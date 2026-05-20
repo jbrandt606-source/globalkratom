@@ -1,190 +1,735 @@
-<!-- Paste this entire file as index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Global Kratom Eradicators</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{--navy:#071f3d;--red:#c8102e;--gray:#f4f6f8;--text:#0b1d34}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Inter,Arial,sans-serif;color:var(--text);background:white;line-height:1.5}
-a{text-decoration:none;color:inherit}
-.container{max-width:1180px;margin:auto;padding:0 24px}
-header{background:white;border-bottom:1px solid #e5e7eb;position:sticky;top:0;z-index:10}
-.nav{height:76px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-weight:800;font-size:22px;line-height:1;color:var(--navy)}
-.logo span{display:block;color:var(--red);font-size:13px;letter-spacing:2px;margin-top:5px}
-nav{display:flex;gap:28px;font-weight:700;font-size:14px}
-.donate,.btn-red{background:var(--red);color:white;padding:13px 22px;border-radius:4px;font-weight:800}
-.hero{background:linear-gradient(90deg,rgba(7,31,61,.94),rgba(7,31,61,.55)),url("assets/hero/capitol-hero.jpg");background-size:cover;background-position:center;padding:78px 0;color:white}
-.hero-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:center}
-.hero h1{font-size:56px;line-height:1.05;margin-bottom:24px}
-.hero p{font-size:19px;max-width:650px;margin-bottom:28px}
-.btns{display:flex;gap:16px;flex-wrap:wrap}
-.btn-outline{border:2px solid white;color:white;padding:12px 22px;border-radius:4px;font-weight:800}
-.mission{background:rgba(4,19,42,.86);border:1px solid rgba(255,255,255,.35);padding:28px;border-radius:8px}
-.mission h3{margin-bottom:12px}
-.stats{background:white;border-bottom:1px solid #e6e9ef}
-.stats-grid{display:grid;grid-template-columns:repeat(6,1fr);text-align:center}
-.stat{padding:26px 14px;border-right:1px solid #e6e9ef}
-.stat:last-child{border-right:0}
-.stat strong{display:block;color:var(--red);font-size:28px;margin-bottom:4px}
-.stat small{font-weight:700;font-size:12px}
-.section{padding:54px 0}
-.section-title{text-align:center;margin-bottom:12px;font-size:28px;color:var(--navy)}
-.section-sub{text-align:center;max-width:760px;margin:0 auto 34px;color:#526174}
-.issues{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
-.issue{background:white;border:1px solid #e1e6ee;border-radius:6px;overflow:hidden;text-align:center;box-shadow:0 8px 20px rgba(0,0,0,.05)}
-.issue img{width:100%;height:145px;object-fit:cover}
-.issue .icon{width:54px;height:54px;border-radius:50%;background:var(--navy);color:white;margin:-27px auto 12px;display:grid;place-items:center;border:5px solid white;font-weight:800}
-.issue h3{font-size:18px;margin:0 12px 10px;color:var(--navy)}
-.issue p{font-size:13px;padding:0 14px 18px;color:#334155}
-.issue a{display:block;color:var(--red);font-weight:800;font-size:13px;padding-bottom:20px}
-.split{display:grid;grid-template-columns:1fr 1.45fr;gap:22px}
-.panel{border-radius:8px;padding:30px;background:#f1f5f9;border:1px solid #e3e8ef}
-.panel.dark{background:linear-gradient(90deg,var(--navy),#0b315c);color:white}
-.panel h3{font-size:24px;margin-bottom:12px}
-.panel p{margin-bottom:18px}
-.evidence-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0}
-.evidence-stats div{border-left:1px solid rgba(255,255,255,.35);padding-left:14px}
-.evidence-stats strong{font-size:22px;display:block}
-.news-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.news{border:1px solid #e1e6ee;border-radius:6px;overflow:hidden;background:white}
-.news img{width:100%;height:110px;object-fit:cover}
-.news div{padding:16px}
-.news b{font-size:12px;color:var(--red)}
-.news h4{font-size:15px;margin:6px 0 10px}
-.cta{background:#fff1f2;border-radius:8px;padding:28px}
-.cta h3{color:var(--red)}
-.strip{background:#eef4fb;padding:26px;text-align:center;font-size:20px;font-weight:800}
-.strip span{display:block;font-size:16px;font-weight:400;margin-top:6px}
-footer{background:var(--navy);color:white;padding:38px 0 20px}
-.footer-grid{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:30px}
-footer h3{font-size:24px}
-footer h4{margin-bottom:12px}
-footer a,footer p{color:#d9e2ef;font-size:14px;display:block;margin-bottom:8px}
-.bottom{border-top:1px solid rgba(255,255,255,.18);margin-top:26px;padding-top:16px;text-align:center;color:#cbd5e1;font-size:12px}
-@media(max-width:900px){
- nav{display:none}
- .hero-grid,.split{grid-template-columns:1fr}
- .hero h1{font-size:38px}
- .stats-grid{grid-template-columns:repeat(2,1fr)}
- .issues{grid-template-columns:repeat(2,1fr)}
- .news-grid{grid-template-columns:1fr}
- .footer-grid{grid-template-columns:1fr}
-}
-@media(max-width:520px){
- .issues{grid-template-columns:1fr}
- .hero{padding:50px 0}
- .nav{height:auto;padding:18px 0}
- .stats-grid{grid-template-columns:1fr}
-}
-</style>
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Global Kratom Eradicators | Evidence-Based Policy & Public Health</title>
+  <!-- Google Fonts: Montserrat for headings, Inter for body (per logo board) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free) for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: #ffffff;
+      color: #1f2a44;
+      line-height: 1.5;
+    }
+
+    /* Color Palette (from logo board & style guides) */
+    :root {
+      --navy: #0B1D34;      /* deep navy */
+      --deep-red: #C8102E;   /* authoritative red */
+      --deep-red-dark: #a00c25;
+      --white: #ffffff;
+      --light-gray: #F5F7FA;
+      --border-light: #E5E7EB;
+      --gray-mid: #6B7280;
+      --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.02);
+      --shadow-md: 0 12px 28px rgba(0, 0, 0, 0.08);
+      --transition: all 0.2s ease;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, .logo-text, .nav-links a, .btn {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 1rem;
+      border-left: 5px solid var(--deep-red);
+      padding-left: 1rem;
+    }
+
+    h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: var(--navy);
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Buttons & CTAs (from ui-components board) */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.8rem;
+      border-radius: 48px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: var(--transition);
+      cursor: pointer;
+      text-decoration: none;
+      border: none;
+      letter-spacing: 0.3px;
+    }
+
+    .btn-primary {
+      background: var(--deep-red);
+      color: white;
+      box-shadow: 0 2px 6px rgba(200, 16, 46, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: var(--deep-red-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(200, 16, 46, 0.25);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid var(--deep-red);
+      color: var(--deep-red);
+    }
+
+    .btn-secondary:hover {
+      background: var(--deep-red);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-light {
+      background: transparent;
+      border: 1.5px solid white;
+      color: white;
+    }
+
+    .btn-outline-light:hover {
+      background: white;
+      color: var(--deep-red);
+    }
+
+    /* Header Navigation (sticky) */
+    .site-header {
+      background: white;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo h1 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin: 0;
+      color: var(--navy);
+      line-height: 1.2;
+    }
+
+    .logo-tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--deep-red);
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.6rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #2c3e50;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--deep-red);
+    }
+
+    .donate-nav {
+      background: var(--deep-red);
+      color: white !important;
+      padding: 0.4rem 1rem;
+      border-radius: 40px;
+    }
+
+    /* Hero Section (hero-image-board style: capitol / government imagery overlay) */
+    .hero {
+      background: linear-gradient(135deg, rgba(11, 29, 52, 0.88), rgba(11, 29, 52, 0.94)), url('https://images.unsplash.com/photo-1541872703-74a5e30068f0?w=1600&auto=format');
+      background-size: cover;
+      background-position: center 30%;
+      padding: 4.5rem 0;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    /* Trust / Stats Bar (from ui-components board) */
+    .stats-bar {
+      background: var(--light-gray);
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .stats-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1.5rem;
+      text-align: center;
+    }
+
+    .stat-item {
+      flex: 1;
+      min-width: 120px;
+    }
+
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--deep-red);
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--navy);
+    }
+
+    .stat-source {
+      font-size: 0.7rem;
+      color: var(--gray-mid);
+    }
+
+    /* Issue Category Cards (from issue-category-board) */
+    .issues-section {
+      padding: 4rem 0;
+      background: white;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .issue-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 1.8rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+      transition: var(--transition);
+    }
+
+    .issue-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .issue-icon {
+      font-size: 2rem;
+      color: var(--deep-red);
+      margin-bottom: 1rem;
+    }
+
+    .issue-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 700;
+      color: var(--deep-red);
+      text-decoration: none;
+      margin-top: 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    /* News Section */
+    .news-section {
+      background: var(--light-gray);
+      padding: 4rem 0;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .news-card {
+      background: white;
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .news-badge {
+      background: var(--deep-red);
+      color: white;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      display: inline-block;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .news-date {
+      color: var(--gray-mid);
+      font-size: 0.8rem;
+      margin: 0.5rem 0;
+    }
+
+    /* Lawmaker Resource Center (from lawmaker-layout-board) */
+    .lawmaker-section {
+      padding: 4rem 0;
+      background: white;
+    }
+
+    .lawmaker-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .resource-card {
+      background: var(--light-gray);
+      padding: 1.8rem;
+      border-radius: 20px;
+      border-left: 4px solid var(--deep-red);
+    }
+
+    /* State Tracker Snapshot */
+    .state-tracker {
+      background: var(--navy);
+      color: white;
+      padding: 2rem;
+      border-radius: 24px;
+      margin: 2rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .tracker-stat {
+      text-align: center;
+      flex: 1;
+    }
+
+    /* Footer (footer-layout-board) */
+    .footer {
+      background: var(--navy);
+      color: #e2e8f0;
+      padding: 3rem 0 2rem;
+      border-top: 4px solid var(--deep-red);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-brand h3 {
+      font-size: 1.5rem;
+      color: white;
+      margin-bottom: 0.25rem;
+    }
+
+    .footer-tagline {
+      color: var(--deep-red);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .footer-links h4, .footer-resources h4 {
+      color: white;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .footer-links ul, .footer-resources ul {
+      list-style: none;
+    }
+
+    .footer-links li, .footer-resources li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links a, .footer-resources a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+
+    .newsletter input {
+      padding: 0.7rem;
+      border-radius: 40px;
+      border: none;
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.75rem;
+    }
+
+    /* Responsive (mobile-first per mobile board) */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 1rem;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .navbar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .nav-links {
+        justify-content: center;
+        gap: 1rem;
+      }
+      .stats-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+      .hero-buttons .btn {
+        width: 100%;
+        justify-content: center;
+      }
+      .state-tracker {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .issue-card {
+        padding: 1.2rem;
+      }
+      h2 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
 <body>
-<header>
-  <div class="container nav">
-    <div class="logo">GLOBAL KRATOM<br>ERADICATORS<span>EDUCATE. EXPOSE. ERADICATE.</span></div>
-    <nav>
-      <a href="#">Evidence</a><a href="#">Issues</a><a href="#">For Lawmakers</a><a href="#">States</a><a href="#">News</a><a href="#">Action Center</a>
-    </nav>
-    <a class="donate" href="#">DONATE</a>
+
+<header class="site-header">
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">
+        <h1>GLOBAL KRATOM ERADICATORS</h1>
+        <div class="logo-tag">EDUCATE. EXPOSE. ERADICATE.</div>
+      </div>
+      <div class="nav-links">
+        <a href="#">HOME</a>
+        <a href="#">EVIDENCE</a>
+        <a href="#">ISSUES</a>
+        <a href="#">FOR LAWMAKERS</a>
+        <a href="#">STATES</a>
+        <a href="#">NEWS</a>
+        <a href="#">ACTION CENTER</a>
+        <a href="#" class="donate-nav">DONATE</a>
+      </div>
+    </div>
   </div>
 </header>
 
-<section class="hero">
-  <div class="container hero-grid">
-    <div>
+<main>
+  <!-- Hero Section: Protect Families. Demand Accountability. -->
+  <section class="hero">
+    <div class="container hero-content">
       <h1>Protect Families.<br>Demand Accountability.</h1>
-      <p>Kratom products are widely sold as “natural” and “safe,” yet evidence shows serious public health risks. It is time for real oversight, testing, and enforcement.</p>
-      <div class="btns">
-        <a class="btn-red" href="#">VIEW THE EVIDENCE →</a>
-        <a class="btn-outline" href="#">TAKE ACTION →</a>
+      <p>Kratom and high-potency alkaloid products pose real risks — dependence, poisoning, organ damage, and death. Science-based policy saves lives.</p>
+      <div class="hero-buttons">
+        <a href="#" class="btn btn-primary"><i class="fas fa-chart-line"></i> VIEW THE EVIDENCE</a>
+        <a href="#" class="btn btn-secondary"><i class="fas fa-gavel"></i> TAKE ACTION</a>
       </div>
     </div>
-    <div class="mission">
-      <h3>Our Mission</h3>
-      <p>We advocate for evidence-based policy that protects public health, informs lawmakers, and prevents harm from unregulated kratom and high-potency alkaloid products.</p>
-      <b>ABOUT OUR MISSION →</b>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="stats">
-  <div class="container stats-grid">
-    <div class="stat"><strong>14,449</strong><small>Poison center exposures<br>2011–2023</small></div>
-    <div class="stat"><strong>1,200%</strong><small>Increase in poison center calls</small></div>
-    <div class="stat"><strong>32</strong><small>Published liver injury cases</small></div>
-    <div class="stat"><strong>500 mg</strong><small>Max kratom content found</small></div>
-    <div class="stat"><strong>7-OH</strong><small>Potent opioid-like alkaloid</small></div>
-    <div class="stat"><strong>50+</strong><small>States taking action</small></div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <h2 class="section-title">THE ISSUES</h2>
-    <p class="section-sub">Scientific evidence shows significant public health risks from kratom and high-potency alkaloid products.</p>
-    <div class="issues">
-      <div class="issue"><img src="assets/issues/dependence.jpg"><div class="icon">●</div><h3>Dependence & Withdrawal</h3><p>Opioid-like dependence and severe withdrawal requiring medical treatment.</p><a href="#">LEARN MORE →</a></div>
-      <div class="issue"><img src="assets/issues/cardiac.jpg"><div class="icon">♥</div><h3>Cardiac Toxicity</h3><p>Reports of arrhythmias, QT prolongation, cardiac arrest, and sudden death.</p><a href="#">LEARN MORE →</a></div>
-      <div class="issue"><img src="assets/issues/liver.jpg"><div class="icon">L</div><h3>Liver Injury</h3><p>Cases of liver failure and transplant linked to kratom use.</p><a href="#">LEARN MORE →</a></div>
-      <div class="issue"><img src="assets/issues/pregnancy.jpg"><div class="icon">M</div><h3>Pregnancy & Neonatal Risk</h3><p>Evidence of neonatal withdrawal and potential harm to developing infants.</p><a href="#">LEARN MORE →</a></div>
-      <div class="issue"><img src="assets/issues/youth.jpg"><div class="icon">Y</div><h3>Youth & College Exposure</h3><p>Increasing use among adolescents and college students.</p><a href="#">LEARN MORE →</a></div>
-      <div class="issue"><img src="assets/issues/contamination.jpg"><div class="icon">!</div><h3>Product Contamination</h3><p>Heavy metals, microbes, pesticides, adulterants, and variable potency.</p><a href="#">LEARN MORE →</a></div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container split">
-    <div class="panel">
-      <h3>Lawmakers:<br>Better Policy Saves Lives</h3>
-      <p>We provide the data, documents, and expert analysis needed to protect communities.</p>
-      <a class="btn-outline" href="#">RESOURCES FOR LAWMAKERS →</a>
-    </div>
-    <div class="panel dark">
-      <h3>Evidence You Can Trust</h3>
-      <p>Explore peer-reviewed studies, government reports, poison center data, case reports, and regulatory documents.</p>
-      <div class="evidence-stats">
-        <div><strong>1,200+</strong>Documents</div>
-        <div><strong>25+</strong>Data Sources</div>
-        <div><strong>2010–2026</strong>Date Range</div>
-        <div><strong>100%</strong>Evidence-Based</div>
+  <!-- Stats / Trust Bar (Poison center data) -->
+  <div class="stats-bar">
+    <div class="container stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">14,449</div>
+        <div class="stat-label">Poison center exposures (2011–2023)</div>
+        <div class="stat-source">Source: America's Poison Centers</div>
       </div>
-      <a class="btn-outline" href="#">BROWSE THE EVIDENCE →</a>
+      <div class="stat-item">
+        <div class="stat-number">1,200%</div>
+        <div class="stat-label">Increase in poison center calls</div>
+        <div class="stat-source">Source: APC Trends Report</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">32</div>
+        <div class="stat-label">Published liver injury cases</div>
+        <div class="stat-source">Source: NIH LiverTox</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">7-OH</div>
+        <div class="stat-label">Potent opioid-like alkaloid</div>
+        <div class="stat-source">Now sold commercially</div>
+      </div>
     </div>
   </div>
-</section>
 
-<section class="section">
+  <!-- Issue Category Cards (Dependence, Cardiac, Liver, Pregnancy, Youth, Contamination) -->
+  <section class="issues-section">
+    <div class="container">
+      <h2>THE REAL HARMS: EVIDENCE-BASED RISKS</h2>
+      <div class="section-subhead" style="color: var(--gray-mid); margin-bottom: 1rem;">Scientific consensus on kratom & 7-OH alkaloid dangers</div>
+      <div class="cards-grid">
+        <div class="issue-card">
+          <div class="issue-icon"><i class="fas fa-brain"></i></div>
+          <h3>Dependence & Withdrawal</h3>
+          <p>Opioid-like dependence and severe withdrawal requiring medical treatment with buprenorphine or methadone.</p>
+          <a href="#" class="card-link">LEARN MORE <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="issue-card">
+          <div class="issue-icon"><i class="fas fa-heartbeat"></i></div>
+          <h3>Cardiac Toxicity</h3>
+          <p>Brugada syndrome, QT prolongation, arrhythmias, cardiac arrest, and sudden death in healthy individuals.</p>
+          <a href="#" class="card-link">LEARN MORE <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="issue-card">
+          <div class="issue-icon"><i class="fas fa-liver"></i></div>
+          <h3>Liver Injury</h3>
+          <p>Cholestatic injury, liver failure, and transplant linked to kratom use. Recovery often after cessation.</p>
+          <a href="#" class="card-link">LEARN MORE <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="issue-card">
+          <div class="issue-icon"><i class="fas fa-baby-carriage"></i></div>
+          <h3>Pregnancy & Neonatal Risk</h3>
+          <p>Neonatal withdrawal, limited safety data, and potential harm to developing infants.</p>
+          <a href="#" class="card-link">LEARN MORE <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="issue-card">
+          <div class="issue-icon"><i class="fas fa-graduation-cap"></i></div>
+          <h3>Youth & College Exposure</h3>
+          <p>Rising use among adolescents and college students fueled by aggressive marketing and easy access.</p>
+          <a href="#" class="card-link">LEARN MORE <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="issue-card">
+          <div class="issue-icon"><i class="fas fa-flask"></i></div>
+          <h3>Product Contamination</h3>
+          <p>Heavy metals, microbes, pesticides, adulterants, and variable potency in many products.</p>
+          <a href="#" class="card-link">LEARN MORE <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- News Section (Latest updates) -->
+  <section class="news-section">
+    <div class="container">
+      <h2>LATEST NEWS & POLICY UPDATES</h2>
+      <div class="news-grid">
+        <div class="news-card">
+          <span class="news-badge">POLICY</span>
+          <h3>States Move to Protect Families as Kratom-Related Harms Rise</h3>
+          <div class="news-date">May 8, 2026</div>
+          <p>Multiple states introduce legislation to regulate high-potency alkaloid products amid rising poison center calls.</p>
+          <a href="#" class="card-link">READ MORE →</a>
+        </div>
+        <div class="news-card">
+          <span class="news-badge">RESEARCH</span>
+          <h3>New Data Shows Alarming Rise in Poison Center Calls</h3>
+          <div class="news-date">April 24, 2026</div>
+          <p>APC report reveals 1,200% increase in exposure calls over the last decade, with severe outcomes in young adults.</p>
+          <a href="#" class="card-link">READ MORE →</a>
+        </div>
+        <div class="news-card">
+          <span class="news-badge">SCIENCE</span>
+          <h3>7-OH: Potent Opioid Alkaloid Found in Commercial Products</h3>
+          <div class="news-date">March 15, 2026</div>
+          <p>New lab analysis confirms dangerously high concentrations of 7‑hydroxymitragynine in unregulated extracts.</p>
+          <a href="#" class="card-link">READ MORE →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lawmaker Resource Center (Better Policy. Stronger Communities.) -->
+  <section class="lawmaker-section">
+    <div class="container">
+      <h2>FOR LAWMAKERS: BETTER POLICY. STRONGER COMMUNITIES.</h2>
+      <p style="margin-bottom: 1rem; color: #4b5563;">Evidence-based tools, model legislation, and data to protect constituents.</p>
+      <div class="lawmaker-grid">
+        <div class="resource-card">
+          <i class="fas fa-file-alt" style="font-size: 2rem; color: var(--deep-red); margin-bottom: 1rem; display: block;"></i>
+          <h3>Issue Briefs</h3>
+          <p>Concise science summaries and policy implications.</p>
+          <a href="#" class="card-link">VIEW RESOURCES →</a>
+        </div>
+        <div class="resource-card">
+          <i class="fas fa-gavel" style="font-size: 2rem; color: var(--deep-red); margin-bottom: 1rem; display: block;"></i>
+          <h3>Model Legislation</h3>
+          <p>Draft bills & regulatory templates for state action.</p>
+          <a href="#" class="card-link">VIEW RESOURCES →</a>
+        </div>
+        <div class="resource-card">
+          <i class="fas fa-chart-simple" style="font-size: 2rem; color: var(--deep-red); margin-bottom: 1rem; display: block;"></i>
+          <h3>Data & Statistics</h3>
+          <p>Poison trends, injury data, state comparisons.</p>
+          <a href="#" class="card-link">VIEW RESOURCES →</a>
+        </div>
+        <div class="resource-card">
+          <i class="fas fa-microphone-alt" style="font-size: 2rem; color: var(--deep-red); margin-bottom: 1rem; display: block;"></i>
+          <h3>Hearings & Testimony</h3>
+          <p>Expert statements and hearing preparation.</p>
+          <a href="#" class="card-link">VIEW RESOURCES →</a>
+        </div>
+      </div>
+
+      <!-- State Actions Snapshot (from lawmaker board) -->
+      <div class="state-tracker">
+        <div class="tracker-stat"><strong>🚫 BAN / PROHIBITED</strong><br>6 states</div>
+        <div class="tracker-stat"><strong>⚖️ RESTRICTED / REGULATED</strong><br>12 states</div>
+        <div class="tracker-stat"><strong>📋 UNDER CONSIDERATION</strong><br>8 states</div>
+        <div class="tracker-stat"><strong>📌 PENDING LEGISLATION</strong><br>15 states</div>
+      </div>
+      <div style="text-align: center; margin-top: 1rem;">
+        <a href="#" class="btn btn-secondary">VIEW FULL STATE TRACKER →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Mission / Callout (from UI board) -->
+  <div style="background: var(--navy); color: white; padding: 3rem 0; text-align: center;">
+    <div class="container">
+      <h3 style="color: white; font-size: 1.8rem;">Our Mission</h3>
+      <p style="max-width: 700px; margin: 1rem auto;">We advocate for evidence-based policy that protects public health, informs lawmakers, and prevents harm from unregulated kratom and high-potency alkaloid products.</p>
+      <a href="#" class="btn btn-outline-light">ABOUT OUR MISSION →</a>
+    </div>
+  </div>
+</main>
+
+<!-- Footer (exact branding and columns) -->
+<footer class="footer">
   <div class="container">
-    <h2>LATEST NEWS</h2>
-    <div class="news-grid">
-      <div class="news"><img src="assets/hero/capitol-hero.jpg"><div><b>POLICY</b><h4>States Move to Protect Families as Kratom-Related Harms Rise</h4><p>May 8, 2026</p></div></div>
-      <div class="news"><img src="assets/hero/science-hero.jpg"><div><b>RESEARCH</b><h4>New Study Identifies Alarming Levels of 7-OH</h4><p>April 24, 2026</p></div></div>
-      <div class="news"><img src="assets/issues/dependence.jpg"><div><b>HEALTH</b><h4>Clinicians Report Severe Withdrawal and Poisoning Cases</h4><p>April 10, 2026</p></div></div>
-      <div class="cta"><h3>Take Action Today</h3><p>Contact lawmakers and demand stronger protections.</p><br><a class="btn-red" href="#">CONTACT YOUR LEGISLATORS →</a></div>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>GLOBAL KRATOM ERADICATORS</h3>
+        <div class="footer-tagline">EDUCATE. EXPOSE. ERADICATE.</div>
+        <p>We are mothers, families, clinicians, and concerned citizens united to end preventable harm. Real oversight, testing, and enforcement can save lives.</p>
+        <div class="social-icons" style="margin-top: 1.2rem;">
+          <a href="#" style="color: #cbd5e1; margin-right: 1rem;"><i class="fab fa-twitter"></i></a>
+          <a href="#" style="color: #cbd5e1; margin-right: 1rem;"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" style="color: #cbd5e1;"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>EVIDENCE</h4>
+        <ul>
+          <li><a href="#">Research Library</a></li>
+          <li><a href="#">Health Risks</a></li>
+          <li><a href="#">Data & Statistics</a></li>
+          <li><a href="#">Reports & Studies</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>ISSUES</h4>
+        <ul>
+          <li><a href="#">Cardiac Toxicity</a></li>
+          <li><a href="#">Liver Injury</a></li>
+          <li><a href="#">Pregnancy & Neonatal</a></li>
+          <li><a href="#">Youth & College Exposure</a></li>
+          <li><a href="#">Product Contamination</a></li>
+        </ul>
+      </div>
+      <div class="footer-resources">
+        <h4>FOR LAWMAKERS</h4>
+        <ul>
+          <li><a href="#">Policy Resources</a></li>
+          <li><a href="#">Model Legislation</a></li>
+          <li><a href="#">State Actions Tracker</a></li>
+          <li><a href="#">Request a Briefing</a></li>
+        </ul>
+      </div>
+      <div class="newsletter">
+        <h4>GET INVOLVED</h4>
+        <ul style="list-style: none;">
+          <li><a href="#" style="color:#cbd5e1;">Take Action</a></li>
+          <li><a href="#" style="color:#cbd5e1;">Contact Your Legislator</a></li>
+          <li><a href="#" style="color:#cbd5e1;">Donate</a></li>
+        </ul>
+        <h4 style="margin-top: 1rem;">STAY INFORMED</h4>
+        <input type="email" placeholder="Email address" style="border-radius: 40px; padding: 0.6rem;">
+        <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.8rem;">SIGN UP</button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Global Kratom Eradicators — All rights reserved. Educate. Expose. Eradicate. | <a href="#" style="color: #cbd5e1;">Privacy Policy</a> | <a href="#" style="color: #cbd5e1;">Terms of Use</a></p>
     </div>
   </div>
-</section>
-
-<div class="strip">
-  We are mothers, families, clinicians, and concerned citizens united to end preventable harm.
-  <span>Kratom is not a harmless “natural” product. Real oversight, testing, and enforcement can save lives.</span>
-</div>
-
-<footer>
-  <div class="container footer-grid">
-    <div><h3>Global Kratom Eradicators</h3><p>Educate. Expose. Eradicate.</p></div>
-    <div><h4>Quick Links</h4><a>Evidence</a><a>Issues</a><a>For Lawmakers</a><a>States</a></div>
-    <div><h4>Resources</h4><a>Research Library</a><a>Data & Reports</a><a>Legislation Tracker</a><a>Media Kit</a></div>
-    <div><h4>Connect</h4><a>Sign Up For Updates</a><a>Contact</a><a>Donate</a></div>
-  </div>
-  <div class="container bottom">© 2026 Global Kratom Eradicators. Educational and legislative resource.</div>
 </footer>
+
 </body>
 </html>
