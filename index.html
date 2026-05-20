@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Global Kratom Eradicators | Evidence-Based Legislative Resource</title>
+  <!-- Google Fonts + Font Awesome 6 (free icons) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, sans-serif;
+      background-color: #ffffff;
+      color: #1e2a41;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* Color palette */
+    :root {
+      --navy: #0a2b3e;       /* deep navy: institutional foundation */
+      --navy-light: #123b52;
+      --deep-red: #9b2c2c;    /* deep red: authoritative accent */
+      --deep-red-dark: #7f2323;
+      --white: #ffffff;
+      --light-gray: #f5f7fa;
+      --card-gray: #ffffff;
+      --border-light: #e9edf2;
+      --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.02);
+      --shadow-md: 0 12px 28px rgba(0, 0, 0, 0.08);
+      --transition: all 0.2s ease;
+    }
+
+    /* container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* typography */
+    h1, h2, h3, h4 {
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--navy);
+      border-left: 4px solid var(--deep-red);
+      padding-left: 1rem;
+    }
+
+    h3 {
+      font-size: 1.35rem;
+      margin-bottom: 0.75rem;
+      color: var(--navy);
+    }
+
+    .section-subhead {
+      font-size: 1.125rem;
+      color: #4a5b6e;
+      margin-bottom: 2.5rem;
+      max-width: 720px;
+    }
+
+    /* buttons & components */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.8rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      cursor: pointer;
+      text-decoration: none;
+      border: none;
+      background: transparent;
+      letter-spacing: -0.01em;
+    }
+
+    .btn-primary {
+      background-color: var(--deep-red);
+      color: white;
+      box-shadow: 0 2px 6px rgba(155, 44, 44, 0.2);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--deep-red-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(155, 44, 44, 0.25);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 1.5px solid var(--deep-red);
+      color: var(--deep-red);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--deep-red);
+      color: white;
+      border-color: var(--deep-red);
+      transform: translateY(-2px);
+    }
+
+    /* header / navigation */
+    .site-header {
+      background-color: var(--white);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo h1 {
+      font-size: 1.55rem;
+      font-weight: 700;
+      margin: 0;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+    }
+
+    .logo p {
+      font-size: 0.8rem;
+      color: var(--deep-red);
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #2c3e50;
+      transition: var(--transition);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--deep-red);
+    }
+
+    /* hero section */
+    .hero {
+      background: linear-gradient(135deg, rgba(10, 43, 62, 0.92), rgba(18, 59, 82, 0.95)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1600&auto=format');
+      background-size: cover;
+      background-position: center 30%;
+      padding: 5rem 0 5.5rem;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 750px;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero .hero-tagline {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      margin-bottom: 2rem;
+      line-height: 1.5;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    /* cards grid */
+    .cards-section {
+      padding: 4rem 0;
+      background-color: var(--light-gray);
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .resource-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 1.8rem;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+    }
+
+    .resource-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .card-icon {
+      font-size: 2.5rem;
+      color: var(--deep-red);
+      margin-bottom: 1.2rem;
+    }
+
+    .resource-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .resource-card p {
+      color: #4b5568;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .card-link {
+      font-weight: 600;
+      color: var(--deep-red);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.2s;
+    }
+
+    .card-link i {
+      font-size: 0.85rem;
+    }
+
+    .card-link:hover {
+      gap: 10px;
+      color: var(--deep-red-dark);
+    }
+
+    /* legislative & evidence section (dual layout) */
+    .evidence-highlight {
+      padding: 4rem 0;
+      background: white;
+    }
+
+    .two-col-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    .evidence-card {
+      background: var(--light-gray);
+      border-radius: 24px;
+      padding: 2rem;
+      border-left: 5px solid var(--deep-red);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .evidence-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .evidence-stats {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin: 1rem 0 0.5rem;
+    }
+
+    .badge {
+      background: var(--deep-red);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 600;
+      display: inline-block;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+    }
+
+    .legislative-list {
+      list-style: none;
+      margin: 1.2rem 0;
+    }
+
+    .legislative-list li {
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.95rem;
+    }
+
+    .legislative-list i {
+      color: var(--deep-red);
+      width: 1.2rem;
+    }
+
+    /* cta / action band */
+    .cta-band {
+      background: var(--navy);
+      color: white;
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .cta-band h3 {
+      color: white;
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-band p {
+      margin-bottom: 1.8rem;
+      opacity: 0.85;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-light {
+      background: white;
+      color: var(--navy);
+    }
+
+    .btn-light:hover {
+      background: var(--light-gray);
+      transform: translateY(-2px);
+    }
+
+    /* footer – exactly required branding */
+    .footer {
+      background-color: var(--navy);
+      color: #e2e8f0;
+      padding: 3rem 0 2rem;
+      border-top: 4px solid var(--deep-red);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-brand h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-tagline {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--deep-red);
+      letter-spacing: -0.2px;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-brand p {
+      margin: 0.5rem 0 0;
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+
+    .footer-links h4, .footer-resources h4, .footer-social h4 {
+      color: white;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      font-size: 1.1rem;
+    }
+
+    .footer-links ul, .footer-resources ul {
+      list-style: none;
+    }
+
+    .footer-links li, .footer-resources li {
+      margin-bottom: 0.7rem;
+    }
+
+    .footer-links a, .footer-resources a {
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: color 0.2s;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a:hover, .footer-resources a:hover {
+      color: white;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1.2rem;
+    }
+
+    .social-icons a {
+      color: #cbd5e1;
+      font-size: 1.5rem;
+      transition: color 0.2s;
+    }
+
+    .social-icons a:hover {
+      color: var(--deep-red);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.8rem;
+    }
+
+    /* responsive breakpoints per mobile board */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 1.2rem;
+      }
+
+      h1 {
+        font-size: 2.3rem;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero .hero-tagline {
+        font-size: 1.1rem;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        gap: 1.2rem;
+        flex-wrap: wrap;
+      }
+
+      .two-col-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .cards-grid {
+        gap: 1.25rem;
+      }
+
+      .hero {
+        padding: 3rem 0;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .evidence-stats {
+        font-size: 1.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .resource-card {
+        padding: 1.5rem;
+      }
+      h2 {
+        font-size: 1.7rem;
+      }
+    }
+
+    /* subtle global spacing */
+    section:last-of-type {
+      margin-bottom: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">
+        <h1>Global Kratom Eradicators</h1>
+        <p>Educate. Expose. Eradicate.</p>
+      </div>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Research</a>
+        <a href="#">Legislative Hub</a>
+        <a href="#">Data & Evidence</a>
+        <a href="#">Action Center</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- Hero section: tone from hero-image-board, public-health advocacy -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-tagline">Evidence-based policy · Public health first</div>
+      <h1>Advancing Kratom Regulation Through Science & Legislative Integrity</h1>
+      <p>A nonpartisan resource for lawmakers, researchers, and communities — building high‑trust frameworks to mitigate risks and protect public health.</p>
+      <div class="hero-buttons">
+        <a href="#" class="btn btn-primary"><i class="fas fa-gavel"></i> Legislative Toolkit</a>
+        <a href="#" class="btn btn-outline"><i class="fas fa-chart-line"></i> Research Library</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key resource cards: ui-components-board style (cards, buttons, subtle shadows) -->
+  <section class="cards-section">
+    <div class="container">
+      <h2>Core Resource Centers</h2>
+      <div class="section-subhead">Data‑driven insights, model legislation, and evidence synthesis for decision‑makers</div>
+      <div class="cards-grid">
+        <div class="resource-card">
+          <div class="card-icon"><i class="fas fa-file-alt"></i></div>
+          <h3>Legislative Dashboard</h3>
+          <p>Track active bills, federal alerts, and state‑level regulatory actions in real time. Comprehensive policy mapping.</p>
+          <a href="#" class="card-link">Explore dashboard <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="resource-card">
+          <div class="card-icon"><i class="fas fa-flask"></i></div>
+          <h3>Evidence Library</h3>
+          <p>Peer‑reviewed studies, toxicology reports, and public health impact analyses. Rigorous, transparent science.</p>
+          <a href="#" class="card-link">Access studies <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="resource-card">
+          <div class="card-icon"><i class="fas fa-chalkboard-user"></i></div>
+          <h3>Public Health Education</h3>
+          <p>Fact sheets, clinical summaries, and community outreach toolkits — designed for professionals and advocates.</p>
+          <a href="#" class="card-link">Download resources <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="resource-card">
+          <div class="card-icon"><i class="fas fa-scale-balanced"></i></div>
+          <h3>Model Legislation</h3>
+          <p>Draft regulatory frameworks, statutory language, and best‑practice guidelines for accountable oversight.</p>
+          <a href="#" class="card-link">Review framework <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- evidence-focused legislative update + featured data (two column layout) -->
+  <section class="evidence-highlight">
+    <div class="container">
+      <h2>Evidence & Legislative Intelligence</h2>
+      <div class="section-subhead">Current policy landscape, informed by rigorous data and public health expertise.</div>
+      <div class="two-col-grid">
+        <div class="evidence-card">
+          <span class="badge">📊 2025 update</span>
+          <h3>Kratom & Public Health Impact</h3>
+          <div class="evidence-stats">15+ States</div>
+          <p>have introduced regulatory measures in 2025. Comprehensive analysis of adverse event reporting, dependency data, and legislative patterns.</p>
+          <div class="legislative-list">
+            <li><i class="fas fa-check-circle"></i> CDC morbidity indicators review</li>
+            <li><i class="fas fa-check-circle"></i> Poison center surveillance 2024-2025</li>
+            <li><i class="fas fa-check-circle"></i> International scheduling comparisons</li>
+          </div>
+          <a href="#" class="card-link" style="margin-top: 0.5rem;">Read full brief <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="evidence-card">
+          <span class="badge">🏛️ legislative tracker</span>
+          <h3>Active Legislation & Hearings</h3>
+          <p>Status of pending bills, committee schedules, and advocacy alerts — updated weekly.</p>
+          <div class="legislative-list">
+            <li><i class="fas fa-map-marker-alt"></i> <strong>TX HB 234</strong> – Retail licensing & age restrictions</li>
+            <li><i class="fas fa-map-marker-alt"></i> <strong>CA SB 188</strong> – Public health research appropriation</li>
+            <li><i class="fas fa-map-marker-alt"></i> <strong>Federal alert</strong> – FDA / DEA scientific review</li>
+          </div>
+          <a href="#" class="btn btn-outline" style="margin-top: 1rem; display: inline-block;">Monitor live hearings →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- call to action: institutional advocacy tone -->
+  <section class="cta-band">
+    <div class="container">
+      <h3>Join a Network of Policy Experts & Advocates</h3>
+      <p>Access real‑time legislative updates, sign on to amicus briefs, and drive evidence‑based reform.</p>
+      <a href="#" class="btn btn-light"><i class="fas fa-envelope"></i> Subscribe for alerts</a>
+    </div>
+  </section>
+</main>
+
+<!-- footer: exactly "Global Kratom Eradicators" + tagline: Educate. Expose. Eradicate. per footer branding board -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Global Kratom Eradicators</h3>
+        <div class="footer-tagline">Educate. Expose. Eradicate.</div>
+        <p>Advancing public health through legislative accountability, research transparency, and community protection. A nonpartisan resource center for evidence‑based policy.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Information</h4>
+        <ul>
+          <li><a href="#">Mission & Guiding Principles</a></li>
+          <li><a href="#">Legislative Agenda</a></li>
+          <li><a href="#">Scientific Advisory Board</a></li>
+          <li><a href="#">Press & Media</a></li>
+        </ul>
+      </div>
+      <div class="footer-resources">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Research Database</a></li>
+          <li><a href="#">State Bill Tracker</a></li>
+          <li><a href="#">For Lawmakers</a></li>
+          <li><a href="#">Community Toolkit</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Engage</h4>
+        <div class="social-icons">
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p style="margin-top: 1.5rem; font-size: 0.8rem;">📞 Legislative hotline: (202) 555-0179</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Global Kratom Eradicators — Educate. Expose. Eradicate. All information provided for educational and legislative reference. Evidence-based, high trust resource center.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
