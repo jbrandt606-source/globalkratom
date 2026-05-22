@@ -1,200 +1,794 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Global Kratom Eradicators | Educate. Expose. Eradicate.</title>
 
-<title>Global Kratom Eradicators | Educate. Expose. Eradicate.</title>
+  <!-- FIXED FAVICON: using relative path and proper PNG + fallback -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logos/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/logos/favicon.png">
+  <link rel="shortcut icon" href="assets/logos/favicon.png">
+  <link rel="apple-touch-icon" href="assets/logos/favicon.png">
 
-<link rel="icon" type="image/png" href="/assets/logos/favicon.png?v=999">
-<link rel="shortcut icon" type="image/png" href="/assets/logos/favicon.png?v=999">
-<link rel="apple-touch-icon" href="/assets/logos/favicon.png?v=999">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: #fff;
+      color: #0b1d34;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+    }
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-<style>
-:root{
-  --navy:#0b1d34;
-  --navy2:#07182c;
-  --red:#c8102e;
-  --red2:#a20d25;
-  --text:#0b1d34;
-  --muted:#5b6878;
-  --line:#dfe5ec;
-  --soft:#f5f7fa;
-  --white:#fff;
-}
+    /* top bar */
+    .topbar {
+      background: #0b1d34;
+      color: #dbe7f4;
+      text-align: center;
+      padding: 9px 18px;
+      font-size: 14px;
+      letter-spacing: 0.03em;
+    }
 
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Inter,Arial,sans-serif;color:var(--text);background:#fff;line-height:1.5}
-a{text-decoration:none;color:inherit}
-img{display:block;max-width:100%}
-.container{max-width:1180px;margin:0 auto;padding:0 24px}
+    /* header (sticky) */
+    header {
+      background: #fff;
+      border-bottom: 1px solid #dfe5ec;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+    .brand img {
+      width: 54px;
+      height: 54px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .brand-title {
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 0.95;
+      font-size: 22px;
+      letter-spacing: 0.02em;
+    }
+    .brand-title span {
+      color: #c8102e;
+    }
+    .brand-sub {
+      margin-top: 7px;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+    nav {
+      display: flex;
+      gap: 25px;
+      font-weight: 800;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+    nav a:hover {
+      color: #c8102e;
+    }
+    .donate {
+      background: #c8102e;
+      color: #fff;
+      padding: 13px 22px;
+      border-radius: 5px;
+      font-weight: 900;
+      text-transform: uppercase;
+      box-shadow: 0 10px 20px rgba(200, 16, 46, 0.25);
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .donate:hover {
+      background: #a20d25;
+    }
 
-.topbar{background:var(--navy);color:#dbe7f4;text-align:center;padding:9px 18px;font-size:14px;letter-spacing:.03em}
+    /* hero */
+    .hero {
+      background: linear-gradient(90deg, rgba(7, 24, 44, 0.96), rgba(7, 24, 44, 0.82), rgba(7, 24, 44, 0.25)), url("assets/hero/capitol-hero.jpg");
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 390px;
+      gap: 48px;
+      align-items: center;
+      padding: 78px 0;
+    }
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+    .eyebrow:before {
+      content: "";
+      width: 58px;
+      height: 4px;
+      background: #c8102e;
+    }
+    .hero h1 {
+      font-size: clamp(42px, 6vw, 68px);
+      line-height: 0.98;
+      font-weight: 900;
+      letter-spacing: -0.06em;
+      margin-bottom: 24px;
+    }
+    .hero p {
+      font-size: 19px;
+      max-width: 660px;
+      color: #eef5ff;
+      margin-bottom: 30px;
+    }
+    .actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 25px;
+      border-radius: 5px;
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: 14px;
+      border: 2px solid transparent;
+      transition: all 0.2s;
+    }
+    .btn-red {
+      background: #c8102e;
+      color: #fff;
+    }
+    .btn-red:hover {
+      background: #a20d25;
+    }
+    .btn-white {
+      border-color: #fff;
+      color: #fff;
+    }
+    .btn-white:hover {
+      background: #fff;
+      color: #0b1d34;
+    }
+    .btn-navy {
+      border-color: #0b1d34;
+      color: #0b1d34;
+    }
+    .btn-navy:hover {
+      background: #0b1d34;
+      color: #fff;
+    }
+    .mission-card {
+      background: rgba(7, 24, 44, 0.91);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+    }
+    .mission-icon {
+      width: 52px;
+      height: 52px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 27px;
+      margin-bottom: 18px;
+    }
+    .mission-card h3 {
+      font-size: 23px;
+      margin-bottom: 12px;
+    }
+    .mission-card p {
+      font-size: 15px;
+      color: #e8f0f8;
+      margin-bottom: 18px;
+    }
+    .mission-card b {
+      text-transform: uppercase;
+      font-size: 13px;
+    }
 
-header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
-.nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:22px}
-.brand{display:flex;align-items:center;gap:14px}
-.brand img{width:54px;height:54px;object-fit:cover}
-.brand-title{font-weight:900;text-transform:uppercase;line-height:.95;font-size:22px;letter-spacing:.02em}
-.brand-title span{display:block;color:var(--red)}
-.brand-sub{margin-top:7px;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.18em}
-nav{display:flex;gap:25px;font-weight:800;font-size:13px;text-transform:uppercase}
-nav a:hover{color:var(--red)}
-.donate{background:var(--red);color:#fff;padding:13px 22px;border-radius:5px;font-weight:900;text-transform:uppercase;box-shadow:0 10px 20px rgba(200,16,46,.25)}
+    /* stats */
+    .stats {
+      background: #fff;
+      border-bottom: 1px solid #dfe5ec;
+      box-shadow: 0 8px 18px rgba(11, 29, 52, 0.05);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+    }
+    .stat {
+      text-align: center;
+      padding: 29px 12px;
+      border-right: 1px solid #dfe5ec;
+    }
+    .stat:last-child {
+      border-right: 0;
+    }
+    .stat-icon {
+      width: 44px;
+      height: 44px;
+      background: #0b1d34;
+      color: #fff;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 11px;
+      font-weight: 900;
+    }
+    .stat strong {
+      display: block;
+      color: #c8102e;
+      font-size: 28px;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat span {
+      display: block;
+      font-size: 12px;
+      font-weight: 800;
+      color: #0b1d34;
+      line-height: 1.25;
+    }
+    .stat small {
+      display: block;
+      color: #66758a;
+      font-size: 11px;
+      margin-top: 8px;
+    }
 
-.hero{
-  background:
-    linear-gradient(90deg,rgba(7,24,44,.96),rgba(7,24,44,.82),rgba(7,24,44,.25)),
-    url("assets/hero/capitol-hero.jpg");
-  background-size:cover;
-  background-position:center;
-  color:#fff;
-}
-.hero-grid{display:grid;grid-template-columns:1.2fr 390px;gap:48px;align-items:center;padding:78px 0}
-.eyebrow{display:flex;align-items:center;gap:14px;text-transform:uppercase;font-weight:900;letter-spacing:.16em;font-size:14px;margin-bottom:22px}
-.eyebrow:before{content:"";width:58px;height:4px;background:var(--red)}
-.hero h1{font-size:clamp(42px,6vw,68px);line-height:.98;font-weight:900;letter-spacing:-.06em;margin-bottom:24px}
-.hero p{font-size:19px;max-width:660px;color:#eef5ff;margin-bottom:30px}
-.actions{display:flex;gap:16px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 25px;border-radius:5px;font-weight:900;text-transform:uppercase;font-size:14px;border:2px solid transparent}
-.btn-red{background:var(--red);color:#fff}
-.btn-red:hover{background:var(--red2)}
-.btn-white{border-color:#fff;color:#fff}
-.btn-white:hover{background:#fff;color:var(--navy)}
-.btn-navy{border-color:var(--navy);color:var(--navy)}
-.btn-navy:hover{background:var(--navy);color:#fff}
+    section {
+      padding: 58px 0;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 30px;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: #0b1d34;
+      margin-bottom: 9px;
+    }
+    .section-sub {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 35px;
+      color: #526176;
+    }
 
-.mission-card{background:rgba(7,24,44,.91);border:1px solid rgba(255,255,255,.35);border-radius:8px;padding:30px;box-shadow:0 14px 30px rgba(0,0,0,.25)}
-.mission-icon{width:52px;height:52px;border:2px solid #fff;border-radius:50%;display:grid;place-items:center;font-size:27px;margin-bottom:18px}
-.mission-card h3{font-size:23px;margin-bottom:12px}
-.mission-card p{font-size:15px;color:#e8f0f8;margin-bottom:18px}
-.mission-card b{text-transform:uppercase;font-size:13px}
+    /* issues grid */
+    .issue-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 18px;
+    }
+    .issue-card {
+      background: #fff;
+      border: 1px solid #dfe5ec;
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(11, 29, 52, 0.06);
+      transition: transform 0.1s;
+    }
+    .issue-card img {
+      width: 100%;
+      height: 145px;
+      object-fit: cover;
+    }
+    .circle-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #0b1d34;
+      color: #fff;
+      border: 6px solid #fff;
+      display: grid;
+      place-items: center;
+      margin: -29px auto 12px;
+      position: relative;
+      z-index: 2;
+      font-size: 21px;
+      font-weight: 900;
+    }
+    .issue-card h3 {
+      font-size: 17px;
+      line-height: 1.15;
+      margin: 0 12px 10px;
+      color: #0b1d34;
+      min-height: 40px;
+    }
+    .issue-card p {
+      font-size: 13px;
+      color: #415166;
+      padding: 0 14px 18px;
+      min-height: 108px;
+    }
+    .issue-card a {
+      display: inline-block;
+      color: #c8102e;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 21px;
+    }
 
-.stats{background:#fff;border-bottom:1px solid var(--line);box-shadow:0 8px 18px rgba(11,29,52,.05)}
-.stats-grid{display:grid;grid-template-columns:repeat(6,1fr)}
-.stat{text-align:center;padding:29px 12px;border-right:1px solid var(--line)}
-.stat:last-child{border-right:0}
-.stat-icon{width:44px;height:44px;background:var(--navy);color:#fff;border-radius:50%;display:grid;place-items:center;margin:0 auto 11px;font-weight:900}
-.stat strong{display:block;color:var(--red);font-size:28px;font-weight:900;line-height:1;margin-bottom:8px}
-.stat span{display:block;font-size:12px;font-weight:800;color:var(--navy);line-height:1.25}
-.stat small{display:block;color:#66758a;font-size:11px;margin-top:8px}
+    /* resources row */
+    .resource-row {
+      display: grid;
+      grid-template-columns: 0.78fr 1.22fr;
+      gap: 22px;
+    }
+    .panel {
+      border: 1px solid #dfe5ec;
+      border-radius: 10px;
+      padding: 32px;
+      box-shadow: 0 8px 20px rgba(11, 29, 52, 0.05);
+    }
+    .panel.light {
+      background: #f4f7fb;
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 20px;
+      align-items: center;
+    }
+    .panel.dark {
+      background: linear-gradient(90deg, rgba(7, 24, 44, 0.98), rgba(7, 24, 44, 0.82)), url("assets/background/navy-texture.jpg");
+      background-size: cover;
+      color: #fff;
+      border-color: transparent;
+    }
+    .capitol-badge {
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      background: #fff;
+      color: #0b1d34;
+      display: grid;
+      place-items: center;
+      font-size: 38px;
+      border: 1px solid #dfe5ec;
+    }
+    .panel h3 {
+      font-size: 24px;
+      line-height: 1.1;
+      margin-bottom: 12px;
+      color: #0b1d34;
+    }
+    .panel.dark h3 {
+      color: #fff;
+    }
+    .panel p {
+      font-size: 14px;
+      color: #48586d;
+      margin-bottom: 20px;
+    }
+    .panel.dark p {
+      color: #dce7f4;
+    }
+    .evidence-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 20px 0 24px;
+    }
+    .evidence-metrics div {
+      border-left: 1px solid rgba(255, 255, 255, 0.3);
+      padding-left: 12px;
+      font-size: 12px;
+      color: #dce7f4;
+    }
+    .evidence-metrics strong {
+      display: block;
+      color: #fff;
+      font-size: 22px;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
 
-section{padding:58px 0}
-.section-title{text-align:center;font-size:30px;font-weight:900;text-transform:uppercase;color:var(--navy);margin-bottom:9px}
-.section-sub{text-align:center;max-width:780px;margin:0 auto 35px;color:#526176}
+    /* news + action */
+    .news-action {
+      background: #f5f7fa;
+      padding-top: 48px;
+    }
+    .news-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 20px;
+    }
+    .news-head h2 {
+      font-size: 25px;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: #0b1d34;
+    }
+    .news-head a {
+      font-size: 13px;
+      font-weight: 900;
+      color: #c8102e;
+      text-transform: uppercase;
+    }
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr) 1.25fr;
+      gap: 18px;
+    }
+    .news-card {
+      background: #fff;
+      border: 1px solid #dfe5ec;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .news-card img {
+      height: 118px;
+      width: 100%;
+      object-fit: cover;
+    }
+    .news-card-content {
+      padding: 16px;
+    }
+    .category {
+      color: #c8102e;
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .news-card h3 {
+      font-size: 15px;
+      line-height: 1.3;
+      margin-bottom: 10px;
+      color: #0b1d34;
+    }
+    .date {
+      font-size: 12px;
+      color: #6b7788;
+    }
+    .action-card {
+      background: #fff1f3;
+      border: 1px solid #ffd7de;
+      border-radius: 8px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .megaphone {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #c8102e;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 26px;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+    .action-card h3 {
+      color: #c8102e;
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+    .action-card p {
+      color: #3f4e63;
+      margin-bottom: 22px;
+    }
 
-.issue-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
-.issue-card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;text-align:center;box-shadow:0 8px 20px rgba(11,29,52,.06)}
-.issue-card img{width:100%;height:145px;object-fit:cover}
-.circle-icon{width:58px;height:58px;border-radius:50%;background:var(--navy);color:#fff;border:6px solid #fff;display:grid;place-items:center;margin:-29px auto 12px;position:relative;z-index:2;font-size:21px;font-weight:900}
-.issue-card h3{font-size:17px;line-height:1.15;margin:0 12px 10px;color:var(--navy);min-height:40px}
-.issue-card p{font-size:13px;color:#415166;padding:0 14px 18px;min-height:108px}
-.issue-card a{display:inline-block;color:var(--red);font-size:12px;font-weight:900;text-transform:uppercase;margin-bottom:21px}
+    /* mission strip */
+    .mission-strip {
+      background: #eef4fb;
+      border-top: 1px solid #dfe5ec;
+      border-bottom: 1px solid #dfe5ec;
+      padding: 26px 0;
+    }
+    .mission-strip .container {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .people-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #0b1d34;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 25px;
+      flex: 0 0 auto;
+    }
+    .mission-strip strong {
+      display: block;
+      font-size: 21px;
+      color: #0b1d34;
+    }
+    .mission-strip span {
+      font-size: 16px;
+      color: #334155;
+    }
 
-.resource-row{display:grid;grid-template-columns:.78fr 1.22fr;gap:22px}
-.panel{border:1px solid var(--line);border-radius:10px;padding:32px;box-shadow:0 8px 20px rgba(11,29,52,.05)}
-.panel.light{background:#f4f7fb;display:grid;grid-template-columns:92px 1fr;gap:20px;align-items:center}
-.panel.dark{
-  background:
-    linear-gradient(90deg,rgba(7,24,44,.98),rgba(7,24,44,.82)),
-    url("assets/background/navy-texture.jpg");
-  background-size:cover;
-  color:#fff;
-  border-color:transparent;
-}
-.capitol-badge{width:84px;height:84px;border-radius:50%;background:#fff;color:var(--navy);display:grid;place-items:center;font-size:38px;border:1px solid var(--line)}
-.panel h3{font-size:24px;line-height:1.1;margin-bottom:12px;color:var(--navy)}
-.panel.dark h3{color:#fff}
-.panel p{font-size:14px;color:#48586d;margin-bottom:20px}
-.panel.dark p{color:#dce7f4}
+    /* FOOTER - FIXED: NO BLEEDING INTO MENU, EXTRA SPACING + WORD BREAK */
+    footer {
+      background: #0b1d34;
+      color: #fff;
+      padding: 38px 0 18px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 34px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    }
+    .footer-brand {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+    }
+    .footer-brand img {
+      width: 62px;
+      height: 62px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .footer-brand h3 {
+      text-transform: uppercase;
+      font-size: 24px;
+      line-height: 1;
+    }
+    .footer-brand h3 span {
+      color: #c8102e;
+      display: block;
+    }
+    .footer-brand p,
+    footer a {
+      color: #dce7f4;
+      font-size: 13px;
+    }
+    .footer-brand p {
+      margin-top: 10px;
+      max-width: 320px;
+    }
+    footer h4 {
+      text-transform: uppercase;
+      font-size: 13px;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+    footer a {
+      display: block;
+      margin-bottom: 8px;
+      transition: opacity 0.2s;
+    }
+    footer a:hover {
+      opacity: 0.8;
+      color: #fff;
+    }
+    .signup {
+      display: flex;
+      margin-top: 12px;
+      max-width: 270px;
+    }
+    .signup input {
+      flex: 1;
+      min-width: 0;
+      padding: 12px;
+      border: 0;
+      border-radius: 4px 0 0 4px;
+      outline: none;
+    }
+    .signup button {
+      border: 0;
+      background: #c8102e;
+      color: #fff;
+      font-weight: 900;
+      padding: 0 14px;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+    }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding-top: 16px;
+      color: #cbd5e1;
+      font-size: 12px;
+    }
 
-.evidence-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0 24px}
-.evidence-metrics div{border-left:1px solid rgba(255,255,255,.3);padding-left:12px;font-size:12px;color:#dce7f4}
-.evidence-metrics strong{display:block;color:#fff;font-size:22px;line-height:1;margin-bottom:5px}
+    /* RESPONSIVE - FIX OVERFLOW & ENSURE NO BLEED */
+    @media (max-width: 1050px) {
+      nav {
+        display: none;
+      }
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+      .mission-card {
+        max-width: 520px;
+      }
+      .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .issue-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .action-card {
+        grid-column: span 2;
+      }
+    }
 
-.news-action{background:var(--soft);padding-top:48px}
-.news-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:20px}
-.news-head h2{font-size:25px;font-weight:900;text-transform:uppercase;color:var(--navy)}
-.news-head a{font-size:13px;font-weight:900;color:var(--red);text-transform:uppercase}
-.news-grid{display:grid;grid-template-columns:repeat(3,1fr) 1.25fr;gap:18px}
-.news-card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
-.news-card img{height:118px;width:100%;object-fit:cover}
-.news-card-content{padding:16px}
-.category{color:var(--red);font-size:11px;font-weight:900;text-transform:uppercase;margin-bottom:8px}
-.news-card h3{font-size:15px;line-height:1.3;margin-bottom:10px;color:var(--navy)}
-.date{font-size:12px;color:#6b7788}
-.action-card{background:#fff1f3;border:1px solid #ffd7de;border-radius:8px;padding:28px;display:flex;flex-direction:column;justify-content:center}
-.megaphone{width:58px;height:58px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-size:26px;font-weight:900;margin-bottom:18px}
-.action-card h3{color:var(--red);font-size:23px;margin-bottom:10px}
-.action-card p{color:#3f4e63;margin-bottom:22px}
-
-.mission-strip{background:#eef4fb;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0}
-.mission-strip .container{display:flex;align-items:center;gap:20px}
-.people-icon{width:64px;height:64px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:25px;flex:0 0 auto}
-.mission-strip strong{display:block;font-size:21px;color:var(--navy)}
-.mission-strip span{font-size:16px;color:#334155}
-
-footer{background:var(--navy);color:#fff;padding:38px 0 18px}
-.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:34px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.16)}
-.footer-brand{display:flex;gap:15px;align-items:flex-start}
-.footer-brand img{width:62px;height:62px;object-fit:cover;border-radius:8px}
-.footer-brand h3{text-transform:uppercase;font-size:24px;line-height:1}
-.footer-brand h3 span{color:var(--red);display:block}
-.footer-brand p,footer a{color:#dce7f4;font-size:13px}
-.footer-brand p{margin-top:10px;max-width:320px}
-footer h4{text-transform:uppercase;font-size:13px;margin-bottom:12px}
-footer a{display:block;margin-bottom:8px}
-.signup{display:flex;margin-top:12px;max-width:270px}
-.signup input{flex:1;min-width:0;padding:12px;border:0;border-radius:4px 0 0 4px}
-.signup button{border:0;background:var(--red);color:#fff;font-weight:900;padding:0 14px;border-radius:0 4px 4px 0}
-.footer-bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:16px;color:#cbd5e1;font-size:12px}
-
-@media(max-width:1050px){
-  nav{display:none}
-  .hero-grid{grid-template-columns:1fr}
-  .mission-card{max-width:520px}
-  .stats-grid{grid-template-columns:repeat(3,1fr)}
-  .issue-grid{grid-template-columns:repeat(3,1fr)}
-  .news-grid{grid-template-columns:repeat(2,1fr)}
-  .action-card{grid-column:span 2}
-}
-
-@media(max-width:760px){
-  .container{padding:0 18px}
-  .topbar{font-size:13px;line-height:1.4}
-  .nav{height:auto;padding:16px 0}
-  .brand img{width:44px;height:44px}
-  .brand-title{font-size:17px}
-  .brand-sub{font-size:10px}
-  .donate{padding:11px 14px;font-size:13px}
-  .hero-grid{padding:50px 0;gap:26px}
-  .hero p{font-size:16px}
-  .actions{flex-direction:column}
-  .btn{width:100%}
-  .stats-grid{grid-template-columns:repeat(2,1fr)}
-  section{padding:42px 0}
-  .issue-grid{grid-template-columns:1fr}
-  .issue-card img{height:190px}
-  .issue-card p{min-height:auto}
-  .resource-row{grid-template-columns:1fr}
-  .panel.light{grid-template-columns:1fr}
-  .evidence-metrics{grid-template-columns:repeat(2,1fr)}
-  .news-head{display:block}
-  .news-head h2{margin-bottom:8px}
-  .news-grid{grid-template-columns:1fr}
-  .action-card{grid-column:auto}
-  .mission-strip .container{align-items:flex-start}
-  .mission-strip strong{font-size:18px}
-  .footer-grid{grid-template-columns:1fr}
-  .footer-bottom{display:block}
-  .footer-bottom div{margin-bottom:8px}
-}
-</style>
+    @media (max-width: 760px) {
+      .container {
+        padding: 0 18px;
+      }
+      .topbar {
+        font-size: 12px;
+        line-height: 1.4;
+      }
+      .nav {
+        height: auto;
+        padding: 16px 0;
+        flex-wrap: wrap;
+      }
+      .brand img {
+        width: 44px;
+        height: 44px;
+      }
+      .brand-title {
+        font-size: 17px;
+      }
+      .brand-sub {
+        font-size: 9px;
+      }
+      .donate {
+        padding: 10px 16px;
+        font-size: 12px;
+        white-space: nowrap;
+      }
+      .hero-grid {
+        padding: 50px 0;
+        gap: 26px;
+      }
+      .hero p {
+        font-size: 16px;
+      }
+      .actions {
+        flex-direction: column;
+      }
+      .btn {
+        width: 100%;
+      }
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      section {
+        padding: 42px 0;
+      }
+      .issue-grid {
+        grid-template-columns: 1fr;
+      }
+      .issue-card img {
+        height: 190px;
+      }
+      .issue-card p {
+        min-height: auto;
+      }
+      .resource-row {
+        grid-template-columns: 1fr;
+      }
+      .panel.light {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .capitol-badge {
+        margin: 0 auto;
+      }
+      .evidence-metrics {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .news-head {
+        display: block;
+      }
+      .news-head h2 {
+        margin-bottom: 8px;
+      }
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+      .action-card {
+        grid-column: auto;
+      }
+      .mission-strip .container {
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+      .mission-strip strong {
+        font-size: 18px;
+      }
+      /* FIX: bottom footer grid becomes 1 column, remove overlap potential */
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .footer-brand {
+        flex-wrap: wrap;
+      }
+      .footer-bottom {
+        display: block;
+        text-align: center;
+      }
+      .footer-bottom div {
+        margin-bottom: 8px;
+      }
+      /* Additional anti-bleed: ensure any overflow text wraps */
+      .footer-brand h3 {
+        word-break: break-word;
+      }
+    }
+    /* extra safety: prevent ANY footer text bleeding into visual menu area */
+    footer,
+    footer * {
+      max-width: 100%;
+      word-break: break-word;
+    }
+    /* ensure "Eradicator" text in footer brand and other columns always separated */
+    .footer-grid > div {
+      overflow: hidden;
+    }
+  </style>
 </head>
-
 <body>
 
 <div class="topbar">GLOBALKRATOM.ORG · Evidence-based policy resources for lawmakers, clinicians, journalists, and families</div>
@@ -208,7 +802,6 @@ footer a{display:block;margin-bottom:8px}
         <div class="brand-sub">Educate. Expose. Eradicate.</div>
       </div>
     </a>
-
     <nav>
       <a href="#evidence">Evidence</a>
       <a href="#issues">Issues</a>
@@ -217,239 +810,90 @@ footer a{display:block;margin-bottom:8px}
       <a href="#news">News</a>
       <a href="#action">Action Center</a>
     </nav>
-
-   
+    <!-- DONATE button restored to match original design -->
+    <a href="#" class="donate">DONATE</a>
   </div>
 </header>
 
 <main>
-
-<section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <div class="eyebrow">Public Health First</div>
-      <h1>Protect Families.<br>Demand Accountability.</h1>
-      <p>Kratom products are widely sold as “natural” and “safe,” yet evidence shows they can cause dependence, severe withdrawal, poisoning, organ damage, and death. It is time for real oversight.</p>
-      <div class="actions">
-        <a class="btn btn-red" href="#evidence">View the Evidence →</a>
-        <a class="btn btn-white" href="#action">Take Action →</a>
-      </div>
-    </div>
-
-    <aside class="mission-card">
-      <div class="mission-icon">✓</div>
-      <h3>Our Mission</h3>
-      <p>We advocate for evidence-based policy that protects public health, informs lawmakers, and prevents harm from unregulated kratom and high-potency alkaloid products.</p>
-      <b>About Our Mission →</b>
-    </aside>
-  </div>
-</section>
-
-<section class="stats">
-  <div class="container stats-grid">
-    <div class="stat"><div class="stat-icon">☎</div><strong>14,449</strong><span>Poison center exposures<br>2011–2023</span><small>Source: America’s Poison Centers</small></div>
-    <div class="stat"><div class="stat-icon">↗</div><strong>1,200%</strong><span>Increase in poison center calls</span><small>Source: APC Trends Report</small></div>
-    <div class="stat"><div class="stat-icon">●</div><strong>32</strong><span>Published liver injury cases</span><small>Source: NIH LiverTox</small></div>
-    <div class="stat"><div class="stat-icon">✚</div><strong>500 mg</strong><span>Max kratom content found</span><small>Source: Kratom Beverage Analysis</small></div>
-    <div class="stat"><div class="stat-icon">⚗</div><strong>7-OH</strong><span>Potent opioid-like alkaloid</span><small>Source: Laboratory Reports</small></div>
-    <div class="stat"><div class="stat-icon">🏛</div><strong>50+</strong><span>States taking action</span><small>Source: GKE Policy Tracker</small></div>
-  </div>
-</section>
-
-<section id="issues">
-  <div class="container">
-    <h2 class="section-title">The Issues</h2>
-    <p class="section-sub">Scientific evidence shows significant public health risks from kratom and high-potency alkaloid products.</p>
-
-    <div class="issue-grid">
-      <article class="issue-card">
-        <img src="assets/icons/dependence.jpg" alt="Dependence and withdrawal">
-        <div class="circle-icon">🧠</div>
-        <h3>Dependence & Withdrawal</h3>
-        <p>Opioid-like dependence and severe withdrawal requiring treatment with medications like buprenorphine and methadone.</p>
-        <a href="#">Learn More →</a>
-      </article>
-
-      <article class="issue-card">
-        <img src="assets/icons/cardiac.jpg" alt="Cardiac toxicity">
-        <div class="circle-icon">♥</div>
-        <h3>Cardiac Toxicity</h3>
-        <p>Reports of Brugada syndrome, QT prolongation, arrhythmias, cardiac arrest, and sudden death in healthy individuals.</p>
-        <a href="#">Learn More →</a>
-      </article>
-
-      <article class="issue-card">
-        <img src="assets/icons/liver.jpg" alt="Liver injury">
-        <div class="circle-icon">●</div>
-        <h3>Liver Injury</h3>
-        <p>Cases of cholestatic injury, liver failure, and transplant linked to kratom use. Recovery often occurs after cessation.</p>
-        <a href="#">Learn More →</a>
-      </article>
-
-      <article class="issue-card">
-        <img src="assets/icons/pregnancy.jpeg" alt="Pregnancy and neonatal risk">
-        <div class="circle-icon">⚕</div>
-        <h3>Pregnancy & Neonatal Risk</h3>
-        <p>Evidence of neonatal withdrawal, limited safety data, and potential harm to developing infants.</p>
-        <a href="#">Learn More →</a>
-      </article>
-
-      <article class="issue-card">
-        <img src="assets/icons/youth.jpeg" alt="Youth and college exposure">
-        <div class="circle-icon">👥</div>
-        <h3>Youth & College Exposure</h3>
-        <p>Increasing use among adolescents and college students fueled by aggressive marketing and easy access.</p>
-        <a href="#">Learn More →</a>
-      </article>
-
-      <article class="issue-card">
-        <img src="assets/icons/contamination.jpeg" alt="Product contamination">
-        <div class="circle-icon">⚗</div>
-        <h3>Product Contamination</h3>
-        <p>Heavy metals, microbes, pesticides, adulterants, and variable potency found in many products.</p>
-        <a href="#">Learn More →</a>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="lawmakers">
-  <div class="container resource-row">
-    <div class="panel light">
-      <div class="capitol-badge">🏛</div>
+  <section class="hero">
+    <div class="container hero-grid">
       <div>
-        <h3>Lawmakers:<br>Better Policy Saves Lives</h3>
-        <p>Outdated laws and lack of enforcement leave families vulnerable. We provide the data, documents, and expert analysis needed to protect communities.</p>
-        <a class="btn btn-navy" href="#">Resources for Lawmakers →</a>
+        <div class="eyebrow">Public Health First</div>
+        <h1>Protect Families.<br>Demand Accountability.</h1>
+        <p>Kratom products are widely sold as "natural" and "safe," yet evidence shows they can cause dependence, severe withdrawal, poisoning, organ damage, and death. It is time for real oversight.</p>
+        <div class="actions">
+          <a class="btn btn-red" href="#evidence">View the Evidence →</a>
+          <a class="btn btn-white" href="#action">Take Action →</a>
+        </div>
       </div>
-    </div>
-
-    <div id="evidence" class="panel dark">
-      <h3>Evidence You Can Trust</h3>
-      <p>Explore our library of peer-reviewed studies, government reports, poison center data, case reports, and regulatory documents.</p>
-      <div class="evidence-metrics">
-        <div><strong>1,200+</strong>Documents & Studies</div>
-        <div><strong>25+</strong>Data Sources</div>
-        <div><strong>2010–2026</strong>Date Range</div>
-        <div><strong>100%</strong>Evidence-Based</div>
-      </div>
-      <a class="btn btn-white" href="#">Browse the Evidence →</a>
-    </div>
-  </div>
-</section>
-
-<section id="news" class="news-action">
-  <div class="container">
-
-    <div class="news-head">
-      <h2>Latest News</h2>
-      <a href="#">View All News →</a>
-    </div>
-
-    <div class="news-grid">
-
-      <!-- POLICY -->
-      <article class="news-card">
-        <img src="assets/icons/policy.jpeg" alt="Policy news">
-        <div class="news-card-content">
-          <div class="category">Policy</div>
-          <h3>States Move to Protect Families as Kratom-Related Harms Rise</h3>
-          <div class="date">May 8, 2026</div>
-        </div>
-      </article>
-
-      <!-- RESEARCH -->
-      <article class="news-card">
-        <img src="assets/icons/health.jpeg" alt="Public health research">
-        <div class="news-card-content">
-          <div class="category">Research</div>
-          <h3>New Study Identifies Alarming Levels of 7-OH in Products</h3>
-          <div class="date">April 24, 2026</div>
-        </div>
-      </article>
-
-      <!-- HEALTH -->
-      <article class="news-card">
-        <img src="assets/icons/dependence.jpg" alt="Withdrawal and poisoning">
-        <div class="news-card-content">
-          <div class="category">Health</div>
-          <h3>Clinicians Report Surge in Severe Withdrawal and Poisoning Cases</h3>
-          <div class="date">April 10, 2026</div>
-        </div>
-      </article>
-
-      <!-- ACTION CARD -->
-      <aside id="action" class="action-card">
-        <div class="megaphone">!</div>
-        <h3>Take Action Today</h3>
-        <p>
-          Your voice can drive change.
-          Contact lawmakers and demand stronger protections for families and communities.
-        </p>
-
-        <a class="btn btn-red" href="#">
-          Contact Your Legislators →
-        </a>
+      <aside class="mission-card">
+        <div class="mission-icon">✓</div>
+        <h3>Our Mission</h3>
+        <p>We advocate for evidence-based policy that protects public health, informs lawmakers, and prevents harm from unregulated kratom and high-potency alkaloid products.</p>
+        <b>About Our Mission →</b>
       </aside>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="mission-strip">
-  <div class="container">
-    <div class="people-icon">👥</div>
-    <div>
-      <strong>We are mothers, families, clinicians, and concerned citizens united to end preventable harm.</strong>
-      <span>Kratom is not a harmless “natural” product. Real oversight, testing, and enforcement can save lives.</span>
+  <section class="stats">
+    <div class="container stats-grid">
+      <div class="stat"><div class="stat-icon">☎</div><strong>14,449</strong><span>Poison center exposures<br>2011–2023</span><small>Source: America’s Poison Centers</small></div>
+      <div class="stat"><div class="stat-icon">↗</div><strong>1,200%</strong><span>Increase in poison center calls</span><small>Source: APC Trends Report</small></div>
+      <div class="stat"><div class="stat-icon">●</div><strong>32</strong><span>Published liver injury cases</span><small>Source: NIH LiverTox</small></div>
+      <div class="stat"><div class="stat-icon">✚</div><strong>500 mg</strong><span>Max kratom content found</span><small>Source: Kratom Beverage Analysis</small></div>
+      <div class="stat"><div class="stat-icon">⚗</div><strong>7-OH</strong><span>Potent opioid-like alkaloid</span><small>Source: Laboratory Reports</small></div>
+      <div class="stat"><div class="stat-icon">🏛</div><strong>50+</strong><span>States taking action</span><small>Source: GKE Policy Tracker</small></div>
     </div>
-  </div>
-</section>
+  </section>
 
+  <section id="issues">
+    <div class="container">
+      <h2 class="section-title">The Issues</h2>
+      <p class="section-sub">Scientific evidence shows significant public health risks from kratom and high-potency alkaloid products.</p>
+      <div class="issue-grid">
+        <article class="issue-card"><img src="assets/icons/dependence.jpg" alt="Dependence"><div class="circle-icon">🧠</div><h3>Dependence & Withdrawal</h3><p>Opioid-like dependence and severe withdrawal requiring treatment with medications like buprenorphine and methadone.</p><a href="#">Learn More →</a></article>
+        <article class="issue-card"><img src="assets/icons/cardiac.jpg" alt="Cardiac"><div class="circle-icon">♥</div><h3>Cardiac Toxicity</h3><p>Reports of Brugada syndrome, QT prolongation, arrhythmias, cardiac arrest, and sudden death in healthy individuals.</p><a href="#">Learn More →</a></article>
+        <article class="issue-card"><img src="assets/icons/liver.jpg" alt="Liver"><div class="circle-icon">●</div><h3>Liver Injury</h3><p>Cases of cholestatic injury, liver failure, and transplant linked to kratom use. Recovery often occurs after cessation.</p><a href="#">Learn More →</a></article>
+        <article class="issue-card"><img src="assets/icons/pregnancy.jpeg" alt="Pregnancy"><div class="circle-icon">⚕</div><h3>Pregnancy & Neonatal Risk</h3><p>Evidence of neonatal withdrawal, limited safety data, and potential harm to developing infants.</p><a href="#">Learn More →</a></article>
+        <article class="issue-card"><img src="assets/icons/youth.jpeg" alt="Youth"><div class="circle-icon">👥</div><h3>Youth & College Exposure</h3><p>Increasing use among adolescents and college students fueled by aggressive marketing and easy access.</p><a href="#">Learn More →</a></article>
+        <article class="issue-card"><img src="assets/icons/contamination.jpeg" alt="Contamination"><div class="circle-icon">⚗</div><h3>Product Contamination</h3><p>Heavy metals, microbes, pesticides, adulterants, and variable potency found in many products.</p><a href="#">Learn More →</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="lawmakers">
+    <div class="container resource-row">
+      <div class="panel light"><div class="capitol-badge">🏛</div><div><h3>Lawmakers:<br>Better Policy Saves Lives</h3><p>Outdated laws and lack of enforcement leave families vulnerable. We provide the data, documents, and expert analysis needed to protect communities.</p><a class="btn btn-navy" href="#">Resources for Lawmakers →</a></div></div>
+      <div id="evidence" class="panel dark"><h3>Evidence You Can Trust</h3><p>Explore our library of peer-reviewed studies, government reports, poison center data, case reports, and regulatory documents.</p><div class="evidence-metrics"><div><strong>1,200+</strong>Documents & Studies</div><div><strong>25+</strong>Data Sources</div><div><strong>2010–2026</strong>Date Range</div><div><strong>100%</strong>Evidence-Based</div></div><a class="btn btn-white" href="#">Browse the Evidence →</a></div>
+    </div>
+  </section>
+
+  <section id="news" class="news-action">
+    <div class="container">
+      <div class="news-head"><h2>Latest News</h2><a href="#">View All News →</a></div>
+      <div class="news-grid">
+        <article class="news-card"><img src="assets/icons/policy.jpeg" alt="Policy"><div class="news-card-content"><div class="category">Policy</div><h3>States Move to Protect Families as Kratom-Related Harms Rise</h3><div class="date">May 8, 2026</div></div></article>
+        <article class="news-card"><img src="assets/icons/health.jpeg" alt="Health"><div class="news-card-content"><div class="category">Research</div><h3>New Study Identifies Alarming Levels of 7-OH in Products</h3><div class="date">April 24, 2026</div></div></article>
+        <article class="news-card"><img src="assets/icons/dependence.jpg" alt="Withdrawal"><div class="news-card-content"><div class="category">Health</div><h3>Clinicians Report Surge in Severe Withdrawal and Poisoning Cases</h3><div class="date">April 10, 2026</div></div></article>
+        <aside id="action" class="action-card"><div class="megaphone">!</div><h3>Take Action Today</h3><p>Your voice can drive change. Contact lawmakers and demand stronger protections for families and communities.</p><a class="btn btn-red" href="#">Contact Your Legislators →</a></aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="mission-strip">
+    <div class="container"><div class="people-icon">👥</div><div><strong>We are mothers, families, clinicians, and concerned citizens united to end preventable harm.</strong><span>Kratom is not a harmless "natural" product. Real oversight, testing, and enforcement can save lives.</span></div></div>
+  </section>
 </main>
 
 <footer>
   <div class="container footer-grid">
-    <div class="footer-brand">
-      <img src="assets/logos/logo-dark.png" alt="Global Kratom Eradicators logo">
-      <div>
-        <h3>Global <span>Kratom</span> Eradicators</h3>
-        <p>Educate. Expose. Eradicate.</p>
-        <p>Promoting truth, accountability, public health, and stronger policy protections.</p>
-      </div>
-    </div>
-
-    <div>
-      <h4>Quick Links</h4>
-      <a href="#issues">Issues</a>
-      <a href="#evidence">Evidence</a>
-      <a href="#lawmakers">For Lawmakers</a>
-      <a href="#action">Action Center</a>
-    </div>
-
-    <div>
-      <h4>Resources</h4>
-      <a href="#">Research Library</a>
-      <a href="#">Data & Reports</a>
-      <a href="#">Legislation Tracker</a>
-      <a href="#">Media Kit</a>
-    </div>
-
-    <div>
-      <h4>Stay Informed</h4>
-      <p>Get updates on research, legislation, and action alerts.</p>
-      <form class="signup">
-        <input type="email" placeholder="Email address">
-        <button type="submit">Sign Up</button>
-      </form>
-    </div>
+    <div class="footer-brand"><img src="assets/logos/logo-dark.png" alt="logo"><div><h3>Global <span>Kratom</span> Eradicators</h3><p>Educate. Expose. Eradicate.</p><p>Promoting truth, accountability, public health, and stronger policy protections.</p></div></div>
+    <div><h4>Quick Links</h4><a href="#issues">Issues</a><a href="#evidence">Evidence</a><a href="#lawmakers">For Lawmakers</a><a href="#action">Action Center</a></div>
+    <div><h4>Resources</h4><a href="#">Research Library</a><a href="#">Data & Reports</a><a href="#">Legislation Tracker</a><a href="#">Media Kit</a></div>
+    <div><h4>Stay Informed</h4><p>Get updates on research, legislation, and action alerts.</p><form class="signup"><input type="email" placeholder="Email address"><button type="submit">Sign Up</button></form></div>
   </div>
-
-  <div class="container footer-bottom">
-    <div>© 2026 Global Kratom Eradicators. All rights reserved.</div>
-    <div>Educational and legislative reference.</div>
-  </div>
+  <div class="container footer-bottom"><div>© 2026 Global Kratom Eradicators. All rights reserved.</div><div>Educational and legislative reference.</div></div>
 </footer>
-
 </body>
 </html>
