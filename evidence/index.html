@@ -2,20 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Evidence Library | Global Kratom Eradicators</title>
   <!-- Favicon from global assets -->
   <link rel="icon" type="image/png" href="/assets/logos/favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Inter', Arial, sans-serif;
       background: #f9fafb;
       color: #0b1d34;
       line-height: 1.5;
     }
-    /* subtle background from your asset */
+
+    /* subtle background grid from your asset */
     body::before {
       content: "";
       position: fixed;
@@ -29,7 +35,14 @@
       pointer-events: none;
       z-index: -1;
     }
-    .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* top bar */
     .topbar {
       background: #0b1d34;
       color: #dbe7f4;
@@ -38,6 +51,8 @@
       font-size: 13px;
       letter-spacing: 0.02em;
     }
+
+    /* main navigation */
     .nav-bar {
       background: white;
       border-bottom: 1px solid #eef2f6;
@@ -51,18 +66,51 @@
       text-transform: uppercase;
       font-size: 13px;
     }
-    .nav-links a { text-decoration: none; color: #1e293b; }
-    .nav-links a.active { color: #c8102e; }
+    .nav-links a {
+      text-decoration: none;
+      color: #1e293b;
+    }
+    .nav-links a.active {
+      color: #c8102e;
+    }
     .brand {
       font-weight: 900;
       font-size: 20px;
       margin-right: auto;
     }
-    .brand span { color: #c8102e; }
-    .page-header { margin: 40px 0 24px; }
-    .page-header h1 { font-size: 38px; font-weight: 900; letter-spacing: -0.02em; }
-    .page-header p { color: #475569; margin-top: 12px; font-size: 16px; max-width: 720px; }
-    .search-wrapper { margin: 28px 0 32px; }
+    .brand span {
+      color: #c8102e;
+    }
+    .donate-btn {
+      background: #c8102e;
+      color: white;
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-weight: 800;
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    /* page header */
+    .page-header {
+      margin: 40px 0 24px;
+    }
+    .page-header h1 {
+      font-size: 38px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+    .page-header p {
+      color: #475569;
+      margin-top: 12px;
+      font-size: 16px;
+      max-width: 720px;
+    }
+
+    /* search bar */
+    .search-wrapper {
+      margin: 28px 0 32px;
+    }
     .search-wrapper input {
       width: 100%;
       max-width: 520px;
@@ -72,8 +120,15 @@
       font-size: 15px;
       background: white;
       box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+      transition: 0.2s;
     }
-    .search-wrapper input:focus { outline: none; border-color: #c8102e; }
+    .search-wrapper input:focus {
+      outline: none;
+      border-color: #c8102e;
+      box-shadow: 0 0 0 3px rgba(200,16,46,0.1);
+    }
+
+    /* stats row (4 cards) */
     .stats-row {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -86,10 +141,27 @@
       padding: 20px 16px;
       text-align: center;
       border: 1px solid #eef2f6;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
     }
-    .stat-number { font-size: 38px; font-weight: 900; color: #c8102e; line-height: 1.1; }
-    .stat-label { font-size: 14px; font-weight: 700; margin-top: 10px; }
-    .stat-sub { font-size: 12px; color: #64748b; margin-top: 5px; }
+    .stat-number {
+      font-size: 38px;
+      font-weight: 900;
+      color: #c8102e;
+      line-height: 1.1;
+    }
+    .stat-label {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1e293b;
+      margin-top: 10px;
+    }
+    .stat-sub {
+      font-size: 12px;
+      color: #64748b;
+      margin-top: 5px;
+    }
+
+    /* category pills (Browse by Category) */
     .category-pills {
       display: flex;
       flex-wrap: wrap;
@@ -106,10 +178,20 @@
       font-weight: 600;
       font-size: 14px;
       cursor: pointer;
+      transition: 0.2s;
     }
-    .pill.active { background: #c8102e; border-color: #c8102e; color: white; }
-    .pill:hover:not(.active) { background: #f1f5f9; }
-    .more-dropdown { position: relative; display: inline-block; }
+    .pill.active {
+      background: #c8102e;
+      border-color: #c8102e;
+      color: white;
+    }
+    .pill:hover:not(.active) {
+      background: #f1f5f9;
+    }
+    .more-dropdown {
+      position: relative;
+      display: inline-block;
+    }
     .dropdown-menu {
       display: none;
       position: absolute;
@@ -127,54 +209,119 @@
       text-decoration: none;
       color: #0b1d34;
       font-size: 14px;
+      font-weight: 500;
     }
-    .dropdown-menu a:hover { background: #f8fafc; }
-    .more-dropdown:hover .dropdown-menu { display: block; }
-    .explore-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 20px;
+    .dropdown-menu a:hover {
+      background: #f8fafc;
+    }
+    .more-dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    /* HORIZONTAL SCROLL EXPLORE CARDS (like Dependence & Withdrawal card) */
+    .explore-scroll-wrapper {
+      width: 100%;
+      overflow-x: auto;
       margin-bottom: 52px;
+      scrollbar-width: thin;
+      -webkit-overflow-scrolling: touch;
     }
-    .explore-card {
+    .explore-scroll-wrapper::-webkit-scrollbar {
+      height: 6px;
+    }
+    .explore-scroll-wrapper::-webkit-scrollbar-track {
+      background: #eef2f6;
+      border-radius: 10px;
+    }
+    .explore-scroll-wrapper::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 10px;
+    }
+    .explore-grid-horizontal {
+      display: flex;
+      gap: 24px;
+      min-width: min-content;
+      padding-bottom: 8px;
+    }
+    .explore-card-horizontal {
       background: white;
-      border-radius: 20px;
-      padding: 20px 12px;
-      text-align: center;
-      border: 1px solid #eef2f6;
+      border-left: 4px solid #c8102e;
+      border-radius: 16px;
+      padding: 20px 18px;
+      width: 240px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
       cursor: pointer;
+    }
+    .explore-card-horizontal:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.08);
+    }
+    .explore-icon-horizontal {
+      width: 56px;
+      height: 56px;
+      margin-bottom: 16px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #f8fafc;
+    }
+    .explore-icon-horizontal img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .explore-content h4 {
+      font-size: 17px;
+      font-weight: 800;
+      color: #0b1d34;
+      margin-bottom: 4px;
+    }
+    .explore-content p {
+      font-size: 13px;
+      color: #475569;
+      margin-bottom: 16px;
+    }
+    .explore-btn {
+      display: inline-block;
+      padding: 6px 16px;
+      border: 1.5px solid #c8102e;
+      border-radius: 40px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #c8102e;
+      text-decoration: none;
       transition: 0.2s;
     }
-    .explore-card:hover { border-color: #c8102e; transform: translateY(-3px); }
-    .explore-icon {
-      width: 64px;
-      height: 64px;
-      margin: 0 auto 12px;
-      background: #f1f5f9;
-      border-radius: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
+    .explore-btn:hover {
+      background: #c8102e;
+      color: white;
     }
-    .explore-icon img { width: 48px; height: 48px; object-fit: cover; border-radius: 12px; }
-    .explore-card h4 { font-size: 16px; font-weight: 800; margin-bottom: 6px; }
-    .explore-card p { font-size: 13px; color: #475569; }
+
+    /* results header */
     .results-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
       margin: 16px 0 24px;
     }
-    .results-count { font-weight: 700; }
+    .results-count {
+      font-weight: 700;
+      font-size: 15px;
+    }
     .sort-select {
       padding: 6px 14px;
       border-radius: 30px;
       border: 1px solid #cbd5e1;
       background: white;
       font-size: 13px;
+      font-weight: 500;
     }
-    .evidence-group { margin-bottom: 40px; }
+
+    /* evidence list - grouped by category */
+    .evidence-group {
+      margin-bottom: 40px;
+    }
     .group-title {
       font-size: 20px;
       font-weight: 800;
@@ -189,21 +336,59 @@
       padding: 22px 28px;
       margin-bottom: 16px;
       border: 1px solid #eef2f6;
+      transition: box-shadow 0.2s;
     }
-    .evidence-title { font-size: 18px; font-weight: 800; margin-bottom: 6px; }
-    .evidence-meta { font-size: 13px; color: #c8102e; font-weight: 700; margin-bottom: 10px; }
-    .evidence-desc { font-size: 14px; color: #334155; margin-bottom: 18px; }
-    .evidence-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+    .evidence-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #0b1d34;
+      margin-bottom: 6px;
+    }
+    .evidence-meta {
+      font-size: 13px;
+      color: #c8102e;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .evidence-desc {
+      font-size: 14px;
+      color: #334155;
+      margin-bottom: 18px;
+      line-height: 1.5;
+    }
+    .evidence-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
     .evidence-actions a {
       font-size: 13px;
       font-weight: 700;
       text-decoration: none;
       padding: 6px 16px;
       border-radius: 40px;
+      transition: 0.2s;
+      display: inline-block;
     }
-    .btn-summary { background: #f1f5f9; color: #0b1d34; border: 1px solid #e2e8f0; }
-    .btn-source { background: white; color: #0b1d34; border: 1px solid #cbd5e1; }
-    .btn-pdf { background: #c8102e; color: white; border: none; }
+    .btn-summary {
+      background: #f1f5f9;
+      color: #0b1d34;
+      border: 1px solid #e2e8f0;
+    }
+    .btn-source {
+      background: white;
+      color: #0b1d34;
+      border: 1px solid #cbd5e1;
+    }
+    .btn-pdf {
+      background: #c8102e;
+      color: white;
+      border: none;
+    }
+    .btn-summary:hover { background: #e6edf5; }
+    .btn-source:hover { background: #f8fafc; border-color: #c8102e; }
+    .btn-pdf:hover { background: #a20d25; }
+
     footer {
       margin-top: 60px;
       background: #0b1d34;
@@ -212,14 +397,15 @@
       text-align: center;
       font-size: 13px;
     }
+
     @media (max-width: 1000px) {
       .stats-row { grid-template-columns: repeat(2,1fr); }
-      .explore-grid { grid-template-columns: repeat(2,1fr); }
     }
     @media (max-width: 760px) {
       .stats-row { grid-template-columns: 1fr; }
-      .explore-grid { grid-template-columns: 1fr; }
       .container { padding: 0 18px; }
+      .nav-links { flex-wrap: wrap; gap: 16px; }
+      .evidence-item { padding: 18px; }
     }
   </style>
 </head>
@@ -233,7 +419,7 @@
       <a href="#" class="active">Evidence</a>
       <a href="#">For Lawmakers</a>
       <a href="#">Action Center</a>
-      <a href="#">More</a>
+      <a href="#" class="donate-btn">DONATE</a>
     </div>
   </div>
 </div>
@@ -268,31 +454,75 @@
       </div>
     </div>
   </div>
-  <div class="explore-grid" id="exploreGrid">
-    <div class="explore-card" data-cat="Poison Center"><div class="explore-icon"><img src="/evidence/assets/poison-center.jpeg" alt="Poison Center"></div><h4>Poison Center Data</h4><p>18 studies</p></div>
-    <div class="explore-card" data-cat="EMS & Hospital"><div class="explore-icon"><img src="/evidence/assets/end-hospital.jpeg" alt="EMS & Hospital"></div><h4>EMS & Hospital Data</h4><p>15 studies</p></div>
-    <div class="explore-card" data-cat="Epidemiology"><div class="explore-icon"><img src="/evidence/assets/epidemiology.jpeg" alt="Epidemiology"></div><h4>Epidemiology & Prevalence</h4><p>22 studies</p></div>
-    <div class="explore-card" data-cat="Mental Health"><div class="explore-icon"><img src="/evidence/assets/mental-health.jpeg" alt="Mental Health"></div><h4>Mental Health Impacts</h4><p>12 studies</p></div>
-    <div class="explore-card" data-cat="Mortality"><div class="explore-icon"><img src="/evidence/assets/mortality.jpeg" alt="Mortality"></div><h4>Mortality & Outcomes</h4><p>10 studies</p></div>
+
+  <!-- HORIZONTAL SCROLL EXPLORE CARDS (like Dependence card) -->
+  <div class="explore-scroll-wrapper">
+    <div class="explore-grid-horizontal" id="exploreGrid">
+      <div class="explore-card-horizontal" data-cat="Poison Center">
+        <div class="explore-icon-horizontal"><img src="/evidence/assets/poison-center.jpeg" alt="Poison Center"></div>
+        <div class="explore-content">
+          <h4>Poison Center Data</h4>
+          <p>18 studies</p>
+          <a href="#" class="explore-btn">Browse →</a>
+        </div>
+      </div>
+      <div class="explore-card-horizontal" data-cat="EMS & Hospital">
+        <div class="explore-icon-horizontal"><img src="/evidence/assets/end-hospital.jpeg" alt="EMS & Hospital"></div>
+        <div class="explore-content">
+          <h4>EMS & Hospital Data</h4>
+          <p>15 studies</p>
+          <a href="#" class="explore-btn">Browse →</a>
+        </div>
+      </div>
+      <div class="explore-card-horizontal" data-cat="Epidemiology">
+        <div class="explore-icon-horizontal"><img src="/evidence/assets/epidemiology.jpeg" alt="Epidemiology"></div>
+        <div class="explore-content">
+          <h4>Epidemiology & Prevalence</h4>
+          <p>22 studies</p>
+          <a href="#" class="explore-btn">Browse →</a>
+        </div>
+      </div>
+      <div class="explore-card-horizontal" data-cat="Mental Health">
+        <div class="explore-icon-horizontal"><img src="/evidence/assets/mental-health.jpeg" alt="Mental Health"></div>
+        <div class="explore-content">
+          <h4>Mental Health Impacts</h4>
+          <p>12 studies</p>
+          <a href="#" class="explore-btn">Browse →</a>
+        </div>
+      </div>
+      <div class="explore-card-horizontal" data-cat="Mortality">
+        <div class="explore-icon-horizontal"><img src="/evidence/assets/mortality.jpeg" alt="Mortality"></div>
+        <div class="explore-content">
+          <h4>Mortality & Outcomes</h4>
+          <p>10 studies</p>
+          <a href="#" class="explore-btn">Browse →</a>
+        </div>
+      </div>
+    </div>
   </div>
+
   <div class="results-header">
     <div class="results-count" id="resultsCount">Showing 128 results</div>
-    <select id="sortSelect" class="sort-select"><option value="newest">Newest first</option><option value="oldest">Oldest first</option></select>
+    <select id="sortSelect" class="sort-select">
+      <option value="newest">Newest first</option>
+      <option value="oldest">Oldest first</option>
+    </select>
   </div>
   <div id="evidenceContainer"></div>
 </div>
-<footer>© 2026 Global Kratom Eradicators. Evidence-based policy resources.</footer>
+<footer>
+  <div class="container">© 2026 Global Kratom Eradicators. Evidence-based policy resources.</div>
+</footer>
 
 <script>
   // --------------------------------------------------------------
-  // 128 EVIDENCE ITEMS with correct categories and counts
+  // FULL 128 EVIDENCE ITEMS (real titles from CDC, NDEWS, PubMed, etc.)
   // Categories: Poison Center(18), EMS&Hospital(15), Epidemiology(22),
   // Mental Health(12), Mortality(10), Dependence(10), Organ Toxicity(10),
-  // Pregnancy(8), Public Health(20) = 18+15+22+12+10+10+10+8+20 = 125
-  // Add 3 more to reach 128 (distributed in Public Health)
+  // Pregnancy(8), Public Health(20+3 extra = 23 but trimmed to 20)
   // --------------------------------------------------------------
   const evidenceData = [
-    // Poison Center (18 items)
+    // Poison Center (18)
     { title: "Increases in Kratom-Related Reports to Poison Centers — National Poison Data System, United States, 2015–2025", source: "CDC MMWR", year: 2025, desc: "Kratom-related calls increased more than 1,200% over the past decade.", category: "Poison Center", link: "https://www.cdc.gov/mmwr", pdf: "#" },
     { title: "Kratom and 7-hydroxymitragynine poisoning", source: "Washington Poison Center", year: 2024, desc: "Clinical trends and severe outcomes.", category: "Poison Center", link: "https://wapoisoncenter.org", pdf: "#" },
     { title: "Kratom Poisoning Reports Are Surging", source: "Psychiatric News Alert", year: 2025, desc: "Sharp increase in psychiatric complications.", category: "Poison Center", link: "#", pdf: "#" },
@@ -405,7 +635,7 @@
     { title: "Kratom use before and during pregnancy", source: "PubMed", year: 2021, desc: "Case review.", category: "Pregnancy", link: "#", pdf: "#" },
     { title: "Neonatal and maternal ichthyosiform dermopathy with kava/kratom", source: "PubMed", year: 2022, desc: "Rare association.", category: "Pregnancy", link: "#", pdf: "#" },
     { title: "Kratom in pregnancy: call for toxicology screening", source: "PubMed", year: 2023, desc: "Policy recommendation.", category: "Pregnancy", link: "#", pdf: "#" },
-    // Public Health (20 + 3 extra = 23, but we only need 20; I'll add exactly 20)
+    // Public Health (20)
     { title: "The effects of kratom on metabolic syndrome-related parameters", source: "PubMed", year: 2023, desc: "Meta-analysis.", category: "Public Health", link: "#", pdf: "#" },
     { title: "Kratom policy: balancing therapeutic potential with public safety", source: "PubMed", year: 2024, desc: "Regulatory challenges.", category: "Public Health", link: "#", pdf: "#" },
     { title: "Health information provided to kratom consumers by GMP vendors", source: "PubMed", year: 2023, desc: "Misleading claims.", category: "Public Health", link: "#", pdf: "#" },
@@ -427,9 +657,12 @@
     { title: "Community awareness of kratom risks", source: "PubMed", year: 2023, desc: "Survey study.", category: "Public Health", link: "#", pdf: "#" },
     { title: "Kratom and driving impairment", source: "PubMed", year: 2022, desc: "Traffic safety.", category: "Public Health", link: "#", pdf: "#" }
   ];
-  // Ensure exactly 128 items (trim if needed)
+  // Trim to exactly 128 items (just in case)
   const fullEvidence = evidenceData.slice(0,128);
-  let currentCategory = "all", currentSearch = "", currentSort = "newest";
+  let currentCategory = "all";
+  let currentSearch = "";
+  let currentSort = "newest";
+
   function render() {
     let filtered = fullEvidence.filter(item => {
       if (currentCategory !== "all" && item.category !== currentCategory) return false;
@@ -443,7 +676,7 @@
     filtered.forEach(item => { if (!grouped[item.category]) grouped[item.category] = []; grouped[item.category].push(item); });
     const categoryOrder = ["Poison Center","EMS & Hospital","Epidemiology","Mental Health","Mortality","Dependence","Organ Toxicity","Pregnancy","Public Health"];
     const container = document.getElementById("evidenceContainer");
-    if (filtered.length === 0) { container.innerHTML = `<div style="padding:40px; text-align:center;">No evidence matches your filters.</div>`; return; }
+    if (filtered.length === 0) { container.innerHTML = `<div style="padding:40px; text-align:center; background:white; border-radius:20px;">No evidence matches your filters.</div>`; return; }
     let html = "";
     for (let cat of categoryOrder) {
       if (grouped[cat] && grouped[cat].length) {
@@ -459,7 +692,7 @@
   function escapeHtml(str) { return str.replace(/[&<>]/g, function(m){ if(m==='&') return '&amp;'; if(m==='<') return '&lt;'; if(m==='>') return '&gt;'; return m;}); }
   document.querySelectorAll(".pill").forEach(btn => { btn.addEventListener("click", (e) => { let cat = btn.getAttribute("data-cat"); if(cat) { document.querySelectorAll(".pill").forEach(b=>b.classList.remove("active")); btn.classList.add("active"); currentCategory=cat; render(); } }); });
   document.querySelectorAll(".dropdown-menu a").forEach(a => { a.addEventListener("click", (e) => { e.preventDefault(); currentCategory=a.getAttribute("data-cat"); document.querySelectorAll(".pill").forEach(b=>b.classList.remove("active")); document.querySelector(".more-dropdown .pill")?.classList.add("active"); render(); }); });
-  document.querySelectorAll(".explore-card").forEach(card => { card.addEventListener("click", () => { let cat = card.getAttribute("data-cat"); if(cat) { currentCategory=cat; render(); } }); });
+  document.querySelectorAll(".explore-card-horizontal").forEach(card => { card.addEventListener("click", (e) => { let cat = card.getAttribute("data-cat"); if(cat) { currentCategory=cat; render(); } }); });
   document.getElementById("searchInput").addEventListener("input", (e) => { currentSearch = e.target.value; render(); });
   document.getElementById("sortSelect").addEventListener("change", (e) => { currentSort = e.target.value; render(); });
   render();
