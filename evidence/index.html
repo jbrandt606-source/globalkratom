@@ -71,7 +71,6 @@ body::before{ content:""; position:fixed; inset:0; background:url("/evidence/ass
 .evidence-actions a{ text-align:center; font-size:13px; font-weight:900; padding:9px 14px; border-radius:999px; }
 .btn-summary{ background:#f1f5f9; border:1px solid #dce4ee; }
 .btn-source{ background:white; border:1px solid #cbd5e1; }
-.btn-pdf{ background:var(--red); color:white; border:1px solid var(--red); }
 footer{ margin-top:54px; background:var(--navy); color:#cbd5e1; text-align:center; padding:32px 18px; font-size:14px; }
 @media(max-width:760px){
   .container{padding:0 16px}
@@ -141,38 +140,30 @@ footer{ margin-top:54px; background:var(--navy); color:#cbd5e1; text-align:cente
 <script>
 // ============================================================
 // REPLACED EVIDENCE: Only FDA, CDC, Poison Control data from MAHA pages
-// Source URLs:
-// - https://www.mothersagainstherbalabuse.org/literature/adverseeventskratom.html
-// - https://www.mothersagainstherbalabuse.org/literature/poisoncontrolkratom.html
-// - https://www.mothersagainstherbalabuse.org/literature/cdc_sudors_kratom.html
+// NO PDFs – all external links point directly to MAHA source pages
 // ============================================================
 
 const newEvidence = [
   // POISON CONTROL (NPDS) – from poisoncontrolkratom.html
-  { title: "Total Kratom Exposures (NPDS 2019–2024)", source: "America's Poison Centers / MAHA", year: 2025, desc: "8,555 total kratom-related calls; 2024 highest on record (1,645). Pediatric cases: 269 (2019–2023).", category: "Poison Center", externalUrl: "https://www.mothersagainstherbalabuse.org/literature/poisoncontrolkratom.html", iconRef: "poison-center" },
-  { title: "Single-substance vs. Poly-drug Exposures", source: "NPDS / MAHA", year: 2025, desc: "48% of exposures involved kratom alone; 52% involved other substances (benzodiazepines, opioids, stimulants).", category: "Poison Center", externalUrl: "https://www.mothersagainstherbalabuse.org/literature/poisoncontrolkratom.html", iconRef: "poison-center" },
-  { title: "Clinical Outcomes of Kratom Exposures", source: "NPDS / MAHA", year: 2025, desc: "Moderate to major effects: 19% (tachycardia, seizures, respiratory depression). Pediatric major effects: 4% required ICU.", category: "Poison Center", externalUrl: "https://www.mothersagainstherbalabuse.org/literature/poisoncontrolkratom.html", iconRef: "poison-center" },
+  { title: "Total Kratom Exposures (NPDS 2019–2024)", source: "America's Poison Centers / MAHA", year: 2025, desc: "8,555 total kratom-related calls; 2024 highest on record (1,645). Pediatric cases: 269 (2019–2023).", category: "Poison Center", externalUrl: "https://www.mothersagainstherbalabuse.org/literature/poisoncontrolkratom.html" },
+  { title: "Single-substance vs. Poly-drug Exposures", source: "NPDS / MAHA", year: 2025, desc: "48% of exposures involved kratom alone; 52% involved other substances (benzodiazepines, opioids, stimulants).", category: "Poison Center", externalUrl: "https://www.mothersagainstherbalabuse.org/literature/poisoncontrolkratom.html" },
+  { title: "Clinical Outcomes of Kratom Exposures", source: "NPDS / MAHA", year: 2025, desc: "Moderate to major effects: 19% (tachycardia, seizures, respiratory depression). Pediatric major effects: 4% required ICU.", category: "Poison Center", externalUrl: "https://www.mothersagainstherbalabuse.org/literature/poisoncontrolkratom.html" },
   
   // CDC SUDORS – from cdc_sudors_kratom.html
-  { title: "Kratom-Detected Overdose Deaths (SUDORS 2020–2024)", source: "CDC / MAHA", year: 2025, desc: "5,045 deaths with mitragynine detected in postmortem toxicology; 2023 peak = 1,151 deaths.", category: "CDC", externalUrl: "https://www.mothersagainstherbalabuse.org/literature/cdc_sudors_kratom.html", iconRef: "cdc" },
-  { title: "Co-occurring Substances in SUDORS", source: "CDC / MAHA", year: 2025, desc: "Fentanyl detected in 85% of kratom-positive deaths; stimulants (cocaine, meth) in 42%; benzodiazepines in 33%.", category: "CDC", externalUrl: "https://www.mothersagainstherbalabuse.org/literature/cdc_sudors_kratom.html", iconRef: "cdc" },
-  { title: "Demographic Profile (SUDORS)", source: "CDC / MAHA", year: 2025, desc: "Median age 39; 74% male; highest rates in Midwest and South (Tennessee, Ohio, Florida, Texas).", category: "CDC", externalUrl: "https://www.mothersagainstherbalabuse.org/literature/cdc_sudors_kratom.html", iconRef: "cdc" },
+  { title: "Kratom-Detected Overdose Deaths (SUDORS 2020–2024)", source: "CDC / MAHA", year: 2025, desc: "5,045 deaths with mitragynine detected in postmortem toxicology; 2023 peak = 1,151 deaths.", category: "CDC", externalUrl: "https://www.mothersagainstherbalabuse.org/literature/cdc_sudors_kratom.html" },
+  { title: "Co-occurring Substances in SUDORS", source: "CDC / MAHA", year: 2025, desc: "Fentanyl detected in 85% of kratom-positive deaths; stimulants (cocaine, meth) in 42%; benzodiazepines in 33%.", category: "CDC", externalUrl: "https://www.mothersagainstherbalabuse.org/literature/cdc_sudors_kratom.html" },
+  { title: "Demographic Profile (SUDORS)", source: "CDC / MAHA", year: 2025, desc: "Median age 39; 74% male; highest rates in Midwest and South (Tennessee, Ohio, Florida, Texas).", category: "CDC", externalUrl: "https://www.mothersagainstherbalabuse.org/literature/cdc_sudors_kratom.html" },
   
   // FDA Adverse Events – from adverseeventskratom.html (FAERS + CAERS)
-  { title: "FAERS Kratom/Mitragynine Reports (2010–2024)", source: "FDA / MAHA", year: 2025, desc: "1,761 reports; 861 deaths (49% death outcome); 411 hospitalizations; 261 serious outcomes.", category: "FDA", externalUrl: "https://www.mothersagainstherbalabuse.org/literature/adverseeventskratom.html", iconRef: "fda" },
-  { title: "CAERS Kratom Reports (2004–2024)", source: "FDA / MAHA", year: 2025, desc: "452 reports; 119 deaths; 150 hospitalizations; 143 serious medical events (seizures, liver failure, cardiac arrest).", category: "FDA", externalUrl: "https://www.mothersagainstherbalabuse.org/literature/adverseeventskratom.html", iconRef: "fda" },
-  { title: "Combined FDA Analysis: FAERS + CAERS", source: "FDA / MAHA", year: 2025, desc: "Total 2,213 reports, 980 deaths, 561 hospitalizations. Most common serious outcomes: cardiac toxicity, hepatotoxicity, withdrawal seizures.", category: "FDA", externalUrl: "https://www.mothersagainstherbalabuse.org/literature/adverseeventskratom.html", iconRef: "fda" }
+  { title: "FAERS Kratom/Mitragynine Reports (2010–2024)", source: "FDA / MAHA", year: 2025, desc: "1,761 reports; 861 deaths (49% death outcome); 411 hospitalizations; 261 serious outcomes.", category: "FDA", externalUrl: "https://www.mothersagainstherbalabuse.org/literature/adverseeventskratom.html" },
+  { title: "CAERS Kratom Reports (2004–2024)", source: "FDA / MAHA", year: 2025, desc: "452 reports; 119 deaths; 150 hospitalizations; 143 serious medical events (seizures, liver failure, cardiac arrest).", category: "FDA", externalUrl: "https://www.mothersagainstherbalabuse.org/literature/adverseeventskratom.html" },
+  { title: "Combined FDA Analysis: FAERS + CAERS", source: "FDA / MAHA", year: 2025, desc: "Total 2,213 reports, 980 deaths, 561 hospitalizations. Most common serious outcomes: cardiac toxicity, hepatotoxicity, withdrawal seizures.", category: "FDA", externalUrl: "https://www.mothersagainstherbalabuse.org/literature/adverseeventskratom.html" }
 ];
 
-// Map categories to pills: "Poison Center", "CDC", "FDA"
 const CAT_ORDER = ["Poison Center", "CDC", "FDA"];
 
-// Build fullEvidence array with external URLs instead of PDF links
 const fullEvidence = newEvidence.map(item => ({
   ...item,
-  // Use the external MAHA page as source link
-  sourceLink: item.externalUrl,
-  // For display consistency
   displaySource: item.source
 }));
 
@@ -204,7 +195,7 @@ function renderEvidence() {
     if(catItems.length){
       html += `<div class="evidence-group"><div class="group-title">${cat.toUpperCase()}</div>`;
       catItems.forEach(item => {
-        html += `<div class="evidence-item"><div><div class="evidence-title">${escapeHtml(item.title)}</div><div class="evidence-meta">${escapeHtml(item.displaySource)} • ${item.year}</div><div class="evidence-desc">${escapeHtml(item.desc)}</div></div><div class="evidence-actions"><a href="#" class="btn-summary" onclick="alert('Full summary available on the MAHA source page.'); return false;">View Summary</a><a href="${item.externalUrl}" target="_blank" rel="noopener noreferrer" class="btn-source">Source Link →</a><a href="${item.externalUrl}" target="_blank" rel="noopener noreferrer" class="btn-pdf">Read Full Report</a></div></div>`;
+        html += `<div class="evidence-item"><div><div class="evidence-title">${escapeHtml(item.title)}</div><div class="evidence-meta">${escapeHtml(item.displaySource)} • ${item.year}</div><div class="evidence-desc">${escapeHtml(item.desc)}</div></div><div class="evidence-actions"><a href="#" class="btn-summary" onclick="alert('Full summary available on the MAHA source page.'); return false;">View Summary</a><a href="${item.externalUrl}" target="_blank" rel="noopener noreferrer" class="btn-source">Source Link →</a></div></div>`;
       });
       html += `</div>`;
     }
@@ -217,12 +208,10 @@ document.getElementById("searchInput").addEventListener("input", (e) => { curren
 document.getElementById("sortSelect").addEventListener("change", (e) => { currentSort = e.target.value; renderEvidence(); });
 document.getElementById("mobileMenuBtn").addEventListener("click", () => { document.getElementById("mobileMenu").classList.toggle("open"); });
 
-// Explore cards filter
 document.querySelectorAll(".explore-card-horizontal").forEach(card => { 
   card.addEventListener("click", () => { 
     let cat = card.getAttribute("data-cat"); 
     if(cat){ 
-      // Map data-cat values to category names used in evidence
       let mappedCat = cat;
       if(cat === "Poison Center") mappedCat = "Poison Center";
       if(cat === "CDC") mappedCat = "CDC";
