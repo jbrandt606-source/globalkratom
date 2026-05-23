@@ -127,102 +127,17 @@ footer{ margin-top:54px; background:var(--navy); color:#cbd5e1; text-align:cente
 
 <script>
 // ============================================================
-// PDF BASE URL – set to your raw GitHub or server path
+// PDF BASE URL – placeholder (no PDFs will be linked because evidence array is empty)
 // ============================================================
 const PDF_BASE = "https://raw.githubusercontent.com/globalkratom/evidence/main/library/";
-
-function pdfLink(filename) { 
-  return PDF_BASE + encodeURIComponent(filename); 
-}
-
-if (PDF_BASE.includes("globalkratom/evidence")) {
-  console.warn("⚠️ PDF_BASE is set to default. If PDFs return 404, update PDF_BASE with the correct raw URL.");
-}
+function pdfLink(filename) { return PDF_BASE + encodeURIComponent(filename); }
 
 // ------------------------------------------------------------
-// FULL EVIDENCE COLLECTION (original dataset)
+// ALL EVIDENCE HAS BEEN REMOVED – empty library
 // ------------------------------------------------------------
-const fullEvidenceCollection = [
-  { title: "2019 Kratom Toxicology Review 2", source: "GKE Library", year: 2019, desc: "Comprehensive toxicology assessment of kratom alkaloids.", category: "Organ Toxicity", file: "2019 Kratom toxicology 2.pdf" },
-  { title: "CDC Kratom Report 2026", source: "CDC / GKE", year: 2026, desc: "Latest CDC epidemiological update on kratom-related morbidity.", category: "Epidemiology", file: "CDCkratom2026.pdf" },
-  { title: "Case Report 10: A Case of Potentiation", source: "GKE Case Series", year: 2024, desc: "Potentiation of adverse effects with concurrent medications.", category: "EMS & Hospital", file: "Case report 10 - A Case of Potenti...pdf" },
-  { title: "Case Report 16: Fatal Combination", source: "GKE", year: 2024, desc: "Polysubstance fatality involving kratom.", category: "Mortality", file: "Case report 16 - Fatal combinatio...pdf" },
-  { title: "Case Report 16: Mitragynine Concentrations", source: "GKE", year: 2024, desc: "Postmortem mitragynine levels in fatal cases.", category: "Mortality", file: "Case report 16 - Mitragynine conc...pdf" },
-  // ========== REMOVED: Case Report 21 (Complexities of Kratom Toxicology) ==========
-  // { title: "Case Report 21: Complexities of Kratom Toxicology", source: "GKE", year: 2025, desc: "Clinical challenges and polypharmacy.", category: "EMS & Hospital", file: "Case report 21 The Complexities o...pdf" },
-  // ========== REMOVED: Case Report 26 (Accidental Overdose, pediatric) ==========
-  // { title: "Case Report 26: Accidental Overdose", source: "GKE", year: 2024, desc: "Pediatric accidental ingestion of kratom.", category: "Poison Center", file: "Case report 26 A Case of Acciden...pdf" },
-  { title: "Case Report 26: Precipitated Withdrawal", source: "GKE", year: 2024, desc: "Precipitated withdrawal after kratom cessation.", category: "Dependence", file: "Case report 26 Precipitated withdraw...pdf" },
-  { title: "Case Report 30: Mitragyna speciosa toxicity", source: "GKE", year: 2023, desc: "Severe hepatic and neurological effects.", category: "Organ Toxicity", file: "Case report 30 Mitragyna specios...pdf" },
-  { title: "Case Report 34: Anesthetic Challenges", source: "GKE", year: 2024, desc: "Perioperative complications in kratom user.", category: "EMS & Hospital", file: "Case report 34 - Anesthetic Chall...pdf" },
-  { title: "Case Report 35: Multiorgan Dysfunction", source: "GKE", year: 2025, desc: "Multiorgan failure following high-dose extract.", category: "Mortality", file: "Case report 35 Multiorgan Dysfun...pdf" },
-  { title: "Case Report 39: Kratom & Cardiac Arrest", source: "GKE", year: 2025, desc: "Cardiac arrest in young adult after kratom use.", category: "Organ Toxicity", file: "Case report 39 A Case of Kratom ...pdf" },
-  { title: "Case Report 42: Kratom Ingestion and Seizure", source: "GKE", year: 2023, desc: "New-onset seizure linked to kratom.", category: "EMS & Hospital", file: "Case report 42 Kratom Ingestion a...pdf" },
-  { title: "Case Report 46: Kratom Overdose", source: "GKE", year: 2024, desc: "Life-threatening overdose requiring ICU.", category: "EMS & Hospital", file: "Case report 46 Case of Kratom Ov...pdf" },
-  { title: "Case Report 47: Complicated Postoperative", source: "GKE", year: 2024, desc: "Delirium and withdrawal post-surgery.", category: "Dependence", file: "Case report 47 Complicated posto...pdf" },
-  { title: "Case Report 58: Death from Kratom", source: "GKE", year: 2026, desc: "Single-substance kratom fatality with toxic levels.", category: "Mortality", file: "Case report 58 Death from Krato...pdf" },
-  { title: "Case Report 9: Two Single-Drug Fatalities", source: "GKE", year: 2023, desc: "Two deaths where kratom was sole psychoactive.", category: "Mortality", file: "Case report 9 - Two Single-Drug F...pdf" },
-  { title: "Case Study 4: Fatal Overdose", source: "GKE", year: 2022, desc: "Postmortem findings in isolated kratom death.", category: "Mortality", file: "Case study 4 - A case of fatal over...pdf" },
-  { title: "Case Study 6: Postmortem Mitragynine", source: "GKE", year: 2022, desc: "Tissue distribution analysis.", category: "Mortality", file: "Case study 6 - Postmortem Mitra...pdf" },
-  { title: "Kratom Toxicity Case 35", source: "GKE", year: 2025, desc: "Acute liver failure due to kratom.", category: "Organ Toxicity", file: "Case35KratomToxicity.pdf" },
-  { title: "Case Report 68: Kratom dependence", source: "GKE", year: 2023, desc: "Severe withdrawal syndrome.", category: "Dependence", file: "Casereport68kratom.pdf" },
-  { title: "FDA Kratom Report", source: "FDA", year: 2025, desc: "Agency findings on kratom risks and import restrictions.", category: "Public Health", file: "FDAkratom.pdf" },
-  { title: "Forensic Implications of Kratom-Kratom alkaloids", source: "Forensic Science", year: 2024, desc: "Toxicological detection in postmortem cases.", category: "Mortality", file: "Forensic Implications of Kratom-K...pdf" },
-  { title: "Import Alert 54-15", source: "FDA", year: 2024, desc: "Detention of kratom-containing products.", category: "Public Health", file: "Import Alert 54-15.pdf" },
-  { title: "Johnson Food Denial", source: "FDA", year: 2024, desc: "Refusal of kratom as dietary supplement.", category: "Public Health", file: "Johnsonfooddenial.pdf" },
-  { title: "KCPA Fail Analysis", source: "Advocacy Review", year: 2025, desc: "Critique of Kratom Consumer Protection Act gaps.", category: "Public Health", file: "Kcpafail.pdf" },
-  { title: "Mitragynine to 7-OH Conversion", source: "Pharmacology", year: 2025, desc: "Metabolic activation and increased toxicity.", category: "Organ Toxicity", file: "Mitragynine to 70H.pdf" },
-  { title: "NDI Fail 2", source: "Regulatory", year: 2025, desc: "New dietary ingredient notification rejection.", category: "Public Health", file: "NDIfail2.pdf" },
-  { title: "Nevada Kratom Study", source: "State Report", year: 2024, desc: "Population survey of kratom use and adverse events.", category: "Epidemiology", file: "Nevada Kratom study.pdf" },
-  { title: "Pinney Associates 2026", source: "Pinney Associates", year: 2026, desc: "Independent safety assessment of kratom.", category: "Public Health", file: "Pinney associates 2026.pdf" },
-  // ========== REMOVED: "CSI-BIA Mitragynine Comments" (forensic comments case) ==========
-  // { title: "CSI-BIA Mitragynine Comments", source: "Forensic", year: 2025, desc: "Mitragynine detection and interpretation.", category: "EMS & Hospital", file: "csi - bia - mitragynine (comments ...pdf" },
-  { title: "CSI-BIA Mitragynine Related Compounds", source: "Forensic", year: 2025, desc: "Analysis of 7-OH and related alkaloids.", category: "Organ Toxicity", file: "csi - bia - mitragynine-related co...pdf" },
-  { title: "Kratom Contamination Chicago", source: "Public Health", year: 2024, desc: "Heavy metals and microbial contaminants.", category: "Public Health", file: "kratom-contamination-chicago.pdf" },
-  { title: "Kratom Cardiac Toxicity 1", source: "Cardiology", year: 2024, desc: "QT prolongation and arrhythmia risk.", category: "Organ Toxicity", file: "kratom_cardiac.pdf" },
-  { title: "Kratom Cardiac Toxicity 2", source: "Cardiology", year: 2024, desc: "Case series of atrial fibrillation.", category: "Organ Toxicity", file: "kratom_cardiac2.pdf" },
-  { title: "Kratom Cardiac Toxicity 3", source: "Cardiology", year: 2024, desc: "Ventricular tachycardia after extract.", category: "Organ Toxicity", file: "kratom_cardiac3.pdf" },
-  { title: "Kratom Cardiac Toxicity 4", source: "Cardiology", year: 2025, desc: "Myocardial injury associated with kratom.", category: "Organ Toxicity", file: "kratom_cardiac4.pdf" },
-  { title: "Kratom Cardiac Toxicity 5", source: "Cardiology", year: 2025, desc: "Cardiogenic shock case.", category: "Organ Toxicity", file: "kratom_cardiac5.pdf" },
-  { title: "Kratom Cardiac Toxicity 6", source: "Cardiology", year: 2025, desc: "Brugada pattern unmasking.", category: "Organ Toxicity", file: "kratom_cardiac6.pdf" },
-  { title: "Kratom Cardiac Toxicity 7", source: "Cardiology", year: 2025, desc: "Heart failure exacerbation.", category: "Organ Toxicity", file: "kratom_cardiac7.pdf" },
-  { title: "Kratom Cardiac Toxicity 8", source: "Cardiology", year: 2025, desc: "Sudden cardiac death case.", category: "Mortality", file: "kratom_cardiac8.pdf" },
-  { title: "Kratom Liver Injury 1", source: "Hepatology", year: 2023, desc: "Acute hepatitis case.", category: "Organ Toxicity", file: "kratom_liver1.pdf" },
-  { title: "Kratom Liver Injury 3", source: "Hepatology", year: 2024, desc: "Cholestatic liver injury.", category: "Organ Toxicity", file: "kratom_liver3.pdf" },
-  { title: "Kratom Liver Injury 4", source: "Hepatology", year: 2024, desc: "Prolonged jaundice from kratom.", category: "Organ Toxicity", file: "kratom_liver4.pdf" },
-  { title: "Kratom Liver Injury 5", source: "Hepatology", year: 2024, desc: "Liver transplant listing after kratom DILI.", category: "Organ Toxicity", file: "kratom_liver5.pdf" },
-  { title: "Kratom Liver Injury 6", source: "Hepatology", year: 2024, desc: "Autoimmune phenotype.", category: "Organ Toxicity", file: "kratom_liver6.pdf" },
-  { title: "Kratom Liver Injury 7", source: "Hepatology", year: 2024, desc: "Rechallenge positive.", category: "Organ Toxicity", file: "kratom_liver7.pdf" },
-  { title: "Kratom Liver Injury 8", source: "Hepatology", year: 2024, desc: "Fulminant hepatic failure.", category: "Organ Toxicity", file: "kratom_liver8.pdf" },
-  { title: "Kratom Liver Injury 9", source: "Hepatology", year: 2024, desc: "Mixed hepatocellular-cholestatic.", category: "Organ Toxicity", file: "kratom_liver9.pdf" },
-  { title: "Kratom Liver Injury 10", source: "Hepatology", year: 2025, desc: "Severe hepatotoxicity case.", category: "Organ Toxicity", file: "kratom_liver10.pdf" },
-  { title: "Kratom Liver Injury 11", source: "Hepatology", year: 2025, desc: "Chronic liver injury after long-term use.", category: "Organ Toxicity", file: "kratom_liver11.pdf" },
-  { title: "Kratom Liver Injury 12", source: "Hepatology", year: 2025, desc: "Acute-on-chronic liver failure.", category: "Organ Toxicity", file: "kratom_liver12.pdf" },
-  { title: "Kratom Liver Injury 13", source: "Hepatology", year: 2025, desc: "Cholestatic hepatitis with ductopenia.", category: "Organ Toxicity", file: "kratom_liver13.pdf" },
-  { title: "Kratom Liver Injury 14", source: "Hepatology", year: 2025, desc: "Fatal liver necrosis associated with kratom.", category: "Mortality", file: "kratom_liver14.pdf" },
-  { title: "Kratom Study 1", source: "Clinical", year: 2024, desc: "Observational study on adverse event profile.", category: "Epidemiology", file: "kratom_study1.pdf" },
-  { title: "Kratom Study 2", source: "Clinical", year: 2024, desc: "Kratom use patterns and healthcare encounters.", category: "Epidemiology", file: "kratom_study2.pdf" },
-  { title: "Kratom Study 3", source: "Clinical", year: 2024, desc: "Polysubstance use in kratom consumers.", category: "Epidemiology", file: "kratom_study3.pdf" },
-  { title: "Kratom Study 4", source: "Clinical", year: 2024, desc: "Emergency visits due to kratom toxicity.", category: "EMS & Hospital", file: "kratom_study4.pdf" },
-  { title: "Kratom Study 5", source: "Clinical", year: 2024, desc: "Kratom withdrawal and dependence severity.", category: "Dependence", file: "kratom_study5.pdf" },
-  { title: "Kratom Study 6", source: "Clinical", year: 2025, desc: "Cardiovascular adverse events from kratom.", category: "Organ Toxicity", file: "kratom_study6.pdf" },
-  { title: "Kratom VFib Case 1", source: "Emergency Medicine", year: 2025, desc: "Ventricular fibrillation arrest after kratom.", category: "Organ Toxicity", file: "kratom_vfib.pdf" },
-  { title: "Kratom VFib Case 2", source: "Emergency Medicine", year: 2025, desc: "Refractory VF requiring ECMO.", category: "Organ Toxicity", file: "kratom_vfib2.pdf" },
-  { title: "Kratom Import Case", source: "Customs", year: 2025, desc: "Seizure of bulk kratom shipment.", category: "Public Health", file: "kratomimportcase.pdf" },
-  { title: "Liver Toxicity Report 2", source: "Gastro", year: 2024, desc: "Cholestatic injury due to kratom.", category: "Organ Toxicity", file: "liver_2.pdf" }
-];
+const fullEvidence = [];  // No evidence items remain
 
-// Remove the exact three items that matched the 'section pictured above':
-// Case Report 21, Case Report 26 (Accidental Overdose), CSI-BIA Mitragynine Comments.
-const pdfEvidence = fullEvidenceCollection.filter(item => {
-  // Skip the problematic entries exactly
-  if (item.title === "Case Report 21: Complexities of Kratom Toxicology") return false;
-  if (item.title === "Case Report 26: Accidental Overdose") return false;
-  if (item.title === "CSI-BIA Mitragynine Comments") return false;
-  return true;
-});
-
-const fullEvidence = pdfEvidence.map(item => ({ ...item, link: pdfLink(item.file), source: item.source + " (PDF)" }));
+// Category order for display (none will appear because array is empty, but pills will show zero counts)
 const CAT_ORDER = ["Poison Center","EMS & Hospital","Epidemiology","Mental Health","Mortality","Dependence","Organ Toxicity","Pregnancy","Public Health"];
 
 function getCategoryCounts() {
@@ -236,8 +151,17 @@ function renderPills() {
   const container = document.getElementById("filterPills");
   let html = `<button data-cat="all" class="pill active">All Evidence (${counts.all})</button>`;
   CAT_ORDER.forEach(cat => { if (counts[cat] > 0) html += `<button data-cat="${cat}" class="pill">${cat} (${counts[cat]})</button>`; });
+  // If all counts are zero, still show only the "All Evidence (0)" pill (no other categories have >0)
   container.innerHTML = html;
-  document.querySelectorAll(".pill").forEach(btn => btn.addEventListener("click", () => { const cat = btn.getAttribute("data-cat"); if(cat){ document.querySelectorAll(".pill").forEach(p=>p.classList.remove("active")); btn.classList.add("active"); currentCategory = cat; renderEvidence(); } }));
+  document.querySelectorAll(".pill").forEach(btn => btn.addEventListener("click", () => { 
+    const cat = btn.getAttribute("data-cat"); 
+    if(cat){ 
+      document.querySelectorAll(".pill").forEach(p=>p.classList.remove("active")); 
+      btn.classList.add("active"); 
+      currentCategory = cat; 
+      renderEvidence(); 
+    } 
+  }));
 }
 
 let currentCategory = "all", currentSearch = "", currentSort = "newest";
@@ -245,9 +169,13 @@ function renderEvidence() {
   let filtered = fullEvidence.filter(item => (currentCategory==="all"||item.category===currentCategory) && (!currentSearch || item.title.toLowerCase().includes(currentSearch.toLowerCase()) || item.source.toLowerCase().includes(currentSearch.toLowerCase())));
   if(currentSort==="newest") filtered.sort((a,b)=>b.year-a.year); else filtered.sort((a,b)=>a.year-b.year);
   document.getElementById("resultsCount").innerText = `Showing ${filtered.length} results`;
-  const grouped = {}; filtered.forEach(item => { if(!grouped[item.category]) grouped[item.category]=[]; grouped[item.category].push(item); });
   const container = document.getElementById("evidenceContainer");
-  if(filtered.length===0){ container.innerHTML = `<div class="evidence-item"><div class="evidence-title">No evidence found</div><div class="evidence-desc">Try adjusting your search or category filters.</div></div>`; return; }
+  if(filtered.length === 0){
+    container.innerHTML = `<div class="evidence-item"><div class="evidence-title">No evidence found</div><div class="evidence-desc">All previously listed items have been removed. The library is currently empty.</div></div>`;
+    return;
+  }
+  const grouped = {}; 
+  filtered.forEach(item => { if(!grouped[item.category]) grouped[item.category]=[]; grouped[item.category].push(item); });
   let html = "";
   for(let cat of CAT_ORDER){
     if(grouped[cat]){
@@ -265,8 +193,21 @@ function escapeHtml(str){ return str.replace(/[&<>]/g, function(m){ if(m==='&') 
 document.getElementById("searchInput").addEventListener("input", (e) => { currentSearch = e.target.value; renderEvidence(); });
 document.getElementById("sortSelect").addEventListener("change", (e) => { currentSort = e.target.value; renderEvidence(); });
 document.getElementById("mobileMenuBtn").addEventListener("click", () => { document.getElementById("mobileMenu").classList.toggle("open"); });
-document.querySelectorAll(".explore-card-horizontal").forEach(card => { card.addEventListener("click", () => { let cat = card.getAttribute("data-cat"); if(cat){ currentCategory = cat; renderEvidence(); document.querySelectorAll(".pill").forEach(p=>p.classList.remove("active")); let targetPill = Array.from(document.querySelectorAll(".pill")).find(p=>p.getAttribute("data-cat")===cat); if(targetPill) targetPill.classList.add("active"); document.getElementById("evidenceContainer").scrollIntoView({ behavior: "smooth", block: "start" }); } }); });
-renderPills(); renderEvidence();
+document.querySelectorAll(".explore-card-horizontal").forEach(card => { 
+  card.addEventListener("click", () => { 
+    let cat = card.getAttribute("data-cat"); 
+    if(cat){ 
+      currentCategory = cat; 
+      renderEvidence(); 
+      document.querySelectorAll(".pill").forEach(p=>p.classList.remove("active")); 
+      let targetPill = Array.from(document.querySelectorAll(".pill")).find(p=>p.getAttribute("data-cat")===cat); 
+      if(targetPill) targetPill.classList.add("active"); 
+      document.getElementById("evidenceContainer").scrollIntoView({ behavior: "smooth", block: "start" }); 
+    } 
+  }); 
+});
+renderPills(); 
+renderEvidence();
 </script>
 </body>
 </html>
