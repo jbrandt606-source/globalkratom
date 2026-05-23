@@ -127,12 +127,9 @@ footer{ margin-top:54px; background:var(--navy); color:#cbd5e1; text-align:cente
 
 <script>
 // ============================================================
-// 🔧 CONFIGURATION – UPDATE THIS WITH THE CORRECT RAW BASE URL
+// PDF BASE URL – set to your raw GitHub or server path
 // ============================================================
-// Example: if your PDFs are at https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/library/
 const PDF_BASE = "https://raw.githubusercontent.com/globalkratom/evidence/main/library/";
-// If that doesn't work, replace with the actual raw GitHub URL or your own server path.
-// ============================================================
 
 function pdfLink(filename) { 
   return PDF_BASE + encodeURIComponent(filename); 
@@ -142,14 +139,19 @@ if (PDF_BASE.includes("globalkratom/evidence")) {
   console.warn("⚠️ PDF_BASE is set to default. If PDFs return 404, update PDF_BASE with the correct raw URL.");
 }
 
-const pdfEvidence = [
+// ------------------------------------------------------------
+// FULL EVIDENCE COLLECTION (original dataset)
+// ------------------------------------------------------------
+const fullEvidenceCollection = [
   { title: "2019 Kratom Toxicology Review 2", source: "GKE Library", year: 2019, desc: "Comprehensive toxicology assessment of kratom alkaloids.", category: "Organ Toxicity", file: "2019 Kratom toxicology 2.pdf" },
   { title: "CDC Kratom Report 2026", source: "CDC / GKE", year: 2026, desc: "Latest CDC epidemiological update on kratom-related morbidity.", category: "Epidemiology", file: "CDCkratom2026.pdf" },
   { title: "Case Report 10: A Case of Potentiation", source: "GKE Case Series", year: 2024, desc: "Potentiation of adverse effects with concurrent medications.", category: "EMS & Hospital", file: "Case report 10 - A Case of Potenti...pdf" },
   { title: "Case Report 16: Fatal Combination", source: "GKE", year: 2024, desc: "Polysubstance fatality involving kratom.", category: "Mortality", file: "Case report 16 - Fatal combinatio...pdf" },
   { title: "Case Report 16: Mitragynine Concentrations", source: "GKE", year: 2024, desc: "Postmortem mitragynine levels in fatal cases.", category: "Mortality", file: "Case report 16 - Mitragynine conc...pdf" },
-  { title: "Case Report 21: Complexities of Kratom Toxicology", source: "GKE", year: 2025, desc: "Clinical challenges and polypharmacy.", category: "EMS & Hospital", file: "Case report 21 The Complexities o...pdf" },
-  { title: "Case Report 26: Accidental Overdose", source: "GKE", year: 2024, desc: "Pediatric accidental ingestion of kratom.", category: "Poison Center", file: "Case report 26 A Case of Acciden...pdf" },
+  // ========== REMOVED: Case Report 21 (Complexities of Kratom Toxicology) ==========
+  // { title: "Case Report 21: Complexities of Kratom Toxicology", source: "GKE", year: 2025, desc: "Clinical challenges and polypharmacy.", category: "EMS & Hospital", file: "Case report 21 The Complexities o...pdf" },
+  // ========== REMOVED: Case Report 26 (Accidental Overdose, pediatric) ==========
+  // { title: "Case Report 26: Accidental Overdose", source: "GKE", year: 2024, desc: "Pediatric accidental ingestion of kratom.", category: "Poison Center", file: "Case report 26 A Case of Acciden...pdf" },
   { title: "Case Report 26: Precipitated Withdrawal", source: "GKE", year: 2024, desc: "Precipitated withdrawal after kratom cessation.", category: "Dependence", file: "Case report 26 Precipitated withdraw...pdf" },
   { title: "Case Report 30: Mitragyna speciosa toxicity", source: "GKE", year: 2023, desc: "Severe hepatic and neurological effects.", category: "Organ Toxicity", file: "Case report 30 Mitragyna specios...pdf" },
   { title: "Case Report 34: Anesthetic Challenges", source: "GKE", year: 2024, desc: "Perioperative complications in kratom user.", category: "EMS & Hospital", file: "Case report 34 - Anesthetic Chall...pdf" },
@@ -173,7 +175,8 @@ const pdfEvidence = [
   { title: "NDI Fail 2", source: "Regulatory", year: 2025, desc: "New dietary ingredient notification rejection.", category: "Public Health", file: "NDIfail2.pdf" },
   { title: "Nevada Kratom Study", source: "State Report", year: 2024, desc: "Population survey of kratom use and adverse events.", category: "Epidemiology", file: "Nevada Kratom study.pdf" },
   { title: "Pinney Associates 2026", source: "Pinney Associates", year: 2026, desc: "Independent safety assessment of kratom.", category: "Public Health", file: "Pinney associates 2026.pdf" },
-  { title: "CSI-BIA Mitragynine Comments", source: "Forensic", year: 2025, desc: "Mitragynine detection and interpretation.", category: "EMS & Hospital", file: "csi - bia - mitragynine (comments ...pdf" },
+  // ========== REMOVED: "CSI-BIA Mitragynine Comments" (forensic comments case) ==========
+  // { title: "CSI-BIA Mitragynine Comments", source: "Forensic", year: 2025, desc: "Mitragynine detection and interpretation.", category: "EMS & Hospital", file: "csi - bia - mitragynine (comments ...pdf" },
   { title: "CSI-BIA Mitragynine Related Compounds", source: "Forensic", year: 2025, desc: "Analysis of 7-OH and related alkaloids.", category: "Organ Toxicity", file: "csi - bia - mitragynine-related co...pdf" },
   { title: "Kratom Contamination Chicago", source: "Public Health", year: 2024, desc: "Heavy metals and microbial contaminants.", category: "Public Health", file: "kratom-contamination-chicago.pdf" },
   { title: "Kratom Cardiac Toxicity 1", source: "Cardiology", year: 2024, desc: "QT prolongation and arrhythmia risk.", category: "Organ Toxicity", file: "kratom_cardiac.pdf" },
@@ -208,6 +211,16 @@ const pdfEvidence = [
   { title: "Kratom Import Case", source: "Customs", year: 2025, desc: "Seizure of bulk kratom shipment.", category: "Public Health", file: "kratomimportcase.pdf" },
   { title: "Liver Toxicity Report 2", source: "Gastro", year: 2024, desc: "Cholestatic injury due to kratom.", category: "Organ Toxicity", file: "liver_2.pdf" }
 ];
+
+// Remove the exact three items that matched the 'section pictured above':
+// Case Report 21, Case Report 26 (Accidental Overdose), CSI-BIA Mitragynine Comments.
+const pdfEvidence = fullEvidenceCollection.filter(item => {
+  // Skip the problematic entries exactly
+  if (item.title === "Case Report 21: Complexities of Kratom Toxicology") return false;
+  if (item.title === "Case Report 26: Accidental Overdose") return false;
+  if (item.title === "CSI-BIA Mitragynine Comments") return false;
+  return true;
+});
 
 const fullEvidence = pdfEvidence.map(item => ({ ...item, link: pdfLink(item.file), source: item.source + " (PDF)" }));
 const CAT_ORDER = ["Poison Center","EMS & Hospital","Epidemiology","Mental Health","Mortality","Dependence","Organ Toxicity","Pregnancy","Public Health"];
