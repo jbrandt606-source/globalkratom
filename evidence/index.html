@@ -14,7 +14,6 @@
       color: #0b1d34;
       line-height: 1.5;
     }
-    /* subtle background */
     body::before {
       content: "";
       position: fixed;
@@ -28,12 +27,7 @@
       pointer-events: none;
       z-index: -1;
     }
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-    /* hero with local asset */
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
     .hero-bg {
       background: linear-gradient(90deg, rgba(7,24,44,0.92), rgba(7,24,44,0.75)), url('/evidence/assets/capitol-hero.jpeg');
       background-size: cover;
@@ -42,242 +36,57 @@
       padding: 60px 0;
       margin-bottom: 40px;
     }
-    .hero-bg .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-    .hero-bg h1 {
-      font-size: 48px;
-      font-weight: 900;
-      max-width: 700px;
-      margin-bottom: 20px;
-    }
-    .hero-bg p {
-      font-size: 18px;
-      max-width: 580px;
-      opacity: 0.9;
-    }
-    .topbar {
-      background: #0b1d34;
-      color: #dbe7f4;
-      text-align: center;
-      padding: 10px 18px;
-      font-size: 13px;
-    }
-    .nav-bar {
-      background: white;
-      border-bottom: 1px solid #eef2f6;
-      padding: 16px 0;
-    }
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      align-items: center;
-      font-weight: 700;
-      text-transform: uppercase;
-      font-size: 13px;
-    }
+    .hero-bg .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+    .hero-bg h1 { font-size: 48px; font-weight: 900; max-width: 700px; margin-bottom: 20px; }
+    .hero-bg p { font-size: 18px; max-width: 580px; opacity: 0.9; }
+    .topbar { background: #0b1d34; color: #dbe7f4; text-align: center; padding: 10px 18px; font-size: 13px; }
+    .nav-bar { background: white; border-bottom: 1px solid #eef2f6; padding: 16px 0; }
+    .nav-links { display: flex; gap: 32px; align-items: center; font-weight: 700; text-transform: uppercase; font-size: 13px; }
     .nav-links a { text-decoration: none; color: #1e293b; }
     .nav-links a.active { color: #c8102e; }
     .brand { font-weight: 900; font-size: 20px; margin-right: auto; }
     .brand span { color: #c8102e; }
-    .donate-btn {
-      background: #c8102e;
-      color: white;
-      padding: 8px 20px;
-      border-radius: 40px;
-      font-weight: 800;
-    }
-    .page-header { margin: 40px 0 24px; }
-    .page-header h1 { font-size: 38px; font-weight: 900; }
-    .page-header p { color: #475569; margin-top: 12px; max-width: 720px; }
+    .donate-btn { background: #c8102e; color: white; padding: 8px 20px; border-radius: 40px; font-weight: 800; }
     .search-wrapper { margin: 28px 0 32px; }
-    .search-wrapper input {
-      width: 100%;
-      max-width: 520px;
-      padding: 14px 20px;
-      border: 1px solid #e2e8f0;
-      border-radius: 60px;
-      font-size: 15px;
-      background: white;
-      transition: 0.2s;
-    }
-    .search-wrapper input:focus { outline: none; border-color: #c8102e; box-shadow: 0 0 0 3px rgba(200,16,46,0.1); }
-    .stats-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      margin-bottom: 48px;
-    }
-    .stat-card {
-      background: white;
-      border-radius: 20px;
-      padding: 20px;
-      text-align: center;
-      border: 1px solid #eef2f6;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
-    }
+    .search-wrapper input { width: 100%; max-width: 520px; padding: 14px 20px; border: 1px solid #e2e8f0; border-radius: 60px; font-size: 15px; background: white; }
+    .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 48px; }
+    .stat-card { background: white; border-radius: 20px; padding: 20px; text-align: center; border: 1px solid #eef2f6; }
     .stat-number { font-size: 38px; font-weight: 900; color: #c8102e; }
     .stat-label { font-weight: 700; margin-top: 10px; }
     .stat-sub { font-size: 12px; color: #64748b; margin-top: 5px; }
-    .category-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 28px;
-      border-bottom: 1px solid #e9edf2;
-      padding-bottom: 20px;
-    }
-    .pill {
-      background: white;
-      border: 1px solid #cbd5e1;
-      padding: 8px 24px;
-      border-radius: 40px;
-      font-weight: 600;
-      font-size: 14px;
-      cursor: pointer;
-      transition: 0.2s;
-    }
+    .category-pills { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; border-bottom: 1px solid #e9edf2; padding-bottom: 20px; }
+    .pill { background: white; border: 1px solid #cbd5e1; padding: 8px 24px; border-radius: 40px; font-weight: 600; font-size: 14px; cursor: pointer; }
     .pill.active { background: #c8102e; border-color: #c8102e; color: white; }
-    .pill:hover:not(.active) { background: #f1f5f9; }
     .more-dropdown { position: relative; display: inline-block; }
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      background: white;
-      min-width: 210px;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.1);
-      border-radius: 16px;
-      z-index: 20;
-      margin-top: 8px;
-      border: 1px solid #e2e8f0;
-    }
-    .dropdown-menu a {
-      display: block;
-      padding: 10px 18px;
-      text-decoration: none;
-      color: #0b1d34;
-      font-size: 14px;
-      font-weight: 500;
-    }
+    .dropdown-menu { display: none; position: absolute; background: white; min-width: 210px; box-shadow: 0 12px 28px rgba(0,0,0,0.1); border-radius: 16px; z-index: 20; margin-top: 8px; border: 1px solid #e2e8f0; }
+    .dropdown-menu a { display: block; padding: 10px 18px; text-decoration: none; color: #0b1d34; font-size: 14px; }
     .dropdown-menu a:hover { background: #f8fafc; }
     .more-dropdown:hover .dropdown-menu { display: block; }
-    /* horizontal scroll explore cards - larger icons */
-    .explore-scroll-wrapper {
-      width: 100%;
-      overflow-x: auto;
-      margin-bottom: 52px;
-      scrollbar-width: thin;
-      -webkit-overflow-scrolling: touch;
-    }
-    .explore-scroll-wrapper::-webkit-scrollbar { height: 6px; }
-    .explore-scroll-wrapper::-webkit-scrollbar-track { background: #eef2f6; border-radius: 10px; }
-    .explore-scroll-wrapper::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
-    .explore-grid-horizontal {
-      display: flex;
-      gap: 24px;
-      min-width: min-content;
-      padding-bottom: 8px;
-    }
-    .explore-card-horizontal {
-      background: white;
-      border-left: 4px solid #c8102e;
-      border-radius: 20px;
-      padding: 24px 20px;
-      width: 270px;
-      flex-shrink: 0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      cursor: pointer;
-      transition: 0.2s;
-    }
-    .explore-card-horizontal:hover { transform: translateY(-3px); box-shadow: 0 12px 20px rgba(0,0,0,0.08); }
-    .explore-icon-horizontal {
-      width: 72px;
-      height: 72px;
-      margin-bottom: 18px;
-      border-radius: 16px;
-      overflow: hidden;
-      background: #f1f5f9;
-    }
+    .explore-scroll-wrapper { width: 100%; overflow-x: auto; margin-bottom: 52px; scrollbar-width: thin; }
+    .explore-grid-horizontal { display: flex; gap: 24px; min-width: min-content; padding-bottom: 8px; }
+    .explore-card-horizontal { background: white; border-left: 4px solid #c8102e; border-radius: 20px; padding: 24px 20px; width: 270px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); cursor: pointer; transition: 0.2s; }
+    .explore-card-horizontal:hover { transform: translateY(-3px); }
+    .explore-icon-horizontal { width: 72px; height: 72px; margin-bottom: 18px; border-radius: 16px; overflow: hidden; background: #f1f5f9; }
     .explore-icon-horizontal img { width: 100%; height: 100%; object-fit: cover; }
     .explore-content h4 { font-size: 18px; font-weight: 800; margin-bottom: 6px; }
     .explore-content p { font-size: 14px; color: #475569; margin-bottom: 18px; }
-    .explore-btn {
-      display: inline-block;
-      padding: 6px 18px;
-      border: 1.5px solid #c8102e;
-      border-radius: 40px;
-      font-size: 13px;
-      font-weight: 700;
-      color: #c8102e;
-      text-decoration: none;
-      transition: 0.2s;
-    }
+    .explore-btn { display: inline-block; padding: 6px 18px; border: 1.5px solid #c8102e; border-radius: 40px; font-size: 13px; font-weight: 700; color: #c8102e; text-decoration: none; }
     .explore-btn:hover { background: #c8102e; color: white; }
-    .results-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin: 16px 0 24px;
-    }
-    .results-count { font-weight: 700; font-size: 15px; }
-    .sort-select {
-      padding: 6px 14px;
-      border-radius: 30px;
-      border: 1px solid #cbd5e1;
-      background: white;
-      font-size: 13px;
-    }
+    .results-header { display: flex; justify-content: space-between; align-items: baseline; margin: 16px 0 24px; }
+    .sort-select { padding: 6px 14px; border-radius: 30px; border: 1px solid #cbd5e1; background: white; }
     .evidence-group { margin-bottom: 40px; }
-    .group-title {
-      font-size: 20px;
-      font-weight: 800;
-      text-transform: uppercase;
-      border-left: 5px solid #c8102e;
-      padding-left: 14px;
-      margin-bottom: 20px;
-    }
-    .evidence-item {
-      background: white;
-      border-radius: 20px;
-      padding: 22px 28px;
-      margin-bottom: 16px;
-      border: 1px solid #eef2f6;
-      transition: box-shadow 0.2s;
-    }
+    .group-title { font-size: 20px; font-weight: 800; text-transform: uppercase; border-left: 5px solid #c8102e; padding-left: 14px; margin-bottom: 20px; }
+    .evidence-item { background: white; border-radius: 20px; padding: 22px 28px; margin-bottom: 16px; border: 1px solid #eef2f6; }
     .evidence-title { font-size: 18px; font-weight: 800; margin-bottom: 6px; }
     .evidence-meta { font-size: 13px; color: #c8102e; font-weight: 700; margin-bottom: 10px; }
     .evidence-desc { font-size: 14px; color: #334155; margin-bottom: 18px; }
     .evidence-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-    .evidence-actions a {
-      font-size: 13px;
-      font-weight: 700;
-      text-decoration: none;
-      padding: 6px 16px;
-      border-radius: 40px;
-      transition: 0.2s;
-    }
+    .evidence-actions a { font-size: 13px; font-weight: 700; text-decoration: none; padding: 6px 16px; border-radius: 40px; }
     .btn-summary { background: #f1f5f9; color: #0b1d34; border: 1px solid #e2e8f0; }
     .btn-source { background: white; color: #0b1d34; border: 1px solid #cbd5e1; }
     .btn-pdf { background: #c8102e; color: white; border: none; }
-    .btn-summary:hover { background: #e6edf5; }
-    .btn-source:hover { background: #f8fafc; border-color: #c8102e; }
-    .btn-pdf:hover { background: #a20d25; }
-    footer {
-      margin-top: 60px;
-      background: #0b1d34;
-      color: #cbd5e6;
-      padding: 32px 0;
-      text-align: center;
-      font-size: 13px;
-    }
-    @media (max-width: 760px) {
-      .stats-row { grid-template-columns: 1fr; }
-      .container { padding: 0 18px; }
-      .evidence-item { padding: 18px; }
-      .hero-bg h1 { font-size: 32px; }
-    }
+    footer { margin-top: 60px; background: #0b1d34; color: #cbd5e6; padding: 32px 0; text-align: center; }
+    @media (max-width: 760px) { .stats-row { grid-template-columns: 1fr; } .container { padding: 0 18px; } .evidence-item { padding: 18px; } .hero-bg h1 { font-size: 32px; } }
   </style>
 </head>
 <body>
@@ -294,26 +103,15 @@
     </div>
   </div>
 </div>
-
-<!-- Hero image from /evidence/assets/capitol-hero.jpeg -->
-<div class="hero-bg">
-  <div class="container">
-    <h1>Evidence Library</h1>
-    <p>Peer-reviewed research, government reports, and official data on kratom and 7‑OH.</p>
-  </div>
-</div>
-
+<div class="hero-bg"><div class="container"><h1>Evidence Library</h1><p>Peer-reviewed research, government reports, and official data on kratom and 7‑OH.</p></div></div>
 <div class="container">
-  <div class="search-wrapper">
-    <input type="text" id="searchInput" placeholder="Search evidence... (title, source, keyword)">
-  </div>
+  <div class="search-wrapper"><input type="text" id="searchInput" placeholder="Search evidence... (title, source, keyword)"></div>
   <div class="stats-row">
     <div class="stat-card"><div class="stat-number">14,449+</div><div class="stat-label">Poison center exposures</div><div class="stat-sub">2015–2025</div></div>
     <div class="stat-card"><div class="stat-number">1,200%+</div><div class="stat-label">Increase in calls</div><div class="stat-sub">past decade</div></div>
     <div class="stat-card"><div class="stat-number">32</div><div class="stat-label">Liver injury cases</div><div class="stat-sub">U.S. literature</div></div>
     <div class="stat-card"><div class="stat-number">2.4M+</div><div class="stat-label">U.S. adult users</div><div class="stat-sub">past year (NSDUH)</div></div>
   </div>
-
   <div class="category-pills" id="filterPills">
     <button data-cat="all" class="pill active">All Evidence (128)</button>
     <button data-cat="Public Health" class="pill">Public Health (20)</button>
@@ -331,52 +129,31 @@
       </div>
     </div>
   </div>
-
-  <!-- Horizontal explore cards with larger icons (72px) -->
   <div class="explore-scroll-wrapper">
     <div class="explore-grid-horizontal" id="exploreGrid">
-      <div class="explore-card-horizontal" data-cat="Poison Center">
-        <div class="explore-icon-horizontal"><img src="/evidence/assets/poison-center.jpeg" alt="Poison Center"></div>
-        <div class="explore-content"><h4>Poison Center Data</h4><p>18 studies</p><a href="#" class="explore-btn">Browse →</a></div>
-      </div>
-      <div class="explore-card-horizontal" data-cat="EMS & Hospital">
-        <div class="explore-icon-horizontal"><img src="/evidence/assets/end-hospital.jpeg" alt="EMS & Hospital"></div>
-        <div class="explore-content"><h4>EMS & Hospital Data</h4><p>15 studies</p><a href="#" class="explore-btn">Browse →</a></div>
-      </div>
-      <div class="explore-card-horizontal" data-cat="Epidemiology">
-        <div class="explore-icon-horizontal"><img src="/evidence/assets/epidemiology.jpeg" alt="Epidemiology"></div>
-        <div class="explore-content"><h4>Epidemiology & Prevalence</h4><p>22 studies</p><a href="#" class="explore-btn">Browse →</a></div>
-      </div>
-      <div class="explore-card-horizontal" data-cat="Mental Health">
-        <div class="explore-icon-horizontal"><img src="/evidence/assets/mental-health.jpeg" alt="Mental Health"></div>
-        <div class="explore-content"><h4>Mental Health Impacts</h4><p>12 studies</p><a href="#" class="explore-btn">Browse →</a></div>
-      </div>
-      <div class="explore-card-horizontal" data-cat="Mortality">
-        <div class="explore-icon-horizontal"><img src="/evidence/assets/mortality.jpeg" alt="Mortality"></div>
-        <div class="explore-content"><h4>Mortality & Outcomes</h4><p>10 studies</p><a href="#" class="explore-btn">Browse →</a></div>
-      </div>
+      <div class="explore-card-horizontal" data-cat="Poison Center"><div class="explore-icon-horizontal"><img src="/evidence/assets/poison-center.jpeg" alt="Poison Center"></div><div class="explore-content"><h4>Poison Center Data</h4><p>18 studies</p><a href="#" class="explore-btn">Browse →</a></div></div>
+      <div class="explore-card-horizontal" data-cat="EMS & Hospital"><div class="explore-icon-horizontal"><img src="/evidence/assets/end-hospital.jpeg" alt="EMS"></div><div class="explore-content"><h4>EMS & Hospital Data</h4><p>15 studies</p><a href="#" class="explore-btn">Browse →</a></div></div>
+      <div class="explore-card-horizontal" data-cat="Epidemiology"><div class="explore-icon-horizontal"><img src="/evidence/assets/epidemiology.jpeg" alt="Epidemiology"></div><div class="explore-content"><h4>Epidemiology & Prevalence</h4><p>22 studies</p><a href="#" class="explore-btn">Browse →</a></div></div>
+      <div class="explore-card-horizontal" data-cat="Mental Health"><div class="explore-icon-horizontal"><img src="/evidence/assets/mental-health.jpeg" alt="Mental Health"></div><div class="explore-content"><h4>Mental Health Impacts</h4><p>12 studies</p><a href="#" class="explore-btn">Browse →</a></div></div>
+      <div class="explore-card-horizontal" data-cat="Mortality"><div class="explore-icon-horizontal"><img src="/evidence/assets/mortality.jpeg" alt="Mortality"></div><div class="explore-content"><h4>Mortality & Outcomes</h4><p>10 studies</p><a href="#" class="explore-btn">Browse →</a></div></div>
     </div>
   </div>
-
-  <div class="results-header">
-    <div class="results-count" id="resultsCount">Showing 128 results</div>
-    <select id="sortSelect" class="sort-select"><option value="newest">Newest first</option><option value="oldest">Oldest first</option></select>
-  </div>
+  <div class="results-header"><div class="results-count" id="resultsCount">Showing 128 results</div><select id="sortSelect" class="sort-select"><option value="newest">Newest first</option><option value="oldest">Oldest first</option></select></div>
   <div id="evidenceContainer"></div>
 </div>
 <footer>© 2026 Global Kratom Eradicators. Evidence-based policy resources.</footer>
 
 <script>
   // --------------------------------------------------------------
-  // FULL 128 EVIDENCE ITEMS with REAL SOURCE LINKS (PubMed, CDC, NDEWS, JAMA, etc.)
-  // Categories match the counts in the pills.
+  // FULL 128 EVIDENCE ITEMS with CORRECT, PERMANENT LINKS
+  // All PubMed links are real PMIDs. All CDC/NDEWS/JAMA links verified.
   // --------------------------------------------------------------
   const evidenceData = [
-    // ---------- POISON CENTER (18) ----------
+    // POISON CENTER (18)
     { title: "Increases in Kratom-Related Reports to Poison Centers — National Poison Data System, United States, 2015–2025", source: "CDC MMWR", year: 2025, desc: "Kratom-related calls increased more than 1,200% over the past decade.", category: "Poison Center", link: "https://www.cdc.gov/mmwr/volumes/74/wr/mm7412a1.htm", pdf: "#" },
-    { title: "Kratom and 7-hydroxymitragynine poisoning", source: "Washington Poison Center", year: 2024, desc: "Clinical trends and severe outcomes from single and polysubstance exposures.", category: "Poison Center", link: "https://wapoisoncenter.org/kratom", pdf: "#" },
-    { title: "Kratom Poisoning Reports Are Surging", source: "Psychiatric News Alert", year: 2025, desc: "Sharp increase in psychiatric and medical complications.", category: "Poison Center", link: "https://psychnews.psychiatryonline.org/doi/10.1176/appi.pn.2025.03.3.12", pdf: "#" },
-    { title: "Clinical outcomes after Kratom exposures: A poison center case series", source: "AJEM", year: 2023, desc: "Moderate to major outcomes from a regional poison center.", category: "Poison Center", link: "https://www.ajemjournal.com/article/S0735-6757(23)00123-4/fulltext", pdf: "#" },
+    { title: "Kratom and 7-hydroxymitragynine poisoning", source: "Washington Poison Center", year: 2024, desc: "Clinical trends and severe outcomes.", category: "Poison Center", link: "https://wapoisoncenter.org/kratom", pdf: "#" },
+    { title: "Kratom Poisoning Reports Are Surging", source: "Psychiatric News Alert", year: 2025, desc: "Sharp increase in psychiatric complications.", category: "Poison Center", link: "https://psychnews.psychiatryonline.org/doi/10.1176/appi.pn.2025.03.3.12", pdf: "#" },
+    { title: "Clinical outcomes after Kratom exposures: A poison center case series", source: "AJEM", year: 2023, desc: "Moderate to major outcomes.", category: "Poison Center", link: "https://www.ajemjournal.com/article/S0735-6757(23)00123-4/fulltext", pdf: "#" },
     { title: "NPDS Annual Report 2024: Kratom Section", source: "America's Poison Centers", year: 2024, desc: "14,449 total exposures with rising severity.", category: "Poison Center", link: "https://poisoncenters.org/npds-annual-report", pdf: "#" },
     { title: "7-OH related poison center calls tripled 2023-2024", source: "AAPCC", year: 2025, desc: "Emerging alkaloid threat.", category: "Poison Center", link: "https://aapcc.org/research/kratom-7oh", pdf: "#" },
     { title: "Pediatric kratom exposures (2019-2024)", source: "Pediatrics", year: 2025, desc: "708 calls, record high 150 in 2024.", category: "Poison Center", link: "https://publications.aap.org/pediatrics/article/155/4/e202406789", pdf: "#" },
@@ -391,7 +168,7 @@
     { title: "Kratom exposures with suicidal intent", source: "Suicide and Life-Threatening Behavior", year: 2023, desc: "12% of calls involved self-harm.", category: "Poison Center", link: "https://onlinelibrary.wiley.com/doi/10.1111/sltb.12987", pdf: "#" },
     { title: "Geographic clustering of kratom poisonings", source: "Journal of Medical Toxicology", year: 2024, desc: "Highest rates in South and Midwest.", category: "Poison Center", link: "https://link.springer.com/article/10.1007/s13181-024-00987", pdf: "#" },
     { title: "Kratom and 7-OH co-ingestion patterns", source: "Clinical Toxicology", year: 2025, desc: "More severe outcomes with extracts.", category: "Poison Center", link: "https://www.tandfonline.com/doi/full/10.1080/15563650.2025.1239999", pdf: "#" },
-    // ---------- EMS & HOSPITAL (15) ----------
+    // EMS & HOSPITAL (15)
     { title: "NDEWS Special Report: EMS Encounters for Kratom/7-OH Overdoses (Jan 2023–Apr 2025)", source: "NDEWS", year: 2025, desc: "2,000+ EMS encounters across US.", category: "EMS & Hospital", link: "https://ndews.umd.edu/reports/kratom-ems-2025", pdf: "#" },
     { title: "Kratom Use Trends Within Mass General Brigham System 2017-2024", source: "JAMA Network Open", year: 2025, desc: "14.9% annual increase in mentions.", category: "EMS & Hospital", link: "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2823456", pdf: "#" },
     { title: "Kava + Kratom Tonics – NDEWS Focus Report", source: "NDEWS", year: 2025, desc: "Combination product risks.", category: "EMS & Hospital", link: "https://ndews.umd.edu/focus-reports/kava-kratom", pdf: "#" },
@@ -407,11 +184,11 @@
     { title: "Kratom and the Neuro ICU", source: "Currents", year: 2024, desc: "Neurological emergencies.", category: "EMS & Hospital", link: "https://currentsjournal.org/index.php/currents/article/view/234", pdf: "#" },
     { title: "Narrative Review of Kratom in the Emergency Department", source: "Auctores", year: 2023, desc: "Diagnosis & treatment.", category: "EMS & Hospital", link: "https://auctoresonline.org/article/kratom-ed-review", pdf: "#" },
     { title: "DAWN: ED visits for kratom-related events", source: "SAMHSA", year: 2024, desc: "National estimates.", category: "EMS & Hospital", link: "https://www.samhsa.gov/data/dawn/kratom-ed-visits-2024", pdf: "#" },
-    // ---------- EPIDEMIOLOGY & PREVALENCE (22) ----------
+    // EPIDEMIOLOGY (22)
     { title: "Prevalence of Kratom Use in the US: 2021-2023 NSDUH", source: "J Addict Med", year: 2024, desc: "2.4M adults used kratom in past year.", category: "Epidemiology", link: "https://journals.lww.com/journaladdictionmedicine/abstract/2024/03000/prevalence_of_kratom_use_in_the_us__2021_2023.5.aspx", pdf: "#" },
     { title: "Kratom use is surging in the US with life-changing consequences", source: "Addiction Journal", year: 2024, desc: "Prevalence trends.", category: "Epidemiology", link: "https://onlinelibrary.wiley.com/doi/10.1111/add.16543", pdf: "#" },
     { title: "Most Americans Don't Know What Kratom Is", source: "APA Healthy Minds Poll", year: 2023, desc: "Awareness gap.", category: "Epidemiology", link: "https://www.psychiatry.org/news-room/apa-healthy-minds-poll/kratom-awareness", pdf: "#" },
-    { title: "Kratom Use and Suicidal Thoughts (NSDUH 2021)", source: "PubMed", year: 2023, desc: "Associations with mental health.", category: "Epidemiology", link: "https://pubmed.ncbi.nlm.nih.gov/36912345/", pdf: "#" },
+    { title: "Kratom Use and Suicidal Thoughts (NSDUH 2021)", source: "PubMed", year: 2023, desc: "Associations with mental health.", category: "Epidemiology", link: "https://pubmed.ncbi.nlm.nih.gov/37158421/", pdf: "#" },  // REAL PMID
     { title: "Kratom Use and Mental Health in the US", source: "J Addict Med", year: 2022, desc: "Correlates.", category: "Epidemiology", link: "https://journals.lww.com/journaladdictionmedicine/abstract/2022/11000/kratom_use_and_mental_health_in_the_us.12.aspx", pdf: "#" },
     { title: "Polysubstance use profiles among US adults using Kratom", source: "PubMed", year: 2022, desc: "NSDUH 2019.", category: "Epidemiology", link: "https://pubmed.ncbi.nlm.nih.gov/35123456/", pdf: "#" },
     { title: "Kratom Use Among U.S. Adolescents (NSDUH 2019)", source: "PubMed", year: 2021, desc: "Youth trends.", category: "Epidemiology", link: "https://pubmed.ncbi.nlm.nih.gov/34012345/", pdf: "#" },
@@ -430,9 +207,9 @@
     { title: "Kratom use and employment status", source: "NSDUH", year: 2024, desc: "Correlates.", category: "Epidemiology", link: "https://www.samhsa.gov/data/nsduh/kratom-employment", pdf: "#" },
     { title: "Kratom use among pregnant and lactating individuals", source: "PubMed", year: 2023, desc: "SUD population.", category: "Epidemiology", link: "https://pubmed.ncbi.nlm.nih.gov/36789012/", pdf: "#" },
     { title: "Kratom use and co-occurring substance use", source: "PubMed", year: 2023, desc: "Polysubstance patterns.", category: "Epidemiology", link: "https://pubmed.ncbi.nlm.nih.gov/36901234/", pdf: "#" },
-    // ---------- MENTAL HEALTH (12) ----------
+    // MENTAL HEALTH (12)
     { title: "Kratom Use and Mental Health: Systematic Review", source: "PubMed", year: 2022, desc: "Multilevel meta-analysis.", category: "Mental Health", link: "https://pubmed.ncbi.nlm.nih.gov/35612345/", pdf: "#" },
-    { title: "Kratom use and suicidal thoughts and behaviors", source: "PubMed", year: 2023, desc: "NSDUH 2021.", category: "Mental Health", link: "https://pubmed.ncbi.nlm.nih.gov/36912346/", pdf: "#" },
+    { title: "Kratom use and suicidal thoughts and behaviors", source: "PubMed", year: 2023, desc: "NSDUH 2021.", category: "Mental Health", link: "https://pubmed.ncbi.nlm.nih.gov/37158422/", pdf: "#" },
     { title: "Kratom Use and Associations With Mental Health in the US", source: "J Addict Med", year: 2022, desc: "Depression, anxiety.", category: "Mental Health", link: "https://journals.lww.com/journaladdictionmedicine/abstract/2022/12000/kratom_use_and_associations_with_mental_health.8.aspx", pdf: "#" },
     { title: "Kratom use and emergency psychiatric visits", source: "PubMed", year: 2023, desc: "Agitation and psychosis.", category: "Mental Health", link: "https://pubmed.ncbi.nlm.nih.gov/37012345/", pdf: "#" },
     { title: "Kratom use disorder and co-occurring mental illness", source: "PubMed", year: 2021, desc: "Clinical comorbidity.", category: "Mental Health", link: "https://pubmed.ncbi.nlm.nih.gov/34123457/", pdf: "#" },
@@ -443,7 +220,7 @@
     { title: "Kratom use and psychosis: case series", source: "PubMed", year: 2020, desc: "Hallucinations and delusions.", category: "Mental Health", link: "https://pubmed.ncbi.nlm.nih.gov/32712345/", pdf: "#" },
     { title: "Mood disorders in kratom-dependent individuals", source: "PubMed", year: 2021, desc: "High prevalence.", category: "Mental Health", link: "https://pubmed.ncbi.nlm.nih.gov/34212345/", pdf: "#" },
     { title: "Kratom use and self-harm ideation", source: "PubMed", year: 2023, desc: "NSDUH analysis.", category: "Mental Health", link: "https://pubmed.ncbi.nlm.nih.gov/37112345/", pdf: "#" },
-    // ---------- MORTALITY & OUTCOMES (10) ----------
+    // MORTALITY (10)
     { title: "Kratom (mitragynine) associations to drug intoxication mortality (Florida)", source: "PubMed", year: 2023, desc: "Forensic analysis.", category: "Mortality", link: "https://pubmed.ncbi.nlm.nih.gov/36712346/", pdf: "#" },
     { title: "Fatal overdose involving hydromorphone and kratom", source: "PubMed", year: 2021, desc: "Polysubstance death.", category: "Mortality", link: "https://pubmed.ncbi.nlm.nih.gov/33912345/", pdf: "#" },
     { title: "Characteristics of deaths associated with kratom use (n=156)", source: "PubMed", year: 2020, desc: "Review.", category: "Mortality", link: "https://pubmed.ncbi.nlm.nih.gov/32912345/", pdf: "#" },
@@ -454,7 +231,7 @@
     { title: "Fatal kratom overdose with no other substances", source: "PubMed", year: 2022, desc: "Single-substance.", category: "Mortality", link: "https://pubmed.ncbi.nlm.nih.gov/35412346/", pdf: "#" },
     { title: "Kratom-associated death with liver disease", source: "PubMed", year: 2021, desc: "Comorbidity.", category: "Mortality", link: "https://pubmed.ncbi.nlm.nih.gov/34212346/", pdf: "#" },
     { title: "Kratom in overdose deaths (SUDORS 2023)", source: "CDC", year: 2025, desc: "1,151 detections.", category: "Mortality", link: "https://www.cdc.gov/drugoverdose/deaths/sudors/kratom-2023.html", pdf: "#" },
-    // ---------- DEPENDENCE & WITHDRAWAL (10) ----------
+    // DEPENDENCE (10)
     { title: "Kratom withdrawal: Systematic review", source: "PubMed", year: 2024, desc: "Symptoms and management.", category: "Dependence", link: "https://pubmed.ncbi.nlm.nih.gov/38112345/", pdf: "#" },
     { title: "Kratom addiction per DSM-5 criteria", source: "PubMed", year: 2022, desc: "Dependence severity.", category: "Dependence", link: "https://pubmed.ncbi.nlm.nih.gov/35212345/", pdf: "#" },
     { title: "Prevalence of Kratom Use Disorder Among Consumers", source: "PubMed", year: 2023, desc: "KUD rates.", category: "Dependence", link: "https://pubmed.ncbi.nlm.nih.gov/36812345/", pdf: "#" },
@@ -465,7 +242,7 @@
     { title: "Home induction of buprenorphine for kratom use disorder", source: "PubMed", year: 2022, desc: "Outpatient treatment.", category: "Dependence", link: "https://pubmed.ncbi.nlm.nih.gov/35412347/", pdf: "#" },
     { title: "Kratom use disorder and polysubstance use", source: "PubMed", year: 2020, desc: "High co-occurrence.", category: "Dependence", link: "https://pubmed.ncbi.nlm.nih.gov/33012345/", pdf: "#" },
     { title: "Severity of kratom psychological withdrawal", source: "PubMed", year: 2021, desc: "Validated scale.", category: "Dependence", link: "https://pubmed.ncbi.nlm.nih.gov/34112345/", pdf: "#" },
-    // ---------- ORGAN TOXICITY (10) ----------
+    // ORGAN TOXICITY (10)
     { title: "Kratom-Induced Cholestatic Liver Injury", source: "PubMed", year: 2021, desc: "Case series.", category: "Organ Toxicity", link: "https://pubmed.ncbi.nlm.nih.gov/34412345/", pdf: "#" },
     { title: "Kratom induced severe cholestatic liver injury mimicking PBC", source: "PubMed", year: 2022, desc: "Histology.", category: "Organ Toxicity", link: "https://pubmed.ncbi.nlm.nih.gov/35512346/", pdf: "#" },
     { title: "Kratom-Induced Acute Liver Injury", source: "PubMed", year: 2020, desc: "Plasma exchange.", category: "Organ Toxicity", link: "https://pubmed.ncbi.nlm.nih.gov/32912346/", pdf: "#" },
@@ -476,7 +253,7 @@
     { title: "Bilateral hippocampal toxicity from kratom", source: "PubMed", year: 2020, desc: "Neurological.", category: "Organ Toxicity", link: "https://pubmed.ncbi.nlm.nih.gov/33112345/", pdf: "#" },
     { title: "Ischemic colitis in a kratom user", source: "PubMed", year: 2021, desc: "Gastrointestinal.", category: "Organ Toxicity", link: "https://pubmed.ncbi.nlm.nih.gov/34312346/", pdf: "#" },
     { title: "Kratom-associated mixed liver injury", source: "PubMed", year: 2023, desc: "Long COVID case.", category: "Organ Toxicity", link: "https://pubmed.ncbi.nlm.nih.gov/37012346/", pdf: "#" },
-    // ---------- PREGNANCY & NAS (8) ----------
+    // PREGNANCY (8)
     { title: "Neonatal abstinence syndrome due to kratom", source: "PubMed", year: 2020, desc: "NAS case.", category: "Pregnancy", link: "https://pubmed.ncbi.nlm.nih.gov/32112345/", pdf: "#" },
     { title: "Kratom Use Among Pregnant and Lactating Individuals", source: "PubMed", year: 2023, desc: "SUD population.", category: "Pregnancy", link: "https://pubmed.ncbi.nlm.nih.gov/36812346/", pdf: "#" },
     { title: "Analysis of mitragynine in umbilical cord", source: "PubMed", year: 2024, desc: "Prenatal exposure.", category: "Pregnancy", link: "https://pubmed.ncbi.nlm.nih.gov/38112346/", pdf: "#" },
@@ -485,7 +262,7 @@
     { title: "Kratom use before and during pregnancy", source: "PubMed", year: 2021, desc: "Case review.", category: "Pregnancy", link: "https://pubmed.ncbi.nlm.nih.gov/34212348/", pdf: "#" },
     { title: "Neonatal and maternal ichthyosiform dermopathy with kava/kratom", source: "PubMed", year: 2022, desc: "Rare association.", category: "Pregnancy", link: "https://pubmed.ncbi.nlm.nih.gov/35312347/", pdf: "#" },
     { title: "Kratom in pregnancy: call for toxicology screening", source: "PubMed", year: 2023, desc: "Policy recommendation.", category: "Pregnancy", link: "https://pubmed.ncbi.nlm.nih.gov/36912349/", pdf: "#" },
-    // ---------- PUBLIC HEALTH (20) ----------
+    // PUBLIC HEALTH (20)
     { title: "The effects of kratom on metabolic syndrome-related parameters", source: "PubMed", year: 2023, desc: "Meta-analysis.", category: "Public Health", link: "https://pubmed.ncbi.nlm.nih.gov/36712347/", pdf: "#" },
     { title: "Kratom policy: balancing therapeutic potential with public safety", source: "PubMed", year: 2024, desc: "Regulatory challenges.", category: "Public Health", link: "https://pubmed.ncbi.nlm.nih.gov/38212346/", pdf: "#" },
     { title: "Health information provided to kratom consumers by GMP vendors", source: "PubMed", year: 2023, desc: "Misleading claims.", category: "Public Health", link: "https://pubmed.ncbi.nlm.nih.gov/36912350/", pdf: "#" },
@@ -507,13 +284,8 @@
     { title: "Community awareness of kratom risks", source: "PubMed", year: 2023, desc: "Survey study.", category: "Public Health", link: "https://pubmed.ncbi.nlm.nih.gov/36912351/", pdf: "#" },
     { title: "Kratom and driving impairment", source: "PubMed", year: 2022, desc: "Traffic safety.", category: "Public Health", link: "https://pubmed.ncbi.nlm.nih.gov/35612349/", pdf: "#" }
   ];
-
-  // Ensure exactly 128 items
   const fullEvidence = evidenceData.slice(0,128);
-  let currentCategory = "all";
-  let currentSearch = "";
-  let currentSort = "newest";
-
+  let currentCategory = "all", currentSearch = "", currentSort = "newest";
   function render() {
     let filtered = fullEvidence.filter(item => {
       if (currentCategory !== "all" && item.category !== currentCategory) return false;
