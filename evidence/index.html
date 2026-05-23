@@ -4,405 +4,75 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>Evidence Library | Global Kratom Eradicators</title>
-
-<!-- Favicon -->
 <link rel="icon" type="image/png" href="/assets/logos/favicon.png?v=9999">
 <link rel="shortcut icon" type="image/png" href="/assets/logos/favicon.png?v=9999">
-<link rel="apple-touch-icon" href="/assets/logos/favicon.png?v=9999">
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
 <style>
-:root{
-  --navy:#0b1d34;
-  --red:#c8102e;
-  --soft:#f6f8fb;
-  --line:#dfe6ef;
-  --text:#0b1d34;
-  --muted:#64748b;
-}
-
+:root{ --navy:#0b1d34; --red:#c8102e; --soft:#f6f8fb; --line:#dfe6ef; --text:#0b1d34; --muted:#64748b; }
 *{box-sizing:border-box;margin:0;padding:0}
-body{
-  font-family:'Inter',Arial,sans-serif;
-  background:#f9fafb;
-  color:var(--text);
-  line-height:1.5;
-}
+body{ font-family:'Inter',Arial,sans-serif; background:#f9fafb; color:var(--text); line-height:1.5; }
 img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
 .container{max-width:1180px;margin:0 auto;padding:0 24px}
-
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:url("/evidence/assets/subtle-grid.png") repeat;
-  opacity:.035;
-  pointer-events:none;
-  z-index:-1;
-}
-
-.topbar{
-  background:var(--navy);
-  color:#dbe7f4;
-  text-align:center;
-  padding:9px 18px;
-  font-size:13px;
-}
-
-.nav-bar{
-  background:white;
-  border-bottom:1px solid var(--line);
-}
-.nav-inner{
-  min-height:88px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:24px;
-}
-.brand{
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
-.brand img{
-  width:54px;
-  height:54px;
-  object-fit:cover;
-  border-radius:6px;
-}
-.brand-title{
-  font-weight:900;
-  text-transform:uppercase;
-  line-height:1;
-  font-size:21px;
-}
+body::before{ content:""; position:fixed; inset:0; background:url("/evidence/assets/subtle-grid.png") repeat; opacity:.035; pointer-events:none; z-index:-1; }
+.topbar{ background:var(--navy); color:#dbe7f4; text-align:center; padding:9px 18px; font-size:13px; }
+.nav-bar{ background:white; border-bottom:1px solid var(--line); }
+.nav-inner{ min-height:88px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+.brand{ display:flex; align-items:center; gap:14px; }
+.brand img{ width:54px; height:54px; object-fit:cover; border-radius:6px; }
+.brand-title{ font-weight:900; text-transform:uppercase; line-height:1; font-size:21px; }
 .brand-title span{color:var(--red)}
-.brand-sub{
-  margin-top:6px;
-  font-size:11px;
-  font-weight:900;
-  text-transform:uppercase;
-}
-.nav-links{
-  display:flex;
-  align-items:center;
-  gap:28px;
-  font-size:13px;
-  font-weight:800;
-  text-transform:uppercase;
-}
+.brand-sub{ margin-top:6px; font-size:11px; font-weight:900; text-transform:uppercase; }
+.nav-links{ display:flex; align-items:center; gap:28px; font-size:13px; font-weight:800; text-transform:uppercase; }
 .nav-links a{color:#172033}
 .nav-links a.active{color:var(--red)}
 .nav-links a:hover{color:var(--red)}
-.mobile-menu-btn{
-  display:none;
-  background:none;
-  border:0;
-  font-size:30px;
-  cursor:pointer;
-}
-
-/* Hero */
-.hero-bg{
-  background:
-    linear-gradient(90deg,rgba(7,24,44,.94),rgba(7,24,44,.74)),
-    url("/evidence/assets/capitol-hero.jpeg");
-  background-size:cover;
-  background-position:center 34%;
-  color:white;
-}
-.hero-content{
-  padding:64px 0;
-  max-width:720px;
-}
-.hero-content h1{
-  font-size:clamp(38px,6vw,58px);
-  font-weight:900;
-  margin-bottom:18px;
-}
-.hero-content p{
-  font-size:18px;
-  color:#eaf1f9;
-}
-
-/* Search row */
-.search-filter-row{
-  margin-top:-32px;
-  position:relative;
-  z-index:2;
-  display:grid;
-  grid-template-columns:1fr auto;
-  gap:14px;
-  background:white;
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:18px;
-  box-shadow:0 14px 34px rgba(11,29,52,.12);
-}
-.search-wrapper input{
-  width:100%;
-  padding:15px 18px;
-  border:1px solid #d7dee8;
-  border-radius:12px;
-  font-size:15px;
-}
-.filter-btn{
-  padding:0 24px;
-  border:1px solid #d7dee8;
-  background:#fff;
-  border-radius:12px;
-  font-weight:800;
-  color:var(--navy);
-}
-
-/* Stats */
-.stats-row{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
-  margin:30px 0 36px;
-}
-.stat-card{
-  background:white;
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:22px;
-  display:flex;
-  gap:16px;
-  align-items:center;
-  box-shadow:0 8px 18px rgba(11,29,52,.05);
-}
-.stat-icon{
-  width:54px;
-  height:54px;
-  border-radius:50%;
-  background:#fff1f3;
-  color:var(--red);
-  display:grid;
-  place-items:center;
-  font-size:24px;
-  flex-shrink:0;
-}
-.stat-number{
-  font-size:30px;
-  font-weight:900;
-  color:var(--red);
-  line-height:1;
-}
-.stat-label{
-  font-weight:800;
-  font-size:14px;
-  margin-top:5px;
-}
-.stat-sub{
-  font-size:12px;
-  color:var(--muted);
-  margin-top:2px;
-}
-
-/* Category pills (all visible, dynamic counts) */
-.category-pills{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  padding-bottom:22px;
-  margin-bottom:28px;
-  border-bottom:1px solid var(--line);
-}
-.pill{
-  background:white;
-  border:1px solid #cbd5e1;
-  color:var(--navy);
-  padding:9px 20px;
-  border-radius:999px;
-  font-weight:800;
-  font-size:14px;
-  cursor:pointer;
-  transition:.18s;
-}
-.pill.active{
-  background:var(--red);
-  color:white;
-  border-color:var(--red);
-}
+.mobile-menu-btn{ display:none; background:none; border:0; font-size:30px; cursor:pointer; }
+.hero-bg{ background: linear-gradient(90deg,rgba(7,24,44,.94),rgba(7,24,44,.74)), url("/evidence/assets/capitol-hero.jpeg"); background-size:cover; background-position:center 34%; color:white; }
+.hero-content{ padding:64px 0; max-width:720px; }
+.hero-content h1{ font-size:clamp(38px,6vw,58px); font-weight:900; margin-bottom:18px; }
+.hero-content p{ font-size:18px; color:#eaf1f9; }
+.search-filter-row{ margin-top:-32px; position:relative; z-index:2; display:grid; grid-template-columns:1fr auto; gap:14px; background:white; border:1px solid var(--line); border-radius:18px; padding:18px; box-shadow:0 14px 34px rgba(11,29,52,.12); }
+.search-wrapper input{ width:100%; padding:15px 18px; border:1px solid #d7dee8; border-radius:12px; font-size:15px; }
+.filter-btn{ padding:0 24px; border:1px solid #d7dee8; background:#fff; border-radius:12px; font-weight:800; color:var(--navy); }
+.stats-row{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin:30px 0 36px; }
+.stat-card{ background:white; border:1px solid var(--line); border-radius:18px; padding:22px; display:flex; gap:16px; align-items:center; box-shadow:0 8px 18px rgba(11,29,52,.05); }
+.stat-icon{ width:54px; height:54px; border-radius:50%; background:#fff1f3; color:var(--red); display:grid; place-items:center; font-size:24px; flex-shrink:0; }
+.stat-number{ font-size:30px; font-weight:900; color:var(--red); line-height:1; }
+.stat-label{ font-weight:800; font-size:14px; margin-top:5px; }
+.stat-sub{ font-size:12px; color:var(--muted); margin-top:2px; }
+.category-pills{ display:flex; flex-wrap:wrap; gap:12px; padding-bottom:22px; margin-bottom:28px; border-bottom:1px solid var(--line); }
+.pill{ background:white; border:1px solid #cbd5e1; color:var(--navy); padding:9px 20px; border-radius:999px; font-weight:800; font-size:14px; cursor:pointer; transition:.18s; }
+.pill.active{ background:var(--red); color:white; border-color:var(--red); }
 .pill:hover:not(.active){background:#f1f5f9}
-
-/* Explore cards */
-.explore-title{
-  font-size:22px;
-  font-weight:900;
-  margin:10px 0 18px;
-}
-.explore-scroll-wrapper{
-  overflow-x:auto;
-  padding-bottom:10px;
-  margin-bottom:42px;
-}
-.explore-grid-horizontal{
-  display:flex;
-  gap:18px;
-  min-width:max-content;
-}
-.explore-card-horizontal{
-  width:250px;
-  flex-shrink:0;
-  background:white;
-  border:1px solid var(--line);
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:0 8px 20px rgba(11,29,52,.08);
-  cursor:pointer;
-  transition:.18s;
-}
-.explore-card-horizontal:hover{
-  transform:translateY(-4px);
-  box-shadow:0 14px 30px rgba(11,29,52,.12);
-}
-.explore-image{
-  height:132px;
-}
-.explore-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-.card-round-icon{
-  width:58px;
-  height:58px;
-  border-radius:50%;
-  background:var(--navy);
-  color:white;
-  display:grid;
-  place-items:center;
-  border:6px solid white;
-  margin:-29px 0 12px 18px;
-  font-size:22px;
-  font-weight:900;
-}
-.explore-content{
-  padding:0 18px 20px;
-}
-.explore-content h4{
-  font-size:18px;
-  font-weight:900;
-  margin-bottom:8px;
-}
-.explore-content p{
-  color:var(--red);
-  font-size:14px;
-  font-weight:800;
-  margin-bottom:14px;
-}
-.explore-btn{
-  display:inline-block;
-  padding:7px 18px;
-  border:1.5px solid var(--red);
-  border-radius:999px;
-  color:var(--red);
-  font-size:13px;
-  font-weight:900;
-}
-.explore-btn:hover{
-  background:var(--red);
-  color:white;
-}
-
-/* Results header */
-.results-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin:8px 0 22px;
-}
-.results-count{
-  font-size:17px;
-  font-weight:700;
-}
-.sort-select{
-  padding:8px 14px;
-  border:1px solid #cbd5e1;
-  border-radius:999px;
-  background:white;
-  font-weight:700;
-}
-
-/* Evidence items */
-.evidence-group{
-  margin-bottom:42px;
-}
-.group-title{
-  font-size:22px;
-  font-weight:900;
-  text-transform:uppercase;
-  border-left:6px solid var(--red);
-  padding-left:14px;
-  margin-bottom:18px;
-}
-.evidence-item{
-  background:white;
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:24px;
-  margin-bottom:16px;
-  display:grid;
-  grid-template-columns:1fr auto;
-  gap:22px;
-  align-items:center;
-}
-.evidence-title{
-  font-size:19px;
-  font-weight:900;
-  margin-bottom:7px;
-}
-.evidence-meta{
-  color:var(--red);
-  font-size:13px;
-  font-weight:900;
-  margin-bottom:10px;
-}
-.evidence-desc{
-  color:#334155;
-  font-size:14px;
-}
-.evidence-actions{
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  min-width:170px;
-}
-.evidence-actions a{
-  text-align:center;
-  font-size:13px;
-  font-weight:900;
-  padding:9px 14px;
-  border-radius:999px;
-}
-.btn-summary{
-  background:#f1f5f9;
-  border:1px solid #dce4ee;
-}
-.btn-source{
-  background:white;
-  border:1px solid #cbd5e1;
-}
-.btn-pdf{
-  background:var(--red);
-  color:white;
-  border:1px solid var(--red);
-}
-
-footer{
-  margin-top:54px;
-  background:var(--navy);
-  color:#cbd5e1;
-  text-align:center;
-  padding:32px 18px;
-  font-size:14px;
-}
-
+.explore-title{ font-size:22px; font-weight:900; margin:10px 0 18px; }
+.explore-scroll-wrapper{ overflow-x:auto; padding-bottom:10px; margin-bottom:42px; }
+.explore-grid-horizontal{ display:flex; gap:18px; min-width:max-content; }
+.explore-card-horizontal{ width:250px; flex-shrink:0; background:white; border:1px solid var(--line); border-radius:18px; overflow:hidden; box-shadow:0 8px 20px rgba(11,29,52,.08); cursor:pointer; transition:.18s; }
+.explore-card-horizontal:hover{ transform:translateY(-4px); box-shadow:0 14px 30px rgba(11,29,52,.12); }
+.explore-image{ height:132px; }
+.explore-image img{ width:100%; height:100%; object-fit:cover; }
+.card-round-icon{ width:58px; height:58px; border-radius:50%; background:var(--navy); color:white; display:grid; place-items:center; border:6px solid white; margin:-29px 0 12px 18px; font-size:22px; font-weight:900; }
+.explore-content{ padding:0 18px 20px; }
+.explore-content h4{ font-size:18px; font-weight:900; margin-bottom:8px; }
+.explore-content p{ color:var(--red); font-size:14px; font-weight:800; margin-bottom:14px; }
+.explore-btn{ display:inline-block; padding:7px 18px; border:1.5px solid var(--red); border-radius:999px; color:var(--red); font-size:13px; font-weight:900; }
+.explore-btn:hover{ background:var(--red); color:white; }
+.results-header{ display:flex; justify-content:space-between; align-items:center; margin:8px 0 22px; }
+.results-count{ font-size:17px; font-weight:700; }
+.sort-select{ padding:8px 14px; border:1px solid #cbd5e1; border-radius:999px; background:white; font-weight:700; }
+.evidence-group{ margin-bottom:42px; }
+.group-title{ font-size:22px; font-weight:900; text-transform:uppercase; border-left:6px solid var(--red); padding-left:14px; margin-bottom:18px; }
+.evidence-item{ background:white; border:1px solid var(--line); border-radius:18px; padding:24px; margin-bottom:16px; display:grid; grid-template-columns:1fr auto; gap:22px; align-items:center; }
+.evidence-title{ font-size:19px; font-weight:900; margin-bottom:7px; }
+.evidence-meta{ color:var(--red); font-size:13px; font-weight:900; margin-bottom:10px; }
+.evidence-desc{ color:#334155; font-size:14px; }
+.evidence-actions{ display:flex; flex-direction:column; gap:10px; min-width:170px; }
+.evidence-actions a{ text-align:center; font-size:13px; font-weight:900; padding:9px 14px; border-radius:999px; }
+.btn-summary{ background:#f1f5f9; border:1px solid #dce4ee; }
+.btn-source{ background:white; border:1px solid #cbd5e1; }
+.btn-pdf{ background:var(--red); color:white; border:1px solid var(--red); }
+footer{ margin-top:54px; background:var(--navy); color:#cbd5e1; text-align:center; padding:32px 18px; font-size:14px; }
 @media(max-width:760px){
   .container{padding:0 16px}
   .nav-inner{min-height:78px}
@@ -411,27 +81,13 @@ footer{
   .brand-sub{font-size:9px}
   .nav-links{display:none}
   .mobile-menu-btn{display:block}
-  .mobile-menu{
-    display:none;
-    background:white;
-    border-top:1px solid var(--line);
-    padding:14px 16px 18px;
-  }
+  .mobile-menu{ display:none; background:white; border-top:1px solid var(--line); padding:14px 16px 18px; }
   .mobile-menu.open{display:block}
-  .mobile-menu a{
-    display:block;
-    padding:12px 0;
-    font-weight:900;
-    border-bottom:1px solid #eef2f6;
-  }
+  .mobile-menu a{ display:block; padding:12px 0; font-weight:900; border-bottom:1px solid #eef2f6; }
   .hero-content{padding:46px 0 54px}
   .hero-content h1{font-size:38px}
   .hero-content p{font-size:16px}
-  .search-filter-row{
-    grid-template-columns:1fr;
-    margin-top:-28px;
-    padding:14px;
-  }
+  .search-filter-row{ grid-template-columns:1fr; margin-top:-28px; padding:14px; }
   .stats-row{grid-template-columns:1fr 1fr;gap:12px}
   .stat-card{display:block;text-align:center;padding:18px 12px}
   .stat-icon{margin:0 auto 10px}
@@ -446,112 +102,47 @@ footer{
 </style>
 </head>
 <body>
-<div class="topbar">GLOBALKRATOM.ORG · Evidence-based policy resources for lawmakers, clinicians, journalists, and families</div>
-
+<div class="topbar">GLOBALKRATOM.ORG · Evidence-based policy resources</div>
 <div class="nav-bar">
   <div class="container">
     <div class="nav-inner">
-      <a class="brand" href="/">
-        <img src="/assets/logos/logo-dark.png" alt="Global Kratom Eradicators">
-        <div>
-          <div class="brand-title">Global <span>Kratom</span> Eradicators</div>
-          <div class="brand-sub">Educate. Expose. Eradicate.</div>
-        </div>
-      </a>
-      <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/evidence/" class="active">Evidence</a>
-        <a href="/lawmakers/">For Lawmakers</a>
-        <a href="/action/">Action Center</a>
-      </div>
+      <a class="brand" href="/"><img src="/assets/logos/logo-dark.png" alt="Global Kratom Eradicators"><div><div class="brand-title">Global <span>Kratom</span> Eradicators</div><div class="brand-sub">Educate. Expose. Eradicate.</div></div></a>
+      <div class="nav-links"><a href="/">Home</a><a href="/evidence/" class="active">Evidence</a><a href="/lawmakers/">For Lawmakers</a><a href="/action/">Action Center</a></div>
       <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
     </div>
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="/">Home</a>
-      <a href="/evidence/" class="active">Evidence</a>
-      <a href="/lawmakers/">For Lawmakers</a>
-      <a href="/action/">Action Center</a>
-    </div>
+    <div class="mobile-menu" id="mobileMenu"><a href="/">Home</a><a href="/evidence/" class="active">Evidence</a><a href="/lawmakers/">For Lawmakers</a><a href="/action/">Action Center</a></div>
   </div>
 </div>
-
-<section class="hero-bg">
-  <div class="container">
-    <div class="hero-content">
-      <h1>Evidence Library</h1>
-      <p>Peer-reviewed research, government reports, and official data on kratom and 7‑OH.</p>
-    </div>
-  </div>
-</section>
-
+<section class="hero-bg"><div class="container"><div class="hero-content"><h1>Evidence Library</h1><p>Peer-reviewed research, government reports, and official data on kratom and 7‑OH.</p></div></div></section>
 <div class="container">
-  <div class="search-filter-row">
-    <div class="search-wrapper">
-      <input type="text" id="searchInput" placeholder="Search evidence... (title, source, keyword)">
-    </div>
-    <button class="filter-btn">Filters</button>
-  </div>
-
-  <div class="stats-row">
-    <div class="stat-card"><div class="stat-icon">☎</div><div><div class="stat-number">14,449+</div><div class="stat-label">Poison center exposures</div><div class="stat-sub">2015–2025</div></div></div>
-    <div class="stat-card"><div class="stat-icon">↗</div><div><div class="stat-number">1,200%+</div><div class="stat-label">Increase in calls</div><div class="stat-sub">past decade</div></div></div>
-    <div class="stat-card"><div class="stat-icon">✚</div><div><div class="stat-number">32</div><div class="stat-label">Liver injury cases</div><div class="stat-sub">U.S. literature</div></div></div>
-    <div class="stat-card"><div class="stat-icon">👥</div><div><div class="stat-number">2.4M+</div><div class="stat-label">U.S. adult users</div><div class="stat-sub">past year (NSDUH)</div></div></div>
-  </div>
-
-  <!-- Category pills (dynamic counts) -->
+  <div class="search-filter-row"><div class="search-wrapper"><input type="text" id="searchInput" placeholder="Search evidence... (title, source, keyword)"></div><button class="filter-btn">Filters</button></div>
+  <div class="stats-row"><div class="stat-card"><div class="stat-icon">☎</div><div><div class="stat-number">14,449+</div><div class="stat-label">Poison center exposures</div><div class="stat-sub">2015–2025</div></div></div><div class="stat-card"><div class="stat-icon">↗</div><div><div class="stat-number">1,200%+</div><div class="stat-label">Increase in calls</div><div class="stat-sub">past decade</div></div></div><div class="stat-card"><div class="stat-icon">✚</div><div><div class="stat-number">32</div><div class="stat-label">Liver injury cases</div><div class="stat-sub">U.S. literature</div></div></div><div class="stat-card"><div class="stat-icon">👥</div><div><div class="stat-number">2.4M+</div><div class="stat-label">U.S. adult users</div><div class="stat-sub">past year (NSDUH)</div></div></div></div>
   <div class="category-pills" id="filterPills"></div>
-
   <div class="explore-title">Explore Key Evidence Categories</div>
-  <div class="explore-scroll-wrapper">
-    <div class="explore-grid-horizontal">
-      <div class="explore-card-horizontal" data-cat="Poison Center">
-        <div class="explore-image"><img src="/evidence/assets/poison-center.jpeg" alt="Poison Center"></div>
-        <div class="card-round-icon">☎</div>
-        <div class="explore-content"><h4>Poison Center Data</h4><p>PDF case reports</p><a href="#" class="explore-btn">Browse →</a></div>
-      </div>
-      <div class="explore-card-horizontal" data-cat="EMS & Hospital">
-        <div class="explore-image"><img src="/evidence/assets/end-hospital.jpeg" alt="EMS & Hospital"></div>
-        <div class="card-round-icon">🚑</div>
-        <div class="explore-content"><h4>EMS & Hospital Data</h4><p>Clinical cases</p><a href="#" class="explore-btn">Browse →</a></div>
-      </div>
-      <div class="explore-card-horizontal" data-cat="Epidemiology">
-        <div class="explore-image"><img src="/evidence/assets/epidemiology.jpeg" alt="Epidemiology"></div>
-        <div class="card-round-icon">📊</div>
-        <div class="explore-content"><h4>Epidemiology & Prevalence</h4><p>Surveys & reports</p><a href="#" class="explore-btn">Browse →</a></div>
-      </div>
-      <div class="explore-card-horizontal" data-cat="Mental Health">
-        <div class="explore-image"><img src="/evidence/assets/mental-health.jpeg" alt="Mental Health"></div>
-        <div class="card-round-icon">🧠</div>
-        <div class="explore-content"><h4>Mental Health Impacts</h4><p>Psychiatric cases</p><a href="#" class="explore-btn">Browse →</a></div>
-      </div>
-      <div class="explore-card-horizontal" data-cat="Mortality">
-        <div class="explore-image"><img src="/evidence/assets/mortality.jpeg" alt="Mortality"></div>
-        <div class="card-round-icon">⚗️</div>
-        <div class="explore-content"><h4>Mortality & Outcomes</h4><p>Fatality reports</p><a href="#" class="explore-btn">Browse →</a></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="results-header">
-    <div class="results-count" id="resultsCount">Showing results</div>
-    <select id="sortSelect" class="sort-select"><option value="newest">Newest first</option><option value="oldest">Oldest first</option></select>
-  </div>
+  <div class="explore-scroll-wrapper"><div class="explore-grid-horizontal"><div class="explore-card-horizontal" data-cat="Poison Center"><div class="explore-image"><img src="/evidence/assets/poison-center.jpeg" alt="Poison Center"></div><div class="card-round-icon">☎</div><div class="explore-content"><h4>Poison Center Data</h4><p>PDF case reports</p><a href="#" class="explore-btn">Browse →</a></div></div><div class="explore-card-horizontal" data-cat="EMS & Hospital"><div class="explore-image"><img src="/evidence/assets/end-hospital.jpeg" alt="EMS & Hospital"></div><div class="card-round-icon">🚑</div><div class="explore-content"><h4>EMS & Hospital Data</h4><p>Clinical cases</p><a href="#" class="explore-btn">Browse →</a></div></div><div class="explore-card-horizontal" data-cat="Epidemiology"><div class="explore-image"><img src="/evidence/assets/epidemiology.jpeg" alt="Epidemiology"></div><div class="card-round-icon">📊</div><div class="explore-content"><h4>Epidemiology & Prevalence</h4><p>Surveys & reports</p><a href="#" class="explore-btn">Browse →</a></div></div><div class="explore-card-horizontal" data-cat="Mental Health"><div class="explore-image"><img src="/evidence/assets/mental-health.jpeg" alt="Mental Health"></div><div class="card-round-icon">🧠</div><div class="explore-content"><h4>Mental Health Impacts</h4><p>Psychiatric cases</p><a href="#" class="explore-btn">Browse →</a></div></div><div class="explore-card-horizontal" data-cat="Mortality"><div class="explore-image"><img src="/evidence/assets/mortality.jpeg" alt="Mortality"></div><div class="card-round-icon">⚗️</div><div class="explore-content"><h4>Mortality & Outcomes</h4><p>Fatality reports</p><a href="#" class="explore-btn">Browse →</a></div></div></div></div>
+  <div class="results-header"><div class="results-count" id="resultsCount">Showing results</div><select id="sortSelect" class="sort-select"><option value="newest">Newest first</option><option value="oldest">Oldest first</option></select></div>
   <div id="evidenceContainer"></div>
 </div>
-
 <footer>© 2026 Global Kratom Eradicators. Evidence-based policy resources.</footer>
 
 <script>
-// ------------------------------------------------------------------
-// ONLY PDF LIBRARY – all files from github.com/globalkratom/evidence/library
-// Base URL for raw PDFs (adjust to actual repository raw base)
+// ============================================================
+// 🔧 CONFIGURATION – UPDATE THIS WITH THE CORRECT RAW BASE URL
+// ============================================================
+// Example: if your PDFs are at https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/library/
 const PDF_BASE = "https://raw.githubusercontent.com/globalkratom/evidence/main/library/";
-function pdfLink(filename) { return PDF_BASE + encodeURIComponent(filename); }
+// If that doesn't work, replace with the actual raw GitHub URL or your own server path.
+// ============================================================
 
-// All PDF entries as seen in screenshots, with appropriate categories
+function pdfLink(filename) { 
+  return PDF_BASE + encodeURIComponent(filename); 
+}
+
+if (PDF_BASE.includes("globalkratom/evidence")) {
+  console.warn("⚠️ PDF_BASE is set to default. If PDFs return 404, update PDF_BASE with the correct raw URL.");
+}
+
 const pdfEvidence = [
-  // Core case reports & studies
   { title: "2019 Kratom Toxicology Review 2", source: "GKE Library", year: 2019, desc: "Comprehensive toxicology assessment of kratom alkaloids.", category: "Organ Toxicity", file: "2019 Kratom toxicology 2.pdf" },
   { title: "CDC Kratom Report 2026", source: "CDC / GKE", year: 2026, desc: "Latest CDC epidemiological update on kratom-related morbidity.", category: "Epidemiology", file: "CDCkratom2026.pdf" },
   { title: "Case Report 10: A Case of Potentiation", source: "GKE Case Series", year: 2024, desc: "Potentiation of adverse effects with concurrent medications.", category: "EMS & Hospital", file: "Case report 10 - A Case of Potenti...pdf" },
@@ -618,13 +209,7 @@ const pdfEvidence = [
   { title: "Liver Toxicity Report 2", source: "Gastro", year: 2024, desc: "Cholestatic injury due to kratom.", category: "Organ Toxicity", file: "liver_2.pdf" }
 ];
 
-// Build final evidence array with link property
-const fullEvidence = pdfEvidence.map(item => ({
-  ...item,
-  link: pdfLink(item.file),
-  source: item.source + " (PDF)"
-}));
-
+const fullEvidence = pdfEvidence.map(item => ({ ...item, link: pdfLink(item.file), source: item.source + " (PDF)" }));
 const CAT_ORDER = ["Poison Center","EMS & Hospital","Epidemiology","Mental Health","Mortality","Dependence","Organ Toxicity","Pregnancy","Public Health"];
 
 function getCategoryCounts() {
@@ -637,86 +222,38 @@ function renderPills() {
   const counts = getCategoryCounts();
   const container = document.getElementById("filterPills");
   let html = `<button data-cat="all" class="pill active">All Evidence (${counts.all})</button>`;
-  CAT_ORDER.forEach(cat => {
-    if (counts[cat] > 0) html += `<button data-cat="${cat}" class="pill">${cat} (${counts[cat]})</button>`;
-  });
+  CAT_ORDER.forEach(cat => { if (counts[cat] > 0) html += `<button data-cat="${cat}" class="pill">${cat} (${counts[cat]})</button>`; });
   container.innerHTML = html;
-  document.querySelectorAll(".pill").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const cat = btn.getAttribute("data-cat");
-      if (cat) {
-        document.querySelectorAll(".pill").forEach(p => p.classList.remove("active"));
-        btn.classList.add("active");
-        currentCategory = cat;
-        renderEvidence();
-      }
-    });
-  });
+  document.querySelectorAll(".pill").forEach(btn => btn.addEventListener("click", () => { const cat = btn.getAttribute("data-cat"); if(cat){ document.querySelectorAll(".pill").forEach(p=>p.classList.remove("active")); btn.classList.add("active"); currentCategory = cat; renderEvidence(); } }));
 }
 
-let currentCategory = "all";
-let currentSearch = "";
-let currentSort = "newest";
-
+let currentCategory = "all", currentSearch = "", currentSort = "newest";
 function renderEvidence() {
-  let filtered = fullEvidence.filter(item => {
-    if (currentCategory !== "all" && item.category !== currentCategory) return false;
-    if (currentSearch && !item.title.toLowerCase().includes(currentSearch.toLowerCase()) && !item.source.toLowerCase().includes(currentSearch.toLowerCase())) return false;
-    return true;
-  });
-  if (currentSort === "newest") filtered.sort((a,b) => b.year - a.year);
-  else filtered.sort((a,b) => a.year - b.year);
+  let filtered = fullEvidence.filter(item => (currentCategory==="all"||item.category===currentCategory) && (!currentSearch || item.title.toLowerCase().includes(currentSearch.toLowerCase()) || item.source.toLowerCase().includes(currentSearch.toLowerCase())));
+  if(currentSort==="newest") filtered.sort((a,b)=>b.year-a.year); else filtered.sort((a,b)=>a.year-b.year);
   document.getElementById("resultsCount").innerText = `Showing ${filtered.length} results`;
-  const grouped = {};
-  filtered.forEach(item => { if (!grouped[item.category]) grouped[item.category] = []; grouped[item.category].push(item); });
+  const grouped = {}; filtered.forEach(item => { if(!grouped[item.category]) grouped[item.category]=[]; grouped[item.category].push(item); });
   const container = document.getElementById("evidenceContainer");
-  if (filtered.length === 0) { container.innerHTML = `<div class="evidence-item"><div class="evidence-title">No evidence found</div><div class="evidence-desc">Try adjusting your search or category filters.</div></div>`; return; }
+  if(filtered.length===0){ container.innerHTML = `<div class="evidence-item"><div class="evidence-title">No evidence found</div><div class="evidence-desc">Try adjusting your search or category filters.</div></div>`; return; }
   let html = "";
-  for (let cat of CAT_ORDER) {
-    if (grouped[cat]) {
+  for(let cat of CAT_ORDER){
+    if(grouped[cat]){
       html += `<div class="evidence-group"><div class="group-title">${cat.toUpperCase()}</div>`;
       grouped[cat].forEach(item => {
-        html += `
-          <div class="evidence-item">
-            <div>
-              <div class="evidence-title">${escapeHtml(item.title)}</div>
-              <div class="evidence-meta">${escapeHtml(item.source)} • ${item.year}</div>
-              <div class="evidence-desc">${escapeHtml(item.desc)}</div>
-            </div>
-            <div class="evidence-actions">
-              <a href="#" class="btn-summary" onclick="alert('Full summary available within the PDF document.'); return false;">View Summary</a>
-              <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="btn-source">Source Link →</a>
-              <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="btn-pdf">PDF</a>
-            </div>
-          </div>
-        `;
+        html += `<div class="evidence-item"><div><div class="evidence-title">${escapeHtml(item.title)}</div><div class="evidence-meta">${escapeHtml(item.source)} • ${item.year}</div><div class="evidence-desc">${escapeHtml(item.desc)}</div></div><div class="evidence-actions"><a href="#" class="btn-summary" onclick="alert('Full summary available within the PDF document.'); return false;">View Summary</a><a href="${item.link}" target="_blank" rel="noopener noreferrer" class="btn-source">Source Link →</a><a href="${item.link}" target="_blank" rel="noopener noreferrer" class="btn-pdf">PDF</a></div></div>`;
       });
       html += `</div>`;
     }
   }
   container.innerHTML = html;
 }
-function escapeHtml(str) { return str.replace(/[&<>]/g, function(m){ if(m==='&') return '&amp;'; if(m==='<') return '&lt;'; if(m==='>') return '&gt;'; return m;}); }
+function escapeHtml(str){ return str.replace(/[&<>]/g, function(m){ if(m==='&') return '&amp;'; if(m==='<') return '&lt;'; if(m==='>') return '&gt;'; return m;}); }
 
 document.getElementById("searchInput").addEventListener("input", (e) => { currentSearch = e.target.value; renderEvidence(); });
 document.getElementById("sortSelect").addEventListener("change", (e) => { currentSort = e.target.value; renderEvidence(); });
 document.getElementById("mobileMenuBtn").addEventListener("click", () => { document.getElementById("mobileMenu").classList.toggle("open"); });
-document.querySelectorAll(".explore-card-horizontal").forEach(card => {
-  card.addEventListener("click", () => {
-    let cat = card.getAttribute("data-cat");
-    if (cat) {
-      currentCategory = cat;
-      renderEvidence();
-      document.querySelectorAll(".pill").forEach(p => p.classList.remove("active"));
-      let targetPill = Array.from(document.querySelectorAll(".pill")).find(p => p.getAttribute("data-cat") === cat);
-      if (targetPill) targetPill.classList.add("active");
-      document.getElementById("evidenceContainer").scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  });
-});
-
-renderPills();
-renderEvidence();
+document.querySelectorAll(".explore-card-horizontal").forEach(card => { card.addEventListener("click", () => { let cat = card.getAttribute("data-cat"); if(cat){ currentCategory = cat; renderEvidence(); document.querySelectorAll(".pill").forEach(p=>p.classList.remove("active")); let targetPill = Array.from(document.querySelectorAll(".pill")).find(p=>p.getAttribute("data-cat")===cat); if(targetPill) targetPill.classList.add("active"); document.getElementById("evidenceContainer").scrollIntoView({ behavior: "smooth", block: "start" }); } }); });
+renderPills(); renderEvidence();
 </script>
 </body>
 </html>
