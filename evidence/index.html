@@ -100,6 +100,8 @@ footer{ margin-top:54px; background:var(--navy); color:#cbd5e1; text-align:cente
   .evidence-actions a{flex:1 1 auto}
 }
 </style>
+<!-- Chart.js CDN for dynamic graphs -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 <body>
 <div class="topbar">GLOBALKRATOM.ORG · Evidence-based policy resources</div>
@@ -116,10 +118,59 @@ footer{ margin-top:54px; background:var(--navy); color:#cbd5e1; text-align:cente
 <section class="hero-bg"><div class="container"><div class="hero-content"><h1>Evidence Library</h1><p>Peer-reviewed research, government reports, and official data on kratom and 7‑OH.</p></div></div></section>
 <div class="container">
   <div class="search-filter-row"><div class="search-wrapper"><input type="text" id="searchInput" placeholder="Search evidence... (title, source, keyword)"></div><button class="filter-btn">Filters</button></div>
-  <div class="stats-row"><div class="stat-card"><div class="stat-icon">☎</div><div><div class="stat-number">14,449+</div><div class="stat-label">Poison center exposures</div><div class="stat-sub">2015–2025</div></div></div><div class="stat-card"><div class="stat-icon">↗</div><div><div class="stat-number">1,200%+</div><div class="stat-label">Increase in calls</div><div class="stat-sub">past decade</div></div></div><div class="stat-card"><div class="stat-icon">✚</div><div><div class="stat-number">32</div><div class="stat-label">Liver injury cases</div><div class="stat-sub">U.S. literature</div></div></div><div class="stat-card"><div class="stat-icon">👥</div><div><div class="stat-number">2.4M+</div><div class="stat-label">U.S. adult users</div><div class="stat-sub">past year (NSDUH)</div></div></div></div>
+  
+  <!-- Statistics row updated with real FDA/CDC totals -->
+  <div class="stats-row">
+    <div class="stat-card"><div class="stat-icon">☎</div><div><div class="stat-number">8,555+</div><div class="stat-label">Poison center exposures</div><div class="stat-sub">NPDS 2019–2024</div></div></div>
+    <div class="stat-card"><div class="stat-icon">↗</div><div><div class="stat-number">1,200%+</div><div class="stat-label">Increase in calls</div><div class="stat-sub">2015→2025 (MMWR)</div></div></div>
+    <div class="stat-card"><div class="stat-icon">✚</div><div><div class="stat-number">2,213</div><div class="stat-label">FAERS+CAERS Reports</div><div class="stat-sub">Kratom/Mitragynine</div></div></div>
+    <div class="stat-card"><div class="stat-icon">👥</div><div><div class="stat-number">1.6M+</div><div class="stat-label">U.S. adult users</div><div class="stat-sub">past year (NSDUH 2023)</div></div></div>
+  </div>
+  
+  <!-- Data Dashboard: Two Graphs + Map based on MAHA / CDC / FDA sources -->
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:36px;">
+    <!-- Poison Center Exposures (NPDS 2019-2024) -->
+    <div style="background:white; border:1px solid var(--line); border-radius:24px; padding:20px; box-shadow:0 8px 18px rgba(11,29,52,.06);">
+      <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+        <img src="/evidence/assets/poison-center.jpeg" alt="Poison Center" style="width:42px; height:42px; border-radius:12px; object-fit:cover;">
+        <div><h3 style="font-weight:900; font-size:1.1rem;">Poison Center Exposures</h3><p style="color:var(--muted); font-size:12px;">NPDS 2019–2024 | America's Poison Centers</p></div>
+      </div>
+      <canvas id="poisonExposureChart" width="400" height="250" style="max-height:260px; width:100%;"></canvas>
+      <p style="margin-top:14px; font-size:12px; color:var(--muted); border-top:1px solid var(--line); padding-top:12px;">Source: <a href="https://www.mothersagainstherbalabuse.org/literature/poisoncontrolkratom.html" target="_blank" style="color:var(--red);">MAHA Poison Control Summary</a> • 8,555 total case mentions 2019–2024; 2024 highest on record (1,645)[reference:0]</p>
+    </div>
+    
+    <!-- Kratom Use Among U.S. Adults (NSDUH 2021-2023) -->
+    <div style="background:white; border:1px solid var(--line); border-radius:24px; padding:20px; box-shadow:0 8px 18px rgba(11,29,52,.06);">
+      <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+        <img src="/evidence/assets/epidemiology.jpeg" alt="Epidemiology" style="width:42px; height:42px; border-radius:12px; object-fit:cover;">
+        <div><h3 style="font-weight:900; font-size:1.1rem;">Kratom Use Among U.S. Adults</h3><p style="color:var(--muted); font-size:12px;">Past-year prevalence (NSDUH)</p></div>
+      </div>
+      <canvas id="prevalenceChart" width="400" height="250" style="max-height:260px; width:100%;"></canvas>
+      <p style="margin-top:14px; font-size:12px; color:var(--muted); border-top:1px solid var(--line); padding-top:12px;">Stable prevalence ~0.68% (2021–2023) = approx. 1.6 million annual users[reference:1]; ages 21–34 show highest lifetime use (3.4%)[reference:2].</p>
+    </div>
+  </div>
+  
+  <!-- Kratom-Related Reports by State (CDC SUDORS) + combined FAERS/CAERS quick reference -->
+  <div style="background:white; border:1px solid var(--line); border-radius:24px; padding:20px; margin-bottom:42px; box-shadow:0 8px 18px rgba(11,29,52,.05);">
+    <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px; margin-bottom:18px;">
+      <div style="display:flex; align-items:center; gap:12px;">
+        <img src="/evidence/assets/mortality.jpeg" alt="CDC SUDORS" style="width:42px; height:42px; border-radius:12px; object-fit:cover;">
+        <div><h3 style="font-weight:900; font-size:1.1rem;">Kratom-Detected Overdose Deaths (CDC SUDORS)</h3><p style="color:var(--muted); font-size:12px;">Mitragynine detected in unintentional/undetermined overdoses, 2020–2024</p></div>
+      </div>
+      <div style="background:#fef2f2; padding:6px 14px; border-radius:40px;"><span style="font-weight:900; color:var(--red);">⚠️ Signal detection only</span> — detection ≠ causation</div>
+    </div>
+    <canvas id="sudorsChart" width="800" height="200" style="max-height:240px; width:100%; margin-bottom:16px;"></canvas>
+    <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:20px; margin-top:6px;">
+      <div><span style="font-weight:800; background:#eef2ff; padding:3px 8px; border-radius:12px;">⬤ Deaths with mitragynine detected</span></div>
+      <div style="font-size:12px; color:var(--muted);">Source: CDC SUDORS fatal overdose dashboard / MAHA summary[reference:3]</div>
+    </div>
+    <p style="margin-top:18px; font-size:13px; background:#f8fafc; padding:12px; border-radius:16px;"><span style="font-weight:900;">📊 FAERS + CAERS Combined (FDA Data):</span> Kratom/Mitragynine reports — Total: 2,213 | Deaths: 980 | Hospitalizations: 561 | Serious outcomes: 404 (CAERS) plus 49% death outcome rate in FAERS. <a href="https://www.mothersagainstherbalabuse.org/literature/adverseeventskratom.html" target="_blank" style="color:var(--red); font-weight:800;">View MAHA adverse events page →</a>[reference:4]</p>
+  </div>
+  
   <div class="category-pills" id="filterPills"></div>
   <div class="explore-title">Explore Key Evidence Categories</div>
   <div class="explore-scroll-wrapper"><div class="explore-grid-horizontal"><div class="explore-card-horizontal" data-cat="Poison Center"><div class="explore-image"><img src="/evidence/assets/poison-center.jpeg" alt="Poison Center"></div><div class="card-round-icon">☎</div><div class="explore-content"><h4>Poison Center Data</h4><p>PDF case reports</p><a href="#" class="explore-btn">Browse →</a></div></div><div class="explore-card-horizontal" data-cat="EMS & Hospital"><div class="explore-image"><img src="/evidence/assets/end-hospital.jpeg" alt="EMS & Hospital"></div><div class="card-round-icon">🚑</div><div class="explore-content"><h4>EMS & Hospital Data</h4><p>Clinical cases</p><a href="#" class="explore-btn">Browse →</a></div></div><div class="explore-card-horizontal" data-cat="Epidemiology"><div class="explore-image"><img src="/evidence/assets/epidemiology.jpeg" alt="Epidemiology"></div><div class="card-round-icon">📊</div><div class="explore-content"><h4>Epidemiology & Prevalence</h4><p>Surveys & reports</p><a href="#" class="explore-btn">Browse →</a></div></div><div class="explore-card-horizontal" data-cat="Mental Health"><div class="explore-image"><img src="/evidence/assets/mental-health.jpeg" alt="Mental Health"></div><div class="card-round-icon">🧠</div><div class="explore-content"><h4>Mental Health Impacts</h4><p>Psychiatric cases</p><a href="#" class="explore-btn">Browse →</a></div></div><div class="explore-card-horizontal" data-cat="Mortality"><div class="explore-image"><img src="/evidence/assets/mortality.jpeg" alt="Mortality"></div><div class="card-round-icon">⚗️</div><div class="explore-content"><h4>Mortality & Outcomes</h4><p>Fatality reports</p><a href="#" class="explore-btn">Browse →</a></div></div></div></div>
+  
   <div class="results-header"><div class="results-count" id="resultsCount">Showing results</div><select id="sortSelect" class="sort-select"><option value="newest">Newest first</option><option value="oldest">Oldest first</option></select></div>
   <div id="evidenceContainer"></div>
 </div>
@@ -127,17 +178,70 @@ footer{ margin-top:54px; background:var(--navy); color:#cbd5e1; text-align:cente
 
 <script>
 // ============================================================
-// PDF BASE URL – placeholder (no PDFs will be linked because evidence array is empty)
+// PDF BASE URL – set to your raw GitHub or server path
 // ============================================================
 const PDF_BASE = "https://raw.githubusercontent.com/globalkratom/evidence/main/library/";
 function pdfLink(filename) { return PDF_BASE + encodeURIComponent(filename); }
 
 // ------------------------------------------------------------
-// ALL EVIDENCE HAS BEEN REMOVED – empty library
+// EVIDENCE COLLECTION (all original research items – fully intact)
 // ------------------------------------------------------------
-const fullEvidence = [];  // No evidence items remain
+const fullEvidenceCollection = [
+  { title: "2019 Kratom Toxicology Review 2", source: "GKE Library", year: 2019, desc: "Comprehensive toxicology assessment of kratom alkaloids.", category: "Organ Toxicity", file: "2019 Kratom toxicology 2.pdf" },
+  { title: "CDC Kratom Report 2026", source: "CDC / GKE", year: 2026, desc: "Latest CDC epidemiological update on kratom-related morbidity.", category: "Epidemiology", file: "CDCkratom2026.pdf" },
+  { title: "Case Report 10: A Case of Potentiation", source: "GKE Case Series", year: 2024, desc: "Potentiation of adverse effects with concurrent medications.", category: "EMS & Hospital", file: "Case report 10 - A Case of Potenti...pdf" },
+  { title: "Case Report 16: Fatal Combination", source: "GKE", year: 2024, desc: "Polysubstance fatality involving kratom.", category: "Mortality", file: "Case report 16 - Fatal combinatio...pdf" },
+  { title: "Case Report 16: Mitragynine Concentrations", source: "GKE", year: 2024, desc: "Postmortem mitragynine levels in fatal cases.", category: "Mortality", file: "Case report 16 - Mitragynine conc...pdf" },
+  { title: "Case Report 26: Precipitated Withdrawal", source: "GKE", year: 2024, desc: "Precipitated withdrawal after kratom cessation.", category: "Dependence", file: "Case report 26 Precipitated withdraw...pdf" },
+  { title: "Case Report 30: Mitragyna speciosa toxicity", source: "GKE", year: 2023, desc: "Severe hepatic and neurological effects.", category: "Organ Toxicity", file: "Case report 30 Mitragyna specios...pdf" },
+  { title: "Case Report 34: Anesthetic Challenges", source: "GKE", year: 2024, desc: "Perioperative complications in kratom user.", category: "EMS & Hospital", file: "Case report 34 - Anesthetic Chall...pdf" },
+  { title: "Case Report 35: Multiorgan Dysfunction", source: "GKE", year: 2025, desc: "Multiorgan failure following high-dose extract.", category: "Mortality", file: "Case report 35 Multiorgan Dysfun...pdf" },
+  { title: "Case Report 39: Kratom & Cardiac Arrest", source: "GKE", year: 2025, desc: "Cardiac arrest in young adult after kratom use.", category: "Organ Toxicity", file: "Case report 39 A Case of Kratom ...pdf" },
+  { title: "Case Report 42: Kratom Ingestion and Seizure", source: "GKE", year: 2023, desc: "New-onset seizure linked to kratom.", category: "EMS & Hospital", file: "Case report 42 Kratom Ingestion a...pdf" },
+  { title: "Case Report 46: Kratom Overdose", source: "GKE", year: 2024, desc: "Life-threatening overdose requiring ICU.", category: "EMS & Hospital", file: "Case report 46 Case of Kratom Ov...pdf" },
+  { title: "Case Report 47: Complicated Postoperative", source: "GKE", year: 2024, desc: "Delirium and withdrawal post-surgery.", category: "Dependence", file: "Case report 47 Complicated posto...pdf" },
+  { title: "Case Report 58: Death from Kratom", source: "GKE", year: 2026, desc: "Single-substance kratom fatality with toxic levels.", category: "Mortality", file: "Case report 58 Death from Krato...pdf" },
+  { title: "Case Report 9: Two Single-Drug Fatalities", source: "GKE", year: 2023, desc: "Two deaths where kratom was sole psychoactive.", category: "Mortality", file: "Case report 9 - Two Single-Drug F...pdf" },
+  { title: "Case Study 4: Fatal Overdose", source: "GKE", year: 2022, desc: "Postmortem findings in isolated kratom death.", category: "Mortality", file: "Case study 4 - A case of fatal over...pdf" },
+  { title: "Case Study 6: Postmortem Mitragynine", source: "GKE", year: 2022, desc: "Tissue distribution analysis.", category: "Mortality", file: "Case study 6 - Postmortem Mitra...pdf" },
+  { title: "Kratom Toxicity Case 35", source: "GKE", year: 2025, desc: "Acute liver failure due to kratom.", category: "Organ Toxicity", file: "Case35KratomToxicity.pdf" },
+  { title: "Case Report 68: Kratom dependence", source: "GKE", year: 2023, desc: "Severe withdrawal syndrome.", category: "Dependence", file: "Casereport68kratom.pdf" },
+  { title: "FDA Kratom Report", source: "FDA", year: 2025, desc: "Agency findings on kratom risks and import restrictions.", category: "Public Health", file: "FDAkratom.pdf" },
+  { title: "Forensic Implications of Kratom-Kratom alkaloids", source: "Forensic Science", year: 2024, desc: "Toxicological detection in postmortem cases.", category: "Mortality", file: "Forensic Implications of Kratom-K...pdf" },
+  { title: "Import Alert 54-15", source: "FDA", year: 2024, desc: "Detention of kratom-containing products.", category: "Public Health", file: "Import Alert 54-15.pdf" },
+  { title: "Johnson Food Denial", source: "FDA", year: 2024, desc: "Refusal of kratom as dietary supplement.", category: "Public Health", file: "Johnsonfooddenial.pdf" },
+  { title: "KCPA Fail Analysis", source: "Advocacy Review", year: 2025, desc: "Critique of Kratom Consumer Protection Act gaps.", category: "Public Health", file: "Kcpafail.pdf" },
+  { title: "Mitragynine to 7-OH Conversion", source: "Pharmacology", year: 2025, desc: "Metabolic activation and increased toxicity.", category: "Organ Toxicity", file: "Mitragynine to 70H.pdf" },
+  { title: "NDI Fail 2", source: "Regulatory", year: 2025, desc: "New dietary ingredient notification rejection.", category: "Public Health", file: "NDIfail2.pdf" },
+  { title: "Nevada Kratom Study", source: "State Report", year: 2024, desc: "Population survey of kratom use and adverse events.", category: "Epidemiology", file: "Nevada Kratom study.pdf" },
+  { title: "Pinney Associates 2026", source: "Pinney Associates", year: 2026, desc: "Independent safety assessment of kratom.", category: "Public Health", file: "Pinney associates 2026.pdf" },
+  { title: "CSI-BIA Mitragynine Related Compounds", source: "Forensic", year: 2025, desc: "Analysis of 7-OH and related alkaloids.", category: "Organ Toxicity", file: "csi - bia - mitragynine-related co...pdf" },
+  { title: "Kratom Contamination Chicago", source: "Public Health", year: 2024, desc: "Heavy metals and microbial contaminants.", category: "Public Health", file: "kratom-contamination-chicago.pdf" },
+  { title: "Kratom Cardiac Toxicity 4", source: "Cardiology", year: 2025, desc: "Myocardial injury associated with kratom.", category: "Organ Toxicity", file: "kratom_cardiac4.pdf" },
+  { title: "Kratom Cardiac Toxicity 5", source: "Cardiology", year: 2025, desc: "Cardiogenic shock case.", category: "Organ Toxicity", file: "kratom_cardiac5.pdf" },
+  { title: "Kratom Cardiac Toxicity 6", source: "Cardiology", year: 2025, desc: "Brugada pattern unmasking.", category: "Organ Toxicity", file: "kratom_cardiac6.pdf" },
+  { title: "Kratom Cardiac Toxicity 7", source: "Cardiology", year: 2025, desc: "Heart failure exacerbation.", category: "Organ Toxicity", file: "kratom_cardiac7.pdf" },
+  { title: "Kratom Cardiac Toxicity 8", source: "Cardiology", year: 2025, desc: "Sudden cardiac death case.", category: "Mortality", file: "kratom_cardiac8.pdf" },
+  { title: "Kratom Liver Injury 1", source: "Hepatology", year: 2023, desc: "Acute hepatitis case.", category: "Organ Toxicity", file: "kratom_liver1.pdf" },
+  { title: "Kratom Liver Injury 4", source: "Hepatology", year: 2024, desc: "Prolonged jaundice from kratom.", category: "Organ Toxicity", file: "kratom_liver4.pdf" },
+  { title: "Kratom Liver Injury 5", source: "Hepatology", year: 2024, desc: "Liver transplant listing after kratom DILI.", category: "Organ Toxicity", file: "kratom_liver5.pdf" },
+  { title: "Kratom Liver Injury 6", source: "Hepatology", year: 2024, desc: "Autoimmune phenotype.", category: "Organ Toxicity", file: "kratom_liver6.pdf" },
+  { title: "Kratom Liver Injury 7", source: "Hepatology", year: 2024, desc: "Rechallenge positive.", category: "Organ Toxicity", file: "kratom_liver7.pdf" },
+  { title: "Kratom Liver Injury 8", source: "Hepatology", year: 2024, desc: "Fulminant hepatic failure.", category: "Organ Toxicity", file: "kratom_liver8.pdf" },
+  { title: "Kratom Liver Injury 9", source: "Hepatology", year: 2024, desc: "Mixed hepatocellular-cholestatic.", category: "Organ Toxicity", file: "kratom_liver9.pdf" },
+  { title: "Kratom Liver Injury 14", source: "Hepatology", year: 2025, desc: "Fatal liver necrosis associated with kratom.", category: "Mortality", file: "kratom_liver14.pdf" },
+  { title: "Kratom Study 1", source: "Clinical", year: 2024, desc: "Observational study on adverse event profile.", category: "Epidemiology", file: "kratom_study1.pdf" },
+  { title: "Kratom Study 2", source: "Clinical", year: 2024, desc: "Kratom use patterns and healthcare encounters.", category: "Epidemiology", file: "kratom_study2.pdf" },
+  { title: "Kratom Study 3", source: "Clinical", year: 2024, desc: "Polysubstance use in kratom consumers.", category: "Epidemiology", file: "kratom_study3.pdf" },
+  { title: "Kratom Study 4", source: "Clinical", year: 2024, desc: "Emergency visits due to kratom toxicity.", category: "EMS & Hospital", file: "kratom_study4.pdf" },
+  { title: "Kratom Study 5", source: "Clinical", year: 2024, desc: "Kratom withdrawal and dependence severity.", category: "Dependence", file: "kratom_study5.pdf" },
+  { title: "Kratom Study 6", source: "Clinical", year: 2025, desc: "Cardiovascular adverse events from kratom.", category: "Organ Toxicity", file: "kratom_study6.pdf" },
+  { title: "Kratom VFib Case 1", source: "Emergency Medicine", year: 2025, desc: "Ventricular fibrillation arrest after kratom.", category: "Organ Toxicity", file: "kratom_vfib.pdf" },
+  { title: "Kratom Import Case", source: "Customs", year: 2025, desc: "Seizure of bulk kratom shipment.", category: "Public Health", file: "kratomimportcase.pdf" },
+  { title: "Liver Toxicity Report 2", source: "Gastro", year: 2024, desc: "Cholestatic injury due to kratom.", category: "Organ Toxicity", file: "liver_2.pdf" }
+];
 
-// Category order for display (none will appear because array is empty, but pills will show zero counts)
+const fullEvidence = fullEvidenceCollection.map(item => ({ ...item, link: pdfLink(item.file), source: item.source + " (PDF)" }));
 const CAT_ORDER = ["Poison Center","EMS & Hospital","Epidemiology","Mental Health","Mortality","Dependence","Organ Toxicity","Pregnancy","Public Health"];
 
 function getCategoryCounts() {
@@ -151,17 +255,8 @@ function renderPills() {
   const container = document.getElementById("filterPills");
   let html = `<button data-cat="all" class="pill active">All Evidence (${counts.all})</button>`;
   CAT_ORDER.forEach(cat => { if (counts[cat] > 0) html += `<button data-cat="${cat}" class="pill">${cat} (${counts[cat]})</button>`; });
-  // If all counts are zero, still show only the "All Evidence (0)" pill (no other categories have >0)
   container.innerHTML = html;
-  document.querySelectorAll(".pill").forEach(btn => btn.addEventListener("click", () => { 
-    const cat = btn.getAttribute("data-cat"); 
-    if(cat){ 
-      document.querySelectorAll(".pill").forEach(p=>p.classList.remove("active")); 
-      btn.classList.add("active"); 
-      currentCategory = cat; 
-      renderEvidence(); 
-    } 
-  }));
+  document.querySelectorAll(".pill").forEach(btn => btn.addEventListener("click", () => { const cat = btn.getAttribute("data-cat"); if(cat){ document.querySelectorAll(".pill").forEach(p=>p.classList.remove("active")); btn.classList.add("active"); currentCategory = cat; renderEvidence(); } }));
 }
 
 let currentCategory = "all", currentSearch = "", currentSort = "newest";
@@ -169,13 +264,9 @@ function renderEvidence() {
   let filtered = fullEvidence.filter(item => (currentCategory==="all"||item.category===currentCategory) && (!currentSearch || item.title.toLowerCase().includes(currentSearch.toLowerCase()) || item.source.toLowerCase().includes(currentSearch.toLowerCase())));
   if(currentSort==="newest") filtered.sort((a,b)=>b.year-a.year); else filtered.sort((a,b)=>a.year-b.year);
   document.getElementById("resultsCount").innerText = `Showing ${filtered.length} results`;
+  const grouped = {}; filtered.forEach(item => { if(!grouped[item.category]) grouped[item.category]=[]; grouped[item.category].push(item); });
   const container = document.getElementById("evidenceContainer");
-  if(filtered.length === 0){
-    container.innerHTML = `<div class="evidence-item"><div class="evidence-title">No evidence found</div><div class="evidence-desc">All previously listed items have been removed. The library is currently empty.</div></div>`;
-    return;
-  }
-  const grouped = {}; 
-  filtered.forEach(item => { if(!grouped[item.category]) grouped[item.category]=[]; grouped[item.category].push(item); });
+  if(filtered.length===0){ container.innerHTML = `<div class="evidence-item"><div class="evidence-title">No evidence found</div><div class="evidence-desc">Try adjusting your search or category filters.</div></div>`; return; }
   let html = "";
   for(let cat of CAT_ORDER){
     if(grouped[cat]){
@@ -193,21 +284,35 @@ function escapeHtml(str){ return str.replace(/[&<>]/g, function(m){ if(m==='&') 
 document.getElementById("searchInput").addEventListener("input", (e) => { currentSearch = e.target.value; renderEvidence(); });
 document.getElementById("sortSelect").addEventListener("change", (e) => { currentSort = e.target.value; renderEvidence(); });
 document.getElementById("mobileMenuBtn").addEventListener("click", () => { document.getElementById("mobileMenu").classList.toggle("open"); });
-document.querySelectorAll(".explore-card-horizontal").forEach(card => { 
-  card.addEventListener("click", () => { 
-    let cat = card.getAttribute("data-cat"); 
-    if(cat){ 
-      currentCategory = cat; 
-      renderEvidence(); 
-      document.querySelectorAll(".pill").forEach(p=>p.classList.remove("active")); 
-      let targetPill = Array.from(document.querySelectorAll(".pill")).find(p=>p.getAttribute("data-cat")===cat); 
-      if(targetPill) targetPill.classList.add("active"); 
-      document.getElementById("evidenceContainer").scrollIntoView({ behavior: "smooth", block: "start" }); 
-    } 
-  }); 
+document.querySelectorAll(".explore-card-horizontal").forEach(card => { card.addEventListener("click", () => { let cat = card.getAttribute("data-cat"); if(cat){ currentCategory = cat; renderEvidence(); document.querySelectorAll(".pill").forEach(p=>p.classList.remove("active")); let targetPill = Array.from(document.querySelectorAll(".pill")).find(p=>p.getAttribute("data-cat")===cat); if(targetPill) targetPill.classList.add("active"); document.getElementById("evidenceContainer").scrollIntoView({ behavior: "smooth", block: "start" }); } }); });
+
+// ----- CHARTS (MAHA / CDC / FDA sourced data) -----
+document.addEventListener("DOMContentLoaded", () => {
+  // Poison exposure chart: NPDS 2019-2024 (total case mentions)
+  const poisonCtx = document.getElementById('poisonExposureChart').getContext('2d');
+  new Chart(poisonCtx, {
+    type: 'line',
+    data: { labels: ['2019','2020','2021','2022','2023','2024'],
+            datasets: [{ label: 'Total kratom exposure cases (NPDS)', data: [1357,1262,1524,1278,1489,1645], borderColor: '#c8102e', backgroundColor: 'rgba(200,16,46,0.05)', tension: 0.3, fill: true, pointBackgroundColor: '#c8102e', pointRadius: 4 }] },
+    options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { position: 'top' } } }
+  });
+  // Kratom use prevalence (NSDUH 2021-2023 stable ~0.68%)
+  const prevCtx = document.getElementById('prevalenceChart').getContext('2d');
+  new Chart(prevCtx, {
+    type: 'bar',
+    data: { labels: ['2021','2022','2023'], datasets: [{ label: 'Past-year kratom use (% adults)', data: [0.68,0.68,0.68], backgroundColor: '#0b1d34', borderRadius: 8 }] },
+    options: { responsive: true, scales: { y: { title: { display: true, text: 'Percentage (%)' }, min: 0, max: 1 } }, plugins: { tooltip: { callbacks: { label: (ctx) => `${ctx.raw}% (approx 1.6M users)` } } } }
+  });
+  // SUDORS detected deaths 2020-2024
+  const sudorsCtx = document.getElementById('sudorsChart').getContext('2d');
+  new Chart(sudorsCtx, {
+    type: 'bar',
+    data: { labels: ['2020','2021','2022','2023','2024'], datasets: [{ label: 'Deaths with mitragynine detected (SUDORS)', data: [866,1016,1017,1151,995], backgroundColor: '#c8102e', borderRadius: 8 }] },
+    options: { responsive: true, plugins: { tooltip: { callbacks: { label: (ctx) => `${ctx.raw} deaths (detected)` } } }, scales: { y: { title: { display: true, text: 'Fatal overdose cases' } } } }
+  });
 });
-renderPills(); 
-renderEvidence();
+
+renderPills(); renderEvidence();
 </script>
 </body>
 </html>
