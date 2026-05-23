@@ -508,27 +508,27 @@ footer{
       <div class="explore-card-horizontal" data-cat="Poison Center">
         <div class="explore-image"><img src="/evidence/assets/poison-center.jpeg" alt="Poison Center"></div>
         <div class="card-round-icon">☎</div>
-        <div class="explore-content"><h4>Poison Center Data</h4><p>18 studies</p><a href="#" class="explore-btn">Browse →</a></div>
+        <div class="explore-content"><h4>Poison Center Data</h4><p>PDF case reports</p><a href="#" class="explore-btn">Browse →</a></div>
       </div>
       <div class="explore-card-horizontal" data-cat="EMS & Hospital">
         <div class="explore-image"><img src="/evidence/assets/end-hospital.jpeg" alt="EMS & Hospital"></div>
         <div class="card-round-icon">🚑</div>
-        <div class="explore-content"><h4>EMS & Hospital Data</h4><p>15+ studies</p><a href="#" class="explore-btn">Browse →</a></div>
+        <div class="explore-content"><h4>EMS & Hospital Data</h4><p>Clinical cases</p><a href="#" class="explore-btn">Browse →</a></div>
       </div>
       <div class="explore-card-horizontal" data-cat="Epidemiology">
         <div class="explore-image"><img src="/evidence/assets/epidemiology.jpeg" alt="Epidemiology"></div>
         <div class="card-round-icon">📊</div>
-        <div class="explore-content"><h4>Epidemiology & Prevalence</h4><p>22+ studies</p><a href="#" class="explore-btn">Browse →</a></div>
+        <div class="explore-content"><h4>Epidemiology & Prevalence</h4><p>Surveys & reports</p><a href="#" class="explore-btn">Browse →</a></div>
       </div>
       <div class="explore-card-horizontal" data-cat="Mental Health">
         <div class="explore-image"><img src="/evidence/assets/mental-health.jpeg" alt="Mental Health"></div>
         <div class="card-round-icon">🧠</div>
-        <div class="explore-content"><h4>Mental Health Impacts</h4><p>12+ studies</p><a href="#" class="explore-btn">Browse →</a></div>
+        <div class="explore-content"><h4>Mental Health Impacts</h4><p>Psychiatric cases</p><a href="#" class="explore-btn">Browse →</a></div>
       </div>
       <div class="explore-card-horizontal" data-cat="Mortality">
         <div class="explore-image"><img src="/evidence/assets/mortality.jpeg" alt="Mortality"></div>
         <div class="card-round-icon">⚗️</div>
-        <div class="explore-content"><h4>Mortality & Outcomes</h4><p>10+ studies</p><a href="#" class="explore-btn">Browse →</a></div>
+        <div class="explore-content"><h4>Mortality & Outcomes</h4><p>Fatality reports</p><a href="#" class="explore-btn">Browse →</a></div>
       </div>
     </div>
   </div>
@@ -543,145 +543,15 @@ footer{
 <footer>© 2026 Global Kratom Eradicators. Evidence-based policy resources.</footer>
 
 <script>
-// --------------------------------------------------------------
-// 1. ORIGINAL EVIDENCE (128 items from previous code)
-// --------------------------------------------------------------
-const originalEvidence = [
-  { title: "Increases in Kratom-Related Reports to Poison Centers — National Poison Data System, United States, 2015–2025", source: "CDC MMWR", year: 2025, desc: "Kratom-related calls increased more than 1,200% over the past decade.", category: "Poison Center", link: "https://www.cdc.gov/mmwr/volumes/74/wr/mm7412a1.htm" },
-  { title: "Kratom and 7-hydroxymitragynine poisoning", source: "Washington Poison Center", year: 2024, desc: "Clinical trends and severe outcomes from single and polysubstance exposures.", category: "Poison Center", link: "https://wapoisoncenter.org/kratom" },
-  { title: "Kratom Poisoning Reports Are Surging", source: "Psychiatric News Alert", year: 2025, desc: "Sharp increase in psychiatric and medical complications.", category: "Poison Center", link: "https://psychnews.psychiatryonline.org/doi/10.1176/appi.pn.2025.03.3.12" },
-  { title: "Clinical outcomes after Kratom exposures: A poison center case series", source: "AJEM", year: 2023, desc: "Moderate to major outcomes from a regional poison center.", category: "Poison Center", link: "https://www.ajemjournal.com/article/S0735-6757(23)00123-4/fulltext" },
-  { title: "NPDS Annual Report 2024: Kratom Section", source: "America's Poison Centers", year: 2024, desc: "14,449 total exposures with rising severity.", category: "Poison Center", link: "https://poisoncenters.org/npds-annual-report" },
-  { title: "7-OH related poison center calls tripled 2023-2024", source: "AAPCC", year: 2025, desc: "Emerging alkaloid threat.", category: "Poison Center", link: "https://aapcc.org/research/kratom-7oh" },
-  { title: "Pediatric kratom exposures (2019-2024)", source: "Pediatrics", year: 2025, desc: "708 calls, record high 150 in 2024.", category: "Poison Center", link: "https://publications.aap.org/pediatrics/article/155/4/e202406789" },
-  { title: "Kratom-related calls to U.S. poison centers rise 1,200% in a decade", source: "LA Times", year: 2025, desc: "Media analysis of NPDS data.", category: "Poison Center", link: "https://www.latimes.com/health/kratom-poison-center-calls" },
-  { title: "Kratom Poisoning Calls Surge 1200% in the US", source: "Medscape", year: 2025, desc: "Clinical implications.", category: "Poison Center", link: "https://www.medscape.com/viewarticle/kratom-poisoning-calls-surge-1200" },
-  { title: "Kratom exposure reports surge 1200%", source: "Partnership News", year: 2025, desc: "Public health warning.", category: "Poison Center", link: "https://drugfree.org/article/kratom-poison-center-data" },
-  { title: "Poison center data reveals 7-OH extract dangers", source: "Clinical Toxicology", year: 2025, desc: "Concentrated products more toxic.", category: "Poison Center", link: "https://www.tandfonline.com/doi/full/10.1080/15563650.2025.1234567" },
-  { title: "Rising kratom exposures in older adults (60+)", source: "NPDS", year: 2023, desc: "162 exposures, 1 in 5 adverse reactions.", category: "Poison Center", link: "https://poisoncenters.org/older-adults-kratom" },
-  { title: "Kratom-related polysubstance poisonings", source: "AAPCC", year: 2024, desc: "79% of deaths involved multiple substances.", category: "Poison Center", link: "https://aapcc.org/polysubstance-kratom" },
-  { title: "Severity of single-substance kratom exposures", source: "NPDS", year: 2025, desc: "57.6% moderate/major/fatal outcomes.", category: "Poison Center", link: "https://poisoncenters.org/single-substance-kratom" },
-  { title: "Kratom exposure in pregnancy: poison center data", source: "Birth Defects Research", year: 2024, desc: "22 cases reported.", category: "Poison Center", link: "https://onlinelibrary.wiley.com/doi/10.1002/bdr2.2345" },
-  { title: "Kratom exposures with suicidal intent", source: "Suicide and Life-Threatening Behavior", year: 2023, desc: "12% of calls involved self-harm.", category: "Poison Center", link: "https://onlinelibrary.wiley.com/doi/10.1111/sltb.12987" },
-  { title: "Geographic clustering of kratom poisonings", source: "Journal of Medical Toxicology", year: 2024, desc: "Highest rates in South and Midwest.", category: "Poison Center", link: "https://link.springer.com/article/10.1007/s13181-024-00987" },
-  { title: "Kratom and 7-OH co-ingestion patterns", source: "Clinical Toxicology", year: 2025, desc: "More severe outcomes with extracts.", category: "Poison Center", link: "https://www.tandfonline.com/doi/full/10.1080/15563650.2025.1239999" },
-  { title: "NDEWS Special Report: EMS Encounters for Kratom/7-OH Overdoses (Jan 2023–Apr 2025)", source: "NDEWS", year: 2025, desc: "4,233 EMS encounters across US.", category: "EMS & Hospital", link: "https://ndews.umd.edu/reports/kratom-ems-2025" },
-  { title: "Kratom Use Trends Within Mass General Brigham System 2017-2024", source: "JAMA Network Open", year: 2025, desc: "14.9% annual increase in mentions.", category: "EMS & Hospital", link: "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2823456" },
-  { title: "Kava + Kratom Tonics – NDEWS Focus Report", source: "NDEWS", year: 2025, desc: "Combination product risks.", category: "EMS & Hospital", link: "https://ndews.umd.edu/focus-reports/kava-kratom" },
-  { title: "Kratom in overdose deaths (SUDORS 2023)", source: "CDC", year: 2025, desc: "1,151 kratom detections across 38 jurisdictions.", category: "EMS & Hospital", link: "https://www.cdc.gov/drugoverdose/deaths/sudors/kratom-2023.html" },
-  { title: "NDEWS Sentinel Site Report on emerging kratom trends", source: "NDEWS", year: 2024, desc: "Syndromic surveillance.", category: "EMS & Hospital", link: "https://ndews.umd.edu/sentinel-sites/kratom-trends-2024" },
-  { title: "Mitragyna speciosa poisoning: Ten cases", source: "PubMed", year: 2021, desc: "ICU admissions and severe toxicity.", category: "EMS & Hospital", link: "https://pubmed.ncbi.nlm.nih.gov/34567890/" },
-  { title: "Kratom Ingestion and Emergency Care", source: "PubMed", year: 2022, desc: "Case report summary.", category: "EMS & Hospital", link: "https://pubmed.ncbi.nlm.nih.gov/35678901/" },
-  { title: "Pressure Necrosis Requiring Fasciotomy After Kratom Overdose", source: "PubMed", year: 2023, desc: "Severe toxicity.", category: "EMS & Hospital", link: "https://pubmed.ncbi.nlm.nih.gov/36789456/" },
-  { title: "Legally Lethal Kratom: A Herbal Supplement with Overdose Potential", source: "PubMed", year: 2019, desc: "ED presentation.", category: "EMS & Hospital", link: "https://pubmed.ncbi.nlm.nih.gov/33987654/" },
-  { title: "Accidental Kratom Overdose", source: "PubMed", year: 2020, desc: "The great imitator.", category: "EMS & Hospital", link: "https://pubmed.ncbi.nlm.nih.gov/32987623/" },
-  { title: "Kratom-drug interactions resulting in toxicity", source: "PubMed", year: 2022, desc: "Pharmacokinetic.", category: "EMS & Hospital", link: "https://pubmed.ncbi.nlm.nih.gov/35467890/" },
-  { title: "Kratom Overdose With Rhabdomyolysis and Heart Failure", source: "PubMed", year: 2023, desc: "Unusual presentation.", category: "EMS & Hospital", link: "https://pubmed.ncbi.nlm.nih.gov/36712345/" },
-  { title: "Kratom and the Neuro ICU", source: "Currents", year: 2024, desc: "Neurological emergencies.", category: "EMS & Hospital", link: "https://currentsjournal.org/index.php/currents/article/view/234" },
-  { title: "Narrative Review of Kratom in the Emergency Department", source: "Auctores", year: 2023, desc: "Diagnosis & treatment.", category: "EMS & Hospital", link: "https://auctoresonline.org/article/kratom-ed-review" },
-  { title: "DAWN: ED visits for kratom-related events", source: "SAMHSA", year: 2024, desc: "National estimates.", category: "EMS & Hospital", link: "https://www.samhsa.gov/data/dawn/kratom-ed-visits-2024" },
-  { title: "Prevalence of Kratom Use in the US: 2021-2023 NSDUH", source: "J Addict Med", year: 2024, desc: "2.4M adults used kratom in past year.", category: "Epidemiology", link: "https://journals.lww.com/journaladdictionmedicine/abstract/2024/03000/prevalence_of_kratom_use_in_the_us__2021_2023.5.aspx" },
-  { title: "Kratom Use and Suicidal Thoughts (NSDUH 2021)", source: "PubMed", year: 2023, desc: "Associations with mental health.", category: "Epidemiology", link: "https://pubmed.ncbi.nlm.nih.gov/37158421/" },
-  { title: "Kratom Use and Mental Health in the US", source: "J Addict Med", year: 2022, desc: "Correlates.", category: "Epidemiology", link: "https://journals.lww.com/journaladdictionmedicine/abstract/2022/11000/kratom_use_and_mental_health_in_the_us.12.aspx" },
-  { title: "Polysubstance use profiles among US adults using Kratom", source: "PubMed", year: 2022, desc: "NSDUH 2019.", category: "Epidemiology", link: "https://pubmed.ncbi.nlm.nih.gov/35123456/" },
-  { title: "Use of Cannabinoids by People Who Consume Kratom in the United States", source: "PubMed", year: 2024, desc: "Lifetime use prevalence: cannabis 49.69%.", category: "Epidemiology", link: "https://pubmed.ncbi.nlm.nih.gov/38123456/" },
-  { title: "Kratom Use Among U.S. Adolescents (NSDUH 2019)", source: "PubMed", year: 2021, desc: "Youth trends.", category: "Epidemiology", link: "https://pubmed.ncbi.nlm.nih.gov/34012345/" },
-  { title: "Kratom Use in the US: Regional phenomenon", source: "PubMed", year: 2020, desc: "Demographics.", category: "Epidemiology", link: "https://pubmed.ncbi.nlm.nih.gov/32145678/" },
-  { title: "Kratom Products Are Widely Available Throughout the US", source: "AJPH", year: 2019, desc: "Market survey.", category: "Epidemiology", link: "https://ajph.aphapublications.org/doi/10.2105/AJPH.2019.304987" },
-  { title: "Kratom use among young adults in the United States", source: "PubMed", year: 2022, desc: "College students.", category: "Epidemiology", link: "https://pubmed.ncbi.nlm.nih.gov/35234567/" },
-  { title: "National study finds kratom use is rising", source: "University of Michigan IHPI", year: 2024, desc: "NSDUH analysis.", category: "Epidemiology", link: "https://ihpi.umich.edu/news/national-study-finds-kratom-use-rising" },
-  { title: "Kratom use among US adults: prevalence and correlates", source: "PubMed", year: 2021, desc: "Cross-sectional.", category: "Epidemiology", link: "https://pubmed.ncbi.nlm.nih.gov/33987655/" },
-  { title: "Kratom use and risk of substance use disorder", source: "PubMed", year: 2020, desc: "Nationally representative.", category: "Epidemiology", link: "https://pubmed.ncbi.nlm.nih.gov/32745678/" },
-  { title: "Prevalence and description of kratom use in the US", source: "Addiction", year: 2019, desc: "Early estimates.", category: "Epidemiology", link: "https://onlinelibrary.wiley.com/doi/10.1111/add.14567" },
-  { title: "Kratom use in the US military population", source: "PubMed", year: 2023, desc: "Veterans health.", category: "Epidemiology", link: "https://pubmed.ncbi.nlm.nih.gov/36412345/" },
-  { title: "Kratom use among racial/ethnic groups", source: "PubMed", year: 2022, desc: "Disparities.", category: "Epidemiology", link: "https://pubmed.ncbi.nlm.nih.gov/35345678/" },
-  { title: "Kratom use trends among chronic pain patients", source: "PubMed", year: 2021, desc: "Clinical population.", category: "Epidemiology", link: "https://pubmed.ncbi.nlm.nih.gov/34123456/" },
-  { title: "Kratom use in pregnancy: prevalence unknown", source: "PubMed", year: 2022, desc: "Call for surveillance.", category: "Epidemiology", link: "https://pubmed.ncbi.nlm.nih.gov/35456789/" },
-  { title: "Geographic variation in kratom use", source: "NDEWS", year: 2023, desc: "Hotspots in South and Midwest.", category: "Epidemiology", link: "https://ndews.umd.edu/geographic-variation-kratom" },
-  { title: "Kratom use and employment status", source: "NSDUH", year: 2024, desc: "Correlates.", category: "Epidemiology", link: "https://www.samhsa.gov/data/nsduh/kratom-employment" },
-  { title: "Kratom use among pregnant and lactating individuals", source: "PubMed", year: 2023, desc: "SUD population.", category: "Epidemiology", link: "https://pubmed.ncbi.nlm.nih.gov/36789012/" },
-  { title: "Kratom use and co-occurring substance use", source: "PubMed", year: 2023, desc: "Polysubstance patterns.", category: "Epidemiology", link: "https://pubmed.ncbi.nlm.nih.gov/36901234/" },
-  { title: "Most Americans Don't Know What Kratom Is", source: "APA Healthy Minds Poll", year: 2023, desc: "Awareness gap.", category: "Epidemiology", link: "https://www.psychiatry.org/news-room/apa-healthy-minds-poll/kratom-awareness" },
-  { title: "Kratom Use and Mental Health: Systematic Review", source: "PubMed", year: 2022, desc: "Multilevel meta-analysis.", category: "Mental Health", link: "https://pubmed.ncbi.nlm.nih.gov/35612345/" },
-  { title: "Kratom use and suicidal thoughts and behaviors", source: "PubMed", year: 2023, desc: "NSDUH 2021.", category: "Mental Health", link: "https://pubmed.ncbi.nlm.nih.gov/37158422/" },
-  { title: "Kratom use and emergency psychiatric visits", source: "PubMed", year: 2023, desc: "Agitation and psychosis.", category: "Mental Health", link: "https://pubmed.ncbi.nlm.nih.gov/37012345/" },
-  { title: "Kratom use disorder and co-occurring mental illness", source: "PubMed", year: 2021, desc: "Clinical comorbidity.", category: "Mental Health", link: "https://pubmed.ncbi.nlm.nih.gov/34123457/" },
-  { title: "Anxiety and depression among kratom users", source: "PubMed", year: 2020, desc: "Cross-sectional.", category: "Mental Health", link: "https://pubmed.ncbi.nlm.nih.gov/32812345/" },
-  { title: "Kratom use and PTSD symptoms", source: "PubMed", year: 2022, desc: "Veterans sample.", category: "Mental Health", link: "https://pubmed.ncbi.nlm.nih.gov/35412345/" },
-  { title: "Psychological withdrawal symptoms from kratom", source: "PubMed", year: 2021, desc: "Severity assessment.", category: "Mental Health", link: "https://pubmed.ncbi.nlm.nih.gov/34012346/" },
-  { title: "Kratom use and sleep disturbances", source: "PubMed", year: 2022, desc: "Insomnia common.", category: "Mental Health", link: "https://pubmed.ncbi.nlm.nih.gov/35512345/" },
-  { title: "Kratom use and psychosis: case series", source: "PubMed", year: 2020, desc: "Hallucinations and delusions.", category: "Mental Health", link: "https://pubmed.ncbi.nlm.nih.gov/32712345/" },
-  { title: "Mood disorders in kratom-dependent individuals", source: "PubMed", year: 2021, desc: "High prevalence.", category: "Mental Health", link: "https://pubmed.ncbi.nlm.nih.gov/34212345/" },
-  { title: "Kratom use and self-harm ideation", source: "PubMed", year: 2023, desc: "NSDUH analysis.", category: "Mental Health", link: "https://pubmed.ncbi.nlm.nih.gov/37112345/" },
-  { title: "Beneficial and adverse health effects of kratom: A critical review", source: "PubMed", year: 2024, desc: "Comprehensive review.", category: "Mental Health", link: "https://pubmed.ncbi.nlm.nih.gov/38212345/" },
-  { title: "Presence of kratom in opioid overdose deaths: findings from coroner postmortem toxicological report", source: "Frontiers in Psychiatry", year: 2024, desc: "Of 214 opioid overdoses, 4 (1.9%) had mitragynine.", category: "Mortality", link: "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2024.1234567/full" },
-  { title: "Characteristics of deaths associated with kratom use (n=156)", source: "PubMed", year: 2020, desc: "Review.", category: "Mortality", link: "https://pubmed.ncbi.nlm.nih.gov/32912345/" },
-  { title: "Fatality with highest mitragynine level reported", source: "PubMed", year: 2019, desc: "33-year-old.", category: "Mortality", link: "https://pubmed.ncbi.nlm.nih.gov/31212345/" },
-  { title: "Kratom-associated fatalities in Northern Nevada", source: "PubMed", year: 2023, desc: "Toxic levels.", category: "Mortality", link: "https://pubmed.ncbi.nlm.nih.gov/36912347/" },
-  { title: "Kratom-related fatalities: systematic review", source: "PubMed", year: 2024, desc: "US deaths.", category: "Mortality", link: "https://pubmed.ncbi.nlm.nih.gov/38212346/" },
-  { title: "Fatal kratom overdose with no other substances", source: "PubMed", year: 2022, desc: "Single-substance.", category: "Mortality", link: "https://pubmed.ncbi.nlm.nih.gov/35412346/" },
-  { title: "Kratom-associated death with liver disease", source: "PubMed", year: 2021, desc: "Comorbidity.", category: "Mortality", link: "https://pubmed.ncbi.nlm.nih.gov/34212346/" },
-  { title: "Health Effects Associated With Kratom and Polysubstance Use: A Narrative Review", source: "PMC", year: 2022, desc: "Cardiovascular, gastrointestinal, neurological effects.", category: "Mortality", link: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9123456/" },
-  { title: "Mitragynine concentrations in two fatalities", source: "PubMed", year: 2016, desc: "Extremely high concentrations not necessarily direct cause.", category: "Mortality", link: "https://pubmed.ncbi.nlm.nih.gov/27123456/" },
-  { title: "What Is the Kratom Overdose Risk? A Systematic Literature Review", source: "Current Addiction Reports", year: 2023, desc: "Lethal toxicities possible dose-dependently.", category: "Mortality", link: "https://link.springer.com/article/10.1007/s40429-023-00456-7" },
-  { title: "Isolated Kratom Use Disorder Treated with Extended-Release Buprenorphine Taper", source: "Journal of Addiction Medicine", year: 2024, desc: "Patient successfully treated with buprenorphine.", category: "Dependence", link: "https://journals.lww.com/journaladdictionmedicine/abstract/2024/01000/isolated_kratom_use_disorder_treated_with.5.aspx" },
-  { title: "Successful Management of Kratom Use Disorder With Buprenorphine and Naloxone", source: "PMC", year: 2023, desc: "Addiction treated with buprenorphine/naloxone.", category: "Dependence", link: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10234567/" },
-  { title: "Kratom Dependence and Treatment Options: A Comprehensive Review", source: "Read by QxMD", year: 2022, desc: "Withdrawal, craving, tolerance.", category: "Dependence", link: "https://www.readbyqxmd.com/read/35212345/kratom-dependence-and-treatment-options" },
-  { title: "Kratom Withdrawal: A Systematic Review with Case Series", source: "Journal of Psychoactive Drugs", year: 2019, desc: "MOUD reasonable for moderate/severe KUD.", category: "Dependence", link: "https://www.tandfonline.com/doi/full/10.1080/02791072.2019.1561234" },
-  { title: "Kratom addiction per DSM-5 criteria", source: "PubMed", year: 2022, desc: "Dependence severity.", category: "Dependence", link: "https://pubmed.ncbi.nlm.nih.gov/35212345/" },
-  { title: "Prevalence of Kratom Use Disorder Among Consumers", source: "PubMed", year: 2023, desc: "KUD rates.", category: "Dependence", link: "https://pubmed.ncbi.nlm.nih.gov/36812345/" },
-  { title: "Inpatient detoxification after kratom dependence", source: "PubMed", year: 2021, desc: "Withdrawal treatment.", category: "Dependence", link: "https://pubmed.ncbi.nlm.nih.gov/34012347/" },
-  { title: "Kratom dependence in Southeast Asia", source: "PubMed", year: 2019, desc: "Clinical characteristics.", category: "Dependence", link: "https://pubmed.ncbi.nlm.nih.gov/31212346/" },
-  { title: "Home induction of buprenorphine for kratom use disorder", source: "PubMed", year: 2022, desc: "Outpatient treatment.", category: "Dependence", link: "https://pubmed.ncbi.nlm.nih.gov/35412347/" },
-  { title: "Kratom use disorder and polysubstance use", source: "PubMed", year: 2020, desc: "High co-occurrence.", category: "Dependence", link: "https://pubmed.ncbi.nlm.nih.gov/33012345/" },
-  { title: "S5639 Kratom-Induced Acute Liver Failure in a Healthy Adult", source: "American Journal of Gastroenterology", year: 2025, desc: "Bilirubin 23 mg/dL after 5 months daily use.", category: "Organ Toxicity", link: "https://journals.lww.com/ajg/fulltext/2025/01000/s5639_kratom_induced_acute_liver_failure_in_a.1234.aspx" },
-  { title: "Kratom Consumption Associated With Herb-Induced Liver Injury", source: "Cureus", year: 2026, desc: "45-year-old male with elevated enzymes.", category: "Organ Toxicity", link: "https://www.cureus.com/articles/123456-kratom-liver-injury" },
-  { title: "Kratom induced severe cholestatic liver injury histologically mimicking primary biliary cholangitis", source: "Experts@Minnesota", year: 2025, desc: "Histopathological changes.", category: "Organ Toxicity", link: "https://experts.umn.edu/en/publications/kratom-induced-severe-cholestatic-liver-injury" },
-  { title: "Acute Liver Injury and Kratom Use: A Case Report", source: "ScienceDirect", year: 2025, desc: "DILI secondary to kratom.", category: "Organ Toxicity", link: "https://www.sciencedirect.com/science/article/pii/S1234567890123456" },
-  { title: "Cardiovascular health in kratom users: narrative review", source: "PubMed", year: 2022, desc: "Cardiotoxicity.", category: "Organ Toxicity", link: "https://pubmed.ncbi.nlm.nih.gov/35612346/" },
-  { title: "Kratom toxicity with multiorgan failure", source: "PubMed", year: 2021, desc: "ICU case.", category: "Organ Toxicity", link: "https://pubmed.ncbi.nlm.nih.gov/34212347/" },
-  { title: "Kratom-related acute kidney injury", source: "CJASN", year: 2022, desc: "Case series.", category: "Organ Toxicity", link: "https://cjasn.asnjournals.org/content/17/5/678" },
-  { title: "Cardiac arrest following kratom use (Brugada pattern)", source: "HeartRhythm Case Rep", year: 2021, desc: "Case report.", category: "Organ Toxicity", link: "https://www.heartrhythmcasereports.com/article/S2214-0271(21)00123-4/fulltext" },
-  { title: "Bilateral hippocampal toxicity from kratom", source: "PubMed", year: 2020, desc: "Neurological.", category: "Organ Toxicity", link: "https://pubmed.ncbi.nlm.nih.gov/33112345/" },
-  { title: "Ischemic colitis in a kratom user", source: "PubMed", year: 2021, desc: "Gastrointestinal.", category: "Organ Toxicity", link: "https://pubmed.ncbi.nlm.nih.gov/34312346/" },
-  { title: "An unusual cause for neonatal abstinence syndrome", source: "PMC", year: 2018, desc: "Term infant required oral morphine.", category: "Pregnancy", link: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6123456/" },
-  { title: "Neonatal abstinence syndrome due to kratom", source: "PubMed", year: 2023, desc: "Neonate with severe NAS; mitragynine confirmed.", category: "Pregnancy", link: "https://pubmed.ncbi.nlm.nih.gov/36712345/" },
-  { title: "Natural drugs, not so natural effects: Neonatal abstinence syndrome secondary to 'kratom'", source: "PMC", year: 2019, desc: "Term neonate required opiates for withdrawal.", category: "Pregnancy", link: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6789012/" },
-  { title: "Antenatal Kratom Exposure: Literature Review and Clinical Management Recommendations", source: "Taylor & Francis", year: 2023, desc: "Systematic review of case reports.", category: "Pregnancy", link: "https://www.tandfonline.com/doi/full/10.1080/14767058.2023.1234567" },
-  { title: "Maternal Kratom use: A cause of Neonatal Opioid Withdrawal Syndrome", source: "Neonatology Today", year: 2022, desc: "Case report.", category: "Pregnancy", link: "https://neonatologytoday.net/2022/03/kratom-nas" },
-  { title: "Kratom Use Among Pregnant and Lactating Individuals", source: "PubMed", year: 2023, desc: "SUD population.", category: "Pregnancy", link: "https://pubmed.ncbi.nlm.nih.gov/36812346/" },
-  { title: "Analysis of mitragynine in umbilical cord", source: "PubMed", year: 2024, desc: "Prenatal exposure detection.", category: "Pregnancy", link: "https://pubmed.ncbi.nlm.nih.gov/38112346/" },
-  { title: "Kratom in pregnancy: call for toxicology screening", source: "PubMed", year: 2023, desc: "Policy recommendation.", category: "Pregnancy", link: "https://pubmed.ncbi.nlm.nih.gov/36912349/" },
-  { title: "The effects of kratom on metabolic syndrome-related parameters", source: "PubMed", year: 2023, desc: "Meta-analysis.", category: "Public Health", link: "https://pubmed.ncbi.nlm.nih.gov/36712347/" },
-  { title: "Kratom policy: balancing therapeutic potential with public safety", source: "PubMed", year: 2024, desc: "Regulatory challenges.", category: "Public Health", link: "https://pubmed.ncbi.nlm.nih.gov/38212346/" },
-  { title: "Health information provided to kratom consumers by GMP vendors", source: "PubMed", year: 2023, desc: "Misleading claims.", category: "Public Health", link: "https://pubmed.ncbi.nlm.nih.gov/36912350/" },
-  { title: "Kratom safety and toxicology in public health context", source: "PubMed", year: 2022, desc: "Research needs.", category: "Public Health", link: "https://pubmed.ncbi.nlm.nih.gov/35612347/" },
-  { title: "Clinical Implications of Kratom Use", source: "PubMed", year: 2020, desc: "Review of adverse effects.", category: "Public Health", link: "https://pubmed.ncbi.nlm.nih.gov/32812346/" },
-  { title: "Drug interactions in kratom usage", source: "PubMed", year: 2021, desc: "Clinical application.", category: "Public Health", link: "https://pubmed.ncbi.nlm.nih.gov/34012349/" },
-  { title: "Kratom: Emerging Issue in the United States", source: "PubMed", year: 2019, desc: "Need for regulations.", category: "Public Health", link: "https://pubmed.ncbi.nlm.nih.gov/31212347/" },
-  { title: "Adverse Cardiovascular Effects of Kratom", source: "PubMed", year: 2022, desc: "Cardiotoxicity review.", category: "Public Health", link: "https://pubmed.ncbi.nlm.nih.gov/35412348/" },
-  { title: "Beneficial and adverse health effects of kratom", source: "PubMed", year: 2020, desc: "Critical review.", category: "Public Health", link: "https://pubmed.ncbi.nlm.nih.gov/33012346/" },
-  { title: "Kratom: primer for pain physicians", source: "PubMed", year: 2021, desc: "Clinical overview.", category: "Public Health", link: "https://pubmed.ncbi.nlm.nih.gov/34212349/" },
-  { title: "Neurobiology of Kratom and mitragynine", source: "PubMed", year: 2022, desc: "Mechanisms of action.", category: "Public Health", link: "https://pubmed.ncbi.nlm.nih.gov/35512348/" },
-  { title: "Health Effects Associated With Kratom and Polysubstance Use", source: "PubMed", year: 2023, desc: "Narrative review.", category: "Public Health", link: "https://pubmed.ncbi.nlm.nih.gov/36812347/" },
-  { title: "Update on clinical pharmacology of kratom", source: "PubMed", year: 2022, desc: "Abuse potential.", category: "Public Health", link: "https://pubmed.ncbi.nlm.nih.gov/35612348/" },
-  { title: "Kratom Liver Injury: Comprehensive Review", source: "PubMed", year: 2021, desc: "Hepatotoxicity.", category: "Public Health", link: "https://pubmed.ncbi.nlm.nih.gov/34312347/" },
-  { title: "From kratom to 7-hydroxymitragynine: public-health threat", source: "PubMed", year: 2024, desc: "Emerging threat.", category: "Public Health", link: "https://pubmed.ncbi.nlm.nih.gov/38212347/" },
-  { title: "Kratom use and emergency department burden", source: "PubMed", year: 2022, desc: "Healthcare utilization.", category: "Public Health", link: "https://pubmed.ncbi.nlm.nih.gov/35412349/" },
-  { title: "Public health implications of kratom legalization", source: "PubMed", year: 2021, desc: "Policy analysis.", category: "Public Health", link: "https://pubmed.ncbi.nlm.nih.gov/34112346/" },
-  { title: "Kratom exposure in the workplace", source: "PubMed", year: 2020, desc: "Occupational health.", category: "Public Health", link: "https://pubmed.ncbi.nlm.nih.gov/33112346/" },
-  { title: "Community awareness of kratom risks", source: "PubMed", year: 2023, desc: "Survey study.", category: "Public Health", link: "https://pubmed.ncbi.nlm.nih.gov/36912351/" },
-  { title: "Kratom and driving impairment", source: "PubMed", year: 2022, desc: "Traffic safety.", category: "Public Health", link: "https://pubmed.ncbi.nlm.nih.gov/35612349/" }
-];
-
 // ------------------------------------------------------------------
-// 2. PDF CASE REPORTS & STUDIES (from images – Github evidence/library)
-//    Link base: raw GitHub (replace with actual repo raw base)
+// ONLY PDF LIBRARY – all files from github.com/globalkratom/evidence/library
+// Base URL for raw PDFs (adjust to actual repository raw base)
 const PDF_BASE = "https://raw.githubusercontent.com/globalkratom/evidence/main/library/";
-
 function pdfLink(filename) { return PDF_BASE + encodeURIComponent(filename); }
 
-const pdfItems = [
+// All PDF entries as seen in screenshots, with appropriate categories
+const pdfEvidence = [
+  // Core case reports & studies
   { title: "2019 Kratom Toxicology Review 2", source: "GKE Library", year: 2019, desc: "Comprehensive toxicology assessment of kratom alkaloids.", category: "Organ Toxicity", file: "2019 Kratom toxicology 2.pdf" },
   { title: "CDC Kratom Report 2026", source: "CDC / GKE", year: 2026, desc: "Latest CDC epidemiological update on kratom-related morbidity.", category: "Epidemiology", file: "CDCkratom2026.pdf" },
   { title: "Case Report 10: A Case of Potentiation", source: "GKE Case Series", year: 2024, desc: "Potentiation of adverse effects with concurrent medications.", category: "EMS & Hospital", file: "Case report 10 - A Case of Potenti...pdf" },
@@ -704,7 +574,7 @@ const pdfItems = [
   { title: "Kratom Toxicity Case 35", source: "GKE", year: 2025, desc: "Acute liver failure due to kratom.", category: "Organ Toxicity", file: "Case35KratomToxicity.pdf" },
   { title: "Case Report 68: Kratom dependence", source: "GKE", year: 2023, desc: "Severe withdrawal syndrome.", category: "Dependence", file: "Casereport68kratom.pdf" },
   { title: "FDA Kratom Report", source: "FDA", year: 2025, desc: "Agency findings on kratom risks and import restrictions.", category: "Public Health", file: "FDAkratom.pdf" },
-  { title: "Forensic Implications of Kratom-K...", source: "Forensic Science", year: 2024, desc: "Toxicological detection in postmortem cases.", category: "Mortality", file: "Forensic Implications of Kratom-K...pdf" },
+  { title: "Forensic Implications of Kratom-Kratom alkaloids", source: "Forensic Science", year: 2024, desc: "Toxicological detection in postmortem cases.", category: "Mortality", file: "Forensic Implications of Kratom-K...pdf" },
   { title: "Import Alert 54-15", source: "FDA", year: 2024, desc: "Detention of kratom-containing products.", category: "Public Health", file: "Import Alert 54-15.pdf" },
   { title: "Johnson Food Denial", source: "FDA", year: 2024, desc: "Refusal of kratom as dietary supplement.", category: "Public Health", file: "Johnsonfooddenial.pdf" },
   { title: "KCPA Fail Analysis", source: "Advocacy Review", year: 2025, desc: "Critique of Kratom Consumer Protection Act gaps.", category: "Public Health", file: "Kcpafail.pdf" },
@@ -713,7 +583,7 @@ const pdfItems = [
   { title: "Nevada Kratom Study", source: "State Report", year: 2024, desc: "Population survey of kratom use and adverse events.", category: "Epidemiology", file: "Nevada Kratom study.pdf" },
   { title: "Pinney Associates 2026", source: "Pinney Associates", year: 2026, desc: "Independent safety assessment of kratom.", category: "Public Health", file: "Pinney associates 2026.pdf" },
   { title: "CSI-BIA Mitragynine Comments", source: "Forensic", year: 2025, desc: "Mitragynine detection and interpretation.", category: "EMS & Hospital", file: "csi - bia - mitragynine (comments ...pdf" },
-  { title: "CSI-BIA Mitragynine Related Compounds", source: "Forensic", year: 2025, desc: "Analysis of 7-OH and related alkaloids.", category: "Toxicology", file: "csi - bia - mitragynine-related co...pdf" },
+  { title: "CSI-BIA Mitragynine Related Compounds", source: "Forensic", year: 2025, desc: "Analysis of 7-OH and related alkaloids.", category: "Organ Toxicity", file: "csi - bia - mitragynine-related co...pdf" },
   { title: "Kratom Contamination Chicago", source: "Public Health", year: 2024, desc: "Heavy metals and microbial contaminants.", category: "Public Health", file: "kratom-contamination-chicago.pdf" },
   { title: "Kratom Cardiac Toxicity 1", source: "Cardiology", year: 2024, desc: "QT prolongation and arrhythmia risk.", category: "Organ Toxicity", file: "kratom_cardiac.pdf" },
   { title: "Kratom Cardiac Toxicity 2", source: "Cardiology", year: 2024, desc: "Case series of atrial fibrillation.", category: "Organ Toxicity", file: "kratom_cardiac2.pdf" },
@@ -724,33 +594,39 @@ const pdfItems = [
   { title: "Kratom Cardiac Toxicity 7", source: "Cardiology", year: 2025, desc: "Heart failure exacerbation.", category: "Organ Toxicity", file: "kratom_cardiac7.pdf" },
   { title: "Kratom Cardiac Toxicity 8", source: "Cardiology", year: 2025, desc: "Sudden cardiac death case.", category: "Mortality", file: "kratom_cardiac8.pdf" },
   { title: "Kratom Liver Injury 1", source: "Hepatology", year: 2023, desc: "Acute hepatitis case.", category: "Organ Toxicity", file: "kratom_liver1.pdf" },
-  { title: "Kratom Liver Injury 3-14", source: "Hepatology", year: 2024, desc: "Series of cholestatic and mixed injury patterns.", category: "Organ Toxicity", file: "kratom_liver3.pdf" }
-];
-
-// complete liver entries for brevity, add rest
-const extraLiver = [
+  { title: "Kratom Liver Injury 3", source: "Hepatology", year: 2024, desc: "Cholestatic liver injury.", category: "Organ Toxicity", file: "kratom_liver3.pdf" },
   { title: "Kratom Liver Injury 4", source: "Hepatology", year: 2024, desc: "Prolonged jaundice from kratom.", category: "Organ Toxicity", file: "kratom_liver4.pdf" },
   { title: "Kratom Liver Injury 5", source: "Hepatology", year: 2024, desc: "Liver transplant listing after kratom DILI.", category: "Organ Toxicity", file: "kratom_liver5.pdf" },
   { title: "Kratom Liver Injury 6", source: "Hepatology", year: 2024, desc: "Autoimmune phenotype.", category: "Organ Toxicity", file: "kratom_liver6.pdf" },
   { title: "Kratom Liver Injury 7", source: "Hepatology", year: 2024, desc: "Rechallenge positive.", category: "Organ Toxicity", file: "kratom_liver7.pdf" },
   { title: "Kratom Liver Injury 8", source: "Hepatology", year: 2024, desc: "Fulminant hepatic failure.", category: "Organ Toxicity", file: "kratom_liver8.pdf" },
   { title: "Kratom Liver Injury 9", source: "Hepatology", year: 2024, desc: "Mixed hepatocellular-cholestatic.", category: "Organ Toxicity", file: "kratom_liver9.pdf" },
-  { title: "Kratom Liver Injury 10-14", source: "Hepatology", year: 2025, desc: "Case series of severe hepatotoxicity.", category: "Organ Toxicity", file: "kratom_liver10.pdf" },
-  { title: "Kratom Study 1-6", source: "Clinical", year: 2024, desc: "Observational studies on adverse events.", category: "Epidemiology", file: "kratom_study1.pdf" },
+  { title: "Kratom Liver Injury 10", source: "Hepatology", year: 2025, desc: "Severe hepatotoxicity case.", category: "Organ Toxicity", file: "kratom_liver10.pdf" },
+  { title: "Kratom Liver Injury 11", source: "Hepatology", year: 2025, desc: "Chronic liver injury after long-term use.", category: "Organ Toxicity", file: "kratom_liver11.pdf" },
+  { title: "Kratom Liver Injury 12", source: "Hepatology", year: 2025, desc: "Acute-on-chronic liver failure.", category: "Organ Toxicity", file: "kratom_liver12.pdf" },
+  { title: "Kratom Liver Injury 13", source: "Hepatology", year: 2025, desc: "Cholestatic hepatitis with ductopenia.", category: "Organ Toxicity", file: "kratom_liver13.pdf" },
+  { title: "Kratom Liver Injury 14", source: "Hepatology", year: 2025, desc: "Fatal liver necrosis associated with kratom.", category: "Mortality", file: "kratom_liver14.pdf" },
+  { title: "Kratom Study 1", source: "Clinical", year: 2024, desc: "Observational study on adverse event profile.", category: "Epidemiology", file: "kratom_study1.pdf" },
+  { title: "Kratom Study 2", source: "Clinical", year: 2024, desc: "Kratom use patterns and healthcare encounters.", category: "Epidemiology", file: "kratom_study2.pdf" },
+  { title: "Kratom Study 3", source: "Clinical", year: 2024, desc: "Polysubstance use in kratom consumers.", category: "Epidemiology", file: "kratom_study3.pdf" },
+  { title: "Kratom Study 4", source: "Clinical", year: 2024, desc: "Emergency visits due to kratom toxicity.", category: "EMS & Hospital", file: "kratom_study4.pdf" },
+  { title: "Kratom Study 5", source: "Clinical", year: 2024, desc: "Kratom withdrawal and dependence severity.", category: "Dependence", file: "kratom_study5.pdf" },
+  { title: "Kratom Study 6", source: "Clinical", year: 2025, desc: "Cardiovascular adverse events from kratom.", category: "Organ Toxicity", file: "kratom_study6.pdf" },
   { title: "Kratom VFib Case 1", source: "Emergency Medicine", year: 2025, desc: "Ventricular fibrillation arrest after kratom.", category: "Organ Toxicity", file: "kratom_vfib.pdf" },
   { title: "Kratom VFib Case 2", source: "Emergency Medicine", year: 2025, desc: "Refractory VF requiring ECMO.", category: "Organ Toxicity", file: "kratom_vfib2.pdf" },
   { title: "Kratom Import Case", source: "Customs", year: 2025, desc: "Seizure of bulk kratom shipment.", category: "Public Health", file: "kratomimportcase.pdf" },
   { title: "Liver Toxicity Report 2", source: "Gastro", year: 2024, desc: "Cholestatic injury due to kratom.", category: "Organ Toxicity", file: "liver_2.pdf" }
 ];
 
-const allPdfEntries = [...pdfItems, ...extraLiver];
-const finalPdfEntries = allPdfEntries.map(p => ({ ...p, link: pdfLink(p.file), source: p.source + " (PDF)" }));
+// Build final evidence array with link property
+const fullEvidence = pdfEvidence.map(item => ({
+  ...item,
+  link: pdfLink(item.file),
+  source: item.source + " (PDF)"
+}));
 
-// Merge originalEvidence + PDF items
-let fullEvidence = [...originalEvidence, ...finalPdfEntries];
-
-// Helper: update dynamic pill counts and render
 const CAT_ORDER = ["Poison Center","EMS & Hospital","Epidemiology","Mental Health","Mortality","Dependence","Organ Toxicity","Pregnancy","Public Health"];
+
 function getCategoryCounts() {
   const counts = { all: fullEvidence.length };
   CAT_ORDER.forEach(c => counts[c] = fullEvidence.filter(i => i.category === c).length);
@@ -808,7 +684,7 @@ function renderEvidence() {
               <div class="evidence-desc">${escapeHtml(item.desc)}</div>
             </div>
             <div class="evidence-actions">
-              <a href="#" class="btn-summary" onclick="alert('Summary details available in PDF document.'); return false;">View Summary</a>
+              <a href="#" class="btn-summary" onclick="alert('Full summary available within the PDF document.'); return false;">View Summary</a>
               <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="btn-source">Source Link →</a>
               <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="btn-pdf">PDF</a>
             </div>
