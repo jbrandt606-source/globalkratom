@@ -128,9 +128,9 @@ footer{ margin-top:54px; background:var(--navy); color:#cbd5e1; text-align:cente
 <script>
 function pdfLink(filename) { return "/evidence/library/" + filename; }
 
-// FULL EVIDENCE LIBRARY — all unique PDFs from your file inventory (74 entries)
+// Full evidence library — all 74 unique entries (no truncation)
 const fullEvidence = [
-  // CDC / FDA / major reports
+  // CDC, FDA, major policy documents
   { title: "Increases in Kratom-Related Reports to Poison Centers — National Poison Data System, United States, 2015–2025", source: "MMWR Morb Mortal Wkly Rep. 2026;75(11):140-146", year: 2026, desc: "CDC reports a 1,200% surge in kratom exposures (258 to 3,434) with 79% of deaths involving polysubstance use, frequently with opioids and benzodiazepines. The 2025 spike coincides with high‑potency 7‑OH products, illustrating the escalating public health threat and the need for regulatory oversight.", category: "Epidemiology", link: pdfLink("CDCkratom2026.pdf") },
   { title: "FDA Import Alert 54-15: Detention of Dietary Supplements Containing Mitragyna speciosa (Kratom)", source: "FDA Import Alert. 2025", year: 2025, desc: "FDA orders detention of all kratom‑containing dietary supplements at U.S. ports, citing serious health risks including respiratory depression, seizures, and liver injury. The alert underscores that kratom lacks safety evidence for human consumption and is unlawfully marketed.", category: "Public Health", link: pdfLink("Import Alert 54-15.pdf") },
   { title: "FDA Statement and Information on Kratom (Mitragyna speciosa)", source: "U.S. Food and Drug Administration. 2024", year: 2024, desc: "FDA warns consumers that kratom is associated with liver toxicity, seizures, substance use disorder, and neonatal abstinence syndrome. Kratom is not approved as a drug or dietary supplement, highlighting its potential for abuse and harm requiring federal control.", category: "Public Health", link: pdfLink("FDAkratom.pdf") },
@@ -154,7 +154,7 @@ const fullEvidence = [
   { title: "Electrical breakdown in liquid-phase processing for conversion of mitragynine to 7-hydroxymitragynine", source: "Heliyon. 2024;10:e36676", year: 2024, desc: "Study demonstrating plasma-based conversion of mitragynine to 7-OH. Shows that processing can artificially boost 7-OH levels far above natural trace amounts, raising safety concerns.", category: "Public Health", link: pdfLink("Mitragynine to 7OH.pdf") },
   { title: "Kratom Overdose with Rhabdomyolysis, Transient Nonischemic Reversible Cardiomyopathy, and CVA", source: "Cureus. 2021;13(7):e16582", year: 2021, desc: "28-year-old with rhabdomyolysis (CPK 26,989), acute renal failure requiring dialysis, transient cardiomyopathy (EF 31-35%), and multifocal brain infarcts after kratom overdose.", category: "Organ Toxicity", link: pdfLink("Case35KratomToxicity.pdf") },
 
-  // CARDIAC (full set from earlier)
+  // CARDIAC (full set)
   { title: "Kratom-Associated Acute Right Ventricular Dysfunction: Diagnostic and Management Insights", source: "JACC Case Rep. 2025;30(20):104206", year: 2025, desc: "Heavy kratom use precipitated severe right ventricular failure requiring intensive care. Kratom can cause acute, life‑threatening cardiac dysfunction, reinforcing the need to classify it as a dangerous substance.", category: "Organ Toxicity", link: pdfLink("kratom_cardiac.pdf") },
   { title: "Brugada Syndrome Unmasked by Kratom Use in a Young Man", source: "JACC Case Rep. 2026;31:107173", year: 2026, desc: "A 28‑year‑old collapsed with ventricular fibrillation after smoking kratom; ECG showed a type 1 Brugada pattern. Kratom’s alkaloids directly inhibit cardiac ion channels, demonstrating its potential to cause sudden cardiac death — a strong argument for control.", category: "Organ Toxicity", link: pdfLink("kratom_cardiac6.pdf") },
   { title: "Kratom Cardiotoxicity: Reversible Brugada Pattern and QTc Prolongation", source: "JACC Case Rep. 2025;30(5):103109", year: 2025, desc: "Patient developed severe QTc prolongation (552 ms) and a Brugada pattern after kratom use, resolving only after abstinence. Kratom’s concentration‑dependent potassium channel blockade poses a clear risk of fatal arrhythmias.", category: "Organ Toxicity", link: pdfLink("kratom_cardiac3.pdf") },
@@ -179,7 +179,7 @@ const fullEvidence = [
   { title: "Drug-Induced Liver Injury Caused by Kratom Use as an Alternative Pain Treatment", source: "J Investig Med High Impact Case Rep. 2019;7:2324709619826167", year: 2019, desc: "47-year-old with mixed liver injury after 3 weeks kratom. Positive rechallenge with shorter latency. RUCAM score +9 (highly probable).", category: "Organ Toxicity", link: pdfLink("kratom_liver14.pdf") },
   { title: "Acute liver injury following short-term use of the herbal supplement kratom", source: "JAAPA. 2022;35(2):39-41", year: 2022, desc: "30-year-old with ALT 1057, AST 332, total bilirubin 6.7 mg/dL after 2 weeks kratom. Normalized within 3 weeks of discontinuation.", category: "Organ Toxicity", link: pdfLink("kratom_liver8.pdf") },
 
-  // POISON CENTER / CASE REPORTS
+  // POISON CENTER & CASE REPORTS
   { title: "A Case of Accidental Kratom Overdose: Naloxone Response and Rebound Hypoxia", source: "Cureus. 2023;15(8):e43144", year: 2023, desc: "Patient presented with apnea, cyanosis, and pinpoint pupils after high‑dose kratom; responded to naloxone but later developed rebound hypoxia. Kratom acts like an opioid and requires the same overdose precautions.", category: "Poison Center", link: pdfLink("Case report 26 A Case of Accidental Kratom Overdose.pdf") },
   { title: "Mitragyna speciosa (Kratom) poisoning: Findings from ten cases", source: "Toxicon. 2023;225:107054", year: 2023, desc: "Ten kratom overdoses with 90% experiencing depressed consciousness; naloxone prevented intubation in two cases. The opioid‑like toxidrome and response to naloxone confirm kratom’s dangerous opioid properties.", category: "EMS & Hospital", link: pdfLink("Case report 30 Mitragyna speciosa (Kratom) poisoning.pdf") },
   { title: "Kratom Ingestion and Emergency Care: Summary and a Case Report", source: "J Emerg Nurs. 2021;47(4):551-556", year: 2021, desc: "Patient with circulatory shock, metabolic acidosis, and hypoxia after kratom; required vasopressors, intubation, and dialysis. Severe critical illness from kratom alone supports its classification as a harmful substance.", category: "EMS & Hospital", link: pdfLink("Case report 42 Kratom Ingestion and Emergency Care.pdf") },
@@ -219,6 +219,7 @@ for (const item of fullEvidence) {
   }
 }
 
+// Category order
 const CAT_ORDER = ["Poison Center","EMS & Hospital","Epidemiology","Mental Health","Mortality","Dependence","Organ Toxicity","Pregnancy","Public Health"];
 
 function getCategoryCounts() {
@@ -273,7 +274,7 @@ function renderEvidence() {
             <div class="evidence-desc">${safeDesc}</div>
           </div>
           <div class="evidence-actions">
-            <a href="#" class="btn-summary" onclick="alert('Full summary and critical findings are detailed inside the PDF document.\\n\\nKey highlights:\\n${safeDesc.substring(0, 350)}...'); return false;">View Summary</a>
+            <a href="#" class="btn-summary" onclick="alert('Study Summary:\\n\\n${safeDesc}'); return false;">View Summary</a>
             <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="btn-source">Source Link →</a>
             <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="btn-pdf">PDF</a>
           </div>
