@@ -69,7 +69,7 @@ body::before{ content:""; position:fixed; inset:0; background:url("/evidence/ass
 .evidence-desc{ color:#334155; font-size:14px; }
 .evidence-actions{ display:flex; flex-direction:column; gap:10px; min-width:170px; }
 .evidence-actions a{ text-align:center; font-size:13px; font-weight:900; padding:9px 14px; border-radius:999px; }
-.btn-summary{ background:#f1f5f9; border:1px solid #dce4ee; }
+.btn-summary{ background:#f1f5f9; border:1px solid #dce4ee; cursor:pointer; }
 .btn-source{ background:white; border:1px solid #cbd5e1; }
 .btn-pdf{ background:var(--red); color:white; border:1px solid var(--red); }
 footer{ margin-top:54px; background:var(--navy); color:#cbd5e1; text-align:center; padding:32px 18px; font-size:14px; }
@@ -127,16 +127,15 @@ footer{ margin-top:54px; background:var(--navy); color:#cbd5e1; text-align:cente
 
 <script>
 // ============================================================
-// PDF BASE URL (GitHub raw repository for evidence/library)
+// PDFs are stored locally under /evidence/library/
 // ============================================================
-const PDF_BASE = "https://raw.githubusercontent.com/globalkratom/evidence/main/library/";
-function pdfLink(filename) { return PDF_BASE + encodeURIComponent(filename); }
+function pdfLink(filename) { return "/evidence/library/" + encodeURIComponent(filename); }
 
 // ============================================================
-// FULL EVIDENCE LIBRARY — 9 peer-reviewed PDFs with summaries
+// FULL EVIDENCE LIBRARY — 9 PDFs with exact filenames as provided
 // ============================================================
 const fullEvidence = [
-  { // 1. CDC MMWR 2026
+  {
     title: "Increases in Kratom-Related Reports to Poison Centers — National Poison Data System, United States, 2015–2025",
     source: "MMWR Morb Mortal Wkly Rep. 2026;75(11):140-146",
     year: 2026,
@@ -144,7 +143,7 @@ const fullEvidence = [
     category: "Epidemiology",
     link: pdfLink("CDCkratom2026.pdf")
   },
-  { // 2. Case report 10: Pharmacokinetic interactions + buprenorphine
+  {
     title: "A Case of Potential Pharmacokinetic Kratom-Drug Interactions Resulting in Toxicity and Subsequent Treatment of Kratom Use Disorder With Buprenorphine/Naloxone",
     source: "Journal of Addiction Medicine. 2022;16(5):606-609",
     year: 2022,
@@ -152,7 +151,7 @@ const fullEvidence = [
     category: "Dependence",
     link: pdfLink("Case report 10 - A Case of Potential Pharmacokinetic Kratom.pdf")
   },
-  { // 3. Fatal combination quetiapine + mitragynine
+  {
     title: "Fatal combination of mitragynine and quetiapine - a case report with discussion of a potential herb-drug interaction",
     source: "Forensic Science, Medicine and Pathology. 2019;15:110-113",
     year: 2019,
@@ -160,7 +159,7 @@ const fullEvidence = [
     category: "Mortality",
     link: pdfLink("Case report 16 - Fatal combination of mitragynine and quetiapine.pdf")
   },
-  { // 4. Mitragynine concentrations in two fatalities
+  {
     title: "Mitragynine concentrations in two fatalities",
     source: "Forensic Science International. 2017;271:e1-e7",
     year: 2017,
@@ -168,7 +167,7 @@ const fullEvidence = [
     category: "Mortality",
     link: pdfLink("Case report 16 - Mitragynine concentrations in two fatalities.pdf")
   },
-  { // 5. Complexities of Kratom (2024)
+  {
     title: "The Complexities of Kratom: Dependence, Withdrawal, and Buprenorphine Treatment",
     source: "Cureus. 2024;16(5):e59630",
     year: 2024,
@@ -176,7 +175,7 @@ const fullEvidence = [
     category: "Dependence",
     link: pdfLink("Case report 21 The Complexities of Kratom.pdf")
   },
-  { // 6. Accidental kratom overdose (naloxone, rebound hypoxia)
+  {
     title: "A Case of Accidental Kratom Overdose: Naloxone Response and Rebound Hypoxia",
     source: "Cureus. 2023;15(8):e43144",
     year: 2023,
@@ -184,7 +183,7 @@ const fullEvidence = [
     category: "Poison Center",
     link: pdfLink("Case report 26 A Case of Accidental Kratom Overdose.pdf")
   },
-  { // 7. Precipitated withdrawal with kratom + naltrexone
+  {
     title: "Precipitated withdrawal with kratom use following naltrexone administration",
     source: "Mental Health Clinician. 2023;13(3):155-158",
     year: 2023,
@@ -192,7 +191,7 @@ const fullEvidence = [
     category: "Dependence",
     link: pdfLink("Case report 26 Precipitated withdrawal with kratom.pdf")
   },
-  { // 8. Mitragyna speciosa poisoning: 10 cases
+  {
     title: "Mitragyna speciosa (Kratom) poisoning: Findings from ten cases",
     source: "Toxicon. 2023;225:107054",
     year: 2023,
@@ -200,9 +199,9 @@ const fullEvidence = [
     category: "EMS & Hospital",
     link: pdfLink("Case report 30 Mitragyna speciosa (Kratom) poisoning.pdf")
   },
-  { // 9. 2019 Kratom toxicology 2 (review article)
+  {
     title: "Kratom Toxicology: Pharmacology, Adverse Effects, and Public Health Implications",
-    source: "Clinical Toxicology Review. 2019; (Comprehensive overview)",
+    source: "Clinical Toxicology Review. 2019 (Comprehensive overview)",
     year: 2019,
     desc: "In-depth toxicology review of Mitragyna speciosa covering alkaloid profiles (mitragynine, 7-OH), dose-dependent opioid/stimulant effects, hepatotoxicity, seizure risk, withdrawal syndrome, and rising U.S. poison center trends. Essential reference for regulators.",
     category: "Public Health",
@@ -210,7 +209,6 @@ const fullEvidence = [
   }
 ];
 
-// Category ordering for display (categories that appear in evidence)
 const CAT_ORDER = ["Poison Center","EMS & Hospital","Epidemiology","Mental Health","Mortality","Dependence","Organ Toxicity","Pregnancy","Public Health"];
 
 function getCategoryCounts() {
@@ -252,7 +250,6 @@ function renderEvidence() {
     container.innerHTML = `<div class="evidence-item"><div class="evidence-title">No evidence found</div><div class="evidence-desc">Try adjusting your search or category filter.</div></div>`;
     return;
   }
-  // Group by category based on CAT_ORDER order for consistent display
   const grouped = {};
   filtered.forEach(item => { if(!grouped[item.category]) grouped[item.category] = []; grouped[item.category].push(item); });
   let html = "";
@@ -260,14 +257,15 @@ function renderEvidence() {
     if(grouped[cat] && grouped[cat].length){
       html += `<div class="evidence-group"><div class="group-title">${cat.toUpperCase()}</div>`;
       grouped[cat].forEach(item => {
+        const safeDesc = item.desc.replace(/[&<>]/g, function(m){ if(m==='&') return '&amp;'; if(m==='<') return '&lt;'; if(m==='>') return '&gt;'; return m;});
         html += `<div class="evidence-item">
           <div>
             <div class="evidence-title">${escapeHtml(item.title)}</div>
             <div class="evidence-meta">${escapeHtml(item.source)} • ${item.year}</div>
-            <div class="evidence-desc">${escapeHtml(item.desc)}</div>
+            <div class="evidence-desc">${safeDesc}</div>
           </div>
           <div class="evidence-actions">
-            <a href="#" class="btn-summary" onclick="alert('Full summary and critical findings are detailed inside the PDF document.\\n\\nKey takeaways:\\n${escapeHtml(item.desc.substring(0, 300))}...'); return false;">View Summary</a>
+            <a href="#" class="btn-summary" onclick="alert('Full summary and critical findings are detailed inside the PDF document.\\n\\nKey highlights:\\n${safeDesc.substring(0, 350)}...'); return false;">View Summary</a>
             <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="btn-source">Source Link →</a>
             <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="btn-pdf">PDF</a>
           </div>
@@ -285,7 +283,6 @@ document.getElementById("sortSelect").addEventListener("change", (e) => { curren
 document.getElementById("mobileMenuBtn").addEventListener("click", () => { document.getElementById("mobileMenu").classList.toggle("open"); });
 document.querySelectorAll(".explore-card-horizontal").forEach(card => { 
   card.addEventListener("click", (e) => {
-    // Prevent accidental click if clicking inner anchor
     if(e.target.tagName === 'A') return;
     let cat = card.getAttribute("data-cat"); 
     if(cat){ 
@@ -299,7 +296,6 @@ document.querySelectorAll(".explore-card-horizontal").forEach(card => {
   }); 
 });
 
-// initial render
 renderPills();
 renderEvidence();
 </script>
