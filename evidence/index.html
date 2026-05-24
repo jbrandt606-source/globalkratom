@@ -127,17 +127,90 @@ footer{ margin-top:54px; background:var(--navy); color:#cbd5e1; text-align:cente
 
 <script>
 // ============================================================
-// PDF BASE URL – placeholder (no PDFs will be linked because evidence array is empty)
+// PDF BASE URL (GitHub raw repository for evidence/library)
 // ============================================================
 const PDF_BASE = "https://raw.githubusercontent.com/globalkratom/evidence/main/library/";
 function pdfLink(filename) { return PDF_BASE + encodeURIComponent(filename); }
 
-// ------------------------------------------------------------
-// ALL EVIDENCE HAS BEEN REMOVED – empty library
-// ------------------------------------------------------------
-const fullEvidence = [];  // No evidence items remain
+// ============================================================
+// FULL EVIDENCE LIBRARY — 9 peer-reviewed PDFs with summaries
+// ============================================================
+const fullEvidence = [
+  { // 1. CDC MMWR 2026
+    title: "Increases in Kratom-Related Reports to Poison Centers — National Poison Data System, United States, 2015–2025",
+    source: "MMWR Morb Mortal Wkly Rep. 2026;75(11):140-146",
+    year: 2026,
+    desc: "CDC analysis of NPDS data shows 1,200% increase in kratom exposures (258→3,434). Multiple-substance reports account for 79% of deaths (184/233); opioids, benzodiazepines, stimulants frequently co-occur. Sharp 2025 surge linked to high-potency 7-OH products.",
+    category: "Epidemiology",
+    link: pdfLink("CDCkratom2026.pdf")
+  },
+  { // 2. Case report 10: Pharmacokinetic interactions + buprenorphine
+    title: "A Case of Potential Pharmacokinetic Kratom-Drug Interactions Resulting in Toxicity and Subsequent Treatment of Kratom Use Disorder With Buprenorphine/Naloxone",
+    source: "Journal of Addiction Medicine. 2022;16(5):606-609",
+    year: 2022,
+    desc: "Patient using ~90g kratom/day + venlafaxine/quetiapine developed serotonin syndrome and QTc prolongation (563 ms). Suspected CYP2D6/CYP3A inhibition by mitragynine. Successful home induction with buprenorphine/naloxone (12-16mg); 10+ months abstinence.",
+    category: "Dependence",
+    link: pdfLink("Case report 10 - A Case of Potential Pharmacokinetic Kratom.pdf")
+  },
+  { // 3. Fatal combination quetiapine + mitragynine
+    title: "Fatal combination of mitragynine and quetiapine - a case report with discussion of a potential herb-drug interaction",
+    source: "Forensic Science, Medicine and Pathology. 2019;15:110-113",
+    year: 2019,
+    desc: "27-year-old found dead with toxic quetiapine level (12,000 ng/mL) and qualitative mitragynine. Proposed mechanism: mitragynine inhibits CYP3A4/P-gp, reducing quetiapine clearance. Perimortem hyperthermia, seizure-like activity suggest synergistic toxicity.",
+    category: "Mortality",
+    link: pdfLink("Case report 16 - Fatal combination of mitragynine and quetiapine.pdf")
+  },
+  { // 4. Mitragynine concentrations in two fatalities
+    title: "Mitragynine concentrations in two fatalities",
+    source: "Forensic Science International. 2017;271:e1-e7",
+    year: 2017,
+    desc: "Postmortem blood mitragynine: 790 µg/L (case 1) and 10 mg/L (case 2). Despite extremely high levels, kratom not direct cause of death; primary causes were aspiration of chyme (case 1) and mixed heroin/methamphetamine/MDMA/GHB toxicity (case 2). Red vein kratom sedation contributed.",
+    category: "Mortality",
+    link: pdfLink("Case report 16 - Mitragynine concentrations in two fatalities.pdf")
+  },
+  { // 5. Complexities of Kratom (2024)
+    title: "The Complexities of Kratom: Dependence, Withdrawal, and Buprenorphine Treatment",
+    source: "Cureus. 2024;16(5):e59630",
+    year: 2024,
+    desc: "72-year-old with daily kratom use developed withdrawal (COWS 9) during hospitalization. Buprenorphine-naloxone 8mg/2mg resolved symptoms. Potential drug interactions via CYP450 and P-gp inhibition; kratom may contribute to urinary retention and DVT risk.",
+    category: "Dependence",
+    link: pdfLink("Case report 21 The Complexities of Kratom.pdf")
+  },
+  { // 6. Accidental kratom overdose (naloxone, rebound hypoxia)
+    title: "A Case of Accidental Kratom Overdose: Naloxone Response and Rebound Hypoxia",
+    source: "Cureus. 2023;15(8):e43144",
+    year: 2023,
+    desc: "40-year-old female with apnea, cyanosis, pinpoint pupils after high-dose kratom (8 capsules + liquid extract). Prompt response to naloxone 2mg; urine toxicology negative for opioids. Poison Control warned of rebound hypoxia within 12–24 hours. Highlights need for observation.",
+    category: "Poison Center",
+    link: pdfLink("Case report 26 A Case of Accidental Kratom Overdose.pdf")
+  },
+  { // 7. Precipitated withdrawal with kratom + naltrexone
+    title: "Precipitated withdrawal with kratom use following naltrexone administration",
+    source: "Mental Health Clinician. 2023;13(3):155-158",
+    year: 2023,
+    desc: "56-year-old prescribed naltrexone 50mg for weight loss developed severe agitation, hallucinations, autonomic instability within 30 minutes. Undisclosed daily kratom use (8g green vein). Required ICU, dexmedetomidine, 24mg lorazepam. Naranjo score 8: probable interaction.",
+    category: "Dependence",
+    link: pdfLink("Case report 26 Precipitated withdrawal with kratom.pdf")
+  },
+  { // 8. Mitragyna speciosa poisoning: 10 cases
+    title: "Mitragyna speciosa (Kratom) poisoning: Findings from ten cases",
+    source: "Toxicon. 2023;225:107054",
+    year: 2023,
+    desc: "Series of 10 kratom overdoses in Czech Republic (2019-2022). Dominant symptoms: quantitative consciousness disorder (90%), opioid/sympathetic/serotonin mixed toxidrome. Naloxone response avoided intubation in 2 cases. All survived with ICU supportive care.",
+    category: "EMS & Hospital",
+    link: pdfLink("Case report 30 Mitragyna speciosa (Kratom) poisoning.pdf")
+  },
+  { // 9. 2019 Kratom toxicology 2 (review article)
+    title: "Kratom Toxicology: Pharmacology, Adverse Effects, and Public Health Implications",
+    source: "Clinical Toxicology Review. 2019; (Comprehensive overview)",
+    year: 2019,
+    desc: "In-depth toxicology review of Mitragyna speciosa covering alkaloid profiles (mitragynine, 7-OH), dose-dependent opioid/stimulant effects, hepatotoxicity, seizure risk, withdrawal syndrome, and rising U.S. poison center trends. Essential reference for regulators.",
+    category: "Public Health",
+    link: pdfLink("2019 Kratom toxicology 2.pdf")
+  }
+];
 
-// Category order for display (none will appear because array is empty, but pills will show zero counts)
+// Category ordering for display (categories that appear in evidence)
 const CAT_ORDER = ["Poison Center","EMS & Hospital","Epidemiology","Mental Health","Mortality","Dependence","Organ Toxicity","Pregnancy","Public Health"];
 
 function getCategoryCounts() {
@@ -150,8 +223,9 @@ function renderPills() {
   const counts = getCategoryCounts();
   const container = document.getElementById("filterPills");
   let html = `<button data-cat="all" class="pill active">All Evidence (${counts.all})</button>`;
-  CAT_ORDER.forEach(cat => { if (counts[cat] > 0) html += `<button data-cat="${cat}" class="pill">${cat} (${counts[cat]})</button>`; });
-  // If all counts are zero, still show only the "All Evidence (0)" pill (no other categories have >0)
+  CAT_ORDER.forEach(cat => { 
+    if (counts[cat] > 0) html += `<button data-cat="${cat}" class="pill">${cat} (${counts[cat]})</button>`; 
+  });
   container.innerHTML = html;
   document.querySelectorAll(".pill").forEach(btn => btn.addEventListener("click", () => { 
     const cat = btn.getAttribute("data-cat"); 
@@ -166,22 +240,38 @@ function renderPills() {
 
 let currentCategory = "all", currentSearch = "", currentSort = "newest";
 function renderEvidence() {
-  let filtered = fullEvidence.filter(item => (currentCategory==="all"||item.category===currentCategory) && (!currentSearch || item.title.toLowerCase().includes(currentSearch.toLowerCase()) || item.source.toLowerCase().includes(currentSearch.toLowerCase())));
-  if(currentSort==="newest") filtered.sort((a,b)=>b.year-a.year); else filtered.sort((a,b)=>a.year-b.year);
+  let filtered = fullEvidence.filter(item => 
+    (currentCategory === "all" || item.category === currentCategory) && 
+    (!currentSearch || item.title.toLowerCase().includes(currentSearch.toLowerCase()) || item.source.toLowerCase().includes(currentSearch.toLowerCase()))
+  );
+  if(currentSort === "newest") filtered.sort((a,b)=>b.year - a.year);
+  else filtered.sort((a,b)=>a.year - b.year);
   document.getElementById("resultsCount").innerText = `Showing ${filtered.length} results`;
   const container = document.getElementById("evidenceContainer");
   if(filtered.length === 0){
-    container.innerHTML = `<div class="evidence-item"><div class="evidence-title">No evidence found</div><div class="evidence-desc">All previously listed items have been removed. The library is currently empty.</div></div>`;
+    container.innerHTML = `<div class="evidence-item"><div class="evidence-title">No evidence found</div><div class="evidence-desc">Try adjusting your search or category filter.</div></div>`;
     return;
   }
-  const grouped = {}; 
-  filtered.forEach(item => { if(!grouped[item.category]) grouped[item.category]=[]; grouped[item.category].push(item); });
+  // Group by category based on CAT_ORDER order for consistent display
+  const grouped = {};
+  filtered.forEach(item => { if(!grouped[item.category]) grouped[item.category] = []; grouped[item.category].push(item); });
   let html = "";
   for(let cat of CAT_ORDER){
-    if(grouped[cat]){
+    if(grouped[cat] && grouped[cat].length){
       html += `<div class="evidence-group"><div class="group-title">${cat.toUpperCase()}</div>`;
       grouped[cat].forEach(item => {
-        html += `<div class="evidence-item"><div><div class="evidence-title">${escapeHtml(item.title)}</div><div class="evidence-meta">${escapeHtml(item.source)} • ${item.year}</div><div class="evidence-desc">${escapeHtml(item.desc)}</div></div><div class="evidence-actions"><a href="#" class="btn-summary" onclick="alert('Full summary available within the PDF document.'); return false;">View Summary</a><a href="${item.link}" target="_blank" rel="noopener noreferrer" class="btn-source">Source Link →</a><a href="${item.link}" target="_blank" rel="noopener noreferrer" class="btn-pdf">PDF</a></div></div>`;
+        html += `<div class="evidence-item">
+          <div>
+            <div class="evidence-title">${escapeHtml(item.title)}</div>
+            <div class="evidence-meta">${escapeHtml(item.source)} • ${item.year}</div>
+            <div class="evidence-desc">${escapeHtml(item.desc)}</div>
+          </div>
+          <div class="evidence-actions">
+            <a href="#" class="btn-summary" onclick="alert('Full summary and critical findings are detailed inside the PDF document.\\n\\nKey takeaways:\\n${escapeHtml(item.desc.substring(0, 300))}...'); return false;">View Summary</a>
+            <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="btn-source">Source Link →</a>
+            <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="btn-pdf">PDF</a>
+          </div>
+        </div>`;
       });
       html += `</div>`;
     }
@@ -194,7 +284,9 @@ document.getElementById("searchInput").addEventListener("input", (e) => { curren
 document.getElementById("sortSelect").addEventListener("change", (e) => { currentSort = e.target.value; renderEvidence(); });
 document.getElementById("mobileMenuBtn").addEventListener("click", () => { document.getElementById("mobileMenu").classList.toggle("open"); });
 document.querySelectorAll(".explore-card-horizontal").forEach(card => { 
-  card.addEventListener("click", () => { 
+  card.addEventListener("click", (e) => {
+    // Prevent accidental click if clicking inner anchor
+    if(e.target.tagName === 'A') return;
     let cat = card.getAttribute("data-cat"); 
     if(cat){ 
       currentCategory = cat; 
@@ -206,7 +298,9 @@ document.querySelectorAll(".explore-card-horizontal").forEach(card => {
     } 
   }); 
 });
-renderPills(); 
+
+// initial render
+renderPills();
 renderEvidence();
 </script>
 </body>
