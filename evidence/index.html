@@ -126,11 +126,8 @@ footer{ margin-top:54px; background:var(--navy); color:#cbd5e1; text-align:cente
 <footer>© 2026 Global Kratom Eradicators. Evidence-based policy resources.</footer>
 
 <script>
-// PDFs are stored locally under /evidence/library/
-function pdfLink(filename) { return "/evidence/library/" + encodeURIComponent(filename); }
+function pdfLink(filename) { return "/evidence/library/" + filename; }
 
-// FULL EVIDENCE LIBRARY – all unique PDFs, no duplicates by filename
-// The perinatal review PDF is now correctly linked and will work when the file exists at the given path
 const fullEvidence = [
   // CDC & major reports
   { title: "Increases in Kratom-Related Reports to Poison Centers — National Poison Data System, United States, 2015–2025", source: "MMWR Morb Mortal Wkly Rep. 2026;75(11):140-146", year: 2026, desc: "CDC analysis shows 1,200% increase in exposures (258→3,434). Multiple-substance reports account for 79% of deaths; opioids, benzodiazepines, stimulants frequently co-occur. Sharp 2025 surge linked to high-potency 7-OH products.", category: "Epidemiology", link: pdfLink("CDCkratom2026.pdf") },
@@ -211,16 +208,16 @@ const fullEvidence = [
   { title: "A Case of Kratom Use: Implications for Managing Addiction and Addressing Comorbidity", source: "J Addict Med. 2022;16(2):138-140", year: 2022, desc: "Case of compartment syndrome, rhabdomyolysis, acute renal insufficiency after prolonged loss of consciousness from kratom smoking.", category: "Organ Toxicity", link: pdfLink("Case report 39 A Case of Kratom Use.pdf") },
   { title: "Electrical breakdown in liquid-phase processing for conversion of mitragynine to 7-hydroxymitragynine", source: "Heliyon. 2024;10:e36676", year: 2024, desc: "Study demonstrating plasma-based conversion of mitragynine to 7-OH. Shows that processing can artificially boost 7-OH levels far above natural trace amounts, raising safety concerns.", category: "Public Health", link: pdfLink("Mitragynine to 7OH.pdf") },
   
-  // PREGNANCY / NEONATAL CASE REPORTS (all unique)
+  // PREGNANCY / NEONATAL CASE REPORTS (all unique) – using correct perinatal_kratom.pdf
   { title: "Novel case of maternal and neonatal kratom dependence and withdrawal", source: "Can Fam Physician. 2018;64(2):121-122", year: 2018, desc: "Case report of mother using 18-20g kratom powder 3x daily throughout pregnancy. Infant developed NAS requiring IV morphine. Maternal withdrawal managed with morphine substitution. Both tapered off over 4 weeks.", category: "Pregnancy", link: pdfLink("neonate3.pdf") },
   { title: "Antenatal Kratom Exposure: Literature Review and Clinical Management Recommendations", source: "Research and Reports in Neonatology. 2023;13:1-9", year: 2023, desc: "Review of 12 mother-infant dyads with prenatal kratom exposure. NAS observed in >80% of neonates; 70% required morphine treatment. Intrauterine growth restriction noted. Recommends buprenorphine or morphine for maternal management.", category: "Pregnancy", link: pdfLink("neonate1.pdf") },
   { title: "Neonatal Withdrawal Following in Utero Exposure to Kratom", source: "J Neonatal Perinatal Med. 2019;12(1):109-112", year: 2019, desc: "Term neonate with negative maternal urine screen but significant withdrawal (high-pitched cry, tremors, hypertonia) after daily kratom use. Clonidine successfully controlled symptoms. First verifiable kratom NAS case at institution.", category: "Pregnancy", link: pdfLink("neonate2.pdf") },
   { title: "Kratom and neonatal abstinence syndrome", source: "J Neonatal Perinatal Med. 2019;12(1):109-112", year: 2019, desc: "Term neonate born to chronic kratom user (5g tablets 1-3x daily). Developed NAS requiring oral morphine for 11 days. Standard toxicology negative. Highlights need for awareness of kratom in differential diagnosis of NAS.", category: "Pregnancy", link: pdfLink("54neonatal.pdf") },
   { title: "Neonatal abstinence syndrome due to maternal kratom use", source: "Pediatrics. 2018;142(6):e20181839", year: 2018, desc: "Newborn with tremors, irritability, hypertonia, high-pitched cry after maternal kratom tea use throughout pregnancy. Required morphine then clonidine. Small for gestational age. Child protection involved.", category: "Pregnancy", link: pdfLink("neonatal1.pdf") },
-  { title: "Emerging Substances and Perinatal Health: A Narrative Review", source: "Obstet Gynecol. 2026;147:64-72", year: 2026, desc: "Comprehensive review of emerging substances including kratom, tianeptine, fentanyl, xylazine, nitazenes, medetomidine, and ketamine in pregnancy. Discusses kratom's opioid-like effects, NAS, and treatment with buprenorphine or morphine.", category: "Pregnancy", link: pdfLink("emerging-substances-and-perinatal-health-review.pdf") }
+  { title: "Emerging Substances and Perinatal Health: A Narrative Review", source: "Obstet Gynecol. 2026;147:64-72", year: 2026, desc: "Comprehensive review of emerging substances including kratom, tianeptine, fentanyl, xylazine, nitazenes, medetomidine, and ketamine in pregnancy. Discusses kratom's opioid-like effects, NAS, and treatment with buprenorphine or morphine. Up to 80% of pregnant kratom users report use to manage opioid withdrawal.", category: "Pregnancy", link: pdfLink("perinatal_kratom.pdf") }
 ];
 
-// Deduplicate by filename to ensure no duplicates
+// Deduplicate by filename
 const seen = new Set();
 const uniqueEvidence = [];
 for (const item of fullEvidence) {
