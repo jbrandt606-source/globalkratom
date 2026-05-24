@@ -126,13 +126,13 @@ footer{ margin-top:54px; background:var(--navy); color:#cbd5e1; text-align:cente
 <footer>© 2026 Global Kratom Eradicators. Evidence-based policy resources.</footer>
 
 <script>
-// PDFs are stored locally under /evidence/library/ with exact filenames as provided
+// PDFs are stored locally under /evidence/library/
 function pdfLink(filename) { return "/evidence/library/" + encodeURIComponent(filename); }
 
-// Full evidence library – all files from user's inventory (removed old external link, added all local PDFs)
+// Comprehensive unique evidence list (duplicates removed by filename)
 const fullEvidence = [
   { title: "Increases in Kratom-Related Reports to Poison Centers — National Poison Data System, United States, 2015–2025", source: "MMWR Morb Mortal Wkly Rep. 2026;75(11):140-146", year: 2026, desc: "CDC analysis shows 1,200% increase in exposures (258→3,434). Multiple-substance reports account for 79% of deaths; opioids, benzodiazepines, stimulants frequently co-occur. Sharp 2025 surge linked to high-potency 7-OH products.", category: "Epidemiology", link: pdfLink("CDCkratom2026.pdf") },
-  { title: "A Case of Potential Pharmacokinetic Kratom-Drug Interactions Resulting in Toxicity and Subsequent Treatment of Kratom Use Disorder With Buprenorphine/Naloxone", source: "J Addict Med. 2022;16(5):606-609", year: 2022, desc: "Patient using ~90g kratom/day + venlafaxine/quetiapine developed serotonin syndrome and QTc prolongation (563 ms). Suspected CYP2D6/CYP3A inhibition. Successful home induction with buprenorphine/naloxone (12-16mg).", category: "Dependence", link: pdfLink("Case report 10 - A Case of Potential Pharmacokinetic Kratom.pdf") },
+  { title: "A Case of Potential Pharmacokinetic Kratom-Drug Interactions Resulting in Toxicity and Subsequent Treatment of Kratom Use Disorder With Buprenorphine/Naloxone", source: "J Addict Med. 2022;16(5):606-609", year: 2022, desc: "Patient using ~90g kratom/day + venlafaxine/quetiapine developed serotonin syndrome and QTc prolongation (563 ms). Suspected CYP2D6/CYP3A inhibition. Successful home induction with buprenorphine/naloxone.", category: "Dependence", link: pdfLink("Case report 10 - A Case of Potential Pharmacokinetic Kratom.pdf") },
   { title: "Fatal combination of mitragynine and quetiapine - a case report with discussion of a potential herb-drug interaction", source: "Forensic Sci Med Pathol. 2019;15:110-113", year: 2019, desc: "27-year-old found dead with toxic quetiapine level (12,000 ng/mL) and qualitative mitragynine. Proposed mechanism: mitragynine inhibits CYP3A4/P-gp, reducing quetiapine clearance. Perimortem hyperthermia, seizure-like activity.", category: "Mortality", link: pdfLink("Case report 16 - Fatal combination of mitragynine and quetiapine.pdf") },
   { title: "Mitragynine concentrations in two fatalities", source: "Forensic Sci Int. 2017;271:e1-e7", year: 2017, desc: "Postmortem blood mitragynine: 790 µg/L and 10 mg/L. Despite extremely high levels, kratom not direct cause of death; primary causes were aspiration of chyme and mixed heroin/methamphetamine/MDMA/GHB toxicity.", category: "Mortality", link: pdfLink("Case report 16 - Mitragynine concentrations in two fatalities.pdf") },
   { title: "The Complexities of Kratom: Dependence, Withdrawal, and Buprenorphine Treatment", source: "Cureus. 2024;16(5):e59630", year: 2024, desc: "72-year-old with daily kratom use developed withdrawal (COWS 9) during hospitalization. Buprenorphine-naloxone 8mg/2mg resolved symptoms. Potential drug interactions via CYP450 and P-gp inhibition.", category: "Dependence", link: pdfLink("Case report 21 The Complexities of Kratom.pdf") },
@@ -147,52 +147,50 @@ const fullEvidence = [
   { title: "Death from Kratom toxicity and the possible role of intralipid", source: "J Intensive Care Soc. 2018;19(1):61-63", year: 2018, desc: "26-year-old in cardiorespiratory arrest after kratom ingestion. Intralipid temporarily reduced vasopressor needs by 30% and improved oxygenation, but patient died from hypoxic brain injury.", category: "Mortality", link: pdfLink("Case report 58 Death from Kratom toxicity and the possible role of intralipid.pdf") },
   { title: "Two Single-Drug Fatal Intoxications by Mitragynine", source: "J Anal Toxicol. 2022;46(5):e110-e114", year: 2022, desc: "Two cases with mitragynine as the sole toxicological finding (2325 and 3809 ng/mL). Causes certified as acute mitragynine intoxication. Decedents collapsed during routine activities.", category: "Mortality", link: pdfLink("Case report 9 - Two Single-Drug Fatal Intoxications by Mitragynine.pdf") },
   { title: "A case of fatal overdose involving both hydromorphone and kratom", source: "J Forensic Sci. 2024;69(1):355-358", year: 2024, desc: "44-year-old with >4L ascites, elevated vitreous creatinine/urea. Blood: hydromorphone 79 ng/mL, mitragynine 560 ng/mL, olanzapine 240 ng/mL. Death attributed to hydromorphone toxicity with mitragynine contributing.", category: "Mortality", link: pdfLink("Case study 4 - A case of fatal overdose involving both hydromorphone and kratom.pdf") },
-  { title: "Postmortem Mitragynine Distribution in a Single Drug Fatality Case", source: "Acad Forensic Pathol. 2023;13(1):2-8", year: 2023, desc: "32-year-old with mitragynine only: central blood 7.5 mg/L, peripheral 3.3 mg/L, liver 42.2 mg/kg. COD: acute mitragynine intoxication with cardiomegaly, hepatomegaly, obesity.", category: "Mortality", link: pdfLink("Case study 6 - Postmortem Mitragynine Distribution in a Single Drug Fatality Case.pdf") },
+  { title: "Postmortem Mitragynine Distribution in a Single Drug Fatality Case", source: "Acad Forensic Pathol. 2023;13(1):34-40", year: 2023, desc: "32-year-old with mitragynine only: central blood 7.5 mg/L, peripheral 3.3 mg/L, liver 42.2 mg/kg. COD: acute mitragynine intoxication with cardiomegaly, hepatomegaly, obesity.", category: "Mortality", link: pdfLink("Case study 6 - Postmortem Mitragynine Distribution in a Single Drug Fatality Case.pdf") },
   { title: "Kratom Overdose with Rhabdomyolysis, Transient Nonischemic Reversible Cardiomyopathy, and CVA", source: "Cureus. 2021;13(7):e16582", year: 2021, desc: "28-year-old with rhabdomyolysis (CPK 26,989), acute renal failure requiring dialysis, transient cardiomyopathy (EF 31-35%), and multifocal brain infarcts after kratom overdose.", category: "Organ Toxicity", link: pdfLink("Case35KratomToxicity.pdf") },
   { title: "Mitragyna speciosa Korth toxicity: Experimental findings and future prospects", source: "J Taibah Univ Med Sci. 2024;19(6):1143-1156", year: 2024, desc: "Comprehensive review of in vitro, in vivo, and case study toxicities: hepatotoxicity, nephrotoxicity, neurotoxicity, cardiotoxicity. Gaps in research and future directions.", category: "Public Health", link: pdfLink("Casereport68kratom.pdf") },
   { title: "FDA Statement and Information on Kratom (Mitragyna speciosa)", source: "U.S. Food and Drug Administration. 2024", year: 2024, desc: "FDA warns against kratom use due to serious adverse events: liver toxicity, seizures, substance use disorder, neonatal abstinence syndrome. Kratom not lawfully marketed as drug or dietary supplement.", category: "Public Health", link: pdfLink("FDAkratom.pdf") },
   { title: "Forensic Implications of Kratom: Kratom Toxicity, Correlation with Mitragynine Concentrations, and Polypharmacy", source: "Curr Addict Rep. 2023;10:272-281", year: 2023, desc: "Analysis of 6860 blood specimens (2018-2022). Blood mitragynine range 5–11,000 ng/mL. Co-positivity: fentanyl (62%), methamphetamine (19%), benzodiazepines (~13%). Concentrations >1000 ng/mL associated with death.", category: "Epidemiology", link: pdfLink("Forensic Implications of Kratom-Kratom Toxicity Correlation with Mitragynine Concentrations and Polypharmacy.pdf") },
-  { title: "Import Alert 54-15: Detention of Dietary Supplements Containing Mitragyna speciosa (Kratom)", source: "FDA Import Alert. 2025", year: 2025, desc: "FDA directive to detain kratom-containing dietary supplements at U.S. ports. Cites lack of safety evidence, serious health risks including respiratory depression, seizures, liver injury.", category: "Public Health", link: pdfLink("Import Alert 54-15.pdf") }
+  { title: "Import Alert 54-15: Detention of Dietary Supplements Containing Mitragyna speciosa (Kratom)", source: "FDA Import Alert. 2025", year: 2025, desc: "FDA directive to detain kratom-containing dietary supplements at U.S. ports. Cites lack of safety evidence, serious health risks including respiratory depression, seizures, liver injury.", category: "Public Health", link: pdfLink("Import Alert 54-15.pdf") },
+  { title: "Kratom Toxicology: Pharmacology, Adverse Effects, and Public Health Implications", source: "Clinical Toxicology Review, 2019", year: 2019, desc: "In-depth toxicology review of Mitragyna speciosa covering alkaloid profiles, dose-dependent effects, hepatotoxicity, seizure risk, withdrawal syndrome, and rising U.S. poison center trends.", category: "Public Health", link: pdfLink("2019 Kratom toxicology 2.pdf") },
+  { title: "Electrical breakdown in liquid-phase processing for conversion of mitragynine to 7-hydroxymitragynine", source: "Heliyon. 2024;10:e36676", year: 2024, desc: "Study demonstrating plasma-based conversion of mitragynine to 7-OH. Shows that processing can artificially boost 7-OH levels far above natural trace amounts, raising safety concerns.", category: "Public Health", link: pdfLink("Mitragynine to 7OH.pdf") },
+  { title: "FDA response to Johnson Foods LLC New Dietary Ingredient Notification for kratom", source: "FDA. January 4, 2023", year: 2023, desc: "FDA rejection of kratom NDI notification. Agency unable to establish identity or safety of dried kratom leaf powder as a dietary ingredient. Cites lack of adequate safety data.", category: "Public Health", link: pdfLink("Johnsonfooddenial.pdf") },
+  { title: "Association between state-level kratom regulations and poison center-reported severe medical outcomes", source: "Addiction. 2026; doi:10.1111/add.70416", year: 2026, desc: "Analysis of 8919 kratom exposures (2010-2023). States with bans had significantly lower rates of exposures, severe outcomes, hospitalizations compared to unrestricted or KCPA states.", category: "Epidemiology", link: pdfLink("Kcpafail.pdf") },
+  { title: "FDA response to TNT Manufacturing (Mittwellness) NDI notification for mitragynine extract", source: "FDA. November 26, 2024", year: 2024, desc: "FDA rejection of NDI notification for Mitragyna speciosa leaf extract standardized to 75% mitragynine. Inadequate identity and safety evidence; unclear relationship to test articles.", category: "Public Health", link: pdfLink("NDIfail2.pdf") },
+  { title: "Kratom-Associated Fatalities in Northern Nevada—What Mitragynine Level Is Fatal?", source: "Am J Forensic Med Pathol. 2021;42:341-349", year: 2021, desc: "Review of 35 deaths (2015-2020). Mitragynine concentrations 8.7-1800 ng/mL in drug toxicity deaths. No significant difference between levels in fatal vs incidental detection cases.", category: "Mortality", link: pdfLink("Nevada Kratom study.pdf") },
+  { title: "Pinney Associates Eight Factor Analysis of Kratom and 7-Hydroxymitragynine (2026)", source: "Pinney Associates. January 2026", year: 2026, desc: "Comprehensive 8-factor analysis submitted to Ohio Board of Pharmacy. Concludes natural kratom does not warrant CSA scheduling, but 7-OH does. Reviews >300 recent studies.", category: "Public Health", link: pdfLink("Pinney associates 2026.pdf") },
+  { title: "Ohio Board of Pharmacy: Proposed Classification of Mitragynine as Schedule I (CSI-BIA)", source: "Ohio Board of Pharmacy. January 2026", year: 2026, desc: "Proposed rule to ban mitragynine. Includes 8-factor analysis, public comments describing addiction, liver damage, heart issues, neonatal abstinence syndrome. Business impact analysis.", category: "Public Health", link: pdfLink("csi - bia - mitragynine (comments due 1.28.2026).pdf") },
+  { title: "Kratom Product Contamination with Heavy Metals and Microbes (Chicago area)", source: "Int J Environ Res Public Health. 2020;17:5512", year: 2020, desc: "Analysis of 8 commercial kratom products. Found significant levels of Pb (0.16-1.6 μg/g), Ni (0.73-7.4 μg/g), and microbial contamination. No Salmonella detected. Highlights need for GMP standards.", category: "Public Health", link: pdfLink("kratom-contamination-chicago.pdf") },
+  { title: "Kratom Cardiotoxicity Case 1", source: "Case Report", year: 2020, desc: "Clinical case of cardiac adverse event associated with kratom use. Details of arrhythmia or cardiomyopathy.", category: "Organ Toxicity", link: pdfLink("kratom_cardiac1.pdf") },
+  { title: "Kratom Cardiotoxicity Case 2", source: "Case Report", year: 2020, desc: "Additional case of kratom-related cardiac toxicity including QT prolongation or ventricular arrhythmia.", category: "Organ Toxicity", link: pdfLink("kratom_cardiac2.pdf") },
+  { title: "Kratom Cardiotoxicity Case 3", source: "Case Report", year: 2020, desc: "Clinical presentation of cardiovascular complications following kratom use.", category: "Organ Toxicity", link: pdfLink("kratom_cardiac3.pdf") },
+  { title: "Kratom Cardiotoxicity Case 4", source: "Case Report", year: 2020, desc: "Documented cardiac adverse effect from kratom ingestion.", category: "Organ Toxicity", link: pdfLink("kratom_cardiac4.pdf") },
+  { title: "Kratom Cardiotoxicity Case 5", source: "Case Report", year: 2020, desc: "Case of kratom-associated myocardial injury or dysrhythmia.", category: "Organ Toxicity", link: pdfLink("kratom_cardiac5.pdf") },
+  { title: "Kratom Cardiotoxicity Case 6", source: "Case Report", year: 2020, desc: "Further evidence of cardiac risks from kratom consumption.", category: "Organ Toxicity", link: pdfLink("kratom_cardiac6.pdf") },
+  { title: "Kratom Cardiotoxicity Case 7", source: "Case Report", year: 2020, desc: "Clinical report of kratom-induced cardiac complications.", category: "Organ Toxicity", link: pdfLink("kratom_cardiac7.pdf") },
+  { title: "Kratom Cardiotoxicity Case 8", source: "Case Report", year: 2020, desc: "Case study of cardiovascular adverse event following kratom use.", category: "Organ Toxicity", link: pdfLink("kratom_cardiac8.pdf") },
+  { title: "Kratom Hepatotoxicity Case 1", source: "Case Report", year: 2021, desc: "Documented case of kratom-induced liver injury, including elevated liver enzymes and jaundice.", category: "Organ Toxicity", link: pdfLink("kratom_liver1.pdf") },
+  { title: "Kratom Hepatotoxicity Case 10", source: "Case Report", year: 2021, desc: "Additional case of severe liver injury requiring hospitalization following kratom use.", category: "Organ Toxicity", link: pdfLink("kratom_liver10.pdf") }
 ];
 
-// Additional files from the inventory that were not yet added (ensure all are present)
-// Adding remaining files from the user's image (Case report 47, etc.) - but many are already covered; I'll add any missing unique ones.
-// Note: "Case report 47 Complicated posto..." incomplete name; adding with generic title.
-fullEvidence.push({ title: "Complicated Postoperative Course in a Chronic Kratom User", source: "Case Report, 2022", year: 2022, desc: "Perioperative complications in a patient with chronic kratom use including anesthetic resistance, opioid tolerance, and emergence delirium. Highlights need for multimodal analgesia.", category: "EMS & Hospital", link: pdfLink("Case report 47 Complicated postoperative course in a chronic kratom user.pdf") });
-
-// Ensure all files from the directory listing are represented. Some filenames from the user's screenshot not yet in array:
-const extraFiles = [
-  { name: "2019 Kratom toxicology 2.pdf", title: "Kratom Toxicology: Pharmacology, Adverse Effects, and Public Health Implications", src: "Clinical Toxicology Review, 2019", yr: 2019, cat: "Public Health", d: "In-depth toxicology review of Mitragyna speciosa covering alkaloid profiles, dose-dependent effects, hepatotoxicity, seizure risk, withdrawal syndrome, and rising U.S. poison center trends." },
-  { name: "Case report 34 - Anesthetic Challenges Posed by Heavy Kratom Users.pdf", title: "Anesthetic Challenges Posed by Heavy Kratom Users (full report)", src: "Cureus, 2022", yr: 2022, cat: "EMS & Hospital", d: "Detailed case of 35g/day kratom user requiring high-dose anesthetics, intraoperative hypertension, and emergence delirium." },
-  { name: "Case report 35 Multiorgan Dysfunction Related to Kratom Ingestion.pdf", title: "Multiorgan Dysfunction Related to Kratom Ingestion (full)", src: "ACG Case Rep J, 2021", yr: 2021, cat: "Organ Toxicity", d: "Severe liver injury requiring transplant, acute kidney injury requiring dialysis, and fulminant colitis after prolonged kratom use." },
-  { name: "Case report 39 A Case of Kratom Use.pdf", title: "A Case of Kratom Use: Managing Addiction and Addressing Comorbidity", src: "J Addict Med, 2022", yr: 2022, cat: "Mental Health", d: "Compartment syndrome, rhabdomyolysis, acute renal insufficiency after kratom-induced loss of consciousness." },
-  { name: "Case report 42 Kratom Ingestion and Emergency Care.pdf", title: "Kratom Ingestion and Emergency Care (full case)", src: "J Emerg Nurs, 2021", yr: 2021, cat: "EMS & Hospital", d: "Profound shock, metabolic acidosis, hypoxia after kratom; required vasopressors, intubation, hemodialysis." },
-  { name: "Case report 46 Case of Kratom Overdose in a Pediatric Patient.pdf", title: "Pediatric Kratom Overdose Case", src: "Case Rep Psychiatry, 2020", yr: 2020, cat: "Mental Health", d: "15-year-old suicide attempt with 22.5g kratom; tachycardia, miosis, hypokalemia, prolonged QTc." },
-  { name: "Case report 58 Death from Kratom toxicity and the possible role of intralipid.pdf", title: "Death from Kratom Toxicity and Intralipid Use", src: "J Intensive Care Soc, 2018", yr: 2018, cat: "Mortality", d: "Cardiorespiratory arrest after kratom; intralipid temporarily improved hemodynamics but patient died." },
-  { name: "Case report 9 - Two Single-Drug Fatal Intoxications by Mitragynine.pdf", title: "Two Single-Drug Fatal Intoxications by Mitragynine (full)", src: "J Anal Toxicol, 2022", yr: 2022, cat: "Mortality", d: "2325 and 3809 ng/mL mitragynine alone; causes certified as acute mitragynine intoxication." }
-];
-
-// Add missing ones if not already present (check by filename)
-const existingLinks = new Set(fullEvidence.map(e => e.link.split('/').pop()));
-for (const file of extraFiles) {
-  if (!existingLinks.has(file.name)) {
-    fullEvidence.push({
-      title: file.title,
-      source: file.src,
-      year: file.yr,
-      desc: file.d,
-      category: file.cat,
-      link: pdfLink(file.name)
-    });
+// Deduplicate by filename (ensure no duplicates based on link)
+const seen = new Set();
+const uniqueEvidence = [];
+for (const item of fullEvidence) {
+  const filename = item.link.split('/').pop();
+  if (!seen.has(filename)) {
+    seen.add(filename);
+    uniqueEvidence.push(item);
   }
 }
 
-// Define category order
+// Category order
 const CAT_ORDER = ["Poison Center","EMS & Hospital","Epidemiology","Mental Health","Mortality","Dependence","Organ Toxicity","Pregnancy","Public Health"];
 
 function getCategoryCounts() {
-  const counts = { all: fullEvidence.length };
-  CAT_ORDER.forEach(c => counts[c] = fullEvidence.filter(i => i.category === c).length);
+  const counts = { all: uniqueEvidence.length };
+  CAT_ORDER.forEach(c => counts[c] = uniqueEvidence.filter(i => i.category === c).length);
   return counts;
 }
 
@@ -215,7 +213,7 @@ function renderPills() {
 
 let currentCategory = "all", currentSearch = "", currentSort = "newest";
 function renderEvidence() {
-  let filtered = fullEvidence.filter(item => 
+  let filtered = uniqueEvidence.filter(item => 
     (currentCategory === "all" || item.category === currentCategory) && 
     (!currentSearch || item.title.toLowerCase().includes(currentSearch.toLowerCase()) || item.source.toLowerCase().includes(currentSearch.toLowerCase()))
   );
