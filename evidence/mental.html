@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Mental Health & Psychiatric Effects | Global Kratom Eradicators</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+    --navy: #0b1d34;
+    --purple: #5e3a6b;
+    --darkblue: #1a3a5f;
+    --gray-bg: #f4f7fc;
+    --border: #cfdee9;
+    --text-dark: #1e2a3e;
+    --muted: #5a6e7c;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: #eef2f8;
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+.topbar {
+    background: var(--navy);
+    color: #dbe7f4;
+    text-align: center;
+    padding: 9px 18px;
+    font-size: 13px;
+}
+.nav-bar {
+    background: white;
+    border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+    min-height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.brand img {
+    width: 54px;
+    height: 54px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.brand-title {
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 21px;
+    line-height: 1;
+}
+.brand-title span {
+    color: var(--purple);
+}
+.brand-sub {
+    margin-top: 6px;
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+.nav-links {
+    display: flex;
+    gap: 28px;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+.nav-links a {
+    color: #172033;
+}
+.nav-links a.active {
+    color: var(--purple);
+}
+.nav-links a:hover {
+    color: var(--purple);
+}
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: 0;
+    font-size: 30px;
+    cursor: pointer;
+}
+.hero-mental {
+    background: linear-gradient(90deg, rgba(11,29,52,0.92), rgba(11,29,52,0.82)), url("/evidence/assets/mental-health.jpeg");
+    background-size: cover;
+    background-position: center 35%;
+    color: white;
+    padding: 56px 0;
+}
+.hero-content h1 {
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 900;
+    margin-bottom: 16px;
+}
+.hero-content p {
+    font-size: 18px;
+    max-width: 720px;
+    color: #eaf1f9;
+}
+.key-findings {
+    background: #0b1d34;
+    color: white;
+    border-radius: 20px;
+    padding: 24px 28px;
+    margin: 32px 0 24px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+.key-findings h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+.key-findings ul {
+    margin-left: 20px;
+    margin-top: 8px;
+}
+.key-findings li {
+    margin-bottom: 8px;
+}
+.section-title {
+    font-size: 26px;
+    font-weight: 900;
+    border-left: 6px solid var(--purple);
+    padding-left: 18px;
+    margin: 48px 0 24px 0;
+}
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+.card {
+    background: white;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    transition: 0.2s;
+}
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+}
+.card-header {
+    background: var(--darkblue);
+    color: white;
+    padding: 16px 20px;
+    font-weight: 800;
+    font-size: 18px;
+}
+.card-body {
+    padding: 20px;
+}
+.card-body p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+.card-link {
+    display: inline-block;
+    background: var(--purple);
+    color: white;
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 800;
+}
+.manifestations-box {
+    background: #f4f0f7;
+    border-left: 4px solid var(--purple);
+    padding: 20px;
+    border-radius: 18px;
+    margin: 32px 0;
+}
+.manifestations-box h4 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+.manifestations-box ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    margin-left: 0;
+}
+.manifestations-box li {
+    background: white;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--darkblue);
+    border: 1px solid var(--border);
+}
+.two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+@media (max-width: 760px) {
+    .two-columns {
+        grid-template-columns: 1fr;
+    }
+    .nav-links {
+        display: none;
+    }
+    .mobile-menu-btn {
+        display: block;
+    }
+    .mobile-menu {
+        display: none;
+        background: white;
+        border-top: 1px solid var(--border);
+        padding: 14px 16px;
+    }
+    .mobile-menu.open {
+        display: block;
+    }
+    .mobile-menu a {
+        display: block;
+        padding: 12px 0;
+        font-weight: 800;
+        border-bottom: 1px solid #eef2f6;
+    }
+}
+footer {
+    background: var(--navy);
+    color: #cbd5e1;
+    text-align: center;
+    padding: 32px 18px;
+    font-size: 14px;
+    margin-top: 56px;
+}
+</style>
+</head>
+<body>
+<div class="topbar">GLOBALKRATOM.ORG · Evidence-based policy resources</div>
+<div class="nav-bar">
+  <div class="container">
+    <div class="nav-inner">
+      <a class="brand" href="/">
+        <img src="/assets/logos/logo-dark.png" alt="Global Kratom Eradicators">
+        <div>
+          <div class="brand-title">Global <span>Kratom</span> Eradicators</div>
+          <div class="brand-sub">Educate. Expose. Eradicate.</div>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/evidence/" class="active">Evidence</a>
+        <a href="/lawmakers/">For Lawmakers</a>
+        <a href="/action/">Action Center</a>
+      </div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/">Home</a>
+      <a href="/evidence/">Evidence</a>
+      <a href="/lawmakers/">For Lawmakers</a>
+      <a href="/action/">Action Center</a>
+    </div>
+  </div>
+</div>
+
+<section class="hero-mental">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Mental Health & Psychiatric Effects</h1>
+      <p>Published case reports and clinical literature documenting psychosis, suicidality, psychiatric hospitalization, behavioral dysregulation, dependence, and withdrawal associated with kratom use.</p>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <!-- Key Findings Box -->
+  <div class="key-findings">
+    <h3>⸻ Key Findings</h3>
+    <ul>
+      <li>Published reports document kratom‑associated psychosis, paranoia, hallucinations, and manic symptoms</li>
+      <li>Cases include severe behavioral dysregulation and self‑harm</li>
+      <li>Dependence and opioid‑like withdrawal syndromes are increasingly reported</li>
+      <li>Withdrawal has required ICU‑level care and medication‑assisted treatment</li>
+      <li>Psychiatric complications appear especially concerning in polysubstance and high‑dose use settings</li>
+    </ul>
+  </div>
+
+  <!-- Commonly Reported Psychiatric Manifestations Box -->
+  <div class="manifestations-box">
+    <h4>Commonly Reported Psychiatric Manifestations</h4>
+    <ul>
+      <li>Anxiety</li>
+      <li>Agitation</li>
+      <li>Insomnia</li>
+      <li>Paranoia</li>
+      <li>Hallucinations</li>
+      <li>Mania</li>
+      <li>Dysphoria</li>
+      <li>Opioid‑like withdrawal</li>
+      <li>Suicidal ideation</li>
+      <li>Behavioral dysregulation</li>
+    </ul>
+  </div>
+
+  <!-- 1. Psychosis & Psychiatric Decompensation -->
+  <div class="section-title">Psychosis & Psychiatric Decompensation</div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header">Kratom‑Induced Psychiatric Decompensation and Paranoid Delusions</div>
+      <div class="card-body"><p>A 35‑year‑old with schizoaffective disorder developed new‑onset paranoid delusions after escalating kratom use. No prior psychotic delusions in seven previous hospitalizations. Kratom’s stimulant properties likely induced psychosis.</p><a href="/evidence/library/Case report 22 Kratom-Induced Psychiatric Decompensation and Paranoid Delusions.pdf" class="card-link" target="_blank">Read Case →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">A Case Report of Kratom‑Induced Psychosis</div>
+      <div class="card-body"><p>A 43‑year‑old man with PTSD took an entire bottle of liquid kratom and developed auditory/visual hallucinations, delusions of grandeur, and insomnia for 7 days. Required hospitalization. Kratom alone induced a manic psychosis.</p><a href="/evidence/library/Case report 36 A Case Report of Kratom-Induced Psychosis.pdf" class="card-link" target="_blank">Read Case →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Kratom: a dangerous player in the opioid crisis</div>
+      <div class="card-body"><p>32‑year‑old developed severe cholestatic liver injury after kratom use; authors conclude kratom has “potentially lethal side effects” and contributes to psychiatric and medical harm.</p><a href="/evidence/library/Case report 55 Kratom a dangerous player in the opioid crisis.pdf" class="card-link" target="_blank">Read Report →</a></div>
+    </div>
+  </div>
+
+  <!-- 2. Suicidality & Self‑Harm -->
+  <div class="section-title">Suicidality & Self‑Harm</div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header">Cannabis and kratom‑induced self‑amputation of ears and penis</div>
+      <div class="card-body"><p>A 31‑year‑old man under the influence of kratom, cannabinoids, and 7‑OH amputated both auricles and his penis. Required emergency surgery, psychiatric care, and later reconstructive surgery. Extreme substance‑induced self‑harm.</p><a href="/evidence/library/Case study 1 - Case Report Cannabis and kratom-induced self-amputation of ears and penis.pdf" class="card-link" target="_blank">Read Case →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Case of Severe Kratom Addiction Contributing to a Suicide Attempt</div>
+      <div class="card-body"><p>A 38‑year‑old woman with opioid use disorder escalated to 35‑42 g/day kratom. Developed tolerance, withdrawal, and lost $75/week. Overdosed on psychiatric medications in a suicide attempt. Kratom directly contributed to a life‑threatening suicide attempt.</p><a href="/evidence/library/Case report 31 Case of Severe Kratom Addiction Contributing to a Suicide Attempt.pdf" class="card-link" target="_blank">Read Case →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">A Case of Kratom Overdose in a Pediatric Patient</div>
+      <div class="card-body"><p>15‑year‑old ingested 45 capsules (22.5g) as suicide attempt. Tachycardia, miosis, tremors, hypokalemia, elevated QTc (474 ms). Required psychiatric hospitalization.</p><a href="/evidence/library/Case report 46 Case of Kratom Overdose in a Pediatric Patient.pdf" class="card-link" target="_blank">Read Case →</a></div>
+    </div>
+  </div>
+
+  <!-- 3. Dependence & Withdrawal -->
+  <div class="section-title">Dependence & Withdrawal</div>
+  <div class="two-columns">
+    <div class="card">
+      <div class="card-header">A Case Report of Kratom Addiction and Withdrawal</div>
+      <div class="card-body"><p>A 37‑year‑old woman developed severe opioid‑like withdrawal after 2 years of kratom extract use, requiring high‑dose clonidine (2 mg over 36 hours) and hydroxyzine. Lost significant weight, hid use from family. Classic addiction and withdrawal.</p><a href="/evidence/library/Case report 61 A Case Report of Kratom Addiction and Withdrawal.pdf" class="card-link" target="_blank">Read Report →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Precipitated withdrawal with kratom following naltrexone</div>
+      <div class="card-body"><p>Naltrexone triggered severe opioid‑like withdrawal in a daily kratom user, requiring ICU and high‑dose benzodiazepines. Demonstrates physical dependence akin to classic opioids.</p><a href="/evidence/library/Case report 26 Precipitated withdrawal with kratom.pdf" class="card-link" target="_blank">Read Case →</a></div>
+    </div>
+  </div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header">The Complexities of Kratom: Dependence, Withdrawal, Buprenorphine</div>
+      <div class="card-body"><p>Chronic kratom user developed withdrawal (COWS 9); required buprenorphine for symptom control. Opioid‑type dependence and withdrawal meeting DSM‑5 criteria.</p><a href="/evidence/library/Case report 21 The Complexities of Kratom.pdf" class="card-link" target="_blank">Read Report →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Treatment of Kratom Use Disorder With a Classical Tricyclic Antidepressant</div>
+      <div class="card-body"><p>A 44‑year‑old man developed severe anxiety, dysphoria, and insomnia during kratom withdrawal that persisted for months. Responded to clomipramine after multiple antidepressants failed.</p><a href="/evidence/library/Case report 11 Treatment of Kratom Use Disorder With a Classical Tricyclic Antidepressant.pdf" class="card-link" target="_blank">Read Report →</a></div>
+    </div>
+  </div>
+
+  <!-- 4. Psychiatric Hospitalization & Emergency Care -->
+  <div class="section-title">Psychiatric Hospitalization & Emergency Care</div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header">Complicated postoperative course secondary to kratom withdrawal</div>
+      <div class="card-body"><p>A 55‑year‑old woman developed severe withdrawal (hallucinations, fever, tachycardia, hypotension) after elective surgery, leading to ICU admission for aspiration pneumonia. Kratom dependence complicated routine medical care.</p><a href="/evidence/library/Case report 47 Complicated postoperative course secondary to kratom withdrawal.pdf" class="card-link" target="_blank">Read Case →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Kratom: a dangerous player in the opioid crisis</div>
+      <div class="card-body"><p>32‑year‑old required hospitalization for severe liver injury and psychiatric evaluation after kratom use. Highlights need for psychiatric and medical comanagement.</p><a href="/evidence/library/Case report 55 Kratom a dangerous player in the opioid crisis.pdf" class="card-link" target="_blank">Read Report →</a></div>
+    </div>
+  </div>
+
+  <!-- 5. Behavioral Toxicity -->
+  <div class="section-title">Behavioral Toxicity</div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header">Cannabis and kratom‑induced self‑amputation (extreme dysregulation)</div>
+      <div class="card-body"><p>This case represents one of the most extreme forms of substance‑induced self‑harm, showing that kratom can precipitate psychotic episodes leading to catastrophic mutilation.</p><a href="/evidence/library/Case study 1 - Case Report Cannabis and kratom-induced self-amputation of ears and penis.pdf" class="card-link" target="_blank">Read Case →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Kratom-Induced Psychiatric Decompensation – aggression, hostility</div>
+      <div class="card-body"><p>Patient became hostile, verbally abusive, accused family members of theft, and resigned from job – severe behavioral dysregulation requiring psychiatric admission.</p><a href="/evidence/library/Case report 22 Kratom-Induced Psychiatric Decompensation and Paranoid Delusions.pdf" class="card-link" target="_blank">Read Case →</a></div>
+    </div>
+  </div>
+
+  <!-- 6. Addiction Medicine Perspective -->
+  <div class="section-title">Addiction Medicine Perspective</div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header">Case Report: Treatment of Kratom Addiction with Buprenorphine/Naloxone</div>
+      <div class="card-body"><p>A man in his 40s with 12 years of kratom use escalated to 40 g/day. Successfully tapered off kratom over 6 months using buprenorphine/naloxone. Need for opioid‑agonist treatment proves opioid‑like addiction potential.</p><a href="/evidence/library/Casestudy5.pdf" class="card-link" target="_blank">Read Case →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">A Case of Potential Pharmacokinetic Kratom‑Drug Interactions</div>
+      <div class="card-body"><p>Patient on ~90g kratom/day developed serotonin syndrome and QTc prolongation from drug interactions. Required buprenorphine to stop kratom. Demonstrates kratom’s abuse liability and need for medication‑assisted treatment.</p><a href="/evidence/library/Case report 10 - A Case of Potential Pharmacokinetic Kratom.pdf" class="card-link" target="_blank">Read Report →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Treatment of Kratom Use Disorder With a Classical Tricyclic Antidepressant</div>
+      <div class="card-body"><p>Clomipramine successfully treated prolonged withdrawal‑associated anxiety and dysphoria after kratom cessation – highlights psychiatric complexity of kratom dependence.</p><a href="/evidence/library/Case report 11 Treatment of Kratom Use Disorder With a Classical Tricyclic Antidepressant.pdf" class="card-link" target="_blank">Read Report →</a></div>
+    </div>
+  </div>
+
+  <!-- Clinical Summary -->
+  <div class="manifestations-box" style="background:#f0f4fa; border-left-color: var(--purple);">
+    <h4 style="font-size: 18px;">⸻ Clinical Summary</h4>
+    <p style="font-size: 14px;">The psychiatric literature on kratom, though based primarily on case reports and case series, documents a recurring pattern of acute psychiatric decompensation, psychosis, suicidality, severe behavioral dysregulation, and opioid‑like dependence/withdrawal. These events have required psychiatric hospitalization, intensive care, and medication‑assisted treatment. While causality is confounded by polysubstance use and preexisting psychiatric conditions in many cases, the temporal relationship and symptom profiles suggest kratom can act as a behavioral‑health precipitant in vulnerable individuals. The emergence of severe self‑harm, paranoia, and withdrawal syndromes indicates that kratom is not a benign botanical but carries meaningful psychiatric and addiction risk.</p>
+  </div>
+</div>
+
+<footer>© 2026 Global Kratom Eradicators. Evidence‑based policy resources.</footer>
+
+<script>
+  document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  });
+</script>
+</body>
+</html>
