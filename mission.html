@@ -11,7 +11,7 @@
   <link rel="shortcut icon" href="assets/logos/favicon.png">
   <link rel="apple-touch-icon" href="assets/logos/favicon.png">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -103,15 +103,106 @@
       color: #c8102e;
     }
 
-    /* mission hero – full‑width image */
+    /* mission hero section with background image and overlaid text */
     .mission-hero {
-      width: 100%;
-      background: #fff;
+      position: relative;
+      background: url("mission-hero.png") no-repeat center center;
+      background-size: cover;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
     }
-    .mission-hero img {
+    .mission-overlay {
+      max-width: 1100px;
+      margin: 0 auto;
       width: 100%;
-      height: auto;
-      display: block;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(2px);
+      border-radius: 32px;
+      padding: 48px 56px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+    .mission-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .mission-header h1 {
+      font-size: 52px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      color: #0b1d34;
+      margin-bottom: 16px;
+    }
+    .mission-header p {
+      font-size: 20px;
+      color: #2c3e50;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .mission-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .mission-col ul {
+      list-style: none;
+    }
+    .mission-col li {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #0b1d34;
+    }
+    .mission-col li::before {
+      content: "✓";
+      color: #c8102e;
+      font-weight: 900;
+      font-size: 22px;
+    }
+    .badge-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      margin-top: 32px;
+      padding-top: 32px;
+      border-top: 2px solid #e2e8f0;
+    }
+    .badge {
+      text-align: center;
+      flex: 1;
+    }
+    .badge-icon {
+      width: 70px;
+      height: 70px;
+      background: #0b1d34;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: 900;
+      margin: 0 auto 12px;
+    }
+    .badge p {
+      font-weight: 800;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #1e293b;
+    }
+    .footer-tagline {
+      text-align: center;
+      font-weight: 700;
+      color: #c8102e;
+      margin-top: 32px;
+      font-size: 18px;
     }
 
     footer {
@@ -230,6 +321,24 @@
       nav {
         display: none;
       }
+      .mission-overlay {
+        padding: 32px 20px;
+      }
+      .mission-header h1 {
+        font-size: 36px;
+      }
+      .mission-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .badge-row {
+        flex-direction: column;
+        align-items: center;
+      }
+      .badge {
+        width: 100%;
+        max-width: 200px;
+      }
       .footer-grid {
         grid-template-columns: 1fr;
         gap: 32px;
@@ -274,7 +383,42 @@
 
 <main>
   <div class="mission-hero">
-    <img src="mission-hero.png" alt="Global Kratom Eradicators Mission – Evidence. Collaboration. Public Health. Pharmacist led, clinician collaboration, parent perspective.">
+    <div class="mission-overlay">
+      <div class="mission-header">
+        <h1>Evidence.<br>Collaboration.<br>Public Health.</h1>
+        <p>Rigorous evidence compiled by a pharmacist, in collaboration with clinicians and parents — to support informed decisions for safer communities.</p>
+      </div>
+      <div class="mission-grid">
+        <div class="mission-col">
+          <ul>
+            <li>Toxicology Reports</li>
+            <li>Hospital & EMS Data</li>
+            <li>Surveillance Systems</li>
+            <li>Clinical Literature</li>
+            <li>Forensic Findings</li>
+          </ul>
+        </div>
+        <div class="mission-col">
+          <ul>
+            <li>Pharmacist Led</li>
+            <li>Clinician Collaboration</li>
+            <li>Parent Perspective</li>
+            <li>Data Transparency</li>
+            <li>Accountability</li>
+          </ul>
+        </div>
+      </div>
+      <div class="badge-row">
+        <div class="badge"><div class="badge-icon">📋</div><p>TOXICOLOGY REPORTS</p></div>
+        <div class="badge"><div class="badge-icon">🚑</div><p>HOSPITAL & EMS DATA</p></div>
+        <div class="badge"><div class="badge-icon">📊</div><p>SURVEILLANCE SYSTEMS</p></div>
+        <div class="badge"><div class="badge-icon">📚</div><p>CLINICAL LITERATURE</p></div>
+        <div class="badge"><div class="badge-icon">🔬</div><p>FORENSIC FINDINGS</p></div>
+      </div>
+      <div class="footer-tagline">
+        DATA TRANSPARENCY · ACCOUNTABILITY
+      </div>
+    </div>
   </div>
 </main>
 
