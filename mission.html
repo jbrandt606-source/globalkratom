@@ -34,11 +34,6 @@
       display: block;
       max-width: 100%;
     }
-    .container {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
 
     /* top bar */
     .topbar {
@@ -64,6 +59,9 @@
       align-items: center;
       justify-content: space-between;
       gap: 22px;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
     }
     .brand {
       display: flex;
@@ -105,42 +103,34 @@
       color: #c8102e;
     }
 
-    /* mission content */
-    .mission-hero {
-      background: #f9fafc;
-      padding: 48px 0 32px;
-      text-align: center;
+    /* mission full‑width image section */
+    .mission-full {
+      width: 100%;
+      min-height: calc(100vh - 120px); /* fill viewport minus header + topbar */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
     }
-    .mission-hero h1 {
-      font-size: 48px;
-      font-weight: 900;
-      color: #0b1d34;
-      margin-bottom: 16px;
-    }
-    .mission-image {
-      max-width: 100%;
-      margin: 0 auto;
-      border-radius: 16px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-    }
-    .mission-container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 20px;
+    .mission-full img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      max-height: calc(100vh - 120px);
     }
 
-    /* footer */
     footer {
       background: #0b1d34;
       color: #fff;
       padding: 38px 0 18px;
-      margin-top: 48px;
     }
     .footer-grid {
       display: grid;
       grid-template-columns: 1.6fr 1fr 1fr 1fr;
       gap: 34px;
-      padding-bottom: 28px;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px 28px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.16);
     }
     .footer-brand {
@@ -214,22 +204,21 @@
       justify-content: space-between;
       gap: 20px;
       flex-wrap: wrap;
-      padding-top: 16px;
+      max-width: 1180px;
+      margin: 16px auto 0;
+      padding: 0 24px;
       color: #cbd5e1;
       font-size: 12px;
     }
 
     @media (max-width: 760px) {
-      .container {
-        padding: 0 20px;
-      }
       .topbar {
         font-size: 11px;
         padding: 10px 12px;
       }
       .nav {
         height: auto;
-        padding: 14px 0;
+        padding: 14px 20px;
         flex-wrap: wrap;
         gap: 12px;
       }
@@ -246,12 +235,13 @@
       nav {
         display: none;
       }
-      .mission-hero h1 {
-        font-size: 32px;
+      .mission-full {
+        min-height: calc(100vh - 100px);
       }
       .footer-grid {
         grid-template-columns: 1fr;
         gap: 32px;
+        padding: 0 20px 28px;
       }
       .footer-brand {
         flex-wrap: wrap;
@@ -260,6 +250,7 @@
         flex-direction: column;
         text-align: center;
         gap: 8px;
+        padding: 0 20px;
       }
     }
   </style>
@@ -269,7 +260,7 @@
 <div class="topbar">GLOBALKRATOM.ORG · Evidence-based policy resources for lawmakers, clinicians, journalists, and families</div>
 
 <header>
-  <div class="container nav">
+  <div class="nav">
     <a class="brand" href="/">
       <img src="assets/logos/logo-dark.png" alt="Global Kratom Eradicators logo">
       <div>
@@ -290,24 +281,20 @@
 </header>
 
 <main>
-  <div class="mission-hero">
-    <div class="container">
-      <h1>Our Mission</h1>
-    </div>
-  </div>
-  <div class="mission-container">
-    <img class="mission-image" src="mission.png" alt="Global Kratom Eradicators Mission Statement – Evidence. Collaboration. Public Health. Pharmacist led, clinician collaboration, parent perspective.">
+  <!-- Full‑page mission image – no extra padding, fills width and most of the viewport height -->
+  <div class="mission-full">
+    <img src="mission.png" alt="Global Kratom Eradicators Mission Statement – Evidence. Collaboration. Public Health. Pharmacist led, clinician collaboration, parent perspective.">
   </div>
 </main>
 
 <footer>
-  <div class="container footer-grid">
+  <div class="footer-grid">
     <div class="footer-brand"><img src="assets/logos/logo-dark.png" alt="logo"><div><h3>Global <span>Kratom</span> Eradicators</h3><p>Educate. Expose. Eradicate.</p><p>Promoting truth, accountability, public health, and stronger policy protections.</p></div></div>
-    <div><h4>Quick Links</h4><a href="#issues">Issues</a><a href="/evidence/index.html">Evidence</a><a href="#lawmakers">For Lawmakers</a><a href="#action">Action Center</a><a href="/mission.html">Mission</a></div>
+    <div><h4>Quick Links</h4><a href="/evidence/index.html">Evidence</a><a href="#lawmakers">For Lawmakers</a><a href="https://antikratom.org" target="_blank" rel="noopener noreferrer">Action Center</a><a href="/mission.html">Mission</a></div>
     <div><h4>Resources</h4><a href="/evidence/index.html">Research Library</a><a href="#">Data & Reports</a><a href="#">Legislation Tracker</a><a href="#">Media Kit</a></div>
     <div><h4>Stay Informed</h4><p>Get updates on research, legislation, and action alerts.</p><form class="signup"><input type="email" placeholder="Email address"><button type="submit">Sign Up</button></form></div>
   </div>
-  <div class="container footer-bottom"><div>© 2026 Global Kratom Eradicators. All rights reserved.</div><div>Educational and legislative reference.</div></div>
+  <div class="footer-bottom"><div>© 2026 Global Kratom Eradicators. All rights reserved.</div><div>Educational and legislative reference.</div></div>
 </footer>
 
 </body>
