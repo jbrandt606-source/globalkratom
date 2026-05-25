@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Epidemiology & Prevalence | Global Kratom Eradicators</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+    --navy: #0b1d34;
+    --teal: #2c6e6e;
+    --darkblue: #1a3a5f;
+    --gray-bg: #f4f7fc;
+    --border: #cfdee9;
+    --text-dark: #1e2a3e;
+    --muted: #5a6e7c;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: #eef2f8;
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+.topbar {
+    background: var(--navy);
+    color: #dbe7f4;
+    text-align: center;
+    padding: 9px 18px;
+    font-size: 13px;
+}
+.nav-bar {
+    background: white;
+    border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+    min-height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.brand img {
+    width: 54px;
+    height: 54px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.brand-title {
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 21px;
+    line-height: 1;
+}
+.brand-title span {
+    color: var(--teal);
+}
+.brand-sub {
+    margin-top: 6px;
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+.nav-links {
+    display: flex;
+    gap: 28px;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+.nav-links a {
+    color: #172033;
+}
+.nav-links a.active {
+    color: var(--teal);
+}
+.nav-links a:hover {
+    color: var(--teal);
+}
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: 0;
+    font-size: 30px;
+    cursor: pointer;
+}
+.hero-epidemiology {
+    background: linear-gradient(90deg, rgba(11,29,52,0.92), rgba(11,29,52,0.82)), url("/evidence/assets/epidemiology.jpeg");
+    background-size: cover;
+    background-position: center 35%;
+    color: white;
+    padding: 56px 0;
+}
+.hero-content h1 {
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 900;
+    margin-bottom: 16px;
+}
+.hero-content p {
+    font-size: 18px;
+    max-width: 720px;
+    color: #eaf1f9;
+}
+.key-findings {
+    background: #0b1d34;
+    color: white;
+    border-radius: 20px;
+    padding: 24px 28px;
+    margin: 32px 0 24px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+.key-findings h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+.key-findings ul {
+    margin-left: 20px;
+    margin-top: 8px;
+}
+.key-findings li {
+    margin-bottom: 8px;
+}
+.section-title {
+    font-size: 26px;
+    font-weight: 900;
+    border-left: 6px solid var(--teal);
+    padding-left: 18px;
+    margin: 48px 0 24px 0;
+}
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+.card {
+    background: white;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+.card-header {
+    background: var(--darkblue);
+    color: white;
+    padding: 16px 20px;
+    font-weight: 800;
+    font-size: 18px;
+}
+.card-body {
+    padding: 20px;
+}
+.card-body p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+.card-link {
+    display: inline-block;
+    background: var(--teal);
+    color: white;
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 800;
+}
+.chart-container {
+    background: white;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    padding: 20px;
+    margin-bottom: 24px;
+    overflow-x: auto;
+}
+.chart-title {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 8px;
+}
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    min-width: 500px;
+}
+.data-table th, .data-table td {
+    padding: 10px 8px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+}
+.data-table th {
+    font-weight: 800;
+    background: #f8fafc;
+}
+.bar-chart {
+    margin: 20px 0;
+}
+.year-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    flex-wrap: wrap;
+}
+.year-label {
+    width: 60px;
+    font-weight: 700;
+}
+.bar {
+    flex: 1;
+    min-width: 120px;
+    height: 32px;
+    background: #e2e8f0;
+    border-radius: 16px;
+    overflow: hidden;
+}
+.bar-fill {
+    height: 100%;
+    background: var(--darkblue);
+    width: 0%;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 8px;
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+}
+.two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+.interpret-box {
+    background: #f0f4fa;
+    border-left: 4px solid var(--teal);
+    padding: 24px;
+    border-radius: 18px;
+    margin: 32px 0 40px;
+}
+@media (max-width: 760px) {
+    .two-columns {
+        grid-template-columns: 1fr;
+    }
+    .nav-links {
+        display: none;
+    }
+    .mobile-menu-btn {
+        display: block;
+    }
+    .mobile-menu {
+        display: none;
+        background: white;
+        border-top: 1px solid var(--border);
+        padding: 14px 16px;
+    }
+    .mobile-menu.open {
+        display: block;
+    }
+    .mobile-menu a {
+        display: block;
+        padding: 12px 0;
+        font-weight: 800;
+        border-bottom: 1px solid #eef2f6;
+    }
+    .year-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .bar {
+        width: 100%;
+    }
+}
+footer {
+    background: var(--navy);
+    color: #cbd5e1;
+    text-align: center;
+    padding: 32px 18px;
+    font-size: 14px;
+    margin-top: 56px;
+}
+</style>
+</head>
+<body>
+<div class="topbar">GLOBALKRATOM.ORG · Evidence-based policy resources</div>
+<div class="nav-bar">
+  <div class="container">
+    <div class="nav-inner">
+      <a class="brand" href="/">
+        <img src="/assets/logos/logo-dark.png" alt="Global Kratom Eradicators">
+        <div>
+          <div class="brand-title">Global <span>Kratom</span> Eradicators</div>
+          <div class="brand-sub">Educate. Expose. Eradicate.</div>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/evidence/" class="active">Evidence</a>
+        <a href="/lawmakers/">For Lawmakers</a>
+        <a href="/action/">Action Center</a>
+      </div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/">Home</a>
+      <a href="/evidence/">Evidence</a>
+      <a href="/lawmakers/">For Lawmakers</a>
+      <a href="/action/">Action Center</a>
+    </div>
+  </div>
+</div>
+
+<section class="hero-epidemiology">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Epidemiology & Prevalence</h1>
+      <p>National surveys, poison‑center surveillance, mortality trends, and population‑level data related to kratom use and adverse outcomes in the United States.</p>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <!-- Key Findings Box -->
+  <div class="key-findings">
+    <h3>⸻ Key Findings</h3>
+    <ul>
+      <li>CDC poison‑center reports increased approximately <strong>1,200%</strong> from 2015–2025</li>
+      <li>Millions of Americans report lifetime kratom exposure (estimated 2.1 M past‑year users)</li>
+      <li>Severe outcomes and hospitalizations increased alongside exposure reports</li>
+      <li>Adults aged 40–59 showed rapidly rising exposure trends</li>
+      <li>Multiple‑substance exposures were associated with the highest morbidity and mortality</li>
+      <li>Pediatric exposures continue to occur annually (record 150 cases in 2024)</li>
+    </ul>
+  </div>
+
+  <!-- 1. National Surveillance Trends -->
+  <div class="section-title">National Surveillance Trends</div>
+  <div class="chart-container">
+    <div class="chart-title">Kratom Exposures Reported to U.S. Poison Centers (2015–2025)</div>
+    <div class="bar-chart">
+      <div class="year-bar"><span class="year-label">2015</span><div class="bar"><div class="bar-fill" style="width:8%">200</div></div></div>
+      <div class="year-bar"><span class="year-label">2020</span><div class="bar"><div class="bar-fill" style="width:48%">1,262</div></div></div>
+      <div class="year-bar"><span class="year-label">2021</span><div class="bar"><div class="bar-fill" style="width:58%">1,524</div></div></div>
+      <div class="year-bar"><span class="year-label">2022</span><div class="bar"><div class="bar-fill" style="width:49%">1,278</div></div></div>
+      <div class="year-bar"><span class="year-label">2023</span><div class="bar"><div class="bar-fill" style="width:57%">1,489</div></div></div>
+      <div class="year-bar"><span class="year-label">2024</span><div class="bar"><div class="bar-fill" style="width:63%">1,645</div></div></div>
+      <div class="year-bar"><span class="year-label">2025</span><div class="bar"><div class="bar-fill" style="width:88%">2,300</div></div></div>
+    </div>
+    <p style="font-size:13px; margin-top:8px;"><strong>Record high: 3,344 reports in a single year (CDC MMWR 2026).</strong> 1,200% increase from 2015 to 2025.</p>
+    <p style="font-size:12px; color:var(--muted);">Source: America’s Poison Centers NPDS; CDC MMWR 2026.</p>
+  </div>
+
+  <div class="chart-container">
+    <div class="chart-title">SUDORS – Kratom/Mitragynine Detected in Overdose Deaths (2020–2024)</div>
+    <div style="overflow-x: auto;">
+      <table class="data-table">
+        <thead><tr><th>Year</th><th>Jurisdictions</th><th>Deaths with kratom detected</th></tr></thead>
+        <tbody>
+          <tr><td>2020</td><td>32</td><td>866</td></tr>
+          <tr><td>2021</td><td>33</td><td>1,016</td></tr>
+          <tr><td>2022</td><td>34</td><td>1,017</td></tr>
+          <tr><td>2023</td><td>38</td><td>1,151</td></tr>
+          <tr><td>2024</td><td>43</td><td>995</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:12px; margin-top:12px;">Source: CDC SUDORS. 2024 apparent decline occurs despite expanded jurisdiction coverage (43 states). Testing practices and polysubstance patterns influence detection.</p>
+  </div>
+
+  <div class="chart-container">
+    <div class="chart-title">Florida Medical Examiners Commission – Mitragynine in Post‑Mortem Toxicology</div>
+    <div style="overflow-x: auto;">
+      <table class="data-table">
+        <thead><tr><th>Year</th><th>Total Occurrences</th><th>Cause of Death</th><th>Present at Death</th><th>Cause %</th><th>Present %</th></tr></thead>
+        <tbody>
+          <tr><td>2020</td><td>246</td><td>166</td><td>80</td><td>67%</td><td>33%</td></tr>
+          <tr><td>2021</td><td>305</td><td>187</td><td>118</td><td>61%</td><td>39%</td></tr>
+          <tr><td>2022</td><td>308</td><td>172</td><td>136</td><td>56%</td><td>44%</td></tr>
+          <tr><td>2023</td><td>274</td><td>182</td><td>92</td><td>66%</td><td>34%</td></tr>
+          <tr><td>2024*</td><td>224</td><td>131</td><td>93</td><td>58%</td><td>42%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:12px; margin-top:12px;">*2024 interim/semi‑annual report. Across all years, mitragynine was determined to be a <strong>cause of death in the majority of detections</strong> – more often causal than incidental.</p>
+  </div>
+
+  <!-- 2. Population Prevalence -->
+  <div class="section-title">Population Prevalence</div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header">National Survey on Drug Use and Health (NSDUH)</div>
+      <div class="card-body"><p>Estimated 1.7 million Americans aged ≥12 used kratom in 2021. Lifetime prevalence ~1.3%, past‑year 0.8% (≈2.1 million adults). Users more likely male, younger, and with higher rates of polysubstance use.</p><a href="/evidence/library/2019 Kratom toxicology 2.pdf" class="card-link" target="_blank">Read Study →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Schimmel et al. (2021) – Cross‑sectional prevalence</div>
+      <div class="card-body"><p>First national U.S. prevalence estimate: 0.8% past‑year, 1.4% lifetime. Users tended to have more serious substance abuse profiles compared to non‑users.</p><a href="/evidence/library/2019 Kratom toxicology 2.pdf" class="card-link" target="_blank">View Study →</a></div>
+    </div>
+  </div>
+
+  <!-- 3. High‑Risk Populations -->
+  <div class="section-title">High‑Risk Populations</div>
+  <div class="two-columns">
+    <div class="chart-container">
+      <div class="chart-title">Older Adults (≥60 years)</div>
+      <p>From 2014–2019, 4.6% of kratom exposures (162 cases) were adults ≥60. Among ≥70 years, <strong>21.9%</strong> were adverse reactions (drug interactions) – more than double the rate in younger adults. Neurological and cardiovascular effects common; 23 deaths reported.</p>
+      <a href="/evidence/library/poisonkratom1.pdf" class="card-link" style="margin-top:12px; display:inline-block;">Read Study →</a>
+    </div>
+    <div class="chart-container">
+      <div class="chart-title">Pediatric Exposures (2019–2024)</div>
+      <p><strong>Total pediatric cases: 707 (2019–2024)</strong>. Children under 5 are the largest age group; 2024 saw a record 107 exposures in <5 yrs. Pediatric exposures increased from 102 (2019) to 150 (2024), driven almost entirely by the youngest children.</p>
+      <a href="/evidence/library/Case report 46 Case of Kratom Overdose in a Pediatric Patient.pdf" class="card-link" style="margin-top:12px; display:inline-block;">Read Report →</a>
+    </div>
+  </div>
+
+  <!-- 4. Hospitalization & Severe Outcome Trends -->
+  <div class="section-title">Hospitalization & Severe Outcome Trends</div>
+  <div class="chart-container">
+    <div class="chart-title">Serious Medical Outcomes (NPDS Single‑Substance)</div>
+    <div style="overflow-x: auto;">
+      <table class="data-table">
+        <thead><tr><th>Year</th><th>Moderate</th><th>Major</th><th>Death</th><th>Total Known</th><th>% Moderate/Major/Death</th></tr></thead>
+        <tbody>
+          <tr><td>2019</td><td>275</td><td>78</td><td>3</td><td>622</td><td>57.2%</td></tr>
+          <tr><td>2020</td><td>259</td><td>66</td><td>5</td><td>564</td><td>58.5%</td></tr>
+          <tr><td>2021</td><td>305</td><td>67</td><td>4</td><td>658</td><td>57.1%</td></tr>
+          <tr><td>2022</td><td>248</td><td>55</td><td>3</td><td>539</td><td>56.8%</td></tr>
+          <tr><td>2023</td><td>305</td><td>70</td><td>5</td><td>624</td><td>60.9%</td></tr>
+          <tr><td>2024</td><td>332</td><td>76</td><td>7</td><td>740</td><td>56.1%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:16px;">2023 NPDS “New & Emerging” analysis: among single‑substance cases with known outcomes, <strong>57.6%</strong> produced moderate/major/fatal effect – third‑highest after tianeptine and phenibut. <strong>34.3%</strong> resulted in hospital admission.</p>
+  </div>
+
+  <!-- 5. Polysubstance Exposure -->
+  <div class="section-title">Polysubstance Exposure</div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header">CDC Overdose Deaths (2016–2017)</div>
+      <div class="card-body"><p>152 deaths with kratom detected; 91 listed as cause. Fentanyl/fentanyl analogs present in <strong>65%</strong>; heroin 33%; benzodiazepines 22%. Polysubstance use common, but kratom contributed causally in most cases where it was detected.</p><a href="/evidence/library/CDCkratom3.pdf" class="card-link" target="_blank">Read Report →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Post et al. (2019) – NPDS 2011–2017</div>
+      <div class="card-body"><p>Multiple‑substance exposures associated with <strong>2.8× higher odds of hospital admission</strong> and <strong>2.25× higher odds of serious medical outcome</strong> compared to single‑substance exposures.</p><a href="/evidence/library/poisonkratom2.pdf" class="card-link" target="_blank">Read Study →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">KCPA state regulation study (2026)</div>
+      <div class="card-body"><p>States with kratom bans had significantly lower exposure rates and severe outcomes than unrestricted or KCPA states, suggesting prohibition reduces polysubstance‑related harm.</p><a href="/evidence/library/Kcpafail.pdf" class="card-link" target="_blank">Read Study →</a></div>
+    </div>
+  </div>
+
+  <!-- 6. Mortality Surveillance -->
+  <div class="section-title">Mortality Surveillance</div>
+  <div class="two-columns">
+    <div class="chart-container">
+      <div class="chart-title">Nevada Kratom Study (2021)</div>
+      <p>35 kratom‑positive deaths; in one case mitragynine was the sole intoxicant (950 ng/mL). Wide concentration range in fatalities shows no safe dose.</p>
+      <a href="/evidence/library/Nevada Kratom study.pdf" class="card-link" target="_blank">Read Study →</a>
+    </div>
+    <div class="chart-container">
+      <div class="chart-title">Papsun et al. (2023) – Forensic Implications</div>
+      <p>Analysis of 6,860 blood specimens; mitragynine up to 11,000 ng/mL. Co‑positivity with fentanyl (62%) and methamphetamine (19%). High concentrations (>1000 ng/mL) associated with death.</p>
+      <a href="/evidence/library/Forensic Implications of Kratom-Kratom Toxicity Correlation with Mitragynine Concentrations and Polypharmacy.pdf" class="card-link" target="_blank">Read Study →</a>
+    </div>
+  </div>
+
+  <!-- 7. Public Health Interpretation -->
+  <div class="interpret-box">
+    <h4 style="font-size: 20px; font-weight: 800; margin-bottom: 12px;">⸻ Public Health Interpretation</h4>
+    <p style="font-size: 16px; line-height: 1.5;">Population‑level surveillance data demonstrate increasing kratom‑related exposures, healthcare utilization, and severe outcomes across multiple demographic groups in the United States. Poison center calls have grown >1,200% in a decade, overdose deaths with kratom detection exceed 1,000 annually, and serious medical outcomes occur in more than half of single‑substance cases. Co‑exposure with fentanyl, benzodiazepines, and stimulants is common, but kratom is frequently determined to be a causal contributor in forensic and medical examiner investigations. These trends, documented by CDC NPDS, SUDORS, and state MEC systems, indicate that kratom represents a measurable and growing public health burden requiring continued surveillance and regulatory attention.</p>
+  </div>
+</div>
+
+<footer>© 2026 Global Kratom Eradicators. Evidence‑based policy resources.</footer>
+
+<script>
+  document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  });
+</script>
+</body>
+</html>
