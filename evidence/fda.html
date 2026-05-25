@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Federal Regulatory Actions | Global Kratom Eradicators</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+    --navy: #0b1d34;
+    --steel: #2c3e66;
+    --red: #b22234;
+    --gray-bg: #f4f7fc;
+    --border: #cfdee9;
+    --text-dark: #1e2a3e;
+    --muted: #5a6e7c;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: #eef2f8;
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+/* header / nav */
+.topbar {
+    background: var(--navy);
+    color: #dbe7f4;
+    text-align: center;
+    padding: 9px 18px;
+    font-size: 13px;
+}
+.nav-bar {
+    background: white;
+    border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+    min-height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.brand img {
+    width: 54px;
+    height: 54px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.brand-title {
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 21px;
+    line-height: 1;
+}
+.brand-title span {
+    color: var(--red);
+}
+.brand-sub {
+    margin-top: 6px;
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+.nav-links {
+    display: flex;
+    gap: 28px;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+.nav-links a {
+    color: #172033;
+}
+.nav-links a.active {
+    color: var(--red);
+}
+.nav-links a:hover {
+    color: var(--red);
+}
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: 0;
+    font-size: 30px;
+    cursor: pointer;
+}
+/* hero */
+.hero-fda {
+    background: linear-gradient(90deg, rgba(11,29,52,0.92), rgba(11,29,52,0.82)), url("/evidence/assets/fda.jpg");
+    background-size: cover;
+    background-position: center 35%;
+    color: white;
+    padding: 56px 0;
+}
+.hero-content h1 {
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 900;
+    margin-bottom: 16px;
+}
+.hero-content p {
+    font-size: 18px;
+    max-width: 720px;
+    color: #eaf1f9;
+}
+/* section styling */
+.section-title {
+    font-size: 26px;
+    font-weight: 900;
+    border-left: 6px solid var(--red);
+    padding-left: 18px;
+    margin: 48px 0 24px 0;
+}
+.subtitle {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--red);
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+.card {
+    background: white;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    transition: 0.2s;
+}
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+}
+.card-header {
+    background: var(--navy);
+    color: white;
+    padding: 16px 20px;
+    font-weight: 800;
+    font-size: 18px;
+}
+.card-body {
+    padding: 20px;
+}
+.card-body p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+.card-link {
+    display: inline-block;
+    background: var(--red);
+    color: white;
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 800;
+    margin-top: 8px;
+}
+.card-link:hover {
+    opacity: 0.9;
+}
+/* charts */
+.chart-container {
+    background: white;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    padding: 20px;
+    margin-bottom: 24px;
+}
+.chart-title {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 8px;
+}
+.stats-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+.stat-badge {
+    background: #f0f4fa;
+    border-radius: 24px;
+    padding: 12px 20px;
+    text-align: center;
+    flex: 1;
+    min-width: 120px;
+}
+.stat-number {
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--red);
+    line-height: 1;
+}
+.stat-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+}
+.year-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+.year-label {
+    width: 60px;
+    font-weight: 700;
+}
+.bar {
+    flex: 1;
+    height: 28px;
+    background: #e2e8f0;
+    border-radius: 14px;
+    overflow: hidden;
+}
+.bar-fill {
+    height: 100%;
+    background: var(--navy);
+    width: 0%;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 8px;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+}
+.reaction-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+.reaction-table th, .reaction-table td {
+    padding: 10px 8px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+}
+.reaction-table th {
+    font-weight: 800;
+    background: #f8fafc;
+}
+.two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+@media (max-width: 760px) {
+    .two-columns {
+        grid-template-columns: 1fr;
+    }
+    .nav-links {
+        display: none;
+    }
+    .mobile-menu-btn {
+        display: block;
+    }
+    .mobile-menu {
+        display: none;
+        background: white;
+        border-top: 1px solid var(--border);
+        padding: 14px 16px;
+    }
+    .mobile-menu.open {
+        display: block;
+    }
+    .mobile-menu a {
+        display: block;
+        padding: 12px 0;
+        font-weight: 800;
+        border-bottom: 1px solid #eef2f6;
+    }
+    .stats-row {
+        flex-direction: column;
+    }
+}
+footer {
+    background: var(--navy);
+    color: #cbd5e1;
+    text-align: center;
+    padding: 32px 18px;
+    font-size: 14px;
+    margin-top: 56px;
+}
+</style>
+</head>
+<body>
+<div class="topbar">GLOBALKRATOM.ORG · Evidence-based policy resources</div>
+<div class="nav-bar">
+  <div class="container">
+    <div class="nav-inner">
+      <a class="brand" href="/">
+        <img src="/assets/logos/logo-dark.png" alt="Global Kratom Eradicators">
+        <div>
+          <div class="brand-title">Global <span>Kratom</span> Eradicators</div>
+          <div class="brand-sub">Educate. Expose. Eradicate.</div>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/evidence/" class="active">Evidence</a>
+        <a href="/lawmakers/">For Lawmakers</a>
+        <a href="/action/">Action Center</a>
+      </div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/">Home</a>
+      <a href="/evidence/">Evidence</a>
+      <a href="/lawmakers/">For Lawmakers</a>
+      <a href="/action/">Action Center</a>
+    </div>
+  </div>
+</div>
+
+<section class="hero-fda">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Federal Regulatory Actions</h1>
+      <p>Official FDA adverse event data, import restrictions, warning letters, and enforcement documents. A decade of federal concern over kratom safety.</p>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <!-- ADVERSE EVENT DASHBOARDS -->
+  <div class="section-title">Post‑Marketing Safety Signals</div>
+  <div class="two-columns">
+    <!-- FAERS -->
+    <div class="chart-container">
+      <div class="chart-title">FAERS (Drugs & Biologics)</div>
+      <div class="stats-row">
+        <div class="stat-badge"><div class="stat-number">1,470</div><div class="stat-label">Total reports</div></div>
+        <div class="stat-badge"><div class="stat-number">722</div><div class="stat-label">Deaths</div></div>
+        <div class="stat-badge"><div class="stat-number">370</div><div class="stat-label">Hospitalizations</div></div>
+        <div class="stat-badge"><div class="stat-number">49%</div><div class="stat-label">Death outcome</div></div>
+      </div>
+      <p style="font-size:13px; margin-top:8px; color:var(--muted)">Source: FAERS line listing, mitragynine/kratom only. Spontaneous reporting system – signals of serious harm.</p>
+    </div>
+    <!-- CAERS -->
+    <div class="chart-container">
+      <div class="chart-title">CAERS (Foods & Dietary Supplements)</div>
+      <div class="stats-row">
+        <div class="stat-badge"><div class="stat-number">743</div><div class="stat-label">Total reports</div></div>
+        <div class="stat-badge"><div class="stat-number">258</div><div class="stat-label">Deaths</div></div>
+        <div class="stat-badge"><div class="stat-number">191</div><div class="stat-label">Hospitalizations</div></div>
+        <div class="stat-badge"><div class="stat-number">404</div><div class="stat-label">Serious cases</div></div>
+      </div>
+      <p style="font-size:13px; margin-top:8px; color:var(--muted)">Dietary supplement‑associated reports. Undermines the “just a botanical” defense.</p>
+    </div>
+  </div>
+
+  <!-- FAERS top reactions -->
+  <div class="chart-container">
+    <div class="chart-title">Most Frequent Reported Reactions (FAERS, n=1,603)</div>
+    <table class="reaction-table">
+      <thead><tr><th>Reaction</th><th>Count</th><th>%</th></tr></thead>
+      <tbody>
+        <tr><td>Toxicity To Various Agents</td><td>326</td><td>20.34%</td></tr>
+        <tr><td>Drug Dependence</td><td>220</td><td>13.72%</td></tr>
+        <tr><td>Drug Abuse</td><td>205</td><td>12.79%</td></tr>
+        <tr><td>Drug Interaction</td><td>170</td><td>10.61%</td></tr>
+        <tr><td>Death</td><td>145</td><td>9.05%</td></tr>
+        <tr><td>Withdrawal Syndrome</td><td>143</td><td>8.92%</td></tr>
+        <tr><td>Serotonin Syndrome</td><td>101</td><td>6.30%</td></tr>
+        <tr><td>Seizure</td><td>92</td><td>5.74%</td></tr>
+        <tr><td>Vomiting</td><td>90</td><td>5.61%</td></tr>
+        <tr><td>Overdose</td><td>73</td><td>4.55%</td></tr>
+        <tr><td>Unresponsive To Stimuli</td><td>56</td><td>3.49%</td></tr>
+        <tr><td>Cardiac Arrest</td><td>55</td><td>3.43%</td></tr>
+        <tr><td>Completed Suicide</td><td>57</td><td>3.56%</td></tr>
+        <tr><td>Electrocardiogram QT Prolonged</td><td>45</td><td>2.81%</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:12px; margin-top:12px;">Data represent combined mitragynine/kratom cases. Death outcome in 744 of 1,603 total cases (46%).</p>
+  </div>
+
+  <!-- Year over year trend -->
+  <div class="chart-container">
+    <div class="chart-title">FAERS Case Count by Received Year (2011–2026)</div>
+    <div class="year-bar"><span class="year-label">2009</span><div class="bar"><div class="bar-fill" style="width:0.4%">1</div></div></div>
+    <div class="year-bar"><span class="year-label">2011</span><div class="bar"><div class="bar-fill" style="width:4%">9</div></div></div>
+    <div class="year-bar"><span class="year-label">2014</span><div class="bar"><div class="bar-fill" style="width:0.4%">1</div></div></div>
+    <div class="year-bar"><span class="year-label">2015</span><div class="bar"><div class="bar-fill" style="width:4%">10</div></div></div>
+    <div class="year-bar"><span class="year-label">2016</span><div class="bar"><div class="bar-fill" style="width:7%">17</div></div></div>
+    <div class="year-bar"><span class="year-label">2017</span><div class="bar"><div class="bar-fill" style="width:20%">50</div></div></div>
+    <div class="year-bar"><span class="year-label">2018</span><div class="bar"><div class="bar-fill" style="width:86%">215</div></div></div>
+    <div class="year-bar"><span class="year-label">2019</span><div class="bar"><div class="bar-fill" style="width:62%">155</div></div></div>
+    <div class="year-bar"><span class="year-label">2020</span><div class="bar"><div class="bar-fill" style="width:42%">104</div></div></div>
+    <div class="year-bar"><span class="year-label">2021</span><div class="bar"><div class="bar-fill" style="width:52%">130</div></div></div>
+    <div class="year-bar"><span class="year-label">2022</span><div class="bar"><div class="bar-fill" style="width:80%">201</div></div></div>
+    <div class="year-bar"><span class="year-label">2023</span><div class="bar"><div class="bar-fill" style="width:86%">214</div></div></div>
+    <div class="year-bar"><span class="year-label">2024</span><div class="bar"><div class="bar-fill" style="width:82%">206</div></div></div>
+    <div class="year-bar"><span class="year-label">2025</span><div class="bar"><div class="bar-fill" style="width:97%">243</div></div></div>
+    <div class="year-bar"><span class="year-label">2026*</span><div class="bar"><div class="bar-fill" style="width:29%">72</div></div></div>
+    <p style="font-size:12px; margin-top:12px;">*Partial year. Sharp increase since 2017 reflects growing adverse event reporting and product proliferation.</p>
+  </div>
+
+  <!-- IMPORT ALERT & NDI DENIALS -->
+  <div class="section-title">Import Restrictions & New Dietary Ingredient Denials</div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header">Import Alert 54‑15</div>
+      <div class="card-body">
+        <p>FDA orders detention without physical examination of all dietary supplements containing kratom. Cites serious health risks: respiratory depression, seizures, liver injury. Effective since 2014, reaffirmed 2025.</p>
+        <a href="/evidence/library/Import Alert 54-15.pdf" class="card-link" target="_blank">View Alert →</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">NDI Denial – Johnson Foods (2023)</div>
+      <div class="card-body">
+        <p>FDA rejected notification for dried kratom leaf powder as a dietary ingredient. Agency unable to establish identity or safety. Concluded that kratom is not eligible for lawful marketing as a supplement.</p>
+        <a href="/evidence/library/Johnsonfooddenial.pdf" class="card-link" target="_blank">Read Denial →</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">NDI Denial – TNT Manufacturing (2024)</div>
+      <div class="card-body">
+        <p>Rejection for Mitragyna speciosa leaf extract standardized to 75% mitragynine. Inadequate safety and identity evidence. Reinforces that kratom extracts cannot be legally sold as dietary supplements.</p>
+        <a href="/evidence/library/NDIfail2.pdf" class="card-link" target="_blank">Read Denial →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- WARNING LETTERS & ENFORCEMENT -->
+  <div class="section-title">Warning Letters & Federal Enforcement Actions</div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header">Cali Botanicals (2019)</div>
+      <div class="card-body"><p>Unapproved new drugs, misbranding. Claims to treat opioid addiction, pain, diabetes, and more. FDA: “public health emergency – opioid crisis.”</p><a href="/evidence/library/Cali Botanicals, LLC - 575320 - 06-11-2019 | FDA.pdf" class="card-link" target="_blank">View Letter →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Kratom Exchange (2022)</div>
+      <div class="card-body"><p>Claims to ease opioid withdrawal, depression, lower blood pressure. Unapproved new drugs; FTC joint action. “Potentially significant threat to public health.”</p><a href="/evidence/library/Kratom Exchange - 633972 - 06-30-2022 | FDA.pdf" class="card-link" target="_blank">View Letter →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Hydroxie (7‑OH) (2025)</div>
+      <div class="card-body"><p>Unapproved new drugs; 7‑OH added to food is unsafe food additive. FDA notes 7‑OH is more potent than mitragynine and linked to addiction, withdrawal, death.</p><a href="/evidence/library/Hydroxie, LLC - 709661 - 06-25-2025 | FDA.pdf" class="card-link" target="_blank">View Letter →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">US Marshals Seizure (2016)</div>
+      <div class="card-body"><p>Nearly 90,000 bottles of kratom supplements (RelaKzpro) seized, worth >$400,000. FDA: kratom is a new dietary ingredient with inadequate safety information.</p><a href="/evidence/library/US Marshals seize dietary supplements containing kratom | FDA.pdf" class="card-link" target="_blank">Read Release →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Triangle Pharmataturals – Mandatory Recall</div>
+      <div class="card-body"><p>FDA’s first mandatory recall order after Salmonella contamination. Company refused voluntary recall. Demonstrates industry cannot self‑police.</p><a href="/evidence/library/Kratom-contamination-salmonella-FDA-warning-13.pdf" class="card-link" target="_blank">View Recall →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">OPMS Black Liquid Kratom Warning (2024)</div>
+      <div class="card-body"><p>FDA warns consumers after death linked to product. Withdrawal, addiction, aggressive behavior reported. Contains 7‑OH. “Not lawfully marketed.”</p><a href="/evidence/library/FDA Warns Consumers Not to Use Optimized Plant Mediated Solutions (OPMS) Black Liquid Kratom | FDA.pdf" class="card-link" target="_blank">Read Alert →</a></div>
+    </div>
+  </div>
+
+  <!-- PUBLIC HEALTH ADVISORIES & LABORATORY FINDINGS -->
+  <div class="section-title">Official FDA Advisories & Scientific Findings</div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header">FDA and Kratom – Official Overview</div>
+      <div class="card-body"><p>Kratom is not lawfully marketed as a dietary supplement or food additive; no FDA‑approved uses. Risks include liver toxicity, seizures, SUD, neonatal abstinence, and death.</p><a href="/evidence/library/FDA and Kratom | FDA.pdf" class="card-link" target="_blank">Read Statement →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Heavy Metals Laboratory Analysis</div>
+      <div class="card-body"><p>30 products tested – significant lead and nickel exceeding safe daily oral intake. Long‑term users risk nervous system damage, kidney injury, cancer.</p><a href="/evidence/library/Laboratory Analysis of Kratom Products for Heavy Metals | FDA.pdf" class="card-link" target="_blank">View Data →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Salmonella Outbreak Investigation</div>
+      <div class="card-body"><p>199 cases, 41 states, 54 hospitalizations. 55% of FDA‑tested samples positive for Salmonella. First mandatory recall order.</p><a href="/evidence/library/kratom-contamination-salmonella.pdf" class="card-link" target="_blank">Read Report →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">2018 FDA Commissioner Statement</div>
+      <div class="card-body"><p>“Kratom is not a safe, benign plant. Compounds are opioids with potential for addiction and abuse.” – Commissioner Gottlieb.</p><a href="/evidence/library/FDA In Brief- FDA objects to kratom compound intended for use as an alternative to prescription opioids and promoted with unproven claims to treat addiction | FDA.pdf" class="card-link" target="_blank">Read Statement →</a></div>
+    </div>
+  </div>
+
+  <!-- CUSTOMS / ENFORCEMENT / SEIZURES ADDITIONAL -->
+  <div class="section-title">Customs & Federal Seizures</div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header">2014 FDA Import Alert</div>
+      <div class="card-body"><p>Detention without physical examination for kratom products. Importers required to prove product safety – repeatedly failed.</p><a href="/evidence/library/Import Alert 54-15.pdf" class="card-link" target="_blank">Review Alert →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">2021 Kratom Seizure – California</div>
+      <div class="card-body"><p>US Marshals seized adulterated dietary supplements containing kratom at FDA’s request. Continued federal enforcement burden.</p><a href="/evidence/library/kratomimportcase.pdf" class="card-link" target="_blank">Read Release →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Kratom NC Contamination Warning</div>
+      <div class="card-body"><p>FDA warned company after finding Klebsiella pneumoniae, Enterobacter, E. coli. Company refused to recall. Illustrates complete lack of quality control.</p><a href="/evidence/library/Kratom-contamination-bacteria-FDA.pdf" class="card-link" target="_blank">View Warning →</a></div>
+    </div>
+  </div>
+
+  <!-- NARRATIVE CLOSING -->
+  <div style="background:#f0f4fa; border-left: 4px solid var(--red); padding: 24px; border-radius: 18px; margin: 40px 0 20px;">
+    <p style="font-size: 16px; font-weight: 600; margin-bottom: 12px;">⸻ Regulatory Sequence</p>
+    <ul style="margin-left: 20px; color: var(--text-dark);">
+      <li>FDA has been concerned for years – import alerts since 2014</li>
+      <li>Post‑market adverse event signals: 1,470+ reports, 722 deaths (FAERS)</li>
+      <li>Safety could not be established as a dietary ingredient – NDI denials</li>
+      <li>Companies repeatedly violate federal standards – warning letters, mandatory recalls</li>
+      <li>Enforcement fails to stop contamination, adulteration, and false claims</li>
+      <li>Harm signals continue accumulating: seizures, cardiac arrest, serotonin syndrome, dependence</li>
+    </ul>
+    <p style="margin-top: 16px; font-weight: 700;">If the federal government has flagged these risks for over a decade, why is kratom still sold unchecked in gas stations and online?</p>
+  </div>
+</div>
+
+<footer>© 2026 Global Kratom Eradicators. Evidence‑based policy resources.</footer>
+
+<script>
+  document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  });
+</script>
+</body>
+</html>
