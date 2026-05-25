@@ -264,10 +264,33 @@ a {
     padding: 20px;
     margin-bottom: 24px;
     text-align: center;
+    cursor: pointer;
 }
 .heatmap-container img {
     border-radius: 12px;
     margin-top: 12px;
+    transition: opacity 0.2s;
+}
+.heatmap-container img:hover {
+    opacity: 0.9;
+}
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
 }
 .interpret-box {
     background: #f0f4fa;
@@ -405,20 +428,12 @@ footer {
     <p style="font-size:12px; margin-top:12px;">Source: CDC SUDORS. 2024 apparent decline occurs despite expanded jurisdiction coverage (43 states). Testing practices and polysubstance patterns influence detection.</p>
   </div>
 
-  <!-- Geographic Distribution – Heatmaps -->
-  <div class="section-title">Geographic Distribution – SUDORS Jurisdictions</div>
-  <div class="heatmap-container">
-    <div class="chart-title">2020: 866 deaths across 32 jurisdictions</div>
-    <img src="/evidence/assets/heatmap1.png" alt="CDC SUDORS heatmap 2020 – kratom/mitragynine detected in overdose deaths by state">
-  </div>
-  <div class="heatmap-container">
-    <div class="chart-title">2023: 1,314 deaths across 42 jurisdictions (peak year)</div>
-    <img src="/evidence/assets/heatmap2.png" alt="CDC SUDORS heatmap 2023 – kratom/mitragynine detected in overdose deaths by state">
-  </div>
-  <div class="heatmap-container">
-    <div class="chart-title">2024: 995 deaths across 43 jurisdictions</div>
-    <img src="/evidence/assets/heatmap2.png" alt="CDC SUDORS heatmap 2024 – kratom/mitragynine detected in overdose deaths by state">
-    <p style="font-size:12px; margin-top:12px;">Top jurisdictions (total deaths 2020–2024): Georgia (807), Michigan (412), Tennessee (286), Ohio (244), South Carolina (219), Florida (204), North Carolina (182), Pennsylvania (160), New York (148), Alabama (136).</p>
+  <!-- Geographic Distribution – Single heatmap (shows all years) -->
+  <div class="section-title">Geographic Distribution – SUDORS Jurisdictions (2020–2024)</div>
+  <div class="heatmap-container" onclick="openLightbox('/evidence/assets/heatmap1.png')">
+    <div class="chart-title">Kratom/Mitragynine-Involved Overdose Deaths by State</div>
+    <img src="/evidence/assets/heatmap1.png" alt="CDC SUDORS heatmap – kratom/mitragynine detected in overdose deaths by state, 2020–2024">
+    <p style="font-size:12px; margin-top:12px;">Click image to enlarge. Top jurisdictions (total deaths 2020–2024): Georgia (807), Michigan (412), Tennessee (286), Ohio (244), South Carolina (219), Florida (204), North Carolina (182), Pennsylvania (160), New York (148), Alabama (136).</p>
   </div>
 
   <div class="chart-container">
@@ -527,7 +542,21 @@ footer {
 
 <footer>© 2026 Global Kratom Eradicators. Evidence‑based policy resources.</footer>
 
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="">
+</div>
+
 <script>
+  function openLightbox(src) {
+    const lightbox = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    img.src = src;
+    lightbox.style.display = 'flex';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+  }
   document.getElementById('mobileMenuBtn').addEventListener('click', function() {
     document.getElementById('mobileMenu').classList.toggle('open');
   });
