@@ -201,6 +201,7 @@ a {
     border: 1px solid var(--border);
     padding: 20px;
     margin-bottom: 24px;
+    overflow-x: auto;
 }
 .chart-title {
     font-size: 20px;
@@ -213,6 +214,7 @@ a {
     width: 100%;
     border-collapse: collapse;
     font-size: 14px;
+    min-width: 500px;
 }
 .data-table th, .data-table td {
     padding: 10px 8px;
@@ -232,6 +234,7 @@ a {
     gap: 12px;
     margin-bottom: 12px;
     font-size: 14px;
+    flex-wrap: wrap;
 }
 .year-label {
     width: 60px;
@@ -239,6 +242,7 @@ a {
 }
 .bar {
     flex: 1;
+    min-width: 120px;
     height: 32px;
     background: #e2e8f0;
     border-radius: 16px;
@@ -286,6 +290,13 @@ a {
         padding: 12px 0;
         font-weight: 800;
         border-bottom: 1px solid #eef2f6;
+    }
+    .year-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .bar {
+        width: 100%;
     }
 }
 footer {
@@ -367,22 +378,51 @@ footer {
     <p style="font-size:12px; color:var(--muted);">Source: America’s Poison Centers® NPDS Annual Reports, Appendix B (Table 22A/22B). 2024 data preliminary.</p>
   </div>
 
+  <!-- FIXED MEDICAL OUTCOMES TABLE -->
+  <div class="chart-container">
+    <div class="chart-title">Medical Outcomes (Single‑Substance Exposures, 2019–2024 Aggregate)</div>
+    <div style="overflow-x: auto;">
+      <table class="data-table">
+        <thead>
+          <tr><th>Year</th><th>None</th><th>Minor</th><th>Moderate</th><th>Major</th><th>Death</th><th>Total known</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>2019</td><td>63</td><td>203</td><td>275</td><td>78</td><td>3</td><td>622</td></tr>
+          <tr><td>2020</td><td>59</td><td>175</td><td>259</td><td>66</td><td>5</td><td>564</td></tr>
+          <tr><td>2021</td><td>69</td><td>213</td><td>305</td><td>67</td><td>4</td><td>658</td></tr>
+          <tr><td>2022</td><td>66</td><td>167</td><td>248</td><td>55</td><td>3</td><td>539</td></tr>
+          <tr><td>2023</td><td>60</td><td>184</td><td>305</td><td>70</td><td>5</td><td>624</td></tr>
+          <tr><td>2024</td><td>92</td><td>233</td><td>332</td><td>76</td><td>7</td><td>740</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:16px;"><strong>2023 “New & Emerging” Findings (NPDS):</strong></p>
+    <ul style="margin-left: 20px; margin-top: 8px;">
+      <li>Among single‑substance cases with known outcomes, <strong>57.6%</strong> of kratom exposures produced a moderate/major/fatal effect (third‑highest after tianeptine and phenibut).</li>
+      <li><strong>34.3%</strong> of kratom exposures resulted in hospital admission.</li>
+      <li><strong>4.76%</strong> of all kratom exposures were coded for withdrawal; of those seen in healthcare, <strong>33.5%</strong> were admitted.</li>
+    </ul>
+    <p style="font-size:12px; margin-top:12px;">Source: 2023 NPDS Annual Report “Emerging Threats” analysis of kratom, phenibut, tianeptine, and nitrous oxide.</p>
+  </div>
+
   <!-- PEDIATRIC FOCUS -->
   <div class="section-title">Pediatric & Adolescent Exposures</div>
   <div class="two-columns">
     <div class="chart-container">
       <div class="chart-title">Pediatric Cases by Age Group</div>
-      <table class="data-table">
-        <thead><tr><th>Year</th><th>&lt;5 yrs</th><th>6–12 yrs</th><th>13–19 yrs</th><th>Total Peds</th></tr></thead>
-        <tbody>
-          <tr><td>2019</td><td>60</td><td>3</td><td>39</td><td>102</td></tr>
-          <tr><td>2020</td><td>63</td><td>5</td><td>35</td><td>103</td></tr>
-          <tr><td>2021</td><td>91</td><td>5</td><td>43</td><td>139</td></tr>
-          <tr><td>2022</td><td>67</td><td>3</td><td>37</td><td>107</td></tr>
-          <tr><td>2023</td><td>71</td><td>3</td><td>32</td><td>106</td></tr>
-          <tr><td>2024</td><td>107</td><td>6</td><td>37</td><td>150</td></tr>
-        </tbody>
-      </table>
+      <div style="overflow-x: auto;">
+        <table class="data-table">
+          <thead><tr><th>Year</th><th>&lt;5 yrs</th><th>6–12 yrs</th><th>13–19 yrs</th><th>Total Peds</th></tr></thead>
+          <tbody>
+            <tr><td>2019</td><td>60</td><td>3</td><td>39</td><td>102</td></tr>
+            <tr><td>2020</td><td>63</td><td>5</td><td>35</td><td>103</td></tr>
+            <tr><td>2021</td><td>91</td><td>5</td><td>43</td><td>139</td></tr>
+            <tr><td>2022</td><td>67</td><td>3</td><td>37</td><td>107</td></tr>
+            <tr><td>2023</td><td>71</td><td>3</td><td>32</td><td>106</td></tr>
+            <tr><td>2024</td><td>107</td><td>6</td><td>37</td><td>150</td></tr>
+          </tbody>
+        </table>
+      </div>
       <p style="font-size:13px; margin-top:12px;">Children under five represent the largest pediatric exposure group each year. 2024 saw a record 107 cases in this age group.</p>
     </div>
     <div class="chart-container">
@@ -395,33 +435,17 @@ footer {
     </div>
   </div>
 
-  <!-- SEVERE OUTCOMES -->
-  <div class="section-title">Clinical Severity & Healthcare Utilization</div>
-  <div class="chart-container">
-    <div class="chart-title">Medical Outcomes (Single‑Substance Exposures, 2019–2024 Aggregate)</div>
-    <table class="data-table">
-      <thead><tr><th>Year</th><th>None</th><th>Minor</th><th>Moderate</th><th>Major</th><th>Death</th><th>Total known</th></tr></thead>
-      <tbody>
-        <tr><td>2019</td><td>63</td><td>203</td><td>275</td><td>78</td><td>3</td><td>622</td></tr>
-        <tr><td>2020</td><td>59</td><td>175</td><td>259</td><td>66</td><td>5</td><td>564</td></tr>
-        <tr><td>2021</td><td>69</td><td>213</td><td>305</td><td>67</td><td>4</td><td>658</td></tr>
-        <tr><td>2022</td><td>66</td><td>167</td><td>248</td><td>55</td><td>3</td><td>539</td></tr>
-        <tr><td>2023</td><td>60</td><td>184</td><td>305</td><td>70</td><td>5</td><td>624</td></tr>
-        <tr><td>2024</td><td>92</td><td>233</td><td>332</td><td>76</td><td>7</td><td>740</td></tr>
-      </tbody>
-    </table>
-    <p style="margin-top:16px;"><strong>2023 “New & Emerging” Findings (NPDS):</strong></p>
-    <ul style="margin-left: 20px; margin-top: 8px;">
-      <li>Among single‑substance cases with known outcomes, <strong>57.6%</strong> of kratom exposures produced a moderate/major/fatal effect (third‑highest after tianeptine and phenibut).</li>
-      <li><strong>34.3%</strong> of kratom exposures resulted in hospital admission.</li>
-      <li><strong>4.76%</strong> of all kratom exposures were coded for withdrawal; of those seen in healthcare, <strong>33.5%</strong> were admitted.</li>
-    </ul>
-    <p style="font-size:12px; margin-top:12px;">Source: 2023 NPDS Annual Report “Emerging Threats” analysis of kratom, phenibut, tianeptine, and nitrous oxide.</p>
-  </div>
-
-  <!-- POLYSUBSTANCE & POISON CENTER PUBLICATIONS -->
+  <!-- PEER-REVIEWED RESEARCH – 1200% INCREASE STUDY FIRST -->
   <div class="section-title">Peer‑Reviewed Poison Center Research</div>
   <div class="card-grid">
+    <!-- CDC 2026 – 1,200% surge (FIRST) -->
+    <div class="card">
+      <div class="card-header">MMWR 2026: 1,200% Surge in Kratom Exposures</div>
+      <div class="card-body">
+        <p>CDC reports a 1,200% increase in kratom exposures (258 → 3,434) with 79% of deaths involving polysubstance use. The 2025 spike coincides with high‑potency 7‑OH products, illustrating the escalating public health threat and the need for regulatory oversight.</p>
+        <a href="/evidence/library/CDCkratom2026.pdf" class="card-link" target="_blank">Read Study →</a>
+      </div>
+    </div>
     <div class="card">
       <div class="card-header">Post et al. (2019) – NPDS 2011–2017</div>
       <div class="card-body">
