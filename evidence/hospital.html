@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>EMS & Hospital Burden | Global Kratom Eradicators</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+    --navy: #0b1d34;
+    --emergency: #b22234;
+    --darkblue: #1a3a5f;
+    --gray-bg: #f4f7fc;
+    --border: #cfdee9;
+    --text-dark: #1e2a3e;
+    --muted: #5a6e7c;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: #eef2f8;
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+.topbar {
+    background: var(--navy);
+    color: #dbe7f4;
+    text-align: center;
+    padding: 9px 18px;
+    font-size: 13px;
+}
+.nav-bar {
+    background: white;
+    border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+    min-height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.brand img {
+    width: 54px;
+    height: 54px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.brand-title {
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 21px;
+    line-height: 1;
+}
+.brand-title span {
+    color: var(--emergency);
+}
+.brand-sub {
+    margin-top: 6px;
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+.nav-links {
+    display: flex;
+    gap: 28px;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+.nav-links a {
+    color: #172033;
+}
+.nav-links a.active {
+    color: var(--emergency);
+}
+.nav-links a:hover {
+    color: var(--emergency);
+}
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: 0;
+    font-size: 30px;
+    cursor: pointer;
+}
+.hero-hospital {
+    background: linear-gradient(90deg, rgba(11,29,52,0.92), rgba(11,29,52,0.82)), url("/evidence/assets/end-hospital.jpeg");
+    background-size: cover;
+    background-position: center 35%;
+    color: white;
+    padding: 56px 0;
+}
+.hero-content h1 {
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 900;
+    margin-bottom: 16px;
+}
+.hero-content p {
+    font-size: 18px;
+    max-width: 720px;
+    color: #eaf1f9;
+}
+.key-findings {
+    background: #0b1d34;
+    color: white;
+    border-radius: 20px;
+    padding: 24px 28px;
+    margin: 32px 0 24px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+.key-findings h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+.key-findings ul {
+    margin-left: 20px;
+    margin-top: 8px;
+}
+.key-findings li {
+    margin-bottom: 8px;
+}
+.section-title {
+    font-size: 26px;
+    font-weight: 900;
+    border-left: 6px solid var(--emergency);
+    padding-left: 18px;
+    margin: 48px 0 24px 0;
+}
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+.card {
+    background: white;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    transition: 0.2s;
+}
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+}
+.card-header {
+    background: var(--darkblue);
+    color: white;
+    padding: 16px 20px;
+    font-weight: 800;
+    font-size: 18px;
+}
+.card-body {
+    padding: 20px;
+}
+.card-body p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+.card-link {
+    display: inline-block;
+    background: var(--emergency);
+    color: white;
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 800;
+    margin-top: 8px;
+}
+.clinical-pattern {
+    background: #f0f4fa;
+    border-left: 4px solid var(--emergency);
+    padding: 20px;
+    border-radius: 18px;
+    margin: 32px 0 40px;
+}
+.clinical-pattern h4 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+.clinical-pattern ul {
+    margin-left: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.clinical-pattern li {
+    background: white;
+    padding: 6px 14px;
+    border-radius: 30px;
+    list-style: none;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--darkblue);
+    border: 1px solid var(--border);
+}
+@media (max-width: 760px) {
+    .nav-links {
+        display: none;
+    }
+    .mobile-menu-btn {
+        display: block;
+    }
+    .mobile-menu {
+        display: none;
+        background: white;
+        border-top: 1px solid var(--border);
+        padding: 14px 16px;
+    }
+    .mobile-menu.open {
+        display: block;
+    }
+    .mobile-menu a {
+        display: block;
+        padding: 12px 0;
+        font-weight: 800;
+        border-bottom: 1px solid #eef2f6;
+    }
+}
+footer {
+    background: var(--navy);
+    color: #cbd5e1;
+    text-align: center;
+    padding: 32px 18px;
+    font-size: 14px;
+    margin-top: 56px;
+}
+</style>
+</head>
+<body>
+<div class="topbar">GLOBALKRATOM.ORG · Evidence-based policy resources</div>
+<div class="nav-bar">
+  <div class="container">
+    <div class="nav-inner">
+      <a class="brand" href="/">
+        <img src="/assets/logos/logo-dark.png" alt="Global Kratom Eradicators">
+        <div>
+          <div class="brand-title">Global <span>Kratom</span> Eradicators</div>
+          <div class="brand-sub">Educate. Expose. Eradicate.</div>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/evidence/" class="active">Evidence</a>
+        <a href="/lawmakers/">For Lawmakers</a>
+        <a href="/action/">Action Center</a>
+      </div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/">Home</a>
+      <a href="/evidence/">Evidence</a>
+      <a href="/lawmakers/">For Lawmakers</a>
+      <a href="/action/">Action Center</a>
+    </div>
+  </div>
+</div>
+
+<section class="hero-hospital">
+  <div class="container">
+    <div class="hero-content">
+      <h1>EMS & Hospital Burden</h1>
+      <p>Published emergency, hospital, anesthesia, and perioperative reports document kratom‑associated clinical events requiring naloxone, airway support, ICU care, dialysis, vasopressors, and management of opioid‑like withdrawal.</p>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <!-- Key Findings Box -->
+  <div class="key-findings">
+    <h3>⸻ Key Clinical Findings</h3>
+    <ul>
+      <li>Kratom exposures have required EMS response, naloxone, intubation, vasopressors, dialysis, and ICU care</li>
+      <li>Published cases describe opioid‑like toxidromes, including apnea, miosis, hypoxia, and rebound respiratory depression</li>
+      <li>Perioperative cases document anesthetic resistance, opioid tolerance, withdrawal, delirium, and postoperative ICU admission</li>
+      <li>Poisoning cases include depressed consciousness, shock, metabolic acidosis, renal failure, and multiorgan injury</li>
+      <li>These reports show kratom can create real healthcare‑system burden, not merely consumer discomfort</li>
+    </ul>
+  </div>
+
+  <!-- 1. Acute Overdose & Toxicity -->
+  <div class="section-title">Acute Overdose & Toxicity</div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header">Mitragyna speciosa poisoning: Findings from ten cases</div>
+      <div class="card-body"><p>Ten overdoses – 90% depressed consciousness; naloxone prevented intubation in two cases. Opioid‑like toxidrome, response to naloxone, and ICU admission documented.</p><a href="/evidence/library/Case report 30 Mitragyna speciosa (Kratom) poisoning.pdf" class="card-link" target="_blank">Read Study →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Accidental Kratom Overdose: Naloxone Response & Rebound Hypoxia</div>
+      <div class="card-body"><p>Apnea, cyanosis, pinpoint pupils; naloxone reversed symptoms but rebound hypoxia occurred. Highlights opioid‑like toxidrome and need for 24h observation.</p><a href="/evidence/library/Case report 26 A Case of Accidental Kratom Overdose.pdf" class="card-link" target="_blank">Read Case →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Kratom Ingestion and Emergency Care</div>
+      <div class="card-body"><p>Circulatory shock, metabolic acidosis, hypoxia. Required vasopressors, intubation, dialysis. Severe critical illness from kratom alone.</p><a href="/evidence/library/Case report 42 Kratom Ingestion and Emergency Care.pdf" class="card-link" target="_blank">Read Report →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Legally Lethal Kratom: Overdose Potential</div>
+      <div class="card-body"><p>Consumed >500g kratom; intubated, AST 1347, ALT 3717, renal injury, 7‑OH >500 ng/mL. 14 days ICU. “Legally lethal.”</p><a href="/evidence/library/poisonkratom3.pdf" class="card-link" target="_blank">View Case →</a></div>
+    </div>
+  </div>
+
+  <!-- 2. Hospitalization & Critical Care -->
+  <div class="section-title">Hospitalization & Critical Care</div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header">Multiorgan Dysfunction Related to Kratom Ingestion</div>
+      <div class="card-body"><p>Mixed liver injury, renal failure requiring dialysis, colitis, liver transplantation, end‑stage renal disease. Long‑term organ damage.</p><a href="/evidence/library/Case report 35 Multiorgan Dysfunction Related to Kratom Ingestion.pdf" class="card-link" target="_blank">Read Case →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Rhabdomyolysis, Cardiomyopathy, CVA after Kratom Overdose</div>
+      <div class="card-body"><p>CPK 26,989, acute renal failure requiring dialysis, transient cardiomyopathy (EF 31‑35%), multifocal brain infarcts.</p><a href="/evidence/library/Case35KratomToxicity.pdf" class="card-link" target="_blank">Read Case →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Kratom Overdose: Rhabdomyolysis, Hearing Loss, Heart Failure</div>
+      <div class="card-body"><p>Acute kidney failure, dialysis, reversible cardiomyopathy (EF <15%), transient hearing loss. ICU‑level toxicity.</p><a href="/evidence/library/kratom_cardiac7.pdf" class="card-link" target="_blank">Read Report →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Cardiac arrest in healthy young male after kratom ingestion</div>
+      <div class="card-body"><p>35‑year‑old cardiac arrest after kratom alone; LVEF 20%, brain infarcts. Catastrophic cardiovascular event.</p><a href="/evidence/library/kratom_cardiac5.pdf" class="card-link" target="_blank">Read Case →</a></div>
+    </div>
+  </div>
+
+  <!-- 3. Perioperative & Anesthesia Risk -->
+  <div class="section-title">Perioperative & Anesthesia Risk</div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header">Kratom Use: An Emerging Perioperative Nursing Concern</div>
+      <div class="card-body"><p>Review of anesthetic resistance, hypertension, emergence delirium, withdrawal. Highlights need for multimodal analgesia and preoperative screening.</p><a href="/evidence/library/kratom_study2.pdf" class="card-link" target="_blank">Read Review →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Anesthetic Challenges Posed by Heavy Kratom Users</div>
+      <div class="card-body"><p>18‑year‑old consuming 35g/day required 6mg/kg propofol, opioid resistance, refractory hypertension, emergence delirium.</p><a href="/evidence/library/Case report 34 - Anesthetic Challenges Posed by Heavy Kratom Users.pdf" class="card-link" target="_blank">Read Case →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Complicated postoperative course secondary to kratom withdrawal</div>
+      <div class="card-body"><p>55‑year‑old woman developed withdrawal (hallucinations, fever, tachycardia, hypotension) after surgery, leading to ICU admission for aspiration pneumonia.</p><a href="/evidence/library/Case report 47 Complicated postoperative course secondary to kratom withdrawal.pdf" class="card-link" target="_blank">Read Case →</a></div>
+    </div>
+  </div>
+
+  <!-- 4. Withdrawal in Hospital Settings -->
+  <div class="section-title">Withdrawal in Hospital Settings</div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header">Precipitated withdrawal with kratom following naltrexone</div>
+      <div class="card-body"><p>Naltrexone triggered severe opioid‑like withdrawal; required ICU and high‑dose benzodiazepines. Physical dependence akin to classic opioids.</p><a href="/evidence/library/Case report 26 Precipitated withdrawal with kratom.pdf" class="card-link" target="_blank">Read Case →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Kratom Addiction and Withdrawal managed with clonidine/hydroxyzine</div>
+      <div class="card-body"><p>Severe opioid‑like withdrawal (abdominal cramps, sweats, vomiting, diarrhea). Required high‑dose clonidine and inpatient detox.</p><a href="/evidence/library/Case report 61 A Case Report of Kratom Addiction and Withdrawal.pdf" class="card-link" target="_blank">Read Report →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Kratom dependence contributing to suicide attempt</div>
+      <div class="card-body"><p>38‑year‑old escalated to 35‑42 g/day; withdrawal (anxiety, abdominal pain, akathisia); overdosed on psychiatric medications. Kratom directly contributed to suicide attempt.</p><a href="/evidence/library/Case report 31 Case of Severe Kratom Addiction Contributing to a Suicide Attempt.pdf" class="card-link" target="_blank">Read Case →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Complexities of Kratom: Dependence, Withdrawal, Buprenorphine</div>
+      <div class="card-body"><p>Chronic user developed withdrawal (COWS 9); required buprenorphine for symptom control. Opioid‑type dependence.</p><a href="/evidence/library/Case report 21 The Complexities of Kratom.pdf" class="card-link" target="_blank">Read Report →</a></div>
+    </div>
+  </div>
+
+  <!-- Clinical Pattern Card -->
+  <div class="clinical-pattern">
+    <h4>Recurring Clinical Patterns</h4>
+    <ul>
+      <li>CNS depression</li>
+      <li>Respiratory compromise</li>
+      <li>Opioid‑like toxidrome</li>
+      <li>Naloxone response</li>
+      <li>Withdrawal syndromes</li>
+      <li>ICU admission</li>
+      <li>Renal injury / rhabdomyolysis</li>
+      <li>Anesthesia complications</li>
+      <li>Metabolic acidosis</li>
+      <li>Cardiovascular instability</li>
+    </ul>
+    <p style="margin-top: 16px; font-size: 14px;">These patterns, repeatedly documented in peer‑reviewed case reports, indicate that kratom produces clinically significant toxicity requiring acute medical intervention.</p>
+  </div>
+</div>
+
+<footer>© 2026 Global Kratom Eradicators. Evidence‑based policy resources.</footer>
+
+<script>
+  document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  });
+</script>
+</body>
+</html>
