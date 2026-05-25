@@ -120,12 +120,36 @@ footer{ margin-top:54px; background:var(--navy); color:#cbd5e1; text-align:cente
   <div class="category-pills" id="filterPills"></div>
   <div class="explore-title">Explore Key Evidence Categories</div>
   <div class="explore-scroll-wrapper"><div class="explore-grid-horizontal">
-    <div class="explore-card-horizontal" data-cat="Public Health"><div class="explore-image"><img src="/evidence/assets/fda.jpg" alt="FDA Position"></div><div class="card-round-icon">⚖️</div><div class="explore-content"><h4>FDA Position</h4><p>Official statements & alerts</p><a href="#" class="explore-btn">Browse →</a></div></div>
-    <div class="explore-card-horizontal" data-cat="Poison Center"><div class="explore-image"><img src="/evidence/assets/poison-center.jpeg" alt="Poison Center"></div><div class="card-round-icon">☎</div><div class="explore-content"><h4>Poison Center Data</h4><p>PDF case reports</p><a href="#" class="explore-btn">Browse →</a></div></div>
-    <div class="explore-card-horizontal" data-cat="EMS & Hospital"><div class="explore-image"><img src="/evidence/assets/end-hospital.jpeg" alt="EMS & Hospital"></div><div class="card-round-icon">🚑</div><div class="explore-content"><h4>EMS & Hospital Data</h4><p>Clinical cases</p><a href="#" class="explore-btn">Browse →</a></div></div>
-    <div class="explore-card-horizontal" data-cat="Epidemiology"><div class="explore-image"><img src="/evidence/assets/epidemiology.jpeg" alt="Epidemiology"></div><div class="card-round-icon">📊</div><div class="explore-content"><h4>Epidemiology & Prevalence</h4><p>Surveys & reports</p><a href="#" class="explore-btn">Browse →</a></div></div>
-    <div class="explore-card-horizontal" data-cat="Mental Health"><div class="explore-image"><img src="/evidence/assets/mental-health.jpeg" alt="Mental Health"></div><div class="card-round-icon">🧠</div><div class="explore-content"><h4>Mental Health Impacts</h4><p>Psychiatric cases</p><a href="#" class="explore-btn">Browse →</a></div></div>
-    <div class="explore-card-horizontal" data-cat="Mortality"><div class="explore-image"><img src="/evidence/assets/mortality.jpeg" alt="Mortality"></div><div class="card-round-icon">⚗️</div><div class="explore-content"><h4>Mortality & Outcomes</h4><p>Fatality reports</p><a href="#" class="explore-btn">Browse →</a></div></div>
+    <div class="explore-card-horizontal" data-url="/evidence/fda.html">
+      <div class="explore-image"><img src="/evidence/assets/fda.jpg" alt="FDA Position"></div>
+      <div class="card-round-icon">⚖️</div>
+      <div class="explore-content"><h4>FDA Position</h4><p>Official statements & alerts</p><a href="/evidence/fda.html" class="explore-btn">Browse →</a></div>
+    </div>
+    <div class="explore-card-horizontal" data-url="/evidence/poison.html">
+      <div class="explore-image"><img src="/evidence/assets/poison-center.jpeg" alt="Poison Center"></div>
+      <div class="card-round-icon">☎</div>
+      <div class="explore-content"><h4>Poison Center Data</h4><p>PDF case reports</p><a href="/evidence/poison.html" class="explore-btn">Browse →</a></div>
+    </div>
+    <div class="explore-card-horizontal" data-url="/evidence/hospital.html">
+      <div class="explore-image"><img src="/evidence/assets/end-hospital.jpeg" alt="EMS & Hospital"></div>
+      <div class="card-round-icon">🚑</div>
+      <div class="explore-content"><h4>EMS & Hospital Data</h4><p>Clinical cases</p><a href="/evidence/hospital.html" class="explore-btn">Browse →</a></div>
+    </div>
+    <div class="explore-card-horizontal" data-url="/evidence/epidemiology.html">
+      <div class="explore-image"><img src="/evidence/assets/epidemiology.jpeg" alt="Epidemiology"></div>
+      <div class="card-round-icon">📊</div>
+      <div class="explore-content"><h4>Epidemiology & Prevalence</h4><p>Surveys & reports</p><a href="/evidence/epidemiology.html" class="explore-btn">Browse →</a></div>
+    </div>
+    <div class="explore-card-horizontal" data-url="/evidence/mental.html">
+      <div class="explore-image"><img src="/evidence/assets/mental-health.jpeg" alt="Mental Health"></div>
+      <div class="card-round-icon">🧠</div>
+      <div class="explore-content"><h4>Mental Health Impacts</h4><p>Psychiatric cases</p><a href="/evidence/mental.html" class="explore-btn">Browse →</a></div>
+    </div>
+    <div class="explore-card-horizontal" data-url="/evidence/mortality.html">
+      <div class="explore-image"><img src="/evidence/assets/mortality.jpeg" alt="Mortality"></div>
+      <div class="card-round-icon">⚗️</div>
+      <div class="explore-content"><h4>Mortality & Outcomes</h4><p>Fatality reports</p><a href="/evidence/mortality.html" class="explore-btn">Browse →</a></div>
+    </div>
   </div></div>
   <div class="results-header"><div class="results-count" id="resultsCount">Showing results</div><select id="sortSelect" class="sort-select"><option value="newest">Newest first</option><option value="oldest">Oldest first</option></select></div>
   <div id="evidenceContainer"></div>
@@ -380,19 +404,17 @@ if (searchInput) {
 }
 document.getElementById("sortSelect").addEventListener("change", (e) => { currentSort = e.target.value; renderEvidence(); });
 document.getElementById("mobileMenuBtn").addEventListener("click", () => { document.getElementById("mobileMenu").classList.toggle("open"); });
-document.querySelectorAll(".explore-card-horizontal").forEach(card => { 
-  card.addEventListener("click", (e) => {
-    if(e.target.tagName === 'A') return;
-    let cat = card.getAttribute("data-cat"); 
-    if(cat){ 
-      currentCategory = cat; 
-      renderEvidence(); 
-      document.querySelectorAll(".pill").forEach(p=>p.classList.remove("active")); 
-      let targetPill = Array.from(document.querySelectorAll(".pill")).find(p=>p.getAttribute("data-cat")===cat); 
-      if(targetPill) targetPill.classList.add("active"); 
-      document.getElementById("evidenceContainer").scrollIntoView({ behavior: "smooth", block: "start" }); 
-    } 
-  }); 
+
+// Make explore cards navigate to the dedicated pages
+document.querySelectorAll(".explore-card-horizontal").forEach(card => {
+  const url = card.getAttribute("data-url");
+  if (url) {
+    card.addEventListener("click", (e) => {
+      // Prevent navigation if the click target is the "Browse →" link (already handles navigation)
+      if (e.target.tagName === 'A') return;
+      window.location.href = url;
+    });
+  }
 });
 
 renderPills();
