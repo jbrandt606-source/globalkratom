@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Mortality & Severe Outcomes | Global Kratom Eradicators</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+    --navy: #0b1d34;
+    --maroon: #6b2e3e;
+    --darkblue: #1a3a5f;
+    --gray-bg: #f4f7fc;
+    --border: #cfdee9;
+    --text-dark: #1e2a3e;
+    --muted: #5a6e7c;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: #eef2f8;
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+.topbar {
+    background: var(--navy);
+    color: #dbe7f4;
+    text-align: center;
+    padding: 9px 18px;
+    font-size: 13px;
+}
+.nav-bar {
+    background: white;
+    border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+    min-height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.brand img {
+    width: 54px;
+    height: 54px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.brand-title {
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 21px;
+    line-height: 1;
+}
+.brand-title span {
+    color: var(--maroon);
+}
+.brand-sub {
+    margin-top: 6px;
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+.nav-links {
+    display: flex;
+    gap: 28px;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+.nav-links a {
+    color: #172033;
+}
+.nav-links a.active {
+    color: var(--maroon);
+}
+.nav-links a:hover {
+    color: var(--maroon);
+}
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: 0;
+    font-size: 30px;
+    cursor: pointer;
+}
+.hero-mortality {
+    background: linear-gradient(90deg, rgba(11,29,52,0.92), rgba(11,29,52,0.82)), url("/evidence/assets/mortality.jpeg");
+    background-size: cover;
+    background-position: center 35%;
+    color: white;
+    padding: 56px 0;
+}
+.hero-content h1 {
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 900;
+    margin-bottom: 16px;
+}
+.hero-content p {
+    font-size: 18px;
+    max-width: 720px;
+    color: #eaf1f9;
+}
+.key-findings {
+    background: #0b1d34;
+    color: white;
+    border-radius: 20px;
+    padding: 24px 28px;
+    margin: 32px 0 24px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+.key-findings h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+.key-findings ul {
+    margin-left: 20px;
+    margin-top: 8px;
+}
+.key-findings li {
+    margin-bottom: 8px;
+}
+.section-title {
+    font-size: 26px;
+    font-weight: 900;
+    border-left: 6px solid var(--maroon);
+    padding-left: 18px;
+    margin: 48px 0 24px 0;
+}
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+.card {
+    background: white;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    transition: 0.2s;
+}
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+}
+.card-header {
+    background: var(--darkblue);
+    color: white;
+    padding: 16px 20px;
+    font-weight: 800;
+    font-size: 18px;
+}
+.card-body {
+    padding: 20px;
+}
+.card-body p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+.card-link {
+    display: inline-block;
+    background: var(--maroon);
+    color: white;
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 800;
+}
+.chart-container {
+    background: white;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    padding: 20px;
+    margin-bottom: 24px;
+    overflow-x: auto;
+}
+.chart-title {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 8px;
+}
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    min-width: 500px;
+}
+.data-table th, .data-table td {
+    padding: 10px 8px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+}
+.data-table th {
+    font-weight: 800;
+    background: #f8fafc;
+}
+.outcome-box {
+    background: #f4f0f0;
+    border-left: 4px solid var(--maroon);
+    padding: 20px;
+    border-radius: 18px;
+    margin: 32px 0;
+}
+.outcome-box h4 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+.outcome-box ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    margin-left: 0;
+}
+.outcome-box li {
+    background: white;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--darkblue);
+    border: 1px solid var(--border);
+}
+.heatmap-container {
+    background: white;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    padding: 20px;
+    margin-bottom: 24px;
+    text-align: center;
+    cursor: pointer;
+}
+.heatmap-container img {
+    border-radius: 12px;
+    margin-top: 12px;
+    transition: opacity 0.2s;
+}
+.heatmap-container img:hover {
+    opacity: 0.9;
+}
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+.two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+@media (max-width: 760px) {
+    .two-columns {
+        grid-template-columns: 1fr;
+    }
+    .nav-links {
+        display: none;
+    }
+    .mobile-menu-btn {
+        display: block;
+    }
+    .mobile-menu {
+        display: none;
+        background: white;
+        border-top: 1px solid var(--border);
+        padding: 14px 16px;
+    }
+    .mobile-menu.open {
+        display: block;
+    }
+    .mobile-menu a {
+        display: block;
+        padding: 12px 0;
+        font-weight: 800;
+        border-bottom: 1px solid #eef2f6;
+    }
+}
+footer {
+    background: var(--navy);
+    color: #cbd5e1;
+    text-align: center;
+    padding: 32px 18px;
+    font-size: 14px;
+    margin-top: 56px;
+}
+</style>
+</head>
+<body>
+<div class="topbar">GLOBALKRATOM.ORG · Evidence-based policy resources</div>
+<div class="nav-bar">
+  <div class="container">
+    <div class="nav-inner">
+      <a class="brand" href="/">
+        <img src="/assets/logos/logo-dark.png" alt="Global Kratom Eradicators">
+        <div>
+          <div class="brand-title">Global <span>Kratom</span> Eradicators</div>
+          <div class="brand-sub">Educate. Expose. Eradicate.</div>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/evidence/" class="active">Evidence</a>
+        <a href="/lawmakers/">For Lawmakers</a>
+        <a href="/action/">Action Center</a>
+      </div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/">Home</a>
+      <a href="/evidence/">Evidence</a>
+      <a href="/lawmakers/">For Lawmakers</a>
+      <a href="/action/">Action Center</a>
+    </div>
+  </div>
+</div>
+
+<section class="hero-mortality">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Mortality & Severe Outcomes</h1>
+      <p>Forensic toxicology reports, mortality surveillance, overdose investigations, and severe clinical outcomes associated with kratom and mitragynine exposure.</p>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <!-- Key Findings Box -->
+  <div class="key-findings">
+    <h3>⸻ Key Findings</h3>
+    <ul>
+      <li>Kratom increasingly appears in overdose surveillance and postmortem toxicology investigations</li>
+      <li>Published reports document fatal intoxications involving both single‑substance and polysubstance exposure</li>
+      <li>Severe outcomes include respiratory depression, cardiac arrest, seizures, multiorgan failure, and ICU admission</li>
+      <li>Multiple‑substance exposures account for the majority of reported fatalities</li>
+      <li>Medical examiner and forensic toxicology systems continue to identify mitragynine in overdose investigations across multiple states</li>
+    </ul>
+  </div>
+
+  <!-- 1. National Mortality Surveillance -->
+  <div class="section-title">National Mortality Surveillance</div>
+  
+  <div class="heatmap-container" onclick="openLightbox('/evidence/assets/heatmap1.png')">
+    <div class="chart-title">SUDORS – Kratom/Mitragynine‑Involved Overdose Deaths by Jurisdiction (2020–2024)</div>
+    <img src="/evidence/assets/heatmap1.png" alt="CDC SUDORS heatmap – kratom/mitragynine detected in overdose deaths by state, 2020–2024">
+    <p style="font-size:12px; margin-top:12px;">Click image to enlarge. Source: CDC SUDORS. Annual detections: 866 (2020, 32 jurisdictions) → 1,314 (2023, 42 jurisdictions) → 995 (2024, 43 jurisdictions).</p>
+  </div>
+
+  <div class="chart-container">
+    <div class="chart-title">Florida Medical Examiners Commission – Mitragynine in Post‑Mortem Toxicology (2020–2024)</div>
+    <div style="overflow-x: auto;">
+      <table class="data-table">
+        <thead>
+          <tr><th>Year</th><th>Total Occurrences</th><th>Cause of Death</th><th>Present at Death</th><th>Cause %</th><th>Present %</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>2020</td><td>246</td><td>166</td><td>80</td><td>67%</td><td>33%</td></tr>
+          <tr><td>2021</td><td>305</td><td>187</td><td>118</td><td>61%</td><td>39%</td></tr>
+          <tr><td>2022</td><td>308</td><td>172</td><td>136</td><td>56%</td><td>44%</td></tr>
+          <tr><td>2023</td><td>274</td><td>182</td><td>92</td><td>66%</td><td>34%</td></tr>
+          <tr><td>2024*</td><td>224</td><td>131</td><td>93</td><td>58%</td><td>42%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:12px; margin-top:12px;">*2024 interim/semi‑annual report. Across 2020–2024, mitragynine was determined to be a <strong>cause of death in the majority of detections</strong> each year – more often causal than incidental.</p>
+  </div>
+
+  <!-- 2. Forensic Toxicology Findings -->
+  <div class="section-title">Forensic Toxicology Findings</div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header">Papsun et al. (2023) – Forensic Implications of Kratom</div>
+      <div class="card-body"><p>Analysis of 6,860 blood specimens; mitragynine up to 11,000 ng/mL. Co‑positivity with fentanyl (62%) and methamphetamine (19%). High concentrations (>1000 ng/mL) associated with death.</p><a href="/evidence/library/Forensic Implications of Kratom-Kratom Toxicity Correlation with Mitragynine Concentrations and Polypharmacy.pdf" class="card-link" target="_blank">Read Study →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Domingo et al. (2017) – Mitragynine in two fatalities</div>
+      <div class="card-body"><p>One case had postmortem mitragynine 10 mg/L – far above recreational levels. Demonstrates extreme concentrations can contribute to death.</p><a href="/evidence/library/Case report 16 - Mitragynine concentrations in two fatalities.pdf" class="card-link" target="_blank">Read Report →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Forensic Implications – High mitragynine levels</div>
+      <div class="card-body"><p>Blood concentrations in postmortem cases ranged from 5.4 to 11,000 ng/mL; concentrations >1000 ng/mL are more often associated with death.</p><a href="/evidence/library/Forensic Implications of Kratom-Kratom Toxicity Correlation with Mitragynine Concentrations and Polypharmacy.pdf" class="card-link" target="_blank">Read Study →</a></div>
+    </div>
+  </div>
+
+  <!-- 3. Single‑Substance Fatalities -->
+  <div class="section-title">Single‑Substance Fatalities</div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header">Two Single‑Drug Fatal Intoxications by Mitragynine</div>
+      <div class="card-body"><p>Two decedents had mitragynine as sole toxicological finding (2,325 and 3,809 ng/mL). Medical examiners ruled acute mitragynine intoxication as cause of death. Kratom alone can be lethal.</p><a href="/evidence/library/Case report 9 - Two Single-Drug Fatal Intoxications by Mitragynine.pdf" class="card-link" target="_blank">Read Study →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Postmortem Mitragynine Distribution – Single Drug Fatality</div>
+      <div class="card-body"><p>Mitragynine‑only fatality with central blood 7.5 mg/L; death certified as acute mitragynine intoxication with cardiomegaly.</p><a href="/evidence/library/Case study 6 - Postmortem Mitragynine Distribution in a Single Drug Fatality Case.pdf" class="card-link" target="_blank">Read Report →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Nevada Kratom Study (2021)</div>
+      <div class="card-body"><p>35 kratom‑positive deaths; in one case mitragynine was the sole intoxicant (950 ng/mL). Wide concentration range in fatalities shows no safe dose.</p><a href="/evidence/library/Nevada Kratom study.pdf" class="card-link" target="_blank">Read Study →</a></div>
+    </div>
+  </div>
+
+  <!-- 4. Severe Clinical Outcomes -->
+  <div class="section-title">Severe Clinical Outcomes</div>
+  <div class="outcome-box">
+    <h4>Reported Severe Outcomes</h4>
+    <ul>
+      <li>Respiratory depression</li>
+      <li>Cardiac arrest</li>
+      <li>Ventricular fibrillation</li>
+      <li>Seizures</li>
+      <li>Coma</li>
+      <li>Dialysis‑requiring renal failure</li>
+      <li>Liver failure / transplantation</li>
+      <li>Stroke / CVA</li>
+      <li>ICU admission</li>
+      <li>Multiorgan dysfunction</li>
+    </ul>
+  </div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header">Kratom Overdose with Rhabdomyolysis, Cardiomyopathy, CVA</div>
+      <div class="card-body"><p>CPK 26,989, acute renal failure requiring dialysis, transient cardiomyopathy (EF 31‑35%), multifocal brain infarcts.</p><a href="/evidence/library/Case35KratomToxicity.pdf" class="card-link" target="_blank">Read Case →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Multiorgan Dysfunction Related to Kratom Ingestion</div>
+      <div class="card-body"><p>Mixed liver injury, renal failure requiring dialysis, colitis, liver transplantation, end‑stage renal disease. Long‑term organ damage requiring transplant.</p><a href="/evidence/library/Case report 35 Multiorgan Dysfunction Related to Kratom Ingestion.pdf" class="card-link" target="_blank">Read Case →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Death from Kratom toxicity – role of intralipid</div>
+      <div class="card-body"><p>Cardiorespiratory arrest after kratom; intralipid temporarily improved condition but patient died. Kratom alone caused fatal respiratory and cardiac failure.</p><a href="/evidence/library/Case report 58 Death from Kratom toxicity and the possible role of intralipid.pdf" class="card-link" target="_blank">Read Report →</a></div>
+    </div>
+  </div>
+
+  <!-- 5. Polysubstance Mortality -->
+  <div class="section-title">Polysubstance Mortality</div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header">CDC SUDORS (2016–2017) – 152 deaths with kratom detected</div>
+      <div class="card-body"><p>Medical examiners listed kratom as a direct cause in 91 deaths (≈60%). Fentanyl/fentanyl analogs present in 65%; heroin 33%; benzodiazepines 22%. Polysubstance common, but kratom contributed causally in most detections.</p><a href="/evidence/library/CDCkratom3.pdf" class="card-link" target="_blank">Read Report →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Fatal combination of mitragynine and quetiapine</div>
+      <div class="card-body"><p>Postmortem showed lethal quetiapine concentration with mitragynine; kratom inhibited quetiapine metabolism, causing death. Herb‑drug interaction fatal.</p><a href="/evidence/library/Case report 16 - Fatal combination of mitragynine and quetiapine.pdf" class="card-link" target="_blank">Read Case →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Fatal overdose involving hydromorphone and kratom</div>
+      <div class="card-body"><p>Death with ascites, renal impairment, and mitragynine 560 ng/mL plus hydromorphone. Kratom contributed to toxicity.</p><a href="/evidence/library/Case study 4 - A case of fatal overdose involving both hydromorphone and kratom.pdf" class="card-link" target="_blank">Read Report →</a></div>
+    </div>
+  </div>
+
+  <!-- 6. Cardiac Fatality Section -->
+  <div class="section-title">Cardiac Fatality & Arrhythmia</div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header">Brugada Syndrome Unmasked by Kratom in a Young Man</div>
+      <div class="card-body"><p>28‑year‑old collapsed with ventricular fibrillation after smoking kratom; ECG showed type 1 Brugada pattern. Kratom’s alkaloids inhibit cardiac ion channels – sudden cardiac death risk.</p><a href="/evidence/library/kratom_cardiac6.pdf" class="card-link" target="_blank">Read Case →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Cardiac arrest in a young healthy male after kratom alone</div>
+      <div class="card-body"><p>35‑year‑old suffered cardiac arrest after using kratom alone; LVEF dropped to 20% and brain infarcts occurred. Catastrophic cardiovascular event.</p><a href="/evidence/library/kratom_cardiac5.pdf" class="card-link" target="_blank">Read Case →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Ventricular fibrillation in a 44‑year‑old man using kratom</div>
+      <div class="card-body"><p>Middle‑aged man with no cardiac history developed VF after kratom; prolonged QT and pulmonary congestion. Kratom can trigger lethal arrhythmias.</p><a href="/evidence/library/kratom_vfib2.pdf" class="card-link" target="_blank">Read Case →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Kratom Cardiotoxicity – Reversible Brugada Pattern & QTc Prolongation</div>
+      <div class="card-body"><p>Patient developed severe QTc prolongation (552 ms) and Brugada pattern after kratom use, resolving after abstinence. Concentration‑dependent potassium channel blockade.</p><a href="/evidence/library/kratom_cardiac3.pdf" class="card-link" target="_blank">Read Report →</a></div>
+    </div>
+  </div>
+
+  <!-- 7. Healthcare System Burden -->
+  <div class="section-title">Healthcare System Burden</div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header">Kratom exposures – NPDS 2011–2017</div>
+      <div class="card-body"><p>1,807 exposures; 31.8% admitted to healthcare facility, 51.9% serious medical outcome. 11 deaths (2 with kratom alone).</p><a href="/evidence/library/poisonkratom2.pdf" class="card-link" target="_blank">Read Study →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">ICU‑level toxicity from kratom overdose</div>
+      <div class="card-body"><p>Patients required intubation, vasopressors, dialysis, and prolonged ICU stays. Kratom alone can produce critical illness.</p><a href="/evidence/library/Case report 42 Kratom Ingestion and Emergency Care.pdf" class="card-link" target="_blank">Read Report →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">Liver transplantation after kratom‑induced liver failure</div>
+      <div class="card-body"><p>Patient required orthotopic liver transplantation and remains on dialysis after chronic kratom use.</p><a href="/evidence/library/Case report 35 Multiorgan Dysfunction Related to Kratom Ingestion.pdf" class="card-link" target="_blank">Read Case →</a></div>
+    </div>
+  </div>
+
+  <!-- Clinical Summary -->
+  <div class="outcome-box" style="background:#f0f4fa; border-left-color: var(--maroon);">
+    <h4 style="font-size: 18px;">⸻ Clinical & Forensic Summary</h4>
+    <p style="font-size: 14px;">Kratom and mitragynine increasingly appear in overdose surveillance systems, forensic toxicology investigations, and severe clinical outcome reports, including fatal intoxications, cardiac arrest, respiratory depression, multiorgan failure, and polysubstance overdose deaths. Single‑substance fatalities have been documented with postmortem concentrations exceeding 2,000 ng/mL. Polysubuse with fentanyl, benzodiazepines, and stimulants is common, but medical examiners have determined mitragynine to be a causal contributor in the majority of Florida detections and approximately 60% of CDC SUDORS deaths. Severe clinical outcomes include intubation, dialysis, cardiac arrhythmias, and liver transplantation. These patterns indicate that kratom is not a benign botanical but carries meaningful risk of severe and fatal outcomes, particularly in high‑dose and polysubstance contexts.</p>
+  </div>
+</div>
+
+<footer>© 2026 Global Kratom Eradicators. Evidence‑based policy resources.</footer>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="">
+</div>
+
+<script>
+  function openLightbox(src) {
+    const lightbox = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    img.src = src;
+    lightbox.style.display = 'flex';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+  }
+  document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  });
+</script>
+</body>
+</html>
