@@ -219,30 +219,24 @@
       font-size: 13px;
     }
 
-    /* FDA callout box - larger Rutherford image */
+    /* FDA callout box - rectangular full-width image */
     .fda-callout {
       background: #fff7e8;
       border-left: 8px solid #c8102e;
       border-radius: 16px;
-      padding: 28px 32px;
+      padding: 0;
       margin: 40px 0 20px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 32px;
+      overflow: hidden;
       box-shadow: 0 8px 20px rgba(0,0,0,0.05);
     }
     .rutherford-img {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
+      width: 100%;
+      height: auto;
+      display: block;
       object-fit: cover;
-      border: 4px solid #c8102e;
-      flex-shrink: 0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    .quote-box {
-      flex: 2;
+    .callout-content {
+      padding: 28px 32px;
     }
     .quote-text {
       font-size: 24px;
@@ -256,13 +250,14 @@
       color: #5c6e84;
     }
     .fda-btn {
+      display: inline-block;
       background: #c8102e;
       color: white;
       padding: 12px 28px;
       border-radius: 40px;
       font-weight: 800;
       font-size: 14px;
-      white-space: nowrap;
+      margin-top: 16px;
       transition: 0.2s;
     }
     .fda-btn:hover {
@@ -759,26 +754,16 @@
       .mission-card {
         padding: 24px;
       }
-      /* Rutherford image larger but responsive */
-      .fda-callout {
-        flex-direction: column;
-        text-align: center;
-        padding: 28px 20px;
-        gap: 20px;
-      }
-      .rutherford-img {
-        width: 140px;
-        height: 140px;
-        margin: 0 auto;
+      .callout-content {
+        padding: 20px;
       }
       .quote-text {
         font-size: 20px;
       }
       .fda-btn {
-        white-space: normal;
+        display: block;
         text-align: center;
-        font-size: 13px;
-        padding: 12px 20px;
+        white-space: normal;
       }
       .stats-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -884,7 +869,7 @@
         <p>This library compiles peer‑reviewed evidence, government reports, and clinical case studies documenting the dangers of unregulated whole‑leaf kratom – dependence, withdrawal, liver injury, cardiac arrest, and deaths.</p>
         <div class="actions">
           <a class="btn btn-red" href="/evidence/index.html">VIEW THE EVIDENCE →</a>
-          <a class="btn btn-white" href="#action">TAKE ACTION →</a>
+          <a class="btn btn-white" href="https://antikratom.org" target="_blank" rel="noopener noreferrer">TAKE ACTION →</a>
         </div>
       </div>
       <aside class="mission-card">
@@ -896,16 +881,16 @@
     </div>
   </section>
 
-  <!-- Rutherford Callout Box - SC State Representative, larger image -->
+  <!-- Rutherford Callout Box - rectangular full-width image -->
   <div class="container">
     <div class="fda-callout">
       <img class="rutherford-img" src="Rutherford.jpeg" alt="South Carolina State Representative Rutherford">
-      <div class="quote-box">
+      <div class="callout-content">
         <div class="quote-text">“The FDA didn’t ban it!”</div>
         <div class="quote-author">– South Carolina State Representative Rutherford</div>
         <p style="margin-top: 8px; font-size: 14px;">Despite decades of documented harms, whole‑leaf kratom remains unregulated. Learn why federal action has stalled – and what can still be done.</p>
+        <a href="#" class="fda-btn">Click here → Myth vs. Fact: What the FDA Can & Cannot Do</a>
       </div>
-      <a href="#" class="fda-btn">Click here → Myth vs. Fact: What the FDA Can & Cannot Do</a>
     </div>
   </div>
 
@@ -938,7 +923,7 @@
   <section id="lawmakers">
     <div class="container resource-row">
       <div class="panel light"><div class="capitol-badge">🏛</div><div><h3>Lawmakers:<br>Better Policy Saves Lives</h3><p>Outdated laws and lack of enforcement leave families vulnerable. We provide the data, documents, and expert analysis needed to protect communities.</p><a class="btn btn-navy" href="#">Resources for Lawmakers →</a></div></div>
-      <div id="evidence" class="panel dark"><h3>Evidence You Can Trust</h3><p>Explore our library of peer-reviewed studies, government reports, poison center data, case reports, and regulatory documents.</p><div class="evidence-metrics"><div><strong>1,200+</strong>Documents & Studies</div><div><strong>25+</strong>Data Sources</div><div><strong>2010–2026</strong>Date Range</div><div><strong>100%</strong>Evidence-Based</div></div><a class="btn btn-white" href="/evidence/index.html">Browse the Evidence →</a></div>
+      <div id="evidence" class="panel dark"><h3>Evidence You Can Trust</h3><p>Explore our library of peer-reviewed studies, government reports, poison center data, case reports, and regulatory documents.</p><div class="evidence-metrics"><div><strong>100+</strong>Documents & Studies</div><div><strong>25+</strong>Data Sources</div><div><strong>2010–2026</strong>Date Range</div><div><strong>100%</strong>Evidence-Based</div></div><a class="btn btn-white" href="/evidence/index.html">Browse the Evidence →</a></div>
     </div>
   </section>
 
@@ -949,7 +934,7 @@
         <article class="news-card"><img src="assets/icons/policy.jpeg" alt="Policy"><div class="news-card-content"><div class="category">Policy</div><h3>States Move to Protect Families as Kratom-Related Harms Rise</h3><div class="date">May 8, 2026</div></div></article>
         <article class="news-card"><img src="assets/icons/health.jpeg" alt="Health"><div class="news-card-content"><div class="category">Research</div><h3>New Study Identifies Alarming Levels of 7-OH in Products</h3><div class="date">April 24, 2026</div></div></article>
         <article class="news-card"><img src="assets/icons/dependence.jpg" alt="Withdrawal"><div class="news-card-content"><div class="category">Health</div><h3>Clinicians Report Surge in Severe Withdrawal and Poisoning Cases</h3><div class="date">April 10, 2026</div></div></article>
-        <aside id="action" class="action-card"><div class="megaphone">!</div><h3>Take Action Today</h3><p>Your voice can drive change. Contact lawmakers and demand stronger protections for families and communities.</p><a class="btn btn-red" href="#">Contact Your Legislators →</a></aside>
+        <aside id="action" class="action-card"><div class="megaphone">!</div><h3>Take Action Today</h3><p>Your voice can drive change. Contact lawmakers and demand stronger protections for families and communities.</p><a class="btn btn-red" href="https://antikratom.org" target="_blank" rel="noopener noreferrer">Contact Your Legislators →</a></aside>
       </div>
     </div>
   </section>
@@ -962,7 +947,7 @@
 <footer>
   <div class="container footer-grid">
     <div class="footer-brand"><img src="assets/logos/logo-dark.png" alt="logo"><div><h3>Global <span>Kratom</span> Eradicators</h3><p>Educate. Expose. Eradicate.</p><p>Promoting truth, accountability, public health, and stronger policy protections.</p></div></div>
-    <div><h4>Quick Links</h4><a href="#issues">Issues</a><a href="/evidence/index.html">Evidence</a><a href="#lawmakers">For Lawmakers</a><a href="#action">Action Center</a></div>
+    <div><h4>Quick Links</h4><a href="#issues">Issues</a><a href="/evidence/index.html">Evidence</a><a href="#lawmakers">For Lawmakers</a><a href="https://antikratom.org" target="_blank" rel="noopener noreferrer">Action Center</a></div>
     <div><h4>Resources</h4><a href="/evidence/index.html">Research Library</a><a href="#">Data & Reports</a><a href="#">Legislation Tracker</a><a href="#">Media Kit</a></div>
     <div><h4>Stay Informed</h4><p>Get updates on research, legislation, and action alerts.</p><form class="signup"><input type="email" placeholder="Email address"><button type="submit">Sign Up</button></form></div>
   </div>
