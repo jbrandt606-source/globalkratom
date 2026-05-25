@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>FDA Authority & Kratom: Myth vs Fact | Global Kratom Eradicators</title>
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logos/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/logos/favicon.png">
+  <link rel="shortcut icon" href="assets/logos/favicon.png">
+  <link rel="apple-touch-icon" href="assets/logos/favicon.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: #fff;
+      color: #0b1d34;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* top bar */
+    .topbar {
+      background: #0b1d34;
+      color: #dbe7f4;
+      text-align: center;
+      padding: 9px 18px;
+      font-size: 14px;
+      letter-spacing: 0.03em;
+    }
+
+    /* header */
+    header {
+      background: #fff;
+      border-bottom: 1px solid #dfe5ec;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+    .brand img {
+      width: 54px;
+      height: 54px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .brand-title {
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 0.95;
+      font-size: 22px;
+      letter-spacing: 0.02em;
+    }
+    .brand-title span {
+      color: #c8102e;
+    }
+    .brand-sub {
+      margin-top: 7px;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+    nav {
+      display: flex;
+      gap: 25px;
+      font-weight: 800;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+    nav a:hover {
+      color: #c8102e;
+    }
+
+    /* hero with fdamyth.png as background */
+    .hero-myth {
+      background: linear-gradient(90deg, rgba(11,29,52,0.85), rgba(11,29,52,0.75)), url("fdamyth.png");
+      background-size: cover;
+      background-position: center 30%;
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+    }
+    .hero-myth .container {
+      max-width: 900px;
+    }
+    .hero-myth h1 {
+      font-size: 48px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .hero-myth p {
+      font-size: 20px;
+      opacity: 0.92;
+    }
+
+    /* section styling */
+    .section-title {
+      font-size: 32px;
+      font-weight: 900;
+      border-left: 6px solid #c8102e;
+      padding-left: 20px;
+      margin: 56px 0 32px 0;
+    }
+    .myth-fact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-bottom: 48px;
+    }
+    .card {
+      background: white;
+      border: 1px solid #dfe5ec;
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.03);
+      transition: 0.2s;
+    }
+    .card:hover {
+      box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+    }
+    .myth-tag {
+      display: inline-block;
+      background: #c8102e;
+      color: white;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 40px;
+      margin-bottom: 16px;
+    }
+    .fact-tag {
+      display: inline-block;
+      background: #0b1d34;
+      color: white;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 40px;
+      margin-bottom: 16px;
+    }
+    .card h3 {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .card p {
+      font-size: 15px;
+      color: #2c3e50;
+      line-height: 1.5;
+    }
+
+    /* two-column layout for can/cannot */
+    .two-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+    .capability-box {
+      background: #f4f7fc;
+      border-radius: 20px;
+      padding: 28px;
+    }
+    .capability-box h3 {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .capability-box ul {
+      list-style: none;
+      margin-left: 0;
+    }
+    .capability-box li {
+      margin-bottom: 14px;
+      padding-left: 28px;
+      position: relative;
+      font-size: 15px;
+    }
+    .capability-box li::before {
+      content: "✓";
+      color: #c8102e;
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+    }
+    .cannot li::before {
+      color: #6b7b8f;
+      content: "✗";
+    }
+
+    /* DSHEA explanation */
+    .dshea-box {
+      background: #eef2f6;
+      border-radius: 20px;
+      padding: 32px;
+      margin: 40px 0;
+      border-left: 8px solid #c8102e;
+    }
+    .dshea-box h3 {
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    /* timeline */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin: 32px 0 48px;
+    }
+    .timeline-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      border-bottom: 1px solid #dfe5ec;
+      padding-bottom: 16px;
+    }
+    .timeline-year {
+      font-weight: 900;
+      font-size: 18px;
+      min-width: 100px;
+      color: #c8102e;
+    }
+    .timeline-desc {
+      font-size: 15px;
+    }
+
+    /* closing box */
+    .closing-box {
+      background: #0b1d34;
+      color: white;
+      border-radius: 20px;
+      padding: 36px;
+      margin: 48px 0 64px;
+      text-align: center;
+    }
+    .closing-box p {
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    footer {
+      background: #0b1d34;
+      color: #fff;
+      padding: 38px 0 18px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 34px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    }
+    .footer-brand {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+    }
+    .footer-brand img {
+      width: 62px;
+      height: 62px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .footer-brand h3 {
+      text-transform: uppercase;
+      font-size: 24px;
+      line-height: 1;
+    }
+    .footer-brand h3 span {
+      color: #c8102e;
+      display: block;
+    }
+    .footer-brand p,
+    footer a {
+      color: #dce7f4;
+      font-size: 13px;
+    }
+    .footer-brand p {
+      margin-top: 10px;
+      max-width: 320px;
+    }
+    footer h4 {
+      text-transform: uppercase;
+      font-size: 13px;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+    footer a {
+      display: block;
+      margin-bottom: 8px;
+      transition: opacity 0.2s;
+    }
+    footer a:hover {
+      opacity: 0.8;
+      color: #fff;
+    }
+    .signup {
+      display: flex;
+      margin-top: 12px;
+      max-width: 270px;
+    }
+    .signup input {
+      flex: 1;
+      min-width: 0;
+      padding: 12px;
+      border: 0;
+      border-radius: 4px 0 0 4px;
+      outline: none;
+    }
+    .signup button {
+      border: 0;
+      background: #c8102e;
+      color: #fff;
+      font-weight: 900;
+      padding: 0 14px;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+    }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding-top: 16px;
+      color: #cbd5e1;
+      font-size: 12px;
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        padding: 0 20px;
+      }
+      .topbar {
+        font-size: 11px;
+      }
+      .nav {
+        height: auto;
+        padding: 14px 0;
+        flex-wrap: wrap;
+      }
+      .brand img {
+        width: 40px;
+        height: 40px;
+      }
+      .brand-title {
+        font-size: 16px;
+      }
+      .brand-sub {
+        font-size: 8px;
+      }
+      nav {
+        display: none;
+      }
+      .hero-myth h1 {
+        font-size: 36px;
+      }
+      .hero-myth p {
+        font-size: 18px;
+      }
+      .myth-fact-grid {
+        grid-template-columns: 1fr;
+      }
+      .two-columns {
+        grid-template-columns: 1fr;
+      }
+      .timeline-item {
+        flex-direction: column;
+        gap: 6px;
+      }
+      .timeline-year {
+        min-width: auto;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .footer-brand {
+        flex-wrap: wrap;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">GLOBALKRATOM.ORG · Evidence-based policy resources for lawmakers, clinicians, journalists, and families</div>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="/">
+      <img src="assets/logos/logo-dark.png" alt="Global Kratom Eradicators logo">
+      <div>
+        <div class="brand-title">Global Kratom <span>Eradicators</span></div>
+        <div class="brand-sub">Educate. Expose. Eradicate.</div>
+      </div>
+    </a>
+    <nav>
+      <a href="/evidence/index.html">Evidence</a>
+      <a href="#issues">Issues</a>
+      <a href="#lawmakers">For Lawmakers</a>
+      <a href="#states">States</a>
+      <a href="#news">News</a>
+      <a href="#action">Action Center</a>
+      <a href="/mission.html">Mission</a>
+      <a href="/fdamyth.html">FDA Myth vs Fact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Hero section with fdamyth.png as background -->
+  <section class="hero-myth">
+    <div class="container">
+      <h1>FDA Authority & Kratom:<br>Myth vs Fact</h1>
+      <p>Understanding what the FDA can—and cannot—do under current federal law regarding kratom, dietary supplements, and emerging alkaloid products.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <!-- MYTH VS FACT CARDS -->
+    <div class="section-title">Common Myths — and the Facts</div>
+    <div class="myth-fact-grid">
+      <div class="card"><div class="myth-tag">Myth</div><h3>“If kratom were dangerous, FDA would just ban it.”</h3><p>FDA cannot instantly ban a product simply because safety concerns exist. Dietary supplement regulation under DSHEA (1994) limits FDA authority unless specific statutory thresholds are met or Congress/DEA take additional action.</p></div>
+      <div class="card"><div class="fact-tag">Fact</div><h3>No instant ban authority.</h3><p>FDA must follow a complex process that often requires proving a product is adulterated or misbranded. Even then, removal from the market can be slow and resource‑intensive.</p></div>
+
+      <div class="card"><div class="myth-tag">Myth</div><h3>“FDA approval is required before supplements are sold.”</h3><p>Unlike prescription drugs, most dietary supplements do not require premarket approval before entering commerce. Manufacturers are generally responsible for ensuring safety and compliance — not the FDA.</p></div>
+      <div class="card"><div class="fact-tag">Fact</div><h3>No pre‑market approval for most supplements.</h3><p>FDA primarily acts after products are already on the market, using enforcement tools like warning letters, import alerts, and recalls.</p></div>
+
+      <div class="card"><div class="myth-tag">Myth</div><h3>“If a product is sold in stores, FDA has determined it is safe.”</h3><p>Retail availability does not equal FDA approval or safety determination. Many products remain on the market while investigations, enforcement actions, recalls, or litigation are ongoing.</p></div>
+      <div class="card"><div class="fact-tag">Fact</div><h3>Safety is not pre‑judged.</h3><p>FDA has repeatedly warned about kratom’s risks, but legal and procedural hurdles mean harmful products can remain accessible for years.</p></div>
+
+      <div class="card"><div class="myth-tag">Myth</div><h3>“FDA has no concerns about kratom.”</h3><p>FDA has repeatedly issued warnings regarding kratom‑related risks, including liver toxicity, seizures, substance use disorder, neonatal abstinence syndrome, contamination, and death.</p></div>
+      <div class="card"><div class="fact-tag">Fact</div><h3>Strong, documented concerns.</h3><p>Since 2014, FDA has issued import alerts, warning letters, public health advisories, and even a mandatory recall order for kratom products.</p></div>
+
+      <div class="card"><div class="myth-tag">Myth</div><h3>“FDA can remove every kratom product immediately.”</h3><p>FDA enforcement authority is constrained by statutory standards, evidentiary burdens, resource limitations, and the structure of federal dietary supplement law.</p></div>
+      <div class="card"><div class="fact-tag">Fact</div><h3>Enforcement is case‑by‑case and slow.</h3><p>Proving adulteration, litigating against hundreds of vendors, and coordinating with customs and DOJ takes years — not days.</p></div>
+
+      <div class="card"><div class="myth-tag">Myth</div><h3>“Import alerts mean a substance is fully banned.”</h3><p>Import alerts allow detention of certain products entering commerce but do not automatically prohibit all domestic distribution or possession.</p></div>
+      <div class="card"><div class="fact-tag">Fact</div><h3>Import alerts ≠ total prohibition.</h3><p>Import Alert 54‑15 detains kratom dietary supplements at ports, but domestic sales of existing inventory may continue unless further action is taken.</p></div>
+
+      <div class="card"><div class="myth-tag">Myth</div><h3>“7‑OH and concentrated alkaloid products are regulated the same way as traditional drugs.”</h3><p>Regulatory frameworks for emerging alkaloid products remain complex and evolving, especially when products are marketed as supplements despite opioid‑like pharmacology.</p></div>
+      <div class="card"><div class="fact-tag">Fact</div><h3>Regulatory gaps exist.</h3><p>FDA has recently targeted 7‑OH products (e.g., warning letters to Hydroxie), but novel synthetic or concentrated alkaloids can appear faster than agency action.</p></div>
+    </div>
+
+    <!-- WHAT FDA CAN / CANNOT DO -->
+    <div class="section-title">What FDA Can — and Cannot — Easily Do</div>
+    <div class="two-columns">
+      <div class="capability-box">
+        <h3>✓ What FDA <em>Can</em> Do</h3>
+        <ul>
+          <li>Issue warning letters to companies</li>
+          <li>Issue import alerts (e.g., Alert 54‑15)</li>
+          <li>Pursue voluntary or mandatory recalls</li>
+          <li>Seize adulterated products via US Marshals</li>
+          <li>Challenge unlawful drug or disease claims</li>
+          <li>Issue public health advisories</li>
+          <li>Refer substances for scheduling review (DEA)</li>
+          <li>Inspect manufacturing facilities</li>
+        </ul>
+      </div>
+      <div class="capability-box cannot">
+        <h3>✗ What FDA <em>Cannot Easily</em> Do</h3>
+        <ul>
+          <li>Instantly remove every product nationwide</li>
+          <li>Require premarket approval for all supplements</li>
+          <li>Unilaterally schedule substances without DEA</li>
+          <li>Criminalize possession independently</li>
+          <li>Inspect every retailer or online seller</li>
+          <li>Rapidly litigate hundreds of violative products</li>
+          <li>Compel states to ban substances</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- DSHEA EXPLANATION -->
+    <div class="dshea-box">
+      <h3>Why Supplement Law Matters: DSHEA 1994</h3>
+      <p><strong>Dietary Supplement Health and Education Act (DSHEA)</strong> fundamentally changed how FDA regulates supplements. Under DSHEA:</p>
+      <ul style="margin-top: 16px; margin-left: 24px;">
+        <li>Supplements are generally marketed without pre‑approval</li>
+        <li>Manufacturers – not FDA – are responsible for ensuring safety</li>
+        <li>FDA often acts <strong>after</strong> products enter commerce</li>
+        <li>Proving adulteration or misbranding can be legally complex and slow</li>
+        <li>New dietary ingredients (NDIs) require notification, but enforcement is limited</li>
+      </ul>
+      <p style="margin-top: 16px;">Kratom has never been lawfully marketed as a dietary ingredient under DSHEA, yet its widespread availability reflects enforcement gaps, not FDA approval or safety.</p>
+    </div>
+
+    <!-- TIMELINE -->
+    <div class="section-title">Federal Actions Related to Kratom (Selected)</div>
+    <div class="timeline">
+      <div class="timeline-item"><div class="timeline-year">2014</div><div class="timeline-desc">FDA issues Import Alert 54‑15, allowing detention of kratom dietary supplements without physical examination.</div></div>
+      <div class="timeline-item"><div class="timeline-year">2016</div><div class="timeline-desc">US Marshals seize nearly 90,000 bottles of kratom supplements (RelaKzpro) worth >$400,000.</div></div>
+      <div class="timeline-item"><div class="timeline-year">2017</div><div class="timeline-desc">FDA issues public health advisory warning consumers not to use kratom.</div></div>
+      <div class="timeline-item"><div class="timeline-year">2018</div><div class="timeline-desc">First mandatory recall order issued for kratom products (Salmonella contamination).</div></div>
+      <div class="timeline-item"><div class="timeline-year">2019–2023</div><div class="timeline-desc">Multiple warning letters to companies making unproven opioid‑withdrawal and disease claims.</div></div>
+      <div class="timeline-item"><div class="timeline-year">2024</div><div class="timeline-desc">FDA warns consumers against OPMS Black Liquid Kratom after reports of death and addiction.</div></div>
+      <div class="timeline-item"><div class="timeline-year">2025</div><div class="timeline-desc">FDA issues warning letter to Hydroxie (7‑OH products) as unapproved new drugs and unsafe food additives.</div></div>
+    </div>
+
+    <!-- CLOSING FOR POLICYMAKERS -->
+    <div class="closing-box">
+      <p><strong>Why This Matters for Policymakers</strong><br><br>
+      Public‑health concern, retail availability, and federal enforcement complexity can coexist simultaneously. Understanding the limits of FDA authority helps explain why state legislatures, boards of pharmacy, and other agencies continue to debate regulatory approaches to kratom and emerging alkaloid products. <strong>Absence of a federal ban does not equal safety</strong> — it reflects the structural reality of supplement law and enforcement priorities.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div class="footer-brand"><img src="assets/logos/logo-dark.png" alt="logo"><div><h3>Global <span>Kratom</span> Eradicators</h3><p>Educate. Expose. Eradicate.</p><p>Promoting truth, accountability, public health, and stronger policy protections.</p></div></div>
+    <div><h4>Quick Links</h4><a href="/evidence/index.html">Evidence</a><a href="#lawmakers">For Lawmakers</a><a href="https://antikratom.org" target="_blank" rel="noopener noreferrer">Action Center</a><a href="/mission.html">Mission</a><a href="/fdamyth.html">FDA Myth vs Fact</a></div>
+    <div><h4>Resources</h4><a href="/evidence/index.html">Research Library</a><a href="#">Data & Reports</a><a href="#">Legislation Tracker</a><a href="#">Media Kit</a></div>
+    <div><h4>Stay Informed</h4><p>Get updates on research, legislation, and action alerts.</p><form class="signup"><input type="email" placeholder="Email address"><button type="submit">Sign Up</button></form></div>
+  </div>
+  <div class="container footer-bottom"><div>© 2026 Global Kratom Eradicators. All rights reserved.</div><div>Educational and legislative reference.</div></div>
+</footer>
+
+</body>
+</html>
