@@ -104,24 +104,10 @@
     nav a:hover {
       color: #c8102e;
     }
-    .donate {
-      background: #c8102e;
-      color: #fff;
-      padding: 13px 22px;
-      border-radius: 5px;
-      font-weight: 900;
-      text-transform: uppercase;
-      box-shadow: 0 10px 20px rgba(200, 16, 46, 0.25);
-      transition: background 0.2s;
-      white-space: nowrap;
-    }
-    .donate:hover {
-      background: #a20d25;
-    }
 
     /* hero */
     .hero {
-      background: linear-gradient(90deg, rgba(7, 24, 44, 0.96), rgba(7, 24, 44, 0.82), rgba(7, 24, 44, 0.25)), url("assets/capitol-hero.jpg");
+      background: linear-gradient(90deg, rgba(7, 24, 44, 0.96), rgba(7, 24, 44, 0.82), rgba(7, 24, 44, 0.25)), url("assets/hero/capitol-hero.jpeg");
       background-size: cover;
       background-position: center;
       color: #fff;
@@ -151,9 +137,9 @@
     }
     .hero h1 {
       font-size: clamp(42px, 6vw, 68px);
-      line-height: 0.98;
+      line-height: 1.05;
       font-weight: 900;
-      letter-spacing: -0.06em;
+      letter-spacing: -0.03em;
       margin-bottom: 24px;
     }
     .hero p {
@@ -693,7 +679,7 @@
       font-size: 12px;
     }
 
-    /* RESPONSIVE */
+    /* RESPONSIVE - FIX MOBILE VIEW */
     @media (max-width: 1050px) {
       nav {
         display: none;
@@ -720,56 +706,96 @@
 
     @media (max-width: 760px) {
       .container {
-        padding: 0 18px;
+        padding: 0 20px;
       }
       .topbar {
-        font-size: 12px;
-        line-height: 1.4;
+        font-size: 11px;
+        line-height: 1.3;
+        padding: 10px 12px;
       }
       .nav {
         height: auto;
-        padding: 16px 0;
+        padding: 14px 0;
         flex-wrap: wrap;
+        gap: 12px;
+      }
+      .brand {
+        gap: 10px;
       }
       .brand img {
-        width: 44px;
-        height: 44px;
+        width: 40px;
+        height: 40px;
       }
       .brand-title {
-        font-size: 17px;
+        font-size: 16px;
+        line-height: 1.1;
       }
       .brand-sub {
-        font-size: 9px;
-      }
-      .donate {
-        padding: 10px 16px;
-        font-size: 12px;
-        white-space: nowrap;
+        font-size: 8px;
+        letter-spacing: 0.12em;
       }
       .hero-grid {
-        padding: 50px 0;
-        gap: 26px;
+        padding: 48px 0 56px;
+        gap: 32px;
+      }
+      .hero h1 {
+        font-size: 38px;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        margin-bottom: 18px;
       }
       .hero p {
         font-size: 16px;
       }
       .actions {
         flex-direction: column;
+        gap: 12px;
       }
       .btn {
         width: 100%;
+        padding: 12px 20px;
+      }
+      .mission-card {
+        padding: 24px;
+      }
+      .fda-callout {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px 20px;
+        gap: 16px;
+      }
+      .rutherford-img {
+        width: 90px;
+        height: 90px;
+        margin: 0 auto;
+      }
+      .quote-text {
+        font-size: 18px;
+      }
+      .fda-btn {
+        white-space: normal;
+        text-align: center;
+        font-size: 13px;
+        padding: 10px 20px;
       }
       .stats-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-      section {
-        padding: 42px 0;
+      .stat {
+        padding: 20px 8px;
+      }
+      .stat strong {
+        font-size: 24px;
+      }
+      .section-title {
+        font-size: 26px;
       }
       .issue-grid {
         grid-template-columns: 1fr;
+        gap: 24px;
       }
       .issue-card img {
-        height: 190px;
+        height: 170px;
       }
       .issue-card p {
         min-height: auto;
@@ -788,10 +814,12 @@
         grid-template-columns: repeat(2, 1fr);
       }
       .news-head {
-        display: block;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
       }
       .news-head h2 {
-        margin-bottom: 8px;
+        font-size: 22px;
       }
       .news-grid {
         grid-template-columns: 1fr;
@@ -800,17 +828,10 @@
         grid-column: auto;
       }
       .mission-strip .container {
-        align-items: flex-start;
-        flex-wrap: wrap;
-      }
-      .mission-strip strong {
-        font-size: 18px;
-      }
-      .fda-callout {
         flex-direction: column;
         text-align: center;
       }
-      .rutherford-img {
+      .people-icon {
         margin: 0 auto;
       }
       .footer-grid {
@@ -821,11 +842,9 @@
         flex-wrap: wrap;
       }
       .footer-bottom {
-        display: block;
+        flex-direction: column;
         text-align: center;
-      }
-      .footer-bottom div {
-        margin-bottom: 8px;
+        gap: 8px;
       }
     }
   </style>
@@ -851,7 +870,7 @@
       <a href="#news">News</a>
       <a href="#action">Action Center</a>
     </nav>
-    <a href="#" class="donate">DONATE</a>
+    <!-- DONATE BUTTON REMOVED -->
   </div>
 </header>
 
@@ -863,8 +882,8 @@
         <h1>Banning 7‑OH Alone Won’t Protect Families.<br>Natural Kratom Causes Real Harm.</h1>
         <p>This library compiles peer‑reviewed evidence, government reports, and clinical case studies documenting the dangers of unregulated whole‑leaf kratom – dependence, withdrawal, liver injury, cardiac arrest, and deaths.</p>
         <div class="actions">
-          <a class="btn btn-red" href="/evidence/index.html">View the Evidence →</a>
-          <a class="btn btn-white" href="#action">Take Action →</a>
+          <a class="btn btn-red" href="/evidence/index.html">VIEW THE EVIDENCE →</a>
+          <a class="btn btn-white" href="#action">TAKE ACTION →</a>
         </div>
       </div>
       <aside class="mission-card">
@@ -876,13 +895,13 @@
     </div>
   </section>
 
-  <!-- Rutherford Callout Box -->
+  <!-- Rutherford Callout Box - SC State Representative -->
   <div class="container">
     <div class="fda-callout">
-      <img class="rutherford-img" src="Rutherford.jpeg" alt="Rutherford">
+      <img class="rutherford-img" src="Rutherford.jpeg" alt="South Carolina State Representative Rutherford">
       <div class="quote-box">
         <div class="quote-text">“The FDA didn’t ban it!”</div>
-        <div class="quote-author">– Rutherford, former FDA Associate Commissioner</div>
+        <div class="quote-author">– South Carolina State Representative Rutherford</div>
         <p style="margin-top: 8px; font-size: 14px;">Despite decades of documented harms, whole‑leaf kratom remains unregulated. Learn why federal action has stalled – and what can still be done.</p>
       </div>
       <a href="#" class="fda-btn">Click here → Myth vs. Fact: What the FDA Can & Cannot Do</a>
