@@ -257,6 +257,18 @@ a {
     grid-template-columns: 1fr 1fr;
     gap: 24px;
 }
+.heatmap-container {
+    background: white;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    padding: 20px;
+    margin-bottom: 24px;
+    text-align: center;
+}
+.heatmap-container img {
+    border-radius: 12px;
+    margin-top: 12px;
+}
 .interpret-box {
     background: #f0f4fa;
     border-left: 4px solid var(--teal);
@@ -385,12 +397,28 @@ footer {
           <tr><td>2020</td><td>32</td><td>866</td></tr>
           <tr><td>2021</td><td>33</td><td>1,016</td></tr>
           <tr><td>2022</td><td>34</td><td>1,017</td></tr>
-          <tr><td>2023</td><td>38</td><td>1,151</td></tr>
+          <tr><td>2023</td><td>42</td><td>1,314</td></tr>
           <tr><td>2024</td><td>43</td><td>995</td></tr>
         </tbody>
       </table>
     </div>
     <p style="font-size:12px; margin-top:12px;">Source: CDC SUDORS. 2024 apparent decline occurs despite expanded jurisdiction coverage (43 states). Testing practices and polysubstance patterns influence detection.</p>
+  </div>
+
+  <!-- Geographic Distribution – Heatmaps -->
+  <div class="section-title">Geographic Distribution – SUDORS Jurisdictions</div>
+  <div class="heatmap-container">
+    <div class="chart-title">2020: 866 deaths across 32 jurisdictions</div>
+    <img src="/evidence/assets/heatmap1.png" alt="CDC SUDORS heatmap 2020 – kratom/mitragynine detected in overdose deaths by state">
+  </div>
+  <div class="heatmap-container">
+    <div class="chart-title">2023: 1,314 deaths across 42 jurisdictions (peak year)</div>
+    <img src="/evidence/assets/heatmap2.png" alt="CDC SUDORS heatmap 2023 – kratom/mitragynine detected in overdose deaths by state">
+  </div>
+  <div class="heatmap-container">
+    <div class="chart-title">2024: 995 deaths across 43 jurisdictions</div>
+    <img src="/evidence/assets/heatmap2.png" alt="CDC SUDORS heatmap 2024 – kratom/mitragynine detected in overdose deaths by state">
+    <p style="font-size:12px; margin-top:12px;">Top jurisdictions (total deaths 2020–2024): Georgia (807), Michigan (412), Tennessee (286), Ohio (244), South Carolina (219), Florida (204), North Carolina (182), Pennsylvania (160), New York (148), Alabama (136).</p>
   </div>
 
   <div class="chart-container">
