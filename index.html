@@ -219,6 +219,79 @@
       font-size: 13px;
     }
 
+    /* Natural Leaf vs Extracts card (standalone) */
+    .policy-highlight {
+      margin: 48px 0 32px;
+    }
+    .policy-card {
+      background: #fff;
+      border: 1px solid #dfe5ec;
+      border-radius: 20px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(11, 29, 52, 0.06);
+      transition: transform 0.1s;
+      max-width: 380px;
+      margin: 0 auto;
+    }
+    .policy-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(11, 29, 52, 0.12);
+    }
+    .policy-card .card-img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      background: #f0f4f8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .policy-card .card-img img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+    }
+    .policy-card .circle-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: #0b1d34;
+      color: #fff;
+      border: 6px solid #fff;
+      display: grid;
+      place-items: center;
+      margin: -35px auto 12px;
+      position: relative;
+      z-index: 2;
+      font-size: 32px;
+      font-weight: 900;
+    }
+    .policy-card h3 {
+      font-size: 20px;
+      font-weight: 900;
+      margin: 0 20px 12px;
+      color: #0b1d34;
+      line-height: 1.2;
+    }
+    .policy-card p {
+      font-size: 14px;
+      color: #415166;
+      padding: 0 20px 20px;
+    }
+    .policy-card .learn-link {
+      display: inline-block;
+      color: #c8102e;
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      letter-spacing: 0.5px;
+    }
+    .policy-card .learn-link:hover {
+      text-decoration: underline;
+    }
+
     /* FDA callout box - rectangular full-width image */
     .fda-callout {
       background: #fff7e8;
@@ -675,7 +748,7 @@
       font-size: 12px;
     }
 
-    /* RESPONSIVE - FIX MOBILE VIEW */
+    /* RESPONSIVE */
     @media (max-width: 1050px) {
       nav {
         display: none;
@@ -882,7 +955,20 @@
     </div>
   </section>
 
-  <!-- Rutherford Callout Box - rectangular full-width image -->
+  <!-- NEW: Natural Leaf vs Extracts feature card -->
+  <div class="container policy-highlight">
+    <div class="policy-card">
+      <div class="card-img">
+        <img src="assets/leafkratom.png" alt="Kratom leaf icon">
+      </div>
+      <div class="circle-icon">🍃</div>
+      <h3>Natural Leaf vs Extracts:<br>What Policymakers Should Know</h3>
+      <p>Even before high‑potency 7‑OH extracts emerged, whole‑leaf kratom was associated with severe outcomes, contamination, and healthcare burden. Understanding the full market matters for effective regulation.</p>
+      <a href="/kratom.html" class="learn-link">LEARN MORE →</a>
+    </div>
+  </div>
+
+  <!-- Rutherford Callout Box - rectangular full-width image (button now links to fdamyth.html) -->
   <div class="container">
     <div class="fda-callout">
       <img class="rutherford-img" src="Rutherford.jpeg" alt="South Carolina State Representative Rutherford">
@@ -890,7 +976,7 @@
         <div class="quote-text">“The FDA didn’t ban it!”</div>
         <div class="quote-author">– South Carolina State Representative Rutherford</div>
         <p style="margin-top: 8px; font-size: 14px;">Despite decades of documented harms, whole‑leaf kratom remains unregulated. Learn why federal action has stalled – and what can still be done.</p>
-        <a href="#" class="fda-btn">Click here → Myth vs. Fact: What the FDA Can & Cannot Do</a>
+        <a href="/fdamyth.html" class="fda-btn">Click here → Myth vs. Fact: What the FDA Can & Cannot Do</a>
       </div>
     </div>
   </div>
