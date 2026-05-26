@@ -219,20 +219,22 @@
       font-size: 13px;
     }
 
-    /* Natural Leaf vs Extracts card (standalone) */
+    /* Natural Leaf vs Extracts card - matching issue card style */
     .policy-highlight {
       margin: 48px 0 32px;
+      display: flex;
+      justify-content: center;
     }
     .policy-card {
       background: #fff;
       border: 1px solid #dfe5ec;
-      border-radius: 20px;
+      border-radius: 8px;
       overflow: hidden;
       text-align: center;
       box-shadow: 0 8px 20px rgba(11, 29, 52, 0.06);
       transition: transform 0.1s;
       max-width: 380px;
-      margin: 0 auto;
+      width: 100%;
     }
     .policy-card:hover {
       transform: translateY(-4px);
@@ -241,52 +243,48 @@
     .policy-card .card-img {
       width: 100%;
       height: 160px;
-      object-fit: cover;
-      background: #f0f4f8;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      overflow: hidden;
     }
     .policy-card .card-img img {
-      width: 100px;
-      height: 100px;
-      object-fit: contain;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
-    .policy-card .circle-icon {
-      width: 70px;
-      height: 70px;
+    .circle-icon {
+      width: 58px;
+      height: 58px;
       border-radius: 50%;
       background: #0b1d34;
       color: #fff;
       border: 6px solid #fff;
       display: grid;
       place-items: center;
-      margin: -35px auto 12px;
+      margin: -29px auto 12px;
       position: relative;
       z-index: 2;
-      font-size: 32px;
+      font-size: 21px;
       font-weight: 900;
     }
     .policy-card h3 {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 900;
-      margin: 0 20px 12px;
+      margin: 0 12px 10px;
       color: #0b1d34;
-      line-height: 1.2;
+      min-height: 40px;
     }
     .policy-card p {
-      font-size: 14px;
+      font-size: 13px;
       color: #415166;
-      padding: 0 20px 20px;
+      padding: 0 14px 18px;
+      min-height: 108px;
     }
     .policy-card .learn-link {
       display: inline-block;
       color: #c8102e;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 900;
       text-transform: uppercase;
-      margin-bottom: 24px;
-      letter-spacing: 0.5px;
+      margin-bottom: 21px;
     }
     .policy-card .learn-link:hover {
       text-decoration: underline;
@@ -426,7 +424,7 @@
       height: 145px;
       object-fit: cover;
     }
-    .circle-icon {
+    .issue-card .circle-icon {
       width: 58px;
       height: 58px;
       border-radius: 50%;
@@ -955,11 +953,11 @@
     </div>
   </section>
 
-  <!-- NEW: Natural Leaf vs Extracts feature card -->
+  <!-- NEW: Natural Leaf vs Extracts card - correctly sized like issue cards -->
   <div class="container policy-highlight">
     <div class="policy-card">
       <div class="card-img">
-        <img src="assets/leafkratom.png" alt="Kratom leaf icon">
+        <img src="assets/leafkratom.png" alt="Kratom leaf">
       </div>
       <div class="circle-icon">🍃</div>
       <h3>Natural Leaf vs Extracts:<br>What Policymakers Should Know</h3>
@@ -968,7 +966,7 @@
     </div>
   </div>
 
-  <!-- Rutherford Callout Box - rectangular full-width image (button now links to fdamyth.html) -->
+  <!-- Rutherford Callout Box - button links to fdamyth.html -->
   <div class="container">
     <div class="fda-callout">
       <img class="rutherford-img" src="Rutherford.jpeg" alt="South Carolina State Representative Rutherford">
