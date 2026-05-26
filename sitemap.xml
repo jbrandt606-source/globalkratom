@@ -1,75 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  
+  <!-- HOMEPAGE - Highest priority, daily updates expected -->
   <url>
     <loc>https://globalkratom.org/</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- EVIDENCE LIBRARY - Core content, updated weekly -->
   <url>
     <loc>https://globalkratom.org/evidence/index.html</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
+  <!-- MISSION PAGE - Stable, monthly review -->
   <url>
     <loc>https://globalkratom.org/mission.html</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- STATE LAWS RESOURCE - Key policy page -->
   <url>
     <loc>https://globalkratom.org/states.html</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- NATURAL LEAF VS EXTRACTS -->
   <url>
     <loc>https://globalkratom.org/kratom.html</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- FDA MYTH VS FACT -->
   <url>
     <loc>https://globalkratom.org/fdamyth.html</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- ISSUE: DEPENDENCE & WITHDRAWAL -->
   <url>
     <loc>https://globalkratom.org/dependence.html</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- ISSUE: CARDIAC TOXICITY -->
   <url>
     <loc>https://globalkratom.org/cardiac.html</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- ISSUE: LIVER INJURY -->
   <url>
     <loc>https://globalkratom.org/liver.html</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- ISSUE: PREGNANCY & NEONATAL RISK -->
   <url>
     <loc>https://globalkratom.org/pregnancy.html</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- ISSUE: YOUTH & COLLEGE EXPOSURE -->
   <url>
     <loc>https://globalkratom.org/youth.html</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- ISSUE: CONTAMINATION -->
   <url>
     <loc>https://globalkratom.org/contamination.html</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- CANONICAL TARGET PAGE (if separate from homepage) -->
+  <!-- Uncomment if you have a dedicated /kratom-harms-evidence page -->
+  <!--
+  <url>
+    <loc>https://globalkratom.org/kratom-harms-evidence</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  -->
+
 </urlset>
