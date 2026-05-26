@@ -132,7 +132,7 @@
       margin: 48px 0 24px 0;
     }
 
-    /* SIDE-BY-SIDE MYTH/FACT CHART - responsive grid */
+    /* SIDE-BY-SIDE MYTH/FACT CHART */
     .myth-chart {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -187,7 +187,25 @@
       line-height: 1.4;
     }
 
-    /* CAN / CANNOT - side by side comparison */
+    /* BOLD CLARIFICATION BOX about SAD study */
+    .study-clarification {
+      background: #fff7e0;
+      border-left: 8px solid #c8102e;
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin: 32px 0 40px;
+      font-weight: 700;
+      text-align: center;
+      font-size: 16px;
+    }
+    .study-clarification p {
+      margin-bottom: 8px;
+    }
+    .study-clarification strong {
+      color: #c8102e;
+    }
+
+    /* CAN / CANNOT */
     .two-columns {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -228,7 +246,7 @@
       color: #6b7b8f;
     }
 
-    /* DSHEA box - short */
+    /* DSHEA box */
     .dshea-box {
       background: #eef2f6;
       border-radius: 20px;
@@ -246,7 +264,7 @@
       margin-bottom: 10px;
     }
 
-    /* timeline - compact */
+    /* timeline */
     .timeline {
       margin: 32px 0 40px;
     }
@@ -267,7 +285,7 @@
       font-size: 14px;
     }
 
-    /* closing box - short */
+    /* closing box */
     .closing-box {
       background: #0b1d34;
       color: white;
@@ -354,7 +372,6 @@
       font-size: 12px;
     }
 
-    /* MOBILE: stack everything */
     @media (max-width: 760px) {
       .container {
         padding: 0 20px;
@@ -446,7 +463,7 @@
   </section>
 
   <div class="container">
-    <!-- SIDE-BY-SIDE MYTH / FACT CHART -->
+    <!-- MYTH VS FACT CHART -->
     <div class="section-title">Myth vs Fact</div>
     <div class="myth-chart">
       <div class="myth-col">
@@ -471,6 +488,13 @@
           <div class="fact-item"><strong>Import alert ≠ prohibition.</strong><p>Existing domestic supply can remain unless further action is taken.</p></div>
         </div>
       </div>
+    </div>
+
+    <!-- BOLD CLARIFICATION ABOUT THE SAD STUDY -->
+    <div class="study-clarification">
+      <p><strong>Important clarification regarding the FDA‑funded Single Ascending Dose (SAD) study on kratom:</strong></p>
+      <p><strong>FDA provided a grant for the study – but FDA did not conduct it. The study was performed by an independent contract research organization.</strong></p>
+      <p><strong>FDA has NOT determined that kratom is safe based on this study. The study does not constitute FDA approval, safety clearance, or a change in the agency’s position that kratom is not lawfully marketed and poses serious health risks.</strong></p>
     </div>
 
     <!-- WHAT FDA CAN / CANNOT DO -->
@@ -507,7 +531,7 @@
       <p>Dietary supplements generally enter the market <strong>without pre‑approval</strong>. FDA acts after products are already sold. Proving adulteration is complex and slow. Kratom has never been lawfully marketed as a dietary ingredient, but enforcement gaps allow continued sales.</p>
     </div>
 
-    <!-- TIMELINE (condensed) -->
+    <!-- TIMELINE -->
     <div class="section-title">Federal Actions on Kratom</div>
     <div class="timeline">
       <div class="timeline-item"><div class="timeline-year">2014</div><div class="timeline-desc">Import Alert 54‑15 – detention of kratom supplements at ports.</div></div>
