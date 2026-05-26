@@ -461,80 +461,76 @@
       margin-bottom: 21px;
     }
 
-    /* resources row */
-    .resource-row {
-      display: grid;
-      grid-template-columns: 0.78fr 1.22fr;
-      gap: 22px;
-    }
-    .panel {
-      border: 1px solid #dfe5ec;
-      border-radius: 10px;
-      padding: 32px;
-      box-shadow: 0 8px 20px rgba(11, 29, 52, 0.05);
-    }
-    .panel.light {
-      background: #f4f7fb;
-      display: grid;
-      grid-template-columns: 92px 1fr;
-      gap: 20px;
-      align-items: center;
-    }
-    .panel.dark {
-      background: linear-gradient(90deg, rgba(7, 24, 44, 0.98), rgba(7, 24, 44, 0.82)), url("assets/background/navy-texture.jpg");
-      background-size: cover;
-      color: #fff;
-      border-color: transparent;
-    }
-    .capitol-badge {
-      width: 84px;
-      height: 84px;
-      border-radius: 50%;
+    /* Lawmaker card (styled like issue card) */
+    .lawmaker-card {
       background: #fff;
-      color: #0b1d34;
+      border: 1px solid #dfe5ec;
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(11, 29, 52, 0.06);
+      transition: transform 0.1s;
+      max-width: 380px;
+      margin: 0 auto;
+    }
+    .lawmaker-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(11, 29, 52, 0.12);
+    }
+    .lawmaker-card .card-img {
+      width: 100%;
+      height: 160px;
+      overflow: hidden;
+    }
+    .lawmaker-card .card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .lawmaker-card .circle-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #0b1d34;
+      color: #fff;
+      border: 6px solid #fff;
       display: grid;
       place-items: center;
-      font-size: 38px;
-      border: 1px solid #dfe5ec;
+      margin: -29px auto 12px;
+      position: relative;
+      z-index: 2;
+      font-size: 21px;
+      font-weight: 900;
     }
-    .panel h3 {
-      font-size: 24px;
-      line-height: 1.1;
-      margin-bottom: 12px;
+    .lawmaker-card h3 {
+      font-size: 18px;
+      font-weight: 900;
+      margin: 0 12px 10px;
       color: #0b1d34;
+      min-height: 40px;
     }
-    .panel.dark h3 {
-      color: #fff;
+    .lawmaker-card p {
+      font-size: 13px;
+      color: #415166;
+      padding: 0 14px 18px;
+      min-height: 90px;
     }
-    .panel p {
-      font-size: 14px;
-      color: #48586d;
-      margin-bottom: 20px;
-    }
-    .panel.dark p {
-      color: #dce7f4;
-    }
-    .evidence-metrics {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin: 20px 0 24px;
-    }
-    .evidence-metrics div {
-      border-left: 1px solid rgba(255, 255, 255, 0.3);
-      padding-left: 12px;
+    .lawmaker-card .learn-link {
+      display: inline-block;
+      color: #c8102e;
       font-size: 12px;
-      color: #dce7f4;
-    }
-    .evidence-metrics strong {
-      display: block;
-      color: #fff;
-      font-size: 22px;
-      line-height: 1;
-      margin-bottom: 5px;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 21px;
     }
 
-    /* news + action */
+    /* resources row - replaced by lawmaker card */
+    .resource-row {
+      display: flex;
+      justify-content: center;
+    }
+
+    /* news section */
     .news-action {
       background: #f5f7fa;
       padding-top: 48px;
@@ -559,7 +555,7 @@
     }
     .news-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr) 1.25fr;
+      grid-template-columns: 1fr 1.25fr;
       gap: 18px;
     }
     .news-card {
@@ -657,7 +653,7 @@
       color: #334155;
     }
 
-    /* FOOTER */
+    /* FOOTER (no resources, no signup) */
     footer {
       background: #0b1d34;
       color: #fff;
@@ -665,7 +661,7 @@
     }
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      grid-template-columns: 1.6fr 1fr;
       gap: 34px;
       padding-bottom: 28px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.16);
@@ -714,28 +710,6 @@
       opacity: 0.8;
       color: #fff;
     }
-    .signup {
-      display: flex;
-      margin-top: 12px;
-      max-width: 270px;
-    }
-    .signup input {
-      flex: 1;
-      min-width: 0;
-      padding: 12px;
-      border: 0;
-      border-radius: 4px 0 0 4px;
-      outline: none;
-    }
-    .signup button {
-      border: 0;
-      background: #c8102e;
-      color: #fff;
-      font-weight: 900;
-      padding: 0 14px;
-      border-radius: 0 4px 4px 0;
-      cursor: pointer;
-    }
     .footer-bottom {
       display: flex;
       justify-content: space-between;
@@ -764,10 +738,10 @@
         grid-template-columns: repeat(3, 1fr);
       }
       .news-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
       }
       .action-card {
-        grid-column: span 2;
+        grid-column: span 1;
       }
     }
 
@@ -858,26 +832,8 @@
       .issue-card p {
         min-height: auto;
       }
-      .resource-row {
-        grid-template-columns: 1fr;
-      }
-      .panel.light {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      .capitol-badge {
-        margin: 0 auto;
-      }
-      .evidence-metrics {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .news-head {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-      }
-      .news-head h2 {
-        font-size: 22px;
+      .lawmaker-card {
+        max-width: 100%;
       }
       .news-grid {
         grid-template-columns: 1fr;
@@ -953,7 +909,7 @@
     </div>
   </section>
 
-  <!-- NEW: Natural Leaf vs Extracts card - correctly sized like issue cards -->
+  <!-- Natural Leaf vs Extracts card -->
   <div class="container policy-highlight">
     <div class="policy-card">
       <div class="card-img">
@@ -966,7 +922,7 @@
     </div>
   </div>
 
-  <!-- Rutherford Callout Box - button links to fdamyth.html -->
+  <!-- Rutherford Callout Box -->
   <div class="container">
     <div class="fda-callout">
       <img class="rutherford-img" src="Rutherford.jpeg" alt="South Carolina State Representative Rutherford">
@@ -995,31 +951,52 @@
       <h2 class="section-title">The Issues</h2>
       <p class="section-sub">Scientific evidence shows significant public health risks from whole‑leaf kratom and its alkaloids.</p>
       <div class="issue-grid">
-        <article class="issue-card"><img src="assets/icons/dependence.jpg" alt="Dependence"><div class="circle-icon">🧠</div><h3>Dependence & Withdrawal</h3><p>Opioid-like dependence and severe withdrawal requiring treatment with medications like buprenorphine and methadone.</p><a href="/evidence/index.html">Learn More →</a></article>
-        <article class="issue-card"><img src="assets/icons/cardiac.jpg" alt="Cardiac"><div class="circle-icon">♥</div><h3>Cardiac Toxicity</h3><p>Reports of Brugada syndrome, QT prolongation, arrhythmias, cardiac arrest, and sudden death in healthy individuals.</p><a href="/evidence/index.html">Learn More →</a></article>
-        <article class="issue-card"><img src="assets/icons/liver.jpg" alt="Liver"><div class="circle-icon">●</div><h3>Liver Injury</h3><p>Cases of cholestatic injury, liver failure, and transplant linked to kratom use. Recovery often occurs after cessation.</p><a href="/evidence/index.html">Learn More →</a></article>
-        <article class="issue-card"><img src="assets/icons/pregnancy.jpeg" alt="Pregnancy"><div class="circle-icon">⚕</div><h3>Pregnancy & Neonatal Risk</h3><p>Evidence of neonatal withdrawal, limited safety data, and potential harm to developing infants.</p><a href="/evidence/index.html">Learn More →</a></article>
-        <article class="issue-card"><img src="assets/icons/youth.jpeg" alt="Youth"><div class="circle-icon">👥</div><h3>Youth & College Exposure</h3><p>Increasing use among adolescents and college students fueled by aggressive marketing and easy access.</p><a href="/evidence/index.html">Learn More →</a></article>
-        <article class="issue-card"><img src="assets/icons/contamination.jpeg" alt="Contamination"><div class="circle-icon">⚗</div><h3>Product Contamination</h3><p>Heavy metals, microbes, pesticides, adulterants, and variable potency found in many products.</p><a href="/evidence/index.html">Learn More →</a></article>
+        <article class="issue-card"><img src="assets/icons/dependence.jpg" alt="Dependence"><div class="circle-icon">🧠</div><h3>Dependence & Withdrawal</h3><p>Opioid-like dependence and severe withdrawal requiring treatment with medications like buprenorphine and methadone.</p><a href="dependence.html">Learn More →</a></article>
+        <article class="issue-card"><img src="assets/icons/cardiac.jpg" alt="Cardiac"><div class="circle-icon">♥</div><h3>Cardiac Toxicity</h3><p>Reports of Brugada syndrome, QT prolongation, arrhythmias, cardiac arrest, and sudden death in healthy individuals.</p><a href="cardiac.html">Learn More →</a></article>
+        <article class="issue-card"><img src="assets/icons/liver.jpg" alt="Liver"><div class="circle-icon">●</div><h3>Liver Injury</h3><p>Cases of cholestatic injury, liver failure, and transplant linked to kratom use. Recovery often occurs after cessation.</p><a href="liver.html">Learn More →</a></article>
+        <article class="issue-card"><img src="assets/icons/pregnancy.jpeg" alt="Pregnancy"><div class="circle-icon">⚕</div><h3>Pregnancy & Neonatal Risk</h3><p>Evidence of neonatal withdrawal, limited safety data, and potential harm to developing infants.</p><a href="pregnancy.html">Learn More →</a></article>
+        <article class="issue-card"><img src="assets/icons/youth.jpeg" alt="Youth"><div class="circle-icon">👥</div><h3>Youth & College Exposure</h3><p>Increasing use among adolescents and college students fueled by aggressive marketing and easy access.</p><a href="youth.html">Learn More →</a></article>
+        <article class="issue-card"><img src="assets/icons/contamination.jpeg" alt="Contamination"><div class="circle-icon">⚗</div><h3>Product Contamination</h3><p>Heavy metals, microbes, pesticides, adulterants, and variable potency found in many products.</p><a href="contamination.html">Learn More →</a></article>
       </div>
     </div>
   </section>
 
+  <!-- Lawmaker Callout Box (styled like issue card, using lawmaker.jpg) -->
   <section id="lawmakers">
     <div class="container resource-row">
-      <div class="panel light"><div class="capitol-badge">🏛</div><div><h3>Lawmakers:<br>Better Policy Saves Lives</h3><p>Outdated laws and lack of enforcement leave families vulnerable. We provide the data, documents, and expert analysis needed to protect communities.</p><a class="btn btn-navy" href="#">Resources for Lawmakers →</a></div></div>
-      <div id="evidence" class="panel dark"><h3>Evidence You Can Trust</h3><p>Explore our library of peer-reviewed studies, government reports, poison center data, case reports, and regulatory documents.</p><div class="evidence-metrics"><div><strong>100+</strong>Documents & Studies</div><div><strong>25+</strong>Data Sources</div><div><strong>2010–2026</strong>Date Range</div><div><strong>100%</strong>Evidence-Based</div></div><a class="btn btn-white" href="/evidence/index.html">Browse the Evidence →</a></div>
+      <div class="lawmaker-card">
+        <div class="card-img">
+          <img src="assets/icons/lawmaker.jpg" alt="Lawmaker resources">
+        </div>
+        <div class="circle-icon">🏛</div>
+        <h3>For Lawmakers:<br>Better Policy Saves Lives</h3>
+        <p>Outdated laws and lack of enforcement leave families vulnerable. We provide the data, documents, and expert analysis needed to protect communities.</p>
+        <a href="states.html" class="learn-link">Resources for Lawmakers →</a>
+      </div>
     </div>
   </section>
 
+  <!-- News Section (only Policy news card + Action card) -->
   <section id="news" class="news-action">
     <div class="container">
       <div class="news-head"><h2>Latest News</h2><a href="#">View All News →</a></div>
       <div class="news-grid">
-        <article class="news-card"><img src="assets/icons/policy.jpeg" alt="Policy"><div class="news-card-content"><div class="category">Policy</div><h3>States Move to Protect Families as Kratom-Related Harms Rise</h3><div class="date">May 8, 2026</div></div></article>
-        <article class="news-card"><img src="assets/icons/health.jpeg" alt="Health"><div class="news-card-content"><div class="category">Research</div><h3>New Study Identifies Alarming Levels of 7-OH in Products</h3><div class="date">April 24, 2026</div></div></article>
-        <article class="news-card"><img src="assets/icons/dependence.jpg" alt="Withdrawal"><div class="news-card-content"><div class="category">Health</div><h3>Clinicians Report Surge in Severe Withdrawal and Poisoning Cases</h3><div class="date">April 10, 2026</div></div></article>
-        <aside id="action" class="action-card"><div class="megaphone">!</div><h3>Take Action Today</h3><p>Your voice can drive change. Contact lawmakers and demand stronger protections for families and communities.</p><a class="btn btn-red" href="https://antikratom.org" target="_blank" rel="noopener noreferrer">Contact Your Legislators →</a></aside>
+        <!-- Policy news card – links to states.html -->
+        <article class="news-card" onclick="window.location.href='states.html';" style="cursor:pointer;">
+          <img src="assets/icons/policy.jpeg" alt="Policy">
+          <div class="news-card-content">
+            <div class="category">Policy</div>
+            <h3>States Move to Protect Families as Kratom-Related Harms Rise</h3>
+            <div class="date">May 8, 2026</div>
+          </div>
+        </article>
+        <!-- Action card (call to action) -->
+        <aside id="action" class="action-card">
+          <div class="megaphone">!</div>
+          <h3>Take Action Today</h3>
+          <p>Your voice can drive change. Contact lawmakers and demand stronger protections for families and communities.</p>
+          <a class="btn btn-red" href="https://antikratom.org" target="_blank" rel="noopener noreferrer">Contact Your Legislators →</a>
+        </aside>
       </div>
     </div>
   </section>
@@ -1031,12 +1008,27 @@
 
 <footer>
   <div class="container footer-grid">
-    <div class="footer-brand"><img src="assets/logos/logo-dark.png" alt="logo"><div><h3>Global <span>Kratom</span> Eradicators</h3><p>Educate. Expose. Eradicate.</p><p>Promoting truth, accountability, public health, and stronger policy protections.</p></div></div>
-    <div><h4>Quick Links</h4><a href="#issues">Issues</a><a href="/evidence/index.html">Evidence</a><a href="#lawmakers">For Lawmakers</a><a href="https://antikratom.org" target="_blank" rel="noopener noreferrer">Action Center</a><a href="/mission.html">Mission</a></div>
-    <div><h4>Resources</h4><a href="/evidence/index.html">Research Library</a><a href="#">Data & Reports</a><a href="#">Legislation Tracker</a><a href="#">Media Kit</a></div>
-    <div><h4>Stay Informed</h4><p>Get updates on research, legislation, and action alerts.</p><form class="signup"><input type="email" placeholder="Email address"><button type="submit">Sign Up</button></form></div>
+    <div class="footer-brand">
+      <img src="assets/logos/logo-dark.png" alt="logo">
+      <div>
+        <h3>Global <span>Kratom</span> Eradicators</h3>
+        <p>Educate. Expose. Eradicate.</p>
+        <p>Promoting truth, accountability, public health, and stronger policy protections.</p>
+      </div>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <a href="#issues">Issues</a>
+      <a href="/evidence/index.html">Evidence</a>
+      <a href="#lawmakers">For Lawmakers</a>
+      <a href="https://antikratom.org" target="_blank" rel="noopener noreferrer">Action Center</a>
+      <a href="/mission.html">Mission</a>
+    </div>
   </div>
-  <div class="container footer-bottom"><div>© 2026 Global Kratom Eradicators. All rights reserved.</div><div>Educational and legislative reference.</div></div>
+  <div class="container footer-bottom">
+    <div>© 2026 Global Kratom Eradicators. All rights reserved.</div>
+    <div>Educational and legislative reference.</div>
+  </div>
 </footer>
 </body>
 </html>
