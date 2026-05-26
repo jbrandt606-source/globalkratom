@@ -58,6 +58,13 @@ body::before{ content:""; position:fixed; inset:0; background:url("/evidence/ass
 .side-panel li{ margin-bottom:10px; font-size:14px; }
 .callout-box{ background:#fff3e8; border-left:6px solid var(--red); border-radius:20px; padding:20px 28px; margin:32px 0; }
 .callout-box strong{ color:var(--red); }
+.heatmap-wrapper{ margin: 24px 0 16px; text-align: center; cursor: pointer; background:#fff; border-radius:24px; padding:8px; border:1px solid var(--line); transition: all 0.2s; }
+.heatmap-wrapper:hover{ box-shadow:0 8px 20px rgba(0,0,0,0.1); transform:scale(1.01); }
+.heatmap-img{ width:100%; border-radius:16px; display:block; }
+.heatmap-caption{ font-size:13px; color:var(--muted); margin-top:10px; font-weight:500; }
+.lightbox{ display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.92); z-index:2000; justify-content:center; align-items:center; cursor:pointer; }
+.lightbox img{ max-width:90vw; max-height:90vh; border-radius:12px; box-shadow:0 20px 40px rgba(0,0,0,0.4); }
+.lightbox.active{ display:flex; }
 footer{ margin-top:54px; background:var(--navy); color:#cbd5e1; text-align:center; padding:32px 18px; font-size:14px; }
 @media(max-width:760px){
   .container{padding:0 16px}
@@ -99,14 +106,25 @@ footer{ margin-top:54px; background:var(--navy); color:#cbd5e1; text-align:cente
 </section>
 
 <div class="container">
-  <!-- Key Finding Callout: KCPA vs no regulation -->
+  <!-- Key Finding Callout -->
   <div class="callout-box">
     <strong>Key Finding – Addiction (2026)</strong><br>
     “States with consumer protection acts designed to promote safety experienced similar rates of severe outcomes as states with no regulation at all.”  
     Retail bans and local suppression measures were significantly more effective in reducing healthcare utilization and poison center calls.
   </div>
 
-  <!-- Methodology Box -->
+  <!-- HEATMAP SECTION (wide, click to expand) -->
+  <div class="heatmap-wrapper" id="heatmapTrigger">
+    <img src="heatmap.png" alt="National kratom policy heatmap – suppression vs. retail normalization" class="heatmap-img">
+    <div class="heatmap-caption">⬆ Click to expand – National heatmap of policy strength & retail suppression ⬆</div>
+  </div>
+
+  <!-- Lightbox modal for expanded view -->
+  <div id="heatmapLightbox" class="lightbox">
+    <img src="heatmap.png" alt="Expanded national heatmap">
+  </div>
+
+  <!-- Methodology Box (heatmap above it) -->
   <div class="methodology-box">
     <h4>Ranking Methodology</h4>
     <p>State tiers are based on a composite score weighting policy strength, SUDORS mortality burden, local restriction authority, and legislative momentum. Data sources: CDC SUDORS (2019-2025), Addiction (2026), FDA Import Alerts, state pharmacy board actions, and pending legislation.</p>
@@ -161,7 +179,7 @@ footer{ margin-top:54px; background:var(--navy); color:#cbd5e1; text-align:cente
           <tr><td>Mississippi</td><td>Local restriction authority</td></tr>
           <tr><td>Washington</td><td>Local control potential</td></tr>
           <tr><td>Massachusetts</td><td>Extensive municipal authority</td></tr>
-          <tr><td>Idaho</td><td>Zero SUDORS deaths + local-control benefit</td></tr>
+          <tr><td>Idaho</td><td>Zero SUDORS deaths + local‑control benefit</td></tr>
           <tr><td>Missouri</td><td>Local restriction pathways</td></tr>
         </tbody>
       </table>
@@ -234,6 +252,18 @@ footer{ margin-top:54px; background:var(--navy); color:#cbd5e1; text-align:cente
   document.getElementById('mobileMenuBtn').addEventListener('click', () => {
     document.getElementById('mobileMenu').classList.toggle('open');
   });
+
+  // Heatmap click-to-expand logic
+  const heatmapWrapper = document.getElementById('heatmapTrigger');
+  const lightbox = document.getElementById('heatmapLightbox');
+  if (heatmapWrapper && lightbox) {
+    heatmapWrapper.addEventListener('click', () => {
+      lightbox.classList.add('active');
+    });
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+    });
+  }
 </script>
 </body>
 </html>
