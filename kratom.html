@@ -97,6 +97,9 @@
       font-size: 13px;
       text-transform: uppercase;
     }
+    nav a {
+      transition: color 0.2s;
+    }
     nav a:hover {
       color: #c8102e;
     }
@@ -157,9 +160,14 @@
       border-radius: 16px;
       border-left: 4px solid #c8102e;
       font-weight: 600;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .policy-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
     }
 
-    /* two-column layout for some sections */
+    /* two-column layout */
     .two-columns {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -172,33 +180,64 @@
       border-radius: 20px;
       padding: 24px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      transition: box-shadow 0.2s, transform 0.1s;
+    }
+    .info-card:hover {
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+      transform: translateY(-2px);
     }
     .info-card h4 {
       font-size: 20px;
       font-weight: 800;
       margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #eef2f8;
+      display: inline-block;
     }
     .info-card ul {
       margin-left: 20px;
+      margin-top: 8px;
     }
     .info-card li {
       margin-bottom: 12px;
       font-size: 15px;
+      color: #2c3e4f;
     }
 
     /* bold highlight box */
     .highlight-bold {
       background: #fff7e0;
       border-left: 8px solid #c8102e;
-      padding: 24px;
+      padding: 28px 32px;
       border-radius: 20px;
       margin: 32px 0;
-      font-weight: 800;
-      text-align: center;
-      font-size: 18px;
+      font-weight: 600;
+      text-align: left;
+      font-size: 17px;
+      line-height: 1.5;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+    .highlight-bold strong {
+      font-weight: 900;
+      color: #a20d25;
+    }
+
+    /* natural list styling */
+    .natural-list {
+      background: #fff;
+      border: 1px solid #dfe5ec;
+      border-radius: 20px;
+      padding: 28px;
+      margin-bottom: 32px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+    .natural-list ul {
+      margin-left: 24px;
+      margin-top: 8px;
+    }
+    .natural-list li {
+      margin-bottom: 12px;
+      font-size: 15px;
     }
 
     footer {
@@ -242,6 +281,10 @@
     footer a {
       display: block;
       margin-bottom: 8px;
+      transition: opacity 0.2s;
+    }
+    footer a:hover {
+      opacity: 0.8;
     }
     .signup {
       display: flex;
@@ -373,7 +416,7 @@
     <div class="section-title">Natural Leaf Is Still Associated With Severe Outcomes</div>
     <div class="two-columns">
       <div class="info-card">
-        <h4>📊 Poison Center Data</h4>
+        <h4>Poison Center Data</h4>
         <ul>
           <li>Over 14,000 kratom exposures reported 2011–2023, majority involving powders/capsules.</li>
           <li>Severe outcomes (seizures, respiratory depression, coma) documented with non‑extract products.</li>
@@ -381,7 +424,7 @@
         </ul>
       </div>
       <div class="info-card">
-        <h4>🏥 Hospitalization & Dependence</h4>
+        <h4>Hospitalization & Dependence</h4>
         <ul>
           <li>Opioid‑like withdrawal requiring ICU care and medication‑assisted treatment.</li>
           <li>Liver injury cases (cholestatic hepatitis, transplant) linked to prolonged powder use.</li>
@@ -394,7 +437,7 @@
     <div class="section-title">Retail Ecosystem & Escalation</div>
     <div class="two-columns">
       <div class="info-card">
-        <h4>🛒 Market Reality</h4>
+        <h4>Market Reality</h4>
         <ul>
           <li>Many users begin with “natural leaf” available at gas stations, smoke shops, and online.</li>
           <li>Same retailers frequently sell both leaf powders and concentrated extracts.</li>
@@ -402,7 +445,7 @@
         </ul>
       </div>
       <div class="info-card">
-        <h4>⬆️ Progression Potential</h4>
+        <h4>Progression Potential</h4>
         <ul>
           <li>Tolerance can lead users to seek higher potency products within the same retail channel.</li>
           <li>Extract products are often marketed alongside leaf, creating a natural escalation pathway.</li>
@@ -415,7 +458,7 @@
     <div class="section-title">Contamination & Product Variability</div>
     <div class="two-columns">
       <div class="info-card">
-        <h4>🧪 Heavy Metals & Microbes</h4>
+        <h4>Heavy Metals & Microbes</h4>
         <ul>
           <li>FDA testing found lead and nickel in leaf products at levels exceeding safe daily intake.</li>
           <li>Salmonella outbreaks traced to powdered kratom (not just extracts).</li>
@@ -423,7 +466,7 @@
         </ul>
       </div>
       <div class="info-card">
-        <h4>⚗️ Adulteration & Potency</h4>
+        <h4>Adulteration & Potency</h4>
         <ul>
           <li>Products labeled “natural” have been found to contain tianeptine, tramadol, or other synthetic additives.</li>
           <li>Mitragynine content varies widely (3–60 mg/g) even among leaf products.</li>
@@ -436,7 +479,7 @@
     <div class="section-title">Why Enforcement Distinctions Become Difficult</div>
     <div class="two-columns">
       <div class="info-card">
-        <h4>📦 Operational Complexity</h4>
+        <h4>Operational Complexity</h4>
         <ul>
           <li>Leaf powder and extract capsules often appear nearly identical.</li>
           <li>Retailers mix and repackage products, obscuring original formulation.</li>
@@ -444,7 +487,7 @@
         </ul>
       </div>
       <div class="info-card">
-        <h4>⚖️ Legal & Testing Burdens</h4>
+        <h4>Legal & Testing Burdens</h4>
         <ul>
           <li>Requiring product‑by‑product alkaloid testing is expensive and slow.</li>
           <li>Enforcement agencies may struggle to distinguish violative from non‑violative products in the field.</li>
@@ -455,7 +498,7 @@
 
     <!-- 5. Natural Does Not Mean Risk‑Free -->
     <div class="section-title">Natural Does Not Mean Risk‑Free</div>
-    <div class="info-card" style="margin-bottom: 32px;">
+    <div class="natural-list">
       <ul>
         <li><strong>Tobacco</strong> – natural plant, causes cancer and addiction.</li>
         <li><strong>Opium poppy</strong> – natural source of morphine and heroin.</li>
@@ -463,21 +506,21 @@
         <li><strong>Digitalis (foxglove)</strong> – natural plant used to make heart medication, but toxic in uncontrolled doses.</li>
         <li><strong>Aristolochia</strong> – natural herb linked to kidney failure and cancer.</li>
       </ul>
-      <p style="margin-top: 16px;">Botanical origin does not eliminate pharmacologic risk. Kratom alkaloids act on opioid, adrenergic, and serotonin receptors, producing dose‑dependent effects that can lead to dependence, toxicity, and death — regardless of whether the product is labeled “natural.”</p>
+      <p style="margin-top: 20px;">Botanical origin does not eliminate pharmacologic risk. Kratom alkaloids act on opioid, adrenergic, and serotonin receptors, producing dose‑dependent effects that can lead to dependence, toxicity, and death — regardless of whether the product is labeled “natural.”</p>
     </div>
 
     <!-- 6. What Current Surveillance Systems Show -->
     <div class="section-title">What Current Surveillance Systems Show</div>
     <div class="two-columns">
       <div class="info-card">
-        <h4>📈 Poison Centers (NPDS)</h4>
+        <h4>Poison Centers (NPDS)</h4>
         <ul>
           <li>1,200% increase in exposure calls 2015–2025, driven by powders and capsules.</li>
           <li>Majority of severe outcomes (agitation, seizures, coma) occurred before 7‑OH extracts became common.</li>
         </ul>
       </div>
       <div class="info-card">
-        <h4>💀 Mortality Surveillance (SUDORS / MEC)</h4>
+        <h4>Mortality Surveillance (SUDORS / MEC)</h4>
         <ul>
           <li>Florida MEC: mitragynine was listed as a cause of death in >1,000 cases 2020–2024.</li>
           <li>CDC SUDORS: kratom detected in 1,000+ overdose deaths annually since 2021.</li>
@@ -489,19 +532,45 @@
     <!-- Closing section -->
     <div class="policy-box" style="background: #0b1d34; color: white; border: none;">
       <h3 style="color: white;">Why This Matters for Policymakers</h3>
-      <p style="font-size: 16px; line-height: 1.5;">Policymakers evaluating restrictions focused only on extracts or isolated alkaloids may also need to consider broader issues involving product variability, contamination, retail enforcement complexity, healthcare burden, and the role of “natural leaf” products within the wider commercial kratom marketplace. <strong>Severe outcomes are not limited to high‑potency extracts</strong> – and surveillance systems continue to document harm from products marketed for years before 7‑OH emerged. A comprehensive regulatory approach should address the entire retail ecosystem, not just its newest components.</p>
+      <p style="font-size: 16px; line-height: 1.5; margin-top: 12px;">Policymakers evaluating restrictions focused only on extracts or isolated alkaloids may also need to consider broader issues involving product variability, contamination, retail enforcement complexity, healthcare burden, and the role of “natural leaf” products within the wider commercial kratom marketplace. <strong>Severe outcomes are not limited to high‑potency extracts</strong> – and surveillance systems continue to document harm from products marketed for years before 7‑OH emerged. A comprehensive regulatory approach should address the entire retail ecosystem, not just its newest components.</p>
     </div>
   </div>
 </main>
 
 <footer>
   <div class="container footer-grid">
-    <div class="footer-brand"><img src="assets/logos/logo-dark.png" alt="logo"><div><h3>Global <span>Kratom</span> Eradicators</h3><p>Educate. Expose. Eradicate.</p></div></div>
-    <div><h4>Quick Links</h4><a href="/evidence/index.html">Evidence</a><a href="/mission.html">Mission</a><a href="/fdamyth.html">FDA Myth vs Fact</a><a href="/kratom.html">Natural Leaf vs Extracts</a><a href="https://antikratom.org" target="_blank">Action</a></div>
-    <div><h4>Resources</h4><a href="/evidence/index.html">Research Library</a><a href="#">Legislation Tracker</a></div>
-    <div><h4>Stay Informed</h4><form class="signup"><input type="email" placeholder="Email"><button>Sign Up</button></form></div>
+    <div class="footer-brand">
+      <img src="assets/logos/logo-dark.png" alt="logo">
+      <div>
+        <h3>Global <span>Kratom</span> Eradicators</h3>
+        <p>Educate. Expose. Eradicate.</p>
+      </div>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <a href="/evidence/index.html">Evidence</a>
+      <a href="/mission.html">Mission</a>
+      <a href="/fdamyth.html">FDA Myth vs Fact</a>
+      <a href="/kratom.html">Natural Leaf vs Extracts</a>
+      <a href="https://antikratom.org" target="_blank">Action</a>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <a href="/evidence/index.html">Research Library</a>
+      <a href="#">Legislation Tracker</a>
+    </div>
+    <div>
+      <h4>Stay Informed</h4>
+      <form class="signup">
+        <input type="email" placeholder="Email">
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
   </div>
-  <div class="container footer-bottom"><div>© 2026 Global Kratom Eradicators</div><div>Educational & legislative reference</div></div>
+  <div class="container footer-bottom">
+    <div>© 2026 Global Kratom Eradicators</div>
+    <div>Educational & legislative reference</div>
+  </div>
 </footer>
 
 </body>
