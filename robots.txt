@@ -1,0 +1,78 @@
+# robots.txt for globalkratom.org
+# Purpose: Allow full indexing of public health content while blocking non‑essential or potentially problematic paths.
+# Last updated: 2026-05-26
+
+# === Allow all major search engines to crawl everything by default ===
+User-agent: *
+Disallow:
+
+# === Polite crawling directives (optional but professional) ===
+# Request a 5‑second crawl delay to reduce server load (adjust as needed)
+Crawl-delay: 5
+
+# === Block access to common hidden or system directories (defensive) ===
+# These paths don't exist on a static HTML site, but blocking them prevents accidental exposure.
+Disallow: /admin/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /backup/
+Disallow: /private/
+Disallow: /config/
+Disallow: /includes/
+Disallow: /logs/
+Disallow: /temp/
+
+# === Block common CMS or script extensions (not applicable to static site, but safe) ===
+Disallow: /*.php$
+Disallow: /*.asp$
+Disallow: /*.aspx$
+Disallow: /*.cgi$
+Disallow: /*.pl$
+
+# === Block any potential staging or test subdirectories ===
+Disallow: /staging/
+Disallow: /dev/
+Disallow: /test/
+Disallow: /old/
+
+# === Block parameter‐driven duplication (if query strings ever appear) ===
+Disallow: /*?*
+Disallow: /*&*
+
+# === Explicitly handle specific crawlers for additional control ===
+# Googlebot (respects Crawl‑delay, but we already have a global rule)
+User-agent: Googlebot
+Crawl-delay: 2
+Disallow:
+
+# Bingbot
+User-agent: Bingbot
+Crawl-delay: 2
+Disallow:
+
+# DuckDuckBot
+User-agent: DuckDuckBot
+Crawl-delay: 5
+Disallow:
+
+# === Block aggressive or low‑value bots (optional but professional) ===
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: rogerbot
+Disallow: /
+
+User-agent: Exabot
+Disallow: /
+
+# === Always point to your sitemap for fastest discovery ===
+Sitemap: https://globalkratom.org/sitemap.xml
