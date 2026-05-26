@@ -28,10 +28,72 @@ body::before{ content:""; position:fixed; inset:0; background:url("/evidence/ass
 .nav-links a.active{color:var(--red)}
 .nav-links a:hover{color:var(--red)}
 .mobile-menu-btn{ display:none; background:none; border:0; font-size:30px; cursor:pointer; }
-.hero-pregnancy{ background: linear-gradient(90deg,rgba(7,24,44,.94),rgba(7,24,44,.74)), url("/assets/icons/pregnancy.jpg"); background-size:cover; background-position:center 34%; color:white; }
+.hero-pregnancy{ background: linear-gradient(90deg,rgba(7,24,44,.94),rgba(7,24,44,.74)), url("/assets/icons/pregnancy.jpeg"); background-size:cover; background-position:center 34%; color:white; }
 .hero-content{ padding:64px 0; max-width:720px; }
 .hero-content h1{ font-size:clamp(38px,6vw,58px); font-weight:900; margin-bottom:18px; }
 .hero-content p{ font-size:18px; color:#eaf1f9; }
+
+/* 醒目风险提示框 - 针对铅污染和孕期风险 */
+.risk-alert-box {
+  background: #fff7f0;
+  border-left: 8px solid #c8102e;
+  border-radius: 20px;
+  padding: 28px 32px;
+  margin: 32px 0 24px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+.risk-alert-box h3 {
+  font-size: 24px;
+  font-weight: 900;
+  color: #c8102e;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.risk-alert-box h3::before {
+  content: "⚠️";
+  font-size: 28px;
+}
+.risk-alert-box p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  color: #1e2a3e;
+}
+.risk-alert-box .lead-stats {
+  background: #fff0e6;
+  border-radius: 16px;
+  padding: 16px 20px;
+  margin: 16px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: space-between;
+}
+.risk-alert-box .lead-stat {
+  flex: 1;
+  text-align: center;
+}
+.risk-alert-box .lead-stat strong {
+  display: block;
+  font-size: 28px;
+  font-weight: 900;
+  color: #c8102e;
+}
+.risk-alert-box .lead-stat span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #5a6e7c;
+}
+.risk-alert-box .warning-note {
+  font-weight: 700;
+  color: #b22234;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #ffd7b5;
+}
+
 .key-findings{ background:#0b1d34; color:white; border-radius:20px; padding:24px 28px; margin:32px 0 24px; box-shadow:0 8px 20px rgba(0,0,0,0.1); }
 .key-findings h3{ font-size:20px; margin-bottom:12px; }
 .key-findings ul{ margin-left:20px; margin-top:8px; }
@@ -59,6 +121,9 @@ footer{ margin-top:54px; background:var(--navy); color:#cbd5e1; text-align:cente
   .hero-content{padding:46px 0 54px}
   .hero-content h1{font-size:38px}
   .hero-content p{font-size:16px}
+  .risk-alert-box{padding:20px;}
+  .risk-alert-box .lead-stats{flex-direction:column; gap:12px;}
+  .risk-alert-box .lead-stat{text-align:left;}
 }
 </style>
 </head>
@@ -76,6 +141,24 @@ footer{ margin-top:54px; background:var(--navy); color:#cbd5e1; text-align:cente
 </div>
 <section class="hero-pregnancy"><div class="container"><div class="hero-content"><h1>Pregnancy & Neonatal Effects</h1><p>Clinical reports and literature documenting neonatal abstinence syndrome (NAS), maternal dependence, and withdrawal associated with prenatal kratom exposure.</p></div></div></section>
 <div class="container">
+  <!-- 醒目风险提示框：聚焦铅污染与孕期风险 -->
+  <div class="risk-alert-box">
+    <h3>Lead in Kratom: A Hidden Pregnancy Risk</h3>
+    <p><strong>Lead crosses the placenta.</strong> It has been detected in fetal tissue and is associated with spontaneous abortion, low birth weight, preterm delivery, and impaired neurodevelopment. <strong>There is no known safe level of lead exposure during pregnancy.</strong></p>
+    <p>Independent laboratory analysis of commercial kratom products has consistently found measurable lead contamination:</p>
+    <div class="lead-stats">
+      <div class="lead-stat"><strong>0.96 µg/g</strong><span>Golden Monk White Powder</span></div>
+      <div class="lead-stat"><strong>1.015 µg/g</strong><span>Golden Monk Red Powder</span></div>
+      <div class="lead-stat"><strong>467.2 ppb</strong><span>Nature's Gold Green</span></div>
+      <div class="lead-stat"><strong>0.597 µg/g</strong><span>Kratom Capsules</span></div>
+    </div>
+    <p>At roughly 1 µg/g lead, a single 5‑gram dose delivers about 5 micrograms of lead. Multiple doses per day turn a "trace" lab finding into repeated ingestion — and for a pregnant woman, repeated placental transfer to the developing fetus. <strong>Every published neonatal case report documenting kratom withdrawal is also a case of repeated fetal lead exposure during critical windows of brain and organ development.</strong></p>
+    <p>The FDA has warned that kratom products contain lead and nickel at levels not considered safe for human consumption, and that heavy kratom users may be exposed to levels many times greater than safe daily exposure.<strong>Import Alert 54‑15</strong> (updated February 2025) allows detention of all kratom‑containing dietary supplements entering U.S. commerce.</p>
+    <div class="warning-note">
+      <strong>⚠️ The takeaway:</strong> Kratom use in pregnancy delivers <em>both</em> lead toxicity <em>and</em> neonatal withdrawal risk. The neonatal abstinence case files are not just about NAS — they are proof that fetuses are being dosed with lead from a product sold without pregnancy warnings.
+    </div>
+  </div>
+
   <div class="key-findings">
     <h3>Key Findings</h3>
     <ul>
