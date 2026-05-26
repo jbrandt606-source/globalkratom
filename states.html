@@ -3,287 +3,89 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>State Policy Landscape | Kratom Regulation & Retail Suppression</title>
+<title>State Policy Landscape | Global Kratom Eradicators</title>
 <link rel="icon" type="image/png" href="/assets/logos/favicon.png?v=9999">
 <link rel="shortcut icon" type="image/png" href="/assets/logos/favicon.png?v=9999">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: 'Inter', Arial, sans-serif;
-    background: #ffffff;
-    color: #111827;
-    line-height: 1.5;
-  }
-
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-
-  .container {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 32px;
-  }
-
-  /* top bar (newsletter/donate style) */
-  .top-toolbar {
-    background: #f9fafb;
-    border-bottom: 1px solid #e5e7eb;
-    padding: 12px 0;
-    font-size: 13px;
-    font-weight: 600;
-  }
-
-  .toolbar-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  .toolbar-left {
-    display: flex;
-    gap: 28px;
-    align-items: center;
-  }
-
-  .toolbar-left a, .toolbar-right a {
-    color: #1f2a44;
-    transition: color 0.2s;
-  }
-
-  .toolbar-left a:hover, .toolbar-right a:hover {
-    color: #c8102e;
-  }
-
-  .toolbar-right {
-    display: flex;
-    gap: 24px;
-    align-items: center;
-  }
-
-  .donate-btn {
-    background: #c8102e;
-    color: white;
-    padding: 6px 18px;
-    border-radius: 40px;
-    font-weight: 800;
-    font-size: 12px;
-    letter-spacing: 0.5px;
-  }
-
-  /* hero */
-  .hero-state {
-    background: linear-gradient(90deg, rgba(7, 24, 44, 0.92), rgba(7, 24, 44, 0.75)), url('assets/capitol-hero.jpeg');
-    background-size: cover;
-    background-position: center 35%;
-    color: white;
-    padding: 56px 0;
-  }
-
-  .hero-content h1 {
-    font-size: 48px;
-    font-weight: 900;
-    margin-bottom: 16px;
-    letter-spacing: -0.02em;
-  }
-
-  .hero-content p {
-    font-size: 18px;
-    color: #e6edf5;
-    max-width: 700px;
-    margin-bottom: 8px;
-  }
-
-  .evidence-note {
-    font-size: 14px;
-    color: #bdd3e8;
-    margin-top: 12px;
-    border-left: 3px solid #c8102e;
-    padding-left: 16px;
-  }
-
-  /* section headers */
-  .section-header {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    border-bottom: 2px solid #e5e7eb;
-    padding-bottom: 12px;
-    margin: 48px 0 24px 0;
-  }
-
-  .section-header h2 {
-    font-size: 28px;
-    font-weight: 800;
-    letter-spacing: -0.01em;
-    color: #0b1d34;
-  }
-
-  .section-header span {
-    font-size: 14px;
-    font-weight: 600;
-    color: #5c6f87;
-  }
-
-  /* numbered list style (national leaders) */
-  .rank-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 20px;
-  }
-
-  .rank-item {
-    background: #fafcff;
-    border-radius: 20px;
-    border: 1px solid #eef2f8;
-    padding: 12px 16px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-weight: 700;
-    transition: 0.1s;
-  }
-
-  .rank-number {
-    background: #c8102e;
-    color: white;
-    width: 32px;
-    height: 32px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 60px;
-    font-weight: 800;
-    font-size: 16px;
-  }
-
-  .rank-name {
-    font-size: 16px;
-    font-weight: 700;
-    color: #0b1d34;
-  }
-
-  /* table for Getting There */
-  .progress-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-    border: 1px solid #eef2f8;
-  }
-
-  .progress-table th {
-    background: #f0f4fa;
-    text-align: left;
-    padding: 16px 20px;
-    font-weight: 800;
-    font-size: 15px;
-    color: #0b1d34;
-  }
-
-  .progress-table td {
-    padding: 14px 20px;
-    border-top: 1px solid #eef2f8;
-    font-weight: 500;
-    color: #1e2f3e;
-  }
-
-  .progress-table tr:hover td {
-    background: #fcfcff;
-  }
-
-  .weak-list, .failure-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 14px;
-    margin-bottom: 24px;
-  }
-
-  .weak-item, .failure-item {
-    background: #fefefe;
-    border: 1px solid #eef2f8;
-    border-radius: 40px;
-    padding: 10px 20px;
-    font-weight: 700;
-    font-size: 15px;
-    color: #1a2c3e;
-    text-align: center;
-  }
-
-  .failure-item {
-    background: #fff6f5;
-    border-left: 4px solid #c8102e;
-    font-weight: 800;
-  }
-
-  .footnote {
-    margin-top: 40px;
-    padding: 24px 28px;
-    background: #f8fafd;
-    border-radius: 24px;
-    border-left: 5px solid #c8102e;
-    font-size: 14px;
-    color: #2c3e50;
-    line-height: 1.6;
-  }
-
-  footer {
-    background: #0b1d34;
-    color: #bdc9db;
-    text-align: center;
-    padding: 32px 24px;
-    margin-top: 56px;
-    font-size: 13px;
-  }
-
-  @media (max-width: 700px) {
-    .container {
-      padding: 0 20px;
-    }
-    .hero-content h1 {
-      font-size: 36px;
-    }
-    .toolbar-inner {
-      flex-direction: column;
-      align-items: stretch;
-      text-align: center;
-    }
-    .toolbar-left, .toolbar-right {
-      justify-content: center;
-    }
-    .section-header {
-      flex-direction: column;
-      gap: 8px;
-    }
-  }
+:root{ --navy:#0b1d34; --red:#c8102e; --soft:#f6f8fb; --line:#dfe6ef; --text:#0b1d34; --muted:#64748b; }
+*{box-sizing:border-box;margin:0;padding:0}
+body{ font-family:'Inter',Arial,sans-serif; background:#f9fafb; color:var(--text); line-height:1.5; }
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.container{max-width:1180px;margin:0 auto;padding:0 24px}
+body::before{ content:""; position:fixed; inset:0; background:url("/evidence/assets/subtle-grid.png") repeat; opacity:.035; pointer-events:none; z-index:-1; }
+.topbar{ background:var(--navy); color:#dbe7f4; text-align:center; padding:9px 18px; font-size:13px; }
+.nav-bar{ background:white; border-bottom:1px solid var(--line); }
+.nav-inner{ min-height:88px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+.brand{ display:flex; align-items:center; gap:14px; }
+.brand img{ width:54px; height:54px; object-fit:cover; border-radius:6px; }
+.brand-title{ font-weight:900; text-transform:uppercase; line-height:1; font-size:21px; }
+.brand-title span{color:var(--red)}
+.brand-sub{ margin-top:6px; font-size:11px; font-weight:900; text-transform:uppercase; }
+.nav-links{ display:flex; align-items:center; gap:28px; font-size:13px; font-weight:800; text-transform:uppercase; }
+.nav-links a{color:#172033}
+.nav-links a.active{color:var(--red)}
+.nav-links a:hover{color:var(--red)}
+.mobile-menu-btn{ display:none; background:none; border:0; font-size:30px; cursor:pointer; }
+.hero-state{ background: linear-gradient(90deg,rgba(7,24,44,.94),rgba(7,24,44,.74)), url('assets/capitol-hero.jpeg'); background-size:cover; background-position:center 34%; color:white; }
+.hero-content{ padding:64px 0; max-width:720px; }
+.hero-content h1{ font-size:clamp(38px,6vw,58px); font-weight:900; margin-bottom:18px; }
+.hero-content p{ font-size:18px; color:#eaf1f9; }
+.key-findings{ background:#0b1d34; color:white; border-radius:20px; padding:24px 28px; margin:32px 0 24px; box-shadow:0 8px 20px rgba(0,0,0,0.1); }
+.key-findings h3{ font-size:20px; margin-bottom:12px; }
+.key-findings ul{ margin-left:20px; margin-top:8px; }
+.key-findings li{ margin-bottom:8px; }
+.section-header{ display:flex; justify-content:space-between; align-items:baseline; border-bottom:2px solid var(--line); padding-bottom:10px; margin:48px 0 24px 0; }
+.section-header h2{ font-size:28px; font-weight:900; }
+.rank-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:20px; margin-bottom:32px; }
+.rank-item{ background:white; border-radius:20px; border:1px solid var(--line); padding:12px 18px; display:flex; align-items:center; gap:14px; font-weight:800; }
+.rank-number{ background:var(--red); color:white; width:34px; height:34px; display:inline-flex; align-items:center; justify-content:center; border-radius:40px; font-weight:900; }
+.progress-table{ width:100%; border-collapse:collapse; background:white; border-radius:24px; overflow:hidden; border:1px solid var(--line); margin-bottom:32px; }
+.progress-table th{ background:#f0f4fa; text-align:left; padding:14px 20px; font-weight:800; }
+.progress-table td{ padding:12px 20px; border-top:1px solid var(--line); color:var(--muted); font-weight:500; }
+.weak-list, .failure-list{ display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:14px; margin-bottom:32px; }
+.weak-item, .failure-item{ background:white; border-radius:40px; padding:10px 20px; border:1px solid var(--line); font-weight:700; text-align:center; }
+.failure-item{ background:#fff6f5; border-left:4px solid var(--red); font-weight:800; }
+.methodology-box{ background:#f4f7fc; border-radius:20px; padding:24px; margin:32px 0; border:1px solid var(--line); }
+.methodology-box h4{ font-weight:900; margin-bottom:12px; font-size:18px; }
+.methodology-table{ width:100%; border-collapse:collapse; margin:12px 0; }
+.methodology-table td{ padding:8px 8px 8px 0; border-bottom:1px solid #e2e8f0; }
+.sidebar-wrapper{ display:grid; grid-template-columns:1fr 320px; gap:32px; margin:24px 0 40px; }
+.side-panel{ background:white; border-radius:24px; border:1px solid var(--line); padding:20px; align-self:start; }
+.side-panel h4{ font-weight:900; font-size:18px; margin-bottom:12px; border-left:4px solid var(--red); padding-left:12px; }
+.side-panel ul{ margin-left:20px; margin-top:12px; }
+.side-panel li{ margin-bottom:10px; font-size:14px; }
+.callout-box{ background:#fff3e8; border-left:6px solid var(--red); border-radius:20px; padding:20px 28px; margin:32px 0; }
+.callout-box strong{ color:var(--red); }
+footer{ margin-top:54px; background:var(--navy); color:#cbd5e1; text-align:center; padding:32px 18px; font-size:14px; }
+@media(max-width:760px){
+  .container{padding:0 16px}
+  .nav-inner{min-height:78px}
+  .brand img{width:44px;height:44px}
+  .brand-title{font-size:17px}
+  .brand-sub{font-size:9px}
+  .nav-links{display:none}
+  .mobile-menu-btn{display:block}
+  .mobile-menu{ display:none; background:white; border-top:1px solid var(--line); padding:14px 16px 18px; }
+  .mobile-menu.open{display:block}
+  .mobile-menu a{ display:block; padding:12px 0; font-weight:900; border-bottom:1px solid #eef2f6; }
+  .hero-content{padding:46px 0 54px}
+  .hero-content h1{font-size:38px}
+  .sidebar-wrapper{grid-template-columns:1fr;}
+}
 </style>
 </head>
 <body>
-
-<div class="top-toolbar">
+<div class="topbar">GLOBALKRATOM.ORG · Evidence-based policy resources</div>
+<div class="nav-bar">
   <div class="container">
-    <div class="toolbar-inner">
-      <div class="toolbar-left">
-        <a href="#">SUBSCRIBE TO NEWSLETTER</a>
-        <a href="#">EXPLORE</a>
-        <a href="#">SEARCH</a>
-      </div>
-      <div class="toolbar-right">
-        <a href="#">DONATE</a>
-        <a href="#" class="donate-btn">TAKE ACTION</a>
-      </div>
+    <div class="nav-inner">
+      <a class="brand" href="/"><img src="/assets/logos/logo-dark.png" alt="Global Kratom Eradicators"><div><div class="brand-title">Global <span>Kratom</span> Eradicators</div><div class="brand-sub">Educate. Expose. Eradicate.</div></div></a>
+      <div class="nav-links"><a href="/">Home</a><a href="/evidence/index.html">Evidence</a><a href="/lawmakers/">For Lawmakers</a><a href="/action/">Action Center</a></div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
     </div>
+    <div class="mobile-menu" id="mobileMenu"><a href="/">Home</a><a href="/evidence/index.html">Evidence</a><a href="/lawmakers/">For Lawmakers</a><a href="/action/">Action Center</a></div>
   </div>
 </div>
 
@@ -291,120 +93,147 @@
   <div class="container">
     <div class="hero-content">
       <h1>State Policy Landscape</h1>
-      <p>Kratom regulation, retail suppression, and public health frameworks across the United States.</p>
-      <div class="evidence-note">
-        Based on peer-reviewed findings (Addiction, 2026): states with at least local restrictions had significantly lower healthcare utilization compared with unrestricted states. This tracker reflects full bans, scheduling actions, local control authority, and pending suppression measures.
-      </div>
+      <p>Kratom regulation, retail suppression, and public health outcomes across the United States – combining policy strength with CDC surveillance data and peer-reviewed findings.</p>
     </div>
   </div>
 </section>
 
 <div class="container">
-  <!-- NATIONAL LEADERS (full bans / Schedule I / functional suppression) -->
-  <div class="section-header">
-    <h2>NATIONAL LEADERS</h2>
-    <span>Retail suppression already achieved</span>
-  </div>
-  <div class="rank-grid">
-    <!-- list of 12 states: California, Alabama, Arkansas, Connecticut, Indiana, Kansas, Kentucky, Louisiana, Ohio, Tennessee, Vermont, Wisconsin -->
-    <div class="rank-item"><span class="rank-number">1</span><span class="rank-name">California</span></div>
-    <div class="rank-item"><span class="rank-number">2</span><span class="rank-name">Alabama</span></div>
-    <div class="rank-item"><span class="rank-number">3</span><span class="rank-name">Arkansas</span></div>
-    <div class="rank-item"><span class="rank-number">4</span><span class="rank-name">Connecticut</span></div>
-    <div class="rank-item"><span class="rank-number">5</span><span class="rank-name">Indiana</span></div>
-    <div class="rank-item"><span class="rank-number">6</span><span class="rank-name">Kansas</span></div>
-    <div class="rank-item"><span class="rank-number">7</span><span class="rank-name">Kentucky</span></div>
-    <div class="rank-item"><span class="rank-number">8</span><span class="rank-name">Louisiana</span></div>
-    <div class="rank-item"><span class="rank-number">9</span><span class="rank-name">Ohio</span></div>
-    <div class="rank-item"><span class="rank-number">10</span><span class="rank-name">Tennessee</span></div>
-    <div class="rank-item"><span class="rank-number">11</span><span class="rank-name">Vermont</span></div>
-    <div class="rank-item"><span class="rank-number">12</span><span class="rank-name">Wisconsin</span></div>
+  <!-- Key Finding Callout: KCPA vs no regulation -->
+  <div class="callout-box">
+    <strong>Key Finding – Addiction (2026)</strong><br>
+    “States with consumer protection acts designed to promote safety experienced similar rates of severe outcomes as states with no regulation at all.”  
+    Retail bans and local suppression measures were significantly more effective in reducing healthcare utilization and poison center calls.
   </div>
 
-  <!-- GETTING THERE (actively moving toward meaningful suppression) -->
-  <div class="section-header">
-    <h2>GETTING THERE</h2>
-    <span>Active movement toward suppression / local-ban authority / scheduling activity</span>
-  </div>
-  <table class="progress-table">
-    <thead>
-      <tr><th>State</th><th>Why Included</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Utah</td><td>Powder-leaf-only + registration</td></tr>
-      <tr><td>Virginia</td><td>Warning labels + locked storage</td></tr>
-      <tr><td>New Hampshire</td><td>Rejected KCPA</td></tr>
-      <tr><td>New York</td><td>Multiple pending restrictions</td></tr>
-      <tr><td>New Jersey</td><td>CJ’s Law pending</td></tr>
-      <tr><td>Delaware</td><td>Schedule I pending</td></tr>
-      <tr><td>Maryland</td><td>Strict advertising rules + bans pending</td></tr>
-      <tr><td>North Carolina</td><td>Considering ban</td></tr>
-      <tr><td>Arizona</td><td>Considering ban</td></tr>
-      <tr><td>Nevada</td><td>Board of Pharmacy voted unanimously to schedule</td></tr>
-      <tr><td>Illinois</td><td>Local county bans allowed</td></tr>
-      <tr><td>Michigan</td><td>Considering ban</td></tr>
-      <tr><td>Pennsylvania</td><td>Local ban capability</td></tr>
-      <tr><td>Mississippi</td><td>Local restriction authority</td></tr>
-      <tr><td>Washington</td><td>Local control potential</td></tr>
-      <tr><td>Massachusetts</td><td>Extensive municipal authority</td></tr>
-      <tr><td>Idaho</td><td>Zero SUDORS deaths + local‑control benefit</td></tr>
-      <tr><td>Missouri</td><td>Local restriction pathways</td></tr>
-    </tbody>
-  </table>
-
-  <!-- WEAK SYSTEMS (partial regulation / broad retail normalization) -->
-  <div class="section-header">
-    <h2>WEAK SYSTEMS</h2>
-    <span>Partial/inconsistent frameworks, broad retail normalization</span>
-  </div>
-  <div class="weak-list">
-    <!-- excluding Minnesota (moved to National Failures) -->
-    <div class="weak-item">West Virginia</div>
-    <div class="weak-item">Montana</div>
-    <div class="weak-item">Maine</div>
-    <div class="weak-item">Alaska</div>
-    <div class="weak-item">Oregon</div>
-    <div class="weak-item">Colorado</div>
-    <div class="weak-item">Oklahoma</div>
-    <div class="weak-item">Iowa</div>
-    <div class="weak-item">Nebraska</div>
-    <div class="weak-item">South Dakota</div>
-    <div class="weak-item">Wyoming</div>
-    <div class="weak-item">New Mexico</div>
-    <div class="weak-item">Hawaii</div>
-    <div class="weak-item">District of Columbia</div>
+  <!-- Methodology Box -->
+  <div class="methodology-box">
+    <h4>Ranking Methodology</h4>
+    <p>State tiers are based on a composite score weighting policy strength, SUDORS mortality burden, local restriction authority, and legislative momentum. Data sources: CDC SUDORS (2019-2025), Addiction (2026), FDA Import Alerts, state pharmacy board actions, and pending legislation.</p>
+    <table class="methodology-table">
+      <tr><td style="width:60%;">Retail suppression / scheduling / full ban</td><td>40%</td></tr>
+      <tr><td>SUDORS mortality & poison center burden</td><td>25%</td></tr>
+      <tr><td>Local restriction authority (county/city bans)</td><td>15%</td></tr>
+      <tr><td>Youth protections & age restrictions</td><td>10%</td></tr>
+      <tr><td>Product restrictions (labeling, testing, extracts)</td><td>10%</td></tr>
+    </table>
+    <p class="citation" style="margin-top:8px; font-size:12px;">* States with missing SUDORS data are noted separately. “National Failures” reflect policy direction, retail normalization, and avoidable burden — not solely current mortality counts.</p>
   </div>
 
-  <!-- NATIONAL FAILURES (high burden + permissive retail normalization) -->
-  <div class="section-header">
-    <h2>NATIONAL FAILURES</h2>
-    <span>High detection burden + weak retail frameworks</span>
-  </div>
-  <div class="failure-list">
-    <div class="failure-item">Georgia — strongest KCPA + highest detection burden</div>
-    <div class="failure-item">Florida — KCPA + high autopsy burden</div>
-    <div class="failure-item">Rhode Island — reversed ban for KCPA</div>
-    <div class="failure-item">South Carolina — very high burden despite retail availability</div>
-    <div class="failure-item">Texas — massive unrestricted market</div>
-    <div class="failure-item">Minnesota — broad retail normalization (high burden)</div>
+  <!-- Sidebar layout for main content + momentum panel -->
+  <div class="sidebar-wrapper">
+    <div>
+      <!-- NATIONAL LEADERS -->
+      <div class="section-header"><h2>NATIONAL LEADERS</h2><span>Retail suppression achieved</span></div>
+      <div class="rank-grid">
+        <div class="rank-item"><span class="rank-number">1</span> California</div>
+        <div class="rank-item"><span class="rank-number">2</span> Alabama</div>
+        <div class="rank-item"><span class="rank-number">3</span> Arkansas</div>
+        <div class="rank-item"><span class="rank-number">4</span> Connecticut</div>
+        <div class="rank-item"><span class="rank-number">5</span> Indiana</div>
+        <div class="rank-item"><span class="rank-number">6</span> Kansas</div>
+        <div class="rank-item"><span class="rank-number">7</span> Kentucky</div>
+        <div class="rank-item"><span class="rank-number">8</span> Louisiana</div>
+        <div class="rank-item"><span class="rank-number">9</span> Ohio</div>
+        <div class="rank-item"><span class="rank-number">10</span> Tennessee</div>
+        <div class="rank-item"><span class="rank-number">11</span> Vermont</div>
+        <div class="rank-item"><span class="rank-number">12</span> Wisconsin</div>
+      </div>
+
+      <!-- GETTING THERE -->
+      <div class="section-header"><h2>GETTING THERE</h2><span>Active movement toward suppression</span></div>
+      <table class="progress-table">
+        <thead><tr><th>State</th><th>Why Included</th></tr></thead>
+        <tbody>
+          <tr><td>Utah</td><td>Powder-leaf-only + registration</td></tr>
+          <tr><td>Virginia</td><td>Warning labels + locked storage</td></tr>
+          <tr><td>New Hampshire</td><td>Rejected KCPA</td></tr>
+          <tr><td>New York</td><td>Multiple pending restrictions</td></tr>
+          <tr><td>New Jersey</td><td>CJ’s Law pending</td></tr>
+          <tr><td>Delaware</td><td>Schedule I pending</td></tr>
+          <tr><td>Maryland</td><td>Strict advertising rules + bans pending</td></tr>
+          <tr><td>North Carolina</td><td>Considering ban</td></tr>
+          <tr><td>Arizona</td><td>Considering ban</td></tr>
+          <tr><td>Nevada</td><td>Board of Pharmacy voted unanimously to schedule</td></tr>
+          <tr><td>Illinois</td><td>Local county bans allowed</td></tr>
+          <tr><td>Michigan</td><td>Considering ban</td></tr>
+          <tr><td>Pennsylvania</td><td>Local ban capability</td></tr>
+          <tr><td>Mississippi</td><td>Local restriction authority</td></tr>
+          <tr><td>Washington</td><td>Local control potential</td></tr>
+          <tr><td>Massachusetts</td><td>Extensive municipal authority</td></tr>
+          <tr><td>Idaho</td><td>Zero SUDORS deaths + local-control benefit</td></tr>
+          <tr><td>Missouri</td><td>Local restriction pathways</td></tr>
+        </tbody>
+      </table>
+
+      <!-- WEAK SYSTEMS -->
+      <div class="section-header"><h2>WEAK SYSTEMS</h2><span>Partial or inconsistent frameworks</span></div>
+      <div class="weak-list">
+        <div class="weak-item">West Virginia</div>
+        <div class="weak-item">Montana</div>
+        <div class="weak-item">Maine</div>
+        <div class="weak-item">Alaska</div>
+        <div class="weak-item">Oregon</div>
+        <div class="weak-item">Colorado</div>
+        <div class="weak-item">Oklahoma</div>
+        <div class="weak-item">Iowa</div>
+        <div class="weak-item">Nebraska</div>
+        <div class="weak-item">South Dakota</div>
+        <div class="weak-item">Wyoming</div>
+        <div class="weak-item">New Mexico</div>
+        <div class="weak-item">Hawaii</div>
+        <div class="weak-item">District of Columbia</div>
+      </div>
+
+      <!-- NATIONAL FAILURES with clarification for RI and Texas -->
+      <div class="section-header"><h2>NATIONAL FAILURES</h2><span>High burden + permissive normalization</span></div>
+      <div class="failure-list">
+        <div class="failure-item">Georgia — strongest KCPA + highest detection burden</div>
+        <div class="failure-item">Florida — KCPA + high autopsy burden</div>
+        <div class="failure-item">Rhode Island — reversed a functional ban for KCPA; policy failure despite low current SUDORS</div>
+        <div class="failure-item">South Carolina — very high burden despite retail availability</div>
+        <div class="failure-item">Texas — massive unrestricted retail market (SUDORS reporting incomplete, but market size and normalization extreme)</div>
+        <div class="failure-item">Minnesota — broad retail normalization + high burden</div>
+      </div>
+    </div>
+
+    <!-- Right side panel: momentum and key actions -->
+    <div class="side-panel">
+      <h4>States Moving Toward Scheduling</h4>
+      <ul>
+        <li><strong>Nevada</strong> – Board of Pharmacy unanimous vote to schedule mitragynine (2026)</li>
+        <li><strong>Delaware</strong> – Schedule I bill pending</li>
+        <li><strong>New Jersey</strong> – “CJ’s Law” (kratom ban) advancing</li>
+        <li><strong>Illinois</strong> – County‑level bans spreading (e.g., St. Clair County)</li>
+        <li><strong>Ohio</strong> – Board of Pharmacy proposed Schedule I (CSI‑BIA analysis)</li>
+        <li><strong>New York</strong> – Multiple bills restricting extracts/sales</li>
+        <li><strong>Maryland</strong> – Local bans plus pending state restrictions</li>
+      </ul>
+      <div style="margin-top: 24px;">
+        <h4>CDC SUDORS Overlay</h4>
+        <p style="font-size:13px; margin-top:8px;">States with full bans or strong local suppression have significantly lower mitragynine‑detected deaths per capita. The Addiction (2026) study confirms: <strong>“States with at least local restrictions had somewhat lower healthcare utilization compared with unrestricted states.”</strong></p>
+      </div>
+    </div>
   </div>
 
-  <!-- explanatory footnote about tier logic and study reference -->
-  <div class="footnote">
-    <strong>Framework notes</strong><br>
-    • <strong>National Leaders:</strong> states with full retail bans, Schedule I classification for mitragynine, or functional suppression (no commercial availability).<br>
-    • <strong>Getting There:</strong> states actively moving toward meaningful suppression — unanimous pharmacy board scheduling votes, pending legislation, local‑ban authority, or regulatory pathways that restrict retail access.<br>
-    • <strong>Weak Systems:</strong> states with partial regulation (e.g., age restrictions, basic labeling) but no effective suppression; broad retail normalization persists.<br>
-    • <strong>National Failures:</strong> states with either high poison‑center / autopsy burden AND permissive retail environments, or KCPA frameworks that failed to reduce harm (Addiction, 2026).<br>
-    • Nevada’s placement in “Getting There” reflects the unanimous Board of Pharmacy scheduling vote, a stronger signal than KCPA alone. Minnesota moved to “National Failures” due to elevated burden and permissive retail normalization despite legislative activity.
+  <!-- footnote with additional context -->
+  <div class="key-findings" style="background:#f4f7fc; color:var(--text); margin:20px 0 0 0;">
+    <h3 style="color:var(--red)">Methodological Notes & Caveats</h3>
+    <ul>
+      <li><strong>Texas</strong> appears in National Failures due to its extremely permissive retail environment (thousands of smoke shops, no state restrictions, major distribution hub) and lack of comprehensive SUDORS reporting; public health burden is likely underestimated.</li>
+      <li><strong>Rhode Island</strong> reversed a de facto ban and adopted KCPA; despite currently lower SUDORS counts, the policy reversal represents a failure to maintain effective suppression, and retail normalization has increased.</li>
+      <li><strong>Nevada</strong> is classified as “Getting There” because the Board of Pharmacy’s unanimous scheduling vote signals imminent suppression, even before final DEA action.</li>
+      <li>KCPA states (Georgia, Florida, etc.) often have higher autopsy and poison‑center burdens, consistent with the Addiction paper finding that KCPA did not reduce severe outcomes compared to no regulation.</li>
+    </ul>
   </div>
 </div>
 
-<footer>
-  <div class="container">
-    <p>© 2026 Global Kratom Eradicators · Evidence‑based policy resources · State suppression tracker updated with peer‑reviewed findings (Addiction 2026, CDC MMWR, FDA Import Alerts).</p>
-  </div>
-</footer>
+<footer>© 2026 Global Kratom Eradicators. Evidence‑based policy resources. Rankings incorporate CDC SUDORS, NPDS, state legislation, and peer‑reviewed literature (Addiction 2026, MMWR 2026).</footer>
 
+<script>
+  document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  });
+</script>
 </body>
 </html>
