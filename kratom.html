@@ -22,7 +22,7 @@
     body {
       font-family: 'Inter', Arial, sans-serif;
       background: #fff;
-      color: #0b1d34;
+      color: #111827;
       line-height: 1.5;
       overflow-x: hidden;
     }
@@ -39,7 +39,7 @@
     /* top bar */
     .topbar {
       background: #0b1d34;
-      color: #dbe7f4;
+      color: #e2e8f0;
       text-align: center;
       padding: 9px 18px;
       font-size: 14px;
@@ -79,6 +79,7 @@
       line-height: 0.95;
       font-size: 22px;
       letter-spacing: 0.02em;
+      color: #0b1d34;
     }
     .brand-title span {
       color: #c8102e;
@@ -89,6 +90,7 @@
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 0.18em;
+      color: #2c3e50;
     }
     nav {
       display: flex;
@@ -99,6 +101,7 @@
     }
     nav a {
       transition: color 0.2s;
+      color: #1e293b;
     }
     nav a:hover {
       color: #c8102e;
@@ -106,7 +109,7 @@
 
     /* hero with leaf image */
     .hero-leaf {
-      background: linear-gradient(90deg, rgba(11,29,52,0.85), rgba(11,29,52,0.75)), url("/assets/leafkratom.png");
+      background: linear-gradient(90deg, rgba(11,29,52,0.88), rgba(11,29,52,0.78)), url("/assets/leafkratom.png");
       background-size: cover;
       background-position: center 30%;
       color: white;
@@ -118,12 +121,14 @@
       font-weight: 900;
       letter-spacing: -0.02em;
       margin-bottom: 16px;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.2);
     }
     .hero-leaf p {
       font-size: 18px;
       max-width: 750px;
       margin: 0 auto;
-      opacity: 0.92;
+      opacity: 0.95;
+      font-weight: 500;
     }
 
     /* section styling */
@@ -133,21 +138,23 @@
       border-left: 6px solid #c8102e;
       padding-left: 20px;
       margin: 56px 0 28px 0;
+      color: #0f172a;
     }
 
     /* key questions box */
     .policy-box {
-      background: #f4f7fc;
+      background: #f8fafc;
       border-radius: 24px;
       padding: 32px;
       margin: 48px 0 32px;
-      border: 1px solid #dfe5ec;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
     }
     .policy-box h3 {
       font-size: 24px;
       font-weight: 800;
       margin-bottom: 20px;
-      color: #0b1d34;
+      color: #0f172a;
     }
     .policy-grid {
       display: grid;
@@ -159,12 +166,14 @@
       padding: 18px;
       border-radius: 16px;
       border-left: 4px solid #c8102e;
-      font-weight: 600;
+      font-weight: 700;
+      color: #1e293b;
       transition: transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
     }
     .policy-item:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     }
 
     /* two-column layout */
@@ -176,10 +185,10 @@
     }
     .info-card {
       background: #fff;
-      border: 1px solid #dfe5ec;
+      border: 1px solid #e2e8f0;
       border-radius: 20px;
       padding: 24px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
       transition: box-shadow 0.2s, transform 0.1s;
     }
     .info-card:hover {
@@ -193,6 +202,7 @@
       padding-bottom: 8px;
       border-bottom: 2px solid #eef2f8;
       display: inline-block;
+      color: #0f172a;
     }
     .info-card ul {
       margin-left: 20px;
@@ -201,12 +211,13 @@
     .info-card li {
       margin-bottom: 12px;
       font-size: 15px;
-      color: #2c3e4f;
+      color: #1e293b;
+      font-weight: 500;
     }
 
     /* bold highlight box */
     .highlight-bold {
-      background: #fff7e0;
+      background: #fffbeb;
       border-left: 8px solid #c8102e;
       padding: 28px 32px;
       border-radius: 20px;
@@ -215,21 +226,22 @@
       text-align: left;
       font-size: 17px;
       line-height: 1.5;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      color: #1e293b;
     }
     .highlight-bold strong {
       font-weight: 900;
-      color: #a20d25;
+      color: #b91c1c;
     }
 
     /* natural list styling */
     .natural-list {
       background: #fff;
-      border: 1px solid #dfe5ec;
+      border: 1px solid #e2e8f0;
       border-radius: 20px;
       padding: 28px;
       margin-bottom: 32px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
     }
     .natural-list ul {
       margin-left: 24px;
@@ -238,6 +250,12 @@
     .natural-list li {
       margin-bottom: 12px;
       font-size: 15px;
+      color: #1e293b;
+      font-weight: 500;
+    }
+    .natural-list p {
+      color: #1e293b;
+      font-weight: 500;
     }
 
     footer {
@@ -268,6 +286,7 @@
       text-transform: uppercase;
       font-size: 24px;
       line-height: 1;
+      color: white;
     }
     .footer-brand h3 span {
       color: #c8102e;
@@ -275,7 +294,7 @@
     }
     .footer-brand p,
     footer a {
-      color: #dce7f4;
+      color: #cbd5e1;
       font-size: 13px;
     }
     footer a {
@@ -285,6 +304,7 @@
     }
     footer a:hover {
       opacity: 0.8;
+      color: white;
     }
     .signup {
       display: flex;
@@ -297,6 +317,8 @@
       border: 0;
       border-radius: 4px 0 0 4px;
       outline: none;
+      background: white;
+      color: #0b1d34;
     }
     .signup button {
       border: 0;
@@ -313,7 +335,7 @@
       gap: 20px;
       flex-wrap: wrap;
       padding-top: 16px;
-      color: #cbd5e1;
+      color: #94a3b8;
       font-size: 12px;
     }
 
@@ -532,7 +554,7 @@
     <!-- Closing section -->
     <div class="policy-box" style="background: #0b1d34; color: white; border: none;">
       <h3 style="color: white;">Why This Matters for Policymakers</h3>
-      <p style="font-size: 16px; line-height: 1.5; margin-top: 12px;">Policymakers evaluating restrictions focused only on extracts or isolated alkaloids may also need to consider broader issues involving product variability, contamination, retail enforcement complexity, healthcare burden, and the role of “natural leaf” products within the wider commercial kratom marketplace. <strong>Severe outcomes are not limited to high‑potency extracts</strong> – and surveillance systems continue to document harm from products marketed for years before 7‑OH emerged. A comprehensive regulatory approach should address the entire retail ecosystem, not just its newest components.</p>
+      <p style="font-size: 16px; line-height: 1.5; margin-top: 12px; color: #e2e8f0; font-weight: 500;">Policymakers evaluating restrictions focused only on extracts or isolated alkaloids may also need to consider broader issues involving product variability, contamination, retail enforcement complexity, healthcare burden, and the role of “natural leaf” products within the wider commercial kratom marketplace. <strong style="color: #fecaca;">Severe outcomes are not limited to high‑potency extracts</strong> – and surveillance systems continue to document harm from products marketed for years before 7‑OH emerged. A comprehensive regulatory approach should address the entire retail ecosystem, not just its newest components.</p>
     </div>
   </div>
 </main>
