@@ -1,0 +1,26 @@
+# Enable the rewrite engine
+RewriteEngine On
+
+# Redirect /lawmakers/ (with or without trailing slash) to lawmakers.html
+RewriteRule ^lawmakers/?$ /lawmakers.html [R=301,L]
+
+# Optional but recommended: Force HTTPS (uncomment if you have SSL)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# Optional: Remove trailing slash from non-directory URLs (improves canonicalization)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} /(.*)/$
+RewriteRule ^ /%1 [R=301,L]
+
+# Optional: Prevent directory listing
+Options -Indexes
+
+# Optional: Block access to hidden files (like .htaccess itself)
+<Files .*>
+    Order Deny,Allow
+    Deny From All
+</Files>
+
+# Optional: Set default charset
+AddDefaultCharset UTF-8
