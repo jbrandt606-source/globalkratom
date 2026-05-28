@@ -437,7 +437,7 @@
       background: #a00d22;
     }
 
-    /* ========== PUBLIC HEALTH INDICATORS (with logos, bold red numbers) ========== */
+    /* ========== PUBLIC HEALTH INDICATORS – LARGER LOGOS ========== */
     .stats.evidence-indicators {
       background: #fff;
       border-bottom: 1px solid #dfe5ec;
@@ -478,8 +478,8 @@
       padding: 24px;
       transition: all 0.2s ease;
       display: flex;
-      align-items: flex-start;
-      gap: 20px;
+      align-items: center;
+      gap: 24px;
     }
     .indicator-card:hover {
       transform: translateY(-4px);
@@ -487,7 +487,7 @@
       border-color: #c8102e;
     }
     .agency-icon {
-      width: 60px;
+      width: 100px;
       height: auto;
       flex-shrink: 0;
     }
@@ -874,7 +874,7 @@
       .btn { width: 100%; padding: 12px 20px; }
       .indicator-grid { grid-template-columns: 1fr; gap: 20px; }
       .indicator-number { font-size: 36px; }
-      .agency-icon { width: 50px; }
+      .agency-icon { width: 70px; } /* slightly smaller on mobile but still prominent */
       .issue-grid { grid-template-columns: 1fr; gap: 24px; }
       .lawmaker-card { max-width: 100%; }
       .footer-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -951,7 +951,7 @@
     </div>
   </div>
 
-  <!-- PUBLIC HEALTH INDICATORS – with logos, bold red numbers, side by side -->
+  <!-- PUBLIC HEALTH INDICATORS – with larger logos (100px width) -->
   <section class="stats evidence-indicators">
     <div class="container">
       <div class="stats-kicker">KEY PUBLIC HEALTH INDICATORS</div>
