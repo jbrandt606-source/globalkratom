@@ -285,20 +285,20 @@
       font-size: 13px;
     }
 
-    /* NEW MODERN CALLOUT STYLES (matching IMG_7519) */
+    /* ---------- NEW DARK CALLOUT STYLES (inspired by IMG_7519) ---------- */
     .modern-callout {
       background: #0b1d34;
+      border-left: 8px solid #c8102e;
       border-radius: 16px;
       padding: 32px 36px;
       margin: 48px 0 32px;
       color: #fff;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.12);
-      border-left: 8px solid #c8102e;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
       transition: transform 0.2s, box-shadow 0.2s;
     }
     .modern-callout:hover {
       transform: translateY(-3px);
-      box-shadow: 0 20px 30px rgba(0,0,0,0.15);
+      box-shadow: 0 20px 30px rgba(0,0,0,0.12);
     }
     .callout-label {
       font-size: 14px;
@@ -342,7 +342,7 @@
       padding: 12px 28px;
       border-radius: 40px;
       font-weight: 800;
-      font-size: 15px;
+      font-size: 14px;
       text-transform: uppercase;
       transition: 0.2s;
       border: none;
@@ -356,14 +356,23 @@
       font-size: 13px;
       padding: 10px 24px;
     }
-    .two-callouts {
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
+    /* Rutherford image inside the callout – fixed for mobile landscape */
+    .rutherford-img {
+      width: 100%;
+      max-width: 280px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      object-fit: cover;
     }
-    /* ensure consistent spacing */
+    @media (max-width: 760px) and (orientation: landscape) {
+      .rutherford-img {
+        max-width: 200px;
+        max-height: 150px;
+      }
+    }
+    /* hide old boxes */
     .policy-highlight, .fda-callout {
-      display: none; /* hide old boxes */
+      display: none;
     }
 
     /* stats */
@@ -780,6 +789,7 @@
       .callout-headline { font-size: 26px; }
       .callout-quote { font-size: 22px; }
       .callout-text { max-width: 100%; }
+      .rutherford-img { max-width: 100%; margin-bottom: 16px; }
     }
   </style>
 </head>
@@ -829,9 +839,9 @@
     </div>
   </section>
 
-  <!-- NEW MODERN CALLOUTS (replacing old policy-highlight and fda-callout) -->
-  <div class="container two-callouts">
-    <!-- Callout 1: Natural Leaf vs Extracts (Kratom box) -->
+  <!-- NEW MODERN CALLOUT BOXES (matching IMG_7519 style, keeping Rutherford image) -->
+  <div class="container">
+    <!-- Box 1: Natural Leaf vs Extracts -->
     <div class="modern-callout">
       <div class="callout-label">⚠️ POLICY BRIEFING</div>
       <div class="callout-headline">Natural Leaf vs Extracts:<br>What Policymakers Should Know</div>
@@ -839,9 +849,10 @@
       <a href="/kratom.html" class="callout-btn callout-btn-small">LEARN MORE →</a>
     </div>
 
-    <!-- Callout 2: Myth vs Fact (FDA inaction) – matches IMG_7519 style -->
+    <!-- Box 2: Myth vs Fact (with Rutherford image, fixed mobile sizing) -->
     <div class="modern-callout">
       <div class="callout-label">FEDERAL INACTION</div>
+      <img class="rutherford-img" src="Rutherford.jpeg" alt="South Carolina State Representative Rutherford">
       <div class="callout-quote">“The FDA didn’t ban it!”</div>
       <div class="callout-author">– South Carolina State Representative Rutherford</div>
       <div class="callout-text">Despite decades of documented harms, whole‑leaf kratom remains unregulated. Learn why federal action has stalled – and what can still be done.</div>
