@@ -437,7 +437,7 @@
       background: #a00d22;
     }
 
-    /* ========== NEW MINIMAL PUBLIC HEALTH INDICATORS (exactly like IMG_7528) ========== */
+    /* ========== PUBLIC HEALTH INDICATORS (with logos, bold red numbers) ========== */
     .stats.evidence-indicators {
       background: #fff;
       border-bottom: 1px solid #dfe5ec;
@@ -474,42 +474,52 @@
     .indicator-card {
       background: #fff;
       border: 1px solid #e9edf2;
-      border-radius: 16px;
-      padding: 28px 24px;
+      border-radius: 20px;
+      padding: 24px;
       transition: all 0.2s ease;
-      text-align: left;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
     }
     .indicator-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.04);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.06);
       border-color: #c8102e;
     }
+    .agency-icon {
+      width: 60px;
+      height: auto;
+      flex-shrink: 0;
+    }
+    .indicator-content {
+      flex: 1;
+    }
     .agency-name {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 800;
       letter-spacing: 1px;
       color: #c8102e;
       text-transform: uppercase;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
     .indicator-number {
-      font-size: 44px;
+      font-size: 42px;
       font-weight: 900;
-      color: #0b1d34;
+      color: #c8102e;
       line-height: 1.1;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
     .indicator-description {
-      font-size: 15px;
+      font-size: 14px;
       color: #2c3e50;
       line-height: 1.4;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
     .indicator-footnote {
       font-size: 12px;
       color: #5a6e7c;
       border-top: 1px solid #eef2f6;
-      padding-top: 16px;
+      padding-top: 12px;
     }
 
     section {
@@ -863,7 +873,8 @@
       .actions { flex-direction: column; gap: 12px; }
       .btn { width: 100%; padding: 12px 20px; }
       .indicator-grid { grid-template-columns: 1fr; gap: 20px; }
-      .indicator-number { font-size: 38px; }
+      .indicator-number { font-size: 36px; }
+      .agency-icon { width: 50px; }
       .issue-grid { grid-template-columns: 1fr; gap: 24px; }
       .lawmaker-card { max-width: 100%; }
       .footer-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -940,7 +951,7 @@
     </div>
   </div>
 
-  <!-- MINIMAL PUBLIC HEALTH INDICATORS – EXACTLY LIKE IMG_7528 -->
+  <!-- PUBLIC HEALTH INDICATORS – with logos, bold red numbers, side by side -->
   <section class="stats evidence-indicators">
     <div class="container">
       <div class="stats-kicker">KEY PUBLIC HEALTH INDICATORS</div>
@@ -948,22 +959,31 @@
       <div class="indicators-sub">Data from national systems tracking kratom-related harms, exposures, and adverse events.</div>
       <div class="indicator-grid">
         <div class="indicator-card">
-          <div class="agency-name">CDC SUDORS</div>
-          <div class="indicator-number">1,151</div>
-          <div class="indicator-description">Kratom/mitragynine detected in overdose deaths in 2023 across participating jurisdictions.</div>
-          <div class="indicator-footnote">2020–2024 range: <strong>866 to 1,151</strong> annual detections</div>
+          <img src="/assets/cdc.png" alt="CDC" class="agency-icon">
+          <div class="indicator-content">
+            <div class="agency-name">CDC SUDORS</div>
+            <div class="indicator-number">1,151</div>
+            <div class="indicator-description">Kratom/mitragynine detected in overdose deaths in 2023 across participating jurisdictions.</div>
+            <div class="indicator-footnote">2020–2024 range: <strong>866 to 1,151</strong> annual detections</div>
+          </div>
         </div>
         <div class="indicator-card">
-          <div class="agency-name">AMERICA'S POISON CENTERS</div>
-          <div class="indicator-number">14,449</div>
-          <div class="indicator-description">Poison center exposure reports involving kratom from 2011–2023.</div>
-          <div class="indicator-footnote">National Poison Data System surveillance</div>
+          <img src="/assets/apc.png" alt="America’s Poison Centers" class="agency-icon">
+          <div class="indicator-content">
+            <div class="agency-name">AMERICA'S POISON CENTERS</div>
+            <div class="indicator-number">14,449</div>
+            <div class="indicator-description">Poison center exposure reports involving kratom from 2011–2023.</div>
+            <div class="indicator-footnote">National Poison Data System surveillance</div>
+          </div>
         </div>
         <div class="indicator-card">
-          <div class="agency-name">FDA FAERS</div>
-          <div class="indicator-number">1,470</div>
-          <div class="indicator-description">FAERS adverse-event reports associated with kratom/mitragynine.</div>
-          <div class="indicator-footnote">Includes <strong>722</strong> death outcomes and <strong>370</strong> hospitalizations</div>
+          <img src="/assets/fda.png" alt="FDA" class="agency-icon">
+          <div class="indicator-content">
+            <div class="agency-name">FDA FAERS</div>
+            <div class="indicator-number">1,470</div>
+            <div class="indicator-description">FAERS adverse-event reports associated with kratom/mitragynine.</div>
+            <div class="indicator-footnote">Includes <strong>722</strong> death outcomes and <strong>370</strong> hospitalizations</div>
+          </div>
         </div>
       </div>
     </div>
