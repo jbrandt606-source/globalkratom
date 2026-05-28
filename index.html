@@ -285,94 +285,167 @@
       font-size: 13px;
     }
 
-    /* ---------- NEW DARK CALLOUT STYLES (inspired by IMG_7519) ---------- */
-    .modern-callout {
-      background: #0b1d34;
-      border-left: 8px solid #c8102e;
-      border-radius: 16px;
-      padding: 32px 36px;
+    /* Natural Leaf vs Extracts card (updated image + content) */
+    .policy-highlight {
       margin: 48px 0 32px;
+      display: flex;
+      justify-content: center;
+    }
+    .policy-card {
+      background: #fff;
+      border: 1px solid #dfe5ec;
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(11, 29, 52, 0.06);
+      transition: transform 0.1s;
+      max-width: 380px;
+      width: 100%;
+    }
+    .policy-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(11, 29, 52, 0.12);
+    }
+    .policy-card .card-img {
+      width: 100%;
+      height: 160px;
+      overflow: hidden;
+    }
+    .policy-card .card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .circle-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #0b1d34;
       color: #fff;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
-      transition: transform 0.2s, box-shadow 0.2s;
+      border: 6px solid #fff;
+      display: grid;
+      place-items: center;
+      margin: -29px auto 12px;
+      position: relative;
+      z-index: 2;
+      font-size: 21px;
+      font-weight: 900;
     }
-    .modern-callout:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 20px 30px rgba(0,0,0,0.12);
+    .policy-card h3 {
+      font-size: 18px;
+      font-weight: 900;
+      margin: 0 12px 10px;
+      color: #0b1d34;
+      min-height: 40px;
     }
-    .callout-label {
-      font-size: 14px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 3px;
+    .policy-card p {
+      font-size: 13px;
+      color: #415166;
+      padding: 0 14px 18px;
+      min-height: 108px;
+    }
+    .policy-card .learn-link {
+      display: inline-block;
       color: #c8102e;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 21px;
+    }
+    .policy-card .learn-link:hover {
+      text-decoration: underline;
+    }
+
+    /* FDA callout box (myth vs fact) – using same card style but with Rutherford image and new text */
+    .fda-callout {
+      background: #fff;
+      border: 1px solid #dfe5ec;
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(11, 29, 52, 0.06);
+      transition: transform 0.1s;
+      max-width: 380px;
+      width: 100%;
+      margin: 40px auto 20px;
+    }
+    .fda-callout:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(11, 29, 52, 0.12);
+    }
+    .rutherford-img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+    }
+    /* fix image on mobile landscape */
+    @media (max-width: 760px) and (orientation: landscape) {
+      .rutherford-img {
+        height: 140px;
+        object-fit: cover;
+      }
+    }
+    .fda-callout .circle-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #0b1d34;
+      color: #fff;
+      border: 6px solid #fff;
+      display: grid;
+      place-items: center;
+      margin: -29px auto 12px;
+      position: relative;
+      z-index: 2;
+      font-size: 21px;
+      font-weight: 900;
+    }
+    .fda-callout h3 {
+      font-size: 18px;
+      font-weight: 900;
+      margin: 0 12px 10px;
+      color: #0b1d34;
+    }
+    .fda-callout .fda-label {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #c8102e;
+      text-transform: uppercase;
+      margin: 8px 0 4px;
+    }
+    .fda-callout .quote-text {
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin: 8px 12px 4px;
+      color: #0b1d34;
+    }
+    .fda-callout .quote-author {
+      font-size: 12px;
+      font-weight: 700;
+      color: #5c6e84;
       margin-bottom: 12px;
     }
-    .callout-headline {
-      font-size: 32px;
-      font-weight: 900;
-      line-height: 1.2;
-      margin-bottom: 18px;
+    .fda-callout p {
+      font-size: 13px;
+      color: #415166;
+      padding: 0 14px 12px;
     }
-    .callout-quote {
-      font-size: 28px;
-      font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 8px;
-    }
-    .callout-author {
-      font-size: 15px;
-      font-weight: 600;
-      color: #dbe7f4;
-      margin-bottom: 20px;
-      border-left: 3px solid #c8102e;
-      padding-left: 14px;
-    }
-    .callout-text {
-      font-size: 16px;
-      line-height: 1.5;
-      margin-bottom: 24px;
-      color: #eef2f8;
-      max-width: 90%;
-    }
-    .callout-btn {
+    .fda-callout .fda-btn {
       display: inline-block;
       background: #c8102e;
       color: white;
-      padding: 12px 28px;
-      border-radius: 40px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 12px;
       font-weight: 800;
-      font-size: 14px;
+      margin-bottom: 21px;
       text-transform: uppercase;
-      transition: 0.2s;
-      border: none;
-      cursor: pointer;
     }
-    .callout-btn:hover {
+    .fda-callout .fda-btn:hover {
       background: #a00d22;
-      transform: translateY(-2px);
-    }
-    .callout-btn-small {
-      font-size: 13px;
-      padding: 10px 24px;
-    }
-    /* Rutherford image inside the callout – fixed for mobile landscape */
-    .rutherford-img {
-      width: 100%;
-      max-width: 280px;
-      border-radius: 12px;
-      margin-bottom: 20px;
-      object-fit: cover;
-    }
-    @media (max-width: 760px) and (orientation: landscape) {
-      .rutherford-img {
-        max-width: 200px;
-        max-height: 150px;
-      }
-    }
-    /* hide old boxes */
-    .policy-highlight, .fda-callout {
-      display: none;
     }
 
     /* stats */
@@ -785,11 +858,7 @@
       .issue-grid { grid-template-columns: 1fr; gap: 24px; }
       .lawmaker-card { max-width: 100%; }
       .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-      .modern-callout { padding: 24px 20px; }
-      .callout-headline { font-size: 26px; }
-      .callout-quote { font-size: 22px; }
-      .callout-text { max-width: 100%; }
-      .rutherford-img { max-width: 100%; margin-bottom: 16px; }
+      .policy-card, .fda-callout { max-width: 100%; }
     }
   </style>
 </head>
@@ -798,7 +867,6 @@
 
 <header>
   <div class="container nav">
-    <!-- UPDATED: brand image uses review.png from root, text identity changed to Global Kratom Policy Review -->
     <a class="brand" href="/">
       <img src="/review.png" alt="Global Kratom Policy Review icon">
       <div>
@@ -839,24 +907,27 @@
     </div>
   </section>
 
-  <!-- NEW MODERN CALLOUT BOXES (matching IMG_7519 style, keeping Rutherford image) -->
-  <div class="container">
-    <!-- Box 1: Natural Leaf vs Extracts -->
-    <div class="modern-callout">
-      <div class="callout-label">⚠️ POLICY BRIEFING</div>
-      <div class="callout-headline">Natural Leaf vs Extracts:<br>What Policymakers Should Know</div>
-      <div class="callout-text">Even before high‑potency 7‑OH extracts emerged, whole‑leaf kratom was associated with severe outcomes, contamination, and healthcare burden. Understanding the full market matters for effective regulation.</div>
-      <a href="/kratom.html" class="callout-btn callout-btn-small">LEARN MORE →</a>
+  <!-- Natural Leaf vs Extracts card (image replaced with leafkratom.png) -->
+  <div class="container policy-highlight">
+    <div class="policy-card">
+      <div class="card-img"><img src="assets/leafkratom.png" alt="Kratom leaf - whole leaf harms"></div>
+      <div class="circle-icon">🍃</div>
+      <h3>Natural Leaf vs Extracts:<br>What Policymakers Should Know</h3>
+      <p>Even before high‑potency 7‑OH extracts emerged, whole‑leaf kratom was associated with severe outcomes, contamination, and healthcare burden. Understanding the full market matters for effective regulation.</p>
+      <a href="/kratom.html" class="learn-link">LEARN MORE →</a>
     </div>
+  </div>
 
-    <!-- Box 2: Myth vs Fact (with Rutherford image, fixed mobile sizing) -->
-    <div class="modern-callout">
-      <div class="callout-label">FEDERAL INACTION</div>
+  <!-- Myth vs Fact card (redesigned to match IMG_7519 style, using same card layout) -->
+  <div class="container">
+    <div class="fda-callout">
       <img class="rutherford-img" src="Rutherford.jpeg" alt="South Carolina State Representative Rutherford">
-      <div class="callout-quote">“The FDA didn’t ban it!”</div>
-      <div class="callout-author">– South Carolina State Representative Rutherford</div>
-      <div class="callout-text">Despite decades of documented harms, whole‑leaf kratom remains unregulated. Learn why federal action has stalled – and what can still be done.</div>
-      <a href="/fdamyth.html" class="callout-btn">MYTH VS. FACT →<br><span style="font-size: 12px; font-weight: 500;">What the FDA Can & Cannot Do</span></a>
+      <div class="circle-icon">⚖️</div>
+      <div class="fda-label">FEDERAL INACTION</div>
+      <div class="quote-text">“The FDA didn’t ban it!”</div>
+      <div class="quote-author">– South Carolina State Representative Rutherford</div>
+      <p>Despite decades of documented harms, whole‑leaf kratom remains unregulated. Learn why federal action has stalled – and what can still be done.</p>
+      <a href="/fdamyth.html" class="fda-btn">MYTH VS. FACT →<br><span style="font-size: 10px; font-weight: 500;">What the FDA Can & Cannot Do</span></a>
     </div>
   </div>
 
