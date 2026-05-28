@@ -285,7 +285,7 @@
       font-size: 13px;
     }
 
-    /* Natural Leaf vs Extracts card (updated image + content) */
+    /* Natural Leaf vs Extracts card */
     .policy-highlight {
       margin: 48px 0 32px;
       display: flex;
@@ -356,7 +356,7 @@
       text-decoration: underline;
     }
 
-    /* FDA callout box (myth vs fact) – using same card style but with Rutherford image and new text */
+    /* FDA callout box (myth vs fact) */
     .fda-callout {
       background: #fff;
       border: 1px solid #dfe5ec;
@@ -448,55 +448,83 @@
       background: #a00d22;
     }
 
-    /* stats */
-    .stats {
+    /* NEW Public Health Indicators Section */
+    .stats.evidence-indicators {
       background: #fff;
       border-bottom: 1px solid #dfe5ec;
-      box-shadow: 0 8px 18px rgba(11, 29, 52, 0.05);
+      padding: 56px 0 64px;
     }
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-    }
-    .stat {
-      text-align: center;
-      padding: 29px 12px;
-      border-right: 1px solid #dfe5ec;
-    }
-    .stat:last-child {
-      border-right: 0;
-    }
-    .stat-icon {
-      width: 44px;
-      height: 44px;
-      background: #0b1d34;
-      color: #fff;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      margin: 0 auto 11px;
-      font-weight: 900;
-    }
-    .stat strong {
-      display: block;
+    .stats-kicker {
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
       color: #c8102e;
-      font-size: 28px;
-      font-weight: 900;
-      line-height: 1;
-      margin-bottom: 8px;
+      text-align: center;
+      margin-bottom: 12px;
     }
-    .stat span {
-      display: block;
-      font-size: 12px;
+    .stats h2 {
+      text-align: center;
+      font-size: 28px;
       font-weight: 800;
       color: #0b1d34;
-      line-height: 1.25;
+      margin-bottom: 48px;
     }
-    .stat small {
+    .indicator-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    .indicator-card {
+      background: #fff;
+      border: 1px solid #dfe5ec;
+      border-radius: 20px;
+      padding: 28px 24px;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      color: inherit;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+    .indicator-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+      border-color: #c8102e;
+    }
+    .agency-icon {
+      width: 48px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    .agency {
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #c8102e;
+      margin-bottom: 8px;
+    }
+    .indicator-card strong {
+      font-size: 44px;
+      font-weight: 900;
+      color: #0b1d34;
+      line-height: 1.1;
+      margin-bottom: 12px;
       display: block;
-      color: #66758a;
-      font-size: 11px;
-      margin-top: 8px;
+    }
+    .indicator-card p {
+      font-size: 15px;
+      color: #2c3e50;
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+    .indicator-card small {
+      font-size: 12px;
+      color: #5a6e7c;
+      display: block;
+      margin-top: 4px;
     }
 
     section {
@@ -832,11 +860,12 @@
       font-size: 12px;
     }
 
+    /* Responsive adjustments */
     @media (max-width: 1050px) {
       nav { display: none; }
       .hero-grid { grid-template-columns: 1fr; }
       .mission-card { max-width: 520px; }
-      .stats-grid { grid-template-columns: repeat(3, 1fr); }
+      .indicator-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
       .issue-grid { grid-template-columns: repeat(3, 1fr); }
       .news-grid { grid-template-columns: 1fr; }
       .action-card { grid-column: span 1; }
@@ -854,11 +883,14 @@
       .hero p { font-size: 16px; }
       .actions { flex-direction: column; gap: 12px; }
       .btn { width: 100%; padding: 12px 20px; }
-      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .indicator-grid { grid-template-columns: 1fr; gap: 20px; }
+      .indicator-card strong { font-size: 38px; }
       .issue-grid { grid-template-columns: 1fr; gap: 24px; }
       .lawmaker-card { max-width: 100%; }
       .footer-grid { grid-template-columns: 1fr; gap: 32px; }
       .policy-card, .fda-callout { max-width: 100%; }
+      .stats h2 { font-size: 24px; margin-bottom: 32px; }
+      .stats.evidence-indicators { padding: 40px 0; }
     }
   </style>
 </head>
@@ -907,7 +939,7 @@
     </div>
   </section>
 
-  <!-- Natural Leaf vs Extracts card (image replaced with leafkratom.png) -->
+  <!-- Natural Leaf vs Extracts card -->
   <div class="container policy-highlight">
     <div class="policy-card">
       <div class="card-img"><img src="assets/leafkratom.png" alt="Kratom leaf - whole leaf harms"></div>
@@ -918,7 +950,7 @@
     </div>
   </div>
 
-  <!-- Myth vs Fact card (redesigned to match IMG_7519 style, using same card layout) -->
+  <!-- Myth vs Fact card -->
   <div class="container">
     <div class="fda-callout">
       <img class="rutherford-img" src="Rutherford.jpeg" alt="South Carolina State Representative Rutherford">
@@ -930,11 +962,46 @@
     </div>
   </div>
 
-  <section class="stats">
-    <div class="container stats-grid">
-      <div class="stat"><div class="stat-icon">☎</div><strong><a href="https://www.cdc.gov/mmwr/volumes/75/wr/mm7511a1.htm" target="_blank" rel="noopener noreferrer" style="color:#c8102e; text-decoration:none;">14,449</a></strong><span>Poison center exposures<br>2011–2023</span><small>Source: <a href="https://www.cdc.gov/mmwr/volumes/75/wr/mm7511a1.htm" target="_blank" rel="noopener noreferrer" style="color:#66758a;">CDC MMWR</a></small></div>
-      <div class="stat"><div class="stat-icon">↗</div><strong><a href="https://www.uvahealth.com/news/kratom-calls-skyrocket-to-nation-s-poison-centers#:~:text=UVA%20Health%20researcher%20Chris%20Holstege,1%2C200%25%20between%202015%20and%202025." target="_blank" rel="noopener noreferrer" style="color:#c8102e; text-decoration:none;">1,200%</a></strong><span>Increase in poison center calls</span><small>Source: <a href="https://www.uvahealth.com/news/kratom-calls-skyrocket-to-nation-s-poison-centers#:~:text=UVA%20Health%20researcher%20Chris%20Holstege,1%2C200%25%20between%202015%20and%202025." target="_blank" rel="noopener noreferrer" style="color:#66758a;">UVA Health Analysis</a></small></div>
-      <div class="stat"><div class="stat-icon">🏛</div><strong><a href="https://legislativeanalysis.org/wp-content/uploads/2025/07/Kratom-Summary-of-State-Laws.pdf" target="_blank" rel="noopener noreferrer" style="color:#c8102e; text-decoration:none;">50+</a></strong><span>States taking action</span><small>Source: <a href="https://legislativeanalysis.org/wp-content/uploads/2025/07/Kratom-Summary-of-State-Laws.pdf" target="_blank" rel="noopener noreferrer" style="color:#66758a;">State Laws Summary (PDF)</a></small></div>
+  <!-- NEW Public Health Indicators Section (replaces old stats) -->
+  <section class="stats evidence-indicators">
+    <div class="container">
+      <div class="stats-kicker">Public Health Indicators</div>
+      <h2>Federal and poison-center surveillance signals</h2>
+      <div class="indicator-grid">
+        <a class="indicator-card primary"
+           href="https://www.mothersagainstherbalabuse.org/literature/cdc_sudors_kratom.html"
+           target="_blank" rel="noopener noreferrer">
+          <img src="/assets/cdc.png" alt="CDC" class="agency-icon">
+          <div>
+            <span class="agency">CDC SUDORS</span>
+            <strong>1,151</strong>
+            <p>Kratom/mitragynine detected in overdose deaths in 2023 across participating jurisdictions.</p>
+            <small>2020–2024 range: 866 to 1,151 annual detections</small>
+          </div>
+        </a>
+        <a class="indicator-card"
+           href="https://www.cdc.gov/mmwr/volumes/75/wr/mm7511a1.htm"
+           target="_blank" rel="noopener noreferrer">
+          <img src="/assets/apc.png" alt="America’s Poison Centers" class="agency-icon">
+          <div>
+            <span class="agency">America’s Poison Centers</span>
+            <strong>14,449</strong>
+            <p>Poison center exposure reports involving kratom from 2011–2023.</p>
+            <small>National Poison Data System surveillance</small>
+          </div>
+        </a>
+        <a class="indicator-card"
+           href="https://www.mothersagainstherbalabuse.org/literature/adverseeventskratom.html"
+           target="_blank" rel="noopener noreferrer">
+          <img src="/assets/fda.png" alt="FDA" class="agency-icon">
+          <div>
+            <span class="agency">FDA FAERS</span>
+            <strong>1,470</strong>
+            <p>FAERS adverse-event reports associated with kratom/mitragynine.</p>
+            <small>Includes 722 death outcomes and 370 hospitalizations</small>
+          </div>
+        </a>
+      </div>
     </div>
   </section>
 
