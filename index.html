@@ -695,6 +695,11 @@
       border: 1px solid #dfe5ec;
       border-radius: 8px;
       overflow: hidden;
+      transition: transform 0.2s;
+    }
+    .news-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     }
     .news-card img {
       height: 118px;
@@ -874,7 +879,7 @@
       .btn { width: 100%; padding: 12px 20px; }
       .indicator-grid { grid-template-columns: 1fr; gap: 20px; }
       .indicator-number { font-size: 36px; }
-      .agency-icon { width: 70px; } /* slightly smaller on mobile but still prominent */
+      .agency-icon { width: 70px; }
       .issue-grid { grid-template-columns: 1fr; gap: 24px; }
       .lawmaker-card { max-width: 100%; }
       .footer-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -882,6 +887,7 @@
       .stats h2 { font-size: 24px; margin-bottom: 12px; }
       .indicators-sub { font-size: 14px; margin-bottom: 32px; }
       .stats.evidence-indicators { padding: 40px 0; }
+      .news-card { margin-bottom: 18px; }
     }
   </style>
 </head>
@@ -951,7 +957,7 @@
     </div>
   </div>
 
-  <!-- PUBLIC HEALTH INDICATORS – with larger logos (100px width) -->
+  <!-- PUBLIC HEALTH INDICATORS -->
   <section class="stats evidence-indicators">
     <div class="container">
       <div class="stats-kicker">KEY PUBLIC HEALTH INDICATORS</div>
@@ -1020,14 +1026,25 @@
     <div class="container">
       <div class="news-head"><h2>Latest News</h2><a href="#">View All News →</a></div>
       <div class="news-grid">
-        <article class="news-card" onclick="window.location.href='states.html';" style="cursor:pointer;">
-          <img src="assets/icons/policy.jpeg" alt="Policy news">
-          <div class="news-card-content">
-            <div class="category">Policy</div>
-            <h3>States Move to Protect Families as Kratom-Related Harms Rise</h3>
-            <div class="date">May 8, 2026</div>
-          </div>
-        </article>
+        <!-- Stacked news articles in first column -->
+        <div style="display: flex; flex-direction: column; gap: 18px;">
+          <article class="news-card" onclick="window.location.href='states.html';" style="cursor:pointer;">
+            <img src="assets/icons/policy.jpeg" alt="Policy news">
+            <div class="news-card-content">
+              <div class="category">Policy</div>
+              <h3>States Move to Protect Families as Kratom-Related Harms Rise</h3>
+              <div class="date">May 8, 2026</div>
+            </div>
+          </article>
+          <article class="news-card" onclick="window.location.href='high.html';" style="cursor:pointer;">
+            <img src="highero.jpeg" alt="Reddit user reports on kratom euphoria">
+            <div class="news-card-content">
+              <div class="category">User Reports</div>
+              <h3>Does Pure Leaf Kratom Get You High? A Review of Reddit User Reports</h3>
+              <div class="date">June 6, 2026</div>
+            </div>
+          </article>
+        </div>
         <aside id="action" class="action-card">
           <div class="megaphone">!</div>
           <h3>Take Action Today</h3>
