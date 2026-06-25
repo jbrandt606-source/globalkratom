@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MQKC65VZVY"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P31PD1SSTD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-MQKC65VZVY', { 'linker': { 'domains': ['mothersagainstherbalabuse.org', 'gasstationheroin.org'] } });
+        gtag('config', 'G-P31PD1SSTD');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Florida's 7-OH Emergency Rule: A Regulatory Failure | Global Kratom Policy Review</title>
+    <meta name="description" content="Florida raised the allowable 7-OH concentration by 2.5x while declaring an 'imminent hazard to public safety.' A sharp analysis of a regulatory failure.">
+    <meta name="author" content="Global Kratom Policy Review">
+    <meta name="robots" content="index, follow">
+
+    <link rel="icon" type="image/png" href="/review.png">
+    <link rel="shortcut icon" href="/review.png">
+    <link rel="apple-touch-icon" href="/review.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0b1d34;
+            --red: #c8102e;
+            --soft: #f6f8fb;
+            --line: #dfe6ef;
+            --text: #0b1d34;
+            --muted: #64748b;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: #f9fafb;
+            color: var(--text);
+            line-height: 1.5;
+        }
+        img {
+            max-width: 100%;
+            display: block
+        }
+        a {
+            text-decoration: none;
+            color: inherit
+        }
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 24px
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: url("/evidence/assets/subtle-grid.png") repeat;
+            opacity: .035;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .topbar {
+            background: var(--navy);
+            color: #dbe7f4;
+            text-align: center;
+            padding: 9px 18px;
+            font-size: 13px;
+        }
+        .nav-bar {
+            background: white;
+            border-bottom: 1px solid var(--line);
+        }
+        .nav-inner {
+            min-height: 88px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .brand img {
+            width: 54px;
+            height: 54px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+        .brand-title {
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1;
+            font-size: 21px;
+        }
+        .brand-title span {
+            color: var(--red)
+        }
+        .brand-sub {
+            margin-top: 6px;
+            font-size: 11px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .nav-links a {
+            color: #172033
+        }
+        .nav-links a.active {
+            color: var(--red)
+        }
+        .nav-links a:hover {
+            color: var(--red)
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: 0;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .hero-story {
+            background: linear-gradient(90deg, rgba(7, 24, 44, 0.75), rgba(7, 24, 44, 0.55)), url("Florida.jpeg");
+            background-size: cover;
+            background-position: center 35%;
+            color: white;
+            border-bottom: 4px solid var(--red);
+        }
+        .hero-content {
+            padding: 64px 0;
+            max-width: 780px;
+        }
+        .hero-content .badge {
+            display: inline-block;
+            background: var(--red);
+            color: white;
+            font-weight: 900;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 5px 16px;
+            border-radius: 40px;
+            margin-bottom: 18px;
+        }
+        .hero-content h1 {
+            font-size: clamp(38px, 6vw, 58px);
+            font-weight: 900;
+            margin-bottom: 18px;
+            line-height: 1.1;
+        }
+        .hero-content h1 .highlight {
+            color: #ffb3b3;
+        }
+        .hero-content p {
+            font-size: 19px;
+            color: #eaf1f9;
+            max-width: 660px;
+        }
+        .story-card {
+            background: white;
+            border-radius: 24px;
+            padding: 32px 36px;
+            margin: 48px 0;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--line);
+        }
+        .story-card h2 {
+            font-size: 28px;
+            font-weight: 900;
+            border-left: 6px solid var(--red);
+            padding-left: 18px;
+            margin-bottom: 24px;
+        }
+        .story-card h3 {
+            font-size: 22px;
+            font-weight: 800;
+            margin: 24px 0 16px;
+        }
+        .story-card p {
+            font-size: 17px;
+            color: var(--text);
+            margin-bottom: 18px;
+            line-height: 1.7;
+        }
+        .story-card ul {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+        .story-card li {
+            margin-bottom: 8px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .story-card .callout {
+            background: #fef5f5;
+            border-left: 4px solid var(--red);
+            padding: 18px 22px;
+            border-radius: 8px;
+            margin: 24px 0;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        .story-card .callout strong {
+            color: var(--red);
+        }
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin: 28px 0;
+        }
+        .comparison-card {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 24px 28px;
+            border: 2px solid var(--line);
+            text-align: center;
+        }
+        .comparison-card.old {
+            border-color: #94a3b8;
+        }
+        .comparison-card.new {
+            border-color: var(--red);
+            background: #fef5f5;
+        }
+        .comparison-card .label {
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--muted);
+        }
+        .comparison-card .value {
+            font-size: 38px;
+            font-weight: 900;
+            margin: 10px 0 4px;
+        }
+        .comparison-card .value .multiplier {
+            font-size: 20px;
+            color: var(--red);
+            font-weight: 800;
+        }
+        .comparison-card .sub {
+            font-size: 14px;
+            color: var(--muted);
+        }
+        .comparison-card.old .value {
+            color: #475569;
+        }
+        .comparison-card.new .value {
+            color: var(--red);
+        }
+        .pdf-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin: 28px 0 10px;
+        }
+        .pdf-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--navy);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 14px;
+            transition: background 0.2s;
+            border: none;
+        }
+        .pdf-link:hover {
+            background: #1a3355;
+        }
+        .pdf-link .icon {
+            font-size: 18px;
+        }
+        .pdf-link.outline {
+            background: transparent;
+            color: var(--navy);
+            border: 2px solid var(--navy);
+        }
+        .pdf-link.outline:hover {
+            background: var(--navy);
+            color: white;
+        }
+        .inline-screenshot {
+            margin: 32px 0;
+            text-align: center;
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 20px;
+        }
+        .inline-screenshot img {
+            max-width: 500px;
+            margin: 0 auto;
+            border-radius: 16px;
+            border: 1px solid var(--line);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+        }
+        .inline-screenshot .caption {
+            font-size: 13px;
+            color: var(--muted);
+            margin-top: 12px;
+        }
+        .footnote {
+            font-size: 14px;
+            color: var(--muted);
+            border-top: 1px solid var(--line);
+            padding-top: 24px;
+            margin-top: 32px;
+        }
+        footer {
+            margin-top: 54px;
+            background: var(--navy);
+            color: #cbd5e1;
+            text-align: center;
+            padding: 32px 18px;
+            font-size: 14px;
+        }
+        @media(max-width:760px) {
+            .container {
+                padding: 0 16px
+            }
+            .nav-inner {
+                min-height: 78px
+            }
+            .brand img {
+                width: 44px;
+                height: 44px
+            }
+            .brand-title {
+                font-size: 17px
+            }
+            .brand-sub {
+                font-size: 9px
+            }
+            .nav-links {
+                display: none
+            }
+            .mobile-menu-btn {
+                display: block
+            }
+            .mobile-menu {
+                display: none;
+                background: white;
+                border-top: 1px solid var(--line);
+                padding: 14px 16px 18px;
+            }
+            .mobile-menu.open {
+                display: block
+            }
+            .mobile-menu a {
+                display: block;
+                padding: 12px 0;
+                font-weight: 900;
+                border-bottom: 1px solid #eef2f6;
+            }
+            .hero-content {
+                padding: 46px 0 54px
+            }
+            .hero-content h1 {
+                font-size: 34px
+            }
+            .hero-content p {
+                font-size: 17px
+            }
+            .story-card {
+                padding: 24px 20px;
+                margin: 32px 0;
+            }
+            .story-card h2 {
+                font-size: 24px;
+            }
+            .story-card p {
+                font-size: 16px;
+            }
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+            .comparison-card .value {
+                font-size: 32px;
+            }
+            .pdf-links {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .pdf-link {
+                justify-content: center;
+            }
+            .inline-screenshot img {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="topbar">GLOBALKRATOM.ORG · Evidence-based policy resources</div>
+    <div class="nav-bar">
+        <div class="container">
+            <div class="nav-inner">
+                <a class="brand" href="/">
+                    <img src="/review.png" alt="Global Kratom Policy Review icon">
+                    <div>
+                        <div class="brand-title">Global <span>Kratom</span> Policy Review</div>
+                        <div class="brand-sub">Research · Analysis · Policy</div>
+                    </div>
+                </a>
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/evidence/index.html">Evidence</a>
+                    <a href="/lawmakers.html">For Lawmakers</a>
+                    <a href="https://antikratom.org">Action Center</a>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            </div>
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="/">Home</a>
+                <a href="/evidence/index.html">Evidence</a>
+                <a href="/lawmakers.html">For Lawmakers</a>
+                <a href="https://antikratom.org">Action Center</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="hero-story">
+        <div class="container">
+            <div class="hero-content">
+                <div class="badge">Regulatory Failure</div>
+                <h1>Florida Raised the 7‑OH Limit <span class="highlight">2.5× Higher</span> While Declaring an <span class="highlight">"Imminent Hazard"</span></h1>
+                <p>The Attorney General's new emergency rule doesn't protect the public — it protects the industry. Here's why.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+
+        <!-- ===== CARD 1: The Naked Contradiction ===== -->
+        <div class="story-card">
+            <h2>Do They Think We Won't Notice?</h2>
+            <p>Florida's first emergency rule treated products containing <strong>more than 400 parts per million (0.4 mg/g)</strong> of 7‑hydroxymitragynine as Schedule I. That was the original line in the sand.</p>
+            <p>The new emergency rule raises that concentration limit to <strong>1 mg/g</strong> for solid products — <span style="color:var(--red);font-weight:900;">two and a half times higher</span> than before.</p>
+
+            <div class="comparison-grid">
+                <div class="comparison-card old">
+                    <div class="label">Original Emergency Rule</div>
+                    <div class="value">0.4 mg/g</div>
+                    <div class="sub">(400 ppm) — Schedule I threshold</div>
+                </div>
+                <div class="comparison-card new">
+                    <div class="label">New Emergency Rule</div>
+                    <div class="value">1.0 mg/g <span class="multiplier">↑ 2.5×</span></div>
+                    <div class="sub">(1,000 ppm) — "Still an emergency"</div>
+                </div>
+            </div>
+
+            <p>Let that sink in.</p>
+            <p>Florida looked at the marketplace, concluded there was an <strong>"imminent hazard to public safety,"</strong> and then responded by <strong style="color:var(--red);">allowing more</strong> of the very substance it claimed created that emergency.</p>
+
+            <div class="callout">
+                ⚠️ The Attorney General is insulting your intelligence. You cannot simultaneously claim an imminent public health hazard and <strong>increase</strong> the allowable concentration of the hazardous substance.
+            </div>
+        </div>
+
+        <!-- ===== CARD 2: The Loophole ===== -->
+        <div class="story-card">
+            <h2>The Concentration Shell Game</h2>
+            <p>Yes, the new rule also regulates additional metabolites and analogs. Yes, it requires a <strong>100:1 mitragynine‑to‑7‑OH ratio</strong>. Those changes close some potential loopholes.</p>
+            <p>But they do not change the simple fact that the <strong>allowable concentration of 7‑OH</strong> in a product is now substantially higher than it was under the original emergency rule.</p>
+
+            <p style="font-weight:800;font-size:20px;color:var(--red);margin:20px 0 10px;">Even more troubling: the rule regulates <em>concentration</em> — not the total amount contained in a finished product.</p>
+
+            <p>That means the rule speaks in terms of milligrams per gram or milligrams per milliliter, but it does <strong>not</strong> establish a maximum amount per tablet, pouch, bottle, or package.</p>
+
+            <div style="background:#f0f4f9;border-radius:12px;padding:20px 24px;margin:20px 0;">
+                <p style="margin:0;font-size:16px;font-weight:600;">Here's the math they don't want you to do:</p>
+                <p style="margin:8px 0 0;font-size:15px;color:var(--muted);">A manufacturer that complies with the concentration and ratio requirements can still produce <strong>larger products</strong> containing substantially <strong>more total 7‑OH</strong> than consumers would assume. A 2‑gram gummy at 1 mg/g contains <strong>2 mg</strong> of 7‑OH. A 5‑gram gummy at the same concentration contains <strong>5 mg</strong> — more than double. Both are "legal" under the new rule.</p>
+            </div>
+
+            <p>If Florida believes 7‑OH presents an imminent danger to public health, its regulations should <strong>reduce</strong> exposure — not increase the allowable concentration while leaving total package content completely unaddressed.</p>
+        </div>
+
+        <!-- ===== CARD 3: Compare the Bills ===== -->
+        <div class="story-card">
+            <h2>Read the Bills Yourself</h2>
+            <p>Don't take our word for it. Compare the original emergency order with the new rule side by side. The math is right there in black and white.</p>
+
+            <div class="pdf-links">
+                <a href="Floridaold.PDF" class="pdf-link" target="_blank">
+                    <span class="icon">📄</span> Read the Original Rule (Floridaold.PDF)
+                </a>
+                <a href="Floridanew.pdf" class="pdf-link outline" target="_blank">
+                    <span class="icon">📄</span> Read the New Rule (Floridanew.pdf)
+                </a>
+            </div>
+
+            <p style="margin-top:20px;font-size:15px;color:var(--muted);">Compare the concentration limits. Compare the total amount exemptions. Then ask yourself: who does this really protect?</p>
+        </div>
+
+        <!-- ===== CARD 4: The Industry-Friendly Pivot ===== -->
+        <div class="story-card">
+            <h2>From "Emergency" to "Business as Usual"</h2>
+            <p>The original emergency order sent a clear signal: 7‑OH was dangerous enough to warrant Schedule I classification at concentrations above 0.4 mg/g. That was the <strong>public health</strong> position.</p>
+            <p>The new rule sends a different signal entirely: <strong>1 mg/g is now acceptable</strong>. That's not a tweak. That's a fundamental retreat from the original position.</p>
+
+            <ul>
+                <li><strong>0.4 mg/g</strong> — "Imminent hazard, must be Schedule I."</li>
+                <li><strong>1.0 mg/g</strong> — "Actually, this is fine now."</li>
+            </ul>
+
+            <p style="margin-top:16px;">What changed between the first emergency order and the second? The science didn't change. The chemical didn't change. The only thing that changed was <strong>political pressure</strong> — likely from the very industry that profits from selling 7‑OH products.</p>
+
+            <div class="callout" style="border-left-color:#c8102e;">
+                🏛️ The Attorney General had a choice: protect the public or protect the industry. The new rule makes it clear which one they chose.
+            </div>
+        </div>
+
+        <!-- ===== CARD 5: What This Means ===== -->
+        <div class="story-card">
+            <h2>Why This Matters</h2>
+            <p>This isn't just a policy wonk's quibble over numbers. This is about <strong>real exposure</strong> to a substance that Florida itself has classified as an imminent hazard.</p>
+
+            <p>Under the old rule, a 1‑gram capsule could contain at most <strong>0.4 mg</strong> of 7‑OH before becoming illegal. Under the new rule, that same capsule can now contain <strong>1.0 mg</strong> — and it's perfectly legal.</p>
+
+            <p>That's <strong>2.5 times more</strong> of a substance that the state claims is so dangerous it requires emergency action.</p>
+
+            <p>And because there's no cap on total package content, a manufacturer could sell a 10‑pack of gummies with <strong>10 mg total</strong> 7‑OH and still be in full compliance. Under the old rule, the same product would have been illegal at just <strong>4 mg total</strong>.</p>
+
+            <p style="font-weight:800;font-size:19px;color:var(--red);margin-top:20px;">The new rule doesn't protect Floridians. It protects the supply chain.</p>
+        </div>
+
+        <!-- ===== CARD 6: Conclusion ===== -->
+        <div class="story-card">
+            <h2>Insulting Our Intelligence</h2>
+            <p>The Attorney General's office expects us to believe that raising the allowable 7‑OH limit by 150% is somehow a <em>strengthening</em> of the emergency response. They expect us to nod along while they close one loophole with their right hand and open a much larger one with their left.</p>
+
+            <p style="font-size:20px;font-weight:900;color:var(--red);">That is not regulation. That is regulatory capture.</p>
+
+            <p>If 7‑OH truly presents an "imminent hazard to public safety," then the response should be to <strong>lower</strong> allowable levels, not raise them. It should be to <strong>limit</strong> total consumer exposure, not ignore it entirely.</p>
+
+            <p>Florida had a chance to lead on public health. Instead, it chose to lead on <strong>plausible deniability</strong> — giving the industry just enough room to keep selling while pretending to take action.</p>
+
+            <div style="background:#0b1d34;color:white;border-radius:12px;padding:20px 24px;margin:28px 0 10px;">
+                <p style="margin:0;font-weight:700;font-size:17px;color:#ffb3b3;">The bottom line:</p>
+                <p style="margin:8px 0 0;font-size:15px;color:#dbe7f4;">Florida raised the legal 7‑OH limit by 2.5× while claiming an emergency. The Attorney General is counting on you not to check the math. Don't let them get away with it.</p>
+            </div>
+
+            <div class="footnote">
+                <strong>Read for yourself:</strong> <a href="Floridaold.PDF" style="color:var(--red);font-weight:700;text-decoration:underline;">Floridaold.PDF</a> · <a href="Floridanew.pdf" style="color:var(--red);font-weight:700;text-decoration:underline;">Floridanew.pdf</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>© 2026 Global Kratom Policy Review. Evidence‑based policy resources.</footer>
+
+    <script>
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
