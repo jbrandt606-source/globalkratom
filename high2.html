@@ -1,3 +1,6 @@
+This is the complete HTML page for your story, now including the new "Do People Really Use 12 Grams of Kratom?" section with the WebMD screenshot and link.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,6 +65,10 @@
     .highlight-pdf a{ display:inline-flex; align-items:center; gap:10px; background:var(--navy); color:white; padding:14px 28px; border-radius:60px; font-weight:800; font-size:16px; transition:0.2s; }
     .highlight-pdf a:hover{ background:#1e3a5f; transform:scale(1.02); }
     .highlight-pdf a::after{ content:"→"; font-size:20px; }
+    .screenshot-block{ margin:28px 0; text-align:center; background:#f8fafc; padding:20px; border-radius:20px; border:1px solid var(--line); }
+    .screenshot-block img{ max-width:500px; margin:0 auto; border-radius:12px; border:1px solid #d0d7e2; box-shadow:0 4px 12px rgba(0,0,0,0.04); }
+    .screenshot-block .caption{ font-size:14px; color:var(--muted); margin-top:14px; }
+    .screenshot-block .caption a{ color:var(--red); font-weight:700; text-decoration:underline; }
     .footnote{ font-size:14px; color:var(--muted); border-top:1px solid var(--line); padding-top:24px; margin-top:32px; }
     footer{ margin-top:54px; background:var(--navy); color:#cbd5e1; text-align:center; padding:32px 18px; font-size:14px; }
     @media(max-width:760px){
@@ -82,6 +89,7 @@
       .story-card p{font-size:16px;}
       .highlight-pdf{flex-direction:column; align-items:stretch; text-align:center; padding:22px;}
       .highlight-pdf a{justify-content:center;}
+      .screenshot-block img{max-width:100%;}
     }
   </style>
 </head>
@@ -160,6 +168,20 @@
     <a href="Fdakratomstudyhighlighted.pdf" target="_blank">Read the highlighted study</a>
   </div>
 
+  <!-- NEW SECTION: Do People Really Use 12 Grams? -->
+  <div class="story-card">
+    <h2>Do People Really Use 12 Grams of Kratom?</h2>
+    <p>A common criticism of the FDA-sponsored human trial is that researchers evaluated a 12-gram dose of botanical kratom. But is that an unrealistic amount?</p>
+
+    <div class="screenshot-block">
+      <img src="/webmd.jpeg" alt="WebMD Kratom Dosage Screenshot">
+      <div class="caption"><em>Screenshot from WebMD's Kratom Dosage Guide.</em></div>
+    </div>
+
+    <p>Not according to WebMD. Its consumer guide states that doses between about 5 and 15 grams of raw kratom may produce stronger effects. That places the 12-gram dose tested in the FDA-sponsored study squarely within the range that a major consumer health resource describes. The FDA researchers were not testing an impossible or hypothetical dose—they were evaluating an amount that public health resources already acknowledge people use.</p>
+    <p style="margin-top:8px;">Read the WebMD article here: <a href="https://www.webmd.com/diet/health-benefits-kratom" target="_blank" style="color:var(--red);font-weight:700;text-decoration:underline;">https://www.webmd.com/diet/health-benefits-kratom</a></p>
+  </div>
+
   <div class="story-card">
     <h2>Don’t Take Our Word for It</h2>
     <p>The data are public. The trial was conducted under rigorous clinical standards. And the conclusions are consistent with what thousands of kratom users have described in online forums: pure leaf kratom produces a high.</p>
@@ -194,3 +216,4 @@
 </script>
 </body>
 </html>
+```
