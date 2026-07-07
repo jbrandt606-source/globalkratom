@@ -75,7 +75,7 @@
     .nav-links a:hover{color:var(--red)}
     .mobile-menu-btn{ display:none; background:none; border:0; font-size:28px; cursor:pointer; }
     
-    .hero-full{ background: linear-gradient(135deg, rgba(8,24,38,0.92) 0%, rgba(8,24,38,0.75) 60%, rgba(8,24,38,0.4) 100%), url("assets/kratom-storefronts.jpg"); background-size:cover; background-position:center; color:white; padding:80px 0; }
+    .hero-full{ background: linear-gradient(135deg, rgba(8,24,38,0.88) 0%, rgba(8,24,38,0.70) 60%, rgba(8,24,38,0.40) 100%), url("assets/capitol-hero.jpeg"); background-size:cover; background-position:center; color:white; padding:80px 0; }
     .hero-full .container{ display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
     .hero-content{ max-width:660px; }
     .hero-badge{ display:inline-block; background:var(--red); color:white; font-weight:800; font-size:13px; padding:6px 20px; border-radius:40px; letter-spacing:0.5px; margin-bottom:20px; }
@@ -116,9 +116,6 @@
     .story-card ul{ margin-left:28px; margin-bottom:20px; }
     .story-card li{ margin-bottom:8px; font-size:16px; }
     
-    .section-alt{ background:#f5f7fa; padding:48px 0; margin:0 -24px; }
-    .section-alt .container{ padding:0 24px; }
-    
     .policy-callout{ background:#f0f7ff; border:2px solid var(--red); border-radius:var(--radius); padding:28px 36px; margin:20px 0; }
     .policy-callout p{ font-size:17px; font-weight:600; margin:0; }
     .policy-callout .highlight{ color:var(--red); }
@@ -147,19 +144,6 @@
     .evidence-card .title{ font-weight:800; font-size:16px; margin-bottom:6px; }
     .evidence-card .desc{ font-size:13px; color:var(--muted); line-height:1.5; flex:1; }
     .evidence-card .arrow-link{ margin-top:12px; color:var(--red); font-weight:700; font-size:13px; display:flex; align-items:center; gap:6px; }
-    
-    .example-grid{ display:grid; grid-template-columns:1fr 1fr; gap:20px; margin:24px 0; }
-    .example-card{ border-radius:var(--radius); padding:24px 28px; border:1px solid var(--line); transition:0.2s; }
-    .example-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow); }
-    .example-card.pharmacist{ background:#f0f7ff; border-color:#b8d4f0; }
-    .example-card.parent{ background:#f5f0ff; border-color:#d4c8f0; }
-    .example-card.physician{ background:#fff5f0; border-color:#f0d4c8; }
-    .example-card.community{ background:#f0fff5; border-color:#c8f0d4; }
-    .example-card .role{ font-weight:800; font-size:15px; color:var(--red); margin-bottom:4px; }
-    .example-card .preview{ font-size:14px; color:var(--text); line-height:1.5; margin:8px 0; }
-    .example-card .meta{ font-size:12px; color:var(--muted); display:flex; gap:16px; align-items:center; }
-    .example-card .read-link{ color:var(--red); font-weight:700; font-size:13px; }
-    .example-card .read-link:hover{ text-decoration:underline; }
     
     .warning-grid{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin:16px 0; }
     .warning-card{ background:#fef6f5; border-radius:12px; padding:16px 20px; border-left:4px solid var(--red); display:flex; align-items:center; gap:12px; font-size:14px; font-weight:600; }
@@ -212,7 +196,6 @@
       .story-card h2{font-size:22px;}
       .icon-grid{grid-template-columns:1fr 1fr;}
       .evidence-grid{grid-template-columns:1fr;}
-      .example-grid{grid-template-columns:1fr;}
       .warning-grid{grid-template-columns:1fr;}
       .cta-bottom{padding:28px 20px;}
       .cta-bottom h2{font-size:26px;}
@@ -227,6 +210,8 @@
     }
   </style>
 </head>
+<body>
+
 <div class="topbar">GLOBALKRATOM.ORG · Evidence-based policy resources</div>
 
 <div class="nav-bar">
@@ -263,7 +248,6 @@
   <a href="#tips">Tips</a>
   <a href="#questions">Questions</a>
   <a href="#evidence">Evidence</a>
-  <a href="#examples">Examples</a>
   <a href="#submit">Submit</a>
   <div class="sidebar-cta"><a href="https://www.regulations.gov/document/HHS-OASH-2026-0232-0001" target="_blank">Comment Now</a></div>
 </aside>
@@ -376,37 +360,6 @@
       <a href="https://globalkratom.org/evidence/poison.html" class="evidence-card"><span class="card-label">Surveillance</span><span class="title">Poison Centers</span><span class="desc">14,449 whole-leaf kratom exposure reports from 2011–2023.</span><span class="arrow-link">View</span></a>
       <a href="https://globalkratom.org/dependence.html" class="evidence-card"><span class="card-label">Addiction</span><span class="title">Dependence and Withdrawal</span><span class="desc">Opioid-like dependence from whole-leaf kratom use.</span><span class="arrow-link">View</span></a>
       <a href="https://globalkratom.org/pregnancy.html" class="evidence-card"><span class="card-label">Maternal Health</span><span class="title">Pregnancy and Neonatal Risk</span><span class="desc">Whole-leaf kratom exposure during pregnancy carries risks.</span><span class="arrow-link">View</span></a>
-    </div>
-  </div>
-
-    <div class="story-card" id="examples">
-    <h2>Comment Examples</h2>
-    <p>Not templates. Examples. Each is 250–400 words and completely different, showing how good comments can vary.</p>
-    <div class="example-grid">
-      <div class="example-card pharmacist">
-        <div class="role">Example A — A Pharmacist</div>
-        <div class="preview">"As a pharmacist with 15 years of experience in community practice, I have observed firsthand the growing availability of whole-leaf kratom products in retail settings. What concerns me most is the lack of dosing guidance and the absence of quality control..."</div>
-        <div class="meta"><span>350 words</span><span class="read-link" onclick="toggleComment(this)">Read Example</span></div>
-        <div class="full-comment">"As a pharmacist with 15 years of experience in community practice, I have observed firsthand the growing availability of whole-leaf kratom products in retail settings. What concerns me most is the lack of dosing guidance and the absence of quality control. Patients often assume these products are safe because they are sold over the counter, yet I have seen individuals develop tolerance and withdrawal symptoms consistent with opioid dependence. I urge HHS to consider requiring standardized labeling, purity testing, and clear warnings about dependence risks. Whole-leaf kratom is not a harmless botanical — it is a psychoactive substance that deserves the same oversight as other drugs with abuse liability."<br><span class="toggle-close" onclick="toggleComment(this)">Close</span></div>
-      </div>
-      <div class="example-card parent">
-        <div class="role">Example B — A Parent</div>
-        <div class="preview">"I am writing as a parent of two teenagers. In our community, whole-leaf kratom is sold alongside CBD and vape products at gas stations and convenience stores. My son told me his friends have tried it because they heard it was 'natural' and 'safe'..."</div>
-        <div class="meta"><span>280 words</span><span class="read-link" onclick="toggleComment(this)">Read Example</span></div>
-        <div class="full-comment">"I am writing as a parent of two teenagers. In our community, whole-leaf kratom is sold alongside CBD and vape products at gas stations and convenience stores. My son told me his friends have tried it because they heard it was 'natural' and 'safe.' I have spent hours reading about kratom after learning my child experimented with it. I was shocked to learn about the addiction potential and the lack of age restrictions. I ask HHS to consider establishing age limits and clear health warnings, and to invest in public education so parents and young people understand the risks. No parent should have to worry that a product sold at the corner store could put their child at risk of addiction."<br><span class="toggle-close" onclick="toggleComment(this)">Close</span></div>
-      </div>
-      <div class="example-card physician">
-        <div class="role">Example C — An Emergency Physician</div>
-        <div class="preview">"I am an emergency medicine physician practicing in an urban trauma center. Over the past several years, I have treated multiple patients for whole-leaf kratom and mitragynine toxicity, including seizures, tachycardia, and altered mental status..."</div>
-        <div class="meta"><span>390 words</span><span class="read-link" onclick="toggleComment(this)">Read Example</span></div>
-        <div class="full-comment">"I am an emergency medicine physician practicing in an urban trauma center. Over the past several years, I have treated multiple patients for whole-leaf kratom and mitragynine toxicity, including seizures, tachycardia, and altered mental status. Several patients required intensive care admission. What is particularly concerning is that many patients did not disclose kratom use initially — they did not consider it a drug. This creates diagnostic challenges and delays appropriate treatment. I support federal oversight that includes mandatory adverse event reporting and clear safety warnings. The clinical data from poison centers and FDA reports should inform regulatory action. Whole-leaf kratom is not a harmless supplement — it is a drug that can cause serious medical emergencies."<br><span class="toggle-close" onclick="toggleComment(this)">Close</span></div>
-      </div>
-      <div class="example-card community">
-        <div class="role">Example D — A Community Member</div>
-        <div class="preview">"I live in a small town where three stores now sell whole-leaf kratom products. Local teens can purchase these products with no ID check. I have seen young people in our community experiment with kratom, unaware of the risks..."</div>
-        <div class="meta"><span>260 words</span><span class="read-link" onclick="toggleComment(this)">Read Example</span></div>
-        <div class="full-comment">"I live in a small town where three stores now sell whole-leaf kratom products. Local teens can purchase these products with no ID check. I have seen young people in our community experiment with kratom, unaware of the risks. While I cannot cite scientific studies, I can describe what I see: increased availability, no public awareness, and families who have no idea these products exist. I ask HHS to consider community education campaigns and to require stores to display health warnings. Families deserve to know what is being sold in their neighborhoods. We need federal action to protect our communities from unregulated psychoactive substances."<br><span class="toggle-close" onclick="toggleComment(this)">Close</span></div>
-      </div>
     </div>
   </div>
 
