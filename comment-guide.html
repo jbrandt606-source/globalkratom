@@ -82,10 +82,10 @@
     .story-card ul{ margin-left:28px; margin-bottom:20px; }
     .story-card li{ margin-bottom:8px; font-size:16px; }
     
-    /* Perspective grid */
-    .perspective-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:20px 0 8px; }
-    .perspective-btn{ background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:14px 10px; text-align:center; font-weight:700; font-size:14px; transition:0.2s; cursor:pointer; color:var(--navy); }
-    .perspective-btn:hover{ background:var(--navy); color:white; border-color:var(--navy); }
+    /* Callout box for policy message */
+    .policy-callout{ background:#f0f7ff; border:2px solid var(--red); border-radius:16px; padding:24px 30px; margin:20px 0; }
+    .policy-callout p{ font-size:17px; font-weight:600; margin:0; }
+    .policy-callout .highlight{ color:var(--red); }
     
     /* Characteristic cards */
     .char-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:16px; margin:20px 0; }
@@ -100,14 +100,13 @@
     .question-card{ background:var(--soft); border-radius:16px; padding:20px 24px; border-left:4px solid var(--red); }
     .question-card p{ font-size:17px; font-weight:600; margin:0; }
     
-    /* Evidence cards */
-    .evidence-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:20px 0; }
-    .evidence-card{ background:white; border:1px solid var(--line); border-radius:16px; padding:20px 22px; text-align:center; transition:0.2s; }
-    .evidence-card:hover{ transform:translateY(-3px); box-shadow:0 8px 16px rgba(0,0,0,0.06); }
-    .evidence-card .label{ font-weight:900; font-size:15px; color:var(--navy); }
-    .evidence-card .source{ font-size:13px; color:var(--muted); margin-top:4px; }
-    .evidence-card a{ display:inline-block; margin-top:10px; color:var(--red); font-weight:700; font-size:13px; }
-    .evidence-card a:hover{ text-decoration:underline; }
+    /* Evidence links - clean list style */
+    .evidence-list{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:20px 0; }
+    .evidence-item{ background:var(--soft); border-radius:12px; padding:14px 20px; border:1px solid var(--line); display:flex; align-items:center; justify-content:space-between; transition:0.2s; }
+    .evidence-item:hover{ background:white; border-color:var(--red); }
+    .evidence-item .name{ font-weight:700; font-size:15px; color:var(--navy); }
+    .evidence-item .link{ color:var(--red); font-weight:700; font-size:13px; }
+    .evidence-item .link:hover{ text-decoration:underline; }
     
     /* Example comments */
     .example-grid{ display:grid; grid-template-columns:1fr 1fr; gap:20px; margin:20px 0; }
@@ -151,18 +150,15 @@
       .hero-content h1{font-size:36px}
       .story-card{padding:24px 20px; margin:32px 0;}
       .story-card h2{font-size:24px;}
-      .perspective-grid{grid-template-columns:repeat(2,1fr);}
       .question-grid{grid-template-columns:1fr;}
-      .evidence-grid{grid-template-columns:1fr 1fr;}
       .example-grid{grid-template-columns:1fr;}
       .mistakes-grid{grid-template-columns:1fr;}
       .cta-bottom{padding:28px 20px;}
       .cta-bottom h2{font-size:26px;}
       .char-grid{grid-template-columns:1fr 1fr;}
+      .evidence-list{grid-template-columns:1fr;}
     }
     @media(max-width:480px){
-      .perspective-grid{grid-template-columns:1fr 1fr;}
-      .evidence-grid{grid-template-columns:1fr;}
       .char-grid{grid-template-columns:1fr;}
     }
   </style>
@@ -204,7 +200,7 @@
       <h1>How to Write a Comment That HHS Will Actually Read</h1>
       <div class="subtitle">The public comment period is now open.</div>
       <p>Every comment becomes part of the public record. The strongest comments are thoughtful, specific, and written in your own words.</p>
-      <a href="https://www.regulations.gov" target="_blank" class="btn-comment">Comment on Regulations.gov →</a>
+      <a href="https://www.regulations.gov/document/HHS-OASH-2026-0232-0001" target="_blank" class="btn-comment">Comment on Regulations.gov →</a>
     </div>
   </div>
 </section>
@@ -222,19 +218,12 @@
     </ul>
   </div>
 
-  <!-- CHOOSE YOUR PERSPECTIVE -->
+  <!-- POLICY MESSAGE: Ban whole-leaf kratom -->
   <div class="story-card">
-    <h2>Choose Your Perspective</h2>
-    <p>Click your background for suggestions about the kinds of observations and evidence you might contribute.</p>
-    <div class="perspective-grid">
-      <div class="perspective-btn" onclick="document.getElementById('perspective-healthcare').scrollIntoView({behavior:'smooth'})">Healthcare Professional</div>
-      <div class="perspective-btn" onclick="document.getElementById('perspective-parent').scrollIntoView({behavior:'smooth'})">Parent</div>
-      <div class="perspective-btn" onclick="document.getElementById('perspective-educator').scrollIntoView({behavior:'smooth'})">Educator</div>
-      <div class="perspective-btn" onclick="document.getElementById('perspective-law').scrollIntoView({behavior:'smooth'})">Law Enforcement</div>
-      <div class="perspective-btn" onclick="document.getElementById('perspective-community').scrollIntoView({behavior:'smooth'})">Community Leader</div>
-      <div class="perspective-btn" onclick="document.getElementById('perspective-researcher').scrollIntoView({behavior:'smooth'})">Researcher</div>
-      <div class="perspective-btn" onclick="document.getElementById('perspective-business').scrollIntoView({behavior:'smooth'})">Business Owner</div>
-      <div class="perspective-btn" onclick="document.getElementById('perspective-citizen').scrollIntoView({behavior:'smooth'})">Concerned Citizen</div>
+    <h2>The Policy Position</h2>
+    <div class="policy-callout">
+      <p><span class="highlight">Banning one chemical does not go far enough.</span> We need to ban whole-leaf natural kratom — the parent plant of 7-hydroxymitragynine (7-OH).</p>
+      <p style="margin-top:12px; font-weight:400;">The FDA-sponsored clinical trial demonstrated that ordinary leaf kratom — not just extracts — produces drug liking, feeling high, and measurable 7-OH in human blood. Regulating only 7-OH while leaving whole-leaf kratom legal will not protect public health. Manufacturers can reformulate, and consumers can still access the parent plant. The evidence shows that whole-leaf kratom itself is psychoactive and carries dependence, toxicity, and abuse liability.</p>
     </div>
   </div>
 
@@ -255,33 +244,30 @@
     <h2>Questions HHS Needs Your Opinion On</h2>
     <p>Instead of writing comments from scratch, answer these questions. People naturally begin writing while answering questions.</p>
     <div class="question-grid">
-      <div class="question-card"><p>Is regulating only one chemical sufficient?</p></div>
+      <div class="question-card"><p>Is regulating only one chemical sufficient when the parent plant produces the same effects?</p></div>
       <div class="question-card"><p>If manufacturers change formulations, should federal policy adapt?</p></div>
       <div class="question-card"><p>Should products sold in vape shops and gas stations receive broader oversight?</p></div>
       <div class="question-card"><p>What impact do these products have in your community?</p></div>
-      <div class="question-card"><p>What evidence do you think HHS should consider?</p></div>
-      <div class="question-card"><p>How should federal policy address whole-leaf kratom versus extracts?</p></div>
+      <div class="question-card"><p>What evidence do you think HHS should consider about whole-leaf kratom?</p></div>
+      <div class="question-card"><p>Should federal policy address whole-leaf kratom as the parent compound of 7-OH?</p></div>
     </div>
   </div>
 
-  <!-- SECTION 4: Evidence -->
+  <!-- SECTION 4: Evidence Links -->
   <div class="story-card">
     <h2>Evidence You May Wish To Review</h2>
-    <div class="evidence-grid">
-      <div class="evidence-card"><div class="label">CDC</div><div class="source">Centers for Disease Control</div><a href="/evidence/cdc.html">View →</a></div>
-      <div class="evidence-card"><div class="label">FDA</div><div class="source">Food and Drug Administration</div><a href="/evidence/fda.html">View →</a></div>
-      <div class="evidence-card"><div class="label">Poison Centers</div><div class="source">America's Poison Centers Data</div><a href="/evidence/poison.html">View →</a></div>
-      <div class="evidence-card"><div class="label">Published Literature</div><div class="source">Peer-reviewed studies</div><a href="/evidence/literature.html">View →</a></div>
-      <div class="evidence-card"><div class="label">DEA Proposal</div><div class="source">Drug Enforcement Administration</div><a href="/evidence/dea.html">View →</a></div>
-      <div class="evidence-card"><div class="label">HHS Request</div><div class="source">Department of Health and Human Services</div><a href="/evidence/hhs.html">View →</a></div>
+    <p>Click any link to access the evidence page.</p>
+    <div class="evidence-list">
+      <div class="evidence-item"><span class="name">Natural Leaf vs Extracts: What Policymakers Should Know</span><a href="https://globalkratom.org/kratom.html" class="link">View →</a></div>
+      <div class="evidence-item"><span class="name">FDA</span><a href="https://globalkratom.org/evidence/fda.html" class="link">View →</a></div>
+      <div class="evidence-item"><span class="name">Poison control</span><a href="https://globalkratom.org/evidence/poison.html" class="link">View →</a></div>
+      <div class="evidence-item"><span class="name">EMS Hospital Data</span><a href="https://globalkratom.org/evidence/hospital.html" class="link">View →</a></div>
+      <div class="evidence-item"><span class="name">Epidemiology</span><a href="https://globalkratom.org/evidence/epidemiology.html" class="link">View →</a></div>
+      <div class="evidence-item"><span class="name">Mental Health</span><a href="https://globalkratom.org/evidence/mental.html" class="link">View →</a></div>
+      <div class="evidence-item"><span class="name">CDC Mortality</span><a href="https://globalkratom.org/evidence/mortality.html" class="link">View →</a></div>
+      <div class="evidence-item"><span class="name">Dependence and withdrawal</span><a href="https://globalkratom.org/dependence.html" class="link">View →</a></div>
+      <div class="evidence-item"><span class="name">Pregnancy</span><a href="https://globalkratom.org/pregnancy.html" class="link">View →</a></div>
     </div>
-  </div>
-
-  <!-- PERSPECTIVE ANCHORS -->
-  <div style="display:none;">
-    <div id="perspective-healthcare"></div><div id="perspective-parent"></div><div id="perspective-educator"></div>
-    <div id="perspective-law"></div><div id="perspective-community"></div><div id="perspective-researcher"></div>
-    <div id="perspective-business"></div><div id="perspective-citizen"></div>
   </div>
 
   <!-- SECTION 5: Comment Examples -->
@@ -324,7 +310,7 @@
   <div class="cta-bottom">
     <h2>Make Your Voice Part of the Public Record</h2>
     <p>Your comment matters. Every thoughtful submission helps shape federal policy.</p>
-    <a href="https://www.regulations.gov" target="_blank" class="btn-cta">Comment Now →</a>
+    <a href="https://www.regulations.gov/document/HHS-OASH-2026-0232-0001" target="_blank" class="btn-cta">Comment Now →</a>
   </div>
 
 </div>
