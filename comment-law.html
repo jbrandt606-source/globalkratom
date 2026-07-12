@@ -23,7 +23,7 @@
   <meta property="og:title" content="A Drug Law Is Only as Good as Its Enforcement">
   <meta property="og:description" content="Law enforcement leaders: HHS is accepting comments on the 7-hydroxymitragynine scheduling threshold. Your voice matters.">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://www.globalkratom.org/comment-law.html">
+  <meta property="og:url" content="https://globalkratom.org/comment-law.html">
   <meta property="og:image" content="https://www.globalkratom.org/assets/capitol-hero.jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -34,7 +34,7 @@
   <meta name="twitter:description" content="Law enforcement leaders: HHS is accepting comments on the 7-hydroxymitragynine scheduling threshold.">
   <meta name="twitter:image" content="https://www.globalkratom.org/assets/capitol-hero.jpeg">
 
-  <link rel="canonical" href="https://www.globalkratom.org/comment-law.html">
+  <link rel="canonical" href="https://globalkratom.org/comment-law.html">
 
   <link rel="icon" type="image/png" href="/review.png">
   <link rel="shortcut icon" href="/review.png">
@@ -46,16 +46,16 @@
     :root {
       --navy: #081826;
       --red: #c8102e;
-      --soft: #f6f8fb;
-      --line: #dfe6ef;
+      --soft: #f1f5f9;  /* slightly darker than before for better contrast */
+      --line: #cbd5e1;
       --text: #0b1d34;
-      --muted: #64748b;
-      --shadow: 0 8px 30px rgba(0,0,0,0.06);
+      --muted: #475569;
+      --shadow: 0 8px 30px rgba(0,0,0,0.08);
       --radius: 16px;
     }
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    body{ font-family:'Inter',Arial,sans-serif; background:#f9fafb; color:var(--text); line-height:1.6; -webkit-font-smoothing:antialiased; }
+    body{ font-family:'Inter',Arial,sans-serif; background:#f8fafc; color:var(--text); line-height:1.6; -webkit-font-smoothing:antialiased; }
     img{max-width:100%;display:block}
     a{text-decoration:none;color:inherit}
     .container{max-width:1180px;margin:0 auto;padding:0 24px}
@@ -89,9 +89,10 @@
     .hero-meta{ margin-top:20px; display:flex; gap:24px; font-size:14px; color:#b0c8df; }
     .hero-meta span{ display:flex; align-items:center; gap:8px; }
     .hero-right{ display:flex; flex-direction:column; gap:20px; }
-    .hero-stat{ background:rgba(255,255,255,0.08); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,0.15); border-radius:var(--radius); padding:24px 28px; }
+    .hero-stat{ background:rgba(255,255,255,0.10); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,0.2); border-radius:var(--radius); padding:24px 28px; }
     .hero-stat .num{ font-size:42px; font-weight:900; color:white; }
-    .hero-stat .label{ font-size:14px; color:#b0c8df; }
+    .hero-stat .label{ font-size:15px; color:#dbe7f4; line-height:1.4; }
+    .hero-stat .desc{ font-size:13px; color:#b0c8df; margin-top:4px; }
 
     .sidebar{ display:none; position:fixed; right:32px; top:50%; transform:translateY(-50%); z-index:50; background:white; border-radius:12px; padding:16px 20px; box-shadow:0 8px 30px rgba(0,0,0,0.1); border:1px solid var(--line); min-width:180px; }
     .sidebar.show{display:block}
@@ -116,7 +117,7 @@
     .story-card ul{ margin-left:28px; margin-bottom:20px; }
     .story-card li{ margin-bottom:8px; font-size:16px; }
 
-    .policy-callout{ background:#f0f7ff; border:2px solid var(--red); border-radius:var(--radius); padding:28px 36px; margin:20px 0; }
+    .policy-callout{ background:#e6f0ff; border:2px solid var(--red); border-radius:var(--radius); padding:28px 36px; margin:20px 0; }
     .policy-callout p{ font-size:17px; font-weight:600; margin:0; }
     .policy-callout .highlight{ color:var(--red); }
 
@@ -138,15 +139,14 @@
     .accordion-body p{ font-size:15px; color:var(--muted); line-height:1.6; margin:0; max-width:100%; }
 
     .evidence-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:24px 0; }
-    .evidence-card{ background:white; border:1px solid var(--line); border-radius:var(--radius); padding:22px 24px; transition:0.2s; cursor:pointer; display:flex; flex-direction:column; }
+    .evidence-card{ background:#f8fafc; border:1px solid var(--line); border-radius:var(--radius); padding:22px 24px; transition:0.2s; cursor:default; display:flex; flex-direction:column; }
     .evidence-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow); border-color:var(--red); }
     .evidence-card .card-label{ font-size:11px; font-weight:800; text-transform:uppercase; color:var(--red); letter-spacing:0.5px; margin-bottom:6px; }
     .evidence-card .title{ font-weight:800; font-size:16px; margin-bottom:6px; }
-    .evidence-card .desc{ font-size:13px; color:var(--muted); line-height:1.5; flex:1; }
-    .evidence-card .arrow-link{ margin-top:12px; color:var(--red); font-weight:700; font-size:13px; display:flex; align-items:center; gap:6px; }
+    .evidence-card .desc{ font-size:13px; color:var(--text); line-height:1.5; flex:1; }
 
     .warning-grid{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin:16px 0; }
-    .warning-card{ background:#fef6f5; border-radius:12px; padding:16px 20px; border-left:4px solid var(--red); display:flex; align-items:center; gap:12px; font-size:14px; font-weight:600; }
+    .warning-card{ background:#fef0ee; border-radius:12px; padding:16px 20px; border-left:4px solid var(--red); display:flex; align-items:center; gap:12px; font-size:14px; font-weight:600; }
     .warning-card .bad{ color:var(--red); font-size:20px; font-weight:900; }
 
     .checklist{ background:var(--soft); border-radius:var(--radius); padding:24px 32px; margin:16px 0; }
@@ -258,7 +258,10 @@
     <div class="hero-content">
       <div class="hero-badge">HHS Public Comment Period Open</div>
       <h1>A Drug Law Is Only as Good as Its Enforcement</h1>
-      <p>HHS is accepting comments on the proposed federal scheduling threshold for 7-hydroxymitragynine (7-OH). Law enforcement has a unique and essential voice in this process — because you understand what makes a law enforceable.</p>
+      <p>HHS is accepting comments on the proposed federal scheduling threshold for 7-hydroxymitragynine (7-OH). The threshold selected will directly affect enforcement. Law enforcement has a unique and important voice in this process — because you understand what makes a law enforceable.</p>
+      <p style="font-weight:500; border-left:3px solid var(--red); padding-left:18px; background:rgba(255,255,255,0.05); border-radius:4px; padding:12px 18px; margin-bottom:20px;">
+        HHS is asking where the legal line should be drawn. Before making that decision, policymakers should hear from the people who investigate drug crimes, analyze evidence, and prosecute controlled-substance cases.
+      </p>
       <div class="hero-actions">
         <a href="https://www.regulations.gov/document/HHS-OASH-2026-0232-0001" target="_blank" class="btn-primary">Submit Your Comment</a>
         <a href="#why-matters" class="btn-secondary">Learn More</a>
@@ -269,9 +272,9 @@
       </div>
     </div>
     <div class="hero-right">
-      <div class="hero-stat"><div class="num">18,000+</div><div class="label">Law enforcement agencies impacted</div></div>
-      <div class="hero-stat"><div class="num">100,000+</div><div class="label">Forensic drug cases annually</div></div>
-      <div class="hero-stat"><div class="num">Percentage</div><div class="label">Thresholds create enforcement gaps</div></div>
+      <div class="hero-stat"><div class="num">1</div><div class="label">Federal Decision</div><div class="desc">Could affect enforcement nationwide.</div></div>
+      <div class="hero-stat"><div class="num">50</div><div class="label">States</div><div class="desc">May look to federal policy.</div></div>
+      <div class="hero-stat"><div class="num">1</div><div class="label">Administrative Record</div><div class="desc">Your organization's experience belongs in it.</div></div>
     </div>
   </div>
 </section>
@@ -294,7 +297,7 @@
     <p>Law enforcement organizations have a unique and important voice in this process. You understand the practical realities of enforcement — what officers can determine in the field, what crime laboratories can measure, and what prosecutors can prove beyond a reasonable doubt. HHS needs to hear from you before a threshold is set that may be difficult or impossible to enforce.</p>
     <ul>
       <li><strong>Your expertise matters:</strong> You know what makes a drug law enforceable.</li>
-      <li><strong>Your voice carries weight:</strong> Agencies take professional law enforcement input seriously.</li>
+      <li><strong>Your voice carries weight:</strong> Professional law enforcement input provides practical implementation perspectives that may be useful to HHS as it evaluates the proposed threshold.</li>
       <li><strong>Your perspective is unique:</strong> No one else understands the practical enforcement challenges like you do.</li>
     </ul>
   </div>
@@ -306,10 +309,10 @@
     </div>
     <p>HHS is considering whether to schedule 7-hydroxymitragynine based on a percentage concentration threshold. While this approach may seem scientifically rigorous, it introduces significant practical challenges for law enforcement at every stage of the enforcement process — from the traffic stop to the courtroom.</p>
     <ul>
-      <li><strong>Field identification:</strong> Officers cannot determine chemical concentration during a traffic stop or search.</li>
-      <li><strong>Laboratory burden:</strong> Crime labs must distinguish lawful from unlawful products based on precise measurements.</li>
-      <li><strong>Prosecutorial proof:</strong> Prosecutors may have to litigate measurement uncertainty and analytical tolerances.</li>
-      <li><strong>Manufacturer adaptation:</strong> Manufacturers may formulate products just below the legal threshold.</li>
+      <li><strong>Field identification:</strong> Officers generally cannot determine whether a product exceeds a statutory concentration threshold during initial field encounters.</li>
+      <li><strong>Laboratory burden:</strong> Crime labs must distinguish lawful from unlawful products based on precise measurements. Quantitative analysis may require additional analytical work and laboratory resources compared with simple identification.</li>
+      <li><strong>Prosecutorial proof:</strong> Cases involving numerical thresholds can involve disputes regarding sampling, analytical methods, and measurement uncertainty.</li>
+      <li><strong>Manufacturer adaptation:</strong> Manufacturers may seek to formulate products to comply with any legal threshold, creating ongoing compliance and enforcement considerations.</li>
     </ul>
   </div>
 
@@ -324,10 +327,10 @@
     <p>When a percentage threshold is in place, crime laboratories must not only identify the substance but also quantify its concentration with precision. This requires more sophisticated instrumentation, more rigorous validation protocols, and more time per case. With many labs already facing significant backlogs, this additional burden could delay investigations and prosecutions.</p>
 
     <h3>Prosecution and Measurement Uncertainty</h3>
-    <p>In court, prosecutors must prove beyond a reasonable doubt that a substance exceeds the legal threshold. This introduces complex questions about measurement uncertainty, analytical tolerances, and laboratory error margins. Defense attorneys will challenge laboratory results, potentially turning every case into a battle over scientific methodology rather than the underlying conduct.</p>
+    <p>In court, prosecutors must prove beyond a reasonable doubt that a substance exceeds the legal threshold. This introduces complex questions about measurement uncertainty, analytical tolerances, and laboratory error margins. Defense attorneys may challenge laboratory results, potentially turning every case into a battle over scientific methodology rather than the underlying conduct.</p>
 
     <h3>Evasion Through Formulation</h3>
-    <p>Manufacturers can formulate products to fall just below any percentage threshold. This creates a "cat and mouse" dynamic where enforcement is constantly chasing new formulations. A threshold that is low enough to be meaningful may be so low that it is practically indistinguishable from measurement error, creating further enforcement complications.</p>
+    <p>Manufacturers may seek to formulate products to comply with any legal threshold, creating ongoing compliance and enforcement considerations. This creates a "cat and mouse" dynamic where enforcement is constantly chasing new formulations. A threshold that is low enough to be meaningful may be so low that it is practically indistinguishable from measurement error, creating further enforcement complications.</p>
   </div>
 
   <div class="story-card" id="questions-hhs">
@@ -341,17 +344,17 @@
 
     <div class="accordion" onclick="this.classList.toggle('open')">
       <div class="accordion-header"><span>What is the burden on state and local crime laboratories?</span><span class="arrow">▾</span></div>
-      <div class="accordion-body"><p>Quantitative analysis requires more time, more training, and more expensive equipment than qualitative identification. Many crime laboratories are already underfunded and overburdened. A percentage threshold will increase case processing time and may extend backlogs, delaying justice.</p></div>
+      <div class="accordion-body"><p>Quantitative analysis requires more time, more training, and more expensive equipment than qualitative identification. Many crime laboratories are already underfunded and overburdened. A percentage threshold may increase case processing time and potentially extend backlogs, delaying justice.</p></div>
     </div>
 
     <div class="accordion" onclick="this.classList.toggle('open')">
       <div class="accordion-header"><span>Will prosecutors be forced to litigate measurement uncertainty in every case?</span><span class="arrow">▾</span></div>
-      <div class="accordion-body"><p>Yes. Any percentage threshold creates a new avenue for defense challenges. Prosecutors would need to establish not only that the substance is present, but also that its concentration exceeds the legal threshold within a margin of error. This shifts the focus of trials from conduct to scientific methodology.</p></div>
+      <div class="accordion-body"><p>Cases involving numerical thresholds can involve disputes regarding sampling, analytical methods, and measurement uncertainty. Prosecutors would need to establish not only that the substance is present, but also that its concentration exceeds the legal threshold within a margin of error. This shifts the focus of trials from conduct to scientific methodology.</p></div>
     </div>
 
     <div class="accordion" onclick="this.classList.toggle('open')">
       <div class="accordion-header"><span>Can manufacturers circumvent a percentage threshold?</span><span class="arrow">▾</span></div>
-      <div class="accordion-body"><p>Manufacturers can formulate products to fall just below any percentage threshold. This means law enforcement will constantly face new products designed to evade enforcement. HHS should consider whether a threshold-based approach creates a regulatory "floor" that manufacturers can safely operate beneath.</p></div>
+      <div class="accordion-body"><p>Manufacturers may seek to formulate products to comply with any legal threshold, creating ongoing compliance and enforcement considerations. This means law enforcement will constantly face new products designed to evade enforcement. HHS should consider whether a threshold-based approach creates a regulatory "floor" that manufacturers can safely operate beneath.</p></div>
     </div>
 
     <div class="accordion" onclick="this.classList.toggle('open')">
@@ -369,9 +372,9 @@
     <h2>Practical Issues for Officers, Crime Labs and Prosecutors</h2>
     <p>The impact of a percentage threshold varies across the enforcement chain. Here's how each role is affected:</p>
     <div class="evidence-grid">
-      <div class="evidence-card"><span class="card-label">Field Operations</span><span class="title">Officers</span><span class="desc">Cannot determine concentration in the field. Probable cause becomes more difficult to establish. Training and policy must adapt to new standards.</span><span class="arrow-link">Read more</span></div>
-      <div class="evidence-card"><span class="card-label">Forensic Analysis</span><span class="title">Crime Laboratories</span><span class="desc">Quantitative analysis increases per-case time and cost. Backlogs may grow. Labs need more equipment and trained analysts to handle the load.</span><span class="arrow-link">Read more</span></div>
-      <div class="evidence-card"><span class="card-label">Courtroom Proof</span><span class="title">Prosecutors</span><span class="desc">Must prove threshold compliance beyond a reasonable doubt. Defense challenges to measurement uncertainty become routine. Trials become more complex and costly.</span><span class="arrow-link">Read more</span></div>
+      <div class="evidence-card"><span class="card-label">Field Operations</span><span class="title">Officers</span><span class="desc">Officers generally cannot determine whether a product exceeds a statutory concentration threshold during initial field encounters. Probable cause is based on totality of circumstances, not a precise measurement.</span></div>
+      <div class="evidence-card"><span class="card-label">Forensic Analysis</span><span class="title">Crime Laboratories</span><span class="desc">Quantitative analysis may require additional analytical work and laboratory resources compared with simple identification. Labs need more equipment and trained analysts to handle the load.</span></div>
+      <div class="evidence-card"><span class="card-label">Courtroom Proof</span><span class="title">Prosecutors</span><span class="desc">Cases involving numerical thresholds can involve disputes regarding sampling, analytical methods, and measurement uncertainty. Trials may become more complex and costly.</span></div>
     </div>
   </div>
 
