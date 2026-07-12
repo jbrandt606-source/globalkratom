@@ -46,10 +46,10 @@
     :root {
       --navy: #081826;
       --red: #c8102e;
-      --soft: #f1f5f9;  /* slightly darker than before for better contrast */
+      --soft: #f1f5f9;
       --line: #cbd5e1;
       --text: #0b1d34;
-      --muted: #475569;
+      --muted: #334155;
       --shadow: 0 8px 30px rgba(0,0,0,0.08);
       --radius: 16px;
     }
@@ -80,7 +80,7 @@
     .hero-content{ max-width:660px; }
     .hero-badge{ display:inline-block; background:var(--red); color:white; font-weight:800; font-size:13px; padding:6px 20px; border-radius:40px; letter-spacing:0.5px; margin-bottom:20px; }
     .hero-content h1{ font-size:clamp(38px,5vw,52px); font-weight:900; line-height:1.05; margin-bottom:16px; letter-spacing:-0.02em; }
-    .hero-content p{ font-size:18px; color:#dbe7f4; margin-bottom:24px; max-width:520px; }
+    .hero-content p{ font-size:18px; color:#dbe7f4; margin-bottom:16px; max-width:520px; }
     .hero-actions{ display:flex; gap:16px; flex-wrap:wrap; align-items:center; }
     .btn-primary{ display:inline-flex; align-items:center; gap:10px; background:var(--red); color:white; padding:14px 32px; border-radius:60px; font-weight:800; font-size:15px; border:2px solid var(--red); transition:0.2s; }
     .btn-primary:hover{ background:transparent; color:white; box-shadow:0 0 30px rgba(200,16,46,0.3); }
@@ -89,10 +89,10 @@
     .hero-meta{ margin-top:20px; display:flex; gap:24px; font-size:14px; color:#b0c8df; }
     .hero-meta span{ display:flex; align-items:center; gap:8px; }
     .hero-right{ display:flex; flex-direction:column; gap:20px; }
-    .hero-stat{ background:rgba(255,255,255,0.10); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,0.2); border-radius:var(--radius); padding:24px 28px; }
+    .hero-stat{ background:rgba(255,255,255,0.12); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,0.25); border-radius:var(--radius); padding:24px 28px; }
     .hero-stat .num{ font-size:42px; font-weight:900; color:white; }
-    .hero-stat .label{ font-size:15px; color:#dbe7f4; line-height:1.4; }
-    .hero-stat .desc{ font-size:13px; color:#b0c8df; margin-top:4px; }
+    .hero-stat .label{ font-size:15px; color:white; font-weight:600; line-height:1.4; }
+    .hero-stat .desc{ font-size:14px; color:#dbe7f4; margin-top:4px; }
 
     .sidebar{ display:none; position:fixed; right:32px; top:50%; transform:translateY(-50%); z-index:50; background:white; border-radius:12px; padding:16px 20px; box-shadow:0 8px 30px rgba(0,0,0,0.1); border:1px solid var(--line); min-width:180px; }
     .sidebar.show{display:block}
@@ -118,7 +118,7 @@
     .story-card li{ margin-bottom:8px; font-size:16px; }
 
     .policy-callout{ background:#e6f0ff; border:2px solid var(--red); border-radius:var(--radius); padding:28px 36px; margin:20px 0; }
-    .policy-callout p{ font-size:17px; font-weight:600; margin:0; }
+    .policy-callout p{ font-size:17px; font-weight:600; margin:0; color:var(--text); }
     .policy-callout .highlight{ color:var(--red); }
 
     .icon-grid{ display:grid; grid-template-columns:repeat(5,1fr); gap:16px; margin:24px 0; }
@@ -136,14 +136,15 @@
     .accordion.open .arrow{ transform:rotate(180deg); }
     .accordion-body{ max-height:0; overflow:hidden; transition:0.3s ease; background:var(--soft); padding:0 24px; }
     .accordion.open .accordion-body{ max-height:300px; padding:18px 24px 24px; }
-    .accordion-body p{ font-size:15px; color:var(--muted); line-height:1.6; margin:0; max-width:100%; }
+    .accordion-body p{ font-size:15px; color:var(--text); line-height:1.6; margin:0; max-width:100%; }
 
-    .evidence-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:24px 0; }
-    .evidence-card{ background:#f8fafc; border:1px solid var(--line); border-radius:var(--radius); padding:22px 24px; transition:0.2s; cursor:default; display:flex; flex-direction:column; }
+    .evidence-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin:24px 0; }
+    .evidence-card{ background:#f1f5f9; border:1px solid var(--line); border-radius:var(--radius); padding:22px 24px; transition:0.2s; cursor:default; display:flex; flex-direction:column; }
     .evidence-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow); border-color:var(--red); }
     .evidence-card .card-label{ font-size:11px; font-weight:800; text-transform:uppercase; color:var(--red); letter-spacing:0.5px; margin-bottom:6px; }
     .evidence-card .title{ font-weight:800; font-size:16px; margin-bottom:6px; }
-    .evidence-card .desc{ font-size:13px; color:var(--text); line-height:1.5; flex:1; }
+    .evidence-card .desc{ font-size:14px; color:var(--text); line-height:1.5; flex:1; }
+    .evidence-card .source{ font-size:13px; color:var(--muted); font-style:italic; margin-top:8px; border-top:1px solid var(--line); padding-top:8px; }
 
     .warning-grid{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin:16px 0; }
     .warning-card{ background:#fef0ee; border-radius:12px; padding:16px 20px; border-left:4px solid var(--red); display:flex; align-items:center; gap:12px; font-size:14px; font-weight:600; }
@@ -243,11 +244,13 @@
 
 <aside class="sidebar show" id="sidebar">
   <h4>On this page</h4>
+  <a href="#who-should-comment">Who Should Comment</a>
   <a href="#why-matters">Why This Matters</a>
   <a href="#enforcement-challenge">The Enforcement Challenge</a>
   <a href="#percentage-issues">Percentage Thresholds</a>
   <a href="#questions-hhs">Questions for HHS</a>
   <a href="#practical-issues">Practical Issues</a>
+  <a href="#testimonies">What Law Enforcement Has Said</a>
   <a href="#why-comment-matters">Why Your Comment Matters</a>
   <a href="#submit">Submit</a>
   <div class="sidebar-cta"><a href="https://www.regulations.gov/document/HHS-OASH-2026-0232-0001" target="_blank">Comment Now</a></div>
@@ -258,7 +261,7 @@
     <div class="hero-content">
       <div class="hero-badge">HHS Public Comment Period Open</div>
       <h1>A Drug Law Is Only as Good as Its Enforcement</h1>
-      <p>HHS is accepting comments on the proposed federal scheduling threshold for 7-hydroxymitragynine (7-OH). The threshold selected will directly affect enforcement. Law enforcement has a unique and important voice in this process — because you understand what makes a law enforceable.</p>
+      <p>HHS is accepting comments on the proposed federal scheduling threshold for 7-hydroxymitragynine (7-OH). The threshold selected will directly affect enforcement. Law enforcement has a unique and important voice in this process, because you understand what makes a law enforceable.</p>
       <p style="font-weight:500; border-left:3px solid var(--red); padding-left:18px; background:rgba(255,255,255,0.05); border-radius:4px; padding:12px 18px; margin-bottom:20px;">
         HHS is asking where the legal line should be drawn. Before making that decision, policymakers should hear from the people who investigate drug crimes, analyze evidence, and prosecute controlled-substance cases.
       </p>
@@ -272,9 +275,9 @@
       </div>
     </div>
     <div class="hero-right">
-      <div class="hero-stat"><div class="num">1</div><div class="label">Federal Decision</div><div class="desc">Could affect enforcement nationwide.</div></div>
-      <div class="hero-stat"><div class="num">50</div><div class="label">States</div><div class="desc">May look to federal policy.</div></div>
-      <div class="hero-stat"><div class="num">1</div><div class="label">Administrative Record</div><div class="desc">Your organization's experience belongs in it.</div></div>
+      <div class="hero-stat"><div class="num">1</div><div class="label">Federal Decision</div><div class="desc">Could influence enforcement nationwide.</div></div>
+      <div class="hero-stat"><div class="num">1</div><div class="label">Administrative Record</div><div class="desc">Your professional experience belongs in it.</div></div>
+      <div class="hero-stat"><div class="num">1</div><div class="label">Enforcement Question</div><div class="desc">Can a concentration-based threshold be enforced in practice?</div></div>
     </div>
   </div>
 </section>
@@ -291,13 +294,28 @@
     <div class="step"><span class="num">4</span> Submit to HHS</div>
   </div>
 
+  <div class="story-card" id="who-should-comment">
+    <h2>Who Should Consider Commenting?</h2>
+    <p>This page is designed for professional organizations and individuals whose work intersects with drug enforcement, forensic analysis, and prosecution. HHS will benefit from hearing directly from:</p>
+    <ul>
+      <li><strong>State Police Associations</strong></li>
+      <li><strong>Sheriffs' Associations</strong></li>
+      <li><strong>Police Chiefs' Associations</strong></li>
+      <li><strong>Narcotics Officers' Associations</strong></li>
+      <li><strong>Prosecutors' Associations</strong></li>
+      <li><strong>State Crime Laboratories</strong></li>
+      <li><strong>State Boards overseeing forensic services</strong> (where applicable)</li>
+    </ul>
+    <p>Your professional experience in the field provides critical context that policymakers may not otherwise consider.</p>
+  </div>
+
   <div class="story-card" id="why-matters">
     <h2>Why This Matters to Law Enforcement</h2>
     <p>The U.S. Department of Health and Human Services (HHS) has opened a public comment period on the proposed federal scheduling threshold for 7-hydroxymitragynine (7-OH). The threshold selected will directly affect how this substance can be policed, prosecuted, and controlled.</p>
-    <p>Law enforcement organizations have a unique and important voice in this process. You understand the practical realities of enforcement — what officers can determine in the field, what crime laboratories can measure, and what prosecutors can prove beyond a reasonable doubt. HHS needs to hear from you before a threshold is set that may be difficult or impossible to enforce.</p>
+    <p>Law enforcement organizations have a unique and important voice in this process. You understand the practical realities of enforcement: what officers can determine in the field, what crime laboratories can measure, and what prosecutors can prove beyond a reasonable doubt. HHS needs to hear from you before a threshold is set that may be difficult or impossible to enforce.</p>
     <ul>
       <li><strong>Your expertise matters:</strong> You know what makes a drug law enforceable.</li>
-      <li><strong>Your voice carries weight:</strong> Professional law enforcement input provides practical implementation perspectives that may be useful to HHS as it evaluates the proposed threshold.</li>
+      <li><strong>Your voice provides practical perspective:</strong> Professional law enforcement input provides practical implementation perspectives that may assist HHS in evaluating the proposed threshold.</li>
       <li><strong>Your perspective is unique:</strong> No one else understands the practical enforcement challenges like you do.</li>
     </ul>
   </div>
@@ -305,9 +323,9 @@
   <div class="story-card" id="enforcement-challenge">
     <h2>The Enforcement Challenge</h2>
     <div class="policy-callout">
-      <p><span class="highlight">A percentage threshold sounds precise on paper.</span> But in practice, it creates a series of enforcement obstacles that officers, crime laboratories, and prosecutors cannot easily overcome.</p>
+      <p><span class="highlight">A percentage threshold sounds precise on paper.</span> But in practice, it creates a series of enforcement obstacles that officers, crime laboratories, and prosecutors may not easily overcome.</p>
     </div>
-    <p>HHS is considering whether to schedule 7-hydroxymitragynine based on a percentage concentration threshold. While this approach may seem scientifically rigorous, it introduces significant practical challenges for law enforcement at every stage of the enforcement process — from the traffic stop to the courtroom.</p>
+    <p>HHS is considering whether to schedule 7-hydroxymitragynine based on a percentage concentration threshold. While this approach may seem scientifically rigorous, it introduces significant practical challenges for law enforcement at every stage of the enforcement process, from the traffic stop to the courtroom.</p>
     <ul>
       <li><strong>Field identification:</strong> Officers generally cannot determine whether a product exceeds a statutory concentration threshold during initial field encounters.</li>
       <li><strong>Laboratory burden:</strong> Crime labs must distinguish lawful from unlawful products based on precise measurements. Quantitative analysis may require additional analytical work and laboratory resources compared with simple identification.</li>
@@ -321,7 +339,7 @@
     <p>Percentage-based thresholds create practical enforcement problems that are often overlooked in the policymaking process. Here are the key challenges law enforcement faces:</p>
 
     <h3>Field Testing Limitations</h3>
-    <p>Officers rely on field tests to make probable cause determinations. Field tests indicate the presence of a substance — they do not measure concentration. A percentage threshold requires a determination that cannot be made at the roadside. This means officers cannot definitively establish whether a substance is lawful or unlawful during initial contact.</p>
+    <p>Officers rely on field tests to make probable cause determinations. Field tests indicate the presence of a substance; they do not measure concentration. A percentage threshold requires a determination that cannot be made at the roadside. This means officers cannot definitively establish whether a substance is lawful or unlawful during initial contact.</p>
 
     <h3>Crime Laboratory Workload</h3>
     <p>When a percentage threshold is in place, crime laboratories must not only identify the substance but also quantify its concentration with precision. This requires more sophisticated instrumentation, more rigorous validation protocols, and more time per case. With many labs already facing significant backlogs, this additional burden could delay investigations and prosecutions.</p>
@@ -335,7 +353,7 @@
 
   <div class="story-card" id="questions-hhs">
     <h2>Questions HHS Should Hear From Law Enforcement</h2>
-    <p>Your organization's comment should address the practical realities of enforcement. These are the questions HHS needs to consider — and your professional experience can help answer them.</p>
+    <p>Your organization's comment should address the practical realities of enforcement. These are the questions HHS needs to consider, and your professional experience can help answer them.</p>
 
     <div class="accordion" onclick="this.classList.toggle('open')">
       <div class="accordion-header"><span>How will officers determine probable cause with a percentage threshold?</span><span class="arrow">▾</span></div>
@@ -364,13 +382,13 @@
 
     <div class="accordion" onclick="this.classList.toggle('open')">
       <div class="accordion-header"><span>Is there a threshold that would actually be enforceable in practice?</span><span class="arrow">▾</span></div>
-      <div class="accordion-body"><p>This is the central question. Law enforcement has the practical experience to advise HHS on what types of thresholds — if any — can be effectively enforced. Your organization's input on this question is essential to creating a law that actually works.</p></div>
+      <div class="accordion-body"><p>This is the central question. Law enforcement has the practical experience to advise HHS on what types of thresholds, if any, can be effectively enforced. Your organization's input on this question is essential to creating a law that actually works.</p></div>
     </div>
   </div>
 
   <div class="story-card" id="practical-issues">
     <h2>Practical Issues for Officers, Crime Labs and Prosecutors</h2>
-    <p>The impact of a percentage threshold varies across the enforcement chain. Here's how each role is affected:</p>
+    <p>The impact of a percentage threshold varies across the enforcement chain. Here is how each role is affected:</p>
     <div class="evidence-grid">
       <div class="evidence-card"><span class="card-label">Field Operations</span><span class="title">Officers</span><span class="desc">Officers generally cannot determine whether a product exceeds a statutory concentration threshold during initial field encounters. Probable cause is based on totality of circumstances, not a precise measurement.</span></div>
       <div class="evidence-card"><span class="card-label">Forensic Analysis</span><span class="title">Crime Laboratories</span><span class="desc">Quantitative analysis may require additional analytical work and laboratory resources compared with simple identification. Labs need more equipment and trained analysts to handle the load.</span></div>
@@ -378,16 +396,42 @@
     </div>
   </div>
 
+  <div class="story-card" id="testimonies">
+    <h2>What Law Enforcement Has Already Told Lawmakers</h2>
+    <p>State-level testimony already highlights the practical enforcement and public safety concerns that a federal threshold must address.</p>
+    <div class="evidence-grid">
+      <div class="evidence-card">
+        <span class="card-label">Kansas Bureau of Investigation</span>
+        <span class="title">"Extremely difficult to effectively enforce."</span>
+        <span class="desc">The KBI described attempts to distinguish traditional leaf from concentrated or altered products in retail settings as extremely difficult. Scheduling the key alkaloids provides law enforcement with the clearest and most practical authority.</span>
+        <span class="source">Bob Stuart, Executive Officer, KBI, Senate Public Health and Welfare Committee, February 12, 2026</span>
+      </div>
+      <div class="evidence-card">
+        <span class="card-label">Iowa Department of Corrections</span>
+        <span class="title">"More severe and volatile than other synthetics, such as K2."</span>
+        <span class="desc">Rathje described physiological and behavioral effects observed among incarcerated individuals, and noted kratom was being smuggled into Iowa prisons, representing an escalating security and public-safety threat.</span>
+        <span class="source">Jen Rathje, spokesperson, Iowa DOC, legislative testimony, 2026</span>
+      </div>
+      <div class="evidence-card">
+        <span class="card-label">Tennessee Bureau of Investigation</span>
+        <span class="title">Overdoses may be less responsive to naloxone.</span>
+        <span class="desc">TBI investigators warned Tennessee lawmakers that kratom overdoses may be less responsive to naloxone, raising concerns about the efficacy of standard overdose interventions.</span>
+        <span class="source">Reported testimony before the Tennessee House Criminal Justice Subcommittee, March 4, 2026</span>
+      </div>
+    </div>
+    <p style="margin-top: 16px;">The Kansas quote is especially relevant because it directly supports the argument for a clear, practical federal standard that avoids unenforceable product distinctions.</p>
+  </div>
+
   <div class="story-card" id="why-comment-matters">
     <h2>Why Your Organization's Comment Matters</h2>
-    <p>Federal agencies take public comments seriously. Comments from professional organizations — especially law enforcement associations — carry significant weight because they represent expert, practical perspectives on implementation.</p>
+    <p>Federal agencies take public comments seriously. Comments from professional organizations, especially law enforcement associations, carry significant weight because they represent expert, practical perspectives on implementation.</p>
     <ul>
       <li><strong>Expertise:</strong> Your members have direct experience with drug law enforcement and understand what works in practice.</li>
       <li><strong>Authority:</strong> Professional organizations speak with authority on behalf of their members and the communities they serve.</li>
-      <li><strong>Practical insight:</strong> HHS needs to understand how proposed regulations will function in the real world — not just on paper.</li>
+      <li><strong>Practical insight:</strong> HHS needs to understand how proposed regulations will function in the real world, not just on paper.</li>
       <li><strong>Unique perspective:</strong> No other group can speak to the intersection of field enforcement, laboratory analysis, and prosecution like law enforcement.</li>
     </ul>
-    <p>Your organization's comment can help shape a federal scheduling policy that is actually enforceable — protecting public safety and ensuring that law enforcement has the tools to do its job effectively.</p>
+    <p>Your organization's comment can help shape a federal scheduling policy that is actually enforceable, protecting public safety and ensuring that law enforcement has the tools to do its job effectively.</p>
   </div>
 
   <div class="story-card" id="submit">
