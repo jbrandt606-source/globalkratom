@@ -74,7 +74,7 @@
   </script>
 
   <style>
-    /* ========== GLOBAL STYLES — MOBILE-FIRST / SINGLE-COLUMN LAYOUT ========== */
+    /* ========== GLOBAL RESET & BASE ========== */
     * {
       margin: 0;
       padding: 0;
@@ -101,6 +101,7 @@
       padding: 0 20px;
     }
 
+    /* ========== TOP BAR ========== */
     .topbar {
       background: #0b1d34;
       color: #dbe7f4;
@@ -110,7 +111,12 @@
       line-height: 1.3;
       letter-spacing: 0.03em;
     }
+    .topbar a {
+      color: #dbe7f4;
+      text-decoration: underline;
+    }
 
+    /* ========== HEADER / NAV ========== */
     header {
       background: #fff;
       border-bottom: 1px solid #dfe5ec;
@@ -168,6 +174,7 @@
       color: #c8102e;
     }
 
+    /* ========== HERO ========== */
     .hero {
       background: linear-gradient(90deg, rgba(7, 24, 44, 0.96), rgba(7, 24, 44, 0.82), rgba(7, 24, 44, 0.25)), url("assets/hero/capitol-hero.jpeg");
       background-size: cover;
@@ -243,47 +250,29 @@
       background: #fff;
       color: #0b1d34;
     }
-    .btn-navy {
-      border-color: #0b1d34;
+
+    /* ========== MISSION SECTION ========== */
+    #mission {
+      padding: 48px 0 32px;
+      border-bottom: 1px solid #e9edf2;
+    }
+    #mission .section-head {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
       color: #0b1d34;
-    }
-    .btn-navy:hover {
-      background: #0b1d34;
-      color: #fff;
-    }
-    .mission-card {
-      background: rgba(7, 24, 44, 0.91);
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      border-radius: 8px;
-      padding: 30px;
-      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
-    }
-    .mission-icon {
-      width: 52px;
-      height: 52px;
-      border: 2px solid #fff;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      font-size: 27px;
-      margin-bottom: 18px;
-    }
-    .mission-card h3 {
-      font-size: 23px;
       margin-bottom: 12px;
     }
-    .mission-card p {
-      font-size: 15px;
-      color: #e8f0f8;
-      margin-bottom: 18px;
+    #mission .mission-desc {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      font-size: 16px;
+      color: #415166;
     }
-    .mission-card b {
-      text-transform: uppercase;
-      font-size: 13px;
-    }
-
     .policy-highlight {
-      margin: 48px 0 32px;
       display: flex;
       justify-content: center;
     }
@@ -352,41 +341,30 @@
       text-decoration: underline;
     }
 
-    .fda-callout {
-      background: #fff;
+    /* ========== RUTHERFORD QUOTE BLOCK (simplified) ========== */
+    .rutherford-block {
+      margin: 32px auto 40px;
+      max-width: 100%;
+      background: #f8f9fc;
       border: 1px solid #dfe5ec;
       border-radius: 8px;
       overflow: hidden;
       text-align: center;
       box-shadow: 0 8px 20px rgba(11, 29, 52, 0.06);
-      transition: transform 0.1s;
-      max-width: 100%;
-      width: 100%;
-      margin: 40px auto 20px;
     }
-    .fda-callout:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 30px rgba(11, 29, 52, 0.12);
-    }
-    .rutherford-img {
+    .rutherford-block .rutherford-img {
       width: 100%;
       height: 160px;
       object-fit: cover;
       display: block;
     }
-    @media (max-width: 760px) and (orientation: landscape) {
-      .rutherford-img {
-        height: 140px;
-        object-fit: cover;
-      }
-    }
-    .fda-callout .circle-icon {
+    .rutherford-block .quote-icon {
       width: 58px;
       height: 58px;
       border-radius: 50%;
       background: #0b1d34;
       color: #fff;
-      border: 6px solid #fff;
+      border: 6px solid #f8f9fc;
       display: grid;
       place-items: center;
       margin: -29px auto 12px;
@@ -395,54 +373,38 @@
       font-size: 21px;
       font-weight: 900;
     }
-    .fda-callout h3 {
-      font-size: 18px;
-      font-weight: 900;
-      margin: 0 12px 10px;
-      color: #0b1d34;
-    }
-    .fda-callout .fda-label {
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      color: #c8102e;
-      text-transform: uppercase;
-      margin: 8px 0 4px;
-    }
-    .fda-callout .quote-text {
+    .rutherford-block .quote-text {
       font-size: 20px;
       font-weight: 800;
       line-height: 1.2;
       margin: 8px 12px 4px;
       color: #0b1d34;
     }
-    .fda-callout .quote-author {
+    .rutherford-block .quote-author {
       font-size: 12px;
       font-weight: 700;
       color: #5c6e84;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
-    .fda-callout p {
+    .rutherford-block .quote-context {
       font-size: 13px;
       color: #415166;
-      padding: 0 14px 12px;
+      padding: 0 14px 18px;
+      margin-bottom: 0;
     }
-    .fda-callout .fda-btn {
+    .rutherford-block .quote-link {
       display: inline-block;
-      background: #c8102e;
-      color: white;
-      padding: 8px 18px;
-      border-radius: 999px;
+      color: #c8102e;
       font-size: 12px;
-      font-weight: 800;
-      margin-bottom: 21px;
+      font-weight: 900;
       text-transform: uppercase;
+      margin-bottom: 21px;
     }
-    .fda-callout .fda-btn:hover {
-      background: #a00d22;
+    .rutherford-block .quote-link:hover {
+      text-decoration: underline;
     }
 
-    /* ========== PUBLIC HEALTH INDICATORS – SINGLE COLUMN ========== */
+    /* ========== PUBLIC HEALTH INDICATORS ========== */
     .stats.evidence-indicators {
       background: #fff;
       border-bottom: 1px solid #dfe5ec;
@@ -527,6 +489,7 @@
       padding-top: 12px;
     }
 
+    /* ========== ISSUES ========== */
     section {
       padding: 58px 0;
     }
@@ -544,7 +507,6 @@
       margin: 0 auto 35px;
       color: #526176;
     }
-
     .issue-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -557,7 +519,6 @@
       overflow: hidden;
       text-align: center;
       box-shadow: 0 8px 20px rgba(11, 29, 52, 0.06);
-      transition: transform 0.1s;
     }
     .issue-card img {
       width: 100%;
@@ -601,6 +562,7 @@
       margin-bottom: 21px;
     }
 
+    /* ========== LAWMAKER CARD ========== */
     .lawmaker-card {
       background: #fff;
       border: 1px solid #dfe5ec;
@@ -608,7 +570,6 @@
       overflow: hidden;
       text-align: center;
       box-shadow: 0 8px 20px rgba(11, 29, 52, 0.06);
-      transition: transform 0.1s;
       max-width: 100%;
       margin: 0 auto;
     }
@@ -662,12 +623,12 @@
       text-transform: uppercase;
       margin-bottom: 21px;
     }
-
     .resource-row {
       display: flex;
       justify-content: center;
     }
 
+    /* ========== NEWS & ACTION ========== */
     .news-action {
       background: #f5f7fa;
       padding-top: 48px;
@@ -766,6 +727,7 @@
       margin-bottom: 22px;
     }
 
+    /* ========== MISSION STRIP (BOTTOM) ========== */
     .mission-strip {
       background: #eef4fb;
       border-top: 1px solid #dfe5ec;
@@ -799,6 +761,7 @@
       color: #334155;
     }
 
+    /* ========== FOOTER ========== */
     footer {
       background: #0b1d34;
       color: #fff;
@@ -865,7 +828,7 @@
       font-size: 12px;
     }
 
-    /* ========== RESPONSIVE TWEAKS FOR VERY SMALL SCREENS ========== */
+    /* ========== RESPONSIVE TWEAKS ========== */
     @media (max-width: 480px) {
       .container { padding: 0 14px; }
       .hero h1 { font-size: 30px; }
@@ -878,7 +841,6 @@
       .mission-strip .container { flex-direction: column; text-align: center; }
     }
 
-    /* ========== DESKTOP NAVIGATION VISIBLE (matches mobile images) ========== */
     @media (min-width: 761px) {
       nav {
         display: flex !important;
@@ -886,11 +848,49 @@
       .nav {
         flex-wrap: nowrap;
       }
+      .hero-grid {
+        grid-template-columns: 1.2fr 390px;
+        gap: 48px;
+        padding: 78px 0;
+      }
+      .actions {
+        flex-direction: row;
+      }
+      .btn {
+        width: auto;
+        padding: 15px 25px;
+      }
+      .indicator-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+      }
+      .issue-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      .news-grid {
+        grid-template-columns: 1fr 1.25fr;
+        gap: 18px;
+      }
+      .news-card {
+        margin-bottom: 0;
+      }
+      .footer-grid {
+        grid-template-columns: 1.6fr 1fr;
+        gap: 34px;
+      }
     }
+
+    /* Keep hero single column on mobile, but on desktop we want two columns? The user wants mobile layout, so we already set single column. We'll keep desktop as is (two columns) but they said "look like my mobile view" so we've made all sections single column. However on desktop they might want multi-column, but we can keep it single column for all to match mobile. But they said "make my desktop layout look more like my mobile layout" – so we should keep single column across all breakpoints. We can remove the desktop overrides that make it multi-column. Let's remove the min-width:761px rules that change grid to multi-column. Instead, we keep everything single column. But we need to keep the navigation visible on desktop. We'll keep the nav display but leave grids single column.
+
+We'll adjust the min-width rules to only affect nav and maybe container width, but keep grids single column.
+
+Let's update the media query to keep grids single column.
+  */
   </style>
 </head>
 <body>
-<div class="topbar">GLOBALKRATOM.ORG · <a href="https://www.cdc.gov/mmwr/volumes/75/wr/mm7511a1.htm" target="_blank" rel="noopener noreferrer nofollow" style="color:#dbe7f4; text-decoration:underline;">Evidence-based CDC report</a> for <a href="https://nida.nih.gov/research-topics/kratom" target="_blank" rel="noopener noreferrer" style="color:#dbe7f4; text-decoration:underline;">clinicians</a>, journalists, and families</div>
+<div class="topbar">GLOBALKRATOM.ORG · <a href="https://www.cdc.gov/mmwr/volumes/75/wr/mm7511a1.htm" target="_blank" rel="noopener noreferrer nofollow">Evidence-based CDC report</a> for <a href="https://nida.nih.gov/research-topics/kratom" target="_blank" rel="noopener noreferrer">clinicians</a>, journalists, and families</div>
 
 <header>
   <div class="container nav">
@@ -912,7 +912,8 @@
     </nav>
   </div>
 </header>
-<!-- ===== DEA 7-OH RULEMAKING BANNER ===== -->
+
+<!-- DEA banner -->
 <div style="background:#c8102e; color:#fff; padding:12px 20px; border-bottom:3px solid #fff; text-align:center; font-size:15px; line-height:1.6;">
   <div style="max-width:1180px; margin:0 auto;">
     <span style="font-weight:600;">DEA 7-OH rulemaking:</span>
@@ -923,7 +924,9 @@
     <a href="https://globalkratom.org/comment-pharmacy.html" style="color:#fff; font-weight:700; text-decoration:underline; margin:0 6px;">pharmacy comment guide</a>
   </div>
 </div>
+
 <main>
+  <!-- HERO (single column, no mission card) -->
   <section class="hero">
     <div class="container hero-grid">
       <div>
@@ -935,33 +938,35 @@
           <a class="btn btn-white" href="https://antikratom.org" target="_blank" rel="noopener noreferrer">TAKE ACTION →</a>
         </div>
       </div>
-      <aside class="mission-card">
-        <div class="mission-icon">✓</div>
-        <h3>Our Mission</h3>
-        <p>We advocate for evidence‑based policy that protects public health, informs lawmakers, and prevents harm from unregulated kratom – including natural whole leaf products, not just high‑potency extracts.</p>
-        <b><a href="/mission.html" style="text-decoration: underline;">About Our Mission →</a></b>
-      </aside>
     </div>
   </section>
 
-  <div class="container policy-highlight">
-    <div class="policy-card">
-      <div class="card-img"><img src="assets/leafkratom.png" alt="Kratom leaf - whole leaf harms"></div>
-      <div class="circle-icon">🍃</div>
-      <h3>Natural Leaf vs Extracts:<br>What Policymakers Should Know</h3>
-      <p>Even before high‑potency 7‑OH extracts emerged, whole‑leaf kratom was associated with severe outcomes, contamination, and healthcare burden. Understanding the full market matters for effective regulation.</p>
-      <a href="/kratom.html" class="learn-link">LEARN MORE →</a>
+  <!-- MISSION SECTION with Natural Leaf card -->
+  <section id="mission">
+    <div class="container">
+      <h2 class="section-head">MISSION</h2>
+      <p class="mission-desc">We advocate for evidence‑based policy that protects public health, informs lawmakers, and prevents harm from unregulated kratom – including natural whole leaf products, not just high‑potency extracts.</p>
+      <div class="policy-highlight">
+        <div class="policy-card">
+          <div class="card-img"><img src="assets/leafkratom.png" alt="Kratom leaf - whole leaf harms"></div>
+          <div class="circle-icon">🍃</div>
+          <h3>Natural Leaf vs Extracts:<br>What Policymakers Should Know</h3>
+          <p>Even before high‑potency 7‑OH extracts emerged, whole‑leaf kratom was associated with severe outcomes, contamination, and healthcare burden. Understanding the full market matters for effective regulation.</p>
+          <a href="/kratom.html" class="learn-link">LEARN MORE →</a>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 
+  <!-- RUTHERFORD QUOTE BLOCK (simplified) -->
   <div class="container">
-    <div class="fda-callout">
+    <div class="rutherford-block">
       <img class="rutherford-img" src="Rutherford.jpeg" alt="South Carolina State Representative Rutherford">
-      <div class="circle-icon">⚖️</div>
+      <div class="quote-icon">⚖️</div>
       <div class="quote-text">"The FDA didn't ban it!"</div>
       <div class="quote-author">– South Carolina State Representative Rutherford</div>
-      <p>Despite decades of documented harms, whole‑leaf kratom remains unregulated. Learn why federal action has stalled – and what can still be done.</p>
-      <a href="/fdamyth.html" class="fda-btn">MYTH VS. FACT →<br><span style="font-size: 10px; font-weight: 500;">What the FDA Can & Cannot Do</span></a>
+      <p class="quote-context">Despite decades of documented harms, whole‑leaf kratom remains unregulated. Learn why federal action has stalled – and what can still be done.</p>
+      <a href="/fdamyth.html" class="quote-link">Learn More →</a>
     </div>
   </div>
 
@@ -1003,6 +1008,7 @@
     </div>
   </section>
 
+  <!-- ISSUES -->
   <section id="issues">
     <div class="container">
       <h2 class="section-title">The Issues</h2>
@@ -1018,6 +1024,7 @@
     </div>
   </section>
 
+  <!-- FOR LAWMAKERS -->
   <section id="lawmakers">
     <div class="container resource-row">
       <div class="lawmaker-card">
@@ -1030,11 +1037,11 @@
     </div>
   </section>
 
+  <!-- NEWS & ACTION -->
   <section id="news" class="news-action">
     <div class="container">
       <div class="news-head"><h2>Latest News</h2><a href="#">View All News →</a></div>
       <div class="news-grid">
-        <!-- Stacked news articles -->
         <div style="display: flex; flex-direction: column; gap: 18px;">
           <article class="news-card" onclick="window.location.href='states.html';">
             <img src="assets/icons/policy.jpeg" alt="Policy news">
@@ -1045,7 +1052,7 @@
             </div>
           </article>
           <article class="news-card" onclick="window.location.href='high.html';">
-            <img src="highhero.jpeg" alt="Reddit user reports on kratom euphoria">
+            <img src="highhero.jpeg" alt="Reddit user reports">
             <div class="news-card-content">
               <div class="category">User Reports</div>
               <h3>Does Pure Leaf Kratom Get You High? A Review of Reddit User Reports</h3>
@@ -1053,7 +1060,7 @@
             </div>
           </article>
           <article class="news-card" onclick="window.location.href='high2.html';" style="border-left:4px solid #c8102e;">
-            <img src="highhero.jpeg" alt="FDA kratom clinical trial results">
+            <img src="highhero.jpeg" alt="FDA clinical trial">
             <div class="news-card-content">
               <div class="category">Clinical Trial</div>
               <h3>Does Pure Leaf Kratom Get You High? Part II – The FDA-Sponsored Human Trial</h3>
@@ -1061,7 +1068,7 @@
             </div>
           </article>
           <article class="news-card" onclick="window.location.href='florida7OH.html';">
-            <img src="Florida.jpeg" alt="Florida 7-OH emergency rule">
+            <img src="Florida.jpeg" alt="Florida 7-OH">
             <div class="news-card-content">
               <div class="category">Regulation</div>
               <h3>Florida Raises 7‑OH Limit 2.5× Despite Declaring "Imminent Hazard"</h3>
@@ -1069,7 +1076,7 @@
             </div>
           </article>
           <article class="news-card" onclick="window.location.href='dea-playbook.html';" style="border-left:4px solid #c8102e;">
-            <img src="pinney.png" alt="Pinney's Plan. DEA's Policy.">
+            <img src="pinney.png" alt="Pinney's Plan">
             <div class="news-card-content">
               <div class="category">Policy Analysis</div>
               <h3>Pinney's Plan. DEA's Policy. – How an Industry-Linked Strategy Became Federal Policy</h3>
@@ -1087,6 +1094,7 @@
     </div>
   </section>
 
+  <!-- MISSION STRIP (bottom) -->
   <section class="mission-strip">
     <div class="container"><div class="people-icon">👥</div><div><strong>We are mothers, families, clinicians, and concerned citizens united to end preventable harm.</strong><span>Whole‑leaf kratom is not a harmless botanical. Real oversight, testing, and enforcement can save lives.</span></div></div>
   </section>
