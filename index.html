@@ -74,7 +74,7 @@
   </script>
 
   <style>
-    /* ========== ORIGINAL STYLES (PRESERVED EXACTLY) ========== */
+    /* ========== GLOBAL STYLES — MOBILE-FIRST / SINGLE-COLUMN LAYOUT ========== */
     * {
       margin: 0;
       padding: 0;
@@ -98,15 +98,16 @@
     .container {
       max-width: 1180px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 20px;
     }
 
     .topbar {
       background: #0b1d34;
       color: #dbe7f4;
       text-align: center;
-      padding: 9px 18px;
-      font-size: 14px;
+      padding: 10px 12px;
+      font-size: 11px;
+      line-height: 1.3;
       letter-spacing: 0.03em;
     }
 
@@ -118,47 +119,50 @@
       z-index: 100;
     }
     .nav {
-      height: 82px;
+      height: auto;
+      padding: 14px 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 22px;
+      gap: 12px;
+      flex-wrap: wrap;
     }
     .brand {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 10px;
       flex-shrink: 0;
     }
     .brand img {
-      width: 54px;
-      height: 54px;
+      width: 40px;
+      height: 40px;
       object-fit: cover;
       border-radius: 6px;
     }
     .brand-title {
       font-weight: 900;
       text-transform: uppercase;
-      line-height: 0.95;
-      font-size: 22px;
+      line-height: 1.1;
+      font-size: 16px;
       letter-spacing: 0.02em;
     }
     .brand-title span {
       color: #c8102e;
     }
     .brand-sub {
-      margin-top: 7px;
-      font-size: 12px;
+      margin-top: 4px;
+      font-size: 8px;
       font-weight: 900;
       text-transform: uppercase;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.12em;
     }
     nav {
       display: flex;
-      gap: 25px;
+      gap: 16px;
       font-weight: 800;
-      font-size: 13px;
+      font-size: 12px;
       text-transform: uppercase;
+      flex-wrap: wrap;
     }
     nav a:hover {
       color: #c8102e;
@@ -172,10 +176,10 @@
     }
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.2fr 390px;
-      gap: 48px;
+      grid-template-columns: 1fr;
+      gap: 32px;
       align-items: center;
-      padding: 78px 0;
+      padding: 48px 0 56px;
     }
     .eyebrow {
       display: flex;
@@ -194,34 +198,35 @@
       background: #c8102e;
     }
     .hero h1 {
-      font-size: clamp(42px, 6vw, 68px);
-      line-height: 1.05;
+      font-size: 38px;
+      line-height: 1.1;
       font-weight: 900;
       letter-spacing: -0.03em;
       margin-bottom: 24px;
     }
     .hero p {
-      font-size: 19px;
+      font-size: 16px;
       max-width: 660px;
       color: #eef5ff;
       margin-bottom: 30px;
     }
     .actions {
       display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 12px;
     }
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 15px 25px;
+      padding: 12px 20px;
       border-radius: 5px;
       font-weight: 900;
       text-transform: uppercase;
       font-size: 14px;
       border: 2px solid transparent;
       transition: all 0.2s;
+      width: 100%;
     }
     .btn-red {
       background: #c8102e;
@@ -290,7 +295,7 @@
       text-align: center;
       box-shadow: 0 8px 20px rgba(11, 29, 52, 0.06);
       transition: transform 0.1s;
-      max-width: 380px;
+      max-width: 100%;
       width: 100%;
     }
     .policy-card:hover {
@@ -355,7 +360,7 @@
       text-align: center;
       box-shadow: 0 8px 20px rgba(11, 29, 52, 0.06);
       transition: transform 0.1s;
-      max-width: 380px;
+      max-width: 100%;
       width: 100%;
       margin: 40px auto 20px;
     }
@@ -437,11 +442,11 @@
       background: #a00d22;
     }
 
-    /* ========== PUBLIC HEALTH INDICATORS – LARGER LOGOS ========== */
+    /* ========== PUBLIC HEALTH INDICATORS – SINGLE COLUMN ========== */
     .stats.evidence-indicators {
       background: #fff;
       border-bottom: 1px solid #dfe5ec;
-      padding: 56px 0 64px;
+      padding: 40px 0;
     }
     .stats-kicker {
       font-size: 13px;
@@ -454,22 +459,22 @@
     }
     .stats h2 {
       text-align: center;
-      font-size: 28px;
+      font-size: 24px;
       font-weight: 800;
       color: #0b1d34;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
     .indicators-sub {
       text-align: center;
-      font-size: 16px;
+      font-size: 14px;
       color: #5a6e7c;
       max-width: 650px;
-      margin: 0 auto 48px;
+      margin: 0 auto 32px;
     }
     .indicator-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
+      grid-template-columns: 1fr;
+      gap: 20px;
     }
     .indicator-card {
       background: #fff;
@@ -487,7 +492,7 @@
       border-color: #c8102e;
     }
     .agency-icon {
-      width: 100px;
+      width: 70px;
       height: auto;
       flex-shrink: 0;
     }
@@ -503,7 +508,7 @@
       margin-bottom: 8px;
     }
     .indicator-number {
-      font-size: 42px;
+      font-size: 36px;
       font-weight: 900;
       color: #c8102e;
       line-height: 1.1;
@@ -542,8 +547,8 @@
 
     .issue-grid {
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 18px;
+      grid-template-columns: 1fr;
+      gap: 24px;
     }
     .issue-card {
       background: #fff;
@@ -604,7 +609,7 @@
       text-align: center;
       box-shadow: 0 8px 20px rgba(11, 29, 52, 0.06);
       transition: transform 0.1s;
-      max-width: 380px;
+      max-width: 100%;
       margin: 0 auto;
     }
     .lawmaker-card:hover {
@@ -672,6 +677,8 @@
       justify-content: space-between;
       align-items: end;
       margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 12px;
     }
     .news-head h2 {
       font-size: 25px;
@@ -687,7 +694,7 @@
     }
     .news-grid {
       display: grid;
-      grid-template-columns: 1fr 1.25fr;
+      grid-template-columns: 1fr;
       gap: 18px;
     }
     .news-card {
@@ -697,6 +704,7 @@
       overflow: hidden;
       transition: transform 0.2s;
       cursor: pointer;
+      margin-bottom: 18px;
     }
     .news-card:hover {
       transform: translateY(-4px);
@@ -768,6 +776,7 @@
       display: flex;
       align-items: center;
       gap: 20px;
+      flex-wrap: wrap;
     }
     .people-icon {
       width: 64px;
@@ -797,8 +806,8 @@
     }
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.6fr 1fr;
-      gap: 34px;
+      grid-template-columns: 1fr;
+      gap: 32px;
       padding-bottom: 28px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.16);
     }
@@ -856,39 +865,27 @@
       font-size: 12px;
     }
 
-    @media (max-width: 1050px) {
-      nav { display: none; }
-      .hero-grid { grid-template-columns: 1fr; }
-      .mission-card { max-width: 520px; }
-      .indicator-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-      .issue-grid { grid-template-columns: repeat(3, 1fr); }
-      .news-grid { grid-template-columns: 1fr; }
-      .action-card { grid-column: span 1; }
+    /* ========== RESPONSIVE TWEAKS FOR VERY SMALL SCREENS ========== */
+    @media (max-width: 480px) {
+      .container { padding: 0 14px; }
+      .hero h1 { font-size: 30px; }
+      .brand-title { font-size: 14px; }
+      .brand img { width: 34px; height: 34px; }
+      nav { font-size: 10px; gap: 10px; }
+      .indicator-card { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .agency-icon { width: 60px; }
+      .indicator-number { font-size: 30px; }
+      .mission-strip .container { flex-direction: column; text-align: center; }
     }
-    @media (max-width: 760px) {
-      .container { padding: 0 20px; }
-      .topbar { font-size: 11px; line-height: 1.3; padding: 10px 12px; }
-      .nav { height: auto; padding: 14px 0; flex-wrap: wrap; gap: 12px; }
-      .brand { gap: 10px; }
-      .brand img { width: 40px; height: 40px; }
-      .brand-title { font-size: 16px; line-height: 1.1; }
-      .brand-sub { font-size: 8px; letter-spacing: 0.12em; }
-      .hero-grid { padding: 48px 0 56px; gap: 32px; }
-      .hero h1 { font-size: 38px; line-height: 1.1; }
-      .hero p { font-size: 16px; }
-      .actions { flex-direction: column; gap: 12px; }
-      .btn { width: 100%; padding: 12px 20px; }
-      .indicator-grid { grid-template-columns: 1fr; gap: 20px; }
-      .indicator-number { font-size: 36px; }
-      .agency-icon { width: 70px; }
-      .issue-grid { grid-template-columns: 1fr; gap: 24px; }
-      .lawmaker-card { max-width: 100%; }
-      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-      .policy-card, .fda-callout { max-width: 100%; }
-      .stats h2 { font-size: 24px; margin-bottom: 12px; }
-      .indicators-sub { font-size: 14px; margin-bottom: 32px; }
-      .stats.evidence-indicators { padding: 40px 0; }
-      .news-card { margin-bottom: 18px; }
+
+    /* ========== DESKTOP NAVIGATION VISIBLE (matches mobile images) ========== */
+    @media (min-width: 761px) {
+      nav {
+        display: flex !important;
+      }
+      .nav {
+        flex-wrap: nowrap;
+      }
     }
   </style>
 </head>
@@ -915,7 +912,7 @@
     </nav>
   </div>
 </header>
-<!-- ===== UPDATED: DEA 7-OH RULEMAKING BANNER (simple sentence + links) ===== -->
+<!-- ===== DEA 7-OH RULEMAKING BANNER ===== -->
 <div style="background:#c8102e; color:#fff; padding:12px 20px; border-bottom:3px solid #fff; text-align:center; font-size:15px; line-height:1.6;">
   <div style="max-width:1180px; margin:0 auto;">
     <span style="font-weight:600;">DEA 7-OH rulemaking:</span>
@@ -1037,7 +1034,7 @@
     <div class="container">
       <div class="news-head"><h2>Latest News</h2><a href="#">View All News →</a></div>
       <div class="news-grid">
-        <!-- Stacked news articles in first column -->
+        <!-- Stacked news articles -->
         <div style="display: flex; flex-direction: column; gap: 18px;">
           <article class="news-card" onclick="window.location.href='states.html';">
             <img src="assets/icons/policy.jpeg" alt="Policy news">
@@ -1055,7 +1052,6 @@
               <div class="date">June 6, 2026</div>
             </div>
           </article>
-          <!-- NEW: high2.html – FDA Trial article -->
           <article class="news-card" onclick="window.location.href='high2.html';" style="border-left:4px solid #c8102e;">
             <img src="highhero.jpeg" alt="FDA kratom clinical trial results">
             <div class="news-card-content">
@@ -1064,7 +1060,6 @@
               <div class="date">June 29, 2026</div>
             </div>
           </article>
-          <!-- Florida 7-OH article -->
           <article class="news-card" onclick="window.location.href='florida7OH.html';">
             <img src="Florida.jpeg" alt="Florida 7-OH emergency rule">
             <div class="news-card-content">
@@ -1073,15 +1068,14 @@
               <div class="date">June 25, 2026</div>
             </div>
           </article>
-          <!-- NEW: dea-playbook.html – DEA / Pinney Associates policy comparison -->
-<article class="news-card" onclick="window.location.href='dea-playbook.html';" style="border-left:4px solid #c8102e;">
-  <img src="pinney.png" alt="Pinney's Plan. DEA's Policy.">
-  <div class="news-card-content">
-    <div class="category">Policy Analysis</div>
-    <h3>Pinney's Plan. DEA's Policy. – How an Industry-Linked Strategy Became Federal Policy</h3>
-    <div class="date">July 9, 2026</div>
-  </div>
-</article>
+          <article class="news-card" onclick="window.location.href='dea-playbook.html';" style="border-left:4px solid #c8102e;">
+            <img src="pinney.png" alt="Pinney's Plan. DEA's Policy.">
+            <div class="news-card-content">
+              <div class="category">Policy Analysis</div>
+              <h3>Pinney's Plan. DEA's Policy. – How an Industry-Linked Strategy Became Federal Policy</h3>
+              <div class="date">July 9, 2026</div>
+            </div>
+          </article>
         </div>
         <aside id="action" class="action-card">
           <div class="megaphone">!</div>
