@@ -215,26 +215,19 @@
             line-height: 1.7;
         }
         .story-card ul {
-            margin-left: 30px;
-            margin-bottom: 20px;
-            list-style: none;
-            padding-left: 0;
+            margin: 16px 0 20px 24px;
+            padding-left: 8px;
+            list-style: disc;
         }
         .story-card li {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-size: 16px;
             line-height: 1.6;
-            padding-left: 24px;
-            position: relative;
+            padding-left: 0;
+            position: static;
         }
         .story-card li::before {
-            content: "•";
-            color: var(--red);
-            font-weight: 900;
-            font-size: 20px;
-            position: absolute;
-            left: 0;
-            top: -2px;
+            content: none;
         }
         .story-card blockquote {
             background: #f2f6fc;
@@ -322,29 +315,6 @@
         .callout-box strong {
             color: var(--red);
         }
-        .evidence-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8px 28px;
-            margin: 18px 0 10px;
-            padding: 0;
-            list-style: none;
-        }
-        .evidence-grid li {
-            margin-bottom: 6px;
-            font-size: 15px;
-            display: flex;
-            align-items: flex-start;
-            gap: 8px;
-            padding-left: 0;
-        }
-        .evidence-grid li::before {
-            content: "•";
-            color: var(--red);
-            font-weight: 900;
-            font-size: 18px;
-            flex-shrink: 0;
-        }
         .image-pair {
             display: flex;
             gap: 20px;
@@ -359,7 +329,7 @@
             border-radius: 12px;
             border: 1px solid var(--line);
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
         }
         .image-pair figure img {
             width: 100%;
@@ -455,10 +425,6 @@
             .highlight-pdf a {
                 justify-content: center;
             }
-            .evidence-grid {
-                grid-template-columns: 1fr;
-                gap: 6px;
-            }
             .image-pair {
                 flex-direction: column;
                 align-items: center;
@@ -466,6 +432,9 @@
             .image-pair figure {
                 max-width: 100%;
                 flex: 1 1 auto;
+            }
+            .story-card ul {
+                margin-left: 20px;
             }
         }
     </style>
@@ -537,7 +506,7 @@
 
             <p>These accounts do not prove that every kratom consumer has a substance use disorder. They do, however, document warning signs that regulators cannot dismiss:</p>
 
-            <ul class="evidence-grid">
+            <ul>
                 <li>Years of daily use</li>
                 <li>Severe withdrawal</li>
                 <li>Difficulty tapering</li>
