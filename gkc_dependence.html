@@ -23,7 +23,7 @@
     <meta name="author" content="Global Kratom Policy Review">
     <meta name="robots" content="index, follow">
 
-    <!-- ===== OPEN GRAPH / SOCIAL MEDIA META TAGS ===== -->
+    <!-- Open Graph / Social Media -->
     <meta property="og:title" content="Whole-Leaf Kratom Dependence Cannot Be Ignored">
     <meta property="og:description" content="Connecticut consumer accounts reveal severe withdrawal, daily dependence, and functional reliance on whole-leaf kratom—not just concentrated 7-OH products.">
     <meta property="og:type" content="article">
@@ -35,11 +35,10 @@
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Whole-Leaf Kratom Dependence Cannot Be Ignored">
-    <meta name="twitter:description" content="Connecticut consumer accounts reveal severe withdrawal, daily dependence, and functional reliance on whole-leaf kratom—not just concentrated 7-OH products.">
+    <meta name="twitter:description" content="Connecticut consumer accounts reveal severe withdrawal, daily dependence, and functional reliance on whole-leaf kratom.">
     <meta name="twitter:image" content="https://www.globalkratom.org/highhero.jpeg">
 
     <link rel="canonical" href="https://www.globalkratom.org/gkc_dependence.html">
-    <!-- ============================================== -->
 
     <link rel="icon" type="image/png" href="/review.png">
     <link rel="shortcut icon" href="/review.png">
@@ -218,11 +217,24 @@
         .story-card ul {
             margin-left: 30px;
             margin-bottom: 20px;
+            list-style: none;
+            padding-left: 0;
         }
         .story-card li {
             margin-bottom: 10px;
             font-size: 16px;
             line-height: 1.6;
+            padding-left: 24px;
+            position: relative;
+        }
+        .story-card li::before {
+            content: "•";
+            color: var(--red);
+            font-weight: 900;
+            font-size: 20px;
+            position: absolute;
+            left: 0;
+            top: -2px;
         }
         .story-card blockquote {
             background: #f2f6fc;
@@ -310,25 +322,57 @@
         .callout-box strong {
             color: var(--red);
         }
-        .warning-grid {
+        .evidence-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px 28px;
+            gap: 8px 28px;
             margin: 18px 0 10px;
             padding: 0;
             list-style: none;
         }
-        .warning-grid li {
+        .evidence-grid li {
             margin-bottom: 6px;
             font-size: 15px;
             display: flex;
             align-items: flex-start;
             gap: 8px;
+            padding-left: 0;
         }
-        .warning-grid li::before {
-            content: "⚠️";
-            font-size: 15px;
+        .evidence-grid li::before {
+            content: "•";
+            color: var(--red);
+            font-weight: 900;
+            font-size: 18px;
             flex-shrink: 0;
+        }
+        .image-pair {
+            display: flex;
+            gap: 20px;
+            margin: 28px 0 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .image-pair figure {
+            flex: 1 1 200px;
+            max-width: 280px;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid var(--line);
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+        .image-pair figure img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+        }
+        .image-pair figcaption {
+            padding: 10px 14px 14px;
+            font-size: 13px;
+            color: var(--muted);
+            text-align: center;
+            font-weight: 500;
         }
         .footnote {
             font-size: 14px;
@@ -411,9 +455,17 @@
             .highlight-pdf a {
                 justify-content: center;
             }
-            .warning-grid {
+            .evidence-grid {
                 grid-template-columns: 1fr;
                 gap: 6px;
+            }
+            .image-pair {
+                flex-direction: column;
+                align-items: center;
+            }
+            .image-pair figure {
+                max-width: 100%;
+                flex: 1 1 auto;
             }
         }
     </style>
@@ -459,33 +511,33 @@
 
     <div class="container">
 
-        <!-- === LEAD === -->
+        <!-- Lead -->
         <div class="story-card">
             <p style="font-size:19px; font-weight:600; color:var(--navy); margin-bottom:8px;">A Connecticut kratom advocacy statement was intended to show why "natural leaf" kratom should remain legal. Instead, several of its own consumer accounts raise serious concerns about long-term dependence, withdrawal, and an inability to function without continued kratom use.</p>
-            <p>Importantly, these accounts describe <strong>whole-leaf kratom</strong>, not concentrated 7-hydroxymitragynine tablets or synthetic derivatives. The products are repeatedly identified as "pure leaf," "raw leaf," "natural kratom powder," "organic," and "unenhanced." Although the statement provides no laboratory results, these were most likely conventional leaf products containing less than the DEA's proposed 0.05% 7-OH threshold. That means the dependence described cannot simply be blamed on newer, high-potency 7-OH products.</p>
-            <p style="font-size:14px; color:var(--muted); margin-top:4px;">Source: KCAC_Position_Statement_Connecticut_Kratom_Ban+(1).pdf</p>
+            <p>Importantly, these accounts describe <strong>whole-leaf kratom</strong>, not concentrated 7‑hydroxymitragynine tablets or synthetic derivatives. The products are repeatedly identified as "pure leaf," "raw leaf," "natural kratom powder," "organic," and "unenhanced." The products were described as conventional whole‑leaf or raw‑leaf kratom and were therefore likely—but not proven—to contain less than the proposed 0.05% 7‑OH threshold. The statement provides no laboratory results for the products used. That means the dependence described cannot simply be blamed on newer, high‑potency 7‑OH products.</p>
+            <p style="font-size:14px; color:var(--muted); margin-top:4px;">Source: Kratom Consumer Advisory Council, “The Severe Impact of Connecticut’s Blanket Kratom Ban on Its Citizens” (2026).</p>
         </div>
 
-        <!-- === DAILY USE & SEVERE WITHDRAWAL === -->
+        <!-- Daily Use and Severe Withdrawal -->
         <div class="story-card">
             <h2>Daily Use and Severe Withdrawal</h2>
             <p>The clearest admission comes from a Connecticut resident who began using kratom in 2014:</p>
             <blockquote>
                 "I have used it daily since then."
-                <div class="attribution">— Connecticut resident, KCAC statement</div>
+                <div class="attribution">Connecticut resident, KCAC statement</div>
             </blockquote>
             <p>She then states:</p>
             <blockquote>
                 "I do have pretty severe withdrawals from kratom."
-                <div class="attribution">— Same resident, KCAC statement</div>
+                <div class="attribution">Same resident, KCAC statement</div>
             </blockquote>
-            <p>She says she intends to keep taking it for as long as possible because she is worried about what she might do without it. This is direct evidence of prolonged daily use, physical withdrawal, and fear of discontinuation involving ordinary kratom leaf.</p>
+            <p>She says she intends to keep taking it for as long as possible because she is worried about what she might do without it. This is direct evidence of prolonged daily use and self‑reported severe withdrawal, accompanied by fear of discontinuation.</p>
 
             <p>Another consumer reports tapering daily doses to make the remaining supply last longer. Others describe the loss of access as "devastating," say they can no longer function normally, or explain that they relocated to another state to maintain access.</p>
 
             <p>These accounts do not prove that every kratom consumer has a substance use disorder. They do, however, document warning signs that regulators cannot dismiss:</p>
 
-            <ul class="warning-grid">
+            <ul class="evidence-grid">
                 <li>Years of daily use</li>
                 <li>Severe withdrawal</li>
                 <li>Difficulty tapering</li>
@@ -493,69 +545,83 @@
                 <li>Continued use despite legal consequences</li>
                 <li>A belief that ordinary functioning is impossible without the substance</li>
             </ul>
+
+            <!-- Advocacy images -->
+            <div class="image-pair">
+                <figure>
+                    <img src="saved2.jpeg" alt="Kratom advocacy signs: 'Leaf It to Kratom,' 'Kratom Saved Me,' 'Plant Over Pharma'">
+                    <figcaption>Kratom advocacy messages from Connecticut consumers</figcaption>
+                </figure>
+                <figure>
+                    <img src="saved.jpeg" alt="Kratom advocacy sticker: 'Kratom Saved Me Est. 2019'">
+                    <figcaption>"Kratom Saved Me" — a common refrain in consumer testimony</figcaption>
+                </figure>
+            </div>
         </div>
 
-        <!-- === DEPENDENCE NOT LIMITED TO 7-OH === -->
+        <!-- Dependence Not Limited to 7-OH -->
         <div class="story-card">
-            <h2>Dependence Is Not Limited to Enhanced 7-OH</h2>
-            <p>The statement attempts to separate whole-leaf kratom from concentrated 7-OH products. That distinction may be relevant to potency, but it does not eliminate the dependence concerns described by the consumers themselves.</p>
+            <h2>Dependence Is Not Limited to Enhanced 7‑OH</h2>
+            <p>The statement attempts to separate whole‑leaf kratom from concentrated 7‑OH products. That distinction may be relevant to potency, but it does not eliminate the dependence concerns described by the consumers themselves.</p>
 
             <p>One recovery specialist quoted in the document acknowledges that some people used kratom to stop opioids but later could not stop kratom:</p>
             <blockquote>
                 "Some people were not able to taper off kratom."
-                <div class="attribution">— Recovery specialist, KCAC statement</div>
+                <div class="attribution">Recovery specialist, KCAC statement</div>
             </blockquote>
             <p>That is an important admission. Replacing heroin or prescription opioids with kratom may reduce certain immediate risks, but substitution is not the same as recovery. Some users may simply exchange one form of opioid dependence for another.</p>
         </div>
 
-        <!-- === WITHDRAWAL MISTAKEN FOR PROOF === -->
+        <!-- Withdrawal Can Be Mistaken -->
         <div class="story-card">
             <h2>Withdrawal Can Be Mistaken for Proof That Kratom Is Necessary</h2>
             <p>Several consumers describe worsening pain, sleeplessness, fatigue, anxiety, or loss of motivation after stopping kratom. Those symptoms may reflect the return of an underlying condition. But after years of repeated use, they may also reflect withdrawal, rebound symptoms, or both.</p>
-            <p>The advocacy statement assumes that feeling worse after stopping proves kratom was successfully treating a medical condition. It does not consider that prolonged exposure may have contributed to the distress experienced after discontinuation.</p>
+            <p>The advocacy statement presents worsening symptoms after discontinuation primarily as evidence that kratom had been treating the underlying conditions. It does not meaningfully examine whether withdrawal, rebound symptoms, or both may also have contributed.</p>
             <div class="callout-box">
-                <p><strong>That uncertainty</strong> is precisely why an unapproved, opioid-active product should not be sold as though it were an ordinary supplement.</p>
+                <p><strong>That uncertainty</strong> is precisely why an unapproved, opioid‑active product should not be sold as though it were an ordinary supplement.</p>
             </div>
         </div>
 
-        <!-- === WHY WHOLE-LEAF SHOULD BE SCHEDULED === -->
+        <!-- Why Whole-Leaf Should Be Scheduled -->
         <div class="story-card">
-            <h2>Why Whole-Leaf Kratom Should Be Scheduled</h2>
+            <h2>Why Whole‑Leaf Kratom Should Be Scheduled</h2>
             <p>The Connecticut testimonies support several conclusions:</p>
             <ul>
-                <li>Whole-leaf kratom can be used daily for many years.</li>
+                <li>Botanical kratom can be used daily for many years.</li>
                 <li>Some consumers report severe withdrawal and difficulty tapering.</li>
                 <li>Others describe profound psychological and functional reliance.</li>
                 <li>The product is being used without FDA approval or standardized medical supervision for chronic pain, opioid addiction, anxiety, depression, ADHD, fibromyalgia, fatigue, and sleep problems.</li>
             </ul>
-            <p>The statement itself acknowledges that no kratom-derived product has been FDA-approved for any medical indication and that additional controlled clinical trials are needed.</p>
-            <p><strong>Scheduling only products above a 0.05% 7-OH threshold would therefore address only part of the problem.</strong> These accounts involve ordinary leaf products that were most likely below that limit, yet they still describe daily use, withdrawal, failed tapering, and an inability to function without continued access.</p>
+            <p>The statement itself acknowledges that no kratom‑derived product has been FDA‑approved for any medical indication and that additional controlled clinical trials are needed.</p>
+            <p><strong>Scheduling only products above a 0.05% 7‑OH threshold would therefore address only part of the problem.</strong> These accounts involve ordinary leaf products that were most likely below that limit, yet they still describe daily use, withdrawal, failed tapering, and an inability to function without continued access.</p>
+
+            <p>These testimonies do not, by themselves, complete the federal scheduling analysis. They do, however, provide relevant real‑world evidence of dependence, withdrawal, prolonged daily use, and unsuccessful tapering involving whole‑leaf kratom—evidence that should be considered alongside the absence of FDA‑approved medical use and the broader pharmacologic and public‑health record.</p>
         </div>
 
-        <!-- === THE LEAF IS PART OF THE PROBLEM === -->
+        <!-- The Leaf Is Part of the Problem -->
         <div class="story-card">
             <h2>The Leaf Is Part of the Problem</h2>
             <p>The people quoted in this statement deserve compassion, appropriate pain care, and medically supervised treatment. But compassion should not require ignoring what their stories reveal.</p>
             <blockquote style="font-size:20px; font-weight:700; color:var(--navy); border-left-color:var(--navy);">
                 The strongest evidence of dependence often comes from those who believe they cannot live normally without the drug.
             </blockquote>
-            <p>These Connecticut accounts show that kratom dependence is not confined to concentrated or synthetic 7-OH. It can occur with whole-leaf kratom itself. That evidence supports treating the botanical product as a serious opioid-active substance and placing it in Schedule I, rather than creating a regulatory loophole for products below the proposed 0.05% 7-OH threshold.</p>
+            <p>These Connecticut accounts show that kratom dependence is not confined to concentrated or synthetic 7‑OH. It can occur with whole‑leaf kratom itself. That evidence supports treating the botanical product as a serious opioid‑active substance and placing it in Schedule I, rather than creating a regulatory loophole for products below the proposed 0.05% 7‑OH threshold.</p>
         </div>
 
-        <!-- === HIGHLIGHTED PDF CALLOUT === -->
+        <!-- Highlighted PDF callout -->
         <div class="highlight-pdf">
             <div class="pdf-text">
-                <span class="pdf-icon">📄 SOURCE DOCUMENT</span>
+                <span class="pdf-icon">Source Document</span>
                 <p class="label">Read the Connecticut KCAC Statement</p>
-                <p>We've highlighted the consumer accounts and admissions that document daily use, severe withdrawal, failed tapering, and functional dependence on whole-leaf kratom.</p>
+                <p>We have highlighted the consumer accounts and admissions that document daily use, severe withdrawal, failed tapering, and functional dependence on whole‑leaf kratom.</p>
             </div>
             <a href="gcac.pdf" target="_blank">Read the highlighted document</a>
         </div>
 
-        <!-- === FOOTNOTE === -->
+        <!-- Footnote -->
         <div class="story-card" style="margin-top:24px;">
             <div class="footnote" style="border-top:0; padding-top:0; margin-top:0;">
-                <strong>Disclaimer:</strong> This analysis is based on the KCAC Position Statement on Connecticut Kratom Ban and related consumer testimonies. Kratom is not FDA-approved for any medical use and carries risks including dependence, withdrawal, and toxicity. The highlighted document is provided for educational and policy purposes.
+                <strong>Disclaimer:</strong> This analysis is based on the Kratom Consumer Advisory Council position statement on Connecticut's blanket kratom ban and related consumer testimonies. Kratom is not FDA‑approved for any medical use and carries risks including dependence, withdrawal, and toxicity. The highlighted document is provided for educational and policy purposes.
             </div>
         </div>
 
