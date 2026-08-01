@@ -27,19 +27,19 @@
     <meta property="og:description" content="An analysis of kratom shipping records containing 'not for human consumption' and 'external use' language, and the evidence FDA may consider when determining a product's intended use.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.globalkratom.org/shipment/human-consumption.html">
-    <meta property="og:image" content="https://www.globalkratom.org/kratom_products.png">
+    <meta property="og:image" content="https://www.globalkratom.org/human.webp">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:type" content="image/webp">
     <meta property="og:site_name" content="Global Kratom Policy Review">
     <meta property="og:locale" content="en_US">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content='"Not for Human Consumption"? What Kratom Shipping Records Reveal'>
     <meta name="twitter:description" content="An analysis of kratom shipping records containing 'not for human consumption' and 'external use' language, and the evidence FDA may consider when determining a product's intended use.">
-    <meta name="twitter:image" content="https://www.globalkratom.org/kratom_products.png">
+    <meta name="twitter:image" content="https://www.globalkratom.org/human.webp">
 
-    <meta name="image" content="https://www.globalkratom.org/kratom_products.png">
+    <meta name="image" content="https://www.globalkratom.org/human.webp">
 
     <link rel="canonical" href="https://www.globalkratom.org/shipment/human-consumption.html">
 
@@ -179,7 +179,7 @@
         }
 
         .hero-full {
-            background: linear-gradient(135deg, rgba(8, 24, 38, 0.88) 0%, rgba(8, 24, 38, 0.75) 50%, rgba(8, 24, 38, 0.55) 100%), url("/kratom_products.png");
+            background: linear-gradient(135deg, rgba(8, 24, 38, 0.85) 0%, rgba(8, 24, 38, 0.70) 50%, rgba(8, 24, 38, 0.50) 100%), url("/human.webp");
             background-size: cover;
             background-position: center;
             color: white;
@@ -194,58 +194,6 @@
             align-items: center;
             position: relative;
             z-index: 2;
-        }
-        .hero-overlay-images {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-            overflow: hidden;
-        }
-        .hero-overlay-images .warehouse {
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            height: 70%;
-            width: 30%;
-            opacity: 0.12;
-            object-fit: cover;
-            object-position: left bottom;
-        }
-        .hero-overlay-images .bol {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            opacity: 0.08;
-            font-family: 'Courier New', monospace;
-            font-size: 14px;
-            color: white;
-            text-align: right;
-            line-height: 1.6;
-            letter-spacing: 1px;
-            pointer-events: none;
-        }
-        .hero-overlay-images .bol span {
-            display: block;
-            font-size: 10px;
-            opacity: 0.6;
-        }
-        .hero-overlay-badge {
-            position: absolute;
-            top: 30px;
-            right: 30px;
-            background: var(--red);
-            color: white;
-            padding: 6px 18px;
-            border-radius: 40px;
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            z-index: 3;
         }
         .hero-content {
             max-width: 700px;
@@ -313,11 +261,6 @@
             padding-left: 20px;
             margin-bottom: 24px;
             line-height: 1.2;
-        }
-        .section-title.centered {
-            border-left: 0;
-            padding-left: 0;
-            text-align: center;
         }
 
         .story-card {
@@ -530,74 +473,197 @@
 
         .evidence-panel {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 16px;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            gap: 12px;
             margin: 16px 0;
         }
         .evidence-panel .panel {
             background: var(--soft);
             border-radius: var(--radius);
-            padding: 18px 20px;
+            padding: 14px 16px;
             border: 1px solid var(--line);
             border-top: 4px solid var(--red);
+            text-align: center;
         }
         .evidence-panel .panel h4 {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 800;
             color: var(--navy);
             text-transform: uppercase;
             letter-spacing: 0.3px;
-            margin: 0 0 6px;
+            margin: 0 0 4px;
         }
         .evidence-panel .panel .quote {
-            font-size: 15px;
+            font-size: 14px;
             color: var(--text);
             font-style: italic;
             margin: 4px 0;
         }
         .evidence-panel .panel .note {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--muted);
-            margin-top: 8px;
+            margin-top: 6px;
         }
         .evidence-panel .panel .label-tag {
             display: inline-block;
             background: var(--navy);
             color: white;
-            font-size: 10px;
+            font-size: 9px;
             font-weight: 700;
             padding: 2px 10px;
             border-radius: 20px;
             text-transform: uppercase;
             letter-spacing: 0.3px;
-            margin-top: 6px;
+            margin-top: 4px;
         }
         .evidence-panel .panel .label-tag.red {
             background: var(--red);
         }
 
-        .source-link {
-            display: inline-block;
-            color: var(--red);
-            font-weight: 700;
-            text-decoration: underline;
-        }
-        .source-link:hover {
-            color: var(--navy);
-        }
-
-        .editor-note {
+        .chain-of-evidence {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            padding: 20px 0;
             background: var(--soft);
             border-radius: var(--radius);
-            padding: 18px 24px;
-            margin-top: 28px;
-            border-left: 4px solid var(--muted);
-            font-size: 15px;
+            border: 1px solid var(--line);
+            margin: 16px 0;
+        }
+        .chain-of-evidence .row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .chain-of-evidence .node {
+            background: var(--navy);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 700;
+            text-align: center;
+        }
+        .chain-of-evidence .node.highlight {
+            background: var(--red);
+        }
+        .chain-of-evidence .arrow-down {
+            font-size: 20px;
             color: var(--muted);
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--red);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 60px;
+            font-weight: 800;
+            font-size: 14px;
+            border: 2px solid var(--red);
+            transition: 0.2s;
+            text-decoration: none;
+        }
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--red);
+            box-shadow: 0 0 30px rgba(200, 16, 46, 0.15);
+        }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            color: var(--navy);
+            padding: 12px 24px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 14px;
+            border: 2px solid var(--line);
+            transition: 0.2s;
+            text-decoration: none;
+        }
+        .btn-secondary:hover {
+            background: var(--navy);
+            color: white;
+            border-color: var(--navy);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 12px 0;
+        }
+
+        .evidence-badge {
+            display: inline-block;
+            background: #1a3a5a;
+            color: white;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 14px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .figure-box {
+            background: white;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: var(--shadow);
+        }
+        .figure-box img {
+            border-radius: 8px;
+            border: 1px solid var(--line);
+        }
+        .figure-box .caption {
+            font-size: 14px;
+            color: var(--muted);
+            margin-top: 12px;
             line-height: 1.6;
         }
-        .editor-note strong {
-            color: var(--text);
+        .figure-box .badge-upper {
+            float: right;
+            background: var(--red);
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-top: -8px;
+        }
+
+        .key-point-box {
+            background: var(--navy);
+            color: white;
+            border-radius: var(--radius);
+            padding: 28px 34px;
+            border-left: 6px solid var(--red);
+            margin: 32px 0 16px;
+        }
+        .key-point-box h3 {
+            font-size: 20px;
+            font-weight: 800;
+            color: white;
+            margin: 0 0 8px;
+        }
+        .key-point-box p {
+            font-size: 17px;
+            color: #dbe7f4;
+            margin: 0;
+            max-width: 100%;
         }
 
         .sidebar {
@@ -644,45 +710,6 @@
             color: var(--red)
         }
 
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--red);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 60px;
-            font-weight: 800;
-            font-size: 14px;
-            border: 2px solid var(--red);
-            transition: 0.2s;
-            text-decoration: none;
-        }
-        .btn-primary:hover {
-            background: transparent;
-            color: var(--red);
-            box-shadow: 0 0 30px rgba(200, 16, 46, 0.15);
-        }
-        .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: transparent;
-            color: var(--navy);
-            padding: 12px 24px;
-            border-radius: 60px;
-            font-weight: 700;
-            font-size: 14px;
-            border: 2px solid var(--line);
-            transition: 0.2s;
-            text-decoration: none;
-        }
-        .btn-secondary:hover {
-            background: var(--navy);
-            color: white;
-            border-color: var(--navy);
-        }
-
         footer {
             margin-top: 40px;
             background: var(--navy);
@@ -699,11 +726,28 @@
             color: white;
         }
 
-        .btn-group {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin: 12px 0;
+        .source-link {
+            display: inline-block;
+            color: var(--red);
+            font-weight: 700;
+            text-decoration: underline;
+        }
+        .source-link:hover {
+            color: var(--navy);
+        }
+
+        .editor-note {
+            background: var(--soft);
+            border-radius: var(--radius);
+            padding: 18px 24px;
+            margin-top: 28px;
+            border-left: 4px solid var(--muted);
+            font-size: 15px;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+        .editor-note strong {
+            color: var(--text);
         }
 
         @media(max-width:1024px) {
@@ -714,13 +758,6 @@
             .hero-right {
                 grid-template-columns: 1fr 1fr;
             }
-            .hero-overlay-images .warehouse {
-                width: 25%;
-                opacity: 0.08;
-            }
-            .hero-overlay-images .bol {
-                display: none;
-            }
             .two-col {
                 grid-template-columns: 1fr;
             }
@@ -728,7 +765,7 @@
                 grid-template-columns: 1fr 1fr;
             }
             .evidence-panel {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
             }
             .comparison-table {
                 grid-template-columns: 1fr;
@@ -815,16 +852,6 @@
             .hero-stat .label {
                 font-size: 11px;
             }
-            .hero-overlay-images .warehouse {
-                width: 20%;
-                opacity: 0.06;
-            }
-            .hero-overlay-badge {
-                top: 16px;
-                right: 16px;
-                font-size: 9px;
-                padding: 4px 12px;
-            }
             .story-card {
                 padding: 20px 16px;
                 margin: 24px 0;
@@ -865,8 +892,12 @@
             .two-col .col {
                 padding: 16px 18px;
             }
+            .evidence-panel {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
             .evidence-panel .panel {
-                padding: 14px 16px;
+                padding: 12px 14px;
             }
             .btn-group {
                 flex-direction: column;
@@ -874,6 +905,15 @@
             .btn-group .btn-primary,
             .btn-group .btn-secondary {
                 justify-content: center;
+            }
+            .figure-box {
+                padding: 12px;
+            }
+            .key-point-box {
+                padding: 20px 22px;
+            }
+            .key-point-box p {
+                font-size: 15px;
             }
             .sidebar {
                 display: none !important;
@@ -884,6 +924,10 @@
             .hero-full .container {
                 padding-right: 16px;
             }
+            .chain-of-evidence .node {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
         }
         @media(max-width:480px) {
             .hero-right {
@@ -893,6 +937,9 @@
                 grid-template-columns: 1fr 1fr;
             }
             .card-grid-3 {
+                grid-template-columns: 1fr;
+            }
+            .evidence-panel {
                 grid-template-columns: 1fr;
             }
             .hero-stat .num {
@@ -935,27 +982,21 @@
     <aside class="sidebar show" id="sidebar">
         <h4>On this page</h4>
         <a href="#central-question">The Central Question</a>
+        <a href="#real-example">A Real-World Example</a>
         <a href="#intended-use">What "Intended Use" Means</a>
         <a href="#workbook-findings">What the Workbook Found</a>
         <a href="#import-alert">Why It Matters Under Import Alert 54-15</a>
         <a href="#evidence">Evidence That May Suggest Human Consumption</a>
         <a href="#case-study">Case Study Format</a>
+        <a href="#chain-of-evidence">Chain of Evidence</a>
         <a href="#supplier-investigation">The Indonesian Supplier Investigation</a>
         <a href="#records-do-not">What the Records Do Not Prove</a>
         <a href="#questions">Questions for FDA and CBP</a>
+        <a href="#key-point">Key Point</a>
         <a href="#closing">Closing</a>
     </aside>
 
     <section class="hero-full" id="hero">
-        <div class="hero-overlay-images">
-            <img class="warehouse" src="/kratom_warehouse.png" alt="" aria-hidden="true">
-            <div class="bol">
-                BILL OF LADING
-                <span>TLKPPNKNJS21015X</span>
-                <span style="font-size:8px;opacity:0.5;">NOT FOR HUMAN CONSUMPTION</span>
-            </div>
-        </div>
-        <div class="hero-overlay-badge">INTENDED-USE INVESTIGATION</div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-badge">Supply Chain Investigation</div>
@@ -990,14 +1031,30 @@
             <h2 class="section-title">The Central Question</h2>
             <p>Some kratom shipping records use phrases such as "not for human consumption," "external use," or similar disclaimers. Other records simply identify the cargo as <em>Mitragyna speciosa</em>, leaf, powder, or plant material.</p>
             <p>A shipping description does not necessarily answer how the product was actually intended to be used. Intended use may also be reflected in product form, packaging, instructions, websites, advertising, customer communications, and downstream sales.</p>
-            <p>This investigation examines what the public records show—and what additional evidence would be needed to determine the intended use of any particular shipment.</p>
+            <p>This investigation examines what the public records show and what additional evidence would be needed to determine the intended use of any particular shipment.</p>
 
             <div class="callout-box light" style="margin-top:16px;">
                 <p><strong>The strongest framing is not "they lied." It is:</strong> What evidence can establish intended human consumption when a shipment is labeled "not for human consumption" or "external use"?</p>
             </div>
         </div>
 
-        <!-- 2. WHAT "INTENDED USE" MEANS -->
+        <!-- 2. A REAL-WORLD EXAMPLE (with image) -->
+        <div class="story-card" id="real-example">
+            <h2 class="section-title">A Real-World Example</h2>
+
+            <div class="figure-box">
+                <span class="badge-upper">Evidence Example</span>
+                <img src="/human.jpeg" alt="Bulk package labeled Not for Human Consumption" style="width:100%;height:auto;border-radius:8px;">
+                <div class="caption">
+                    <strong>Figure 1. Example Bulk Package Label</strong><br>
+                    This photograph shows a bulk package labeled "Not for Human Consumption." The label describes the contents as crushed leaves of <em>Mitragyna speciosa</em> and references FDA and Customs while stating the material is intended for botanical research or aromatherapy. A photograph like this does not, by itself, establish how every shipment was intended to be used. It illustrates one example of the type of labeling that investigators may compare with shipping records, importer websites, downstream marketing, retail packaging, and other evidence when evaluating intended use.
+                </div>
+            </div>
+
+            <p>Such labels appear in public records and are part of a larger evidentiary picture. They do not automatically prove or disprove anything; they are one data point among many.</p>
+        </div>
+
+        <!-- 3. WHAT "INTENDED USE" MEANS -->
         <div class="story-card" id="intended-use">
             <h2 class="section-title">What "Intended Use" Means</h2>
             <p>In FDA regulation, intended use is not determined solely by one sentence printed on a shipping document. FDA may examine labeling, advertising, websites, promotional claims, product form, instructions, and other surrounding evidence.</p>
@@ -1022,9 +1079,10 @@
             </div>
 
             <p>No single item automatically proves the intended use of every shipment. The question becomes stronger when multiple forms of evidence point in the same direction.</p>
+            <p><strong>The goal of this investigation is not to rely on any single document, but to compare independent sources describing the same product, supplier, importer, and shipment.</strong></p>
         </div>
 
-        <!-- 3. WHAT THE WORKBOOK FOUND -->
+        <!-- 4. WHAT THE WORKBOOK FOUND -->
         <div class="story-card" id="workbook-findings">
             <h2 class="section-title">What the Workbook Found</h2>
 
@@ -1049,7 +1107,7 @@
             </div>
         </div>
 
-        <!-- 4. WHY THE WORDING MATTERS UNDER IMPORT ALERT 54-15 -->
+        <!-- 5. WHY THE WORDING MATTERS UNDER IMPORT ALERT 54-15 -->
         <div class="story-card" id="import-alert">
             <h2 class="section-title">Why the Wording Matters Under Import Alert 54-15</h2>
 
@@ -1061,12 +1119,21 @@
             <p>A "not for human consumption" statement may be relevant evidence, but it does not by itself establish that FDA lacked jurisdiction or that the material had no consumptive intended use.</p>
 
             <div class="btn-group">
-                <a href="/shipment/import-alert.html" class="btn-primary">Read the Import Alert Guide →</a>
-                <a href="/shipment/alert.pdf" class="btn-secondary" download>⬇ Download FDA Import Alert 54-15</a>
+                <a href="/shipment/import-alert.html" class="btn-primary">Read the Import Alert Guide</a>
+                <a href="/shipment/alert.pdf" class="btn-secondary" download>Download FDA Import Alert 54-15 (PDF)</a>
             </div>
+
+            <!-- Evidence Sources box (no icons) -->
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0;background:var(--soft);padding:16px 20px;border-radius:var(--radius);border:1px solid var(--line);">
+                <div style="text-align:center;font-weight:700;color:var(--navy);font-size:13px;">Shipping Records</div>
+                <div style="text-align:center;font-weight:700;color:var(--navy);font-size:13px;">Supplier Websites</div>
+                <div style="text-align:center;font-weight:700;color:var(--navy);font-size:13px;">Retail Products</div>
+                <div style="text-align:center;font-weight:700;color:var(--navy);font-size:13px;">FDA Documents</div>
+            </div>
+            <p style="font-size:15px;color:var(--muted);">Evidence comes from multiple sources. No single record is conclusive; the inquiry becomes stronger when multiple forms of evidence align.</p>
         </div>
 
-        <!-- 5. EVIDENCE THAT MAY SUGGEST HUMAN CONSUMPTION -->
+        <!-- 6. EVIDENCE THAT MAY SUGGEST HUMAN CONSUMPTION -->
         <div class="story-card" id="evidence">
             <h2 class="section-title">Evidence That May Suggest Human Consumption</h2>
             <p>This is the heart of the page.</p>
@@ -1123,35 +1190,70 @@
             </div>
         </div>
 
-        <!-- 6. STRONGEST CASE STUDY FORMAT -->
+        <!-- 7. STRONGEST CASE STUDY FORMAT (expanded) -->
         <div class="story-card" id="case-study">
             <h2 class="section-title">Case Study Format</h2>
-            <p>For each supplier or importer, the evidence can be organized in a three-column panel:</p>
+            <p>For each supplier or importer, the evidence can be organized in a five-step chain:</p>
 
             <div class="evidence-panel">
                 <div class="panel">
-                    <h4>What the Shipping Record Says</h4>
+                    <h4>1. Shipping Record</h4>
                     <div class="quote">"Mitragyna speciosa — not for human consumption"</div>
                     <span class="label-tag">Shipping record</span>
                 </div>
                 <div class="panel">
-                    <h4>What the Company Says Elsewhere</h4>
-                    <div class="quote">Website, marketplace listing, catalog, product photograph, brewing instruction, capsule offer, or consumer-use claim.</div>
-                    <span class="label-tag red">Company statement</span>
-                    <span class="label-tag" style="background:var(--muted);">Marketplace listing</span>
-                    <span class="label-tag" style="background:var(--muted);">Retail product</span>
+                    <h4>2. Bulk Package Label</h4>
+                    <div class="quote">"Not for Human Consumption" on the actual bag</div>
+                    <span class="label-tag">Package label</span>
                 </div>
                 <div class="panel">
-                    <h4>What Can Reasonably Be Concluded</h4>
-                    <div class="note">The records create a documented inconsistency or an intended-use question. They do not, without more evidence, prove that the wording on a specific customs entry was false.</div>
+                    <h4>3. Company Website</h4>
+                    <div class="quote">Marketing copy, product descriptions, testimonials</div>
+                    <span class="label-tag red">Website</span>
+                </div>
+                <div class="panel">
+                    <h4>4. Retail Product</h4>
+                    <div class="quote">Capsules, shots, powders sold to consumers</div>
+                    <span class="label-tag">Retail product</span>
+                </div>
+                <div class="panel">
+                    <h4>5. Inference</h4>
+                    <div class="note">The records create a documented inconsistency or an intended-use question.</div>
                     <span class="label-tag" style="background:var(--navy);">Inference</span>
                 </div>
             </div>
 
-            <p><strong>Evidence labels:</strong> Shipping record · Company statement · Marketplace listing · Retail product · Archived webpage · Inference</p>
+            <p><strong>Evidence labels:</strong> Shipping record · Package label · Website · Retail product · Inference</p>
+            <p>This template becomes the standard investigative framework for every importer.</p>
         </div>
 
-        <!-- 7. THE INDONESIAN SUPPLIER INVESTIGATION -->
+        <!-- 8. CHAIN OF EVIDENCE GRAPHIC -->
+        <div class="story-card" id="chain-of-evidence">
+            <h2 class="section-title">Chain of Evidence</h2>
+            <p>This graphic illustrates how independent sources can be linked to build a case for intended use.</p>
+
+            <div class="chain-of-evidence">
+                <div class="row"><span class="node">Bill of Lading</span></div>
+                <span class="arrow-down">↓</span>
+                <div class="row"><span class="node">Container Number</span></div>
+                <span class="arrow-down">↓</span>
+                <div class="row"><span class="node">Importer</span></div>
+                <span class="arrow-down">↓</span>
+                <div class="row"><span class="node">Warehouse</span></div>
+                <span class="arrow-down">↓</span>
+                <div class="row"><span class="node">Bulk Package</span></div>
+                <span class="arrow-down">↓</span>
+                <div class="row"><span class="node">Website</span></div>
+                <span class="arrow-down">↓</span>
+                <div class="row"><span class="node highlight">Retail Product</span></div>
+                <span class="arrow-down">↓</span>
+                <div class="row"><span class="node">Consumer</span></div>
+            </div>
+
+            <p style="font-size:15px;color:var(--muted);">Each link in the chain provides a piece of the evidentiary puzzle. The strongest cases connect multiple links directly to the same shipment.</p>
+        </div>
+
+        <!-- 9. THE INDONESIAN SUPPLIER INVESTIGATION -->
         <div class="story-card" id="supplier-investigation">
             <h2 class="section-title">The Indonesian Supplier Investigation</h2>
             <h3>What Did the Overseas Supplier Understand the Product to Be?</h3>
@@ -1172,7 +1274,7 @@
             </div>
         </div>
 
-        <!-- 8. WHAT THE RECORDS DO NOT PROVE -->
+        <!-- 10. WHAT THE RECORDS DO NOT PROVE -->
         <div class="story-card" id="records-do-not">
             <h2 class="section-title">What the Records Do Not Prove</h2>
 
@@ -1200,7 +1302,7 @@
             </ul>
         </div>
 
-        <!-- 9. QUESTIONS FOR FDA AND CBP -->
+        <!-- 11. QUESTIONS FOR FDA AND CBP -->
         <div class="story-card" id="questions">
             <h2 class="section-title">Questions for FDA and CBP</h2>
             <p>This section will be especially effective for lawmakers.</p>
@@ -1236,7 +1338,15 @@
             </div>
         </div>
 
-        <!-- 10. RECOMMENDED CLOSING -->
+        <!-- 12. KEY POINT -->
+        <div class="story-card" id="key-point">
+            <div class="key-point-box">
+                <h3>Key Point</h3>
+                <p>The question is not whether a shipment contains the words "Not for Human Consumption." The question is whether the complete body of evidence—including shipping records, package labeling, websites, product form, retail marketing, and downstream distribution—describes a product that was ultimately intended for human consumption.</p>
+            </div>
+        </div>
+
+        <!-- 13. RECOMMENDED CLOSING -->
         <div class="story-card" id="closing">
             <h2 class="section-title">Closing</h2>
             <p>A disclaimer is evidence. It is not necessarily the end of the inquiry.</p>
@@ -1244,9 +1354,9 @@
             <p>The public shipping records identify the question. FDA, CBP, importer records, commercial invoices, entry documents, and downstream distribution records are needed to answer it.</p>
 
             <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;">
-                <a href="/supply-chain-investigation.html" class="btn-secondary" style="border-color:var(--line);">← Back to Main Investigation</a>
-                <a href="/bills-of-lading.html" class="btn-secondary" style="border-color:var(--line);">Understanding Bills of Lading →</a>
-                <a href="/shipment/import-alert.html" class="btn-secondary" style="border-color:var(--line);">FDA Import Alert Guide →</a>
+                <a href="/supply-chain-investigation.html" class="btn-secondary" style="border-color:var(--line);">Back to Main Investigation</a>
+                <a href="/bills-of-lading.html" class="btn-secondary" style="border-color:var(--line);">Understanding Bills of Lading</a>
+                <a href="/shipment/import-alert.html" class="btn-secondary" style="border-color:var(--line);">FDA Import Alert Guide</a>
             </div>
 
             <div class="editor-note" style="margin-top:24px;">
