@@ -41,7 +41,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <style>
-        /* ----- Same base styles as importers.html (and other series pages) ----- */
+        /* ----- Same base styles as intro.html and supply-chain-investigation.html ----- */
         :root {
             --navy: #0b1d34;
             --navy2: #153a5d;
@@ -131,18 +131,17 @@
             font-weight: 900;
             letter-spacing: -.025em;
         }
-        .brand-mark {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            display: grid;
-            place-items: center;
-            background: linear-gradient(145deg, #e7edf5, #fff);
-            border: 2px solid var(--navy);
-            font-size: .72rem;
+        .brand img {
+            width: 48px;
+            height: 48px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+        .brand-copy {
+            display: flex;
+            flex-direction: column;
         }
         .brand-copy strong {
-            display: block;
             font-size: 1rem;
             line-height: 1.2;
         }
@@ -151,7 +150,6 @@
             font-style: normal;
         }
         .brand-copy small {
-            display: block;
             color: var(--muted);
             font-weight: 700;
             letter-spacing: .05em;
@@ -658,6 +656,103 @@
             font-size: .78rem;
         }
 
+        .figure-box {
+            margin-top: 16px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+        .figure-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .figure-box .caption {
+            padding: 14px 20px;
+            background: var(--soft);
+            font-size: .85rem;
+            color: var(--muted);
+            border-top: 1px solid var(--line);
+        }
+
+        .case-study-shipment {
+            background: var(--soft);
+            border-radius: var(--radius);
+            padding: 24px 28px;
+            border: 1px solid var(--line);
+            margin: 16px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 2;
+        }
+        .case-study-shipment .field {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            padding: 4px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .case-study-shipment .field:last-child {
+            border-bottom: 0;
+        }
+        .case-study-shipment .field .tag {
+            font-weight: 700;
+            color: var(--red);
+            min-width: 120px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            font-family: 'Inter', Arial, sans-serif;
+        }
+        .case-study-shipment .field .value {
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .callout-box {
+            background: var(--navy);
+            color: white;
+            border-radius: var(--radius);
+            padding: 24px 30px;
+            margin: 24px 0;
+            border-left: 6px solid var(--red);
+        }
+        .callout-box p {
+            color: #dbe7f4;
+            max-width: 100%;
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+        .callout-box .source {
+            font-size: 14px;
+            color: #8aa3c0;
+            margin-top: 10px;
+            font-weight: 400;
+        }
+        .callout-box.light {
+            background: var(--soft);
+            color: var(--text);
+            border-left-color: var(--muted);
+        }
+        .callout-box.light p {
+            color: var(--text);
+        }
+
+        .editor-note {
+            background: var(--soft);
+            border-radius: var(--radius);
+            padding: 18px 24px;
+            margin-top: 28px;
+            border-left: 4px solid var(--muted);
+            font-size: 15px;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+        .editor-note strong {
+            color: var(--text);
+        }
+
         @media (max-width: 950px) {
             .site-menu {
                 display: none;
@@ -733,6 +828,14 @@
             .cta h2 {
                 font-size: 1.5rem;
             }
+            .case-study-shipment {
+                padding: 16px 18px;
+                font-size: 12px;
+            }
+            .case-study-shipment .field .tag {
+                min-width: 80px;
+                font-size: 10px;
+            }
         }
     </style>
 </head>
@@ -743,21 +846,18 @@
 <header class="site-header">
     <div class="header-inner">
         <a class="brand" href="/">
-            <span class="brand-mark" aria-hidden="true">GK</span>
-            <span class="brand-copy">
+            <img src="/review.png" alt="Global Kratom Policy Review icon">
+            <div class="brand-copy">
                 <strong>GLOBAL <em>KRATOM</em> POLICY REVIEW</strong>
                 <small>RESEARCH · ANALYSIS · POLICY</small>
-            </span>
+            </div>
         </a>
         <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-menu">☰</button>
         <nav id="site-menu" class="site-menu" aria-label="Main navigation">
-            <a href="/shipment/intro.html">Series Home</a>
-            <a href="/bills-of-lading.html">Bills of Lading</a>
-            <a href="/import-alert.html">Import Alert 54-15</a>
-            <a href="/shipment/human-consumption.html">Intended Use</a>
-            <a href="/shipment/fertilizer.html">Fertilizer Code</a>
-            <a href="/shipment/exporters.html">Exporters</a>
-            <a href="/shipment/importers.html">Importers</a>
+            <a href="/">Home</a>
+            <a href="/evidence/index.html">Evidence</a>
+            <a href="/lawmakers.html">For Lawmakers</a>
+            <a href="https://antikratom.org">Action Center</a>
         </nav>
     </div>
 </header>
@@ -811,7 +911,7 @@
                 <li>support customs processing.</li>
             </ul>
             <p>HS codes are standardized internationally to six digits. The U.S. Harmonized Tariff Schedule (HTSUS) extends those codes with additional digits for U.S.-specific classifications.</p>
-            <div class="figure-box" style="margin-top:16px;">
+            <div class="figure-box">
                 <img src="/shipment/kratom_export3.jpeg" alt="Port overview with container ships and cargo">
                 <div class="caption">International trade classifications follow cargo through ports and customs processing. An HS code is not merely a product nickname; it is part of the formal trade record.</div>
             </div>
@@ -902,13 +1002,13 @@
         <section class="section" id="case-study">
             <h2>Case Study</h2>
             <p>One of the 3101.00 shipments provides a concrete example. The following is reconstructed from public shipping records.</p>
-            <div class="case-study-shipment" style="background:var(--soft);border-radius:var(--radius);padding:24px 28px;border:1px solid var(--line);margin:16px 0;font-family:'Courier New',monospace;font-size:14px;line-height:2;">
-                <div class="field" style="display:flex;align-items:baseline;gap:12px;padding:4px 0;border-bottom:1px solid #e2e8f0;"><span style="font-weight:700;color:var(--red);min-width:120px;font-size:12px;text-transform:uppercase;letter-spacing:0.3px;font-family:'Inter',Arial,sans-serif;">Shipper</span><span style="font-weight:500;color:var(--text);">Zyam Trade 168</span></div>
-                <div class="field" style="display:flex;align-items:baseline;gap:12px;padding:4px 0;border-bottom:1px solid #e2e8f0;"><span style="font-weight:700;color:var(--red);min-width:120px;font-size:12px;text-transform:uppercase;letter-spacing:0.3px;font-family:'Inter',Arial,sans-serif;">Consignee</span><span style="font-weight:500;color:var(--text);">South Asia Trade</span></div>
-                <div class="field" style="display:flex;align-items:baseline;gap:12px;padding:4px 0;border-bottom:1px solid #e2e8f0;"><span style="font-weight:700;color:var(--red);min-width:120px;font-size:12px;text-transform:uppercase;letter-spacing:0.3px;font-family:'Inter',Arial,sans-serif;">Product Description</span><span style="font-weight:500;color:var(--text);">Mitragyna speciosa</span></div>
-                <div class="field" style="display:flex;align-items:baseline;gap:12px;padding:4px 0;border-bottom:1px solid #e2e8f0;background:rgba(200,16,46,0.04);border-left:3px solid var(--red);"><span style="font-weight:700;color:var(--red);min-width:120px;font-size:12px;text-transform:uppercase;letter-spacing:0.3px;font-family:'Inter',Arial,sans-serif;">HS Code</span><span style="font-weight:500;color:var(--text);"><strong>3101.00</strong></span></div>
-                <div class="field" style="display:flex;align-items:baseline;gap:12px;padding:4px 0;border-bottom:1px solid #e2e8f0;"><span style="font-weight:700;color:var(--red);min-width:120px;font-size:12px;text-transform:uppercase;letter-spacing:0.3px;font-family:'Inter',Arial,sans-serif;">Weight</span><span style="font-weight:500;color:var(--text);">~45,000 kg</span></div>
-                <div class="field" style="display:flex;align-items:baseline;gap:12px;padding:4px 0;"><span style="font-weight:700;color:var(--red);min-width:120px;font-size:12px;text-transform:uppercase;letter-spacing:0.3px;font-family:'Inter',Arial,sans-serif;">Container</span><span style="font-weight:500;color:var(--text);">Multiple containers</span></div>
+            <div class="case-study-shipment">
+                <div class="field"><span class="tag">Shipper</span><span class="value">Zyam Trade 168</span></div>
+                <div class="field"><span class="tag">Consignee</span><span class="value">South Asia Trade</span></div>
+                <div class="field"><span class="tag">Product Description</span><span class="value">Mitragyna speciosa</span></div>
+                <div class="field" style="background:rgba(200,16,46,0.04);border-left:3px solid var(--red);"><span class="tag">HS Code</span><span class="value"><strong>3101.00</strong></span></div>
+                <div class="field"><span class="tag">Weight</span><span class="value">~45,000 kg</span></div>
+                <div class="field"><span class="tag">Container</span><span class="value">Multiple containers</span></div>
             </div>
             <div class="note"><strong>Question raised:</strong> Why was the fertilizer heading used for a botanical product? Was this an error, a deliberate choice, or a reflection of different intended use?</div>
             <p style="font-size:15px;color:var(--muted);">No conclusions are drawn from a single case. It is presented as an example of the type of discrepancy that appears in the public record.</p>
@@ -946,7 +1046,7 @@
             <h2>Closing</h2>
             <p>Customs classifications are more than administrative codes. They provide another piece of the documentary record surrounding imported kratom.</p>
             <p>In this investigation, most public records used one botanical classification, while a smaller number used a fertilizer heading. Public records identify the difference. Understanding why those differences occurred would require additional customs documentation beyond the bills of lading examined here.</p>
-            <div class="editor-note" style="margin-top:24px;background:var(--soft);border-radius:var(--radius);padding:18px 24px;border-left:4px solid var(--muted);font-size:15px;color:var(--muted);line-height:1.6;">
+            <div class="editor-note" style="margin-top:24px;">
                 <strong>Editor's note:</strong> This analysis is based on publicly available shipping records and trade databases. Shipping records alone do not establish regulatory violations or unlawful conduct. Additional customs and FDA records would be required to determine how any particular shipment was reviewed or admitted into the United States. This analysis is provided for informational and policy-research purposes.
             </div>
         </section>
