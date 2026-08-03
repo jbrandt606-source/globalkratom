@@ -159,14 +159,9 @@ footer{background:#061426;color:rgba(255,255,255,.68);padding:42px 20px}
 .footer-links{display:flex;gap:14px;flex-wrap:wrap}
 .footer-links a{color:rgba(255,255,255,.8);text-decoration:none;font-weight:700;font-size:.84rem}
 
-.sidebar{display:none;position:fixed;top:50%;transform:translateY(-50%);z-index:50;background:white;border-radius:12px;padding:16px 20px;box-shadow:0 8px 30px rgba(0,0,0,.1);border:1px solid var(--line);min-width:170px;max-height:80vh;overflow-y:auto}
-.sidebar.show{display:block}
-.sidebar h4{font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:800;margin-bottom:10px;border-bottom:1px solid var(--line);padding-bottom:8px}
-.sidebar a{display:block;font-size:12px;font-weight:600;padding:5px 0;color:var(--muted);transition:.2s;border-bottom:1px solid #f0f2f5}
-.sidebar a:last-child{border-bottom:0}
-.sidebar a:hover{color:var(--red)}
+/* Remove sidebar styles - no longer needed */
+.sidebar{display:none!important}
 
-@media (min-width:1200px){.sidebar.show{display:block}}
 @media(max-width:950px){.site-menu{display:none}.site-menu.open{display:flex;position:absolute;left:0;right:0;top:72px;flex-direction:column;align-items:stretch;padding:16px;background:#fff;border-bottom:1px solid var(--line)}.menu-btn{display:block}.hero-full .container{grid-template-columns:1fr;gap:30px}.hero-right{grid-template-columns:1fr 1fr}.intro-grid,.profile-grid,.network-grid,.two-col{grid-template-columns:1fr}.bar-row{grid-template-columns:220px 1fr 95px}.kpi-grid{grid-template-columns:repeat(2,1fr)}.questions{grid-template-columns:1fr}.series-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:680px){.brand-copy strong{font-size:.87rem}.brand-copy small{display:none}.hero-full .container{gap:20px}.hero-content h1{font-size:26px}.hero-content .subhead{font-size:16px}.hero-right{grid-template-columns:1fr 1fr;gap:10px}.hero-stat{padding:12px 14px}.hero-stat .num{font-size:22px}.hero-stat .label{font-size:11px}.shell{width:min(calc(100% - 22px),var(--max));margin-top:-24px}.panel{padding:24px 18px}.profile-top{display:block}.profile-weight{text-align:left;margin-top:15px}dl{grid-template-columns:1fr}.footer-inner{display:block}.footer-links{margin-top:15px}.series-grid{grid-template-columns:1fr}}
 </style>
@@ -193,18 +188,7 @@ footer{background:#061426;color:rgba(255,255,255,.68);padding:42px 20px}
   </div>
 </header>
 
-<aside class="sidebar show" id="sidebar">
-    <h4>On this page</h4>
-    <a href="#intro">Every shipment begins with a named shipper</a>
-    <a href="#numbers">Investigation by the numbers</a>
-    <a href="#ranking">Largest Indonesia-linked names</a>
-    <a href="#profiles">Selected exporter profiles</a>
-    <a href="#relationships">Recurring supplier–importer relationships</a>
-    <a href="#patterns">Patterns that deserve separate review</a>
-    <a href="#records">What the records show—and what they do not</a>
-    <a href="#directory">Full Indonesia-linked supplier directory</a>
-    <a href="#questions">Questions for lawmakers</a>
-</aside>
+<!-- Sidebar removed entirely -->
 
 <main id="main">
 <section class="hero-full">
