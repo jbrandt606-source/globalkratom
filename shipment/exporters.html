@@ -46,256 +46,469 @@
 <style>
 :root{--navy:#0b1d34;--navy2:#153a5d;--red:#c8102e;--red2:#9e0d25;--blue:#367fcb;--green:#2f855a;--orange:#c76c14;--purple:#7756a8;--soft:#f5f7fb;--line:#dce4ee;--ink:#172033;--muted:#64748b;--white:#fff;--shadow:0 16px 40px rgba(11,29,52,.11);--radius:18px;--max:1180px}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;overflow-x:hidden;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--ink);background:var(--soft);line-height:1.62}img{max-width:100%;display:block}a{color:inherit}.skip{position:fixed;top:8px;left:8px;z-index:999;padding:10px 14px;color:#fff;background:var(--red);border-radius:8px;transform:translateY(-150%)}.skip:focus{transform:none}
-.topline{background:var(--navy);color:rgba(255,255,255,.75);font-size:.78rem;letter-spacing:.04em;text-align:center;padding:10px 16px}.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}.nav{width:min(calc(100% - 32px),var(--max));min-height:72px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--navy);font-weight:900;letter-spacing:-.025em}.brand-mark{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#e7edf5,#fff);border:2px solid var(--navy);font-size:.72rem}.brand small{display:block;color:var(--muted);font-weight:700;letter-spacing:.05em;font-size:.67rem}.nav-links{display:flex;gap:20px;align-items:center}.nav-links a{text-decoration:none;color:#42536a;font-weight:760;font-size:.88rem}.nav-links a:hover{color:var(--red)}.menu-btn{display:none;border:0;background:none;color:var(--blue);font-size:1.7rem;cursor:pointer}
-.hero{position:relative;min-height:760px;color:#fff;display:flex;align-items:flex-end;background-image:linear-gradient(90deg,rgba(5,18,35,.92),rgba(5,18,35,.76) 52%,rgba(5,18,35,.35)),url('/shipment/kratom_shipment.jpeg');background-size:cover;background-position:center;isolation:isolate}.hero:after{content:"";position:absolute;inset:auto 0 0;height:210px;background:linear-gradient(transparent,rgba(4,16,30,.92));z-index:-1}.hero-inner{width:min(calc(100% - 40px),var(--max));margin:auto;padding:120px 0 76px}.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--red);padding:9px 15px;border-radius:999px;font-size:.75rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}h1{max-width:900px;margin:24px 0 0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(3.1rem,7.6vw,6.4rem);line-height:.98;letter-spacing:-.055em;text-wrap:balance}.hero-sub{max-width:810px;margin:26px 0 0;color:rgba(255,255,255,.88);font-size:clamp(1.05rem,2.2vw,1.34rem)}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}.btn{min-height:48px;padding:12px 18px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-weight:850;border:1px solid transparent;transition:.18s}.btn:hover{transform:translateY(-2px)}.btn-red{background:var(--red);color:#fff}.btn-red:hover{background:var(--red2)}.btn-ghost{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.35)}.hero-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:42px}.hero-stat{padding:18px 20px;border:1px solid rgba(255,255,255,.16);border-radius:14px;background:rgba(255,255,255,.08);backdrop-filter:blur(7px)}.hero-stat strong{display:block;font-family:Georgia,serif;font-size:2.15rem;line-height:1}.hero-stat span{display:block;margin-top:7px;color:rgba(255,255,255,.72);font-size:.82rem;font-weight:700}
-.shell{width:min(calc(100% - 36px),var(--max));margin:-34px auto 76px;position:relative;z-index:4}.panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:36px;margin:0 0 28px}.intro-grid{display:grid;grid-template-columns:1.35fr .75fr;gap:28px}.panel h2{margin:0 0 16px;color:var(--navy);font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.9rem,4.5vw,3rem);line-height:1.1;letter-spacing:-.025em}.panel h3{color:var(--navy)}.panel p{color:#3e4f66}.definition{padding:22px;border-left:5px solid var(--red);border-radius:12px;background:var(--navy);color:#fff}.definition strong{display:block;color:#ffc8d2;margin-bottom:8px;text-transform:uppercase;letter-spacing:.1em;font-size:.74rem}.definition p{margin:0;color:rgba(255,255,255,.82)}.section-title{display:flex;align-items:center;gap:14px;margin-bottom:18px}.section-title:before{content:"";width:7px;height:42px;background:var(--red)}.section-title h2{margin:0}
-.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.kpi{padding:22px;border-radius:14px;background:#f3f6fa;border:1px solid var(--line)}.kpi strong{display:block;color:var(--red);font-family:Georgia,serif;font-size:2.15rem;line-height:1}.kpi span{display:block;margin-top:7px;color:var(--muted);font-size:.85rem;font-weight:750}
-.data-note{margin-top:18px;padding:20px;border-left:5px solid #72859d;border-radius:12px;background:#eef2f7;color:#43536a}.data-note strong{color:var(--navy)}
-.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:14px}table{width:100%;border-collapse:collapse;background:#fff}th{padding:14px;text-align:left;background:var(--navy);color:#fff;font-size:.78rem;letter-spacing:.04em}td{padding:14px;border-bottom:1px solid #e8edf4;vertical-align:top;font-size:.9rem}td small{display:block;color:var(--muted);margin-top:5px}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#edf2f7;color:#23354b;padding:3px 6px;border-radius:6px;font-size:.78rem}
-.bar-chart{display:grid;gap:13px;margin-top:20px}.bar-row{display:grid;grid-template-columns:260px 1fr 110px;gap:14px;align-items:center}.bar-label{display:flex;gap:10px;align-items:center;min-width:0}.bar-label strong{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:#fff;font-size:.72rem;flex:none}.bar-label span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:750}.bar-track{height:15px;border-radius:999px;background:#e7edf4;overflow:hidden}.bar-track span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--red),#e45b72)}.bar-value{text-align:right;font-weight:850;color:var(--navy)}
-.profile-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.profile-card{padding:24px;border:1px solid var(--line);border-radius:15px;background:#fff;box-shadow:0 8px 22px rgba(11,29,52,.055)}.profile-top{display:flex;justify-content:space-between;gap:15px;align-items:flex-start}.profile-kicker{color:var(--red);font-size:.7rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase}.profile-card h3{margin:6px 0 0;font-size:1.3rem}.profile-weight{color:var(--navy);font-family:Georgia,serif;font-size:1.9rem;font-weight:900;text-align:right;line-height:1}.profile-weight small{display:block;margin-top:6px;color:var(--muted);font-family:Inter,Arial,sans-serif;font-size:.68rem;font-weight:750}.profile-metrics{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}.profile-metrics span{padding:7px 10px;border-radius:999px;background:#f1f5f9;color:#52647a;font-size:.75rem}.profile-flags{display:flex;flex-wrap:wrap;gap:7px;margin:13px 0}.flag{padding:5px 8px;border-radius:999px;color:#fff;font-size:.67rem;font-weight:850}.flag-green{background:var(--green)}.flag-red{background:var(--red)}.flag-orange{background:var(--orange)}.flag-blue{background:var(--blue)}.flag-purple{background:var(--purple)}dl{display:grid;grid-template-columns:100px 1fr;gap:10px 14px;margin:17px 0 0}dt{font-weight:850;color:var(--navy)}dd{margin:0;color:#53647a;font-size:.84rem}
-.network-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.network-card{padding:20px;border-radius:14px;border:1px solid var(--line);background:#f7f9fc}.network-card strong{display:block;color:var(--navy)}.network-card .arrow{display:block;color:var(--red);font-size:1.4rem;margin:8px 0}.network-card b{display:block;color:#30445d}.network-card small{color:var(--muted)}
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}.what-card{padding:24px;border-radius:15px}.what-card h3{margin-top:0}.what-card ul{margin:0;padding-left:20px}.what-card li{margin:8px 0}.can{background:#edf8f1;border:1px solid #bee1c9}.cannot{background:#fff0f2;border:1px solid #f0bdc6}.questions{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.question{padding:18px;border:1px solid var(--line);border-radius:12px;background:#f5f7fb;font-weight:800;color:var(--navy)}
-.cta{padding:38px;border-radius:var(--radius);color:#fff;background:radial-gradient(circle at top right,rgba(54,127,203,.34),transparent 38%),var(--navy)}.cta h2{color:#fff}.cta p{color:rgba(255,255,255,.75);max-width:800px}footer{padding:42px 20px;background:#061426;color:rgba(255,255,255,.68)}.footer-inner{width:min(100%,var(--max));margin:auto;display:flex;justify-content:space-between;gap:25px}.footer-inner strong{color:#fff}.footer-links{display:flex;gap:14px;flex-wrap:wrap}.footer-links a{color:rgba(255,255,255,.8);text-decoration:none;font-weight:700;font-size:.84rem}
-@media print{.site-header,.topline,.hero-actions,.search-box,.cta,footer{display:none!important}.hero{min-height:auto;background:#0b1d34!important}.hero-inner{padding:45px 0}.shell{margin:0 auto}.panel{box-shadow:none;break-inside:avoid}}
-@media(max-width:950px){.nav-links{display:none}.menu-btn{display:block}.nav-links.open{display:flex;position:absolute;left:0;right:0;top:72px;flex-direction:column;align-items:stretch;padding:16px;background:#fff;border-bottom:1px solid var(--line)}.hero{min-height:790px}.hero-stats{grid-template-columns:repeat(2,1fr)}.intro-grid,.profile-grid,.network-grid{grid-template-columns:1fr}.bar-row{grid-template-columns:220px 1fr 95px}.kpi-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:680px){.brand span:last-child{font-size:.87rem}.brand small{display:none}.hero-inner{padding:92px 0 62px}h1{font-size:clamp(3rem,14vw,4.6rem)}.hero-actions{display:grid}.btn{width:100%}.shell{width:min(calc(100% - 22px),var(--max));margin-top:-24px}.panel{padding:24px 18px}.two-col,.questions{grid-template-columns:1fr}.bar-row{grid-template-columns:1fr}.bar-track{order:3}.bar-value{text-align:left}.profile-top{display:block}.profile-weight{text-align:left;margin-top:15px}dl{grid-template-columns:1fr}.footer-inner{display:block}.footer-links{margin-top:15px}}
+.topline{background:var(--navy);color:rgba(255,255,255,.75);font-size:.78rem;letter-spacing:.04em;text-align:center;padding:10px 16px}
+.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
+.header-inner{width:min(calc(100% - 32px),var(--max));min-height:72px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--navy);font-weight:900;letter-spacing:-.025em}
+.brand img{width:48px;height:48px;object-fit:cover;border-radius:6px}
+.brand-copy{display:flex;flex-direction:column}
+.brand-copy strong{font-size:1rem;line-height:1.2}
+.brand-copy strong em{color:var(--red);font-style:normal}
+.brand-copy small{color:var(--muted);font-weight:700;letter-spacing:.05em;font-size:.67rem}
+.menu-btn{display:none;border:0;background:none;color:var(--blue);font-size:1.7rem;cursor:pointer}
+.site-menu{display:flex;gap:20px;align-items:center}
+.site-menu a{text-decoration:none;color:#42536a;font-weight:760;font-size:.88rem}
+.site-menu a:hover{color:var(--red)}
+
+/* ----- Hero styles matching fertilizer.html ----- */
+.hero-full{background:linear-gradient(135deg,rgba(8,24,38,.85),rgba(8,24,38,.70) 50%,rgba(8,24,38,.50) 100%),url("/shipment/kratom_shipment.jpeg");background-size:cover;background-position:center;color:white;padding:80px 0 60px;position:relative;overflow:hidden}
+.hero-full .container{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:0 24px}
+.hero-content{max-width:700px;position:relative;z-index:3}
+.hero-badge{display:inline-block;background:var(--red);color:white;font-weight:800;font-size:13px;padding:6px 22px;border-radius:40px;letter-spacing:.5px;margin-bottom:20px;text-transform:uppercase}
+.hero-content h1{font-size:clamp(32px,4.5vw,48px);font-weight:900;line-height:1.05;margin-bottom:14px;letter-spacing:-.02em}
+.hero-content .subhead{font-size:19px;color:#dbe7f4;margin-bottom:20px;max-width:650px;font-weight:500;line-height:1.4}
+.hero-right{display:grid;grid-template-columns:1fr 1fr;gap:14px;position:relative;z-index:3}
+.hero-stat{background:rgba(255,255,255,.07);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:18px 22px}
+.hero-stat .num{font-size:34px;font-weight:900;color:white;line-height:1}
+.hero-stat .label{font-size:13px;color:#b0c8df;margin-top:4px;line-height:1.3}
+
+/* ----- Rest of the page styles (unchanged) ----- */
+.shell{width:min(calc(100% - 36px),var(--max));margin:-34px auto 76px;position:relative;z-index:4}
+.panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:36px;margin:0 0 28px}
+.intro-grid{display:grid;grid-template-columns:1.35fr .75fr;gap:28px}
+.panel h2{margin:0 0 16px;color:var(--navy);font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.9rem,4.5vw,3rem);line-height:1.1;letter-spacing:-.025em}
+.panel h3{color:var(--navy)}
+.panel p{color:#3e4f66}
+.definition{padding:22px;border-left:5px solid var(--red);border-radius:12px;background:var(--navy);color:#fff}
+.definition strong{display:block;color:#ffc8d2;margin-bottom:8px;text-transform:uppercase;letter-spacing:.1em;font-size:.74rem}
+.definition p{margin:0;color:rgba(255,255,255,.82)}
+.section-title{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.section-title:before{content:"";width:7px;height:42px;background:var(--red)}
+.section-title h2{margin:0}
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.kpi{padding:22px;border-radius:14px;background:#f3f6fa;border:1px solid var(--line)}
+.kpi strong{display:block;color:var(--red);font-family:Georgia,serif;font-size:2.15rem;line-height:1}
+.kpi span{display:block;margin-top:7px;color:var(--muted);font-size:.85rem;font-weight:750}
+.data-note{margin-top:18px;padding:20px;border-left:5px solid #72859d;border-radius:12px;background:#eef2f7;color:#43536a}
+.data-note strong{color:var(--navy)}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:14px}
+table{width:100%;border-collapse:collapse;background:#fff}
+th{padding:14px;text-align:left;background:var(--navy);color:#fff;font-size:.78rem;letter-spacing:.04em}
+td{padding:14px;border-bottom:1px solid #e8edf4;vertical-align:top;font-size:.9rem}
+td small{display:block;color:var(--muted);margin-top:5px}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#edf2f7;color:#23354b;padding:3px 6px;border-radius:6px;font-size:.78rem}
+.bar-chart{display:grid;gap:13px;margin-top:20px}
+.bar-row{display:grid;grid-template-columns:260px 1fr 110px;gap:14px;align-items:center}
+.bar-label{display:flex;gap:10px;align-items:center;min-width:0}
+.bar-label strong{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:#fff;font-size:.72rem;flex:none}
+.bar-label span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:750}
+.bar-track{height:15px;border-radius:999px;background:#e7edf4;overflow:hidden}
+.bar-track span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--red),#e45b72)}
+.bar-value{text-align:right;font-weight:850;color:var(--navy)}
+.profile-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.profile-card{padding:24px;border:1px solid var(--line);border-radius:15px;background:#fff;box-shadow:0 8px 22px rgba(11,29,52,.055)}
+.profile-top{display:flex;justify-content:space-between;gap:15px;align-items:flex-start}
+.profile-kicker{color:var(--red);font-size:.7rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+.profile-card h3{margin:6px 0 0;font-size:1.3rem}
+.profile-weight{color:var(--navy);font-family:Georgia,serif;font-size:1.9rem;font-weight:900;text-align:right;line-height:1}
+.profile-weight small{display:block;margin-top:6px;color:var(--muted);font-family:Inter,Arial,sans-serif;font-size:.68rem;font-weight:750}
+.profile-metrics{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.profile-metrics span{padding:7px 10px;border-radius:999px;background:#f1f5f9;color:#52647a;font-size:.75rem}
+.profile-flags{display:flex;flex-wrap:wrap;gap:7px;margin:13px 0}
+.flag{padding:5px 8px;border-radius:999px;color:#fff;font-size:.67rem;font-weight:850}
+.flag-green{background:var(--green)}.flag-red{background:var(--red)}.flag-orange{background:var(--orange)}.flag-blue{background:var(--blue)}.flag-purple{background:var(--purple)}
+dl{display:grid;grid-template-columns:100px 1fr;gap:10px 14px;margin:17px 0 0}
+dt{font-weight:850;color:var(--navy)}
+dd{margin:0;color:#53647a;font-size:.84rem}
+.network-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.network-card{padding:20px;border-radius:14px;border:1px solid var(--line);background:#f7f9fc}
+.network-card strong{display:block;color:var(--navy)}
+.network-card .arrow{display:block;color:var(--red);font-size:1.4rem;margin:8px 0}
+.network-card b{display:block;color:#30445d}
+.network-card small{color:var(--muted)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.what-card{padding:24px;border-radius:15px}
+.what-card h3{margin-top:0}
+.what-card ul{margin:0;padding-left:20px}
+.what-card li{margin:8px 0}
+.can{background:#edf8f1;border:1px solid #bee1c9}
+.cannot{background:#fff0f2;border:1px solid #f0bdc6}
+.questions{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.question{padding:18px;border:1px solid var(--line);border-radius:12px;background:#f5f7fb;font-weight:800;color:var(--navy)}
+.cta{padding:38px;border-radius:var(--radius);color:#fff;background:radial-gradient(circle at top right,rgba(54,127,203,.34),transparent 38%),var(--navy)}
+.cta h2{color:#fff}
+.cta p{color:rgba(255,255,255,.75);max-width:800px}
+.btn{min-height:48px;padding:12px 18px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-weight:850;border:1px solid transparent;transition:.18s}
+.btn:hover{transform:translateY(-2px)}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red2)}
+.btn-ghost{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.35)}
+
+/* Series menu styles */
+.series-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:20px 0 0}
+.series-grid a{padding:18px 20px;border:1px solid var(--line);border-radius:14px;text-decoration:none;color:var(--navy);background:#fff;transition:.2s;display:flex;flex-direction:column}
+.series-grid a:hover{border-color:var(--red);box-shadow:0 4px 16px rgba(0,0,0,.06);background:var(--soft)}
+.series-grid a span{font-weight:700;font-size:1rem;display:block}
+.series-grid a small{display:block;margin-top:4px;color:var(--muted);font-size:.78rem;font-weight:400}
+.series-grid a .badge{display:inline-block;margin-top:8px;padding:2px 10px;border-radius:999px;background:var(--navy);color:#fff;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;align-self:flex-start}
+.series-grid a .badge.current{background:var(--red)}
+
+footer{background:#061426;color:rgba(255,255,255,.68);padding:42px 20px}
+.footer-inner{width:min(100%,var(--max));margin:auto;display:flex;justify-content:space-between;gap:25px}
+.footer-inner strong{color:#fff}
+.footer-links{display:flex;gap:14px;flex-wrap:wrap}
+.footer-links a{color:rgba(255,255,255,.8);text-decoration:none;font-weight:700;font-size:.84rem}
+
+.sidebar{display:none;position:fixed;top:50%;transform:translateY(-50%);z-index:50;background:white;border-radius:12px;padding:16px 20px;box-shadow:0 8px 30px rgba(0,0,0,.1);border:1px solid var(--line);min-width:170px;max-height:80vh;overflow-y:auto}
+.sidebar.show{display:block}
+.sidebar h4{font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:800;margin-bottom:10px;border-bottom:1px solid var(--line);padding-bottom:8px}
+.sidebar a{display:block;font-size:12px;font-weight:600;padding:5px 0;color:var(--muted);transition:.2s;border-bottom:1px solid #f0f2f5}
+.sidebar a:last-child{border-bottom:0}
+.sidebar a:hover{color:var(--red)}
+
+@media (min-width:1200px){.sidebar.show{display:block}}
+@media(max-width:950px){.site-menu{display:none}.site-menu.open{display:flex;position:absolute;left:0;right:0;top:72px;flex-direction:column;align-items:stretch;padding:16px;background:#fff;border-bottom:1px solid var(--line)}.menu-btn{display:block}.hero-full .container{grid-template-columns:1fr;gap:30px}.hero-right{grid-template-columns:1fr 1fr}.intro-grid,.profile-grid,.network-grid,.two-col{grid-template-columns:1fr}.bar-row{grid-template-columns:220px 1fr 95px}.kpi-grid{grid-template-columns:repeat(2,1fr)}.questions{grid-template-columns:1fr}.series-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:680px){.brand-copy strong{font-size:.87rem}.brand-copy small{display:none}.hero-full .container{gap:20px}.hero-content h1{font-size:26px}.hero-content .subhead{font-size:16px}.hero-right{grid-template-columns:1fr 1fr;gap:10px}.hero-stat{padding:12px 14px}.hero-stat .num{font-size:22px}.hero-stat .label{font-size:11px}.shell{width:min(calc(100% - 22px),var(--max));margin-top:-24px}.panel{padding:24px 18px}.profile-top{display:block}.profile-weight{text-align:left;margin-top:15px}dl{grid-template-columns:1fr}.footer-inner{display:block}.footer-links{margin-top:15px}.series-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <div class="topline">GLOBALKRATOM.ORG · Evidence-based policy resources</div>
-<header class="site-header"><nav class="nav" aria-label="Main navigation"><a class="brand" href="/"><span class="brand-mark">GK</span><span>GLOBAL <span style="color:#c8102e">KRATOM</span> POLICY REVIEW<small>RESEARCH · ANALYSIS · POLICY</small></span></a><button class="menu-btn" type="button" aria-label="Toggle menu" aria-expanded="false">☰</button><div class="nav-links"><a href="/shipment/intro.html">Supply Chain</a><a href="/shipment/bills-of-lading.html">Bills of Lading</a><a href="/shipment/import-alert.html">Import Alert 54-15</a><a href="/shipment/human-consumption.html">Intended Use</a><a href="/shipment/fertilizer.html">Tariff Codes</a></div></nav></header>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">
+      <img src="/review.png" alt="Global Kratom Policy Review icon">
+      <div class="brand-copy">
+        <strong>GLOBAL <em>KRATOM</em> POLICY REVIEW</strong>
+        <small>RESEARCH · ANALYSIS · POLICY</small>
+      </div>
+    </a>
+    <button class="menu-btn" type="button" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <nav id="site-menu" class="site-menu" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/evidence/index.html">Evidence</a>
+      <a href="/lawmakers.html">For Lawmakers</a>
+      <a href="https://antikratom.org">Action Center</a>
+    </nav>
+  </div>
+</header>
+
+<aside class="sidebar show" id="sidebar">
+    <h4>On this page</h4>
+    <a href="#intro">Every shipment begins with a named shipper</a>
+    <a href="#numbers">Investigation by the numbers</a>
+    <a href="#ranking">Largest Indonesia-linked names</a>
+    <a href="#profiles">Selected exporter profiles</a>
+    <a href="#relationships">Recurring supplier–importer relationships</a>
+    <a href="#patterns">Patterns that deserve separate review</a>
+    <a href="#records">What the records show—and what they do not</a>
+    <a href="#directory">Full Indonesia-linked supplier directory</a>
+    <a href="#questions">Questions for lawmakers</a>
+</aside>
+
 <main id="main">
-<section class="hero"><div class="hero-inner"><span class="eyebrow">Exporter network investigation</span><h1>Indonesia's Largest Kratom Exporters</h1><p class="hero-sub">Public shipping records identify the named suppliers and shippers behind thousands of metric tons of <em>Mitragyna speciosa</em> entering the United States. This page examines scale, recurring importer relationships, HS-code patterns, ports, and the limits of the public record.</p><div class="hero-actions"><a class="btn btn-red" href="#ranking">Explore the ranking</a><a class="btn btn-ghost" href="downloads/ImportYeti_Mitragyna_Analysis_2026-07-31.xlsx">Download the workbook</a></div><div class="hero-stats"><div class="hero-stat"><strong>41</strong><span>Normalized Indonesia-linked entities</span></div><div class="hero-stat"><strong>276</strong><span>Company-level curated records</span></div><div class="hero-stat"><strong>8,599.233</strong><span>Metric tons in the company-level count</span></div><div class="hero-stat"><strong>251</strong><span>Strict Indonesia country-field records</span></div></div></div></section>
+<section class="hero-full">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">Exporter network investigation</div>
+      <h1>Indonesia's Largest Kratom Exporters</h1>
+      <p class="subhead">Public shipping records identify the named suppliers and shippers behind thousands of metric tons of <em>Mitragyna speciosa</em> entering the United States. This page examines scale, recurring importer relationships, HS-code patterns, ports, and the limits of the public record.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px;">
+        <a class="btn btn-red" href="#ranking">Explore the ranking</a>
+        <a class="btn btn-ghost" href="downloads/ImportYeti_Mitragyna_Analysis_2026-07-31.xlsx">Download the workbook</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-stat"><div class="num">41</div><div class="label">Normalized Indonesia-linked entities</div></div>
+      <div class="hero-stat"><div class="num">276</div><div class="label">Company-level curated records</div></div>
+      <div class="hero-stat"><div class="num">8,599.233</div><div class="label">Metric tons (company-level count)</div></div>
+      <div class="hero-stat"><div class="num">251</div><div class="label">Strict Indonesia country-field records</div></div>
+    </div>
+  </div>
+</section>
+
 <div class="shell">
-<section class="panel intro-grid"><div><div class="section-title"><h2>Every shipment begins with a named shipper</h2></div><p>When lawmakers see kratom at a gas station, vape shop, smoke shop, or online retailer, they are seeing the final commercial product—not the upstream trade network that supplied it. Before reaching the United States, bulk leaf or powder may pass through harvesters, processors, exporters, freight consolidators, ocean carriers, customs brokers, importers, and warehouses.</p><p>The workbook behind this investigation identified <strong>41 normalized supplier or shipper entities with at least one Indonesia-linked record</strong>. Counting all curated records tied to those entities produces a company-level total of <strong>276 records</strong> and <strong>8,599.233 metric tons</strong>.<br><br>A stricter row-level count—limited only to records whose supplier-country field explicitly identifies Indonesia—produces <strong>251 records</strong> and <strong>7,995.956 metric tons</strong>. Both totals are disclosed because commercial trade databases contain apparent country-label and normalization errors.</p></div><aside class="definition"><strong>Important terminology</strong><p>The company named as “shipper” on a bill of lading is not necessarily the farmer or manufacturer. It may be a producer, processor, exporter, freight consolidator, or logistics intermediary. This page therefore uses <em>named supplier / shipper</em> in its data tables and reserves broader conclusions for evidence beyond shipping records.</p></aside></section>
+<section class="panel intro-grid" id="intro">
+  <div><div class="section-title"><h2>Every shipment begins with a named shipper</h2></div><p>When lawmakers see kratom at a gas station, vape shop, smoke shop, or online retailer, they are seeing the final commercial product—not the upstream trade network that supplied it. Before reaching the United States, bulk leaf or powder may pass through harvesters, processors, exporters, freight consolidators, ocean carriers, customs brokers, importers, and warehouses.</p><p>The workbook behind this investigation identified <strong>41 normalized supplier or shipper entities with at least one Indonesia-linked record</strong>. Counting all curated records tied to those entities produces a company-level total of <strong>276 records</strong> and <strong>8,599.233 metric tons</strong>.<br><br>A stricter row-level count—limited only to records whose supplier-country field explicitly identifies Indonesia—produces <strong>251 records</strong> and <strong>7,995.956 metric tons</strong>. Both totals are disclosed because commercial trade databases contain apparent country-label and normalization errors.</p></div>
+  <aside class="definition"><strong>Important terminology</strong><p>The company named as “shipper” on a bill of lading is not necessarily the farmer or manufacturer. It may be a producer, processor, exporter, freight consolidator, or logistics intermediary. This page therefore uses <em>named supplier / shipper</em> in its data tables and reserves broader conclusions for evidence beyond shipping records.</p></aside>
+</section>
 
-<!-- Removed the "From harvest to trade" section entirely -->
+<section class="panel" id="numbers">
+  <div class="section-title"><h2>Investigation by the numbers</h2></div>
+  <div class="kpi-grid">
+    <div class="kpi"><strong>500</strong><span>Public source records reviewed</span></div>
+    <div class="kpi"><strong>367</strong><span>Curated shipment records overall</span></div>
+    <div class="kpi"><strong>41</strong><span>Normalized Indonesia-linked entities</span></div>
+    <div class="kpi"><strong>55.0%</strong><span>All curated weight associated with the top 10 Indonesia-linked names</span></div>
+  </div>
+  <div class="method-box" style="margin-top:18px;padding:22px;border:1px solid #cdd8e6;border-left:6px solid var(--blue);border-radius:14px;background:#f4f8fd">
+    <strong style="display:block;color:var(--navy);margin-bottom:9px">Two disclosed counting methods</strong>
+    <p style="margin:0 0 10px"><strong>Company-level Indonesia-linked count:</strong> 41 normalized entities, 276 curated records, and 8,599.233 metric tons. An entity is included if at least one curated record identifies an Indonesia link; all curated records for that normalized entity are then counted.</p>
+    <p style="margin:0"><strong>Strict country-field count:</strong> 251 curated records and 7,995.956 metric tons where the supplier-country field itself explicitly identifies Indonesia.</p>
+  </div>
+  <div class="data-note"><strong>Dataset period:</strong> 2024-04-25 to 2026-07-22. The curated table is a best estimate after reducing likely master/house document duplication. Country fields in commercial databases contain apparent normalization errors and should not be treated as definitive evidence of cultivation origin or corporate domicile.</div>
+</section>
 
-<section class="panel"><div class="section-title"><h2>Investigation by the numbers</h2></div><div class="kpi-grid"><div class="kpi"><strong>500</strong><span>Public source records reviewed</span></div><div class="kpi"><strong>367</strong><span>Curated shipment records overall</span></div><div class="kpi"><strong>41</strong><span>Normalized Indonesia-linked entities</span></div><div class="kpi"><strong>55.0%</strong><span>All curated weight associated with the top 10 Indonesia-linked names</span></div></div><div class="method-box" style="margin-top:18px;padding:22px;border:1px solid #cdd8e6;border-left:6px solid var(--blue);border-radius:14px;background:#f4f8fd"><strong style="display:block;color:var(--navy);margin-bottom:9px">Two disclosed counting methods</strong><p style="margin:0 0 10px"><strong>Company-level Indonesia-linked count:</strong> 41 normalized entities, 276 curated records, and 8,599.233 metric tons. An entity is included if at least one curated record identifies an Indonesia link; all curated records for that normalized entity are then counted.</p><p style="margin:0"><strong>Strict country-field count:</strong> 251 curated records and 7,995.956 metric tons where the supplier-country field itself explicitly identifies Indonesia.</p></div><div class="data-note"><strong>Dataset period:</strong> 2024-04-25 to 2026-07-22. The curated table is a best estimate after reducing likely master/house document duplication. Country fields in commercial databases contain apparent normalization errors and should not be treated as definitive evidence of cultivation origin or corporate domicile.</div></section>
-<section class="panel" id="ranking"><div class="section-title"><h2>Largest Indonesia-linked names by documented weight</h2></div><p>The ranking below uses the <strong>company-level Indonesia-linked method</strong>: a normalized entity is included when at least one curated record contains an Indonesia link, and all curated records for that entity are then shown. Two other high-volume names in the overall supplier ranking—Transindo Antariksa Logistik and Zyam Trade 168—are addressed separately because their country fields point to Singapore and Thailand.</p><div class="table-wrap"><table class="responsive"><thead><tr><th>Rank</th><th>Named supplier / shipper</th><th>Curated records</th><th>Metric tons</th><th>Importer relationships</th><th>HS mix</th></tr></thead><tbody><tr>
-<td data-label="Rank">1</td>
-<td data-label="Named supplier / shipper"><strong>CV Cahaya</strong><small>Indonesia/ID (40); Singapore/SG (1)</small></td>
-<td data-label="Curated records">41</td>
-<td data-label="Metric tons">1,772.082</td>
-<td data-label="Importer relationships">7</td>
-<td data-label="HS mix"><code>121190:41</code></td>
-</tr>
-<tr>
-<td data-label="Rank">2</td>
-<td data-label="Named supplier / shipper"><strong>Borneo Lingga Ambawang</strong><small>Indonesia/ID (40); Indonesia/CN (1)</small></td>
-<td data-label="Curated records">41</td>
-<td data-label="Metric tons">1,037.406</td>
-<td data-label="Importer relationships">4</td>
-<td data-label="HS mix"><code>121190:41</code></td>
-</tr>
-<tr>
-<td data-label="Rank">3</td>
-<td data-label="Named supplier / shipper"><strong>PT Sahabat Sukses Kalimantan Barat</strong><small>Indonesia/ID (14); Colombia/CO (6)</small></td>
-<td data-label="Curated records">20</td>
-<td data-label="Metric tons">733.575</td>
-<td data-label="Importer relationships">6</td>
-<td data-label="HS mix"><code>121190:19; 310100:1</code></td>
-</tr>
-<tr>
-<td data-label="Rank">4</td>
-<td data-label="Named supplier / shipper"><strong>Delta Gambung Nusantara</strong><small>Indonesia/ID (27)</small></td>
-<td data-label="Curated records">27</td>
-<td data-label="Metric tons">708.312</td>
-<td data-label="Importer relationships">3</td>
-<td data-label="HS mix"><code>121190:27</code></td>
-</tr>
-<tr>
-<td data-label="Rank">5</td>
-<td data-label="Named supplier / shipper"><strong>PT Sahabat Alam Mulia</strong><small>Indonesia/ID (14); Indonesia/KR (1)</small></td>
-<td data-label="Curated records">15</td>
-<td data-label="Metric tons">619.286</td>
-<td data-label="Importer relationships">3</td>
-<td data-label="HS mix"><code>121190:15</code></td>
-</tr>
-<tr>
-<td data-label="Rank">6</td>
-<td data-label="Named supplier / shipper"><strong>Robi Darmawan Botanicals</strong><small>Indonesia/ID (6); India/ID (4)</small></td>
-<td data-label="Curated records">10</td>
-<td data-label="Metric tons">413.5</td>
-<td data-label="Importer relationships">1</td>
-<td data-label="HS mix"><code>121190:9; 120930:1</code></td>
-</tr>
-<tr>
-<td data-label="Rank">7</td>
-<td data-label="Named supplier / shipper"><strong>PT Borindo Perkasa Indonesia</strong><small>Indonesia/ID (11); Rwanda/KR (1); Indonesia/KR (1)</small></td>
-<td data-label="Curated records">13</td>
-<td data-label="Metric tons">300.67</td>
-<td data-label="Importer relationships">1</td>
-<td data-label="HS mix"><code>121190:13</code></td>
-</tr>
-<tr>
-<td data-label="Rank">8</td>
-<td data-label="Named supplier / shipper"><strong>Dua Saudara Berkarya</strong><small>Indonesia/ID (8)</small></td>
-<td data-label="Curated records">8</td>
-<td data-label="Metric tons">277.547</td>
-<td data-label="Importer relationships">2</td>
-<td data-label="HS mix"><code>121190:8</code></td>
-</tr>
-<tr>
-<td data-label="Rank">9</td>
-<td data-label="Named supplier / shipper"><strong>Aditama Sentosa Indonesia</strong><small>Indonesia/ID (7); Singapore/SG (2)</small></td>
-<td data-label="Curated records">9</td>
-<td data-label="Metric tons">215.35</td>
-<td data-label="Importer relationships">2</td>
-<td data-label="HS mix"><code>121190:9</code></td>
-</tr>
-<tr>
-<td data-label="Rank">10</td>
-<td data-label="Named supplier / shipper"><strong>Ampera Jaya Global</strong><small>Indonesia/ID (5)</small></td>
-<td data-label="Curated records">5</td>
-<td data-label="Metric tons">191.5</td>
-<td data-label="Importer relationships">2</td>
-<td data-label="HS mix"><code>121190:5</code></td>
-</tr></tbody></table></div></section>
-<section class="panel"><div class="section-title"><h2>Concentration of documented weight</h2></div><p>The top ten Indonesia-linked names account for approximately <strong>6,269.228 metric tons</strong>—about <strong>55.0%</strong> of all curated shipment weight in the workbook.</p><div class="bar-chart"><div class="bar-row">
-  <div class="bar-label"><strong>1</strong><span>CV Cahaya</span></div>
-  <div class="bar-track"><span style="width:100.00%"></span></div>
-  <div class="bar-value">1,772.082 t</div>
-</div>
-<div class="bar-row">
-  <div class="bar-label"><strong>2</strong><span>Borneo Lingga Ambawang</span></div>
-  <div class="bar-track"><span style="width:58.54%"></span></div>
-  <div class="bar-value">1,037.406 t</div>
-</div>
-<div class="bar-row">
-  <div class="bar-label"><strong>3</strong><span>PT Sahabat Sukses Kalimantan Barat</span></div>
-  <div class="bar-track"><span style="width:41.40%"></span></div>
-  <div class="bar-value">733.575 t</div>
-</div>
-<div class="bar-row">
-  <div class="bar-label"><strong>4</strong><span>Delta Gambung Nusantara</span></div>
-  <div class="bar-track"><span style="width:39.97%"></span></div>
-  <div class="bar-value">708.312 t</div>
-</div>
-<div class="bar-row">
-  <div class="bar-label"><strong>5</strong><span>PT Sahabat Alam Mulia</span></div>
-  <div class="bar-track"><span style="width:34.95%"></span></div>
-  <div class="bar-value">619.286 t</div>
-</div>
-<div class="bar-row">
-  <div class="bar-label"><strong>6</strong><span>Robi Darmawan Botanicals</span></div>
-  <div class="bar-track"><span style="width:23.33%"></span></div>
-  <div class="bar-value">413.5 t</div>
-</div>
-<div class="bar-row">
-  <div class="bar-label"><strong>7</strong><span>PT Borindo Perkasa Indonesia</span></div>
-  <div class="bar-track"><span style="width:16.97%"></span></div>
-  <div class="bar-value">300.67 t</div>
-</div>
-<div class="bar-row">
-  <div class="bar-label"><strong>8</strong><span>Dua Saudara Berkarya</span></div>
-  <div class="bar-track"><span style="width:15.66%"></span></div>
-  <div class="bar-value">277.547 t</div>
-</div>
-<div class="bar-row">
-  <div class="bar-label"><strong>9</strong><span>Aditama Sentosa Indonesia</span></div>
-  <div class="bar-track"><span style="width:12.15%"></span></div>
-  <div class="bar-value">215.35 t</div>
-</div>
-<div class="bar-row">
-  <div class="bar-label"><strong>10</strong><span>Ampera Jaya Global</span></div>
-  <div class="bar-track"><span style="width:10.81%"></span></div>
-  <div class="bar-value">191.5 t</div>
-</div></div></section>
-<section class="panel"><div class="section-title"><h2>Selected exporter / shipper profiles</h2></div><p>These profiles summarize what the workbook establishes: shipment count, documented weight, importer relationships, HS-code mix, ports, dates, and flagged wording. They do not establish manufacturing quality, intended use, FDA review, or legal compliance.</p><div class="profile-grid"><article class="profile-card">
-<div class="profile-top"><div><span class="profile-kicker">Named supplier / shipper</span><h3>CV Cahaya</h3></div><div class="profile-weight">1,772.082<small>metric tons</small></div></div>
-<div class="profile-metrics"><span><strong>41</strong> records</span><span><strong>7</strong> importer relationships</span><span><strong>2024-05-02</strong> first arrival</span></div>
-<div class="profile-flags"><span class="flag flag-green">No flagged wording</span></div>
-<dl><dt>HS mix</dt><dd><code>121190:41</code></dd><dt>Top importers</dt><dd>South Asia Trade (25); Deent Import (6); Far East Global (4); Krown Logistics (3); Malumalu (1); International Packing Solutions (1)</dd><dt>Destination ports</dt><dd>Los Angeles, Ca (20); Miami, Florida (11); Oakland, Ca (8); Savannah, Ga. (1); Long Beach, Ca (1)</dd></dl>
-</article>
-<article class="profile-card">
-<div class="profile-top"><div><span class="profile-kicker">Named supplier / shipper</span><h3>Borneo Lingga Ambawang</h3></div><div class="profile-weight">1,037.406<small>metric tons</small></div></div>
-<div class="profile-metrics"><span><strong>41</strong> records</span><span><strong>4</strong> importer relationships</span><span><strong>2025-04-29</strong> first arrival</span></div>
-<div class="profile-flags"><span class="flag flag-green">No flagged wording</span></div>
-<dl><dt>HS mix</dt><dd><code>121190:41</code></dd><dt>Top importers</dt><dd>Via Express Cargo (20); Patagonia Trade &amp; Distribution (10); Oceania Trade &amp; Distribution (10); Cas Connecting Group (1)</dd><dt>Destination ports</dt><dd>Oakland, Ca (36); Tampa, Fla. (4); Seattle, Wa (1)</dd></dl>
-</article>
-<article class="profile-card">
-<div class="profile-top"><div><span class="profile-kicker">Named supplier / shipper</span><h3>PT Sahabat Sukses Kalimantan Barat</h3></div><div class="profile-weight">733.575<small>metric tons</small></div></div>
-<div class="profile-metrics"><span><strong>20</strong> records</span><span><strong>6</strong> importer relationships</span><span><strong>2024-05-31</strong> first arrival</span></div>
-<div class="profile-flags"><span class="flag flag-orange">Non-121190</span></div>
-<dl><dt>HS mix</dt><dd><code>121190:19; 310100:1</code></dd><dt>Top importers</dt><dd>Usindo Exim Consulting (6); Golden Mitra Botanicals (6); K Jo (3); South Asia Trade (2); Jap Empore (2); Steven Tupuola Atamai Holdings (1)</dd><dt>Destination ports</dt><dd>Miami, Florida (8); Norfolk, Va. (6); Los Angeles, Ca (3); Tampa, Fla. (3)</dd></dl>
-</article>
-<article class="profile-card">
-<div class="profile-top"><div><span class="profile-kicker">Named supplier / shipper</span><h3>Delta Gambung Nusantara</h3></div><div class="profile-weight">708.312<small>metric tons</small></div></div>
-<div class="profile-metrics"><span><strong>27</strong> records</span><span><strong>3</strong> importer relationships</span><span><strong>2025-04-15</strong> first arrival</span></div>
-<div class="profile-flags"><span class="flag flag-blue">Dye/color wording</span></div>
-<dl><dt>HS mix</dt><dd><code>121190:27</code></dd><dt>Top importers</dt><dd>Wholesale Kings (18); Terra Tropic (8); Herbal Gift (1)</dd><dt>Destination ports</dt><dd>Oakland, Ca (16); Los Angeles, Ca (11)</dd></dl>
-</article>
-<article class="profile-card">
-<div class="profile-top"><div><span class="profile-kicker">Named supplier / shipper</span><h3>PT Sahabat Alam Mulia</h3></div><div class="profile-weight">619.286<small>metric tons</small></div></div>
-<div class="profile-metrics"><span><strong>15</strong> records</span><span><strong>3</strong> importer relationships</span><span><strong>2024-06-27</strong> first arrival</span></div>
-<div class="profile-flags"><span class="flag flag-green">No flagged wording</span></div>
-<dl><dt>HS mix</dt><dd><code>121190:15</code></dd><dt>Top importers</dt><dd>Jap Empore (13); Golden Mitra Botanicals (1); South Asia Trade (1)</dd><dt>Destination ports</dt><dd>Tampa, Fla. (8); Miami, Florida (6); Baltimore, Md. (1)</dd></dl>
-</article>
-<article class="profile-card">
-<div class="profile-top"><div><span class="profile-kicker">Named supplier / shipper</span><h3>Robi Darmawan Botanicals</h3></div><div class="profile-weight">413.5<small>metric tons</small></div></div>
-<div class="profile-metrics"><span><strong>10</strong> records</span><span><strong>1</strong> importer relationships</span><span><strong>2025-08-23</strong> first arrival</span></div>
-<div class="profile-flags"><span class="flag flag-orange">Non-121190</span><span class="flag flag-red">Non-consumption wording</span></div>
-<dl><dt>HS mix</dt><dd><code>121190:9; 120930:1</code></dd><dt>Top importers</dt><dd>Tesoro Pharma (10)</dd><dt>Destination ports</dt><dd>Norfolk, Va. (8); Oakland, Ca (2)</dd></dl>
-</article></div></section>
-<section class="panel"><div class="section-title"><h2>Recurring supplier–importer relationships</h2></div><p>The workbook shows that much of the trade was organized through repeated commercial pairings rather than isolated transactions.</p><div class="network-grid"><article class="network-card"><strong>CV Cahaya</strong><span class="arrow">↓</span><b>South Asia Trade</b><small>25 curated records · 1,102.331 metric tons</small></article><article class="network-card"><strong>PT Sahabat Alam Mulia</strong><span class="arrow">↓</span><b>Jap Empore</b><small>13 records · 574.711 metric tons</small></article><article class="network-card"><strong>Borneo Lingga Ambawang</strong><span class="arrow">↓</span><b>Via Express Cargo</b><small>20 records · 506.128 metric tons</small></article><article class="network-card"><strong>Delta Gambung Nusantara</strong><span class="arrow">↓</span><b>Wholesale Kings</b><small>18 records · 465.177 metric tons</small></article><article class="network-card"><strong>Robi Darmawan Botanicals</strong><span class="arrow">↓</span><b>Tesoro Pharma</b><small>10 records · 413.500 metric tons</small></article><article class="network-card"><strong>PT Borindo Perkasa Indonesia</strong><span class="arrow">↓</span><b>Via Express Cargo</b><small>13 records · 300.670 metric tons</small></article></div></section>
-<section class="panel"><div class="section-title"><h2>Patterns that deserve separate review</h2></div><div class="two-col"><article class="what-card cannot"><h3>Classification and wording outliers</h3><ul><li><strong>PT Sahabat Sukses Kalimantan Barat:</strong> 19 records under 121190 and one under 310100.</li><li><strong>Robi Darmawan Botanicals:</strong> six records with non-consumption wording and one record under 120930.</li><li><strong>Delta Gambung Nusantara:</strong> 11 records carrying dye/color-use wording in the workbook flags.</li><li><strong>Ampera Jaya Global:</strong> four non-consumption records and two dye/color wording flags.</li><li><strong>Ihsan Jaya Logistik:</strong> nine external-use records and nine records under 090111.</li></ul></article><article class="what-card can"><h3>What these flags mean</h3><ul><li>They identify exact wording or codes in the curated records.</li><li>They help isolate records for closer review.</li><li>They do not establish who selected the wording.</li><li>They do not prove CBP accepted the code.</li><li>They do not prove FDA reviewed or admitted a shipment.</li><li>They are leads for the later public-materials and company-profile investigations.</li></ul></article></div></section>
-<section class="panel"><div class="section-title"><h2>What the records show—and what they do not</h2></div><div class="two-col"><article class="what-card can"><h3>The records can establish</h3><ul><li>The named shipper and consignee in the public record.</li><li>Documented weights, dates, ports, routes, and container data.</li><li>Cargo descriptions and HS codes appearing in the dataset.</li><li>Recurring relationships between named suppliers and U.S. importers.</li><li>Patterns worth requesting additional records about.</li></ul></article><article class="what-card cannot"><h3>The records do not establish</h3><ul><li>Which farm produced the material.</li><li>Whether the named shipper actually manufactured it.</li><li>Product quality, testing, contamination controls, or age.</li><li>Whether FDA reviewed, detained, released, or refused a shipment.</li><li>Whether CBP accepted or modified the reported classification.</li><li>Whether any law was violated.</li></ul></article></div></section>
+<section class="panel" id="ranking">
+  <div class="section-title"><h2>Largest Indonesia-linked names by documented weight</h2></div>
+  <p>The ranking below uses the <strong>company-level Indonesia-linked method</strong>: a normalized entity is included when at least one curated record contains an Indonesia link, and all curated records for that entity are then shown. Two other high-volume names in the overall supplier ranking—Transindo Antariksa Logistik and Zyam Trade 168—are addressed separately because their country fields point to Singapore and Thailand.</p>
+  <div class="table-wrap"><table class="responsive"><thead><tr><th>Rank</th><th>Named supplier / shipper</th><th>Curated records</th><th>Metric tons</th><th>Importer relationships</th><th>HS mix</th></tr></thead><tbody>
+    <tr><td data-label="Rank">1</td><td data-label="Named supplier / shipper"><strong>CV Cahaya</strong><small>Indonesia/ID (40); Singapore/SG (1)</small></td><td data-label="Curated records">41</td><td data-label="Metric tons">1,772.082</td><td data-label="Importer relationships">7</td><td data-label="HS mix"><code>121190:41</code></td></tr>
+    <tr><td data-label="Rank">2</td><td data-label="Named supplier / shipper"><strong>Borneo Lingga Ambawang</strong><small>Indonesia/ID (40); Indonesia/CN (1)</small></td><td data-label="Curated records">41</td><td data-label="Metric tons">1,037.406</td><td data-label="Importer relationships">4</td><td data-label="HS mix"><code>121190:41</code></td></tr>
+    <tr><td data-label="Rank">3</td><td data-label="Named supplier / shipper"><strong>PT Sahabat Sukses Kalimantan Barat</strong><small>Indonesia/ID (14); Colombia/CO (6)</small></td><td data-label="Curated records">20</td><td data-label="Metric tons">733.575</td><td data-label="Importer relationships">6</td><td data-label="HS mix"><code>121190:19; 310100:1</code></td></tr>
+    <tr><td data-label="Rank">4</td><td data-label="Named supplier / shipper"><strong>Delta Gambung Nusantara</strong><small>Indonesia/ID (27)</small></td><td data-label="Curated records">27</td><td data-label="Metric tons">708.312</td><td data-label="Importer relationships">3</td><td data-label="HS mix"><code>121190:27</code></td></tr>
+    <tr><td data-label="Rank">5</td><td data-label="Named supplier / shipper"><strong>PT Sahabat Alam Mulia</strong><small>Indonesia/ID (14); Indonesia/KR (1)</small></td><td data-label="Curated records">15</td><td data-label="Metric tons">619.286</td><td data-label="Importer relationships">3</td><td data-label="HS mix"><code>121190:15</code></td></tr>
+    <tr><td data-label="Rank">6</td><td data-label="Named supplier / shipper"><strong>Robi Darmawan Botanicals</strong><small>Indonesia/ID (6); India/ID (4)</small></td><td data-label="Curated records">10</td><td data-label="Metric tons">413.5</td><td data-label="Importer relationships">1</td><td data-label="HS mix"><code>121190:9; 120930:1</code></td></tr>
+    <tr><td data-label="Rank">7</td><td data-label="Named supplier / shipper"><strong>PT Borindo Perkasa Indonesia</strong><small>Indonesia/ID (11); Rwanda/KR (1); Indonesia/KR (1)</small></td><td data-label="Curated records">13</td><td data-label="Metric tons">300.67</td><td data-label="Importer relationships">1</td><td data-label="HS mix"><code>121190:13</code></td></tr>
+    <tr><td data-label="Rank">8</td><td data-label="Named supplier / shipper"><strong>Dua Saudara Berkarya</strong><small>Indonesia/ID (8)</small></td><td data-label="Curated records">8</td><td data-label="Metric tons">277.547</td><td data-label="Importer relationships">2</td><td data-label="HS mix"><code>121190:8</code></td></tr>
+    <tr><td data-label="Rank">9</td><td data-label="Named supplier / shipper"><strong>Aditama Sentosa Indonesia</strong><small>Indonesia/ID (7); Singapore/SG (2)</small></td><td data-label="Curated records">9</td><td data-label="Metric tons">215.35</td><td data-label="Importer relationships">2</td><td data-label="HS mix"><code>121190:9</code></td></tr>
+    <tr><td data-label="Rank">10</td><td data-label="Named supplier / shipper"><strong>Ampera Jaya Global</strong><small>Indonesia/ID (5)</small></td><td data-label="Curated records">5</td><td data-label="Metric tons">191.5</td><td data-label="Importer relationships">2</td><td data-label="HS mix"><code>121190:5</code></td></tr>
+  </tbody></table></div>
+</section>
 
-<!-- Removed the search bar section entirely -->
-<section class="panel"><div class="section-title"><h2>Full Indonesia-linked supplier directory</h2></div><p>The table below lists all 41 normalized entities with their record counts, weights, importers, HS codes, flags, and arrival ranges.</p>
-<div class="table-wrap"><table><thead><tr><th>Named supplier / shipper</th><th>Records</th><th>Metric tons</th><th>Importers</th><th>HS mix</th><th>Workbook flags</th><th>Arrival range</th></tr></thead><tbody>
-<tr><td><strong>CV Cahaya</strong><small>Indonesia/ID (40); Singapore/SG (1)</small></td><td>41</td><td>1,772.082</td><td>7</td><td><code>121190:41</code></td><td>No workbook flags</td><td>2024-05-02<br><span class="muted">to 2026-02-05</span></td></tr>
-<tr><td><strong>Borneo Lingga Ambawang</strong><small>Indonesia/ID (40); Indonesia/CN (1)</small></td><td>41</td><td>1,037.406</td><td>4</td><td><code>121190:41</code></td><td>No workbook flags</td><td>2025-04-29<br><span class="muted">to 2026-06-24</span></td></tr>
-<tr><td><strong>PT Sahabat Sukses Kalimantan Barat</strong><small>Indonesia/ID (14); Colombia/CO (6)</small></td><td>20</td><td>733.575</td><td>6</td><td><code>121190:19; 310100:1</code></td><td>1 non-121190</td><td>2024-05-31<br><span class="muted">to 2026-07-22</span></td></tr>
-<tr><td><strong>Delta Gambung Nusantara</strong><small>Indonesia/ID (27)</small></td><td>27</td><td>708.312</td><td>3</td><td><code>121190:27</code></td><td>11 dye/color</td><td>2025-04-15<br><span class="muted">to 2026-07-17</span></td></tr>
-<tr><td><strong>PT Sahabat Alam Mulia</strong><small>Indonesia/ID (14); Indonesia/KR (1)</small></td><td>15</td><td>619.286</td><td>3</td><td><code>121190:15</code></td><td>No workbook flags</td><td>2024-06-27<br><span class="muted">to 2025-06-01</span></td></tr>
-<tr><td><strong>Robi Darmawan Botanicals</strong><small>Indonesia/ID (6); India/ID (4)</small></td><td>10</td><td>413.5</td><td>1</td><td><code>121190:9; 120930:1</code></td><td>1 non-121190; 6 non-consumption</td><td>2025-08-23<br><span class="muted">to 2026-07-15</span></td></tr>
-<tr><td><strong>PT Borindo Perkasa Indonesia</strong><small>Indonesia/ID (11); Rwanda/KR (1); Indonesia/KR (1)</small></td><td>13</td><td>300.67</td><td>1</td><td><code>121190:13</code></td><td>No workbook flags</td><td>2024-07-09<br><span class="muted">to 2024-12-20</span></td></tr>
-<tr><td><strong>Dua Saudara Berkarya</strong><small>Indonesia/ID (8)</small></td><td>8</td><td>277.547</td><td>2</td><td><code>121190:8</code></td><td>No workbook flags</td><td>2025-05-06<br><span class="muted">to 2026-03-07</span></td></tr>
-<tr><td><strong>Aditama Sentosa Indonesia</strong><small>Indonesia/ID (7); Singapore/SG (2)</small></td><td>9</td><td>215.35</td><td>2</td><td><code>121190:9</code></td><td>No workbook flags</td><td>2024-05-17<br><span class="muted">to 2024-11-02</span></td></tr>
-<tr><td><strong>Ampera Jaya Global</strong><small>Indonesia/ID (5)</small></td><td>5</td><td>191.5</td><td>2</td><td><code>121190:5</code></td><td>4 non-consumption; 2 dye/color</td><td>2025-06-20<br><span class="muted">to 2025-08-23</span></td></tr>
-<tr><td><strong>Sekrindo Mangala Jaya</strong><small>Indonesia/ID (7)</small></td><td>7</td><td>181.542</td><td>2</td><td><code>121190:7</code></td><td>No workbook flags</td><td>2025-05-21<br><span class="muted">to 2026-01-22</span></td></tr>
-<tr><td><strong>Dawu Supply Chain Management Indonesia</strong><small>Vietnam/ID (4); Indonesia/ID (3)</small></td><td>7</td><td>172.012</td><td>1</td><td><code>121190:7</code></td><td>6 non-consumption; 1 dye/color</td><td>2024-06-12<br><span class="muted">to 2025-05-26</span></td></tr>
-<tr><td><strong>Citra Khatulistiwa Berseri</strong><small>Indonesia/ID (6)</small></td><td>6</td><td>168.48</td><td>2</td><td><code>121190:6</code></td><td>No workbook flags</td><td>2025-05-21<br><span class="muted">to 2026-03-07</span></td></tr>
-<tr><td><strong>Ihsan Jaya Logistik</strong><small>Indonesia/ID (6); Singapore/SG (5)</small></td><td>11</td><td>152.516</td><td>2</td><td><code>090111:9; 121190:2</code></td><td>9 non-121190; 11 non-consumption; 9 external-use</td><td>2025-05-11<br><span class="muted">to 2026-06-24</span></td></tr>
-<tr><td><strong>PT Kalamantha Embara Buana</strong><small>Indonesia/ID (4)</small></td><td>4</td><td>137.7</td><td>2</td><td><code>121190:4</code></td><td>2 non-consumption</td><td>2025-05-12<br><span class="muted">to 2025-06-30</span></td></tr>
-<tr><td><strong>Bvl Logistik Indonesia</strong><small>Indonesia/ID (5)</small></td><td>5</td><td>136.5</td><td>1</td><td><code>121190:5</code></td><td>No workbook flags</td><td>2025-04-21<br><span class="muted">to 2025-05-03</span></td></tr>
-<tr><td><strong>Sumber Warih Sejahtera</strong><small>Indonesia/ID (4); Singapore/SG (1)</small></td><td>5</td><td>133.699</td><td>2</td><td><code>121190:5</code></td><td>No workbook flags</td><td>2025-08-08<br><span class="muted">to 2026-03-05</span></td></tr>
-<tr><td><strong>Nirwadaya Bumi Lestari</strong><small>Indonesia/ID (4)</small></td><td>4</td><td>111.74</td><td>2</td><td><code>121190:4</code></td><td>No workbook flags</td><td>2025-11-11<br><span class="muted">to 2026-02-02</span></td></tr>
-<tr><td><strong>Raw Botanical Nusantara</strong><small>Indonesia/ID (3)</small></td><td>3</td><td>109.003</td><td>1</td><td><code>121190:3</code></td><td>No workbook flags</td><td>2026-02-04<br><span class="muted">to 2026-06-29</span></td></tr>
-<tr><td><strong>Kalimantan Botanical Group</strong><small>Indonesia/ID (3)</small></td><td>3</td><td>84.24</td><td>1</td><td><code>121190:3</code></td><td>No workbook flags</td><td>2025-05-06<br><span class="muted">to 2025-05-20</span></td></tr>
-<tr><td><strong>Kratom Herbal Borneo</strong><small>Indonesia/ID (3)</small></td><td>3</td><td>84.24</td><td>2</td><td><code>121190:3</code></td><td>No workbook flags</td><td>2025-06-02<br><span class="muted">to 2026-02-18</span></td></tr>
-<tr><td><strong>Kapuas Botanical Indonesia</strong><small>Indonesia/ID (2)</small></td><td>2</td><td>83.943</td><td>1</td><td><code>121190:2</code></td><td>No workbook flags</td><td>2026-02-18<br><span class="muted">to 2026-02-18</span></td></tr>
-<tr><td><strong>Sungai Dangko Indah</strong><small>Indonesia/ID (4)</small></td><td>4</td><td>70.69</td><td>1</td><td><code>121190:4</code></td><td>No workbook flags</td><td>2024-06-08<br><span class="muted">to 2024-07-07</span></td></tr>
-<tr><td><strong>Rajawali Botanical Nusantara</strong><small>Indonesia/ID (2)</small></td><td>2</td><td>56.005</td><td>1</td><td><code>121190:2</code></td><td>No workbook flags</td><td>2024-09-03<br><span class="muted">to 2024-11-05</span></td></tr>
-<tr><td><strong>Berkah Bahagia Berjaya</strong><small>Indonesia/ID (2)</small></td><td>2</td><td>56</td><td>1</td><td><code>121190:2</code></td><td>1 non-consumption</td><td>2025-11-04<br><span class="muted">to 2026-03-07</span></td></tr>
-<tr><td><strong>Family Brother</strong><small>Indonesia/ID (1)</small></td><td>1</td><td>55.5</td><td>1</td><td><code>121190:1</code></td><td>No workbook flags</td><td>2025-05-05<br><span class="muted">to 2025-05-05</span></td></tr>
-<tr><td><strong>Nusantara Hijau Borneo</strong><small>Indonesia/ID (1)</small></td><td>1</td><td>55.5</td><td>1</td><td><code>121190:1</code></td><td>1 non-consumption</td><td>2025-07-02<br><span class="muted">to 2025-07-02</span></td></tr>
-<tr><td><strong>Drip Green Ocean</strong><small>Indonesia/ID (1)</small></td><td>1</td><td>55</td><td>1</td><td><code>121190:1</code></td><td>1 non-consumption</td><td>2025-09-28<br><span class="muted">to 2025-09-28</span></td></tr>
-<tr><td><strong>Sinergi Cakra Nusantara</strong><small>Indonesia/ID (2)</small></td><td>2</td><td>55</td><td>1</td><td><code>121190:2</code></td><td>2 non-consumption</td><td>2025-07-17<br><span class="muted">to 2026-02-16</span></td></tr>
-<tr><td><strong>Alam Jaya Medika</strong><small>Indonesia/ID (2)</small></td><td>2</td><td>54.5</td><td>1</td><td><code>121190:2</code></td><td>2 non-consumption; 2 dye/color</td><td>2025-05-16<br><span class="muted">to 2025-06-22</span></td></tr>
-<tr><td><strong>Evergreen Logistics Indonesia</strong><small>Indonesia/ID (1)</small></td><td>1</td><td>54.001</td><td>1</td><td><code>121190:1</code></td><td>1 non-consumption</td><td>2025-08-07<br><span class="muted">to 2025-08-07</span></td></tr>
-<tr><td><strong>Permata Hijau Kalimantan</strong><small>Indonesia/ID (1)</small></td><td>1</td><td>50</td><td>1</td><td><code>121190:1</code></td><td>1 non-consumption</td><td>2025-07-25<br><span class="muted">to 2025-07-25</span></td></tr>
-<tr><td><strong>Elfen Jaya Abadi</strong><small>Indonesia/ID (1); Singapore/SG (1)</small></td><td>2</td><td>34.987</td><td>2</td><td><code>121190:2</code></td><td>No workbook flags</td><td>2025-07-26<br><span class="muted">to 2025-07-30</span></td></tr>
-<tr><td><strong>Djb Botanicals Indonesia</strong><small>Indonesia/ID (1)</small></td><td>1</td><td>28.536</td><td>1</td><td><code>121190:1</code></td><td>No workbook flags</td><td>2025-09-11<br><span class="muted">to 2025-09-11</span></td></tr>
-<tr><td><strong>Jas Worldwide Indonesia</strong><small>Indonesia/ID (1)</small></td><td>1</td><td>28</td><td>1</td><td><code>121190:1</code></td><td>No workbook flags</td><td>2025-08-04<br><span class="muted">to 2025-08-04</span></td></tr>
-<tr><td><strong>Gawai Tuah Bahijau</strong><small>Indonesia/ID (1)</small></td><td>1</td><td>27.676</td><td>1</td><td><code>121190:1</code></td><td>No workbook flags</td><td>2026-01-20<br><span class="muted">to 2026-01-20</span></td></tr>
-<tr><td><strong>Jaya Global Lintas Samudera</strong><small>Indonesia/ID (1)</small></td><td>1</td><td>27.015</td><td>1</td><td><code>320300:1</code></td><td>1 non-121190; 1 dye/color</td><td>2025-05-09<br><span class="muted">to 2025-05-09</span></td></tr>
-<tr><td><strong>Baba Jack Industri</strong><small>Indonesia/ID (1)</small></td><td>1</td><td>24.48</td><td>1</td><td><code>121190:1</code></td><td>No workbook flags</td><td>2026-02-18<br><span class="muted">to 2026-02-18</span></td></tr>
-<tr><td><strong>Rayyan Abadi Logistics</strong><small>Indonesia/ID (1)</small></td><td>1</td><td>15</td><td>1</td><td><code>121190:1</code></td><td>No workbook flags</td><td>2024-12-11<br><span class="muted">to 2024-12-11</span></td></tr>
-<tr><td><strong>Cahaya Fajar Samudera</strong><small>Indonesia/ID (1)</small></td><td>1</td><td>14.5</td><td>1</td><td><code>121190:1</code></td><td>No workbook flags</td><td>2025-09-23<br><span class="muted">to 2025-09-23</span></td></tr>
-<tr><td><strong>Kreasi Alam Borneo</strong><small>Indonesia/ID (1)</small></td><td>1</td><td>12</td><td>1</td><td><code>121190:1</code></td><td>No workbook flags</td><td>2025-10-02<br><span class="muted">to 2025-10-02</span></td></tr>
-</tbody></table></div></section>
-<section class="panel"><div class="section-title"><h2>Questions for lawmakers and agencies</h2></div><div class="questions"><div class="question">Which named shippers are producers, processors, exporters, or freight intermediaries?</div><div class="question">What documentation links a U.S. importer to the actual overseas manufacturer?</div><div class="question">How are identity, contamination, age, and storage conditions verified before entry?</div><div class="question">Why do some supplier names appear under multiple tariff headings or intended-use descriptions?</div><div class="question">Were high-volume recurring supplier–importer relationships reviewed by FDA or CBP?</div><div class="question">Can agencies connect bulk imports to downstream retail products and brands?</div></div></section>
-<section class="cta"><h2>Next: What the exporters say publicly</h2><p>The shipping records establish scale and commercial relationships. The next investigation compares the records with exporter websites, marketing materials, business profiles, product catalogs, social-media statements, and evidence bearing on intended use.</p><a class="btn btn-red" href="/shipment/exporter-materials.html">Continue to exporter public materials →</a></section>
+<section class="panel"><div class="section-title"><h2>Concentration of documented weight</h2></div>
+<p>The top ten Indonesia-linked names account for approximately <strong>6,269.228 metric tons</strong>—about <strong>55.0%</strong> of all curated shipment weight in the workbook.</p>
+<div class="bar-chart">
+  <div class="bar-row"><div class="bar-label"><strong>1</strong><span>CV Cahaya</span></div><div class="bar-track"><span style="width:100.00%"></span></div><div class="bar-value">1,772.082 t</div></div>
+  <div class="bar-row"><div class="bar-label"><strong>2</strong><span>Borneo Lingga Ambawang</span></div><div class="bar-track"><span style="width:58.54%"></span></div><div class="bar-value">1,037.406 t</div></div>
+  <div class="bar-row"><div class="bar-label"><strong>3</strong><span>PT Sahabat Sukses Kalimantan Barat</span></div><div class="bar-track"><span style="width:41.40%"></span></div><div class="bar-value">733.575 t</div></div>
+  <div class="bar-row"><div class="bar-label"><strong>4</strong><span>Delta Gambung Nusantara</span></div><div class="bar-track"><span style="width:39.97%"></span></div><div class="bar-value">708.312 t</div></div>
+  <div class="bar-row"><div class="bar-label"><strong>5</strong><span>PT Sahabat Alam Mulia</span></div><div class="bar-track"><span style="width:34.95%"></span></div><div class="bar-value">619.286 t</div></div>
+  <div class="bar-row"><div class="bar-label"><strong>6</strong><span>Robi Darmawan Botanicals</span></div><div class="bar-track"><span style="width:23.33%"></span></div><div class="bar-value">413.5 t</div></div>
+  <div class="bar-row"><div class="bar-label"><strong>7</strong><span>PT Borindo Perkasa Indonesia</span></div><div class="bar-track"><span style="width:16.97%"></span></div><div class="bar-value">300.67 t</div></div>
+  <div class="bar-row"><div class="bar-label"><strong>8</strong><span>Dua Saudara Berkarya</span></div><div class="bar-track"><span style="width:15.66%"></span></div><div class="bar-value">277.547 t</div></div>
+  <div class="bar-row"><div class="bar-label"><strong>9</strong><span>Aditama Sentosa Indonesia</span></div><div class="bar-track"><span style="width:12.15%"></span></div><div class="bar-value">215.35 t</div></div>
+  <div class="bar-row"><div class="bar-label"><strong>10</strong><span>Ampera Jaya Global</span></div><div class="bar-track"><span style="width:10.81%"></span></div><div class="bar-value">191.5 t</div></div>
+</div></section>
+
+<section class="panel" id="profiles">
+  <div class="section-title"><h2>Selected exporter / shipper profiles</h2></div>
+  <p>These profiles summarize what the workbook establishes: shipment count, documented weight, importer relationships, HS-code mix, ports, dates, and flagged wording. They do not establish manufacturing quality, intended use, FDA review, or legal compliance.</p>
+  <div class="profile-grid">
+    <article class="profile-card"><div class="profile-top"><div><span class="profile-kicker">Named supplier / shipper</span><h3>CV Cahaya</h3></div><div class="profile-weight">1,772.082<small>metric tons</small></div></div>
+      <div class="profile-metrics"><span><strong>41</strong> records</span><span><strong>7</strong> importer relationships</span><span><strong>2024-05-02</strong> first arrival</span></div>
+      <div class="profile-flags"><span class="flag flag-green">No flagged wording</span></div>
+      <dl><dt>HS mix</dt><dd><code>121190:41</code></dd><dt>Top importers</dt><dd>South Asia Trade (25); Deent Import (6); Far East Global (4); Krown Logistics (3); Malumalu (1); International Packing Solutions (1)</dd><dt>Destination ports</dt><dd>Los Angeles, Ca (20); Miami, Florida (11); Oakland, Ca (8); Savannah, Ga. (1); Long Beach, Ca (1)</dd></dl>
+    </article>
+    <article class="profile-card"><div class="profile-top"><div><span class="profile-kicker">Named supplier / shipper</span><h3>Borneo Lingga Ambawang</h3></div><div class="profile-weight">1,037.406<small>metric tons</small></div></div>
+      <div class="profile-metrics"><span><strong>41</strong> records</span><span><strong>4</strong> importer relationships</span><span><strong>2025-04-29</strong> first arrival</span></div>
+      <div class="profile-flags"><span class="flag flag-green">No flagged wording</span></div>
+      <dl><dt>HS mix</dt><dd><code>121190:41</code></dd><dt>Top importers</dt><dd>Via Express Cargo (20); Patagonia Trade &amp; Distribution (10); Oceania Trade &amp; Distribution (10); Cas Connecting Group (1)</dd><dt>Destination ports</dt><dd>Oakland, Ca (36); Tampa, Fla. (4); Seattle, Wa (1)</dd></dl>
+    </article>
+    <article class="profile-card"><div class="profile-top"><div><span class="profile-kicker">Named supplier / shipper</span><h3>PT Sahabat Sukses Kalimantan Barat</h3></div><div class="profile-weight">733.575<small>metric tons</small></div></div>
+      <div class="profile-metrics"><span><strong>20</strong> records</span><span><strong>6</strong> importer relationships</span><span><strong>2024-05-31</strong> first arrival</span></div>
+      <div class="profile-flags"><span class="flag flag-orange">Non-121190</span></div>
+      <dl><dt>HS mix</dt><dd><code>121190:19; 310100:1</code></dd><dt>Top importers</dt><dd>Usindo Exim Consulting (6); Golden Mitra Botanicals (6); K Jo (3); South Asia Trade (2); Jap Empore (2); Steven Tupuola Atamai Holdings (1)</dd><dt>Destination ports</dt><dd>Miami, Florida (8); Norfolk, Va. (6); Los Angeles, Ca (3); Tampa, Fla. (3)</dd></dl>
+    </article>
+    <article class="profile-card"><div class="profile-top"><div><span class="profile-kicker">Named supplier / shipper</span><h3>Delta Gambung Nusantara</h3></div><div class="profile-weight">708.312<small>metric tons</small></div></div>
+      <div class="profile-metrics"><span><strong>27</strong> records</span><span><strong>3</strong> importer relationships</span><span><strong>2025-04-15</strong> first arrival</span></div>
+      <div class="profile-flags"><span class="flag flag-blue">Dye/color wording</span></div>
+      <dl><dt>HS mix</dt><dd><code>121190:27</code></dd><dt>Top importers</dt><dd>Wholesale Kings (18); Terra Tropic (8); Herbal Gift (1)</dd><dt>Destination ports</dt><dd>Oakland, Ca (16); Los Angeles, Ca (11)</dd></dl>
+    </article>
+    <article class="profile-card"><div class="profile-top"><div><span class="profile-kicker">Named supplier / shipper</span><h3>PT Sahabat Alam Mulia</h3></div><div class="profile-weight">619.286<small>metric tons</small></div></div>
+      <div class="profile-metrics"><span><strong>15</strong> records</span><span><strong>3</strong> importer relationships</span><span><strong>2024-06-27</strong> first arrival</span></div>
+      <div class="profile-flags"><span class="flag flag-green">No flagged wording</span></div>
+      <dl><dt>HS mix</dt><dd><code>121190:15</code></dd><dt>Top importers</dt><dd>Jap Empore (13); Golden Mitra Botanicals (1); South Asia Trade (1)</dd><dt>Destination ports</dt><dd>Tampa, Fla. (8); Miami, Florida (6); Baltimore, Md. (1)</dd></dl>
+    </article>
+    <article class="profile-card"><div class="profile-top"><div><span class="profile-kicker">Named supplier / shipper</span><h3>Robi Darmawan Botanicals</h3></div><div class="profile-weight">413.5<small>metric tons</small></div></div>
+      <div class="profile-metrics"><span><strong>10</strong> records</span><span><strong>1</strong> importer relationships</span><span><strong>2025-08-23</strong> first arrival</span></div>
+      <div class="profile-flags"><span class="flag flag-orange">Non-121190</span><span class="flag flag-red">Non-consumption wording</span></div>
+      <dl><dt>HS mix</dt><dd><code>121190:9; 120930:1</code></dd><dt>Top importers</dt><dd>Tesoro Pharma (10)</dd><dt>Destination ports</dt><dd>Norfolk, Va. (8); Oakland, Ca (2)</dd></dl>
+    </article>
+  </div>
+</section>
+
+<section class="panel" id="relationships">
+  <div class="section-title"><h2>Recurring supplier–importer relationships</h2></div>
+  <p>The workbook shows that much of the trade was organized through repeated commercial pairings rather than isolated transactions.</p>
+  <div class="network-grid">
+    <article class="network-card"><strong>CV Cahaya</strong><span class="arrow">↓</span><b>South Asia Trade</b><small>25 curated records · 1,102.331 metric tons</small></article>
+    <article class="network-card"><strong>PT Sahabat Alam Mulia</strong><span class="arrow">↓</span><b>Jap Empore</b><small>13 records · 574.711 metric tons</small></article>
+    <article class="network-card"><strong>Borneo Lingga Ambawang</strong><span class="arrow">↓</span><b>Via Express Cargo</b><small>20 records · 506.128 metric tons</small></article>
+    <article class="network-card"><strong>Delta Gambung Nusantara</strong><span class="arrow">↓</span><b>Wholesale Kings</b><small>18 records · 465.177 metric tons</small></article>
+    <article class="network-card"><strong>Robi Darmawan Botanicals</strong><span class="arrow">↓</span><b>Tesoro Pharma</b><small>10 records · 413.500 metric tons</small></article>
+    <article class="network-card"><strong>PT Borindo Perkasa Indonesia</strong><span class="arrow">↓</span><b>Via Express Cargo</b><small>13 records · 300.670 metric tons</small></article>
+  </div>
+</section>
+
+<section class="panel" id="patterns">
+  <div class="section-title"><h2>Patterns that deserve separate review</h2></div>
+  <div class="two-col">
+    <article class="what-card cannot"><h3>Classification and wording outliers</h3>
+      <ul><li><strong>PT Sahabat Sukses Kalimantan Barat:</strong> 19 records under 121190 and one under 310100.</li>
+      <li><strong>Robi Darmawan Botanicals:</strong> six records with non-consumption wording and one record under 120930.</li>
+      <li><strong>Delta Gambung Nusantara:</strong> 11 records carrying dye/color-use wording in the workbook flags.</li>
+      <li><strong>Ampera Jaya Global:</strong> four non-consumption records and two dye/color wording flags.</li>
+      <li><strong>Ihsan Jaya Logistik:</strong> nine external-use records and nine records under 090111.</li></ul>
+    </article>
+    <article class="what-card can"><h3>What these flags mean</h3>
+      <ul><li>They identify exact wording or codes in the curated records.</li>
+      <li>They help isolate records for closer review.</li>
+      <li>They do not establish who selected the wording.</li>
+      <li>They do not prove CBP accepted the code.</li>
+      <li>They do not prove FDA reviewed or admitted a shipment.</li>
+      <li>They are leads for the later public-materials and company-profile investigations.</li></ul>
+    </article>
+  </div>
+</section>
+
+<section class="panel" id="records">
+  <div class="section-title"><h2>What the records show—and what they do not</h2></div>
+  <div class="two-col">
+    <article class="what-card can"><h3>The records can establish</h3>
+      <ul><li>The named shipper and consignee in the public record.</li>
+      <li>Documented weights, dates, ports, routes, and container data.</li>
+      <li>Cargo descriptions and HS codes appearing in the dataset.</li>
+      <li>Recurring relationships between named suppliers and U.S. importers.</li>
+      <li>Patterns worth requesting additional records about.</li></ul>
+    </article>
+    <article class="what-card cannot"><h3>The records do not establish</h3>
+      <ul><li>Which farm produced the material.</li>
+      <li>Whether the named shipper actually manufactured it.</li>
+      <li>Product quality, testing, contamination controls, or age.</li>
+      <li>Whether FDA reviewed, detained, released, or refused a shipment.</li>
+      <li>Whether CBP accepted or modified the reported classification.</li>
+      <li>Whether any law was violated.</li></ul>
+    </article>
+  </div>
+</section>
+
+<section class="panel" id="directory">
+  <div class="section-title"><h2>Full Indonesia-linked supplier directory</h2></div>
+  <p>The table below lists all 41 normalized entities with their record counts, weights, importers, HS codes, flags, and arrival ranges.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Named supplier / shipper</th><th>Records</th><th>Metric tons</th><th>Importers</th><th>HS mix</th><th>Workbook flags</th><th>Arrival range</th></tr></thead>
+      <tbody>
+        <tr><td><strong>CV Cahaya</strong><small>Indonesia/ID (40); Singapore/SG (1)</small></td><td>41</td><td>1,772.082</td><td>7</td><td><code>121190:41</code></td><td>No workbook flags</td><td>2024-05-02<br><span class="muted">to 2026-02-05</span></td></tr>
+        <tr><td><strong>Borneo Lingga Ambawang</strong><small>Indonesia/ID (40); Indonesia/CN (1)</small></td><td>41</td><td>1,037.406</td><td>4</td><td><code>121190:41</code></td><td>No workbook flags</td><td>2025-04-29<br><span class="muted">to 2026-06-24</span></td></tr>
+        <tr><td><strong>PT Sahabat Sukses Kalimantan Barat</strong><small>Indonesia/ID (14); Colombia/CO (6)</small></td><td>20</td><td>733.575</td><td>6</td><td><code>121190:19; 310100:1</code></td><td>1 non-121190</td><td>2024-05-31<br><span class="muted">to 2026-07-22</span></td></tr>
+        <tr><td><strong>Delta Gambung Nusantara</strong><small>Indonesia/ID (27)</small></td><td>27</td><td>708.312</td><td>3</td><td><code>121190:27</code></td><td>11 dye/color</td><td>2025-04-15<br><span class="muted">to 2026-07-17</span></td></tr>
+        <tr><td><strong>PT Sahabat Alam Mulia</strong><small>Indonesia/ID (14); Indonesia/KR (1)</small></td><td>15</td><td>619.286</td><td>3</td><td><code>121190:15</code></td><td>No workbook flags</td><td>2024-06-27<br><span class="muted">to 2025-06-01</span></td></tr>
+        <tr><td><strong>Robi Darmawan Botanicals</strong><small>Indonesia/ID (6); India/ID (4)</small></td><td>10</td><td>413.5</td><td>1</td><td><code>121190:9; 120930:1</code></td><td>1 non-121190; 6 non-consumption</td><td>2025-08-23<br><span class="muted">to 2026-07-15</span></td></tr>
+        <tr><td><strong>PT Borindo Perkasa Indonesia</strong><small>Indonesia/ID (11); Rwanda/KR (1); Indonesia/KR (1)</small></td><td>13</td><td>300.67</td><td>1</td><td><code>121190:13</code></td><td>No workbook flags</td><td>2024-07-09<br><span class="muted">to 2024-12-20</span></td></tr>
+        <tr><td><strong>Dua Saudara Berkarya</strong><small>Indonesia/ID (8)</small></td><td>8</td><td>277.547</td><td>2</td><td><code>121190:8</code></td><td>No workbook flags</td><td>2025-05-06<br><span class="muted">to 2026-03-07</span></td></tr>
+        <tr><td><strong>Aditama Sentosa Indonesia</strong><small>Indonesia/ID (7); Singapore/SG (2)</small></td><td>9</td><td>215.35</td><td>2</td><td><code>121190:9</code></td><td>No workbook flags</td><td>2024-05-17<br><span class="muted">to 2024-11-02</span></td></tr>
+        <tr><td><strong>Ampera Jaya Global</strong><small>Indonesia/ID (5)</small></td><td>5</td><td>191.5</td><td>2</td><td><code>121190:5</code></td><td>4 non-consumption; 2 dye/color</td><td>2025-06-20<br><span class="muted">to 2025-08-23</span></td></tr>
+        <tr><td><strong>Sekrindo Mangala Jaya</strong><small>Indonesia/ID (7)</small></td><td>7</td><td>181.542</td><td>2</td><td><code>121190:7</code></td><td>No workbook flags</td><td>2025-05-21<br><span class="muted">to 2026-01-22</span></td></tr>
+        <tr><td><strong>Dawu Supply Chain Management Indonesia</strong><small>Vietnam/ID (4); Indonesia/ID (3)</small></td><td>7</td><td>172.012</td><td>1</td><td><code>121190:7</code></td><td>6 non-consumption; 1 dye/color</td><td>2024-06-12<br><span class="muted">to 2025-05-26</span></td></tr>
+        <tr><td><strong>Citra Khatulistiwa Berseri</strong><small>Indonesia/ID (6)</small></td><td>6</td><td>168.48</td><td>2</td><td><code>121190:6</code></td><td>No workbook flags</td><td>2025-05-21<br><span class="muted">to 2026-03-07</span></td></tr>
+        <tr><td><strong>Ihsan Jaya Logistik</strong><small>Indonesia/ID (6); Singapore/SG (5)</small></td><td>11</td><td>152.516</td><td>2</td><td><code>090111:9; 121190:2</code></td><td>9 non-121190; 11 non-consumption; 9 external-use</td><td>2025-05-11<br><span class="muted">to 2026-06-24</span></td></tr>
+        <tr><td><strong>PT Kalamantha Embara Buana</strong><small>Indonesia/ID (4)</small></td><td>4</td><td>137.7</td><td>2</td><td><code>121190:4</code></td><td>2 non-consumption</td><td>2025-05-12<br><span class="muted">to 2025-06-30</span></td></tr>
+        <tr><td><strong>Bvl Logistik Indonesia</strong><small>Indonesia/ID (5)</small></td><td>5</td><td>136.5</td><td>1</td><td><code>121190:5</code></td><td>No workbook flags</td><td>2025-04-21<br><span class="muted">to 2025-05-03</span></td></tr>
+        <tr><td><strong>Sumber Warih Sejahtera</strong><small>Indonesia/ID (4); Singapore/SG (1)</small></td><td>5</td><td>133.699</td><td>2</td><td><code>121190:5</code></td><td>No workbook flags</td><td>2025-08-08<br><span class="muted">to 2026-03-05</span></td></tr>
+        <tr><td><strong>Nirwadaya Bumi Lestari</strong><small>Indonesia/ID (4)</small></td><td>4</td><td>111.74</td><td>2</td><td><code>121190:4</code></td><td>No workbook flags</td><td>2025-11-11<br><span class="muted">to 2026-02-02</span></td></tr>
+        <tr><td><strong>Raw Botanical Nusantara</strong><small>Indonesia/ID (3)</small></td><td>3</td><td>109.003</td><td>1</td><td><code>121190:3</code></td><td>No workbook flags</td><td>2026-02-04<br><span class="muted">to 2026-06-29</span></td></tr>
+        <tr><td><strong>Kalimantan Botanical Group</strong><small>Indonesia/ID (3)</small></td><td>3</td><td>84.24</td><td>1</td><td><code>121190:3</code></td><td>No workbook flags</td><td>2025-05-06<br><span class="muted">to 2025-05-20</span></td></tr>
+        <tr><td><strong>Kratom Herbal Borneo</strong><small>Indonesia/ID (3)</small></td><td>3</td><td>84.24</td><td>2</td><td><code>121190:3</code></td><td>No workbook flags</td><td>2025-06-02<br><span class="muted">to 2026-02-18</span></td></tr>
+        <tr><td><strong>Kapuas Botanical Indonesia</strong><small>Indonesia/ID (2)</small></td><td>2</td><td>83.943</td><td>1</td><td><code>121190:2</code></td><td>No workbook flags</td><td>2026-02-18<br><span class="muted">to 2026-02-18</span></td></tr>
+        <tr><td><strong>Sungai Dangko Indah</strong><small>Indonesia/ID (4)</small></td><td>4</td><td>70.69</td><td>1</td><td><code>121190:4</code></td><td>No workbook flags</td><td>2024-06-08<br><span class="muted">to 2024-07-07</span></td></tr>
+        <tr><td><strong>Rajawali Botanical Nusantara</strong><small>Indonesia/ID (2)</small></td><td>2</td><td>56.005</td><td>1</td><td><code>121190:2</code></td><td>No workbook flags</td><td>2024-09-03<br><span class="muted">to 2024-11-05</span></td></tr>
+        <tr><td><strong>Berkah Bahagia Berjaya</strong><small>Indonesia/ID (2)</small></td><td>2</td><td>56</td><td>1</td><td><code>121190:2</code></td><td>1 non-consumption</td><td>2025-11-04<br><span class="muted">to 2026-03-07</span></td></tr>
+        <tr><td><strong>Family Brother</strong><small>Indonesia/ID (1)</small></td><td>1</td><td>55.5</td><td>1</td><td><code>121190:1</code></td><td>No workbook flags</td><td>2025-05-05<br><span class="muted">to 2025-05-05</span></td></tr>
+        <tr><td><strong>Nusantara Hijau Borneo</strong><small>Indonesia/ID (1)</small></td><td>1</td><td>55.5</td><td>1</td><td><code>121190:1</code></td><td>1 non-consumption</td><td>2025-07-02<br><span class="muted">to 2025-07-02</span></td></tr>
+        <tr><td><strong>Drip Green Ocean</strong><small>Indonesia/ID (1)</small></td><td>1</td><td>55</td><td>1</td><td><code>121190:1</code></td><td>1 non-consumption</td><td>2025-09-28<br><span class="muted">to 2025-09-28</span></td></tr>
+        <tr><td><strong>Sinergi Cakra Nusantara</strong><small>Indonesia/ID (2)</small></td><td>2</td><td>55</td><td>1</td><td><code>121190:2</code></td><td>2 non-consumption</td><td>2025-07-17<br><span class="muted">to 2026-02-16</span></td></tr>
+        <tr><td><strong>Alam Jaya Medika</strong><small>Indonesia/ID (2)</small></td><td>2</td><td>54.5</td><td>1</td><td><code>121190:2</code></td><td>2 non-consumption; 2 dye/color</td><td>2025-05-16<br><span class="muted">to 2025-06-22</span></td></tr>
+        <tr><td><strong>Evergreen Logistics Indonesia</strong><small>Indonesia/ID (1)</small></td><td>1</td><td>54.001</td><td>1</td><td><code>121190:1</code></td><td>1 non-consumption</td><td>2025-08-07<br><span class="muted">to 2025-08-07</span></td></tr>
+        <tr><td><strong>Permata Hijau Kalimantan</strong><small>Indonesia/ID (1)</small></td><td>1</td><td>50</td><td>1</td><td><code>121190:1</code></td><td>1 non-consumption</td><td>2025-07-25<br><span class="muted">to 2025-07-25</span></td></tr>
+        <tr><td><strong>Elfen Jaya Abadi</strong><small>Indonesia/ID (1); Singapore/SG (1)</small></td><td>2</td><td>34.987</td><td>2</td><td><code>121190:2</code></td><td>No workbook flags</td><td>2025-07-26<br><span class="muted">to 2025-07-30</span></td></tr>
+        <tr><td><strong>Djb Botanicals Indonesia</strong><small>Indonesia/ID (1)</small></td><td>1</td><td>28.536</td><td>1</td><td><code>121190:1</code></td><td>No workbook flags</td><td>2025-09-11<br><span class="muted">to 2025-09-11</span></td></tr>
+        <tr><td><strong>Jas Worldwide Indonesia</strong><small>Indonesia/ID (1)</small></td><td>1</td><td>28</td><td>1</td><td><code>121190:1</code></td><td>No workbook flags</td><td>2025-08-04<br><span class="muted">to 2025-08-04</span></td></tr>
+        <tr><td><strong>Gawai Tuah Bahijau</strong><small>Indonesia/ID (1)</small></td><td>1</td><td>27.676</td><td>1</td><td><code>121190:1</code></td><td>No workbook flags</td><td>2026-01-20<br><span class="muted">to 2026-01-20</span></td></tr>
+        <tr><td><strong>Jaya Global Lintas Samudera</strong><small>Indonesia/ID (1)</small></td><td>1</td><td>27.015</td><td>1</td><td><code>320300:1</code></td><td>1 non-121190; 1 dye/color</td><td>2025-05-09<br><span class="muted">to 2025-05-09</span></td></tr>
+        <tr><td><strong>Baba Jack Industri</strong><small>Indonesia/ID (1)</small></td><td>1</td><td>24.48</td><td>1</td><td><code>121190:1</code></td><td>No workbook flags</td><td>2026-02-18<br><span class="muted">to 2026-02-18</span></td></tr>
+        <tr><td><strong>Rayyan Abadi Logistics</strong><small>Indonesia/ID (1)</small></td><td>1</td><td>15</td><td>1</td><td><code>121190:1</code></td><td>No workbook flags</td><td>2024-12-11<br><span class="muted">to 2024-12-11</span></td></tr>
+        <tr><td><strong>Cahaya Fajar Samudera</strong><small>Indonesia/ID (1)</small></td><td>1</td><td>14.5</td><td>1</td><td><code>121190:1</code></td><td>No workbook flags</td><td>2025-09-23<br><span class="muted">to 2025-09-23</span></td></tr>
+        <tr><td><strong>Kreasi Alam Borneo</strong><small>Indonesia/ID (1)</small></td><td>1</td><td>12</td><td>1</td><td><code>121190:1</code></td><td>No workbook flags</td><td>2025-10-02<br><span class="muted">to 2025-10-02</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="panel" id="questions">
+  <div class="section-title"><h2>Questions for lawmakers and agencies</h2></div>
+  <div class="questions">
+    <div class="question">Which named shippers are producers, processors, exporters, or freight intermediaries?</div>
+    <div class="question">What documentation links a U.S. importer to the actual overseas manufacturer?</div>
+    <div class="question">How are identity, contamination, age, and storage conditions verified before entry?</div>
+    <div class="question">Why do some supplier names appear under multiple tariff headings or intended-use descriptions?</div>
+    <div class="question">Were high-volume recurring supplier–importer relationships reviewed by FDA or CBP?</div>
+    <div class="question">Can agencies connect bulk imports to downstream retail products and brands?</div>
+  </div>
+</section>
+
+<!-- FULL SERIES MENU -->
+<section class="panel" id="series-menu">
+  <div class="section-title"><h2>Following the Kratom Supply Chain — Complete Series</h2></div>
+  <p>Explore every investigation in this series, from the introductory overview to the final importer analysis.</p>
+  <div class="series-grid">
+    <a href="/shipment/intro.html">
+      <span>Series Introduction</span>
+      <small>Overview of the investigation and key concepts</small>
+      <span class="badge">Intro</span>
+    </a>
+    <a href="/shipment/supply-chain-investigation.html">
+      <span>Inside America's Kratom Supply Chain</span>
+      <small>The scale, scope, and significance of the trade</small>
+      <span class="badge">Main</span>
+    </a>
+    <a href="/shipment/bills-of-lading.html">
+      <span>Understanding Bills of Lading</span>
+      <small>How to read shipping records like an investigator</small>
+      <span class="badge">Documentation</span>
+    </a>
+    <a href="/shipment/import-alert.html">
+      <span>FDA Import Alert 54-15 Explained</span>
+      <small>FDA's detention policy for kratom imports</small>
+      <span class="badge">Regulatory</span>
+    </a>
+    <a href="/shipment/human-consumption.html">
+      <span>"Not for Human Consumption"</span>
+      <small>Intentional use evidence and shipping disclaimers</small>
+      <span class="badge">Intended Use</span>
+    </a>
+    <a href="/shipment/fertilizer.html">
+      <span>The Fertilizer Classification</span>
+      <small>HS 3101.00 vs. 1211.90 — why the difference?</small>
+      <span class="badge">Tariff Codes</span>
+    </a>
+    <a href="/shipment/exporters.html" class="current">
+      <span>Indonesia's Largest Kratom Exporters</span>
+      <small>Who ships the bulk leaf and powder?</small>
+      <span class="badge current">You are here</span>
+    </a>
+    <a href="/shipment/exporter-materials.html">
+      <span>What the Exporters Say</span>
+      <small>Public marketing and websites compared with shipping records</small>
+      <span class="badge">Public Materials</span>
+    </a>
+    <a href="/shipment/importers.html">
+      <span>America's Largest Kratom Importers</span>
+      <small>U.S. consignees, company profiles, and trade networks</small>
+      <span class="badge">Importers</span>
+    </a>
+  </div>
+</section>
+
 </div>
 </main>
-<footer><div class="footer-inner"><div><strong>Global Kratom Policy Review</strong><div>Research · Analysis · Policy</div></div><div class="footer-links"><a href="/shipment/intro.html">Main Investigation</a><a href="/shipment/bills-of-lading.html">Bills of Lading</a><a href="/shipment/import-alert.html">Import Alert 54-15</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div></div></footer>
+
+<footer>
+<div class="footer-inner">
+  <div><strong>Global Kratom Policy Review</strong><div>Research · Analysis · Policy</div></div>
+  <div class="footer-links">
+    <a href="/shipment/intro.html">Main Investigation</a>
+    <a href="/shipment/bills-of-lading.html">Bills of Lading</a>
+    <a href="/shipment/import-alert.html">Import Alert 54-15</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/contact.html">Contact</a>
+  </div>
+</div>
+</footer>
+
 <script>
-const menu=document.querySelector('.menu-btn'),links=document.querySelector('.nav-links');if(menu)menu.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});
+const menu=document.querySelector('.menu-btn'),links=document.querySelector('#site-menu');if(menu)menu.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});
 </script>
 </body>
 </html>
