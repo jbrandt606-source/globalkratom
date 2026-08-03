@@ -41,82 +41,80 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <style>
-        /* ----- Base styles consistent with human-consumption.html and other series pages ----- */
+        /* ----- Base styles consistent with human-consumption.html ----- */
         :root {
-            --navy: #0b1d34;
-            --navy2: #153a5d;
+            --navy: #081826;
             --red: #c8102e;
-            --red2: #9e0d25;
-            --blue: #367fcb;
-            --green: #2f855a;
-            --orange: #c76c14;
-            --purple: #7756a8;
-            --soft: #f5f7fb;
-            --line: #dce4ee;
-            --ink: #172033;
+            --soft: #f6f8fb;
+            --line: #dfe6ef;
+            --text: #0b1d34;
             --muted: #64748b;
-            --white: #fff;
-            --shadow: 0 16px 40px rgba(11, 29, 52, .11);
-            --radius: 18px;
-            --max: 1180px;
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+            --radius: 16px;
         }
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0
         }
         html {
-            scroll-behavior: smooth;
+            scroll-behavior: smooth
         }
         body {
-            margin: 0;
-            overflow-x: hidden;
-            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-            color: var(--ink);
-            background: var(--soft);
-            line-height: 1.62;
+            font-family: 'Inter', Arial, sans-serif;
+            background: #f9fafb;
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
         }
         img {
             max-width: 100%;
-            display: block;
+            display: block
         }
         a {
-            color: inherit;
+            text-decoration: none;
+            color: inherit
         }
-        .skip-link {
-            position: fixed;
-            top: 8px;
-            left: 8px;
-            z-index: 999;
-            padding: 10px 14px;
-            color: #fff;
-            background: var(--red);
-            border-radius: 8px;
-            transform: translateY(-150%);
-        }
-        .skip-link:focus {
-            transform: none;
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 24px;
         }
 
-        .utility {
+        @media (min-width: 1200px) {
+            .container {
+                padding-right: 260px;
+            }
+            .hero-full .container {
+                padding-right: 260px;
+            }
+            .sidebar {
+                right: 24px;
+            }
+        }
+
+        .topbar {
             background: var(--navy);
-            color: rgba(255, 255, 255, .75);
-            font-size: .78rem;
-            letter-spacing: .04em;
+            color: #dbe7f4;
             text-align: center;
-            padding: 10px 16px;
+            padding: 8px 18px;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+        .topbar a {
+            color: #dbe7f4;
+            text-decoration: underline
         }
 
-        .site-header {
+        .nav-bar {
+            background: white;
+            border-bottom: 1px solid var(--line);
             position: sticky;
             top: 0;
             z-index: 100;
-            background: rgba(255, 255, 255, .97);
-            border-bottom: 1px solid var(--line);
-            backdrop-filter: blur(14px);
         }
-        .header-inner {
-            width: min(calc(100% - 32px), var(--max));
-            min-height: 72px;
-            margin: auto;
+        .nav-inner {
+            min-height: 76px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -125,11 +123,7 @@
         .brand {
             display: flex;
             align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            color: var(--navy);
-            font-weight: 900;
-            letter-spacing: -.025em;
+            gap: 14px;
         }
         .brand img {
             width: 48px;
@@ -137,429 +131,539 @@
             object-fit: cover;
             border-radius: 6px;
         }
-        .brand-copy {
-            display: flex;
-            flex-direction: column;
+        .brand-title {
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1;
+            font-size: 19px;
         }
-        .brand-copy strong {
-            font-size: 1rem;
-            line-height: 1.2;
+        .brand-title span {
+            color: var(--red)
         }
-        .brand-copy strong em {
-            color: var(--red);
-            font-style: normal;
-        }
-        .brand-copy small {
+        .brand-sub {
+            margin-top: 4px;
+            font-size: 10px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
             color: var(--muted);
-            font-weight: 700;
-            letter-spacing: .05em;
-            font-size: .67rem;
         }
-        .menu-button {
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .nav-links a {
+            color: #172033
+        }
+        .nav-links a:hover {
+            color: var(--red)
+        }
+        .mobile-menu-btn {
             display: none;
-            border: 0;
             background: none;
-            color: var(--blue);
-            font-size: 1.7rem;
+            border: 0;
+            font-size: 28px;
             cursor: pointer;
         }
-        .site-menu {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-        .site-menu a {
-            text-decoration: none;
-            color: #42536a;
-            font-weight: 760;
-            font-size: .88rem;
-        }
-        .site-menu a:hover {
-            color: var(--red);
-        }
 
-        .hero {
-            position: relative;
-            min-height: 760px;
-            color: #fff;
-            display: flex;
-            align-items: flex-end;
-            background-image: linear-gradient(90deg, rgba(5, 18, 35, .92), rgba(5, 18, 35, .76) 52%, rgba(5, 18, 35, .35)), url('/shipment/kratom_warehouse.png');
+        /* ----- Hero styles matching human-consumption.html ----- */
+        .hero-full {
+            background: linear-gradient(135deg, rgba(8, 24, 38, 0.85) 0%, rgba(8, 24, 38, 0.70) 50%, rgba(8, 24, 38, 0.50) 100%), url("/shipment/kratom_warehouse.png");
             background-size: cover;
             background-position: center;
-            isolation: isolate;
-        }
-        .hero::after {
-            content: "";
-            position: absolute;
-            inset: auto 0 0;
-            height: 210px;
-            background: linear-gradient(transparent, rgba(4, 16, 30, .92));
-            z-index: -1;
-        }
-        .hero-inner {
-            width: min(calc(100% - 40px), var(--max));
-            margin: auto;
-            padding: 120px 0 76px;
-        }
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: var(--red);
-            padding: 9px 15px;
-            border-radius: 999px;
-            font-size: .75rem;
-            font-weight: 900;
-            letter-spacing: .12em;
-            text-transform: uppercase;
-        }
-        .hero h1 {
-            max-width: 900px;
-            margin: 24px 0 0;
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(3.1rem, 7.6vw, 6.4rem);
-            line-height: .98;
-            letter-spacing: -.055em;
-            text-wrap: balance;
-        }
-        .hero-subtitle {
-            max-width: 810px;
-            margin: 26px 0 0;
-            color: rgba(255, 255, 255, .88);
-            font-size: clamp(1.05rem, 2.2vw, 1.34rem);
-        }
-        .hero-note {
-            margin: 18px 0 0;
-            color: rgba(255, 255, 255, .72);
-            font-size: .84rem;
-            font-weight: 700;
-        }
-        .stat-grid {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 12px;
-            margin-top: 42px;
-        }
-        .stat {
-            padding: 18px 20px;
-            border: 1px solid rgba(255, 255, 255, .16);
-            border-radius: 14px;
-            background: rgba(255, 255, 255, .08);
-            backdrop-filter: blur(7px);
-        }
-        .stat b {
-            display: block;
-            font-family: Georgia, serif;
-            font-size: 2.15rem;
-            line-height: 1;
-        }
-        .stat span {
-            display: block;
-            margin-top: 7px;
-            color: rgba(255, 255, 255, .72);
-            font-size: .82rem;
-            font-weight: 700;
-        }
-
-        .page {
-            width: min(calc(100% - 36px), var(--max));
-            margin: -34px auto 76px;
+            color: white;
+            padding: 80px 0 60px;
             position: relative;
-            z-index: 4;
-        }
-        .section {
-            background: #fff;
-            border: 1px solid var(--line);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            padding: 36px;
-            margin: 0 0 28px;
-        }
-        .section h2 {
-            margin: 0 0 16px;
-            color: var(--navy);
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(1.9rem, 4.5vw, 3rem);
-            line-height: 1.1;
-            letter-spacing: -.025em;
-        }
-        .section p {
-            color: #3e4f66;
-        }
-        .lead {
-            font-size: 1.2rem;
-            font-weight: 500;
-            color: var(--navy);
-        }
-        .note {
-            padding: 22px;
-            border-left: 5px solid var(--blue);
-            border-radius: 12px;
-            background: #f0f6fe;
-            color: var(--navy);
-            margin: 18px 0;
-        }
-        .note strong {
-            color: var(--navy);
-        }
-        .warning {
-            padding: 22px;
-            border-left: 5px solid var(--red);
-            border-radius: 12px;
-            background: #fef0f2;
-            color: var(--navy);
-            margin: 18px 0;
-        }
-        .warning strong {
-            color: var(--red);
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            margin: 20px 0;
-        }
-        .card {
-            padding: 24px;
-            border: 1px solid var(--line);
-            border-radius: 14px;
-            background: var(--soft);
-        }
-        .card h3 {
-            margin: 0 0 8px;
-            font-size: 1.1rem;
-            color: var(--navy);
-        }
-        .card p {
-            margin: 0;
-            color: #3e4f66;
-        }
-        .evidence-label {
-            display: inline-block;
-            margin-top: 12px;
-            padding: 4px 12px;
-            border-radius: 999px;
-            background: var(--navy);
-            color: #fff;
-            font-size: .7rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: .05em;
-        }
-
-        .compare {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin: 16px 0;
-        }
-        .compare-panel {
-            background: #fff;
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid var(--line);
-        }
-        .compare-panel h3 {
-            margin: 0 0 10px;
-            color: var(--navy);
-            font-size: 1rem;
-        }
-        .compare-panel ul {
-            margin: 0;
-            padding-left: 20px;
-            color: #3e4f66;
-            font-size: .95rem;
-        }
-        .compare-panel ul li {
-            margin-bottom: 8px;
-        }
-
-        .chips {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 10px;
-        }
-        .chip {
-            padding: 4px 12px;
-            border-radius: 999px;
-            font-size: .75rem;
-            font-weight: 700;
-        }
-        .chip-green {
-            background: #d1e7dd;
-            color: #0f5132;
-        }
-        .chip-orange {
-            background: #ffe5d0;
-            color: #a64d00;
-        }
-        .chip-blue {
-            background: #cfe2ff;
-            color: #084298;
-        }
-        .chip-muted {
-            background: #e9ecef;
-            color: #495057;
-        }
-        .chip-red {
-            background: #f8d7da;
-            color: #842029;
-        }
-
-        .table-scroll {
-            overflow: auto;
-            border: 1px solid var(--line);
-            border-radius: 14px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: #fff;
-            font-size: .9rem;
-        }
-        th {
-            padding: 14px;
-            text-align: left;
-            background: var(--navy);
-            color: #fff;
-            font-size: .78rem;
-            letter-spacing: .04em;
-        }
-        td {
-            padding: 14px;
-            border-bottom: 1px solid #e8edf4;
-            vertical-align: top;
-        }
-        td .entity {
-            font-weight: 700;
-            color: var(--navy);
-        }
-        td .subtle {
-            display: block;
-            color: var(--muted);
-            font-size: .78rem;
-        }
-        td .rank {
-            font-weight: 700;
-            color: var(--navy);
-        }
-        .bar-track {
-            height: 6px;
-            background: #e7edf4;
-            border-radius: 999px;
-            margin-top: 6px;
             overflow: hidden;
         }
-        .bar-fill {
-            height: 100%;
-            background: var(--red);
-            border-radius: 999px;
-        }
-
-        .source-link {
-            font-weight: 850;
-            color: var(--red);
-            text-decoration: underline;
-        }
-        .source-link:hover {
-            color: var(--navy);
-        }
-
-        .dark-callout {
-            padding: 28px 32px;
-            background: var(--navy);
-            color: #dbe7f4;
-            border-radius: var(--radius);
-            margin: 20px 0;
-        }
-        .dark-callout p {
-            color: #dbe7f4;
-            max-width: 800px;
-        }
-
-        .questions {
+        .hero-full .container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
+            gap: 50px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
         }
-        .question {
-            padding: 18px;
-            border: 1px solid var(--line);
-            border-radius: 12px;
-            background: #f5f7fb;
+        .hero-content {
+            max-width: 700px;
+            position: relative;
+            z-index: 3;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: var(--red);
+            color: white;
             font-weight: 800;
-            color: var(--navy);
-        }
-
-        .section-kicker {
-            display: block;
-            margin-bottom: 8px;
-            color: #c8102e;
-            font-size: .72rem;
-            font-weight: 900;
-            letter-spacing: .12em;
+            font-size: 13px;
+            padding: 6px 22px;
+            border-radius: 40px;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
             text-transform: uppercase;
         }
-
-        .button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 48px;
-            padding: 12px 24px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 850;
-            border: 1px solid transparent;
-            transition: .18s;
+        .hero-content h1 {
+            font-size: clamp(32px, 4.5vw, 48px);
+            font-weight: 900;
+            line-height: 1.05;
+            margin-bottom: 14px;
+            letter-spacing: -0.02em;
         }
-        .button:hover {
-            transform: translateY(-2px);
+        .hero-content .subhead {
+            font-size: 19px;
+            color: #dbe7f4;
+            margin-bottom: 20px;
+            max-width: 650px;
+            font-weight: 500;
+            line-height: 1.4;
         }
-        .button-primary {
-            background: var(--red);
-            color: #fff;
+        .hero-right {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            position: relative;
+            z-index: 3;
         }
-        .button-primary:hover {
-            background: var(--red2);
-        }
-
-        .btn-red {
-            background: var(--red);
-            color: #fff;
-            padding: 12px 24px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 850;
-            border: 1px solid transparent;
-            transition: .18s;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 48px;
-        }
-        .btn-red:hover {
-            background: var(--red2);
-            transform: translateY(-2px);
-        }
-
-        .cta {
-            padding: 38px;
+        .hero-stat {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: var(--radius);
-            color: #fff;
-            background: radial-gradient(circle at top right, rgba(54, 127, 203, .34), transparent 38%), var(--navy);
+            padding: 18px 22px;
         }
-        .cta h2 {
-            color: #fff;
+        .hero-stat .num {
+            font-size: 34px;
+            font-weight: 900;
+            color: white;
+            line-height: 1;
         }
-        .cta p {
-            color: rgba(255, 255, 255, .75);
-            max-width: 800px;
+        .hero-stat .label {
+            font-size: 13px;
+            color: #b0c8df;
+            margin-top: 4px;
+            line-height: 1.3;
         }
 
+        .section-title {
+            font-size: 30px;
+            font-weight: 900;
+            border-left: 6px solid var(--red);
+            padding-left: 20px;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .story-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 40px 44px;
+            margin: 40px 0;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--line);
+        }
+        .story-card p {
+            font-size: 17px;
+            color: var(--text);
+            margin-bottom: 18px;
+            max-width: 740px;
+        }
+        .story-card p.wide {
+            max-width: 100%;
+        }
+        .story-card h3 {
+            font-size: 22px;
+            font-weight: 800;
+            margin: 32px 0 16px;
+        }
+        .story-card h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 24px 0 12px;
+            color: var(--navy);
+        }
+        .story-card ul,
+        .story-card ol {
+            margin-left: 28px;
+            margin-bottom: 20px;
+        }
+        .story-card li {
+            margin-bottom: 10px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin: 16px 0;
+        }
+        .two-col .col {
+            background: var(--soft);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            border: 1px solid var(--line);
+        }
+        .two-col .col h4 {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--navy);
+            margin: 0 0 8px;
+        }
+        .two-col .col p {
+            font-size: 15px;
+            margin-bottom: 10px;
+            max-width: 100%;
+        }
+        .two-col .col ul {
+            margin-left: 18px;
+            font-size: 15px;
+        }
+        .two-col .col ul li {
+            margin-bottom: 6px;
+        }
+
+        .callout-box {
+            background: var(--navy);
+            color: white;
+            border-radius: var(--radius);
+            padding: 24px 30px;
+            margin: 24px 0;
+            border-left: 6px solid var(--red);
+        }
+        .callout-box p {
+            color: #dbe7f4;
+            max-width: 100%;
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+        .callout-box .source {
+            font-size: 14px;
+            color: #8aa3c0;
+            margin-top: 10px;
+            font-weight: 400;
+        }
+
+        .callout-box.light {
+            background: var(--soft);
+            color: var(--text);
+            border-left-color: var(--muted);
+        }
+        .callout-box.light p {
+            color: var(--text);
+        }
+        .callout-box.light .source {
+            color: var(--muted);
+        }
+
+        .callout-box.red {
+            background: var(--red);
+            border-left-color: white;
+        }
+        .callout-box.red p {
+            color: white;
+        }
+        .callout-box.red .source {
+            color: #f0c0c0;
+        }
+
+        .callout-box.green {
+            background: #1a6e3a;
+            border-left-color: #a8d08d;
+        }
+        .callout-box.green p {
+            color: white;
+        }
+
+        .callout-box.orange {
+            background: #b45f1a;
+            border-left-color: #f4b183;
+        }
+        .callout-box.orange p {
+            color: white;
+        }
+
+        .stat-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin: 16px 0 8px;
+        }
+        .stat-strip .stat-item {
+            background: var(--soft);
+            border-radius: var(--radius);
+            padding: 18px 16px;
+            text-align: center;
+            border: 1px solid var(--line);
+        }
+        .stat-strip .stat-item .num {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--red);
+            display: block;
+            line-height: 1.1;
+        }
+        .stat-strip .stat-item .label {
+            font-size: 13px;
+            color: var(--muted);
+            font-weight: 600;
+            margin-top: 4px;
+            display: block;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin: 16px 0;
+        }
+        .comparison-grid .col {
+            background: var(--soft);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            border: 1px solid var(--line);
+            text-align: center;
+        }
+        .comparison-grid .col h4 {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--navy);
+            margin: 0 0 8px;
+        }
+        .comparison-grid .col .code {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--red);
+            font-family: 'Courier New', monospace;
+        }
+        .comparison-grid .col img {
+            margin: 12px auto;
+            max-height: 120px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        .comparison-grid .col .desc {
+            font-size: 15px;
+            color: var(--muted);
+            margin-top: 8px;
+        }
+        .comparison-grid .center-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--navy);
+            font-size: 16px;
+            padding: 0 8px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 12px 0;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--red);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 60px;
+            font-weight: 800;
+            font-size: 14px;
+            border: 2px solid var(--red);
+            transition: 0.2s;
+            text-decoration: none;
+        }
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--red);
+            box-shadow: 0 0 30px rgba(200, 16, 46, 0.15);
+        }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            color: var(--navy);
+            padding: 12px 24px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 14px;
+            border: 2px solid var(--line);
+            transition: 0.2s;
+            text-decoration: none;
+        }
+        .btn-secondary:hover {
+            background: var(--navy);
+            color: white;
+            border-color: var(--navy);
+        }
+
+        .figure-box {
+            background: white;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: var(--shadow);
+        }
+        .figure-box img {
+            border-radius: 8px;
+            border: 1px solid var(--line);
+            width: 100%;
+            height: auto;
+        }
+        .figure-box .caption {
+            font-size: 14px;
+            color: var(--muted);
+            margin-top: 12px;
+            line-height: 1.6;
+        }
+
+        .case-study-shipment {
+            background: var(--soft);
+            border-radius: var(--radius);
+            padding: 24px 28px;
+            border: 1px solid var(--line);
+            margin: 16px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 2;
+        }
+        .case-study-shipment .field {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            padding: 4px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .case-study-shipment .field:last-child {
+            border-bottom: 0;
+        }
+        .case-study-shipment .field .tag {
+            font-weight: 700;
+            color: var(--red);
+            min-width: 120px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            font-family: 'Inter', Arial, sans-serif;
+        }
+        .case-study-shipment .field .value {
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .sidebar {
+            display: none;
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 50;
+            background: white;
+            border-radius: 12px;
+            padding: 16px 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--line);
+            min-width: 170px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .sidebar.show {
+            display: block
+        }
+        .sidebar h4 {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--muted);
+            font-weight: 800;
+            margin-bottom: 10px;
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 8px;
+        }
+        .sidebar a {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 5px 0;
+            color: var(--muted);
+            transition: 0.2s;
+            border-bottom: 1px solid #f0f2f5;
+        }
+        .sidebar a:last-child {
+            border-bottom: 0
+        }
+        .sidebar a:hover {
+            color: var(--red)
+        }
+
+        footer {
+            margin-top: 40px;
+            background: var(--navy);
+            color: #cbd5e1;
+            text-align: center;
+            padding: 28px 18px;
+            font-size: 14px;
+        }
+        footer a {
+            color: #cbd5e1;
+            text-decoration: underline;
+        }
+        footer a:hover {
+            color: white;
+        }
+
+        .editor-note {
+            background: var(--soft);
+            border-radius: var(--radius);
+            padding: 18px 24px;
+            margin-top: 28px;
+            border-left: 4px solid var(--muted);
+            font-size: 15px;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+        .editor-note strong {
+            color: var(--text);
+        }
+
+        .key-terms {
+            background: var(--soft);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            border: 1px solid var(--line);
+            margin: 16px 0;
+        }
+        .key-terms h4 {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--navy);
+            margin: 0 0 10px;
+        }
+        .key-terms dl {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 4px 16px;
+            font-size: 15px;
+        }
+        .key-terms dt {
+            font-weight: 700;
+            color: var(--navy);
+        }
+        .key-terms dd {
+            color: var(--muted);
+            margin: 0;
+        }
+
+        /* Series menu styles */
         .series-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -611,222 +715,149 @@
             background: var(--red);
         }
 
-        .site-footer {
-            padding: 42px 20px;
-            background: #061426;
-            color: rgba(255, 255, 255, .68);
-        }
-        .footer-inner {
-            width: min(100%, var(--max));
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            gap: 25px;
-            flex-wrap: wrap;
-        }
-        .footer-inner strong {
-            color: #fff;
-            display: block;
-        }
-        .footer-inner p {
-            margin: 6px 0 0;
-            max-width: 400px;
-        }
-        .footer-inner nav {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-        .footer-inner nav a {
-            color: rgba(255, 255, 255, .8);
-            text-decoration: none;
-            font-weight: 700;
-            font-size: .84rem;
-        }
-        .footer-inner nav a:hover {
-            color: #fff;
-        }
-        .footer-legal {
-            width: min(100%, var(--max));
-            margin: 24px auto 0;
-            padding-top: 16px;
-            border-top: 1px solid rgba(255, 255, 255, .08);
-            text-align: center;
-            font-size: .78rem;
-        }
-
-        .figure-box {
-            margin-top: 16px;
-            border: 1px solid var(--line);
-            border-radius: var(--radius);
-            overflow: hidden;
-        }
-        .figure-box img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        .figure-box .caption {
-            padding: 14px 20px;
-            background: var(--soft);
-            font-size: .85rem;
-            color: var(--muted);
-            border-top: 1px solid var(--line);
-        }
-
-        .case-study-shipment {
-            background: var(--soft);
-            border-radius: var(--radius);
-            padding: 24px 28px;
-            border: 1px solid var(--line);
-            margin: 16px 0;
-            font-family: 'Courier New', monospace;
-            font-size: 14px;
-            line-height: 2;
-        }
-        .case-study-shipment .field {
-            display: flex;
-            align-items: baseline;
-            gap: 12px;
-            padding: 4px 0;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        .case-study-shipment .field:last-child {
-            border-bottom: 0;
-        }
-        .case-study-shipment .field .tag {
-            font-weight: 700;
-            color: var(--red);
-            min-width: 120px;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-            font-family: 'Inter', Arial, sans-serif;
-        }
-        .case-study-shipment .field .value {
-            font-weight: 500;
-            color: var(--text);
-        }
-
-        .callout-box {
-            background: var(--navy);
-            color: white;
-            border-radius: var(--radius);
-            padding: 24px 30px;
-            margin: 24px 0;
-            border-left: 6px solid var(--red);
-        }
-        .callout-box p {
-            color: #dbe7f4;
-            max-width: 100%;
-            font-size: 18px;
-            font-weight: 500;
-            margin-bottom: 0;
-        }
-        .callout-box .source {
-            font-size: 14px;
-            color: #8aa3c0;
-            margin-top: 10px;
-            font-weight: 400;
-        }
-        .callout-box.light {
-            background: var(--soft);
-            color: var(--text);
-            border-left-color: var(--muted);
-        }
-        .callout-box.light p {
-            color: var(--text);
-        }
-
-        .editor-note {
-            background: var(--soft);
-            border-radius: var(--radius);
-            padding: 18px 24px;
-            margin-top: 28px;
-            border-left: 4px solid var(--muted);
-            font-size: 15px;
-            color: var(--muted);
-            line-height: 1.6;
-        }
-        .editor-note strong {
-            color: var(--text);
-        }
-
-        @media (max-width: 950px) {
-            .site-menu {
-                display: none;
+        @media(max-width:1024px) {
+            .hero-full .container {
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
-            .site-menu.open {
-                display: flex;
-                position: absolute;
-                left: 0;
-                right: 0;
-                top: 72px;
-                flex-direction: column;
-                align-items: stretch;
-                padding: 16px;
-                background: #fff;
-                border-bottom: 1px solid var(--line);
+            .hero-right {
+                grid-template-columns: 1fr 1fr;
             }
-            .menu-button {
-                display: block;
-            }
-            .hero {
-                min-height: 790px;
-            }
-            .stat-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .compare {
+            .two-col {
                 grid-template-columns: 1fr;
             }
-            .questions {
+            .stat-strip {
+                grid-template-columns: 1fr 1fr;
+            }
+            .comparison-grid {
                 grid-template-columns: 1fr;
+            }
+            .comparison-grid .center-label {
+                padding: 8px 0;
+            }
+            .sidebar {
+                display: none !important;
+            }
+            .container {
+                padding-right: 24px;
+            }
+            .hero-full .container {
+                padding-right: 24px;
+            }
+            .key-terms dl {
+                grid-template-columns: 1fr;
+                gap: 2px;
             }
             .series-grid {
                 grid-template-columns: 1fr 1fr;
             }
         }
-        @media (max-width: 680px) {
-            .brand-copy strong {
-                font-size: .87rem;
+
+        @media(max-width:768px) {
+            .container {
+                padding: 0 16px
             }
-            .brand-copy small {
+            .nav-inner {
+                min-height: 64px
+            }
+            .brand img {
+                width: 36px;
+                height: 36px
+            }
+            .brand-title {
+                font-size: 15px
+            }
+            .brand-sub {
+                font-size: 8px
+            }
+            .nav-links {
+                display: none
+            }
+            .mobile-menu-btn {
+                display: block
+            }
+            .mobile-menu {
                 display: none;
+                background: white;
+                border-top: 1px solid var(--line);
+                padding: 12px 16px 16px;
             }
-            .hero-inner {
-                padding: 92px 0 62px;
+            .mobile-menu.open {
+                display: block
             }
-            .hero h1 {
-                font-size: clamp(3rem, 14vw, 4.6rem);
+            .mobile-menu a {
+                display: block;
+                padding: 10px 0;
+                font-weight: 800;
+                border-bottom: 1px solid #eef2f6;
+                font-size: 14px;
             }
-            .page {
-                width: min(calc(100% - 22px), var(--max));
-                margin-top: -24px;
+            .hero-full {
+                padding: 40px 0 36px;
             }
-            .section {
-                padding: 24px 18px;
+            .hero-full .container {
+                gap: 20px;
             }
-            .cards {
-                grid-template-columns: 1fr;
+            .hero-content h1 {
+                font-size: 26px;
             }
-            .series-grid {
-                grid-template-columns: 1fr;
+            .hero-content .subhead {
+                font-size: 16px;
             }
-            .footer-inner {
-                flex-direction: column;
-                gap: 16px;
-            }
-            .footer-inner nav {
-                flex-wrap: wrap;
+            .hero-right {
+                grid-template-columns: 1fr 1fr;
                 gap: 10px;
             }
-            .cta {
-                padding: 28px 22px;
+            .hero-stat {
+                padding: 12px 14px;
             }
-            .cta h2 {
-                font-size: 1.5rem;
+            .hero-stat .num {
+                font-size: 22px;
+            }
+            .hero-stat .label {
+                font-size: 11px;
+            }
+            .story-card {
+                padding: 20px 16px;
+                margin: 24px 0;
+            }
+            .story-card p {
+                font-size: 15px;
+            }
+            .section-title {
+                font-size: 22px;
+                padding-left: 14px;
+            }
+            .stat-strip {
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+            }
+            .stat-strip .stat-item {
+                padding: 14px 12px;
+            }
+            .stat-strip .stat-item .num {
+                font-size: 22px;
+            }
+            .stat-strip .stat-item .label {
+                font-size: 12px;
+            }
+            .callout-box {
+                padding: 18px 20px;
+            }
+            .callout-box p {
+                font-size: 15px;
+            }
+            .two-col .col {
+                padding: 16px 18px;
+            }
+            .comparison-grid .col {
+                padding: 16px 18px;
+            }
+            .comparison-grid .col .code {
+                font-size: 22px;
+            }
+            .figure-box {
+                padding: 12px;
             }
             .case-study-shipment {
                 padding: 16px 18px;
@@ -836,75 +867,168 @@
                 min-width: 80px;
                 font-size: 10px;
             }
+            .btn-group {
+                flex-direction: column;
+            }
+            .btn-group .btn-primary,
+            .btn-group .btn-secondary {
+                justify-content: center;
+            }
+            .sidebar {
+                display: none !important;
+            }
+            .container {
+                padding-right: 16px;
+            }
+            .hero-full .container {
+                padding-right: 16px;
+            }
+            .key-terms dl {
+                grid-template-columns: 1fr;
+            }
+            .series-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media(max-width:480px) {
+            .hero-right {
+                grid-template-columns: 1fr 1fr;
+            }
+            .stat-strip {
+                grid-template-columns: 1fr 1fr;
+            }
+            .hero-stat .num {
+                font-size: 18px;
+            }
         }
     </style>
 </head>
 <body>
-<a class="skip-link" href="#main-content">Skip to content</a>
 
-<div class="utility">GLOBALKRATOM.ORG · Evidence-based policy resources</div>
-<header class="site-header">
-    <div class="header-inner">
-        <a class="brand" href="/">
-            <img src="/review.png" alt="Global Kratom Policy Review icon">
-            <div class="brand-copy">
-                <strong>GLOBAL <em>KRATOM</em> POLICY REVIEW</strong>
-                <small>RESEARCH · ANALYSIS · POLICY</small>
+    <div class="topbar">GLOBALKRATOM.ORG · Evidence-based policy resources</div>
+
+    <div class="nav-bar">
+        <div class="container">
+            <div class="nav-inner">
+                <a class="brand" href="/">
+                    <img src="/review.png" alt="Global Kratom Policy Review icon">
+                    <div>
+                        <div class="brand-title">Global <span>Kratom</span> Policy Review</div>
+                        <div class="brand-sub">Research · Analysis · Policy</div>
+                    </div>
+                </a>
+                <div class="nav-links">
+                    <a href="/shipment/intro.html">Series Home</a>
+                    <a href="/shipment/bills-of-lading.html">Bills of Lading</a>
+                    <a href="/shipment/import-alert.html">Import Alert 54-15</a>
+                    <a href="/shipment/human-consumption.html">Intended Use</a>
+                    <a href="/shipment/fertilizer.html">Fertilizer Code</a>
+                    <a href="/shipment/exporters.html">Exporters</a>
+                    <a href="/shipment/importers.html">Importers</a>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
             </div>
-        </a>
-        <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-menu">☰</button>
-        <nav id="site-menu" class="site-menu" aria-label="Main navigation">
-            <a href="/shipment/intro.html">Series Home</a>
-            <a href="/bills-of-lading.html">Bills of Lading</a>
-            <a href="/shipment/import-alert.html">Import Alert 54-15</a>
-            <a href="/shipment/human-consumption.html">Intended Use</a>
-            <a href="/shipment/fertilizer.html">Fertilizer Code</a>
-            <a href="/shipment/exporters.html">Exporters</a>
-            <a href="/shipment/importers.html">Importers</a>
-        </nav>
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="/shipment/intro.html">Series Home</a>
+                <a href="/shipment/bills-of-lading.html">Bills of Lading</a>
+                <a href="/shipment/import-alert.html">Import Alert 54-15</a>
+                <a href="/shipment/human-consumption.html">Intended Use</a>
+                <a href="/shipment/fertilizer.html">Fertilizer Code</a>
+                <a href="/shipment/exporters.html">Exporters</a>
+                <a href="/shipment/importers.html">Importers</a>
+            </div>
+        </div>
     </div>
-</header>
 
-<main id="main-content">
+    <aside class="sidebar show" id="sidebar">
+        <h4>On this page</h4>
+        <a href="#opening">Opening</a>
+        <a href="#by-the-numbers">By the Numbers</a>
+        <a href="#what-is-hts">What Is an HS / HTS Code?</a>
+        <a href="#two-classifications">The Two Classifications Found</a>
+        <a href="#workbook-findings">What the Workbook Found</a>
+        <a href="#why-matters">Why This Matters</a>
+        <a href="#records-cannot">What Public Records Cannot Tell Us</a>
+        <a href="#fda-customs">FDA and Customs</a>
+        <a href="#questions">Questions Raised</a>
+        <a href="#case-study">Case Study</a>
+        <a href="#compare">Compare the Two Headings</a>
+        <a href="#lawmaker-questions">Questions for Lawmakers</a>
+        <a href="#closing">Closing</a>
+        <a href="#key-terms">Key Terms</a>
+    </aside>
 
-    <section class="hero">
-        <div class="hero-inner">
-            <span class="eyebrow">TARIFF CLASSIFICATION INVESTIGATION</span>
-            <h1>The Fertilizer Classification</h1>
-            <p class="hero-subtitle">Why did some kratom shipments use a fertilizer tariff heading while most used a botanical classification?</p>
-            <div class="stat-grid">
-                <div class="stat"><b>367</b><span>Curated shipments reviewed</span></div>
-                <div class="stat"><b>11,390 t</b><span>Metric tons documented</span></div>
-                <div class="stat"><b>1211.90</b><span>Most common HS heading</span></div>
-                <div class="stat"><b>3101.00</b><span>Fertilizer heading (4 records)</span></div>
+    <!-- Hero section - now using .hero-full to match human-consumption.html -->
+    <section class="hero-full" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Tariff Classification Investigation</div>
+                <h1>The Fertilizer Classification</h1>
+                <p class="subhead">Why did some kratom shipments use a fertilizer tariff heading while most used a botanical classification?</p>
             </div>
-            <p class="hero-note">Workbook analysis through July 31, 2026 · 500 public shipping records reviewed</p>
+            <div class="hero-right">
+                <div class="hero-stat">
+                    <div class="num">367</div>
+                    <div class="label">Curated shipments reviewed</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="num">11,390</div>
+                    <div class="label">Metric tons documented</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="num">1211.90</div>
+                    <div class="label">Most common HS heading</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="num">3101.00</div>
+                    <div class="label">Fertilizer heading (4 records)</div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <div class="page">
+    <div class="container">
 
-        <section class="section" id="opening">
-            <h2>Opening</h2>
-            <p class="lead">Most people assume customs classifications simply describe a product.</p>
+        <!-- OPENING -->
+        <div class="story-card" id="opening">
+            <h2 class="section-title">Opening</h2>
+            <p>Most people assume customs classifications simply describe a product.</p>
             <p>In reality, every imported product is assigned a Harmonized System (HS) or Harmonized Tariff Schedule (HTS) classification that helps customs authorities identify merchandise, determine tariff treatment, and compile trade statistics. Assigning the correct classification can be technically complex and depends on the characteristics and declared use of the product.</p>
             <p>Among the hundreds of public kratom shipping records examined for this investigation, most used a botanical heading associated with plants used primarily in pharmacy or similar purposes. A smaller number were associated with a heading for animal or vegetable fertilizers. This page explains what those classifications mean and why the differences are noteworthy.</p>
-            <div class="note"><strong>Key point:</strong> A tariff heading does not, by itself, determine the product's intended use, FDA status, or legal admissibility. It is one element of the customs record.</div>
-        </section>
 
-        <section class="section" id="by-the-numbers">
-            <h2>Investigation by the Numbers</h2>
-            <div class="cards">
-                <div class="card"><h3>367</h3><p>Curated shipment records</p></div>
-                <div class="card"><h3>11,390 t</h3><p>Total documented weight</p></div>
-                <div class="card"><h3>1211.90</h3><p>Used on most records</p></div>
-                <div class="card"><h3>3101.00</h3><p>Used on 4 records</p></div>
+            <div class="figure-box" style="margin-top:20px;">
+                <img src="/shipment/kratom_export3.jpeg" alt="Port overview with container ships and cargo">
+                <div class="caption">International trade classifications follow cargo through ports and customs processing. An HS code is not merely a product nickname; it is part of the formal trade record.</div>
+            </div>
+        </div>
+
+        <!-- BY THE NUMBERS -->
+        <div class="story-card" id="by-the-numbers">
+            <h2 class="section-title">Investigation by the Numbers</h2>
+            <div class="stat-strip">
+                <div class="stat-item">
+                    <span class="num">367</span>
+                    <span class="label">Curated Shipments</span>
+                </div>
+                <div class="stat-item">
+                    <span class="num">11,390</span>
+                    <span class="label">Metric Tons</span>
+                </div>
+                <div class="stat-item">
+                    <span class="num">1211.90</span>
+                    <span class="label">Most records</span>
+                </div>
+                <div class="stat-item">
+                    <span class="num">3101.00</span>
+                    <span class="label">Smaller subset</span>
+                </div>
             </div>
             <p style="font-size:15px;color:var(--muted);">500 public shipping records were reviewed to compile this dataset.</p>
-        </section>
+        </div>
 
-        <section class="section" id="what-is-hts">
-            <h2>What Is an HS / HTS Code?</h2>
+        <!-- WHAT IS AN HS / HTS CODE -->
+        <div class="story-card" id="what-is-hts">
+            <h2 class="section-title">What Is an HS / HTS Code?</h2>
             <p>Every internationally traded product receives a customs classification.</p>
             <p>That classification helps customs authorities:</p>
             <ul>
@@ -914,34 +1038,45 @@
                 <li>support customs processing.</li>
             </ul>
             <p>HS codes are standardized internationally to six digits. The U.S. Harmonized Tariff Schedule (HTSUS) extends those codes with additional digits for U.S.-specific classifications.</p>
-            <div class="figure-box">
-                <img src="/shipment/kratom_export3.jpeg" alt="Port overview with container ships and cargo">
-                <div class="caption">International trade classifications follow cargo through ports and customs processing. An HS code is not merely a product nickname; it is part of the formal trade record.</div>
-            </div>
-        </section>
+        </div>
 
-        <section class="section" id="two-classifications">
-            <h2>The Two Classifications Found</h2>
-            <div class="compare">
-                <div class="compare-panel">
-                    <h3>HS / HTS 1211.90</h3>
-                    <p><strong>Plants and plant parts</strong> used primarily in perfumery, pharmacy, insecticidal, fungicidal, or similar purposes, whether fresh, dried, cut, crushed, or powdered.</p>
-                    <div class="chips"><span class="chip chip-green">Botanical / pharmacy heading</span></div>
-                    <img src="/shipment/kratom_leaf.jpeg" alt="Kratom leaves" style="margin-top:12px;max-height:100px;object-fit:contain;">
+        <!-- THE TWO CLASSIFICATIONS FOUND -->
+        <div class="story-card" id="two-classifications">
+            <h2 class="section-title">The Two Classifications Found</h2>
+
+            <div class="comparison-grid">
+                <div class="col">
+                    <div class="code">1211.90</div>
+                    <img src="/shipment/kratom_leaf.jpeg" alt="Kratom leaves, dried plant material">
+                    <h4>Botanical / Pharmacy Heading</h4>
+                    <div class="desc">Plants and plant parts used primarily in perfumery, pharmacy, insecticidal, fungicidal, or similar purposes, whether fresh, dried, cut, crushed, or powdered.</div>
                 </div>
-                <div class="compare-panel">
-                    <h3>HS 3101.00</h3>
-                    <p><strong>Animal or vegetable fertilizers</strong>, whether or not mixed together or chemically treated; fertilizers produced by the mixing or chemical treatment of animal or vegetable products.</p>
-                    <div class="chips"><span class="chip chip-orange">Fertilizer heading</span></div>
-                    <img src="/shipment/kratom_warehouse.png" alt="Bulk sacks in warehouse" style="margin-top:12px;max-height:100px;object-fit:cover;border-radius:8px;">
+                <div class="center-label">vs</div>
+                <div class="col">
+                    <div class="code">3101.00</div>
+                    <img src="/shipment/kratom_warehouse.png" alt="Bulk sacks in warehouse" style="max-height:120px;object-fit:cover;">
+                    <h4>Fertilizer Heading</h4>
+                    <div class="desc">Animal or vegetable fertilizers, whether or not mixed together or chemically treated; fertilizers produced by the mixing or chemical treatment of animal or vegetable products.</div>
                 </div>
             </div>
-            <p style="text-align:center;font-weight:600;color:var(--navy);">Same botanical name in the public record. Different customs heading.</p>
-            <div class="note" style="margin-top:16px;"><strong>Key findings:</strong> Four curated shipment records in the dataset were classified under HS 310100 (animal or vegetable fertilizers), representing 178.2 metric tons of cargo. All four were associated with a single U.S. importer, South Asia Trade, and originated from two suppliers: Zyam Trade 168 (three shipments) and PT Sahabat Sukses Kalimantan Barat (one shipment). An additional curated record contained both HS 121190 and HS 310100 classifications, indicating a mixed coding in the available trade data.</div>
-        </section>
+            <p style="text-align:center;font-weight:600;color:var(--navy);margin-top:8px;">Same botanical name in the public record. Different customs heading.</p>
 
-        <section class="section" id="workbook-findings">
-            <h2>What the Workbook Found</h2>
+            <div class="callout-box green" style="margin-top:20px;">
+                <p><strong>HS / HTS 1211.90</strong></p>
+                <p style="font-size:16px;font-weight:400;color:#dbe7f4;">Heading 1211 covers plants and plant parts used primarily in perfumery, pharmacy, insecticidal, fungicidal, or similar purposes, whether fresh, dried, cut, crushed, or powdered. Indonesian export regulations also specifically reference kratom under heading 1211.90.</p>
+            </div>
+
+            <div class="callout-box orange">
+                <p><strong>HS 3101.00</strong></p>
+                <p style="font-size:16px;font-weight:400;color:#dbe7f4;">Heading 3101 covers animal or vegetable fertilizers, whether or not mixed together or chemically treated; fertilizers produced by the mixing or chemical treatment of animal or vegetable products.</p>
+            </div>
+
+            <p style="margin-top:12px;">Four curated shipment records in the dataset were classified under HS 310100 (animal or vegetable fertilizers), representing 178.2 metric tons of cargo. All four were associated with a single U.S. importer, South Asia Trade, and originated from two suppliers: Zyam Trade 168 (three shipments) and PT Sahabat Sukses Kalimantan Barat (one shipment). An additional curated record contained both HS 121190 and HS 310100 classifications, indicating a mixed coding in the available trade data.</p>
+        </div>
+
+        <!-- WHAT THE WORKBOOK FOUND -->
+        <div class="story-card" id="workbook-findings">
+            <h2 class="section-title">What the Workbook Found</h2>
             <p>The curated dataset shows:</p>
             <ul>
                 <li>Most records used HS 1211.90 (plants for pharmacy, etc.).</li>
@@ -951,10 +1086,11 @@
                 <li>One additional record used both classifications (mixed coding).</li>
             </ul>
             <p>This investigation does not speculate beyond the data. The records show the classifications that were used; they do not explain why.</p>
-        </section>
+        </div>
 
-        <section class="section" id="why-matters">
-            <h2>Why This Matters</h2>
+        <!-- WHY THIS MATTERS -->
+        <div class="story-card" id="why-matters">
+            <h2 class="section-title">Why This Matters</h2>
             <p>The presence of different classifications raises questions such as:</p>
             <ul>
                 <li>Why were different headings used?</li>
@@ -966,11 +1102,12 @@
             <div class="callout-box light" style="margin-top:16px;">
                 <p><strong>Public shipping records alone cannot answer those questions.</strong></p>
             </div>
-        </section>
+        </div>
 
-        <section class="section" id="records-cannot">
-            <h2>What Public Records Cannot Tell Us</h2>
-            <div class="dark-callout">
+        <!-- WHAT PUBLIC RECORDS CANNOT TELL US -->
+        <div class="story-card" id="records-cannot">
+            <h2 class="section-title">What Public Records Cannot Tell Us</h2>
+            <div class="callout-box red">
                 <p>Shipping records do not establish:</p>
                 <ul style="color:#f0c0c0;margin-top:10px;">
                     <li>whether the classification was accepted by CBP;</li>
@@ -980,31 +1117,49 @@
                     <li>whether any law was violated.</li>
                 </ul>
             </div>
-        </section>
+        </div>
 
-        <section class="section" id="fda-customs">
-            <h2>FDA and Customs</h2>
+        <!-- FDA AND CUSTOMS -->
+        <div class="story-card" id="fda-customs">
+            <h2 class="section-title">FDA and Customs</h2>
             <p>Tariff classification and FDA admissibility are related but distinct concepts. A tariff heading does not, by itself, determine whether a product is a dietary supplement, food, fertilizer, or lawful to import. FDA evaluates products under its own statutory authorities, while CBP administers customs classification and tariff collection.</p>
             <p>For context, see our guide to <a href="/shipment/import-alert.html" class="source-link">FDA Import Alert 54-15</a>.</p>
-        </section>
+        </div>
 
-        <section class="section" id="questions">
-            <h2>Questions Raised</h2>
-            <div class="questions">
-                <div class="question">Why did different HS headings appear?</div>
-                <div class="question">Were they associated with different exporters?</div>
-                <div class="question">Different importers?</div>
-                <div class="question">Different cargo descriptions?</div>
-                <div class="question">Different intended uses?</div>
-                <div class="question">Different customs brokers?</div>
-                <div class="question" style="grid-column:span 2;">Different time periods?</div>
+        <!-- QUESTIONS RAISED -->
+        <div class="story-card" id="questions">
+            <h2 class="section-title">Questions Raised</h2>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0;">
+                <div style="background:var(--soft);border-radius:var(--radius);padding:16px 18px;border:1px solid var(--line);">
+                    <strong style="color:var(--navy);">Why did different HS headings appear?</strong>
+                </div>
+                <div style="background:var(--soft);border-radius:var(--radius);padding:16px 18px;border:1px solid var(--line);">
+                    <strong style="color:var(--navy);">Were they associated with different exporters?</strong>
+                </div>
+                <div style="background:var(--soft);border-radius:var(--radius);padding:16px 18px;border:1px solid var(--line);">
+                    <strong style="color:var(--navy);">Different importers?</strong>
+                </div>
+                <div style="background:var(--soft);border-radius:var(--radius);padding:16px 18px;border:1px solid var(--line);">
+                    <strong style="color:var(--navy);">Different cargo descriptions?</strong>
+                </div>
+                <div style="background:var(--soft);border-radius:var(--radius);padding:16px 18px;border:1px solid var(--line);">
+                    <strong style="color:var(--navy);">Different intended uses?</strong>
+                </div>
+                <div style="background:var(--soft);border-radius:var(--radius);padding:16px 18px;border:1px solid var(--line);">
+                    <strong style="color:var(--navy);">Different customs brokers?</strong>
+                </div>
+                <div style="background:var(--soft);border-radius:var(--radius);padding:16px 18px;border:1px solid var(--line);grid-column:span 2;">
+                    <strong style="color:var(--navy);">Different time periods?</strong>
+                </div>
             </div>
             <p>These questions are not accusations. They are reasonable inquiries based on observed variations in public records.</p>
-        </section>
+        </div>
 
-        <section class="section" id="case-study">
-            <h2>Case Study</h2>
+        <!-- CASE STUDY -->
+        <div class="story-card" id="case-study">
+            <h2 class="section-title">Case Study</h2>
             <p>One of the 3101.00 shipments provides a concrete example. The following is reconstructed from public shipping records.</p>
+
             <div class="case-study-shipment">
                 <div class="field"><span class="tag">Shipper</span><span class="value">Zyam Trade 168</span></div>
                 <div class="field"><span class="tag">Consignee</span><span class="value">South Asia Trade</span></div>
@@ -1013,29 +1168,62 @@
                 <div class="field"><span class="tag">Weight</span><span class="value">~45,000 kg</span></div>
                 <div class="field"><span class="tag">Container</span><span class="value">Multiple containers</span></div>
             </div>
-            <div class="note"><strong>Question raised:</strong> Why was the fertilizer heading used for a botanical product? Was this an error, a deliberate choice, or a reflection of different intended use?</div>
-            <p style="font-size:15px;color:var(--muted);">No conclusions are drawn from a single case. It is presented as an example of the type of discrepancy that appears in the public record.</p>
-        </section>
 
-        <section class="section" id="compare">
-            <h2>Compare the Two Headings</h2>
-            <div class="table-scroll">
-                <table>
-                    <thead><tr><th>Question</th><th>HS 1211.90</th><th>HS 3101.00</th></tr></thead>
+            <div style="display:flex;flex-direction:column;gap:6px;margin:12px 0;padding:12px 16px;background:var(--soft);border-radius:var(--radius);border:1px solid var(--line);">
+                <div style="font-weight:700;color:var(--navy);">Bill of Lading → Product Description → HS 3101 → Importer → Exporter</div>
+                <div style="font-size:14px;color:var(--muted);">Questions raised: Why was the fertilizer heading used for a botanical product? Was this an error, a deliberate choice, or a reflection of different intended use?</div>
+            </div>
+
+            <p style="font-size:15px;color:var(--muted);">No conclusions are drawn from a single case. It is presented as an example of the type of discrepancy that appears in the public record.</p>
+        </div>
+
+        <!-- COMPARE THE TWO HEADINGS -->
+        <div class="story-card" id="compare">
+            <h2 class="section-title">Compare the Two Headings</h2>
+            <div style="overflow-x:auto;">
+                <table style="width:100%;border-collapse:collapse;border:1px solid var(--line);border-radius:var(--radius);font-size:15px;">
+                    <thead style="background:var(--navy);color:white;">
+                        <tr>
+                            <th style="padding:12px 16px;text-align:left;">Question</th>
+                            <th style="padding:12px 16px;text-align:left;">HS 1211.90</th>
+                            <th style="padding:12px 16px;text-align:left;">HS 3101.00</th>
+                        </tr>
+                    </thead>
                     <tbody>
-                        <tr><td><strong>General description</strong></td><td>Plants/plant parts used primarily in perfumery, pharmacy, insecticidal, fungicidal, or similar purposes</td><td>Animal or vegetable fertilizers</td></tr>
-                        <tr><td><strong>Appeared in workbook</strong></td><td>Yes</td><td>Yes</td></tr>
-                        <tr><td><strong>Most common in dataset</strong></td><td>Yes</td><td>No (4 records)</td></tr>
-                        <tr><td><strong>Automatically determines intended use?</strong></td><td>No</td><td>No</td></tr>
-                        <tr><td><strong>Automatically determines FDA status?</strong></td><td>No</td><td>No</td></tr>
+                        <tr style="border-bottom:1px solid var(--line);">
+                            <td style="padding:10px 16px;font-weight:600;">General description</td>
+                            <td style="padding:10px 16px;">Plants/plant parts used primarily in perfumery, pharmacy, insecticidal, fungicidal, or similar purposes</td>
+                            <td style="padding:10px 16px;">Animal or vegetable fertilizers</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--line);background:var(--soft);">
+                            <td style="padding:10px 16px;font-weight:600;">Appeared in workbook</td>
+                            <td style="padding:10px 16px;">Yes</td>
+                            <td style="padding:10px 16px;">Yes</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--line);">
+                            <td style="padding:10px 16px;font-weight:600;">Most common in dataset</td>
+                            <td style="padding:10px 16px;">Yes</td>
+                            <td style="padding:10px 16px;">No (4 records)</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--line);background:var(--soft);">
+                            <td style="padding:10px 16px;font-weight:600;">Automatically determines intended use?</td>
+                            <td style="padding:10px 16px;">No</td>
+                            <td style="padding:10px 16px;">No</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:10px 16px;font-weight:600;">Automatically determines FDA status?</td>
+                            <td style="padding:10px 16px;">No</td>
+                            <td style="padding:10px 16px;">No</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
             <p style="margin-top:12px;font-size:15px;color:var(--muted);">The public records show the classifications used. They do not establish whether those classifications were accurate, accepted, or challenged.</p>
-        </section>
+        </div>
 
-        <section class="section" id="lawmaker-questions">
-            <h2>Questions for Lawmakers</h2>
+        <!-- QUESTIONS FOR LAWMAKERS -->
+        <div class="story-card" id="lawmaker-questions">
+            <h2 class="section-title">Questions for Lawmakers</h2>
             <ul>
                 <li>How often does CBP encounter multiple classifications for the same commodity?</li>
                 <li>Were any of these entries reviewed or reclassified?</li>
@@ -1043,36 +1231,50 @@
                 <li>What documentation accompanied the entries?</li>
                 <li>Did FDA and CBP evaluate the same shipments differently?</li>
             </ul>
-        </section>
 
-        <section class="section" id="closing">
-            <h2>Closing</h2>
+            <div class="figure-box" style="margin-top:20px;">
+                <img src="/shipment/kratom_export1.jpeg" alt="Container ship at sea">
+                <div class="caption">The bill of lading shows how cargo was described during transport. The final customs entry, CBP review, and FDA admissibility decision require additional government records.</div>
+            </div>
+        </div>
+
+        <!-- CLOSING -->
+        <div class="story-card" id="closing">
+            <h2 class="section-title">Closing</h2>
             <p>Customs classifications are more than administrative codes. They provide another piece of the documentary record surrounding imported kratom.</p>
             <p>In this investigation, most public records used one botanical classification, while a smaller number used a fertilizer heading. Public records identify the difference. Understanding why those differences occurred would require additional customs documentation beyond the bills of lading examined here.</p>
+
+            <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;">
+                <a href="/shipment/supply-chain-investigation.html" class="btn-secondary" style="border-color:var(--line);">Back to Main Investigation</a>
+                <a href="/shipment/bills-of-lading.html" class="btn-secondary" style="border-color:var(--line);">Understanding Bills of Lading</a>
+                <a href="/shipment/import-alert.html" class="btn-secondary" style="border-color:var(--line);">FDA Import Alert Guide</a>
+            </div>
+
             <div class="editor-note" style="margin-top:24px;">
                 <strong>Editor's note:</strong> This analysis is based on publicly available shipping records and trade databases. Shipping records alone do not establish regulatory violations or unlawful conduct. Additional customs and FDA records would be required to determine how any particular shipment was reviewed or admitted into the United States. This analysis is provided for informational and policy-research purposes.
             </div>
-        </section>
+        </div>
 
-        <section class="section" id="key-terms">
-            <h2>Key Terms</h2>
-            <div style="background:var(--soft);border-radius:var(--radius);padding:20px 24px;border:1px solid var(--line);margin:16px 0;">
-                <dl style="display:grid;grid-template-columns:auto 1fr;gap:4px 16px;font-size:15px;">
-                    <dt style="font-weight:700;color:var(--navy);">HS (Harmonized System)</dt>
-                    <dd style="color:var(--muted);margin:0;">International six-digit product classification used by most countries.</dd>
-                    <dt style="font-weight:700;color:var(--navy);">HTS (Harmonized Tariff Schedule)</dt>
-                    <dd style="color:var(--muted);margin:0;">Country-specific tariff schedule built on the HS; the U.S. version is HTSUS.</dd>
-                    <dt style="font-weight:700;color:var(--navy);">CBP</dt>
-                    <dd style="color:var(--muted);margin:0;">U.S. Customs and Border Protection, which administers customs laws and collects tariffs.</dd>
-                    <dt style="font-weight:700;color:var(--navy);">FDA</dt>
-                    <dd style="color:var(--muted);margin:0;">U.S. Food and Drug Administration, which regulates products under food, drug, and related laws independently of tariff classification.</dd>
+        <!-- KEY TERMS SIDEBAR (inline) -->
+        <div class="story-card" id="key-terms">
+            <h2 class="section-title">Key Terms</h2>
+            <div class="key-terms">
+                <dl>
+                    <dt>HS (Harmonized System)</dt>
+                    <dd>International six-digit product classification used by most countries.</dd>
+                    <dt>HTS (Harmonized Tariff Schedule)</dt>
+                    <dd>Country-specific tariff schedule built on the HS; the U.S. version is HTSUS.</dd>
+                    <dt>CBP</dt>
+                    <dd>U.S. Customs and Border Protection, which administers customs laws and collects tariffs.</dd>
+                    <dt>FDA</dt>
+                    <dd>U.S. Food and Drug Administration, which regulates products under food, drug, and related laws independently of tariff classification.</dd>
                 </dl>
             </div>
-        </section>
+        </div>
 
         <!-- FULL SERIES MENU -->
-        <section class="section" id="series-menu">
-            <h2>Following the Kratom Supply Chain — Complete Series</h2>
+        <div class="story-card" id="series-menu">
+            <h2 class="section-title">Following the Kratom Supply Chain — Complete Series</h2>
             <p>Explore every investigation in this series, from the introductory overview to the final importer analysis.</p>
             <div class="series-grid">
                 <a href="/shipment/intro.html">
@@ -1085,7 +1287,7 @@
                     <small>The scale, scope, and significance of the trade</small>
                     <span class="badge">Main</span>
                 </a>
-                <a href="/bills-of-lading.html">
+                <a href="/shipment/bills-of-lading.html">
                     <span>Understanding Bills of Lading</span>
                     <small>How to read shipping records like an investigator</small>
                     <span class="badge">Documentation</span>
@@ -1121,37 +1323,21 @@
                     <span class="badge">Importers</span>
                 </a>
             </div>
-        </section>
-
-    </div>
-</main>
-
-<footer class="site-footer">
-    <div class="footer-inner">
-        <div>
-            <strong>Global Kratom Policy Review</strong>
-            <p>Evidence-based policy resources built from public records, agency documents, and original data analysis.</p>
         </div>
-        <nav aria-label="Footer navigation">
-            <a href="/shipment/intro.html">Supply Chain Series</a>
-            <a href="/bans/">U.S. Ban Map</a>
-            <a href="/about/">About</a>
-            <a href="/contact/">Contact</a>
-        </nav>
-    </div>
-    <div class="footer-legal">© 2026 Global Kratom Policy Review. Informational and policy-research purposes only.</div>
-</footer>
 
-<script>
-    // Mobile menu toggle
-    const menuBtn = document.querySelector('.menu-button');
-    const siteMenu = document.getElementById('site-menu');
-    if (menuBtn) {
-        menuBtn.addEventListener('click', () => {
-            const open = siteMenu.classList.toggle('open');
-            menuBtn.setAttribute('aria-expanded', String(open));
+    </div>
+
+    <footer>
+        &copy; 2026 Global Kratom Policy Review. Evidence-based policy resources.
+        <br><span style="font-size:12px;color:#7a8fa3;margin-top:6px;display:inline-block;">
+            <a href="/privacy.html">Privacy</a> &middot; <a href="/terms.html">Terms</a> &middot; <a href="/contact.html">Contact</a>
+        </span>
+    </footer>
+
+    <script>
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.toggle('open');
         });
-    }
-</script>
+    </script>
 </body>
 </html>
