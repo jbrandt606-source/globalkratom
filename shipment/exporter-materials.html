@@ -67,6 +67,7 @@
     </script>
 
     <style>
+        /* ----- Global styles (matching exporters.html) ----- */
         :root {
             --navy: #0b1d34;
             --navy2: #153a5d;
@@ -130,6 +131,7 @@
             padding: 10px 16px;
         }
 
+        /* Standard GlobalKratom header */
         .site-header {
             position: sticky;
             top: 0;
@@ -156,18 +158,17 @@
             font-weight: 900;
             letter-spacing: -.025em;
         }
-        .brand-mark {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            display: grid;
-            place-items: center;
-            background: linear-gradient(145deg, #e7edf5, #fff);
-            border: 2px solid var(--navy);
-            font-size: .72rem;
+        .brand img {
+            width: 48px;
+            height: 48px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+        .brand-copy {
+            display: flex;
+            flex-direction: column;
         }
         .brand-copy strong {
-            display: block;
             font-size: 1rem;
             line-height: 1.2;
         }
@@ -176,7 +177,6 @@
             font-style: normal;
         }
         .brand-copy small {
-            display: block;
             color: var(--muted);
             font-weight: 700;
             letter-spacing: .05em;
@@ -205,90 +205,87 @@
             color: var(--red);
         }
 
-        .hero {
-            position: relative;
-            min-height: 760px;
-            color: #fff;
-            display: flex;
-            align-items: flex-end;
-            background-image: linear-gradient(90deg, rgba(5, 18, 35, .92), rgba(5, 18, 35, .76) 52%, rgba(5, 18, 35, .35)), url('/shipment/kratom_extract.jpeg');
+        /* ----- Hero styles matching fertilizer.html ----- */
+        .hero-full {
+            background: linear-gradient(135deg, rgba(8, 24, 38, .85), rgba(8, 24, 38, .70) 50%, rgba(8, 24, 38, .50) 100%), url("/shipment/kratom_extract.jpeg");
             background-size: cover;
             background-position: center;
-            isolation: isolate;
+            color: white;
+            padding: 80px 0 60px;
+            position: relative;
+            overflow: hidden;
         }
-        .hero::after {
-            content: "";
-            position: absolute;
-            inset: auto 0 0;
-            height: 210px;
-            background: linear-gradient(transparent, rgba(4, 16, 30, .92));
-            z-index: -1;
-        }
-        .hero-inner {
-            width: min(calc(100% - 40px), var(--max));
-            margin: auto;
-            padding: 120px 0 76px;
-        }
-        .eyebrow {
-            display: inline-flex;
+        .hero-full .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
             align-items: center;
-            gap: 10px;
+            position: relative;
+            z-index: 2;
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .hero-content {
+            max-width: 700px;
+            position: relative;
+            z-index: 3;
+        }
+        .hero-badge {
+            display: inline-block;
             background: var(--red);
-            padding: 9px 15px;
-            border-radius: 999px;
-            font-size: .75rem;
-            font-weight: 900;
-            letter-spacing: .12em;
+            color: white;
+            font-weight: 800;
+            font-size: 13px;
+            padding: 6px 22px;
+            border-radius: 40px;
+            letter-spacing: .5px;
+            margin-bottom: 20px;
             text-transform: uppercase;
         }
-        .hero h1 {
-            max-width: 900px;
-            margin: 24px 0 0;
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(3.1rem, 7.6vw, 6.4rem);
-            line-height: .98;
-            letter-spacing: -.055em;
-            text-wrap: balance;
+        .hero-content h1 {
+            font-size: clamp(32px, 4.5vw, 48px);
+            font-weight: 900;
+            line-height: 1.05;
+            margin-bottom: 14px;
+            letter-spacing: -.02em;
         }
-        .hero-subtitle {
-            max-width: 810px;
-            margin: 26px 0 0;
-            color: rgba(255, 255, 255, .88);
-            font-size: clamp(1.05rem, 2.2vw, 1.34rem);
+        .hero-content .subhead {
+            font-size: 19px;
+            color: #dbe7f4;
+            margin-bottom: 20px;
+            max-width: 650px;
+            font-weight: 500;
+            line-height: 1.4;
         }
-        .hero-note {
-            margin: 18px 0 0;
-            color: rgba(255, 255, 255, .72);
-            font-size: .84rem;
-            font-weight: 700;
-        }
-        .stat-grid {
+        .hero-right {
             display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 12px;
-            margin-top: 42px;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            position: relative;
+            z-index: 3;
         }
-        .stat {
-            padding: 18px 20px;
-            border: 1px solid rgba(255, 255, 255, .16);
-            border-radius: 14px;
-            background: rgba(255, 255, 255, .08);
-            backdrop-filter: blur(7px);
+        .hero-stat {
+            background: rgba(255, 255, 255, .07);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, .12);
+            border-radius: var(--radius);
+            padding: 18px 22px;
         }
-        .stat b {
-            display: block;
-            font-family: Georgia, serif;
-            font-size: 2.15rem;
+        .hero-stat .num {
+            font-size: 34px;
+            font-weight: 900;
+            color: white;
             line-height: 1;
         }
-        .stat span {
-            display: block;
-            margin-top: 7px;
-            color: rgba(255, 255, 255, .72);
-            font-size: .82rem;
-            font-weight: 700;
+        .hero-stat .label {
+            font-size: 13px;
+            color: #b0c8df;
+            margin-top: 4px;
+            line-height: 1.3;
         }
 
+        /* ----- Rest of the page styles (preserved) ----- */
         .page {
             width: min(calc(100% - 36px), var(--max));
             margin: -34px auto 76px;
@@ -601,6 +598,58 @@
             max-width: 800px;
         }
 
+        /* Series menu styles */
+        .series-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin: 20px 0 0;
+        }
+        .series-grid a {
+            padding: 18px 20px;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            text-decoration: none;
+            color: var(--navy);
+            background: #fff;
+            transition: .2s;
+            display: flex;
+            flex-direction: column;
+        }
+        .series-grid a:hover {
+            border-color: var(--red);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, .06);
+            background: var(--soft);
+        }
+        .series-grid a span {
+            font-weight: 700;
+            font-size: 1rem;
+            display: block;
+        }
+        .series-grid a small {
+            display: block;
+            margin-top: 4px;
+            color: var(--muted);
+            font-size: .78rem;
+            font-weight: 400;
+        }
+        .series-grid a .badge {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 2px 10px;
+            border-radius: 999px;
+            background: var(--navy);
+            color: #fff;
+            font-size: .65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .05em;
+            align-self: flex-start;
+        }
+        .series-grid a .badge.current {
+            background: var(--red);
+        }
+
         .site-footer {
             padding: 42px 20px;
             background: #061426;
@@ -646,6 +695,11 @@
             font-size: .78rem;
         }
 
+        /* Remove sidebar */
+        .sidebar {
+            display: none !important;
+        }
+
         @media (max-width: 950px) {
             .site-menu {
                 display: none;
@@ -665,17 +719,21 @@
             .menu-button {
                 display: block;
             }
-            .hero {
-                min-height: 790px;
+            .hero-full .container {
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
-            .stat-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .hero-right {
+                grid-template-columns: 1fr 1fr;
             }
             .compare {
                 grid-template-columns: 1fr;
             }
             .questions {
                 grid-template-columns: 1fr;
+            }
+            .series-grid {
+                grid-template-columns: 1fr 1fr;
             }
         }
         @media (max-width: 680px) {
@@ -685,11 +743,27 @@
             .brand-copy small {
                 display: none;
             }
-            .hero-inner {
-                padding: 92px 0 62px;
+            .hero-full .container {
+                gap: 20px;
             }
-            .hero h1 {
-                font-size: clamp(3rem, 14vw, 4.6rem);
+            .hero-content h1 {
+                font-size: 26px;
+            }
+            .hero-content .subhead {
+                font-size: 16px;
+            }
+            .hero-right {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+            .hero-stat {
+                padding: 12px 14px;
+            }
+            .hero-stat .num {
+                font-size: 22px;
+            }
+            .hero-stat .label {
+                font-size: 11px;
             }
             .page {
                 width: min(calc(100% - 22px), var(--max));
@@ -718,6 +792,9 @@
             .cta h2 {
                 font-size: 1.5rem;
             }
+            .series-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -728,39 +805,51 @@
 <header class="site-header">
     <div class="header-inner">
         <a class="brand" href="/">
-            <span class="brand-mark" aria-hidden="true">GK</span>
-            <span class="brand-copy">
+            <img src="/review.png" alt="Global Kratom Policy Review icon">
+            <div class="brand-copy">
                 <strong>GLOBAL <em>KRATOM</em> POLICY REVIEW</strong>
                 <small>RESEARCH · ANALYSIS · POLICY</small>
-            </span>
+            </div>
         </a>
         <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-menu">☰</button>
         <nav id="site-menu" class="site-menu" aria-label="Main navigation">
-            <a href="/shipment/intro.html">Series Home</a>
-            <a href="/bills-of-lading.html">Bills of Lading</a>
-            <a href="/import-alert.html">Import Alert 54-15</a>
-            <a href="/shipment/human-consumption.html">Intended Use</a>
-            <a href="/shipment/fertilizer.html">Fertilizer Code</a>
-            <a href="/shipment/exporters.html">Exporters</a>
-            <a href="/shipment/importers.html">Importers</a>
+            <a href="/">Home</a>
+            <a href="/evidence/index.html">Evidence</a>
+            <a href="/lawmakers.html">For Lawmakers</a>
+            <a href="https://antikratom.org">Action Center</a>
         </nav>
     </div>
 </header>
 
+<!-- Sidebar removed entirely -->
+
 <main id="main-content">
 
-    <section class="hero">
-        <div class="hero-inner">
-            <span class="eyebrow">PUBLIC-MATERIALS REVIEW</span>
-            <h1>What the Exporters' Public Materials Say</h1>
-            <p class="hero-subtitle">Comparing shipment records with exporter websites, marketing profiles, government announcements, and other public statements.</p>
-            <div class="stat-grid">
-                <div class="stat"><b>3</b><span>Exporter case studies</span></div>
-                <div class="stat"><b>80</b><span>Curated shipment records</span></div>
-                <div class="stat"><b>3,194.263 t</b><span>Documented shipment weight</span></div>
-                <div class="stat"><b>15</b><span>Reported importer relationships across profiles</span></div>
+    <section class="hero-full">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">PUBLIC-MATERIALS REVIEW</div>
+                <h1>What the Exporters' Public Materials Say</h1>
+                <p class="subhead">Comparing shipment records with exporter websites, marketing profiles, government announcements, and other public statements.</p>
             </div>
-            <p class="hero-note">Public-materials review updated August 2, 2026 · Company and third-party sources are labeled by source type.</p>
+            <div class="hero-right">
+                <div class="hero-stat">
+                    <div class="num">3</div>
+                    <div class="label">Exporter case studies</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="num">80</div>
+                    <div class="label">Curated shipment records</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="num">3,194.263 t</div>
+                    <div class="label">Documented shipment weight</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="num">15</div>
+                    <div class="label">Reported importer relationships</div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -941,11 +1030,64 @@
             <a class="button button-primary" href="downloads/ImportYeti_Mitragyna_Analysis_2026-07-31.xlsx" download>Download the analyzed shipment workbook</a>
         </section>
 
-        <!-- CTA SECTION - styled like exporters.html, pointing to importers.html -->
+        <!-- CTA SECTION - pointing to importers.html -->
         <section class="cta">
             <h2>Next: Who Receives America's Bulk Kratom?</h2>
             <p>The shipping records establish the scale of exports and the supplier network. The next investigation examines the U.S. importers and consignees named in the same public records, revealing who is receiving America's bulk kratom shipments and how they appear in the trade documentation.</p>
             <a class="btn-red" href="/shipment/importers.html">Continue to the importers investigation →</a>
+        </section>
+
+        <!-- FULL SERIES MENU -->
+        <section class="section" id="series-menu">
+            <h2>Following the Kratom Supply Chain — Complete Series</h2>
+            <p>Explore every investigation in this series, from the introductory overview to the final importer analysis.</p>
+            <div class="series-grid">
+                <a href="/shipment/intro.html">
+                    <span>Series Introduction</span>
+                    <small>Overview of the investigation and key concepts</small>
+                    <span class="badge">Intro</span>
+                </a>
+                <a href="/shipment/supply-chain-investigation.html">
+                    <span>Inside America's Kratom Supply Chain</span>
+                    <small>The scale, scope, and significance of the trade</small>
+                    <span class="badge">Main</span>
+                </a>
+                <a href="/shipment/bills-of-lading.html">
+                    <span>Understanding Bills of Lading</span>
+                    <small>How to read shipping records like an investigator</small>
+                    <span class="badge">Documentation</span>
+                </a>
+                <a href="/shipment/import-alert.html">
+                    <span>FDA Import Alert 54-15 Explained</span>
+                    <small>FDA's detention policy for kratom imports</small>
+                    <span class="badge">Regulatory</span>
+                </a>
+                <a href="/shipment/human-consumption.html">
+                    <span>"Not for Human Consumption"</span>
+                    <small>Intentional use evidence and shipping disclaimers</small>
+                    <span class="badge">Intended Use</span>
+                </a>
+                <a href="/shipment/fertilizer.html">
+                    <span>The Fertilizer Classification</span>
+                    <small>HS 3101.00 vs. 1211.90 — why the difference?</small>
+                    <span class="badge">Tariff Codes</span>
+                </a>
+                <a href="/shipment/exporters.html">
+                    <span>Indonesia's Largest Kratom Exporters</span>
+                    <small>Who ships the bulk leaf and powder?</small>
+                    <span class="badge">Exporters</span>
+                </a>
+                <a href="/shipment/exporter-materials.html" class="current">
+                    <span>What the Exporters Say</span>
+                    <small>Public marketing and websites compared with shipping records</small>
+                    <span class="badge current">You are here</span>
+                </a>
+                <a href="/shipment/importers.html">
+                    <span>America's Largest Kratom Importers</span>
+                    <small>U.S. consignees, company profiles, and trade networks</small>
+                    <span class="badge">Importers</span>
+                </a>
+            </div>
         </section>
 
     </div>
