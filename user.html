@@ -48,8 +48,8 @@
         :root {
             --navy: #0b1d34;
             --red: #c8102e;
-            --soft: #f6f8fb;
-            --line: #dfe6ef;
+            --soft: #f1f4f8;
+            --line: #dce2ec;
             --text: #0a0f1a;
             --muted: #475569;
         }
@@ -62,7 +62,8 @@
             font-family: 'Inter', Arial, sans-serif;
             background: #f9fafb;
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.7;
+            font-size: 18px;
         }
         img {
             max-width: 100%;
@@ -90,8 +91,9 @@
             background: var(--navy);
             color: #dbe7f4;
             text-align: center;
-            padding: 9px 18px;
-            font-size: 13px;
+            padding: 10px 18px;
+            font-size: 14px;
+            letter-spacing: 0.3px;
         }
         .nav-bar {
             background: white;
@@ -160,7 +162,7 @@
         .hero-story {
             background: url('/user.png') center / cover no-repeat;
             position: relative;
-            min-height: 440px;
+            min-height: 460px;
             display: flex;
             align-items: center;
         }
@@ -178,34 +180,35 @@
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 52%;
-            padding: 52px 0 56px;
+            max-width: 55%;
+            padding: 56px 0 60px;
         }
         .hero-content h1 {
-            font-size: clamp(24px, 3.6vw, 40px);
+            font-size: clamp(32px, 4.2vw, 48px);
             font-weight: 900;
-            margin-bottom: 14px;
+            margin-bottom: 16px;
             line-height: 1.15;
             color: #ffffff;
-            text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7);
+            text-shadow: 0 2px 16px rgba(0, 0, 0, 0.8);
         }
         .hero-content p {
-            font-size: 17px;
+            font-size: 20px;
             color: #ffffff;
-            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+            text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
             max-width: 90%;
+            font-weight: 400;
         }
 
         .story-card {
             background: white;
             border-radius: 24px;
-            padding: 32px 36px;
+            padding: 40px 44px;
             margin: 48px 0;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
             border: 1px solid var(--line);
         }
         .story-card h2 {
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 900;
             padding-left: 0;
             margin-bottom: 24px;
@@ -213,32 +216,41 @@
             border-left: none;
         }
         .story-card h3 {
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 800;
-            margin: 24px 0 16px;
+            margin: 28px 0 18px;
             color: #0b1d34;
         }
         .story-card p {
-            font-size: 17px;
+            font-size: 19px;
             color: #0a0f1a;
-            margin-bottom: 18px;
-            line-height: 1.7;
+            margin-bottom: 20px;
+            line-height: 1.8;
         }
         .story-card ul {
             margin-left: 30px;
             margin-bottom: 20px;
         }
         .story-card li {
-            margin-bottom: 8px;
-            font-size: 16px;
+            margin-bottom: 10px;
+            font-size: 18px;
             color: #0a0f1a;
+            line-height: 1.7;
         }
         .highlight-box {
             background: #fef9f5;
             border-left: 6px solid var(--red);
-            padding: 20px 24px;
+            padding: 24px 28px;
             border-radius: 12px;
             margin: 24px 0;
+        }
+        .highlight-box p {
+            font-size: 19px;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+        .highlight-box p:last-child {
+            margin-bottom: 0;
         }
         .highlight-box strong {
             color: var(--red);
@@ -246,51 +258,105 @@
         .pdf-box {
             background: var(--soft);
             border-radius: 16px;
-            padding: 20px 24px;
-            border-left: 6px solid var(--red);
+            padding: 24px 28px;
             margin: 28px 0;
             display: flex;
             align-items: center;
             gap: 18px;
             flex-wrap: wrap;
+            border: 1px solid var(--line);
+        }
+        .pdf-box span {
+            font-size: 18px;
+            font-weight: 700;
         }
         .pdf-box a {
             background: var(--navy);
             color: white;
-            padding: 10px 22px;
+            padding: 12px 26px;
             border-radius: 999px;
             font-weight: 800;
-            font-size: 14px;
+            font-size: 16px;
+            transition: background 0.2s;
         }
         .pdf-box a:hover {
             background: var(--red);
         }
+        .pdf-box .muted {
+            font-size: 15px;
+            color: var(--muted);
+            font-weight: 400;
+        }
         .big-number {
-            font-size: 48px;
+            font-size: 56px;
             font-weight: 900;
             color: var(--red);
             letter-spacing: -1px;
-            line-height: 1;
+            line-height: 1.1;
         }
         .footnote {
-            font-size: 14px;
+            font-size: 15px;
             color: var(--muted);
             border-top: 1px solid var(--line);
             padding-top: 24px;
             margin-top: 32px;
+        }
+        .comparison-box {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .comparison-item {
+            text-align: center;
+            background: var(--soft);
+            padding: 20px 30px;
+            border-radius: 12px;
+            min-width: 140px;
+            border: 1px solid var(--line);
+        }
+        .comparison-item .number {
+            font-size: 42px;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+        .comparison-item .label {
+            font-size: 14px;
+            color: var(--muted);
+            margin-top: 4px;
+            font-weight: 600;
+        }
+        .comparison-item .number.navy {
+            color: var(--navy);
+        }
+        .comparison-item .number.red {
+            color: var(--red);
+        }
+        .quote-block {
+            font-style: italic;
+            background: var(--soft);
+            padding: 16px 22px;
+            border-radius: 8px;
+            font-size: 19px;
+            border-left: 4px solid var(--navy);
+            margin: 16px 0;
         }
         footer {
             margin-top: 54px;
             background: var(--navy);
             color: #cbd5e1;
             text-align: center;
-            padding: 32px 18px;
-            font-size: 14px;
+            padding: 36px 18px;
+            font-size: 15px;
         }
 
         @media(max-width:760px) {
             .container {
                 padding: 0 16px
+            }
+            body {
+                font-size: 16px;
             }
             .nav-inner {
                 min-height: 78px
@@ -325,21 +391,22 @@
                 padding: 12px 0;
                 font-weight: 900;
                 border-bottom: 1px solid #eef2f6;
+                font-size: 15px;
             }
 
             .hero-story {
-                min-height: 320px;
+                min-height: 300px;
             }
             .hero-content {
                 max-width: 100%;
-                padding: 36px 0 40px;
+                padding: 32px 0 36px;
             }
             .hero-content h1 {
-                font-size: clamp(22px, 6vw, 32px);
-                text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+                font-size: clamp(26px, 6.5vw, 34px);
+                text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85);
             }
             .hero-content p {
-                font-size: 15px;
+                font-size: 17px;
                 max-width: 100%;
             }
 
@@ -348,17 +415,41 @@
                 margin: 32px 0;
             }
             .story-card h2 {
-                font-size: 24px;
+                font-size: 26px;
             }
             .story-card p {
+                font-size: 17px;
+            }
+            .story-card li {
                 font-size: 16px;
             }
+            .highlight-box {
+                padding: 18px 20px;
+            }
+            .highlight-box p {
+                font-size: 17px;
+            }
             .pdf-box {
+                padding: 18px 20px;
                 flex-direction: column;
                 align-items: stretch;
             }
+            .pdf-box span {
+                font-size: 16px;
+            }
             .big-number {
-                font-size: 36px;
+                font-size: 40px;
+            }
+            .comparison-item {
+                padding: 14px 20px;
+                min-width: 100px;
+            }
+            .comparison-item .number {
+                font-size: 32px;
+            }
+            .quote-block {
+                font-size: 17px;
+                padding: 14px 18px;
             }
         }
     </style>
@@ -409,7 +500,7 @@
         <div class="story-card">
             <h2>24 Million Americans</h2>
             <p>Kratom advocates have a shiny new number:</p>
-            <div style="text-align:center;margin:16px 0;">
+            <div style="text-align:center;margin:20px 0;">
                 <span class="big-number">24 MILLION AMERICANS</span>
             </div>
             <p>Supposedly, that's how many Americans use kratom.</p>
@@ -418,9 +509,9 @@
             <p>Nobody counted 24 million people. The number comes from extrapolating a 9.1% prevalence estimate from a 2025 survey by Oliver Grundmann and colleagues.</p>
 
             <div class="pdf-box">
-                <span style="font-weight:700;">Read the study:</span>
+                <span>Read the study:</span>
                 <a href="/user.pdf" target="_blank">📄 Prevalence and Use Patterns of Kratom.pdf</a>
-                <span style="font-size:14px;color:var(--muted);">(10 pages)</span>
+                <span class="muted">(10 pages)</span>
             </div>
 
             <p>And the methodology deserves considerably more attention than the talking point.</p>
@@ -430,9 +521,9 @@
         <div class="story-card">
             <h2>First Problem: The Study Says "Non-Probabilistic"</h2>
             <p>The title advertises a:</p>
-            <p style="font-style:italic;background:var(--soft);padding:12px 18px;border-radius:8px;">"US Nationally Representative Sample."</p>
+            <div class="quote-block">"US Nationally Representative Sample."</div>
             <p>The Methods section says:</p>
-            <p style="font-style:italic;background:var(--soft);padding:12px 18px;border-radius:8px;">"This survey utilized non-probabilistic based sampling."</p>
+            <div class="quote-block">"This survey utilized non-probabilistic based sampling."</div>
             <p>Participants came from people who had previously opted into commercial research panels maintained by Research America and its partners.</p>
             <div class="highlight-box">
                 <p><strong>That's not a minor footnote.</strong></p>
@@ -455,9 +546,9 @@
             </div>
             <p>That left exactly <strong>1,049</strong> completed survey responses - the kratom users.</p>
             <p>Then the paper divides those 1,049 users by the 11,545 people who began the survey and announces:</p>
-            <div style="text-align:center;margin:16px 0;">
+            <div style="text-align:center;margin:20px 0;">
                 <span class="big-number">9.1%</span>
-                <p style="margin-top:4px;font-size:14px;color:var(--muted);">prevalence among the general U.S. adult population</p>
+                <p style="margin-top:6px;font-size:16px;color:var(--muted);font-weight:500;">prevalence among the general U.S. adult population</p>
             </div>
             <p>The arithmetic isn't the interesting part.</p>
             <p>The leap from an opt-in, non-probability online panel to the general U.S. adult population is.</p>
@@ -468,14 +559,14 @@
             <h2>Especially When Federal Data Said 0.7%</h2>
             <p>Here's the part worth putting in giant type.</p>
             <p>The paper itself acknowledges that analysis of the federal <strong>National Survey on Drug Use and Health</strong> estimated past-year kratom use at:</p>
-            <div style="display:flex;gap:24px;justify-content:center;margin:16px 0;flex-wrap:wrap;">
-                <div style="text-align:center;background:var(--soft);padding:16px 24px;border-radius:12px;min-width:120px;">
-                    <div style="font-size:36px;font-weight:900;color:var(--navy);">0.7%</div>
-                    <div style="font-size:13px;color:var(--muted);">NSDUH past-year</div>
+            <div class="comparison-box">
+                <div class="comparison-item">
+                    <div class="number navy">0.7%</div>
+                    <div class="label">NSDUH past-year</div>
                 </div>
-                <div style="text-align:center;background:var(--soft);padding:16px 24px;border-radius:12px;min-width:120px;">
-                    <div style="font-size:36px;font-weight:900;color:var(--red);">9.1%</div>
-                    <div style="font-size:13px;color:var(--muted);">New study</div>
+                <div class="comparison-item">
+                    <div class="number red">9.1%</div>
+                    <div class="label">New study</div>
                 </div>
             </div>
             <p>That's roughly a <strong>13-fold difference</strong>.</p>
@@ -490,7 +581,7 @@
         <div class="story-card">
             <h2>Surprise: Guess Who Provided the Data?</h2>
             <p>Buried near the end:</p>
-            <p style="font-style:italic;background:var(--soft);padding:12px 18px;border-radius:8px;">"The authors would like to thank the <strong>Global Kratom Coalition</strong> for providing the survey data for independent analysis and publication."</p>
+            <div class="quote-block">"The authors would like to thank the <strong>Global Kratom Coalition</strong> for providing the survey data for independent analysis and publication."</div>
             <p>Yes.</p>
             <p>The Global Kratom Coalition provided the survey data behind the study now being used to support an enormous estimate of America's kratom-using population.</p>
             <p>The authors report no potential conflict of interest and no funding associated with the article.</p>
@@ -513,7 +604,7 @@
                 <li>Prevalence roughly <strong>13 times</strong> the earlier federal past-year estimate.</li>
                 <li>And out pops:</li>
             </ul>
-            <div style="text-align:center;margin:16px 0;">
+            <div style="text-align:center;margin:20px 0;">
                 <span class="big-number">24 MILLION!</span>
             </div>
         </div>
@@ -552,14 +643,17 @@
                 <li>The resulting prevalence <strong>dwarfs</strong> the earlier federal past-year estimate.</li>
                 <li>And the paper itself <strong>can't consistently describe</strong> whether its 9.1% represents current, active, or lifetime use.</li>
             </ul>
-            <div class="highlight-box" style="margin-top:24px;">
-                <p style="font-size:18px;font-weight:800;margin-bottom:8px;">So the next time somebody marches into a statehouse declaring:</p>
-                <p style="font-size:24px;font-weight:900;color:var(--red);">"24 million Americans use kratom!"</p>
-                <p style="margin-top:12px;font-weight:700;">Lawmakers should ask one question:</p>
-                <p style="font-size:20px;font-weight:900;margin-bottom:0;">24 million according to whom?</p>
+            <div class="highlight-box" style="margin-top:28px;">
+                <p style="font-size:20px;font-weight:800;margin-bottom:10px;">So the next time somebody marches into a statehouse declaring:</p>
+                <p style="font-size:28px;font-weight:900;color:var(--red);">"24 million Americans use kratom!"</p>
+                <p style="margin-top:14px;font-weight:700;font-size:19px;">Lawmakers should ask one question:</p>
+                <p style="font-size:22px;font-weight:900;margin-bottom:0;">24 million according to whom?</p>
             </div>
-            <p style="margin-top:16px;font-weight:800;font-size:18px;">Because 24 million Americans weren't counted.</p>
-            <p style="font-size:20px;font-weight:900;color:var(--red);">They were manufactured by multiplication.</p>
+            <p style="margin-top:20px;font-weight:800;font-size:20px;">Because 24 million Americans weren't counted.</p>
+            <p style="font-size:22px;font-weight:900;color:var(--red);">They were manufactured by multiplication.</p>
+            <div class="footnote">
+                <strong>Methodological note:</strong> This critique is based on the publicly available study "Prevalence and Use Patterns of Kratom (Mitragyna speciosa Korth.) in a US Nationally Representative Sample" (Grundmann et al., 2025). The analysis focuses on the study's sampling methodology, data source, and reported prevalence estimates.
+            </div>
         </div>
 
     </div>
