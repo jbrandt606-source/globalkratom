@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MQKC65VZVY"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P31PD1SSTD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config','G-MQKC65VZVY',{'linker':{'domains':['mothersagainstherbalabuse.org','gasstationheroin.org']}});
+    gtag('config','G-P31PD1SSTD');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+
+  <!-- Primary SEO -->
+  <title>U.S. Kratom Ban Map: State Laws &amp; 271 Local Bans | Global Kratom Policy Review</title>
+  <meta name="description" content="Interactive U.S. kratom ban map tracking statewide laws and 271 listed city, county, town, and tribal bans across 18 states. Updated August 29, 2026.">
+  <meta name="author" content="Global Kratom Policy Review">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
+  <!-- Expert SEO: Keywords & News -->
+  <meta name="keywords" content="kratom ban map, state kratom laws, local kratom bans, kratom policy tracker, US kratom legislation, globalkratom policy, kratom prohibition">
+  <meta name="news_keywords" content="kratom, ban, law, policy, map, legislation, US">
+
+  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+  <meta property="og:title" content="U.S. Kratom Ban Map: State Laws and 271 Local Bans">
+  <meta property="og:description" content="Explore statewide kratom policy and a searchable directory of 271 listed local bans across 18 states.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.globalkratom.org/bans/">
+  <meta property="og:image" content="https://www.globalkratom.org/highhero.jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Global Kratom Policy Review">
+  <meta property="article:author" content="Global Kratom Policy Review">
+  <meta property="article:publisher" content="https://www.globalkratom.org/">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="U.S. Kratom Ban Map: State Laws and Local Bans">
+  <meta name="twitter:description" content="Interactive state map and searchable local kratom-ban directory.">
+  <meta name="twitter:image" content="https://www.globalkratom.org/highhero.jpeg">
+  <meta name="twitter:site" content="@GlobalKratom">
+
+  <!-- Canonical & Icons -->
+  <link rel="canonical" href="https://www.globalkratom.org/bans/">
+  <link rel="icon" type="image/png" href="/review.png">
+  <link rel="shortcut icon" href="/review.png">
+  <link rel="apple-touch-icon" href="/review.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Expert SEO: Structured Data (E-E-A-T enhanced) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "U.S. Kratom Ban Map and Local Ban Tracker",
+      "url": "https://www.globalkratom.org/bans/",
+      "description": "Interactive map of statewide kratom laws and a searchable directory of local kratom bans.",
+      "dateModified": "2026-08-29",
+      "author": {
+        "@type": "Organization",
+        "name": "Global Kratom Policy Review",
+        "url": "https://www.globalkratom.org/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Global Kratom Policy Review",
+        "url": "https://www.globalkratom.org/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.globalkratom.org/review.png"
+        },
+        "sameAs": [
+          "https://twitter.com/GlobalKratom",
+          "https://www.facebook.com/GlobalKratomPolicy"
+        ]
+      },
+      "mainEntity": {
+        "@type": "Dataset",
+        "name": "State and Local Kratom Policy Tracker",
+        "spatialCoverage": "United States",
+        "temporalCoverage": "2026"
+      },
+      "image": "https://www.globalkratom.org/highhero.jpeg"
+    }
+  </script>
+
+  <style>
+  :root{
+    --navy:#0b1d34;
+    --navy2:#153a5d;
+    --red:#c8102e;
+    --mred:#d72638;
+    --orange:#f28c18;
+    --blue:#367fcb;
+    --yellow:#f4c430;
+    --green:#69b86b;
+    --soft:#f6f8fb;
+    --line:#dfe6ef;
+    --text:#0b1d34;
+    --muted:#64748b;
+  }
+
+  *{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+  }
+
+  html{
+    scroll-behavior:smooth;
+  }
+
+  body{
+    font-family:Inter,Arial,sans-serif;
+    background:#f9fafb;
+    color:var(--text);
+    line-height:1.5;
+    overflow-x:hidden;
+  }
+
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:url("/evidence/assets/subtle-grid.png") repeat;
+    opacity:.035;
+    pointer-events:none;
+    z-index:-1;
+  }
+
+  a{
+    color:inherit;
+    text-decoration:none;
+  }
+
+  button,
+  input,
+  select{
+    font:inherit;
+  }
+
+  button{
+    cursor:pointer;
+  }
+
+  img,
+  svg{
+    max-width:100%;
+  }
+
+  .container{
+    width:100%;
+    max-width:1520px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* Top navigation */
+
+  .topbar{
+    background:var(--navy);
+    color:#dbe7f4;
+    text-align:center;
+    padding:9px 18px;
+    font-size:13px;
+  }
+
+  .nav-bar{
+    background:#fff;
+    border-bottom:1px solid var(--line);
+  }
+
+  .nav-inner{
+    min-height:88px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+  }
+
+  .brand{
+    min-width:0;
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+
+  .brand img{
+    width:54px;
+    height:54px;
+    flex:0 0 auto;
+    object-fit:cover;
+    border-radius:6px;
+  }
+
+  .brand-title{
+    font-size:21px;
+    font-weight:900;
+    line-height:1;
+    text-transform:uppercase;
+  }
+
+  .brand-title span{
+    color:var(--red);
+  }
+
+  .brand-sub{
+    margin-top:6px;
+    font-size:11px;
+    font-weight:900;
+    text-transform:uppercase;
+  }
+
+  .nav-links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+    font-size:13px;
+    font-weight:800;
+    text-transform:uppercase;
+  }
+
+  .nav-links a.active,
+  .nav-links a:hover{
+    color:var(--red);
+  }
+
+  .mobile-menu-btn{
+    display:none;
+    background:none;
+    border:0;
+    color:var(--navy);
+    font-size:30px;
+  }
+
+  .mobile-menu{
+    display:none;
+    background:#fff;
+    border-top:1px solid var(--line);
+    padding:14px 16px;
+  }
+
+  .mobile-menu a{
+    display:block;
+    padding:12px 0;
+    border-bottom:1px solid #eef2f6;
+    font-weight:900;
+  }
+
+  /* Hero */
+
+  .hero{
+    background:
+      linear-gradient(90deg,rgba(7,24,44,.86),rgba(7,24,44,.52)),
+      url("/highhero.jpeg"),
+      linear-gradient(135deg,var(--navy),var(--navy2));
+    background-size:cover;
+    background-position:center;
+    color:#fff;
+  }
+
+  .hero-content{
+    max-width:800px;
+    padding:72px 0;
+  }
+
+  .kicker{
+    display:inline-block;
+    margin-bottom:18px;
+    padding:7px 14px;
+    background:var(--red);
+    border-radius:999px;
+    font-size:13px;
+    font-weight:900;
+    text-transform:uppercase;
+  }
+
+  .hero h1{
+    margin-bottom:18px;
+    font-size:clamp(40px,6vw,64px);
+    font-weight:900;
+    line-height:1.02;
+  }
+
+  .hero p{
+    color:#eaf1f9;
+    font-size:18px;
+  }
+
+  .updated{
+    margin-top:18px;
+    color:#cad7e5;
+    font-size:13px;
+  }
+
+  /* Main layout */
+
+  main{
+    padding:32px 0 58px;
+  }
+
+  .metrics{
+    position:relative;
+    z-index:2;
+    display:grid;
+    grid-template-columns:repeat(6,minmax(0,1fr));
+    gap:12px;
+    margin-top:-64px;
+  }
+
+  .metric,
+  .card,
+  .map-card,
+  .panel{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:20px;
+  }
+
+  .metric{
+    min-width:0;
+    padding:16px;
+    box-shadow:0 8px 22px rgba(6,28,48,.08);
+  }
+
+  .metric strong{
+    display:block;
+    font-size:1.8rem;
+  }
+
+  .metric span{
+    color:var(--muted);
+    font-size:.78rem;
+  }
+
+  .card{
+    margin:28px 0;
+    padding:30px 34px;
+  }
+
+  .card h2{
+    margin-bottom:18px;
+    padding-left:18px;
+    border-left:0;
+    font-size:28px;
+    font-weight:900;
+  }
+
+  .card p{
+    margin-bottom:14px;
+    font-size:17px;
+  }
+
+  /* Search and filter controls */
+
+  .controls{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 320px;
+    gap:12px;
+    margin:22px 0;
+  }
+
+  .control{
+    min-width:0;
+    padding:16px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:16px;
+  }
+
+  label{
+    display:block;
+    margin-bottom:7px;
+    font-size:.76rem;
+    font-weight:800;
+    text-transform:uppercase;
+  }
+
+  input,
+  select{
+    width:100%;
+    min-width:0;
+    padding:12px;
+    background:#fff;
+    border:1px solid #cfd7df;
+    border-radius:11px;
+  }
+
+  .filters{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:12px;
+  }
+
+  .filters button{
+    padding:9px 13px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:999px;
+    color:var(--blue);
+    font-weight:800;
+  }
+
+  .filters button.active{
+    background:var(--navy);
+    color:#fff;
+  }
+
+  /* Map and state panel */
+
+  .layout{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:18px;
+    width:100%;
+  }
+
+  .map-card{
+    width:100%;
+    max-width:1480px;
+    min-width:0;
+    padding:18px;
+    overflow:hidden;
+    margin:0 auto;
+  }
+
+  .map-head{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:14px;
+    padding:5px 4px 12px;
+  }
+
+  .map-head h2{
+    font-size:21px;
+  }
+
+  .mobile-hint{
+    display:none;
+    color:var(--muted);
+    font-size:12px;
+    font-weight:700;
+  }
+
+  .map-tools{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:8px;
+    padding:0 4px 10px;
+  }
+
+  .map-tools button{
+    padding:8px 12px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:999px;
+    color:var(--navy);
+    font-weight:900;
+  }
+
+  .map-tools button:active{
+    transform:scale(.98);
+  }
+
+  .map-scroll{
+    position:relative;
+    width:100%;
+    height:840px;
+    overflow:auto;
+    margin:0 auto;
+    background:#fff;
+    border:1px solid #edf1f5;
+    border-radius:14px;
+    overscroll-behavior:contain;
+    touch-action:pan-x pan-y;
+    cursor:grab;
+    user-select:none;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  .map-scroll.dragging{
+    cursor:grabbing;
+  }
+
+  #map{
+    display:block;
+    width:1480px;
+    max-width:none;
+    height:auto;
+    margin:0 auto;
+    background:#fff;
+    transform-origin:top left;
+  }
+
+  .state{
+    cursor:pointer;
+    stroke:#fff;
+    stroke-width:1.25;
+    vector-effect:non-scaling-stroke;
+    transition:filter .15s,opacity .15s;
+  }
+
+  .state:hover,
+  .state:focus{
+    outline:none;
+    filter:brightness(.84);
+  }
+
+  .state.dimmed{
+    opacity:.12;
+  }
+
+  .state.selected{
+    stroke:var(--navy);
+    stroke-width:4;
+  }
+
+  .state-label{
+    pointer-events:none;
+    fill:#071d31;
+    font-size:10px;
+    font-weight:900;
+    text-anchor:middle;
+    dominant-baseline:middle;
+  }
+
+  .legend{
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px 15px;
+    padding:12px 5px 3px;
+    font-size:.86rem;
+    font-weight:700;
+  }
+
+  .legend-item{
+    display:flex;
+    align-items:center;
+    gap:7px;
+  }
+
+  .swatch{
+    width:14px;
+    height:14px;
+    flex:0 0 auto;
+    border-radius:4px;
+  }
+
+  /* State information panel */
+
+  .panel{
+    position:static;
+    width:100%;
+    max-width:1480px;
+    min-height:0;
+    padding:20px;
+    margin:0 auto;
+  }
+
+  .panel-empty{
+    padding-top:40px;
+    color:var(--muted);
+    text-align:center;
+  }
+
+  .badge{
+    display:inline-block;
+    padding:6px 10px;
+    border-radius:999px;
+    color:#fff;
+    font-size:.78rem;
+    font-weight:900;
+  }
+
+  .panel h2{
+    margin:.7rem 0;
+    font-size:2rem;
+  }
+
+  .facts{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+    margin:18px 0;
+  }
+
+  .fact{
+    min-width:0;
+    padding:11px;
+    background:var(--soft);
+    border-radius:10px;
+  }
+
+  .fact small{
+    display:block;
+    color:var(--muted);
+    font-size:.7rem;
+    text-transform:uppercase;
+  }
+
+  .fact strong{
+    display:block;
+    margin-top:4px;
+  }
+
+  .policy-detail{
+    margin-top:16px;
+    padding:15px 16px;
+    background:var(--soft);
+    border-left:5px solid var(--red);
+    border-radius:12px;
+  }
+
+  .policy-detail h3{
+    margin-bottom:6px;
+    font-size:15px;
+  }
+
+  .policy-detail p{
+    color:var(--text);
+    font-size:15px;
+  }
+
+  .panel-local{
+    margin-top:16px;
+    padding-top:14px;
+    border-top:1px solid var(--line);
+  }
+
+  .panel-local h3{
+    margin-bottom:8px;
+    font-size:16px;
+  }
+
+  .mini-list,
+  .source-note{
+    color:var(--muted);
+    font-size:13px;
+  }
+
+  .source-note{
+    margin-top:18px;
+    padding-top:13px;
+    border-top:1px solid var(--line);
+  }
+
+  /* Local-ban section */
+
+  .local-overview{
+    display:grid;
+    grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);
+    gap:18px;
+  }
+
+  .local-stats{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:12px;
+    margin-top:20px;
+  }
+
+  .local-stat{
+    min-width:0;
+    padding:17px;
+    background:var(--soft);
+    border-radius:14px;
+  }
+
+  .local-stat strong{
+    display:block;
+    font-size:27px;
+  }
+
+  .rank{
+    list-style:none;
+  }
+
+  .rank li{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    padding:11px 0;
+    border-top:1px solid var(--line);
+  }
+
+  .rank li:first-child{
+    border:0;
+  }
+
+  .rank strong{
+    font-size:18px;
+  }
+
+  .directory-tools{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 240px;
+    gap:12px;
+    margin:18px 0;
+  }
+
+  .directory-count{
+    margin-bottom:10px;
+    color:var(--muted);
+    font-size:13px;
+  }
+
+  .directory{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:12px;
+  }
+
+  .place{
+    min-width:0;
+    padding:14px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+  }
+
+  .place strong{
+    display:block;
+  }
+
+  .place span{
+    color:var(--muted);
+    font-size:13px;
+  }
+
+  .place button{
+    display:block;
+    margin-top:8px;
+    padding:0;
+    background:none;
+    border:0;
+    color:var(--red);
+    font-weight:800;
+  }
+
+  .more{
+    display:block;
+    margin:20px auto 0;
+    padding:11px 22px;
+    background:var(--navy);
+    border:0;
+    border-radius:999px;
+    color:#fff;
+    font-weight:800;
+  }
+
+  .audit{
+    margin-top:20px;
+    color:var(--muted);
+    font-size:14px;
+  }
+
+  /* Action callout */
+
+  .action{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+    margin-top:30px;
+    padding:28px;
+    background:linear-gradient(135deg,var(--navy),#133b60);
+    border-radius:20px;
+    color:#fff;
+  }
+
+  .action h2{
+    font-size:27px;
+  }
+
+  .action p{
+    color:#dce8f4;
+  }
+
+  .action a{
+    flex:0 0 auto;
+    padding:14px 24px;
+    background:var(--red);
+    border-radius:999px;
+    color:#fff;
+    font-weight:900;
+    white-space:nowrap;
+  }
+
+  .tooltip{
+    position:fixed;
+    z-index:20;
+    padding:9px 11px;
+    background:var(--navy);
+    border-radius:9px;
+    color:#fff;
+    font-size:.8rem;
+    opacity:0;
+    pointer-events:none;
+  }
+
+  footer{
+    padding:32px 18px;
+    background:var(--navy);
+    color:#cbd5e1;
+    text-align:center;
+    font-size:14px;
+  }
+
+  /* Tablet and smaller laptop layout */
+
+  @media(max-width:1100px){
+    .container{
+      max-width:100%;
+      padding-left:18px;
+      padding-right:18px;
+    }
+
+    .layout{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+
+    .map-card,
+    .panel{
+      width:100%;
+    }
+
+    .panel{
+      position:static;
+      min-height:0;
+    }
+
+    .map-scroll{
+      width:100%;
+      height:720px;
+      overflow:auto;
+      background:#fff;
+      border:1px solid #edf1f5;
+      touch-action:pan-x pan-y;
+      -webkit-overflow-scrolling:touch;
+    }
+
+    #map{
+      width:1360px;
+      max-width:none;
+      height:auto;
+    }
+
+    .map-tools{
+      position:static;
+      width:100%;
+      background:#fff;
+    }
+
+    .legend{
+      position:static;
+      width:100%;
+      min-width:0;
+      background:#fff;
+    }
+  }
+
+  /* Tablet */
+
+  @media(max-width:900px){
+    .metrics{
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      margin-top:18px;
+    }
+
+    .controls{
+      grid-template-columns:1fr;
+    }
+
+    .local-overview{
+      grid-template-columns:1fr;
+    }
+
+    .directory{
+      grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+
+    .action{
+      align-items:flex-start;
+      flex-direction:column;
+    }
+  }
+
+  /* Portrait mobile */
+
+  @media(max-width:760px){
+    .container{
+      padding:0 12px;
+    }
+
+    .nav-inner{
+      min-height:78px;
+    }
+
+    .brand{
+      gap:10px;
+    }
+
+    .brand img{
+      width:44px;
+      height:44px;
+    }
+
+    .brand-title{
+      font-size:17px;
+    }
+
+    .brand-sub{
+      font-size:9px;
+    }
+
+    .nav-links{
+      display:none;
+    }
+
+    .mobile-menu-btn{
+      display:block;
+    }
+
+    .mobile-menu.open{
+      display:block;
+    }
+
+    .hero-content{
+      padding:50px 0 72px;
+    }
+
+    .hero h1{
+      font-size:40px;
+    }
+
+    .metrics{
+      margin-top:-38px;
+    }
+
+    .metric{
+      padding:13px;
+    }
+
+    .metric strong{
+      font-size:1.45rem;
+    }
+
+    .card{
+      padding:24px 20px;
+    }
+
+    .card h2{
+      font-size:24px;
+    }
+
+    .local-stats{
+      grid-template-columns:1fr;
+    }
+
+    .map-card{
+      padding:10px;
+      overflow:hidden;
+    }
+
+    .map-head{
+      display:block;
+      padding:8px 6px 12px;
+    }
+
+    .map-head h2{
+      font-size:24px;
+      line-height:1.2;
+    }
+
+    .mobile-hint{
+      display:block;
+      margin-top:10px;
+      line-height:1.45;
+    }
+
+    .map-tools{
+      position:static;
+      width:100%;
+      display:flex;
+      justify-content:flex-start;
+      gap:7px;
+      padding:4px 6px 12px;
+      background:#fff;
+    }
+
+    .map-tools button{
+      padding:8px 11px;
+      font-size:14px;
+    }
+
+    .map-scroll{
+      width:100%;
+      height:600px;
+      min-height:0;
+      overflow:auto;
+      background:#fff;
+      border:1px solid #edf1f5;
+      border-radius:14px;
+      overscroll-behavior:contain;
+      touch-action:pan-x pan-y;
+      -webkit-overflow-scrolling:touch;
+    }
+
+    .map-scroll::-webkit-scrollbar{
+      width:8px;
+      height:8px;
+    }
+
+    .map-scroll::-webkit-scrollbar-thumb{
+      background:#aab7c5;
+      border-radius:999px;
+    }
+
+    .map-scroll::-webkit-scrollbar-track{
+      background:#eef2f6;
+    }
+
+    #map{
+      display:block;
+      width:1150px;
+      max-width:none;
+      height:auto;
+      margin:0;
+      transform-origin:top left;
+    }
+
+    .state-label{
+      font-size:10px;
+    }
+
+    .legend{
+      position:static;
+      width:100%;
+      min-width:0;
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
+      padding:14px 6px 4px;
+      background:#fff;
+    }
+
+    .legend-item{
+      min-width:0;
+      font-size:13px;
+    }
+
+    .facts{
+      grid-template-columns:1fr;
+    }
+
+    .directory-tools{
+      grid-template-columns:1fr;
+    }
+
+    .directory{
+      grid-template-columns:1fr;
+    }
+
+    .action a{
+      width:100%;
+      white-space:normal;
+      text-align:center;
+    }
+  }
+
+  /* Very small phones */
+
+  @media(max-width:430px){
+    .topbar{
+      font-size:12px;
+    }
+
+    .brand-title{
+      font-size:15px;
+    }
+
+    .brand-sub{
+      font-size:8px;
+    }
+
+    .hero h1{
+      font-size:36px;
+    }
+
+    .hero p{
+      font-size:17px;
+    }
+
+    .metrics{
+      gap:10px;
+    }
+
+    .map-tools{
+      gap:6px;
+    }
+
+    .map-tools button{
+      padding:8px 10px;
+      font-size:13px;
+    }
+
+    .map-scroll{
+      height:580px;
+    }
+
+    #map{
+      width:1150px;
+    }
+
+    .legend{
+      grid-template-columns:1fr;
+    }
+  }
+
+  /* Landscape phones and tablets */
+
+  @media(max-width:1100px) and (orientation:landscape){
+    .layout{
+      display:flex;
+      flex-direction:column;
+    }
+
+    .map-scroll{
+      height:620px;
+    }
+
+    #map{
+      width:1400px;
+      max-width:none;
+    }
+
+    .map-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+    }
+
+    .map-tools{
+      position:static;
+      width:100%;
+    }
+
+    .legend{
+      display:flex;
+      flex-wrap:wrap;
+      width:100%;
+    }
+  }
+</style>
+<style>.article{max-width:1040px;margin:0 auto}.article-card{background:#fff;border:1px solid var(--line);border-radius:20px;margin:28px 0;padding:34px 42px}.article-card h2{margin-bottom:18px;padding-left:18px;border-left:0;font-size:32px;font-weight:900}.article-card p{margin:0 0 16px;font-size:17px}.callout{margin:24px 0;padding:22px 26px;background:#fff4b8;border:1px solid #ead56f;border-radius:14px;font-size:19px;font-weight:800}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:14px;margin:22px 0}.data-table{width:100%;border-collapse:collapse;min-width:720px}.data-table th{background:var(--navy);color:#fff;text-align:left;padding:13px}.data-table td{padding:13px;border-top:1px solid var(--line)}.data-table .num{text-align:right}.sources{margin-top:22px;padding:18px 20px;background:#fbfcfe;border:1px solid var(--line);border-radius:13px}.sources h3{font-size:16px;margin-bottom:8px}.sources p,.sources li{font-size:13px;color:#475569}.sources ul{padding-left:20px}.sources a{color:var(--navy2);text-decoration:underline}.article-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:-58px;position:relative;z-index:2}.article-metrics .metric{background:#fff}@media(max-width:760px){.article-card{padding:25px 20px}.article-metrics{grid-template-columns:repeat(2,1fr);margin-top:-38px}}.ten-sec{margin:24px 0;padding:24px 26px;background:#fff4b8;border:1px solid #ead56f;border-radius:16px}.ten-sec h2{padding-left:0!important;margin-bottom:12px!important;font-size:26px!important}.ten-sec ul{margin:0 0 0 22px}.ten-sec li{margin:9px 0;font-size:16px}.leg-box{margin:22px 0;padding:22px 25px;background:#fff4b8;border:1px solid #ead56f;border-radius:14px}.leg-box h3{margin:0 0 10px;font-size:18px;text-transform:uppercase}.leg-list{margin:10px 0 18px 26px}.leg-list li{margin:8px 0;font-size:16px}.statecards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:20px 0}.statecard{background:#f6f8fb;border:1px solid var(--line);border-radius:14px;padding:18px}.statecard h3{font-size:20px;margin-bottom:8px}.statecard ul{margin-left:20px}.statecard li{margin:6px 0}.takeaway{margin-top:12px;padding:11px 13px;background:#fff4b8;border-radius:9px;font-size:14px;font-weight:700}.twocol{display:grid;grid-template-columns:1fr 1fr;gap:14px}.evidence{background:#f6f8fb;border:1px solid var(--line);border-radius:14px;padding:18px}.evidence h3{margin-bottom:8px}.evidence ul{margin-left:20px}.evidence li{margin:7px 0}@media(max-width:760px){.statecards,.twocol{grid-template-columns:1fr}}</style></head><body><div class="topbar">GLOBALKRATOM.ORG · Evidence-based policy resources</div><div class="nav-bar"><div class="container"><div class="nav-inner"><a class="brand" href="/"><img src="/review.png" alt="Global Kratom Policy Review icon"><div><div class="brand-title">Global <span>Kratom</span> Policy Review</div><div class="brand-sub">Research · Analysis · Policy</div></div></a><nav class="nav-links"><a href="/">Home</a><a href="/evidence/index.html">Evidence</a><a href="/lawmakers.html">For Lawmakers</a><a href="/bans/">Ban Tracker</a></nav></div></div></div><section class="hero"><div class="container"><div class="hero-content"><span class="kicker">Policy Analysis</span><h1>They Banned Kratom. The Disaster Never Came.</h1><p>A decade of real-world data from states that prohibited kratom tests a familiar prediction: that removing legal kratom would drive people toward more dangerous drugs and produce broad public health harm.</p><div class="updated">Latest final federal mortality data: 2024</div></div></div></section><main><div class="container article"><section class="article-metrics"><div class="metric"><strong>5</strong><span>Long-standing prohibition states</span></div><div class="metric"><strong>10+ yrs</strong><span>Without legal kratom in several states</span></div><div class="metric"><strong>13.9</strong><span>Arkansas 2024 overdose rate</span></div><div class="metric"><strong>25%</strong><span>Arkansas death decline, 2023 to 2024</span></div></section>
+<section class="ten-sec">
+<h2>10-Second Summary</h2>
+<ul>
+<li><strong>Arkansas overdose mortality:</strong> 13.9 deaths per 100,000 in 2024, compared with 23.1 nationally.</li>
+<li><strong>Arkansas overdose deaths:</strong> down about 25% from 517 in 2023 to 387 in 2024 while kratom remained prohibited.</li>
+<li><strong>Violent crime:</strong> lower in 2025 than 2017 in four of the six states examined, including declines of about 24% in Alabama, 23% in Indiana, 24% in Wisconsin, and 35% in Rhode Island.</li>
+<li><strong>Property crime:</strong> lower in all six states from 2017 to 2025. Five states declined roughly 43% to 46%.</li>
+</ul>
+<p style="margin:14px 0 0;font-size:14px"><strong>What this means:</strong> These figures do not prove that kratom prohibition caused any improvement. They do show that long-standing prohibition is compatible with falling overdose deaths and substantial crime declines, contrary to a simple prediction of inevitable public-health or social deterioration.</p>
+</section>
+<section class="article-card"><h2>The Central Question</h2><div class="leg-box"><h3>The claim is testable</h3><p>Opponents of prohibition argue that banning kratom will push consumers toward fentanyl and other dangerous opioids. Five states have maintained kratom prohibitions for roughly a decade or longer. <strong>Does the overdose data show that predicted effect? No consistent pattern appears.</strong></p></div><ul class="leg-list"><li><strong>Arkansas:</strong> 13.9 overdose deaths per 100,000 in 2024, compared with 23.1 nationally.</li><li><strong>Wisconsin:</strong> 19.8 per 100,000, also below the national rate.</li><li><strong>Vermont:</strong> 33.6 per 100,000, substantially above the national rate.</li></ul><p><strong>Same broad policy category. Very different outcomes.</strong> That does not prove prohibition works. It does undermine a categorical claim that prohibition itself predictably produces an overdose catastrophe.</p></section><section class="article-card"><h2>Bottom Line</h2><div class="leg-box"><p><strong>States that prohibited kratom roughly a decade ago do not show a consistent pattern of increased overdose mortality, crime, or broader social deterioration.</strong> Some perform better than national averages and some worse. These comparisons do not prove that prohibition caused any outcome. They do challenge claims that prohibition itself predictably produces a public-health catastrophe.</p></div></section><section class="article-card"><h2>The Prediction Can Be Tested</h2><p>When states consider prohibiting kratom, they often hear a warning: take kratom away and people will return to heroin, fentanyl, or other dangerous opioids. Overdoses will rise. Public health will suffer.</p><p>That is a testable claim.</p><p>Alabama, Arkansas, Indiana, Wisconsin, and Vermont have maintained long-standing prohibitions. Rhode Island also prohibited kratom for years before changing course toward a regulated legal framework.</p><div class="callout">The question is not whether prohibition made these states better. The question is whether the predicted catastrophe actually appeared.</div><p>These comparisons do not establish causation. Fentanyl penetration, treatment access, naloxone distribution, demographics, economic conditions, COVID-19, and many other factors affect state outcomes.</p></section>
+<section class="article-card"><h2>The Most Relevant Metric: Drug Overdose Mortality</h2><p>CDC final 2024 mortality data show no single overdose pattern among these states. Arkansas and Wisconsin were below the national all-drug overdose rate. Alabama and Indiana were somewhat higher. Vermont was substantially higher.</p><div class="table-wrap"><table class="data-table"><thead><tr><th>State</th><th>Prohibited since</th><th>2024 rate</th><th>Final deaths</th><th>Policy context</th></tr></thead><tbody><tr><td><b>Arkansas</b></td><td>2016</td><td class="num"><b>13.9</b></td><td class="num">387</td><td>Long-standing prohibition</td></tr><tr><td><b>Wisconsin</b></td><td>2014</td><td class="num"><b>19.8</b></td><td class="num">1,164</td><td>Long-standing prohibition</td></tr><tr><td><b>Alabama</b></td><td>2016</td><td class="num">25.0</td><td class="num">1,175</td><td>Long-standing prohibition</td></tr><tr><td><b>Indiana</b></td><td>2014</td><td class="num">25.7</td><td class="num">1,688</td><td>Long-standing prohibition</td></tr><tr><td><b>Vermont</b></td><td>2016</td><td class="num">33.6</td><td class="num">205</td><td>Long-standing prohibition</td></tr><tr><td><b>Rhode Island</b></td><td>2017*</td><td class="num">28.0</td><td class="num">333</td><td>Former prohibition, later changed course</td></tr><tr><td><b>United States</b></td><td>Not applicable</td><td class="num"><b>23.1</b></td><td class="num">Not shown</td><td>National comparison</td></tr></tbody></table></div><p>Rates are age-adjusted deaths per 100,000. CDC cautions that state differences do not account for all state-specific population characteristics.</p><div class="sources"><h3>Where these numbers came from</h3><ul><li><a href="https://www.cdc.gov/nchs/state-stats/deaths/drug-overdose.html">CDC/NCHS Drug Overdose Mortality</a>, final 2024 age-adjusted state rates.</li><li><a href="https://www.cdc.gov/nchs/nvss/vsrr/drug-overdose-data.htm">CDC/NCHS Vital Statistics Rapid Release</a>, final 2023 and 2024 overdose death counts.</li>
+<li>Prohibition dates are based on the states' scheduling actions and statutes. Wisconsin and Indiana prohibited the principal kratom alkaloids in 2014; Alabama, Arkansas, and Vermont followed in 2016. Rhode Island's prohibition took effect in 2017 and was later replaced by a regulated framework.</li></ul><p style="font-size:12px;color:#64748b;margin-top:8px">* Rhode Island is shown for historical comparison and is not currently classified here as a long-standing prohibition state.</p></div></section>
+<section class="article-card"><h2>Arkansas Is the Awkward Case for the Catastrophe Argument</h2><p>Arkansas prohibited kratom in 2016. In 2024, its age-adjusted all-drug overdose mortality rate was <b>13.9 per 100,000</b>, well below the national rate of 23.1.</p><p>Arkansas recorded <b>517 overdose deaths in 2023</b> and <b>387 in 2024</b>.</p><div class="leg-box"><h3>Arkansas test case</h3><ul class="leg-list"><li>Kratom prohibited since <strong>2016</strong></li><li>2024 overdose rate: <strong>13.9 per 100,000</strong></li><li>U.S. rate: <strong>23.1 per 100,000</strong></li><li>2023 overdose deaths: <strong>517</strong></li><li>2024 overdose deaths: <strong>387</strong></li><li>One-year change: <strong>about 25% lower</strong></li></ul></div><p>This does not mean Arkansas reduced overdoses because it banned kratom. It does demonstrate that a state can maintain kratom prohibition and still achieve a large reduction in overdose deaths.</p><div class="sources"><h3>Source</h3><p><a href="https://www.cdc.gov/nchs/nvss/vsrr/drug-overdose-data.htm">CDC/NCHS final overdose counts</a> and <a href="https://www.cdc.gov/nchs/state-stats/deaths/drug-overdose.html">CDC final 2024 state overdose rates</a>.</p></div></section>
+<section class="article-card"><h2>Alabama Shows Improvement Without Legal Kratom</h2><p>Alabama's overdose history is mixed, and it should be presented that way. Final overdose deaths fell from <b>1,598 in 2023</b> to <b>1,175 in 2024</b>, about a 26% decline, although the 2024 age-adjusted rate of 25.0 remained above the national rate.</p><p>Other public health measures improved too. Alabama's 2024 infant mortality rate was <b>7.1 deaths per 1,000 live births</b>. The Alabama Department of Public Health reports that the state reached its lowest recorded infant mortality rate, 6.7, in 2022.</p><div class="sources"><h3>Sources</h3><ul><li><a href="https://www.cdc.gov/nchs/nvss/vsrr/drug-overdose-data.htm">CDC/NCHS overdose death counts</a>.</li><li><a href="https://www.cdc.gov/nchs/state-stats/states/al.html">CDC Alabama Stats of the States</a>.</li><li><a href="https://www.alabamapublichealth.gov/perinatal/infant-mortality.html">Alabama Department of Public Health, Infant Mortality</a>.</li></ul></div></section>
+<section class="article-card"><h2>Wisconsin Has Lived Without Legal Kratom for More Than a Decade</h2><p>Wisconsin's prohibition dates to 2014. Its 2024 age-adjusted all-drug overdose mortality rate was <b>19.8 per 100,000</b>, below the national rate of 23.1. Final 2024 overdose deaths totaled 1,164.</p><p>Wisconsin experienced the fentanyl crisis. The point is not that prohibition protected it. The point is that more than a decade without a legal kratom market has not produced a unique or obvious overdose catastrophe.</p><div class="sources"><h3>Source</h3><p><a href="https://www.cdc.gov/nchs/state-stats/deaths/drug-overdose.html">CDC/NCHS Drug Overdose Mortality</a> and <a href="https://www.cdc.gov/nchs/nvss/vsrr/drug-overdose-data.htm">CDC final overdose counts</a>.</p></div></section>
+<section class="article-card"><h2>Vermont Counts Too</h2><p>A credible comparison cannot discard the state with inconvenient numbers. Vermont's 2024 overdose mortality rate was <b>33.6 per 100,000</b>, well above the national rate, with 205 final overdose deaths.</p><p>If Vermont's high rate is offered as proof that prohibition causes overdose deaths, Arkansas immediately creates a problem for that argument. Arkansas has the same broad prohibition policy category and a rate of 13.9.</p><div class="callout">Neither state proves causation. Together, they show why simplistic state-level causal claims are weak.</div><div class="sources"><h3>Source</h3><p><a href="https://www.cdc.gov/nchs/state-stats/deaths/drug-overdose.html">CDC/NCHS Drug Overdose Mortality</a>.</p></div></section>
+<section class="article-card"><h2>Indiana Belongs in the Analysis</h2><p>Indiana's 2024 overdose mortality rate was <b>25.7 per 100,000</b>, above the national rate. Final overdose deaths totaled 1,688.</p><p>Indiana belongs here precisely because the number is not especially favorable. A serious policy review should include all of the long-standing prohibition states, not just the ones that make the preferred argument look good.</p><div class="sources"><h3>Source</h3><p><a href="https://www.cdc.gov/nchs/state-stats/deaths/drug-overdose.html">CDC/NCHS Drug Overdose Mortality</a> and <a href="https://www.cdc.gov/nchs/nvss/vsrr/drug-overdose-data.htm">CDC final overdose counts</a>.</p></div></section>
+<section class="article-card"><h2>What This Data Shows, and What It Does Not</h2><div class="twocol"><div class="evidence"><h3>What the Data Show</h3><ul><li>Long-standing prohibition states do not exhibit a consistent overdose pattern.</li><li>Some prohibition states are below the national overdose rate.</li><li>Some are above it.</li><li>Large overdose declines have occurred while prohibition remained in effect.</li><li>States can improve unrelated health and education measures without a legal kratom market.</li></ul></div><div class="evidence"><h3>What the Data Do Not Show</h3><ul><li>That banning kratom caused overdose rates to fall.</li><li>That prohibition caused improvements in education or infant mortality.</li><li>That Vermont's high overdose rate was caused by its kratom ban.</li><li>That state-level comparisons establish individual-level causation.</li></ul></div></div></section><section class="article-card"><h2>Rhode Island Gives Us a Different Test</h2><p>Rhode Island later changed course from prohibition toward a regulated legal framework, so it should not be presented as a permanently banned state.</p><p>Instead, it can become a prospective policy test. If regulated legal access produces the public health benefits advocates predict, those benefits should eventually be measurable in overdose mortality, poison-center calls, emergency-department visits, treatment data, and kratom-related adverse events.</p><div class="leg-box"><p><strong>If regulated legal access produces the public health benefits advocates predict, Rhode Island should eventually provide measurable evidence of them.</strong></p></div><div class="sources"><h3>Current comparison source</h3><p>CDC reports 333 final overdose deaths in Rhode Island in 2024. See <a href="https://www.cdc.gov/nchs/nvss/vsrr/drug-overdose-data.htm">CDC/NCHS Vital Statistics Rapid Release</a>.</p></div></section>
+<section class="article-card"><h2>Broader Social Indicators</h2><p>Overdose mortality is the most directly relevant measure for claims that prohibition drives people toward more dangerous opioids. Crime, education, infant mortality, employment, poverty, and other social indicators are included only as broader context. They are not presented as outcomes caused by kratom policy.</p><div class="leg-box"><p><strong>These measures answer a narrower question:</strong> did states without legal kratom become unable to improve on ordinary measures of public health and social welfare? The record does not show such a general collapse.</p></div></section><section class="article-card"><h2>Crime Did Not Explode After Prohibition</h2>
+<p>Crime provides another useful reality check, but it should not be treated as an outcome caused by kratom policy. The figures below come from the FBI Crime Data Explorer exports for each state and track change within each state over time.</p>
+
+<p>Because the Crime Data Explorer exports begin partway through 2016, <strong>2017 is used as the first complete calendar year</strong>. Annual totals were calculated by summing the 12 monthly FBI CDE counts. Raw counts are used here to evaluate change within a state, not to compare crime levels between states with different populations.</p>
+
+<h3 style="margin:24px 0 10px;font-size:21px">Violent Crime, 2017 to 2025</h3>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>State</th><th>2017</th><th>2024</th><th>2025</th><th>Change, 2017 to 2025</th></tr></thead><tbody>
+<tr><td><b>Alabama</b></td><td class="num">23,995</td><td class="num">19,453</td><td class="num"><b>18,176</b></td><td class="num"><b>-24.3%</b></td></tr>
+<tr><td><b>Arkansas</b></td><td class="num">16,381</td><td class="num">17,952</td><td class="num"><b>16,405</b></td><td class="num">+0.1%</td></tr>
+<tr><td><b>Indiana</b></td><td class="num">23,981</td><td class="num">21,162</td><td class="num"><b>18,418</b></td><td class="num"><b>-23.2%</b></td></tr>
+<tr><td><b>Wisconsin</b></td><td class="num">18,636</td><td class="num">16,833</td><td class="num"><b>14,255</b></td><td class="num"><b>-23.5%</b></td></tr>
+<tr><td><b>Vermont</b></td><td class="num">1,095</td><td class="num">1,476</td><td class="num"><b>1,415</b></td><td class="num">+29.2%</td></tr>
+<tr><td><b>Rhode Island*</b></td><td class="num">2,475</td><td class="num">1,724</td><td class="num"><b>1,604</b></td><td class="num"><b>-35.2%</b></td></tr>
+</tbody></table></div>
+
+<div class="leg-box"><p><strong>Four of the six states recorded substantially fewer violent crimes in 2025 than in 2017.</strong> Alabama fell about 24%, Indiana about 23%, Wisconsin about 24%, and Rhode Island about 35%. Arkansas was essentially unchanged. Vermont increased from a much smaller numerical base.</p></div>
+
+<h3 style="margin:28px 0 10px;font-size:21px">Property Crime, 2017 to 2025</h3>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>State</th><th>2017</th><th>2024</th><th>2025</th><th>Change, 2017 to 2025</th></tr></thead><tbody>
+<tr><td><b>Alabama</b></td><td class="num">137,342</td><td class="num">83,820</td><td class="num"><b>77,324</b></td><td class="num"><b>-43.7%</b></td></tr>
+<tr><td><b>Arkansas</b></td><td class="num">90,613</td><td class="num">59,926</td><td class="num"><b>51,103</b></td><td class="num"><b>-43.6%</b></td></tr>
+<tr><td><b>Indiana</b></td><td class="num">138,568</td><td class="num">90,974</td><td class="num"><b>76,449</b></td><td class="num"><b>-44.8%</b></td></tr>
+<tr><td><b>Wisconsin</b></td><td class="num">105,181</td><td class="num">69,411</td><td class="num"><b>59,893</b></td><td class="num"><b>-43.1%</b></td></tr>
+<tr><td><b>Vermont</b></td><td class="num">9,450</td><td class="num">10,813</td><td class="num"><b>9,295</b></td><td class="num"><b>-1.6%</b></td></tr>
+<tr><td><b>Rhode Island*</b></td><td class="num">18,714</td><td class="num">11,570</td><td class="num"><b>10,138</b></td><td class="num"><b>-45.8%</b></td></tr>
+</tbody></table></div>
+
+<div class="leg-box"><p><strong>Property crime fell in all six states over the full 2017 to 2025 period.</strong> Five showed declines of roughly 43% to 46%. Vermont was essentially flat, down about 2%.</p></div>
+
+<p>These trends do not establish that kratom prohibition reduced crime. Crime is affected by policing, demographics, economic conditions, reporting practices, and many other factors. The narrower conclusion is that long-standing prohibition was compatible with substantial crime declines in several states. The broad social deterioration sometimes predicted after prohibition is not apparent in these FBI trends.</p>
+
+<div class="sources"><h3>Crime data source and method</h3><ul>
+<li><strong>Source:</strong> FBI Crime Data Explorer state exports supplied for Alabama, Arkansas, Indiana, Wisconsin, Vermont, and Rhode Island, using the <b>violent-crime</b> and <b>property-crime</b> offense series.</li>
+<li>2017 is the first complete calendar year in the supplied exports because the series begins partway through 2016.</li>
+<li>Annual totals are the sum of the 12 monthly CDE counts for each state.</li>
+<li>Percent changes compare each state's 2017 annual total with its 2025 annual total.</li>
+<li>These are raw within-state counts, not population-adjusted rates, and should not be used to rank crime levels across states.</li>
+<li>* Rhode Island is included as a historical comparison because it later changed from prohibition to a regulated legal framework.</li>
+</ul></div>
+</section><section class="article-card"><h2>Other Metrics Matter Too</h2>
+<p>The overdose question is the most directly relevant to claims that prohibition sends people toward more dangerous opioids. Broader measures are useful for a different reason. They test claims that states cannot function or improve without legal access to kratom.</p>
+
+<ul class="leg-list">
+<li><strong>Infant mortality:</strong> Alabama reached a record low of <strong>6.7 deaths per 1,000 live births in 2022</strong> and stood at <strong>7.1 in 2024</strong>.</li>
+<li><strong>Education:</strong> Alabama's average NAEP fourth-grade mathematics score rose from <strong>230 in 2019</strong> to <strong>236 in 2024</strong>, essentially level with the 2024 national public-school average of 237.</li>
+<li><strong>Crime:</strong> FBI Crime Data Explorer trends above show substantial declines in violent crime in several states and large property-crime declines in five of the six states examined.</li>
+<li><strong>Economic and social measures:</strong> employment, poverty, household income, teen births, and other indicators can provide additional context, but each has many causes and should be interpreted separately.</li>
+</ul>
+
+<div class="leg-box"><p><strong>None of these improvements can be attributed to kratom prohibition.</strong> The narrower point is that they occurred without a legal kratom market. Prohibition did not prevent states from making progress on unrelated measures of public health, education, crime, and social welfare.</p></div>
+
+<div class="sources"><h3>Primary data sources used for broader metrics</h3><ul>
+<li><a href="https://www.cdc.gov/nchs/state-stats/states/al.html">CDC Stats of the States</a> for state health measures.</li>
+<li><a href="https://www.alabamapublichealth.gov/perinatal/infant-mortality.html">Alabama Department of Public Health</a> for Alabama infant mortality.</li>
+<li><a href="https://nces.ed.gov/programs/digest/d19/tables/dt19_222.75.asp">NCES/NAEP, 2019 fourth-grade mathematics</a>.</li>
+<li><a href="https://nces.ed.gov/nationsreportcard/subject/publications/stt2024/pdf/2024219AL4.pdf">NAEP 2024 Alabama Grade 4 Mathematics State Snapshot</a>.</li>
+<li><a href="https://www.bls.gov/lau/">U.S. Bureau of Labor Statistics</a> for state unemployment data.</li>
+<li><a href="https://www.census.gov/programs-surveys/acs">U.S. Census Bureau American Community Survey</a> for poverty and household income.</li>
+</ul></div>
+</section><section class="article-card"><h2>The Question the Data Should Answer</h2><p>When the claim is made that banning kratom will send consumers to fentanyl, the next question should be simple: what does the population-level evidence show?</p><div class="leg-box"><h3>Which prohibition state demonstrates that effect?</h3><ul class="leg-list"><li>Arkansas is far below the national overdose rate.</li><li>Wisconsin is below it.</li><li>Alabama and Indiana are somewhat above it.</li><li>Vermont is substantially above it.</li></ul></div><p><strong>There is no consistent prohibition pattern.</strong></p><p>That does not prove bans reduce overdoses. It means the public should not be told that bans increase them without evidence either.</p><div class="leg-box"><p><strong>A prediction repeated often is still a prediction. The states that already banned kratom give us something better: data.</strong></p></div></section><section class="article-card"><h2>Method and Source Note</h2><p>This page uses final 2024 CDC/NCHS mortality data where available. Overdose rates are age-adjusted deaths per 100,000 population. Final death counts and age-adjusted rates are different measures and are labeled separately.</p><p>Education figures are from the National Assessment of Educational Progress. Alabama infant mortality figures are from CDC and the Alabama Department of Public Health. Crime figures are calculated from the FBI Crime Data Explorer state exports described in the crime section. Broader economic source links are provided for readers who wish to reproduce or extend the analysis.</p><p>No social, educational, economic, or mortality improvement on this page is attributed causally to kratom prohibition. The analysis asks a narrower question: whether long-standing prohibition states display the consistent public health or social collapse predicted by broad claims against prohibition.</p></section>
+</div></main><footer>Global Kratom Policy Review · Research · Analysis · Policy</footer></body></html>
