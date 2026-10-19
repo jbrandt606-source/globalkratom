@@ -40,5 +40,6 @@ jobs:
             echo 'No index changes'
           else
             git commit -m 'Update OPMS PDF full-text index [skip ci]'
+            git pull --rebase origin main
             git push
           fi
