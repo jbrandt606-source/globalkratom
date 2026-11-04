@@ -1,0 +1,244 @@
+MITRAGYNINE -> 7-HYDROXYMITRAGYNINE (7-OH)
+PATENT EVIDENCE INDEX FOR AN IMMEDIATE-PRECURSOR PETITION
+Research cutoff: October 9, 2026
+
+SCOPE AND USE
+This is an annotated public-patent research index, not a certified worldwide
+completeness, patent-validity, ownership, or legal-status opinion. Relevant
+patent texts, claims, family relationships, and selected original PDF pages were
+reviewed. National counterparts and continuations are not independent experiments.
+Unpublished applications and poorly indexed national records may not be captured.
+Dates below are publication or grant dates, not necessarily invention dates.
+Applicant names describe the published record, not independently verified current
+ownership. An A-publication is not represented here as an issued patent.
+
+The entries identify evidence and its limits. They do not reproduce reagents,
+quantities, reaction conditions, or manufacturing procedures. A patent claim or
+proposed embodiment is not independent experimental confirmation or proof of
+commercial practice. The statutory designation requires additional DEA findings.
+
+A. DIRECT-CONVERSION METHOD CLAIMS
+
+Title shared by A1-A3:
+Method of converting mitragynine to 7-hydroxymitragynine
+Named inventors: Haywood Max Mitchell, Cecil Page, Joseph William Merino.
+
+A1. US12466830B1 | U.S. grant | November 11, 2025
+Locator: Claim 1; corresponding detailed description.
+Relevance: Expressly claims conversion from mitragynine to 7-OH.
+https://patents.google.com/patent/US12466830B1/en
+
+A2. US12492201B1 | U.S. grant | December 9, 2025
+Locator: Claim 1; cross-reference to related application.
+Relevance: Another expressly claimed mitragynine-to-7-OH conversion method.
+Relationship: Continuation-in-part of the application underlying A1.
+https://patents.google.com/patent/US12492201B1/en
+
+A3. US12606560B1 | U.S. grant | April 21, 2026
+Locator: Claim 1; cross-reference to related application.
+Relevance: Expressly claimed conversion; continuation of A1's application.
+Caution for A1-A3: Related grants, not three independent laboratory replications.
+https://patents.google.com/patent/US12606560B1/en
+
+B. COLUMBIA: WORKED CONVERSION EXAMPLES
+
+Title: Mitragynine alkaloids as opioid receptor modulators
+Published applicant: Trustees of Columbia University in the City of New York.
+Key locators: Examples 2 and 19 (preparative conversion); Example 20
+(metabolism, supporting a biological relationship rather than manufacture).
+Example 19 reports preparation and characterization of 7-OH from mitragynine.
+Some disclosed chemistry contains transient intermediates; do not equate a direct
+preparative starting-material/product relationship with a single elementary step.
+Use the specification as evidence, not an assertion that every issued claim
+in this family independently claims the conversion method.
+
+B1. WO2017165738A1 | International application | September 28, 2017
+https://patents.google.com/patent/WO2017165738A1/en
+B2. US20190084983A1 | U.S. application | March 21, 2019
+https://patents.google.com/patent/US20190084983A1/en
+B3. US10961244B2 | U.S. grant | March 30, 2021
+https://patents.google.com/patent/US10961244B2/en
+B4. US20210179618A1 | U.S. continuation application | June 17, 2021
+https://patents.google.com/patent/US20210179618A1/en
+B5. US11912707B2 | U.S. continuation grant | February 27, 2024
+https://patents.google.com/patent/US11912707B2/en
+These publications belong to a related disclosure family and should not be
+counted as five independent confirmations.
+
+C. FUZHOU UNIVERSITY: STARTING MATERIAL AND PREPARATION
+
+C1. CN106967067A | Chinese application | July 21, 2017
+Title, translated: Method for preparing 7-hydroxymitragynine.
+Published applicant: Fuzhou University.
+Locators: Abstract; Contents of Invention; Claim 1; detailed embodiments.
+Relevance: Explicitly identifies mitragynine as starting material for 7-OH.
+Caution: English text is a machine translation. Obtain a qualified translation
+of relied-upon passages for a formal filing. No Chinese grant was verified.
+https://patents.google.com/patent/CN106967067A/en
+Chinese original:
+https://patents.google.com/patent/CN106967067A/zh
+
+D. SHAMAN PHARMA: BOTANICAL SOURCE AND DOWNSTREAM CONVERSION
+
+D1. WO2025123039A1 | International application | June 12, 2025
+Title: Method for production of spiro-oxindole and indoxyl derivatives of
+mitragynine.
+Published applicant: Shaman Pharma LLC. Inventor: Patrick Kampmeyer.
+Locators: Paragraphs [0009]-[0016], printed pages 2-3; especially [0012].
+Relevance: Section on semi-synthesis of 7-OH links mitragynine-containing source
+material, including leaves/extracts, to downstream 7-OH production.
+Caution: This is a process disclosure, not proof of actual company manufacturing.
+https://patents.google.com/patent/WO2025123039A1/en
+Original PDF reviewed on printed pages 2-3:
+https://patentimages.storage.googleapis.com/64/45/ea/f0f5f3a6a6f39a/WO2025123039A1.pdf
+
+E. DEUTERATED-ANALOG FAMILY: ORDINARY 7-OH PREPARATION IN THE SPECIFICATION
+
+Title: Deuterated mitragynine analogs as safer opioid modulators in the
+mitragynine class.
+Published applicants: Columbia University; Research Foundation for Mental
+Hygiene; Memorial Sloan Kettering Cancer Center.
+Locators: Experimental Details, synthetic sections headed
+7-Hydroxymitragynine (7-OH), Procedure 1 and Procedure 2 - Larger Scale.
+Relevance: Includes ordinary, nondeuterated 7-OH preparation from mitragynine,
+not merely discussions of isotopically modified analogs.
+Caution: Repeated procedures in related research programs are not automatically
+independent replication. Larger laboratory scale does not establish industry use.
+
+E1. WO2020160280A1 | International application | August 6, 2020
+https://patents.google.com/patent/WO2020160280A1/en
+E2. US20220135564A1 | U.S. application
+https://patents.google.com/patent/US20220135564A1/en
+
+F. KURES: ADDITIONAL ORDINARY 7-OH PREPARATION
+
+Title: Salts and polymorphs of mitragynine and 3-deuteromitragynine.
+Published applicant: Kures Inc. Inventor: Andrew Kruegel.
+Locators: Example 1; WO paragraphs [0302]-[0303], ordinary 7-OH preparation.
+Relevance: Identifies mitragynine as the preparative input to 7-OH even though
+the overall application concerns salts and polymorphs.
+Caution: Treat the worked synthetic disclosure separately from the scope of
+salt/polymorph claims. Do not represent laboratory work as proven retail supply.
+
+F1. WO2022234524A1 | International application | November 10, 2022
+https://patents.google.com/patent/WO2022234524A1/en
+F2. US20240239798A1 | U.S. application | July 18, 2024
+https://patents.google.com/patent/US20240239798A1/en
+
+G. MITRADYNE: EXPRESS ENZYME-BASED CONVERSION CLAIMS
+
+Title: Polypeptides for use in the synthesis of kratom alkaloids.
+Published applicant: Mitradyne Corporation.
+G1. US20250092433A1 | U.S. application | March 20, 2025
+Locators: Published Claims 7 and 19; corresponding description.
+https://patents.google.com/patent/US20250092433A1/en
+G2. EP4538367A2 | European application | April 16, 2025
+Locators: Published Claim 6; corresponding description.
+https://patents.google.com/patent/EP4538367A2/en
+G3. EP4538367A3 | Subsequent publication | June 18, 2025
+https://patents.google.com/patent/EP4538367A3/en
+Relevance: Expressly identifies an enzyme-mediated mitragynine-to-7-OH
+relationship. A2 and A3 are publications of the same European application.
+Caution: Do not represent the claimed C7-conversion embodiment as an independently
+verified experimental result or an issued U.S./European claim.
+
+H. SUPPORTING DISCLOSURES AND QUALIFICATIONS
+
+H1. Memorial Sloan Kettering analog family
+Title: Mitragynine analogs and uses thereof.
+Locators: WO background paragraph [0005]; corresponding U.S. background.
+Explicitly describes oxidation of mitragynine producing 7-OH.
+Also review the U.S. specification's Method of Synthesis section discussing
+racemic total synthesis. Do not assert that extracting mitragynine from kratom
+leaf is the only conceivable route to 7-OH. Whether an alternative route bypasses
+mitragynine itself requires route-specific analysis, not an assumption based on
+its nonbotanical starting material.
+WO2016176657A1
+https://patents.google.com/patent/WO2016176657A1/en
+US20180134708A1
+https://patents.google.com/patent/US20180134708A1/en
+US11046692B2
+https://patents.google.com/patent/US11046692B2/en
+US12617790B2
+https://patents.google.com/patent/US12617790B2/en
+
+H2. Upstream leaf-source evidence
+US11760758B2 | U.S. grant | September 19, 2023
+Title: Mitragynine analogs for the treatment of pain, mood disorders and
+substance use disorders.
+Locator: Discussion paragraph explaining recovery of mitragynine from kratom
+leaf and subsequent scaffold modification.
+Relevance: Supports leaf as a source of mitragynine. It is not the cleanest
+standalone exhibit for the specific unmodified mitragynine -> unmodified 7-OH
+relationship; prioritize A-G instead.
+https://patents.google.com/patent/US11760758B2/en
+Related publication: WO2020037136A1
+https://patents.google.com/patent/WO2020037136A1/en
+Related U.S. application: US20210179619A1
+https://patents.google.com/patent/US20210179619A1/en
+
+H3. Additional formulation disclosures (lower evidentiary weight)
+US20180169172A1
+Title: Compound and method for reducing appetite, fatigue and pain.
+Locator: Description passage on proposed synthesis of 7-OH by oxidation of
+mitragynine.
+https://patents.google.com/patent/US20180169172A1/en
+US10751380B2
+Title: Compound and method for treating spasms, inflammation and pain.
+Locator: Corresponding proposed-synthesis description.
+https://patents.google.com/patent/US10751380B2/en
+US20190255036A1 | Application published August 22, 2019
+Title: Compound and method for reducing neuropathic pain and depression.
+Locator: Embodiment describing 7-OH as semisynthetically obtained by oxidation
+of naturally derived mitragynine.
+https://patents.google.com/patent/US20190255036A1/en
+Caution: Proposed formulation/clinical embodiments are not proof of completed
+clinical trials or validated manufacturing. Use only the supported chemical
+relationship; do not adopt the applications' unrelated medical claims.
+
+I. SCREENED MATERIAL THAT SHOULD NOT LEAD THE PETITION
+
+US8247428B2 and US8648090B2
+Indole alkaloid derivatives having opioid receptor agonistic effect, and
+therapeutic compositions and methods relating to same.
+https://patents.google.com/patent/US8247428B2/en
+https://patents.google.com/patent/US8648090B2/en
+Reviewed passages concern substituted derivatives and MGM-15/MGM-16. They are
+less direct for this particular unmodified mitragynine-to-7-OH question.
+
+WO2026078445A1
+Method of forming extract of Mitragyna speciosa using acetone.
+Locator: Paragraph [0051]. The disclosure seeks to prevent oxidation products
+including 7-OH during extraction. It corroborates a distinction between
+preserving/extracting mitragynine and intentionally converting it.
+https://patents.google.com/patent/WO2026078445A1/en
+
+J. UNRESOLVED INTERNATIONAL LEAD
+
+A primary research article, Genotoxicity risk assessment of a
+7-hydroxymitragynine-enriched Kratom preparation, references Thai number
+2303000098 for its proprietary preparation. The original Thai patent record,
+its claims, and grant/application status were NOT retrieved or verified.
+Do not count it as confirmed patent evidence until the original is obtained.
+Publisher record:
+https://www.sciencedirect.com/science/article/pii/S2214750026000089
+
+K. LEGAL AND EVIDENTIARY FRAMEWORK
+
+21 U.S.C. 802(23): The designation requires findings concerning the principal
+compound used (or production primarily for use), immediate intermediary role,
+and necessity of control. The patents chiefly support the chemical relationship;
+they do not alone establish commercial predominance or necessity.
+https://www.govinfo.gov/content/pkg/USCODE-2024-title21/html/USCODE-2024-title21-chap13-subchapI-partA-sec802.htm
+
+USPTO MPEP 2164.02: Working and Prophetic Examples. A disclosed example may
+report work actually performed or a proposed embodiment based on predicted
+results. Patent publication/grant is not independent scientific validation.
+https://www.uspto.gov/web/offices/pac/mpep/s2164.html
+
+SUGGESTED FIRST EXHIBITS
+A1 Claim 1; B1/B3 Example 19; C1 translated Claim 1 and preparation disclosure;
+D1 paragraphs [0009]-[0016]; F1 paragraphs [0302]-[0303]. Use G as additional
+claimed enzyme-based conversion, clearly distinguished from worked chemistry.
+Attach a qualified chemist's explanation and separate commercial-use evidence.
+Confirm the target substance's operative CSA status independently at filing.
