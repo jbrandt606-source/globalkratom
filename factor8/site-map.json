@@ -1,0 +1,306 @@
+{
+  "index.html": {
+    "title": "Factor Eight.The immediate precursor case.",
+    "sections": [
+      [
+        "request",
+        "The requested action"
+      ],
+      [
+        "roadmap",
+        "Read the case"
+      ],
+      [
+        "core-record",
+        "The principal evidence"
+      ],
+      [
+        "status",
+        "Target scheduling"
+      ],
+      [
+        "archive",
+        "Document archive"
+      ]
+    ]
+  },
+  "statute.html": {
+    "title": "The law, in plain English.",
+    "sections": [
+      [
+        "plain-english",
+        "An earlier point in manufacture"
+      ],
+      [
+        "factor-eight",
+        "Factor 8 versus three prongs"
+      ],
+      [
+        "three-prongs",
+        "Exact statutory text"
+      ],
+      [
+        "preventive",
+        "Preventive authority"
+      ],
+      [
+        "authority",
+        "Authority and limits"
+      ],
+      [
+        "scope",
+        "Requested scope"
+      ],
+      [
+        "filing",
+        "Acceptance versus approval"
+      ]
+    ]
+  },
+  "history.html": {
+    "title": "A law designed to act before the final product.",
+    "sections": [
+      [
+        "origin",
+        "1970 \u00b7 The authority"
+      ],
+      [
+        "phenylacetone",
+        "1979 \u00b7 Phenylacetone"
+      ],
+      [
+        "anpp",
+        "2010 \u00b7 ANPP"
+      ],
+      [
+        "norfentanyl",
+        "2020 \u00b7 Norfentanyl"
+      ],
+      [
+        "lessons",
+        "Lessons for this petition"
+      ],
+      [
+        "today",
+        "Application to mitragynine"
+      ]
+    ]
+  },
+  "prong1.html": {
+    "title": "Prong 1.The principal compound.",
+    "sections": [
+      [
+        "meaning",
+        "What Prong A requires"
+      ],
+      [
+        "preparative",
+        "Preparative evidence"
+      ],
+      [
+        "commercial",
+        "Commercial evidence"
+      ],
+      [
+        "analysis",
+        "Analytical corroboration"
+      ],
+      [
+        "mp",
+        "Separate MP assessment"
+      ],
+      [
+        "finding",
+        "Requested finding"
+      ]
+    ]
+  },
+  "prong2.html": {
+    "title": "Prong 2.The immediate intermediary.",
+    "sections": [
+      [
+        "meaning",
+        "Immediate and likely"
+      ],
+      [
+        "seven-oh",
+        "The 7-OH relationship"
+      ],
+      [
+        "mp",
+        "The MP pathways"
+      ],
+      [
+        "not-metabolism",
+        "Metabolism is not manufacture"
+      ],
+      [
+        "alternatives",
+        "Alternative routes"
+      ],
+      [
+        "finding",
+        "Requested finding"
+      ]
+    ]
+  },
+  "prong3.html": {
+    "title": "Prong 3.The necessity of control.",
+    "sections": [
+      [
+        "prevent",
+        "Prevention is authorized"
+      ],
+      [
+        "chain",
+        "The necessity argument"
+      ],
+      [
+        "incremental",
+        "What input control adds"
+      ],
+      [
+        "commercial",
+        "Commercial context"
+      ],
+      [
+        "alternatives",
+        "Alternative routes"
+      ],
+      [
+        "scope",
+        "Mixtures and botanical material"
+      ],
+      [
+        "finding",
+        "Requested finding"
+      ]
+    ]
+  },
+  "petition.html": {
+    "title": "Petition for immediate-precursor control of mitragynine.",
+    "sections": [
+      [
+        "relief",
+        "I. Requested action"
+      ],
+      [
+        "summary",
+        "II. Statement of grounds"
+      ],
+      [
+        "authority",
+        "III. Legal authority"
+      ],
+      [
+        "targets",
+        "IV. Targets and timing"
+      ],
+      [
+        "prongs",
+        "V. Three requested findings"
+      ],
+      [
+        "contrary",
+        "VI. Contrary evidence"
+      ],
+      [
+        "scope",
+        "VII. Scope and severability"
+      ],
+      [
+        "rule",
+        "VIII. Proposed text"
+      ],
+      [
+        "record-request",
+        "IX. Agency determination"
+      ],
+      [
+        "exhibits",
+        "X. Exhibits"
+      ],
+      [
+        "filing",
+        "Filing fields"
+      ]
+    ]
+  },
+  "patents.html": {
+    "title": "The patent record.",
+    "sections": [
+      [
+        "families",
+        "Disclosure families"
+      ],
+      [
+        "priority",
+        "Priority patent evidence"
+      ],
+      [
+        "read",
+        "How the patents are used"
+      ]
+    ]
+  },
+  "manufacturing.html": {
+    "title": "The manufacturing record.",
+    "sections": [
+      [
+        "company",
+        "Company and sworn accounts"
+      ],
+      [
+        "litigation",
+        "Litigation and record leads"
+      ],
+      [
+        "identity",
+        "Corporate identity"
+      ]
+    ]
+  },
+  "laboratory.html": {
+    "title": "What the laboratory record can establish.",
+    "sections": [
+      [
+        "composition",
+        "Reported sample composition"
+      ],
+      [
+        "research",
+        "Analytical research"
+      ],
+      [
+        "use",
+        "Use in the petition"
+      ]
+    ]
+  },
+  "documents.html": {
+    "title": "The exhibit register.",
+    "sections": [
+      [
+        "register",
+        "Archive and filters"
+      ],
+      [
+        "legal",
+        "Legal authorities"
+      ]
+    ]
+  },
+  "search.html": {
+    "title": "Search the source record.",
+    "sections": [
+      [
+        "search",
+        "Search"
+      ],
+      [
+        "coverage",
+        "Coverage and interpretation"
+      ]
+    ]
+  }
+}
