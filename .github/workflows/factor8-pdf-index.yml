@@ -1,0 +1,82 @@
+name: Index Factor 8 PDFs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'factor8/docs/**'
+      - 'factor8/catalog.json'
+      - 'factor8/reviewed-excerpts.json'
+      - 'scripts/build_factor8_index.py'
+      - '.github/workflows/factor8-pdf-index.yml'
+  workflow_dispatch:
+    inputs:
+      ocr:
+        description: 'OCR scans? Choose auto for the widest PDF coverage.'
+        required: true
+        default: 'auto'
+        type: choice
+        options: ['auto', 'off']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: factor8-pdf-index
+  cancel-in-progress: false
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check required repository paths
+        run: |
+          test -f scripts/build_factor8_index.py || { echo 'Missing scripts/build_factor8_index.py at repository root.'; exit 1; }
+          test -f factor8/catalog.json || { echo 'Missing factor8/catalog.json.'; exit 1; }
+          test -d factor8/docs/patents || { echo 'Missing lowercase factor8/docs/patents folder.'; exit 1; }
+      - name: Install PDF and optional OCR dependencies
+        env:
+          OCR_MODE: ${{ github.event_name == 'workflow_dispatch' && inputs.ocr || 'off' }}
+        run: |
+          python -m pip install 'PyMuPDF>=1.24,<2'
+          if [ "$OCR_MODE" = auto ]; then
+            sudo apt-get update
+            sudo apt-get install -y tesseract-ocr
+          fi
+      - name: Build search index
+        env:
+          OCR_MODE: ${{ github.event_name == 'workflow_dispatch' && inputs.ocr || 'off' }}
+        run: python scripts/build_factor8_index.py --root . --ocr "$OCR_MODE"
+      - name: Commit generated search data
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A factor8/search-data/
+          if git diff --cached --quiet; then
+            echo 'No index changes.'
+          else
+            git commit -m 'Update Factor Eight searchable evidence index'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
+      - name: Summarize coverage and publishing step
+        run: |
+          python - <<'PY'
+          import json, os
+          data = json.load(open('factor8/search-data/manifest.json'))
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as f:
+              f.write('## Factor Eight search index\n\n')
+              for name, value in data['stats'].items():
+                  f.write(f'- {name}: {value}\n')
+              f.write('\nOriginal PDFs were not changed.\n\n')
+              f.write('**Publishing:** A commit made with GITHUB_TOKEN does not automatically trigger a branch-based GitHub Pages build. Use your existing Pages deployment workflow, or make a normal user commit, to publish the updated index. This workflow does not replace your website deployment configuration.\n')
+          PY
