@@ -3,9 +3,7 @@ name: Kratom Hearing Watch
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 11,14,17,22,2 * * *"
-
+  
 permissions:
   contents: write
   pull-requests: write
