@@ -1,0 +1,66 @@
+
+name: Kratom Hearing Watch
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 11,14,17,22,2 * * *"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: kratom-hearing-watch
+  cancel-in-progress: false
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Verify API key
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          if [ -z "$OPENAI_API_KEY" ]; then
+            echo "::error::OPENAI_API_KEY is missing."
+            exit 1
+          fi
+
+      - name: Install dependencies
+        run: pip install openai beautifulsoup4 requests
+
+      - name: Research and prepare changes
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python scripts/kratom_hearing_watch.py
+
+      - name: Create review pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: automation/kratom-hearing-updates
+          delete-branch: true
+          draft: true
+          commit-message: "Update kratom hearing tracker"
+          title: "Review: Kratom hearing tracker updates"
+          body: |
+            Automated research identified proposed tracker changes.
+
+            Review every source, date, product scope,
+            and status before merging.
+
+            No changes have been published automatically.
+          add-paths: |
+            ban_hearing.html
+            reports/kratom-hearing-watch.md
